@@ -72,10 +72,11 @@ export default function HomePage() {
     {
       id: "oak-stone",
       category: "kitchens",
-      badge: "Кухня",
+      badge: "Шпон & Эмаль",
       title: "Кухня Шпон Дуба & Мраморный фартук",
       desc: "Фасады из натурального шпона дуба в сочетании с белой матовой эмалью и акриловым камнем с бесшовной склейкой.",
-      specs: ["Шпон дуба", "МДФ эмаль", "Акриловый камень", "Трефолева 1П"],
+      specLabel: "Фасады",
+      specValue: "Шпон дуба / Эмаль RAL",
       photos: [
         "/img/projects/oak-stone/photo_1.jpg",
         "/img/projects/oak-stone/photo_2.jpg",
@@ -87,10 +88,11 @@ export default function HomePage() {
     {
       id: "glass-wardrobe",
       category: "wardrobes",
-      badge: "Смарт-гардеробная",
+      badge: "Stopsol",
       title: "Гардеробная со стеклом STOPSOL",
       desc: "Смарт-стекло: зеркало при выключенном свете, прозрачная витрина при включении подсветки. Без нижней направляющей.",
-      specs: ["Стекло Stopsol", "Подвесная система", "LED 4000K", "Трефолева 1П"],
+      specLabel: "Стекло",
+      specValue: "Stopsol & LED 4000K",
       photos: [
         "/img/projects/glass-wardrobe/photo_1.jpg",
         "/img/projects/glass-wardrobe/photo_2.jpg",
@@ -101,10 +103,11 @@ export default function HomePage() {
     {
       id: "aleksandra",
       category: "kitchens",
-      badge: "Кухня",
+      badge: "Fenix NTM",
       title: "Кухня «Александра» Fenix NTM",
       desc: "Суперматовый нано-пластик Fenix NTM с защитой от отпечатков пальцев, встроенная техника, надежные механизмы.",
-      specs: ["Fenix NTM", "Супермат", "Подсветка", "Трефолева 1П"],
+      specLabel: "Материал",
+      specValue: "Fenix NTM супермат",
       photos: [
         "/img/kitchens/aleksandra/photo_1.jpg",
         "/img/kitchens/aleksandra/photo_2.jpg",
@@ -116,10 +119,11 @@ export default function HomePage() {
     {
       id: "slavena",
       category: "kitchens",
-      badge: "Кухня",
+      badge: "Кашемир",
       title: "Кухня «Славена» Теплый Кашемир",
       desc: "Матовый пластик теплый кашемир, монолитная столешница и фартук из искусственного камня, скрытый профиль Gola.",
-      specs: ["МДФ пластик", "Камень", "Gola", "Трефолева 1П"],
+      specLabel: "Профиль",
+      specValue: "Скрытый Gola / Камень",
       photos: [
         "/img/kitchens/slavena/photo_1.jpg",
         "/img/kitchens/slavena/photo_2.jpg",
@@ -130,10 +134,11 @@ export default function HomePage() {
     {
       id: "mirror-hall",
       category: "closets",
-      badge: "Встроенный шкаф",
+      badge: "Встроенный",
       title: "Встроенный шкаф в нишу прихожей",
       desc: "Монтаж точно в размер от пола до потолка, зеркальные полотна, интегрированная мягкая ниша для обуви.",
-      specs: ["Зеркало", "Ниша под обувь", "Торцевой профиль", "Трефолева 1П"],
+      specLabel: "Монтаж",
+      specValue: "Точно в нишу / Зеркало",
       photos: [
         "/img/projects/mirror-hall/photo_1.jpg",
         "/img/projects/mirror-hall/photo_2.jpg",
@@ -143,10 +148,11 @@ export default function HomePage() {
     {
       id: "timofey",
       category: "kitchens",
-      badge: "Кухня",
+      badge: "Дуб & Глянец",
       title: "Кухня «Тимофей» Дуб & Белый глянец",
       desc: "Комбинация светлых фасадов МДФ пластик и древесной текстуры, петли и ящики с плавными доводчиками.",
-      specs: ["Шпон дуба", "МДФ пластик", "Фурнитура плавного хода", "Трефолева 1П"],
+      specLabel: "Фасады",
+      specValue: "Шпон дуба & Пластик",
       photos: [
         "/img/kitchens/timofey/photo_1.jpg",
         "/img/kitchens/timofey/photo_2.jpg",
@@ -157,10 +163,11 @@ export default function HomePage() {
     {
       id: "brick-wardrobe",
       category: "wardrobes",
-      badge: "Гардеробная",
+      badge: "П-образная",
       title: "Гардеробная система со скошенными полками",
       desc: "П-образная планировка со скошенными полками по шаблону стен, глубокие выдвижные корзины и подсветка штанг.",
-      specs: ["Индивидуальный раскрой", "П-образная", "LED подсветка", "Трефолева 1П"],
+      specLabel: "Планировка",
+      specValue: "П-образная система",
       photos: [
         "/img/projects/brick-wardrobe/photo_1.jpg",
         "/img/projects/brick-wardrobe/photo_2.jpg",
@@ -177,11 +184,11 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* 1. HERO SECTION (1-in-1 from concept-1.html) */}
+      {/* 1. HERO SECTION */}
       <Hero />
 
-      {/* 2. CATALOG SECTION (1-Line Horizontal Slider, Tone 1: Deep Dark Obsidian) */}
-      <section className="catalog-section" id="catalog" style={{ backgroundColor: "var(--bg-dark)" }}>
+      {/* 2. CATALOG SECTION (1-Line Horizontal Slider) */}
+      <section className="catalog-section" id="catalog">
         <div className="container">
           <div className="catalog-head-row">
             <div>
@@ -212,35 +219,35 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Filter Tabs Bar */}
+          {/* Filter Tabs Bar (No util counters) */}
           <div className="catalog-tabs-bar" role="tablist">
             <button
               type="button"
               className={`cat-tab ${activeTab === "all" ? "is-active" : ""}`}
               onClick={() => setActiveTab("all")}
             >
-              Все проекты ({catalogItems.length})
+              Все проекты
             </button>
             <button
               type="button"
               className={`cat-tab ${activeTab === "kitchens" ? "is-active" : ""}`}
               onClick={() => setActiveTab("kitchens")}
             >
-              Кухни ({catalogItems.filter((i) => i.category === "kitchens").length})
+              Кухни
             </button>
             <button
               type="button"
               className={`cat-tab ${activeTab === "wardrobes" ? "is-active" : ""}`}
               onClick={() => setActiveTab("wardrobes")}
             >
-              Гардеробные STOPSOL ({catalogItems.filter((i) => i.category === "wardrobes").length})
+              Гардеробные STOPSOL
             </button>
             <button
               type="button"
               className={`cat-tab ${activeTab === "closets" ? "is-active" : ""}`}
               onClick={() => setActiveTab("closets")}
             >
-              Встроенные шкафы ({catalogItems.filter((i) => i.category === "closets").length})
+              Встроенные шкафы
             </button>
           </div>
 
@@ -332,8 +339,8 @@ export default function HomePage() {
                         <h3 className="card-title">{item.title}</h3>
                         <div className="card-footer">
                           <div>
-                            <div className="card-price-label">Производство</div>
-                            <div className="card-price-val">Собственный цех</div>
+                            <div className="card-price-label">{item.specLabel}</div>
+                            <div className="card-price-val">{item.specValue}</div>
                           </div>
                           <Link href={item.link} className="card-btn-action">
                             Подробнее →
@@ -350,7 +357,7 @@ export default function HomePage() {
       </section>
 
       {/* 3. WORKSHOP & PRODUCTION (Bespoke Studio Bento Showcase) */}
-      <section className="workshop-section" id="production" style={{ backgroundColor: "var(--bg-studio)" }}>
+      <section className="workshop-section" id="production">
         <div className="container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "16px" }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>
@@ -362,7 +369,7 @@ export default function HomePage() {
           </div>
 
           <div className="workshop-bento-grid">
-            {/* Left: Main Hero CNC Photo & Telemetry Box */}
+            {/* Left: Main Hero CNC Photo */}
             <div className="workshop-bento-hero">
               <div className="workshop-hero-photo-wrap">
                 <Image
@@ -421,101 +428,73 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. PROCESS BLUEPRINT TIMELINE (Dynamic Alternating Zigzag) */}
-      <section className="steps-section" id="steps" style={{ backgroundColor: "var(--bg-dark)" }}>
+      {/* 4. PROCESS BLUEPRINT TIMELINE */}
+      <section className="steps-section" id="steps">
         <div className="container">
           <div className="steps-header" style={{ marginBottom: "36px" }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Как создается ваша мебель</h2>
           </div>
 
           <div className="process-pipeline-wrap">
-            {/* SVG Zigzag Neon Track */}
-            <svg className="process-zigzag-svg" viewBox="0 0 1000 120" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="zigzagGreenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3E8E50" stopOpacity="0.35" />
-                  <stop offset="50%" stopColor="#3E8E50" stopOpacity="0.95" />
-                  <stop offset="100%" stopColor="#3E8E50" stopOpacity="0.35" />
-                </linearGradient>
-              </defs>
-              <polyline
-                points="125,27 375,82 625,27 875,82"
-                fill="none"
-                stroke="rgba(62, 142, 80, 0.18)"
-                strokeWidth="8"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <polyline
-                points="125,27 375,82 625,27 875,82"
-                fill="none"
-                stroke="url(#zigzagGreenGrad)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeDasharray="6 4"
-              />
-            </svg>
-
             <div className="process-pipeline">
-              {/* Step 1 - Top */}
-              <div className="process-node-card node-top">
-                <div className="process-node-circle">01</div>
+              {/* Step 1 */}
+              <div className="process-node-card">
                 <div className="process-node-body">
                   <div className="process-node-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 3L3 21" /><path d="M14 3l7 7-4 4-7-7 4-4z" /><path d="M3 14l7 7 4-4-7-7-4 4z" />
                     </svg>
                   </div>
-                  <h3 className="process-node-title">1 день • Выезд мастера</h3>
+                  <span className="process-node-timing">1 день</span>
+                  <h3 className="process-node-title">Выезд мастера и замер</h3>
                   <p className="process-node-desc">
                     Инженер привозит образцы эмалей, шпона и сканирует геометрию стен.
                   </p>
                 </div>
               </div>
 
-              {/* Step 2 - Bottom */}
-              <div className="process-node-card node-bottom">
-                <div className="process-node-circle">02</div>
+              {/* Step 2 */}
+              <div className="process-node-card">
                 <div className="process-node-body">
                   <div className="process-node-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="3" y="3" width="18" height="18" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" />
                     </svg>
                   </div>
-                  <h3 className="process-node-title">2–3 дня • 3D-проект и смета</h3>
+                  <span className="process-node-timing">2–3 дня</span>
+                  <h3 className="process-node-title">3D-проект и смета</h3>
                   <p className="process-node-desc">
                     Эргономика, интеграция техники и фиксация стоимости в договоре.
                   </p>
                 </div>
               </div>
 
-              {/* Step 3 - Top */}
-              <div className="process-node-card node-top">
-                <div className="process-node-circle">03</div>
+              {/* Step 3 */}
+              <div className="process-node-card">
                 <div className="process-node-body">
                   <div className="process-node-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 14 14" />
                     </svg>
                   </div>
-                  <h3 className="process-node-title">14–21 день • Изготовление в цеху</h3>
+                  <span className="process-node-timing">14–21 день</span>
+                  <h3 className="process-node-title">Изготовление в цеху</h3>
                   <p className="process-node-desc">
                     Раскрой на ЧПУ, PUR-кромление и обязательная контрольная сборка.
                   </p>
                 </div>
               </div>
 
-              {/* Step 4 - Bottom */}
-              <div className="process-node-card node-bottom">
-                <div className="process-node-circle">04</div>
+              {/* Step 4 */}
+              <div className="process-node-card">
                 <div className="process-node-body">
                   <div className="process-node-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
                     </svg>
                   </div>
-                  <h3 className="process-node-title">1 день • Чистый монтаж</h3>
+                  <span className="process-node-timing">1 день</span>
+                  <h3 className="process-node-title">Чистый монтаж</h3>
                   <p className="process-node-desc">
                     Штатная бригада устанавливает мебель, подключает технику и убирает мусор.
                   </p>
@@ -526,8 +505,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. MATERIALS & FINISHES (Tone 2: Studio Graphite) */}
-      <section className="materials-section" id="materials" style={{ backgroundColor: "var(--bg-studio)" }}>
+      {/* 5. MATERIALS & FINISHES (4 Columns) */}
+      <section className="materials-section" id="materials">
         <div className="container">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px", flexWrap: "wrap", gap: "16px" }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>Используемые материалы и покрытия</h2>
@@ -537,27 +516,27 @@ export default function HomePage() {
           </div>
 
           <div className="materials-grid">
-            {MATERIALS.map((mat) => (
+            {MATERIALS.slice(0, 4).map((mat) => (
               <Link key={mat.id} href="/calculator" className="mat-card" style={{ textDecoration: "none" }}>
                 <div className="mat-photo-wrap">
                   <Image
                     src={mat.image}
                     alt={mat.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 260px"
+                    sizes="(max-width: 768px) 100vw, 300px"
                     style={{ objectFit: "cover" }}
                   />
                   <span className="mat-tag-pill">
                     {mat.tag}
                   </span>
                 </div>
-                <div className="mat-body" style={{ padding: "18px 20px" }}>
-                  <h3 className="mat-title" style={{ marginBottom: "10px" }}>{mat.title}</h3>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "6px" }}>
-                    <span style={{ fontSize: "13px", color: "var(--color-green-brand)", fontWeight: 600 }}>
-                      Выбрать в проекте →
-                    </span>
-                  </div>
+                <div className="mat-body">
+                  <div className="mat-subtitle">{mat.tag}</div>
+                  <h3 className="mat-title">{mat.title}</h3>
+                  <p className="mat-desc">{mat.description}</p>
+                  <span className="mat-link-action">
+                    Выбрать в проекте →
+                  </span>
                 </div>
               </Link>
             ))}
@@ -565,11 +544,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. FAQ (Tone 1: Deep Dark Obsidian) */}
+      {/* 6. FAQ */}
       <Faq />
 
-      {/* 7. FINAL CONSULTATION & CONTACTS (Tone 2: Studio Graphite) */}
-      <section className="final-section" id="contacts" style={{ backgroundColor: "var(--bg-studio)" }}>
+      {/* 7. FINAL CONSULTATION & CONTACTS */}
+      <section className="final-section" id="contacts">
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">
@@ -578,18 +557,28 @@ export default function HomePage() {
                   Обсудите ваш проект со специалистами студии
                 </h2>
                 <p className="final-desc">
-                  Отправьте эскиз от руки, размеры помещения или понравившееся фото в сообщество ВКонтакте. Технологи рассчитают смету и порекомендуют материалы под ваш бюджет.
+                  Отправьте эскиз от руки, размеры помещения или понравившееся фото. Технологи рассчитают смету и порекомендуют материалы под ваш бюджет.
                 </p>
                 <div className="final-buttons-row">
+                  <a
+                    href={`tel:${SITE_CONFIG.phoneRaw}`}
+                    className="btn btn-green"
+                    style={{ gap: "8px" }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    {SITE_CONFIG.phone}
+                  </a>
                   <a
                     href={SITE_CONFIG.vkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-green"
+                    className="btn btn-glass"
                     style={{ gap: "10px" }}
                   >
                     <VkIcon />
-                    Написать ВКонтакте
+                    ВКонтакте
                   </a>
                   <Link href="/contacts#measure" className="btn btn-glass">
                     Записаться на замер
@@ -639,9 +628,15 @@ export default function HomePage() {
                         </svg>
                       </div>
                       <div className="contact-meta">
-                        <span className="contact-label">Онлайн-консультация</span>
-                        <strong className="contact-value">Официальное сообщество ВКонтакте</strong>
-                        <span className="contact-sub">Консультация технолога и предварительный расчет</span>
+                        <span className="contact-label">Прямой телефон</span>
+                        <a
+                          href={`tel:${SITE_CONFIG.phoneRaw}`}
+                          className="contact-value"
+                          style={{ color: "#FFFFFF", textDecoration: "none" }}
+                        >
+                          {SITE_CONFIG.phone}
+                        </a>
+                        <span className="contact-sub">Елена Волкова • Консультация и вызов мастера</span>
                       </div>
                     </div>
                   </div>

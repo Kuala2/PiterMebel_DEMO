@@ -1,4 +1,4 @@
-﻿# dependencies
+# dependencies
 /node_modules
 /.pnp
 .pnp.js
@@ -35,3 +35,4 @@ next-env.d.ts
 
 # temp screenshots
 screenshots/
+.design/

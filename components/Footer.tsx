@@ -60,10 +60,17 @@ export default function Footer() {
           {/* Col 4: Contacts */}
           <div>
             <div className="footer-col-head">Связь</div>
-            <p className="footer-desc" style={{ marginBottom: "14px" }}>
-              Цех на ул. Трефолева, 1П
+            <p className="footer-desc" style={{ marginBottom: "10px" }}>
+              <a
+                href={`tel:${SITE_CONFIG.phoneRaw}`}
+                style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "15px", textDecoration: "none" }}
+              >
+                {SITE_CONFIG.phone}
+              </a>
               <br />
-              Пн – Сб: с 10:00 до 20:00
+              <span style={{ fontSize: "12.5px", color: "var(--color-text-muted)" }}>
+                {SITE_CONFIG.workHours}
+              </span>
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
               <a

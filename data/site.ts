@@ -9,6 +9,9 @@ export interface SiteConfig {
   metro: string;
   legalEntity: string;
   contactPerson: string;
+  phone: string;
+  phoneRaw: string;
+  email: string;
   workHours: string;
   vkUrl: string;
   disclaimer: string;
@@ -26,7 +29,10 @@ export const SITE_CONFIG: SiteConfig = {
   address: "ул. Трефолева, 1П",
   metro: "район метро «Нарвская»",
   legalEntity: "Студия мебели «ПитерМебель»",
-  contactPerson: "Мастер-технолог студии",
+  contactPerson: "Елена Волкова",
+  phone: "+7 (921) 784-05-89",
+  phoneRaw: "+79217840589",
+  email: "piter.meb@yandex.ru",
   workHours: "Пн – Сб: с 10:00 до 20:00",
   vkUrl: "https://vk.ru/pitermebelcom",
   disclaimer: "Демонстрационный концепт сайта. Материалы взяты из открытого сообщества студии ВКонтакте. Не является публичной офертой.",

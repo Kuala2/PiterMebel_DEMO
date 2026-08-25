@@ -104,7 +104,7 @@ export default function ProjectsPortfolioPage() {
                 className={`cat-tab ${activeType === tab.key ? "is-active" : ""}`}
                 onClick={() => setActiveType(tab.key)}
               >
-                {tab.label} ({tab.count})
+                {tab.label}
               </button>
             ))}
           </div>
@@ -336,8 +336,8 @@ export default function ProjectsPortfolioPage() {
                         </div>
                         <div className="card-footer">
                           <div>
-                            <div className="card-footer-label">Производство</div>
-                            <div className="card-footer-val">Собственный цех</div>
+                            <div className="card-price-label">Спецификация</div>
+                            <div className="card-price-val">Индивидуальный раскрой</div>
                           </div>
                           <Link href={`/projects/${project.slug}`} className="card-btn-action">
                             Смотреть проект →
@@ -367,14 +367,24 @@ export default function ProjectsPortfolioPage() {
                 </p>
                 <div className="final-buttons-row">
                   <a
+                    href={`tel:${SITE_CONFIG.phoneRaw}`}
+                    className="btn btn-green"
+                    style={{ gap: "8px" }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    {SITE_CONFIG.phone}
+                  </a>
+                  <a
                     href={SITE_CONFIG.vkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-green"
+                    className="btn btn-glass"
                     style={{ gap: "10px" }}
                   >
                     <VkIcon />
-                    Обсудить в сообществе ВКонтакте
+                    ВКонтакте
                   </a>
                 </div>
               </div>

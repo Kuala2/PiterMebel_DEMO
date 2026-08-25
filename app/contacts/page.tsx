@@ -40,144 +40,180 @@ export default function ContactsPage() {
         </div>
       </section>
 
-      {/* 2. Fast-Track Interaction Ways (Tone 1: #0A0C0E) */}
+      {/* 2. Fast-Track Interaction Ways */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "70px", paddingBottom: "70px" }}>
         <div className="container">
           <div className="steps-header" style={{ textAlign: "center", marginBottom: "40px" }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>3 способа начать работу над проектом</h2>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>Способы связи со студией</h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "20px" }}>
-            {/* Way 1: Online */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
+            {/* Way 1: Direct Phone */}
             <div
               style={{
-                background: "var(--bg-surface)",
+                background: "var(--bg-surface-elevated)",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "var(--radius-md)",
-                padding: "28px",
+                padding: "26px 24px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 gap: "20px",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.5)",
               }}
             >
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-sm)", background: "var(--color-green-subtle)", color: "var(--color-green-brand)", border: "1px solid var(--border-green)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-xs)", background: "rgba(62, 142, 80, 0.1)", color: "var(--color-green-brand)", border: "1px solid rgba(62, 142, 80, 0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </span>
+                  <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    Прямой звонок
+                  </span>
+                </div>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  {SITE_CONFIG.phone}
+                </h3>
+                <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
+                  Елена Волкова. Ответим на любые технические вопросы, согласуем замер и сориентируем по срокам.
+                </p>
+              </div>
+              <a
+                href={`tel:${SITE_CONFIG.phoneRaw}`}
+                className="btn btn-green btn-sm"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                Позвонить сейчас
+              </a>
+            </div>
+
+            {/* Way 2: Online VK */}
+            <div
+              style={{
+                background: "var(--bg-surface-elevated)",
+                border: "1px solid var(--border-subtle)",
+                borderRadius: "var(--radius-md)",
+                padding: "26px 24px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: "20px",
+              }}
+            >
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
+                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-xs)", background: "rgba(62, 142, 80, 0.1)", color: "var(--color-green-brand)", border: "1px solid rgba(62, 142, 80, 0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                     </svg>
                   </span>
-                  <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                    Экспресс · 30 минут
+                  <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    Экспресс · ВКонтакте
                   </span>
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#FFFFFF", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                   Онлайн-оценка по эскизу
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
-                  Пришлите понравившееся фото из интернета, схему от руки или размеры стен в чат ВКонтакте. Технолог сделает предварительный расчет сметы.
+                  Пришлите понравившееся фото из интернета, схему от руки или размеры стен в чат ВКонтакте.
                 </p>
               </div>
               <a
                 href={SITE_CONFIG.vkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-green btn-sm"
-                style={{ width: "100%", gap: "8px" }}
+                className="btn btn-glass btn-sm"
+                style={{ width: "100%", justifyContent: "center", gap: "8px" }}
               >
                 <VkIcon />
-                Отправить эскиз в VK
+                Написать в VK
               </a>
             </div>
 
-            {/* Way 2: Measurement */}
+            {/* Way 3: Measurement */}
             <div
               style={{
-                background: "var(--bg-surface)",
-                border: "1px solid var(--border-green)",
+                background: "var(--bg-surface-elevated)",
+                border: "1px solid var(--border-subtle)",
                 borderRadius: "var(--radius-md)",
-                padding: "28px",
+                padding: "26px 24px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 gap: "20px",
-                position: "relative",
-                boxShadow: "0 4px 16px rgba(114, 186, 56, 0.15)",
               }}
             >
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-sm)", background: "var(--color-green-brand)", color: "#0D0F11", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-xs)", background: "rgba(62, 142, 80, 0.1)", color: "var(--color-green-brand)", border: "1px solid rgba(62, 142, 80, 0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M21 3L3 21" /><path d="M14 3l7 7-4 4-7-7 4-4z" />
                     </svg>
                   </span>
-                  <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                  <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                     Выездной замер · Бесплатно
                   </span>
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#FFFFFF", marginBottom: "8px" }}>
-                  Замер с чемоданом образцов
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  Замер с образцами
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
-                  Инженер приедет к вам в Санкт-Петербурге, выполнит лазерное сканирование стен, привезет веера эмалей RAL, образцы Fenix и натуральный шпон.
+                  Инженер приедет к вам в Санкт-Петербурге, выполнит лазерный замер стен, привезет веера эмалей RAL и образцы.
                 </p>
               </div>
-              <a href="#measure" className="btn btn-green btn-sm" style={{ width: "100%" }}>
+              <a href="#measure" className="btn btn-green btn-sm" style={{ width: "100%", justifyContent: "center" }}>
                 Вызвать мастера на замер
               </a>
             </div>
 
-            {/* Way 3: Workshop Visit */}
+            {/* Way 4: Workshop Visit */}
             <div
               style={{
-                background: "var(--bg-surface)",
+                background: "var(--bg-surface-elevated)",
                 border: "1px solid var(--border-subtle)",
                 borderRadius: "var(--radius-md)",
-                padding: "28px",
+                padding: "26px 24px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 gap: "20px",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.5)",
               }}
             >
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-sm)", background: "var(--color-green-subtle)", color: "var(--color-green-brand)", border: "1px solid var(--border-green)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <span style={{ width: "36px", height: "36px", borderRadius: "var(--radius-xs)", background: "rgba(62, 142, 80, 0.1)", color: "var(--color-green-brand)", border: "1px solid rgba(62, 142, 80, 0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                   </span>
-                  <span style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                  <span style={{ fontSize: "11px", fontWeight: 600, color: "var(--color-green-brand)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
                     Визит на производство
                   </span>
                 </div>
-                <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#FFFFFF", marginBottom: "8px" }}>
-                  Встреча в цеху на Трефолева
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  Цех на ул. Трефолева
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
-                  Посмотрите на станки, проверьте точность присадки и оцените качество сборки мебели вживую перед заключением договора.
+                  Посмотрите на станки ЧПУ, проверьте точность присадки и оцените качество сборки вживую.
                 </p>
               </div>
               <a
                 href="https://yandex.ru/maps/?text=Санкт-Петербург+ул+Трефолева+1П"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-green btn-sm"
-                style={{ width: "100%" }}
+                className="btn btn-glass btn-sm"
+                style={{ width: "100%", justifyContent: "center" }}
               >
-                Проложить маршрут в цех →
+                Маршрут на карте →
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Form Section (Tone 2: #101317) */}
+      {/* 3. Form Section */}
       <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
           <div className="final-card-container">
@@ -191,14 +227,24 @@ export default function ContactsPage() {
                 </p>
                 <div className="final-buttons-row">
                   <a
+                    href={`tel:${SITE_CONFIG.phoneRaw}`}
+                    className="btn btn-green"
+                    style={{ gap: "8px" }}
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    {SITE_CONFIG.phone}
+                  </a>
+                  <a
                     href={SITE_CONFIG.vkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-green"
+                    className="btn btn-glass"
                     style={{ gap: "10px" }}
                   >
                     <VkIcon />
-                    Обсудить в сообществе ВКонтакте
+                    ВКонтакте
                   </a>
                 </div>
               </div>
