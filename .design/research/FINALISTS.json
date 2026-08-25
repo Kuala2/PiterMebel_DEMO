@@ -1,0 +1,40 @@
+{
+  "finalists": [
+    {
+      "name": "FT Bespoke",
+      "domain": "ftbespoke.co.uk",
+      "role": "visual-anchor",
+      "lane": "market",
+      "relevance": "same-niche",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "На home, portfolio и проектной странице повторяются приоритет крупной интерьерной фотографии, прозрачная короткая навигация и спокойный переход от результата к объяснению мастерской; mobile перестраивает hero и текст в последовательные блоки."
+    },
+    {
+      "name": "Matthew Cox",
+      "domain": "matthewcox.com",
+      "role": "product-system",
+      "lane": "product-craft",
+      "relevance": "adjacent-product",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "Категория Tables и detail Fire Table показывают полноценную систему: крупные предметные кадры, история происхождения, материалы, размеры и действие собраны в одной визуальной грамматике, продолжающей спокойный home."
+    },
+    {
+      "name": "London Furniture Studio",
+      "domain": "londonfurniturestudio.com",
+      "role": "art-direction",
+      "lane": "market",
+      "relevance": "same-niche",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "Home, Projects и What We Do повторяют тёмно-зелёную брендовую рамку, тёплую предметную фотографию, центрированные антиквенные заголовки и редкие золотистые акценты; mobile превращает медиаполе в самостоятельный атмосферный фон."
+    },
+    {
+      "name": "DIS Мебель",
+      "domain": "dis-mebel.ru",
+      "role": "commercial-ux",
+      "lane": "market",
+      "relevance": "same-niche",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "Локальный home связывает предметный тезис, портфолио, производство и консультацию; внутренние страницы раскрывают категории работ и процесс, а mobile сохраняет приоритет оффера и двух последовательных действий."
+    }
+  ]
+}

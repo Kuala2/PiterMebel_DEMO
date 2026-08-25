@@ -1,0 +1,403 @@
+{
+  "capturedAt": "2026-08-23T09:57:18.493Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "ft-bespoke",
+      "url": "https://www.ftbespoke.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/fresh-clean-captures/ft-bespoke-mobile-first.png",
+        "desktopFirst": ".design/research/fresh-clean-captures/ft-bespoke-desktop-first.png",
+        "desktopFull": ".design/research/fresh-clean-captures/ft-bespoke-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.ftbespoke.co.uk/",
+      "title": "FT BESPOKE – Kitchens & Fine Furniture",
+      "dom": {
+        "textLength": 531,
+        "mediaCount": 32,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 51,
+        "std": 64.2,
+        "edge": 37,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 507,
+        "mediaCount": 26,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 41,
+        "std": 75.6,
+        "edge": 30.7,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.ftbespoke.co.uk/#content",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/about/",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/",
+          "inNav": true,
+          "text": "Portfolio"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/contact/",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY0OSIsInRvZ2dsZSI6ZmFsc2V9",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-2-1-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-2-2-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-4-1-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-5-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bratton-kitchen/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-furniture/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-office/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/toy-house-kitchen/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/kitchens/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/libraries",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bedrooms",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.instagram.com/ftbespokefurniture/",
+          "inNav": true,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "haus-bespoke",
+      "url": "https://www.hausbespoke.co.uk/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.hausbespoke.co.uk/",
+      "title": "Bespoke Joinery London, Kitchens & Wardrobes | HausBespoke",
+      "dom": {
+        "textLength": 5351,
+        "mediaCount": 18,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "andrew-ryan",
+      "url": "https://andrew-ryan.co.uk/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://andrew-ryan.co.uk/",
+      "title": "Bespoke & Luxury Kitchens UK | Andrew Ryan",
+      "dom": {
+        "textLength": 5494,
+        "mediaCount": 46,
+        "overlays": 1
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "name": "anka-bespoke",
+      "url": "https://ankabespoke.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/fresh-clean-captures/anka-bespoke-mobile-first.png",
+        "desktopFirst": ".design/research/fresh-clean-captures/anka-bespoke-desktop-first.png",
+        "desktopFull": ".design/research/fresh-clean-captures/anka-bespoke-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://ankabespoke.co.uk/",
+      "title": "Anka Bespoke | Luxury Craftsmanship",
+      "dom": {
+        "textLength": 2563,
+        "mediaCount": 22,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 51,
+        "std": 47.8,
+        "edge": 36.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2565,
+        "mediaCount": 22,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 46,
+        "std": 47.4,
+        "edge": 34.9,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://ankabespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://ankabespoke.co.uk/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/finishes",
+          "inNav": true,
+          "text": "Finishes"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/projects",
+          "inNav": true,
+          "text": "Bespoke Commissions"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/press-and-media",
+          "inNav": true,
+          "text": "Blog"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/editions",
+          "inNav": true,
+          "text": "Editions"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/news",
+          "inNav": false,
+          "text": "EXPLORE"
+        },
+        {
+          "href": "tel:+4401225 819132",
+          "inNav": true,
+          "text": "+44 (0)1225 819132"
+        },
+        {
+          "href": "mailto:hello@ankabespoke.co.uk",
+          "inNav": true,
+          "text": "hello@ankabespoke.co.uk"
+        },
+        {
+          "href": "tel:+4402036091034",
+          "inNav": true,
+          "text": "+44 (0)203 6091034"
+        },
+        {
+          "href": "https://www.instagram.com/anka.bespoke/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://uk.linkedin.com/company/anka-metal-coatings-ltd",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.facebook.com/share/1BMfB4wzfK/?mibextid=wwXIfr",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://ankabespoke.co.uk/#",
+          "inNav": true,
+          "text": "Privacy Policy"
+        }
+      ]
+    },
+    {
+      "name": "london-furniture-studio",
+      "url": "https://www.londonfurniturestudio.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/fresh-clean-captures/london-furniture-studio-mobile-first.png",
+        "desktopFirst": ".design/research/fresh-clean-captures/london-furniture-studio-desktop-first.png",
+        "desktopFull": ".design/research/fresh-clean-captures/london-furniture-studio-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.londonfurniturestudio.com/",
+      "title": "London Furniture Studio — Bespoke Joinery & Fine Cabinetry",
+      "dom": {
+        "textLength": 2794,
+        "mediaCount": 9,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 38,
+        "std": 34.3,
+        "edge": 19.9,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2749,
+        "mediaCount": 10,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 19,
+        "std": 48.1,
+        "edge": 8.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.londonfurniturestudio.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/who-we-are",
+          "inNav": true,
+          "text": "Who We Are"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/what-we-do",
+          "inNav": true,
+          "text": "What We Do"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/projects",
+          "inNav": true,
+          "text": "Projects"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/londonfurniturestudio/",
+          "inNav": false,
+          "text": "View Our Work"
+        },
+        {
+          "href": "mailto:info@londonfurniturestudio.com",
+          "inNav": true,
+          "text": "info@londonfurniturestudio.com"
+        },
+        {
+          "href": "tel:+442080505843",
+          "inNav": true,
+          "text": "020 8050 5843"
+        }
+      ]
+    }
+  ]
+}

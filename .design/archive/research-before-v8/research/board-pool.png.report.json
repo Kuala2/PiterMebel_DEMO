@@ -1,0 +1,57 @@
+{
+  "board": ".design/research/board-pool.png",
+  "source": ".design/research/references/captures.json",
+  "pageType": "home",
+  "variant": "desktopFirst",
+  "count": 8,
+  "items": [
+    {
+      "name": "dis-mebel",
+      "pageType": "home",
+      "file": ".design/research/references/dis-mebel-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/"
+    },
+    {
+      "name": "santafiore",
+      "pageType": "home",
+      "file": ".design/research/references/santafiore-desktop-first.png",
+      "finalUrl": "https://santafiore.ru/"
+    },
+    {
+      "name": "jack-trench",
+      "pageType": "home",
+      "file": ".design/research/references/jack-trench-desktop-first.png",
+      "finalUrl": "https://www.jacktrench.co.uk/"
+    },
+    {
+      "name": "freeborn-carpentry",
+      "pageType": "home",
+      "file": ".design/research/references/freeborn-carpentry-desktop-first.png",
+      "finalUrl": "https://www.freeborn-carpentry.co.uk/"
+    },
+    {
+      "name": "de-la-espada",
+      "pageType": "home",
+      "file": ".design/research/references/de-la-espada-desktop-first.png",
+      "finalUrl": "https://delaespada.com/"
+    },
+    {
+      "name": "arthur-vallin",
+      "pageType": "home",
+      "file": ".design/research/references/arthur-vallin-desktop-first.png",
+      "finalUrl": "https://www.arthurvallin.com/"
+    },
+    {
+      "name": "sabine-marcelis",
+      "pageType": "home",
+      "file": ".design/research/references/sabine-marcelis-desktop-first.png",
+      "finalUrl": "https://sabinemarcelis.com/"
+    },
+    {
+      "name": "destroyers-builders",
+      "pageType": "home",
+      "file": ".design/research/references/destroyers-builders-desktop-first.png",
+      "finalUrl": "https://destroyersbuilders.com/"
+    }
+  ]
+}

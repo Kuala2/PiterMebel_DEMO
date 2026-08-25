@@ -1,0 +1,52 @@
+{
+  "capturedAt": "2026-08-23T11:12:50.699Z",
+  "mode": "file",
+  "items": [
+    {
+      "name": "concept-1",
+      "file": ".design/style-lab/concept-1.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots/concept-1-1440x1000-first.png",
+          "full": ".design/style-lab/shots/concept-1-1440x1000-full.png",
+          "segments": [
+            ".design/style-lab/shots/concept-1-1440x1000-seg01.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg02.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg03.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg04.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg05.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg06.png",
+            ".design/style-lab/shots/concept-1-1440x1000-seg07.png"
+          ]
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots/concept-1-390x844-first.png",
+          "full": ".design/style-lab/shots/concept-1-390x844-full.png",
+          "segments": [
+            ".design/style-lab/shots/concept-1-390x844-seg01.png",
+            ".design/style-lab/shots/concept-1-390x844-seg02.png",
+            ".design/style-lab/shots/concept-1-390x844-seg03.png",
+            ".design/style-lab/shots/concept-1-390x844-seg04.png",
+            ".design/style-lab/shots/concept-1-390x844-seg05.png",
+            ".design/style-lab/shots/concept-1-390x844-seg06.png",
+            ".design/style-lab/shots/concept-1-390x844-seg07.png",
+            ".design/style-lab/shots/concept-1-390x844-seg08.png",
+            ".design/style-lab/shots/concept-1-390x844-seg09.png",
+            ".design/style-lab/shots/concept-1-390x844-seg10.png",
+            ".design/style-lab/shots/concept-1-390x844-seg11.png"
+          ]
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 50,
+        "std": 68.4,
+        "edge": 35.4,
+        "usable": true
+      },
+      "sha256": "b9ce94bdc736ae9a7b8bbf8037730e20221e362aeb5a6169ace717346173ba51"
+    }
+  ]
+}

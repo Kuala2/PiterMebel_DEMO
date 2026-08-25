@@ -1,0 +1,4 @@
+interface:
+  display_name: "Autonomous Site Designer"
+  short_description: "Многостраничные сайты через visual-first этапы"
+  default_prompt: "Используй $autonomous-site-designer. Определи активный этап текущего проекта, выполни только его и остановись на предусмотренном checkpoint."

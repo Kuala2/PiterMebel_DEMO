@@ -1,0 +1,270 @@
+{
+  "capturedAt": "2026-08-23T09:51:41.265Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "intererno",
+      "url": "https://www.intererno.com/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.intererno.com/",
+      "title": "ИНТЕРЬЕРНО - Дизайнерская мебель на заказ в Москве по индивидуальным размерам и ценам | Официальный сайт",
+      "dom": {
+        "textLength": 2609,
+        "mediaCount": 33,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "dis-mebel",
+      "url": "https://dis-mebel.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references-retry/dis-mebel-mobile-first.png",
+        "desktopFirst": ".design/research/references-retry/dis-mebel-desktop-first.png",
+        "desktopFull": ".design/research/references-retry/dis-mebel-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://dis-mebel.ru/",
+      "title": "ДИС-Мебель — производство мебели на заказ в Москве и МО",
+      "dom": {
+        "textLength": 2814,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 23,
+        "std": 42.2,
+        "edge": 26.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2809,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 25,
+        "std": 48.5,
+        "edge": 29.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://dis-mebel.ru/index.html",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://dis-mebel.ru/about.html",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://dis-mebel.ru/production.html",
+          "inNav": true,
+          "text": "Производство"
+        },
+        {
+          "href": "https://dis-mebel.ru/contacts.html",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "tel:+79262117676",
+          "inNav": true,
+          "text": "+7 926 211 76 76"
+        },
+        {
+          "href": "https://dis-mebel.ru/#lead",
+          "inNav": false,
+          "text": "Получить консультацию"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private",
+          "inNav": false,
+          "text": "Частные интерьерыКвартиры, загородные дома"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial",
+          "inNav": false,
+          "text": "Коммерческие интерьерыОфисы, общественные пространства, кафе"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive",
+          "inNav": false,
+          "text": "ЭксклюзивWelkom-зоны, ресепшены, работа с массивом ценных пород дерева"
+        },
+        {
+          "href": "https://dis-mebel.ru/privacy.html",
+          "inNav": false,
+          "text": "Политикой конфиденциальности"
+        },
+        {
+          "href": "mailto:info@dis-mebel.ru",
+          "inNav": true,
+          "text": "info@dis-mebel.ru"
+        },
+        {
+          "href": "https://t.me/Stepanov_AD",
+          "inNav": true,
+          "text": "Telegram"
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOLq86pmEeeYbAQl9GqkvS3go059JaM9P2FzO3t9Pi3uM_uByjI",
+          "inNav": true,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "name": "module-furniture",
+      "url": "https://modulefurniture.moscow/",
+      "status": "fail",
+      "reasons": [
+        "mobile-chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://modulefurniture.moscow/",
+      "title": "module furniture",
+      "dom": {
+        "textLength": 1240,
+        "mediaCount": 11,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 29,
+        "std": 32.3,
+        "edge": 14.6,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1912,
+        "mediaCount": 12,
+        "overlays": 2
+      }
+    },
+    {
+      "name": "the-idea",
+      "url": "https://theidea.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://theidea.ru/",
+      "title": "Производитель дизайнерской мебели The IDEA - официальный сайт",
+      "dom": {
+        "textLength": 5366,
+        "mediaCount": 71,
+        "overlays": 3
+      }
+    },
+    {
+      "name": "reform",
+      "url": "https://www.reformcph.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.reformcph.com/de",
+      "title": "Reform – Eine neue Perspektive auf Küchen",
+      "dom": {
+        "textLength": 1688,
+        "mediaCount": 19,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "tylko",
+      "url": "https://tylko.com/",
+      "status": "fail",
+      "reasons": [
+        "HTTP 403",
+        "bot-challenge"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://tylko.com/",
+      "title": "Just a moment...",
+      "dom": {
+        "textLength": 257,
+        "mediaCount": 1,
+        "overlays": 0
+      }
+    },
+    {
+      "name": "vipp",
+      "url": "https://vipp.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://vipp.com/en",
+      "title": "Official Vipp Online Shop | Vipp",
+      "dom": {
+        "textLength": 2706,
+        "mediaCount": 43,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "boffi",
+      "url": "https://www.boffi.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.boffi.com/en/",
+      "title": "Boffi Official Website - Made in Italy Furniture Brand",
+      "dom": {
+        "textLength": 4548,
+        "mediaCount": 74,
+        "overlays": 1
+      }
+    }
+  ]
+}

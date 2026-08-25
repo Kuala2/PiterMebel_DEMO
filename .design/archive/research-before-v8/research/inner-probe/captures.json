@@ -1,0 +1,1682 @@
+{
+  "capturedAt": "2026-08-22T22:23:50.044Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "destroyers-projects-probe",
+      "url": "https://destroyersbuilders.com/projects/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/inner-probe/destroyers-projects-probe-desktop-first.png",
+        "desktopFull": ".design/research/inner-probe/destroyers-projects-probe-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://destroyersbuilders.com/projects/",
+      "title": "destroyers builders",
+      "dom": {
+        "textLength": 552,
+        "mediaCount": 15,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 46,
+        "std": 55.2,
+        "edge": 30.9,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://destroyersbuilders.com/",
+          "inNav": false,
+          "text": "destroyers / builders"
+        },
+        {
+          "href": "https://destroyersbuilders.com/objects/",
+          "inNav": false,
+          "text": "objects"
+        },
+        {
+          "href": "https://destroyersbuilders.com/projects/",
+          "inNav": false,
+          "text": "projects"
+        },
+        {
+          "href": "https://destroyersbuilders.com/open-editions/",
+          "inNav": false,
+          "text": "open editions"
+        },
+        {
+          "href": "https://destroyersbuilders.com/cart/",
+          "inNav": false,
+          "text": "0 cart"
+        },
+        {
+          "href": "https://destroyersbuilders.com/info/",
+          "inNav": false,
+          "text": "info"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/fluid-re-collection-milan-design-week-10-corso-como/",
+          "inNav": false,
+          "text": "Fluid Re-Collection – Milan Design Week – 10 Corso Como"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/slabs-collection-for-aequo-gallery/",
+          "inNav": false,
+          "text": "SLABS collection for AEQUO gallery – Solo Show Mumbai"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/sculpting-archetypes-villa-borsani/",
+          "inNav": false,
+          "text": "Milan Design Week – Villa Borsani"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/aequo-gallery/",
+          "inNav": false,
+          "text": "SLABS collection for AEQUO gallery"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/reception-desk-bench/",
+          "inNav": false,
+          "text": "RECEPTION DESK & BENCH"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/studio-space-asse/",
+          "inNav": false,
+          "text": "STUDIO SPACE"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/kassl-x-destroyers-builders/",
+          "inNav": false,
+          "text": "KASSL Editions – Paris Fashion Week & Liberty London"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/connections-publication/",
+          "inNav": false,
+          "text": "connections, available online"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/fundaments-at-valerie-traan-gallery/",
+          "inNav": false,
+          "text": "FUNDAMENTS at VALERIE TRAAN GALLERY"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/licht-gallery/",
+          "inNav": false,
+          "text": "LICHT GALLERY"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/medallion-chair-dior/",
+          "inNav": false,
+          "text": "MEDALLION CHAIR – DIOR"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/rooted-flows-solidified-reflections/",
+          "inNav": false,
+          "text": "ROOTED FLOWS: SOLIDIFIED REFLECTIONS"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/blueness/",
+          "inNav": false,
+          "text": "BLUENESS"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/in-the-atelier-destroyers-builders/",
+          "inNav": false,
+          "text": "in the atelier destroyers/builders"
+        },
+        {
+          "href": "https://destroyersbuilders.com/project/brut/",
+          "inNav": false,
+          "text": "BRUT collective"
+        },
+        {
+          "href": "https://destroyersbuilders.com/objects",
+          "inNav": false,
+          "text": "objects"
+        }
+      ]
+    },
+    {
+      "name": "de-la-espada-collection-probe",
+      "url": "https://delaespada.com/collections/all",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/inner-probe/de-la-espada-collection-probe-desktop-first.png",
+        "desktopFull": ".design/research/inner-probe/de-la-espada-collection-probe-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://delaespada.com/collections/all",
+      "title": "ALL PRODUCTS – De La Espada",
+      "dom": {
+        "textLength": 9890,
+        "mediaCount": 504,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 26,
+        "std": 27.7,
+        "edge": 15.8,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://delaespada.com/collections/all#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://delaespada.com/pages/products",
+          "inNav": false,
+          "text": "PRODUCTS"
+        },
+        {
+          "href": "https://delaespada.com/collections/all",
+          "inNav": false,
+          "text": "VIEW ALL PRODUCTS"
+        },
+        {
+          "href": "https://delaespada.com/collections",
+          "inNav": false,
+          "text": "VIEW PRODUCTS BY TYPE"
+        },
+        {
+          "href": "https://delaespada.com/pages/products-in-depth",
+          "inNav": false,
+          "text": "PRODUCTS IN-DEPTH"
+        },
+        {
+          "href": "https://delaespada.com/pages/furniture-tailoring",
+          "inNav": false,
+          "text": "FURNITURE TAILORING"
+        },
+        {
+          "href": "https://delaespada.com/pages/ensemble-collection",
+          "inNav": false,
+          "text": "LIMITED EDITIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/look-books",
+          "inNav": false,
+          "text": "PUBLICATIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/ready-to-ship",
+          "inNav": false,
+          "text": "QUICK SHIP"
+        },
+        {
+          "href": "https://delaespada.com/pages/projects",
+          "inNav": false,
+          "text": "IN SITU"
+        },
+        {
+          "href": "https://delaespada.com/pages/by-space",
+          "inNav": false,
+          "text": "VIEW BY SPACE"
+        },
+        {
+          "href": "https://delaespada.com/pages/spaces-by-product-type",
+          "inNav": false,
+          "text": "VIEW BY PRODUCT TYPE"
+        },
+        {
+          "href": "https://delaespada.com/pages/spaces-view-all",
+          "inNav": false,
+          "text": "VIEW ALL SPACES"
+        },
+        {
+          "href": "https://delaespada.com/pages/about",
+          "inNav": false,
+          "text": "ABOUT"
+        },
+        {
+          "href": "https://delaespada.com/pages/company",
+          "inNav": false,
+          "text": "COMPANY"
+        },
+        {
+          "href": "https://delaespada.com/pages/de-la-espada-world",
+          "inNav": false,
+          "text": "OUR CREATIVE WORLD"
+        },
+        {
+          "href": "https://delaespada.com/pages/craft2",
+          "inNav": false,
+          "text": "CRAFT"
+        },
+        {
+          "href": "https://delaespada.com/pages/wood",
+          "inNav": false,
+          "text": "WOOD"
+        },
+        {
+          "href": "https://delaespada.com/pages/care-guide",
+          "inNav": false,
+          "text": "CARE"
+        },
+        {
+          "href": "https://delaespada.com/pages/designers",
+          "inNav": false,
+          "text": "DESIGNERS"
+        },
+        {
+          "href": "https://delaespada.com/pages/sustainability",
+          "inNav": false,
+          "text": "SUSTAINABILITY"
+        },
+        {
+          "href": "https://delaespada.com/pages/materials",
+          "inNav": false,
+          "text": "MATERIALS"
+        },
+        {
+          "href": "https://delaespada.com/pages/stories",
+          "inNav": false,
+          "text": "STORIES"
+        },
+        {
+          "href": "https://delaespada.com/pages/events",
+          "inNav": false,
+          "text": "EVENTS"
+        },
+        {
+          "href": "https://delaespada.com/blogs/news",
+          "inNav": false,
+          "text": "JOURNAL"
+        },
+        {
+          "href": "https://delaespada.com/pages/newsletter",
+          "inNav": false,
+          "text": "NEWSLETTER"
+        },
+        {
+          "href": "https://delaespada.com/pages/stories-film",
+          "inNav": false,
+          "text": "FILM"
+        },
+        {
+          "href": "https://delaespada.com/pages/residencies",
+          "inNav": false,
+          "text": "RESIDENCIES"
+        },
+        {
+          "href": "https://delaespada.com/blogs/podcast",
+          "inNav": false,
+          "text": "PODCAST"
+        },
+        {
+          "href": "https://delaespada.com/blogs/opinion",
+          "inNav": false,
+          "text": "OPINION"
+        },
+        {
+          "href": "https://delaespada.com/pages/contact",
+          "inNav": false,
+          "text": "CONTACT"
+        },
+        {
+          "href": "https://delaespada.com/pages/buying-guide",
+          "inNav": false,
+          "text": "BUYING GUIDE"
+        },
+        {
+          "href": "https://delaespada.com/pages/retailers",
+          "inNav": false,
+          "text": "RETAILERS"
+        },
+        {
+          "href": "https://delaespada.presscloud.com/",
+          "inNav": false,
+          "text": "RESOURCE LIBRARY"
+        },
+        {
+          "href": "https://delaespada.com/pages/press",
+          "inNav": false,
+          "text": "PRESS"
+        },
+        {
+          "href": "https://delaespada.com/account",
+          "inNav": false,
+          "text": "Log in"
+        },
+        {
+          "href": "https://www.instagram.com/delaespada/",
+          "inNav": false,
+          "text": "instagram Instagram"
+        },
+        {
+          "href": "https://www.facebook.com/DeLaEspadaFurniture",
+          "inNav": false,
+          "text": "Facebook"
+        },
+        {
+          "href": "https://www.youtube.com/channel/UCJ10utt1UDULCysa6CZAFyA",
+          "inNav": false,
+          "text": "YouTube"
+        },
+        {
+          "href": "https://www.pinterest.com/delaespada/_created/",
+          "inNav": false,
+          "text": "Pinterest"
+        },
+        {
+          "href": "https://www.linkedin.com/company/de-la-espada",
+          "inNav": false,
+          "text": "LinkedIn"
+        },
+        {
+          "href": "https://vimeo.com/delaespada",
+          "inNav": false,
+          "text": "vimeo Vimeo"
+        },
+        {
+          "href": "https://delaespada.com/search",
+          "inNav": true,
+          "text": "icon-search Search"
+        },
+        {
+          "href": "https://delaespada.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/cart",
+          "inNav": true,
+          "text": "Cart"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/182-albireo-sofa-system",
+          "inNav": false,
+          "text": "ALBIREO SOFA SYSTEMfrom €9.595,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/alpha-coffee-table",
+          "inNav": false,
+          "text": "ALPHA COFFEE TABLEfrom €4.430,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/alpha-coffee-table-with-stone-top",
+          "inNav": false,
+          "text": "ALPHA COFFEE TABLE WITH STONE TOPfrom €4.880,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/alpha-side-table",
+          "inNav": false,
+          "text": "ALPHA SIDE TABLEfrom €2.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/176m-alpha-tables-with-stone-top",
+          "inNav": false,
+          "text": "ALPHA SIDE TABLE WITH STONE TOPfrom €2.955,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/179-altair-chair",
+          "inNav": false,
+          "text": "ALTAIR CHAIRfrom €2.940,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/410-ando-chair",
+          "inNav": false,
+          "text": "ANDO CHAIRfrom €1.320,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/410s-ando-chair-upholstered",
+          "inNav": false,
+          "text": "ANDO CHAIR UPHOLSTEREDfrom €1.250,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/692-arts-and-crafts-sideboards",
+          "inNav": false,
+          "text": "ARTS AND CRAFTS SIDEBOARDSfrom €11.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/691-arts-and-crafts-cabinets",
+          "inNav": false,
+          "text": "ARTS AND CRAFTS CABINETSfrom €25.585,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/181-aries-side-table",
+          "inNav": false,
+          "text": "ARIES SIDE TABLEfrom €3.195,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/368s-armstrong-armchair",
+          "inNav": false,
+          "text": "ARMSTRONG ARMCHAIRfrom €7.450,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/387-armstrong-coffee-table",
+          "inNav": false,
+          "text": "ARMSTRONG COFFEE TABLEfrom €2.765,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/386-armstrong-sofa",
+          "inNav": false,
+          "text": "ARMSTRONG SOFAfrom €9.640,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/azores-sofa-system",
+          "inNav": false,
+          "text": "AZORES COLLECTIONfrom €2.360,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138sq-azores-lounge-armchair",
+          "inNav": false,
+          "text": "AZORES LOUNGE ARMCHAIRfrom €7.400,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/500-bed-one",
+          "inNav": false,
+          "text": "BED ONEfrom €24.490,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/122-belle-reeve-sofa-system",
+          "inNav": false,
+          "text": "BELLE REEVE SOFA SYSTEMfrom €13.995,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/443-bench",
+          "inNav": false,
+          "text": "BENCHfrom €1.300,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/444-bench-with-back",
+          "inNav": false,
+          "text": "BENCH WITH BACKfrom €2.550,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/105-blanche-bergere",
+          "inNav": false,
+          "text": "BLANCHE BERGEREfrom €8.060,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/227-box-sofa",
+          "inNav": false,
+          "text": "BOX SOFAfrom €12.290,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/360-burnham-windsor-chair",
+          "inNav": false,
+          "text": "BURNHAM WINDSOR CHAIRfrom €2.635,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/249-butterfly-bar-stool",
+          "inNav": false,
+          "text": "BUTTERFLY BAR STOOLfrom €2.370,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/249-butterfly-chair",
+          "inNav": false,
+          "text": "BUTTERFLY CHAIRfrom €1.865,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/780pt-capo-bar-stool",
+          "inNav": false,
+          "text": "CAPO BAR STOOLfrom €2.445,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/782-ukeu-capo-bed",
+          "inNav": false,
+          "text": "CAPO BEDfrom €7.750,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/780s-capo-dining-armchair",
+          "inNav": false,
+          "text": "CAPO DINING ARMCHAIRfrom €2.020,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/780-capo-dining-chair",
+          "inNav": false,
+          "text": "CAPO DINING CHAIRfrom €1.565,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/781s-capo-lounge-armchair",
+          "inNav": false,
+          "text": "CAPO LOUNGE ARMCHAIRfrom €3.840,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/781sz-capo-lounge-armchair-with-manta-espinhada-upholstery",
+          "inNav": false,
+          "text": "CAPO LOUNGE ARMCHAIR WITH MANTA ESPINHADA UPHOLSTERYfrom €5.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/capo-lounge-armchair-with-manta-espinhada-verde-upholstery",
+          "inNav": false,
+          "text": "CAPO LOUNGE ARMCHAIR WITH MANTA ESPINHADA VERDE UPHOLSTERYfrom €5.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/capo-lounge-armchair-with-manta-lido-upholstery",
+          "inNav": false,
+          "text": "CAPO LOUNGE ARMCHAIR WITH MANTA LIDO UPHOLSTERYfrom €5.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/781-capo-lounge-chair",
+          "inNav": false,
+          "text": "CAPO LOUNGE CHAIRfrom €3.075,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/409-carlo-side-table",
+          "inNav": false,
+          "text": "CARLO SIDETABLE€5.290,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/061-ukeu-carlton-bed",
+          "inNav": false,
+          "text": "CARLTON BEDfrom €11.140,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/502-chair-one",
+          "inNav": false,
+          "text": "CHAIR ONEfrom €1.495,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/063-classon-bedside-chest",
+          "inNav": false,
+          "text": "CLASSON BEDSIDE CHESTfrom €5.855,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/053s-classon-low-chest",
+          "inNav": false,
+          "text": "CLASSON LOW CHESTfrom €16.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/052j-classon-sideboard-2-door3-drawer",
+          "inNav": false,
+          "text": "CLASSON SIDEBOARD 2 DOOR / 3 DRAWERfrom €16.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/052m-classon-sideboard-2-door-3-drawer",
+          "inNav": false,
+          "text": "CLASSON SIDEBOARD 2 DOOR / 6 CENTRAL DRAWERfrom €16.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/052f-classon-sideboard",
+          "inNav": false,
+          "text": "CLASSON SIDEBOARD 3 DOOR / 3 DRAWERfrom €16.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/052e-classon-sideboard",
+          "inNav": false,
+          "text": "CLASSON SIDEBOARD 4 DOORfrom €16.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/053-classon-tall-chest",
+          "inNav": false,
+          "text": "CLASSON TALL CHESTfrom €13.840,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/343-colombo-dining-armchair",
+          "inNav": false,
+          "text": "COLOMBO DINING ARMCHAIRfrom €2.285,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/771-commune-bench",
+          "inNav": false,
+          "text": "COMMUNE BENCHfrom €3.110,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/772-commune-coffee-table",
+          "inNav": false,
+          "text": "COMMUNE COFFEE TABLEfrom €4.330,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/773-commune-dining-table",
+          "inNav": false,
+          "text": "COMMUNE DINING TABLEfrom €6.065,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/770-commune-stool",
+          "inNav": false,
+          "text": "COMMUNE STOOLfrom €1.880,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/455-ukeu-companions-bed",
+          "inNav": false,
+          "text": "COMPANIONS BEDfrom €7.320,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/453m-companions-bedside",
+          "inNav": false,
+          "text": "COMPANIONS BEDSIDEfrom €2.475,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/453s-companions-low-bedside",
+          "inNav": false,
+          "text": "COMPANIONS LOW BEDSIDEfrom €1.945,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/454rl-companions-writing-desk",
+          "inNav": false,
+          "text": "COMPANIONS WRITING DESKfrom €4.885,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/392lv-coniston-large-rectangular-mirror",
+          "inNav": false,
+          "text": "CONISTON LARGE RECTANGULAR MIRRORfrom €3.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/392lr-coniston-large-round-mirror",
+          "inNav": false,
+          "text": "CONISTON LARGE ROUND MIRRORfrom €3.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/140s-corvo-small-coffee-table",
+          "inNav": false,
+          "text": "CORVO SMALL COFFEE TABLEfrom €3.030,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/173-cursa-dining-chair",
+          "inNav": false,
+          "text": "CURSA DINING CHAIRfrom €2.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/cursa-lounge-chair",
+          "inNav": false,
+          "text": "CURSA LOUNGE CHAIRfrom €6.710,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/180l-r-deneb-desk",
+          "inNav": false,
+          "text": "DENEB DESKfrom €7.350,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/358-different-trains-cabinet",
+          "inNav": false,
+          "text": "DIFFERENT TRAINS CABINETfrom €3.615,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/777-drape-desk",
+          "inNav": false,
+          "text": "DRAPE DESKfrom €5.490,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/110-ukeu-dubois-bed",
+          "inNav": false,
+          "text": "DUBOIS BED TALL HEADBOARD WITH BEDSIDE TABLESfrom €13.780,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/113-ukeu-low-dubois-bed-no-bedsides",
+          "inNav": false,
+          "text": "DUBOIS BED, LOW HEADBOARD, NO BEDSIDESfrom €9.830,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/112-ukeu-low-dubois-bed",
+          "inNav": false,
+          "text": "DUBOIS BED, LOW HEADBOARD, WITH BEDSIDE TABLESfrom €11.745,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/753-duet-chair-timber-seat",
+          "inNav": false,
+          "text": "DUET CHAIR - TIMBER SEATfrom €2.765,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/753s-duet-chair-upholstered-seat",
+          "inNav": false,
+          "text": "DUET CHAIR - UPHOLSTERED SEATfrom €2.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/064-elliot-desk-storage",
+          "inNav": false,
+          "text": "ELLIOT DESK STORAGEfrom €2.765,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/060-elliot-deskdressing-table",
+          "inNav": false,
+          "text": "ELLIOT DESK/DRESSING TABLEfrom €7.110,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/050-elliot-dining-chair",
+          "inNav": false,
+          "text": "ELLIOT DINING CHAIRfrom €2.120,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/051-elliot-oblong-dining-table",
+          "inNav": false,
+          "text": "ELLIOT OBLONG DINING TABLEfrom €9.525,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/056-elliot-rectangular-dining-table",
+          "inNav": false,
+          "text": "ELLIOT RECTANGULAR DINING TABLEfrom €8.795,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/101-elysia-lounge-chair",
+          "inNav": false,
+          "text": "ELYSIA LOUNGE CHAIRfrom €7.290,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/101z-elysia-lounge-chair-with-manta-lido",
+          "inNav": false,
+          "text": "ELYSIA LOUNGE CHAIR WITH MANTA LIDOfrom €12.540,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/757-extend-mirrors",
+          "inNav": false,
+          "text": "EXTEND MIRRORSfrom €1.815,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138s-faial-lounge-chair",
+          "inNav": false,
+          "text": "FAIAL LOUNGE CHAIRfrom €10.745,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/344-fin-dining-chair",
+          "inNav": false,
+          "text": "FIN DINING CHAIRfrom €2.155,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/765-ukeu-frame-bed",
+          "inNav": false,
+          "text": "FRAME BEDfrom €7.995,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/768-ukeu-frame-bed-with-arms",
+          "inNav": false,
+          "text": "FRAME BED WITH ARMSfrom €9.505,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/frame-sofa-system",
+          "inNav": false,
+          "text": "FRAME SOFA SYSTEMfrom €9.570,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/769-frame-sofa-tray",
+          "inNav": false,
+          "text": "FRAME SOFA TRAY€2.055,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/054-gates-sofa",
+          "inNav": false,
+          "text": "GATES SOFAfrom €14.035,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/139s-graciosa-oval-side-table",
+          "inNav": false,
+          "text": "GRACIOSA OVAL SIDE TABLEfrom €2.360,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/178-hadar-lounge-chair",
+          "inNav": false,
+          "text": "HADAR LOUNGE CHAIRfrom €6.710,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/790-handle-side-table",
+          "inNav": false,
+          "text": "HANDLE SIDE TABLEfrom €1.675,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/106-harold-desk",
+          "inNav": false,
+          "text": "HAROLD DESKfrom €6.065,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/362-hastoe-windsor-chair",
+          "inNav": false,
+          "text": "HASTOE WINDSOR CHAIRfrom €1.835,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/351-ukeu-hepburn-bed",
+          "inNav": false,
+          "text": "HEPBURN BEDfrom €6.455,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/350f-hepburn-fixed-3-seater-sofa",
+          "inNav": false,
+          "text": "HEPBURN FIXED 3-SEATER SOFAfrom €12.215,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/391-hepburn-modular-sofa",
+          "inNav": false,
+          "text": "HEPBURN MODULAR SOFA SYSTEMfrom €12.745,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/351t-hepburn-side-table",
+          "inNav": false,
+          "text": "HEPBURN SIDE TABLEfrom €585,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/381-horizon-coffee-table",
+          "inNav": false,
+          "text": "HORIZON COFFEE TABLEfrom €3.310,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/345-i-beam-side-table",
+          "inNav": false,
+          "text": "I-BEAM SIDE TABLEfrom €2.870,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/361-ibstone-windsor-chair",
+          "inNav": false,
+          "text": "IBSTONE WINDSOR CHAIRfrom €1.885,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/izar-dining-table",
+          "inNav": false,
+          "text": "IZAR DINING TABLEfrom €12.540,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/170b-izar-dining-table-with-brass",
+          "inNav": false,
+          "text": "IZAR DINING TABLE WITH BRASSfrom €12.540,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138g-jorge-armless-sofa",
+          "inNav": false,
+          "text": "JORGE ARMLESS SOFAfrom €12.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/120-kim-bench",
+          "inNav": false,
+          "text": "KIM BENCHfrom €3.125,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/119-kim-coffee-table",
+          "inNav": false,
+          "text": "KIM COFFEE TABLEfrom €2.870,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/118-kim-side-table",
+          "inNav": false,
+          "text": "KIM SIDE TABLEfrom €2.440,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/359-kimble-windsor-chair",
+          "inNav": false,
+          "text": "KIMBLE WINDSOR CHAIRfrom €2.800,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/217-ladder-bookcase",
+          "inNav": false,
+          "text": "LADDER BOOKCASEfrom €3.955,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/760-lattice",
+          "inNav": false,
+          "text": "LATTICEfrom €9.070,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/103l-laurel-coffee-table",
+          "inNav": false,
+          "text": "LAUREL COFFEE TABLEfrom €3.410,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/103lm-laurel-coffee-table-in-marble",
+          "inNav": false,
+          "text": "LAUREL COFFEE TABLE IN MARBLEfrom €6.780,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/103s-laurel-side-table",
+          "inNav": false,
+          "text": "LAUREL SIDE TABLEfrom €1.615,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/103sm-laurel-side-table-in-marble",
+          "inNav": false,
+          "text": "LAUREL SIDE TABLE IN MARBLEfrom €3.925,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/761t-lianou-stool",
+          "inNav": false,
+          "text": "LIANOU STOOL€1.880,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/341e-light-extending-table",
+          "inNav": false,
+          "text": "LIGHT EXTENDING TABLEfrom €13.475,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/394f-light-oval-table",
+          "inNav": false,
+          "text": "LIGHT OVAL TABLEfrom €8.380,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/393f-light-rectangular-table",
+          "inNav": false,
+          "text": "LIGHT RECTANGULAR TABLEfrom €7.895,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/442-low-bench",
+          "inNav": false,
+          "text": "LOW BENCHfrom €1.050,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/340-low-lounge-chair",
+          "inNav": false,
+          "text": "LOW LOUNGE CHAIRfrom €5.320,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/340o-low-ottoman",
+          "inNav": false,
+          "text": "LOW OTTOMANfrom €1.905,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/445-low-settle",
+          "inNav": false,
+          "text": "LOW SETTLEfrom €3.110,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/440-low-stool",
+          "inNav": false,
+          "text": "LOW STOOLfrom €755,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/440s-low-stool-upholstered",
+          "inNav": false,
+          "text": "LOW STOOL UPHOLSTEREDfrom €1.000,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/373-maia",
+          "inNav": false,
+          "text": "MAIAfrom €1.255,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/349g-manta-dining-chair",
+          "inNav": false,
+          "text": "MANTA DINING CHAIRfrom €2.180,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/139m-maria-medium-side-table",
+          "inNav": false,
+          "text": "MARIA MEDIUM SIDE TABLEfrom €3.705,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/108-marlon-rectangular-table",
+          "inNav": false,
+          "text": "MARLON RECTANGULAR TABLEfrom €11.345,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/108rm-marlon-round-table",
+          "inNav": false,
+          "text": "MARLON ROUND TABLEfrom €10.275,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/355t-mars-round-table",
+          "inNav": false,
+          "text": "MARS ROUND TABLEfrom €5.315,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/384-marys-chair",
+          "inNav": false,
+          "text": "MARY'S CHAIRfrom €2.210,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/385-marys-side-table",
+          "inNav": false,
+          "text": "MARYS SIDE TABLEfrom €2.475,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/400-ukeu-mcqueen-bed",
+          "inNav": false,
+          "text": "MCQUEEN BEDfrom €8.245,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/402rl-mcqueen-bedside",
+          "inNav": false,
+          "text": "MCQUEEN BEDSIDEfrom €4.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/379-mcqueen-bedside-chest",
+          "inNav": false,
+          "text": "MCQUEEN BEDSIDE CHESTfrom €3.885,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/378-mcqueen-8-drawer-chest",
+          "inNav": false,
+          "text": "MCQUEEN EIGHT DRAWER CHESTfrom €10.200,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/368-mcqueen-large-chest",
+          "inNav": false,
+          "text": "MCQUEEN LARGE CHESTfrom €12.900,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/380-mcqueen-low-chest",
+          "inNav": false,
+          "text": "MCQUEEN LOW CHESTfrom €8.945,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/401-mcqueen-sofa",
+          "inNav": false,
+          "text": "MCQUEEN SOFAfrom €12.790,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/369-mcqueen-tall-chest",
+          "inNav": false,
+          "text": "MCQUEEN TALL CHESTfrom €8.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138f-miguel-sofa",
+          "inNav": false,
+          "text": "MIGUEL SOFAfrom €13.100,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/389-mira-lounge-chair",
+          "inNav": false,
+          "text": "MIRA LOUNGE CHAIRfrom €5.575,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/389o-mira-ottoman",
+          "inNav": false,
+          "text": "MIRA OTTOMANfrom €1.905,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/109q-mitch-cabinet",
+          "inNav": false,
+          "text": "MITCH CABINET - SQUAREfrom €11.310,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/109s-mitch-low-cabinet",
+          "inNav": false,
+          "text": "MITCH LOW CABINETfrom €11.310,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/101o-nino-ottoman",
+          "inNav": false,
+          "text": "NINO OTTOMANfrom €1.665,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/october-dining-chair",
+          "inNav": false,
+          "text": "OCTOBER DINING CHAIRfrom €2.295,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/799s-october-dining-armchair",
+          "inNav": false,
+          "text": "OCTOBER DINING ARMCHAIRfrom €2.650,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/october-dining-table",
+          "inNav": false,
+          "text": "OCTOBER DINING TABLEfrom €12.555,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/177-orion-dining-table-timber-metal-base",
+          "inNav": false,
+          "text": "ORION DINING TABLE - TIMBER & METAL BASEfrom €12.665,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/177-orion-dining-table-timber-base",
+          "inNav": false,
+          "text": "ORION DINING TABLE - TIMBER BASEfrom €12.535,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/365s-orson-compact-desk",
+          "inNav": false,
+          "text": "ORSON COMPACT DESKfrom €4.425,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/365-orson-desk",
+          "inNav": false,
+          "text": "ORSON DESKfrom €6.025,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/370-orson-desk-accessories",
+          "inNav": false,
+          "text": "ORSON DESK ACCESSORIESfrom €105,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/365q-orson-micro-desk",
+          "inNav": false,
+          "text": "ORSON MICRO DESKfrom €4.075,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/395-overton-table",
+          "inNav": false,
+          "text": "OVERTON TABLEfrom €13.770,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/797-petit-3-chair",
+          "inNav": false,
+          "text": "PETIT 3 CHAIRfrom €1.090,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/798-petit-4-chair",
+          "inNav": false,
+          "text": "PETIT 4 CHAIRfrom €1.165,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/798pt-petit-bar-stool",
+          "inNav": false,
+          "text": "PETIT BAR STOOLfrom €1.815,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138j-pico-daybed",
+          "inNav": false,
+          "text": "PICO DAYBEDfrom €13.430,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/403sl-planalto-sofa",
+          "inNav": false,
+          "text": "PLANALTO SOFAfrom €16.025,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/758-ukeu-platform-bed",
+          "inNav": false,
+          "text": "PLATFORM BEDfrom €13.610,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/755-platform-sofa",
+          "inNav": false,
+          "text": "PLATFORM SOFAfrom €10.950,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/405-refectory-extending-table",
+          "inNav": false,
+          "text": "REFECTORY EXTENDING TABLEfrom €11.570,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/405f-refectory-fixed-table",
+          "inNav": false,
+          "text": "REFECTORY FIXED TABLEfrom €9.540,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/406pt-saia-bar-stool",
+          "inNav": false,
+          "text": "SAIA BAR STOOLfrom €2.285,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/406-saia-dining-chair",
+          "inNav": false,
+          "text": "SAIA DINING CHAIRfrom €1.565,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/407-saia-lounge-chair",
+          "inNav": false,
+          "text": "SAIA LOUNGE CHAIRfrom €3.255,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/447457-seat-pad",
+          "inNav": false,
+          "text": "SEAT PADSfrom €855,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/123s-sela-dining-armchair",
+          "inNav": false,
+          "text": "SELA DINING ARMCHAIRfrom €3.225,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/123-sela-dining-chair",
+          "inNav": false,
+          "text": "SELA DINING CHAIRfrom €2.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124s-sela-lounge-chair-narrow-arms",
+          "inNav": false,
+          "text": "SELA LOUNGE CHAIR - NARROW ARMSfrom €7.120,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124sz-sela-lounge-chair-wide-arms",
+          "inNav": false,
+          "text": "SELA LOUNGE CHAIR - WIDE ARMSfrom €7.390,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124szz-sela-lounge-chair-with-manta-lido",
+          "inNav": false,
+          "text": "SELA LOUNGE CHAIR WITH MANTA LIDOfrom €8.830,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124m-sela-sofa",
+          "inNav": false,
+          "text": "SELA SOFAfrom €9.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124b-sela-medium-bench",
+          "inNav": false,
+          "text": "SELA MEDIUM BENCHfrom €4.205,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/124o-sela-small-bench",
+          "inNav": false,
+          "text": "SELA SMALL BENCHfrom €2.305,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/446-settle",
+          "inNav": false,
+          "text": "SETTLEfrom €4.860,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/776-shaker-back-cushion",
+          "inNav": false,
+          "text": "SHAKER BACK CUSHIONfrom €460,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/763b-shaker-bench",
+          "inNav": false,
+          "text": "SHAKER BENCHfrom €3.575,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/763sb-shaker-bench-upholstered-seat",
+          "inNav": false,
+          "text": "SHAKER BENCH - UPHOLSTERED SEATfrom €4.510,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/763-shaker-dining-chair",
+          "inNav": false,
+          "text": "SHAKER DINING CHAIRfrom €1.560,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/763s-shaker-dining-chair-upholstered-seat",
+          "inNav": false,
+          "text": "SHAKER DINING CHAIR - UPHOLSTERED SEATfrom €1.840,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/764t-shaker-dining-table",
+          "inNav": false,
+          "text": "SHAKER DINING TABLEfrom €9.850,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/764m-shaker-dining-table",
+          "inNav": false,
+          "text": "SHAKER DINING TABLE STONE TOPfrom €10.160,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/764r-shaker-round-table",
+          "inNav": false,
+          "text": "SHAKER ROUND TABLEfrom €4.705,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/456m-sidekicks-coffee-table",
+          "inNav": false,
+          "text": "SIDEKICKS COFFEE TABLE WITH ALUMINIUM TOPfrom €3.410,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/456-sidekicks-coffee-table-with-terrazzo-top",
+          "inNav": false,
+          "text": "SIDEKICKS COFFEE TABLE WITH TERRAZZO TOPfrom €3.410,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/459-sidekicks-height-adjustable-table",
+          "inNav": false,
+          "text": "SIDEKICKS HEIGHT ADJUSTABLE TABLEfrom €4.750,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/459m-sidekicks-height-adjustable-table-with-terrazzo-top",
+          "inNav": false,
+          "text": "SIDEKICKS HEIGHT ADJUSTABLE TABLE WITH TERRAZZO TOPfrom €4.750,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/456-sidekicks-occasional-table",
+          "inNav": false,
+          "text": "SIDEKICKS OCCASIONAL TABLEfrom €3.250,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/456m-sidekicks-occasional-table-with-terrazzo-top",
+          "inNav": false,
+          "text": "SIDEKICKS OCCASIONAL TABLE WITH TERRAZZO TOPfrom €3.250,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/458-sidekicks-small-dining-table",
+          "inNav": false,
+          "text": "SIDEKICKS SMALL DINING TABLEfrom €4.035,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/458m-sidekicks-small-dining-table-with-terrazzo-top",
+          "inNav": false,
+          "text": "SIDEKICKS SMALL DINING TABLE WITH TERRAZZO TOPfrom €4.035,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/sirius-sofa-system",
+          "inNav": false,
+          "text": "SIRIUS SOFA SYSTEMfrom €11.860,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/788-sofa-eight-modular-system",
+          "inNav": false,
+          "text": "SOFA EIGHT MODULAR SYSTEMfrom €7.990,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/sofa-eight-table",
+          "inNav": false,
+          "text": "SOFA EIGHT TABLEfrom €1.245,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/785-solo-cabinet",
+          "inNav": false,
+          "text": "SOLO 2-DOOR CABINETfrom €7.430,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/750pt-solo-bar-stool",
+          "inNav": false,
+          "text": "SOLO BAR STOOLfrom €2.640,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/787-ukeu-solo-bed",
+          "inNav": false,
+          "text": "SOLO BEDfrom €9.675,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/786-solo-bedside-chest",
+          "inNav": false,
+          "text": "SOLO BEDSIDE CHESTfrom €2.670,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/750b-solo-bench",
+          "inNav": false,
+          "text": "SOLO BENCHfrom €4.035,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/794-solo-daybed",
+          "inNav": false,
+          "text": "SOLO DAYBEDfrom €5.930,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/784-solo-desk",
+          "inNav": false,
+          "text": "SOLO DESKfrom €7.280,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/solo-desk-pencil-tray",
+          "inNav": false,
+          "text": "SOLO DESK PENCIL TRAY€230,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/750-solo-dining-chair",
+          "inNav": false,
+          "text": "SOLO DINING CHAIRfrom €1.680,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/752-solo-dining-table",
+          "inNav": false,
+          "text": "SOLO DINING TABLEfrom €7.745,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/751-solo-lounge-chair",
+          "inNav": false,
+          "text": "SOLO LOUNGE CHAIRfrom €3.975,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/783-solo-oblong-table",
+          "inNav": false,
+          "text": "SOLO OBLONG TABLEfrom €6.815,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/751o-solo-ottoman",
+          "inNav": false,
+          "text": "SOLO OTTOMANfrom €2.130,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/752r-solo-round-table",
+          "inNav": false,
+          "text": "SOLO ROUND TABLEfrom €5.930,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/750l-solo-sofa",
+          "inNav": false,
+          "text": "SOLO SOFAfrom €5.535,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/796-solo-storage-tray",
+          "inNav": false,
+          "text": "SOLO STORAGE TRAYfrom €865,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/785t-solo-tall-4-door-cabinet",
+          "inNav": false,
+          "text": "SOLO TALL 4-DOOR CABINETfrom €12.445,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/789t-solo-tall-vitrine",
+          "inNav": false,
+          "text": "SOLO TALL VITRINEfrom €19.555,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/789-solo-vitrine",
+          "inNav": false,
+          "text": "SOLO VITRINEfrom €11.320,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/785l-solo-wide-4-door-cabinet",
+          "inNav": false,
+          "text": "SOLO WIDE 4-DOOR CABINETfrom €12.445,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/102s-stanley-armchair",
+          "inNav": false,
+          "text": "STANLEY ARMCHAIRfrom €8.175,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/102-stanley-sofa",
+          "inNav": false,
+          "text": "STANLEY SOFAfrom €12.500,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/116-steve-pouf",
+          "inNav": false,
+          "text": "STEVE POUFfrom €2.310,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/441-stool",
+          "inNav": false,
+          "text": "STOOLfrom €875,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/441s-stool-upholstered",
+          "inNav": false,
+          "text": "STOOL UPHOLSTEREDfrom €1.060,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/762-structure-table",
+          "inNav": false,
+          "text": "STRUCTURE TABLEfrom €13.835,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/265-suite-bed",
+          "inNav": false,
+          "text": "SUITE BEDfrom €15.275,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/501-table-one",
+          "inNav": false,
+          "text": "TABLE ONEfrom €18.660,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/501-table-one-all-timbers",
+          "inNav": false,
+          "text": "TABLE ONE - ALL TIMBERSfrom €12.790,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/tai-in-console-cabinet-room-divider",
+          "inNav": false,
+          "text": "TAI IN - CONSOLE CABINET / ROOM DIVIDER€24.595,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/tai-dan-1-console-cabinet",
+          "inNav": false,
+          "text": "TAI DAN 1 - CONSOLE CABINETfrom €19.860,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/tai-dan-2-console-cabinet",
+          "inNav": false,
+          "text": "TAI DAN 2 - CONSOLE CABINETfrom €23.365,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/tai-hen-bookshelf",
+          "inNav": false,
+          "text": "TAI HEN - BOOKSHELFfrom €21.520,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/tai-sei-sculpture",
+          "inNav": false,
+          "text": "TAI SEI - SCULPTURE€9.220,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/408-tavli-dining-table",
+          "inNav": false,
+          "text": "TAVLI DINING TABLEfrom €5.615,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/138m-terceira-sofa",
+          "inNav": false,
+          "text": "TERCEIRA ARMLESS SOFAfrom €12.085,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/272-throne-bar-stool-rattan",
+          "inNav": false,
+          "text": "THRONE BAR STOOL - RATTANfrom €3.475,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/271-throne-bar-stool-upholstered",
+          "inNav": false,
+          "text": "THRONE BAR STOOL - UPHOLSTEREDfrom €3.475,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/272-throne-dining-chair-rattan",
+          "inNav": false,
+          "text": "THRONE DINING CHAIR - RATTANfrom €2.980,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/271-throne-dining-chair-upholstered",
+          "inNav": false,
+          "text": "THRONE DINING CHAIR - UPHOLSTEREDfrom €2.980,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/270-throne-lounge-chair-rattan",
+          "inNav": false,
+          "text": "THRONE LOUNGE CHAIR - RATTANfrom €7.075,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/269-throne-lounge-chair-upholstered",
+          "inNav": false,
+          "text": "THRONE LOUNGE CHAIR - UPHOLSTEREDfrom €7.075,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/268-throne-sofa-rattan",
+          "inNav": false,
+          "text": "THRONE SOFA - RATTANfrom €14.460,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/267-throne-sofa-upholstered",
+          "inNav": false,
+          "text": "THRONE SOFA - UPHOLSTEREDfrom €14.460,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/452e-together-extending-table",
+          "inNav": false,
+          "text": "TOGETHER EXTENDING TABLEfrom €6.590,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/452f-together-fixed-table",
+          "inNav": false,
+          "text": "TOGETHER FIXED TABLEfrom €5.730,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/756-tray-desk",
+          "inNav": false,
+          "text": "TRAY DESKfrom €6.810,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754c-trio-console-table",
+          "inNav": false,
+          "text": "TRIO CONSOLE TABLEfrom €3.030,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754o-trio-oval-coffee-table",
+          "inNav": false,
+          "text": "TRIO OVAL COFFEE TABLEfrom €3.515,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754m-trio-round-coffee-table",
+          "inNav": false,
+          "text": "TRIO ROUND COFFEE TABLEfrom €3.030,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754mm-trio-round-coffee-table-with-marble-top",
+          "inNav": false,
+          "text": "TRIO ROUND COFFEE TABLE WITH STONE TOPfrom €3.310,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754s-trio-side-table",
+          "inNav": false,
+          "text": "TRIO SIDE TABLEfrom €2.005,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754sbsp-trio-side-table-with-metal-top",
+          "inNav": false,
+          "text": "TRIO SIDE TABLE WITH METAL TOPfrom €2.005,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/754sm-trio-side-table-with-marble-top",
+          "inNav": false,
+          "text": "TRIO SIDE TABLE WITH STONE TOPfrom €2.105,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/759s-trunk-low-cabinet",
+          "inNav": false,
+          "text": "TRUNK LOW CABINETfrom €16.225,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/759l-trunk-tall-cabinet",
+          "inNav": false,
+          "text": "TRUNK TALL CABINETfrom €19.460,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/twenty-five-bed",
+          "inNav": false,
+          "text": "TWENTY-FIVE BEDfrom €10.710,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/684s-twenty-five-upholstered-bed",
+          "inNav": false,
+          "text": "TWENTY-FIVE UPHOLSTERED BEDfrom €10.710,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/twenty-five-bedside-chest",
+          "inNav": false,
+          "text": "TWENTY-FIVE BEDSIDE CHESTfrom €5.580,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/twenty-five-bedside-table",
+          "inNav": false,
+          "text": "TWENTY-FIVE BEDSIDE TABLEfrom €5.225,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all/products/685s-twenty-five-bedside-with-upholstery",
+          "inNav": false,
+          "text": "TWENTY-FIVE BEDSIDE WITH UPHOLSTERYfrom €4.960,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/all?page=2",
+          "inNav": false,
+          "text": "2"
+        },
+        {
+          "href": "https://delaespada.com/pages/terms-and-conditions",
+          "inNav": true,
+          "text": "TERMS AND CONDITIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/lifetime-repair-service",
+          "inNav": true,
+          "text": "LIFETIME REPAIR SERVICE"
+        },
+        {
+          "href": "https://delaespada.com/pages/warranty",
+          "inNav": true,
+          "text": "WARRANTY"
+        },
+        {
+          "href": "https://delaespada.com/pages/privacy-policy",
+          "inNav": true,
+          "text": "PRIVACY POLICY"
+        }
+      ]
+    }
+  ]
+}

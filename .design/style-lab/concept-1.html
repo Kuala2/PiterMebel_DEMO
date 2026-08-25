@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ПитерМебель — Индивидуальные кухни и мебель на заказ в СПб | Производство на Трефолева 1П</title>
+  
+  <!-- Modern Clean Typography: Onest + Cormorant Garamond for Slogan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       QUIET LUXURY DESIGN SYSTEM (Studio Graphite & Refined Sage Accent)
+       ========================================================================== */
+    :root {
+      --bg-dark: #0E1114;
+      --bg-studio: #13171C;
+      --bg-surface: #181D24;
+      --bg-surface-elevated: #202630;
+      --bg-header: rgba(14, 17, 20, 0.92);
+      
+      /* Subtle, high-end sage green (used ONLY for primary action buttons) */
+      --color-green-brand: #5F944C;
+      --color-green-hover: #6FA858;
+      --color-green-subtle: rgba(95, 148, 76, 0.12);
+
+      --color-text-primary: #F3F5F7;
+      --color-text-secondary: #9AA2B0;
+      --color-text-muted: #626B7A;
+
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --border-medium: rgba(255, 255, 255, 0.12);
+      --border-focus: rgba(95, 148, 76, 0.4);
+
+      --font-main: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+
+      --container-max: 1360px;
+      --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      background-color: var(--bg-dark);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--color-text-primary);
+      font-family: var(--font-main);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* Headings & Kicker */
+    .section-kicker {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--color-text-primary);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 680px;
+    }
+
+    /* Clean Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-green {
+      background: var(--color-green-brand);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(95, 148, 76, 0.25);
+    }
+
+    .btn-green:hover {
+      background: var(--color-green-hover);
+      box-shadow: 0 6px 20px rgba(95, 148, 76, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--color-text-primary);
+      border: 1px solid var(--border-medium);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+
+    /* ==========================================================================
+       HEADER
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(14, 17, 20, 0.7);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background 0.3s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .origami-bird-img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #FFFFFF;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    .nav-link:hover {
+      color: #FFFFFF;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header-phone-box {
+      text-align: right;
+    }
+
+    .header-phone {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    .header-address-tag {
+      display: block;
+      font-size: 11px;
+      color: var(--color-text-muted);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-fullscreen {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 72px;
+      background: var(--bg-dark);
+      overflow: hidden;
+    }
+
+    .hero-bg-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(14,17,20,0.5) 0%, rgba(14,17,20,0.75) 100%);
+    }
+
+    .hero-center-wrapper {
+      position: relative;
+      z-index: 2;
+      margin: auto 0;
+      padding: 60px 0;
+    }
+
+    .hero-slogan-title {
+      font-family: var(--font-serif);
+      font-size: 64px;
+      font-weight: 400;
+      font-style: italic;
+      color: #FFFFFF;
+      text-align: center;
+      line-height: 1.15;
+      max-width: 900px;
+      margin: 0 auto 24px auto;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    /* Bottom Trust Bar */
+    .hero-bottom-bar {
+      position: relative;
+      z-index: 2;
+      padding: 16px 0 24px 0;
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: rgba(24, 29, 36, 0.65);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .hero-stat-item {
+      padding: 18px 24px;
+      border-right: 1px solid var(--border-subtle);
+    }
+
+    .hero-stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-variant-numeric: lining-nums;
+      margin-bottom: 2px;
+    }
+
+    .stat-text {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       CATALOG SECTION
+       ========================================================================== */
+    .catalog-section {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+
+    .catalog-head-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 32px;
+    }
+
+    /* Clean Tabs Bar */
+    .catalog-tabs-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .cat-tab {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--color-text-secondary);
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-main);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .cat-tab:hover {
+      color: #FFFFFF;
+      border-color: var(--border-medium);
+    }
+
+    .cat-tab.is-active {
+      background: var(--bg-surface-elevated);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Grid of Cards */
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .catalog-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .catalog-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-gallery-wrap {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-dark);
+      overflow: hidden;
+    }
+
+    .card-img-slide {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: transform 0.4s ease;
+    }
+
+    .card-img-slide.is-active {
+      display: block;
+    }
+
+    .catalog-card:hover .card-img-slide.is-active {
+      transform: scale(1.02);
+    }
+
+    /* Subtle side arrows */
+    .card-photo-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: rgba(14, 17, 20, 0.7);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      transition: var(--transition);
+      opacity: 0;
+    }
+
+    .catalog-card:hover .card-photo-arrow {
+      opacity: 0.9;
+    }
+
+    .card-photo-arrow:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .card-photo-arrow.arrow-prev { left: 10px; }
+    .card-photo-arrow.arrow-next { right: 10px; }
+
+    .card-photo-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      z-index: 3;
+    }
+
+    .photo-square-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .photo-square-dot.is-active {
+      background: #FFFFFF;
+      width: 14px;
+      border-radius: 3px;
+    }
+
+    .card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .card-specs-line {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin-bottom: 16px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .card-origin {
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    .card-btn-action {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-btn-action:hover {
+      color: var(--color-green-brand);
+      transform: translateX(2px);
+    }
+
+    /* ==========================================================================
+       WORKSHOP & PRODUCTION SECTION
+       ========================================================================== */
+    .workshop-section {
+      padding: 90px 0;
+      background: var(--bg-studio);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .workshop-media-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .mosaic-photo-card {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-dark);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .mosaic-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mosaic-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 10px 16px;
+      background: rgba(14, 17, 20, 0.85);
+      backdrop-filter: blur(8px);
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* 3 Clean Features */
+    .features-clean-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-clean-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .feature-clean-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 8px;
+    }
+
+    .feature-clean-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       4 STEPS OF WORK
+       ========================================================================== */
+    .steps-section {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+
+    .steps-clean-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .step-clean-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 26px 20px;
+      position: relative;
+    }
+
+    .step-clean-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .step-clean-time {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .step-clean-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 6px;
+    }
+
+    .step-clean-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       MATERIALS
+       ========================================================================== */
+    .materials-section {
+      padding: 90px 0;
+      background: var(--bg-studio);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .materials-clean-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .material-clean-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .material-clean-card:hover {
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+    }
+
+    .material-img-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background: var(--bg-dark);
+    }
+
+    .material-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .material-body {
+      padding: 16px;
+    }
+
+    .material-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+
+    .material-desc {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       FINAL CTA & CONTACTS
+       ========================================================================== */
+    .final-section {
+      padding: 90px 0;
+      background: var(--bg-dark);
+    }
+
+    .final-clean-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .final-headline {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    .final-desc {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .final-address-box {
+      background: var(--bg-studio);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: #090B0D;
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 13px;
+      color: var(--color-text-secondary);
+    }
+
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+
+    .footer-col-head {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: 14px;
+    }
+
+    .footer-nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom-bar {
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--color-text-muted);
+    }
+
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 14, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.is-active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      max-width: 440px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 10px 12px;
+      font-family: var(--font-main);
+      font-size: 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--color-green-brand);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-slogan-title { font-size: 46px; }
+      .workshop-media-mosaic { grid-template-columns: 1fr; }
+      .features-clean-grid { grid-template-columns: 1fr; }
+      .steps-clean-grid { grid-template-columns: repeat(2, 1fr); }
+      .materials-clean-grid { grid-template-columns: repeat(3, 1fr); }
+      .final-clean-card { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .header-nav, .header-phone-box { display: none; }
+      .hero-slogan-title { font-size: 34px; }
+      .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-clean-grid { grid-template-columns: 1fr; }
+      .materials-clean-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-main-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#hero" class="brand-link">
+          <img src="../../brand/logo_bird.png" alt="ПитерМебель" class="origami-bird-img">
+          <span class="brand-title">ПитерМебель</span>
+        </a>
+
+        <nav class="header-nav">
+          <a href="#catalog" class="nav-link">Проекты</a>
+          <a href="#production" class="nav-link">Производство</a>
+          <a href="#steps" class="nav-link">Этапы</a>
+          <a href="#materials" class="nav-link">Материалы</a>
+          <a href="#contacts" class="nav-link">Контакты</a>
+        </nav>
+
+        <div class="header-right">
+          <div class="header-phone-box">
+            <a href="tel:+79217840589" class="header-phone">+7 (921) 784-05-89</a>
+            <span class="header-address-tag">ул. Трефолева, 1П</span>
+          </div>
+
+          <button class="btn btn-green btn-sm" onclick="openModal()">
+            Рассчитать проект
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-fullscreen" id="hero">
+      <div class="hero-bg-container">
+        <img src="../../posts/post_248/photo_hero_upscaled.jpg" alt="Кухни на заказ в Санкт-Петербурге" class="hero-bg-img">
+        <div class="hero-bg-overlay"></div>
+      </div>
+
+      <div class="hero-center-wrapper">
+        <div class="container">
+          <h1 class="hero-slogan-title">Вы мечтаете — мы воплощаем</h1>
+          <div class="hero-actions">
+            <button class="btn btn-green" onclick="openModal()">
+              Рассчитать проект
+            </button>
+            <a href="#catalog" class="btn btn-glass">
+              Смотреть каталог ↓
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom-bar">
+        <div class="container">
+          <div class="hero-stats-grid">
+            <div class="hero-stat-item">
+              <div class="stat-num">2005</div>
+              <div class="stat-text">Собственный цех на ул. Трефолева, 1П</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-num">1 500+</div>
+              <div class="stat-text">Реализованных проектов в Петербурге</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-num">24 мес.</div>
+              <div class="stat-text">Официальная гарантия по договору</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="stat-num">0 ₽</div>
+              <div class="stat-text">Выездной лазерный замер с образцами</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG SECTION -->
+    <section class="catalog-section" id="catalog">
+      <div class="container">
+        <div class="catalog-head-row">
+          <div>
+            <span class="section-kicker">Портфолио студии</span>
+            <h2 class="section-title">Реализованные объекты</h2>
+          </div>
+          <p class="section-subtitle">
+            Мебель, изготовленная по индивидуальным размерам на улице Трефолева.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="catalog-tabs-bar">
+          <button class="cat-tab is-active" onclick="filterGallery('all', this)">Все объекты (6)</button>
+          <button class="cat-tab" onclick="filterGallery('kitchens', this)">Кухни</button>
+          <button class="cat-tab" onclick="filterGallery('wardrobes', this)">Гардеробные</button>
+          <button class="cat-tab" onclick="filterGallery('closets', this)">Шкафы</button>
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="catalog-grid" id="catalog-grid">
+          
+          <!-- Card 1 -->
+          <article class="catalog-card" data-category="kitchens">
+            <div class="card-gallery-wrap">
+              <img src="../../posts/post_253/photo_1.jpg" alt="Кухня Шпон Дуба" class="card-img-slide is-active">
+              <img src="../../posts/post_253/photo_2.jpg" alt="Кухня Шпон Дуба" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Кухня «Шпон Дуба & Мрамор»</h3>
+              <p class="card-desc">Комбинация натурального шпона дуба, шелковисто-матовой эмали и бесшовного акрилового камня.</p>
+              <div class="card-specs-line">Шпон дуба · МДФ эмаль · Акриловый камень</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="catalog-card" data-category="wardrobes">
+            <div class="card-gallery-wrap">
+              <img src="../../posts/post_254/photo_1.jpg" alt="Гардеробная STOPSOL" class="card-img-slide is-active">
+              <img src="../../posts/post_254/photo_2.jpg" alt="Гардеробная STOPSOL" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Гардеробная со стеклом Stopsol</h3>
+              <p class="card-desc">Смарт-стекло: зеркало при выключенном свете, прозрачная витрина при включении подсветки полок.</p>
+              <div class="card-specs-line">Стекло Stopsol · Подвесная система · LED 4000K</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="catalog-card" data-category="kitchens">
+            <div class="card-gallery-wrap">
+              <img src="../../products/item_1_kukhnya_alexandra/photo_1.jpg" alt="Кухня Александра" class="card-img-slide is-active">
+              <img src="../../products/item_1_kukhnya_alexandra/photo_2.jpg" alt="Кухня Александра" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Кухня «Александра» Fenix NTM</h3>
+              <p class="card-desc">Суперматовый нано-пластик с защитой от отпечатков пальцев, корпус Egger и скрытая фурнитура.</p>
+              <div class="card-specs-line">Fenix NTM · Влагостойкий корпус · Доводчики</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="catalog-card" data-category="kitchens">
+            <div class="card-gallery-wrap">
+              <img src="../../products/item_2_kukhnya_slavena/photo_1.jpg" alt="Кухня Славена" class="card-img-slide is-active">
+              <img src="../../products/item_2_kukhnya_slavena/photo_2.jpg" alt="Кухня Славена" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Кухня «Славена» Тёплый Кашемир</h3>
+              <p class="card-desc">Матовый пластик теплый кашемир, бесшовная столешница из камня и скрытый профиль Gola.</p>
+              <div class="card-specs-line">МДФ пластик · Искусственный камень · Профиль Gola</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="catalog-card" data-category="closets">
+            <div class="card-gallery-wrap">
+              <img src="../../posts/post_256/photo_1.jpg" alt="Встроенный шкаф" class="card-img-slide is-active">
+              <img src="../../posts/post_256/photo_2.jpg" alt="Встроенный шкаф" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Встроенный шкаф в нишу</h3>
+              <p class="card-desc">Точная посадка от пола до потолка, зеркальные полотна AGC и интегрированная мягкая обувница.</p>
+              <div class="card-specs-line">Зеркало AGC · Ниша под обувь · Скрытый монтаж</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="catalog-card" data-category="wardrobes">
+            <div class="card-gallery-wrap">
+              <img src="../../posts/post_247/photo_1.jpg" alt="Гардеробная Дуб Кендал" class="card-img-slide is-active">
+              <img src="../../posts/post_247/photo_2.jpg" alt="Гардеробная Дуб Кендал" class="card-img-slide">
+              <button class="card-photo-arrow arrow-prev" onclick="stepCardPhoto(this, -1)">←</button>
+              <button class="card-photo-arrow arrow-next" onclick="stepCardPhoto(this, 1)">→</button>
+              <div class="card-photo-dots">
+                <span class="photo-square-dot is-active" onclick="switchCardPhoto(this, 0)"></span>
+                <span class="photo-square-dot" onclick="switchCardPhoto(this, 1)"></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Гардеробная «Дуб Кендал»</h3>
+              <p class="card-desc">П-образная планировка со скошенными полками по шаблону стен, глубокие выдвижные корзины.</p>
+              <div class="card-specs-line">Egger H3170 · П-образная · Подсветка штанг</div>
+              <div class="card-footer">
+                <span class="card-origin">Цех на Трефолева</span>
+                <a href="#contacts" class="card-btn-action">Смотреть проект →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSHOP & PRODUCTION SECTION -->
+    <section class="workshop-section" id="production">
+      <div class="container">
+        <div class="catalog-head-row">
+          <div>
+            <span class="section-kicker">Производство в Санкт-Петербурге</span>
+            <h2 class="section-title">Собственный цех на ул. Трефолева, 1П</h2>
+          </div>
+          <p class="section-subtitle">
+            Прямой контроль качества с 2005 года: от раскроя плитных материалов до чистового монтажа под ключ.
+          </p>
+        </div>
+
+        <div class="workshop-media-mosaic">
+          <div class="mosaic-photo-card">
+            <img src="../../brand/workshop_cnc.jpg" alt="Раскрой деталей в цеху">
+            <div class="mosaic-caption">Раскрой плитных материалов без микросколов с допуском до 0.1 мм</div>
+          </div>
+          <div class="mosaic-photo-card">
+            <img src="../../brand/workshop_edge.jpg" alt="Влагостойкое кромление деталей">
+            <div class="mosaic-caption">Влагостойкая PUR-герметизация торцов фасадов и корпусов</div>
+          </div>
+        </div>
+
+        <div class="features-clean-grid">
+          <div class="feature-clean-card">
+            <h3 class="feature-clean-title">Предварительная сборка в цеху</h3>
+            <p class="feature-clean-desc">Каждый гарнитур полностью собирается на Трефолева до отправки к вам, чтобы исключить любые перекосы и микрозазоры.</p>
+          </div>
+          <div class="feature-clean-card">
+            <h3 class="feature-clean-title">Влагостойкий клеевой шов</h3>
+            <p class="feature-clean-desc">Все детали защищены полиуретановым термоклеем от пара плиты, воды и перепадов температур.</p>
+          </div>
+          <div class="feature-clean-card">
+            <h3 class="feature-clean-title">Штатная бригада мастеров</h3>
+            <p class="feature-clean-desc">Замерщик, конструктор и сборщики — штатные сотрудники студии с опытом работы от 7 лет.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 STEPS OF WORK -->
+    <section class="steps-section" id="steps">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <span class="section-kicker">Прозрачный процесс</span>
+          <h2 class="section-title">4 шага до готовой мебели</h2>
+        </div>
+
+        <div class="steps-clean-grid">
+          <div class="step-clean-card">
+            <div class="step-clean-num">
+              <span>01</span>
+              <span class="step-clean-time">1 день</span>
+            </div>
+            <h3 class="step-clean-title">Замер с образцами</h3>
+            <p class="step-clean-desc">Мастер приедет с каталогом материалов (Fenix, эмаль по RAL, шпон дуба) и выполнит лазерный замер помещения.</p>
+          </div>
+
+          <div class="step-clean-card">
+            <div class="step-clean-num">
+              <span>02</span>
+              <span class="step-clean-time">24 часа</span>
+            </div>
+            <h3 class="step-clean-title">3D-проект и смета</h3>
+            <p class="step-clean-desc">Конструктор подготовит 3D-визуализацию с расстановкой техники и точный расчёт стоимости без скрытых доплат.</p>
+          </div>
+
+          <div class="step-clean-card">
+            <div class="step-clean-num">
+              <span>03</span>
+              <span class="step-clean-time">Цех</span>
+            </div>
+            <h3 class="step-clean-title">Изготовление и тест</h3>
+            <p class="step-clean-desc">Раскрой, нанесение влагостойкой кромки и контрольная предварительная сборка на улице Трефолева.</p>
+          </div>
+
+          <div class="step-clean-card">
+            <div class="step-clean-num">
+              <span>04</span>
+              <span class="step-clean-time">1 день</span>
+            </div>
+            <h3 class="step-clean-title">Чистый монтаж</h3>
+            <p class="step-clean-desc">Доставка, сборка штатной бригадой, подключение встроенной техники и уборка мусора промышленным пылесосом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIALS SECTION -->
+    <section class="materials-section" id="materials">
+      <div class="container">
+        <div class="catalog-head-row">
+          <div>
+            <span class="section-kicker">Премиальные фактуры</span>
+            <h2 class="section-title">Материалы и фасады</h2>
+          </div>
+          <p class="section-subtitle">
+            Образцы всех материалов мастер привозит на замер для примерки к вашему освещению.
+          </p>
+        </div>
+
+        <div class="materials-clean-grid">
+          <div class="material-clean-card">
+            <div class="material-img-wrap">
+              <img src="../../posts/post_253/photo_1.jpg" alt="Эмаль по RAL">
+            </div>
+            <div class="material-body">
+              <h3 class="material-title">Эмаль по RAL</h3>
+              <p class="material-desc">Безупречно гладкая матовая поверхность</p>
+            </div>
+          </div>
+
+          <div class="material-clean-card">
+            <div class="material-img-wrap">
+              <img src="../../posts/post_253/photo_2.jpg" alt="Шпон дуба">
+            </div>
+            <div class="material-body">
+              <h3 class="material-title">Шпон дуба</h3>
+              <p class="material-desc">Натуральная выразительная текстура дерева</p>
+            </div>
+          </div>
+
+          <div class="material-clean-card">
+            <div class="material-img-wrap">
+              <img src="../../products/item_1_kukhnya_alexandra/photo_1.jpg" alt="Fenix NTM">
+            </div>
+            <div class="material-body">
+              <h3 class="material-title">Fenix NTM</h3>
+              <p class="material-desc">Суперматовый nano-пластик без отпечатков</p>
+            </div>
+          </div>
+
+          <div class="material-clean-card">
+            <div class="material-img-wrap">
+              <img src="../../posts/post_254/photo_1.jpg" alt="Стекло Stopsol">
+            </div>
+            <div class="material-body">
+              <h3 class="material-title">Стекло Stopsol</h3>
+              <p class="material-desc">Смарт-зеркало с тёплой подсветкой</p>
+            </div>
+          </div>
+
+          <div class="material-clean-card">
+            <div class="material-img-wrap">
+              <img src="../../products/item_2_kukhnya_slavena/photo_1.jpg" alt="МДФ Velvet">
+            </div>
+            <div class="material-body">
+              <h3 class="material-title">МДФ Velvet</h3>
+              <p class="material-desc">Приятная тактильная soft-touch фактура</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CONTACT SECTION -->
+    <section class="final-section" id="contacts">
+      <div class="container">
+        <div class="final-clean-card">
+          <div>
+            <span class="section-kicker">Связь со студией</span>
+            <h2 class="final-headline">Рассчитайте стоимость мебели за 30 минут</h2>
+            <p class="final-desc">
+              Пришлите эскиз, размеры помещения или понравившееся фото в сообщество ВКонтакте. Технолог студии подготовит расчет сметы в нескольких вариантах материалов.
+            </p>
+            <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="https://vk.com/pitermebelcom" target="_blank" rel="noopener" class="btn btn-green">
+                Написать ВКонтакте
+              </a>
+              <button class="btn btn-glass" onclick="openModal()">
+                Записаться на замер
+              </button>
+            </div>
+          </div>
+
+          <div class="final-address-box">
+            <h3 style="font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 12px;">Производство на Трефолева</h3>
+            <p style="font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 16px;">
+              Санкт-Петербург, ул. Трефолева, 1П (м. «Нарвская»)<br>
+              Пн – Сб: с 10:00 до 20:00 (по предварительной записи)
+            </p>
+            <a href="tel:+79217840589" style="font-size: 15px; font-weight: 700; color: #FFFFFF; display: block; margin-bottom: 4px;">
+              +7 (921) 784-05-89
+            </a>
+            <span style="font-size: 12px; color: var(--color-text-muted);">Бесплатная парковка на территории</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <img src="../../brand/logo_bird.png" alt="ПитерМебель" style="width: 24px; height: 24px;">
+            <span style="font-weight: 700; color: #FFFFFF;">ПитерМебель</span>
+          </div>
+          <p style="font-size: 12px; color: var(--color-text-muted); line-height: 1.5;">
+            Собственное мебельное производство в Санкт-Петербурге с 2005 года.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Навигация</div>
+          <ul class="footer-nav-links">
+            <li><a href="#catalog">Каталог проектов</a></li>
+            <li><a href="#production">О производстве</a></li>
+            <li><a href="#steps">Этапы работы</a></li>
+            <li><a href="#materials">Материалы</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Контакты</div>
+          <ul class="footer-nav-links">
+            <li><a href="tel:+79217840589">+7 (921) 784-05-89</a></li>
+            <li>СПб, ул. Трефолева, 1П</li>
+            <li><a href="https://vk.com/pitermebelcom" target="_blank" rel="noopener">Сообщество VK</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-head">Замер</div>
+          <p style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 12px;">
+            Бесплатный выезд инженера с чемоданом образцов по СПб.
+          </p>
+          <button class="btn btn-green btn-sm" onclick="openModal()" style="width: 100%;">
+            Вызвать мастера
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>© 2005–2026 Студия мебели «ПитерМебель». Все права защищены.</div>
+        <div>Собственный цех в СПб (м. «Нарвская»)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="calc-modal" onclick="closeModalBackdrop(event)">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <h3 style="font-size: 20px; font-weight: 600; color: #FFFFFF; margin-bottom: 6px;">Заявка на расчет</h3>
+      <p style="font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px;">
+        Оставьте контакт — технолог свяжется для консультации и вызова мастера на замер.
+      </p>
+
+      <form onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label class="form-label">Ваше имя</label>
+          <input type="text" class="form-input" placeholder="Елена" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Телефон или ник в VK</label>
+          <input type="text" class="form-input" placeholder="+7 (999) 000-00-00" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Тип мебели</label>
+          <select class="form-select">
+            <option value="Кухня">Кухня на заказ</option>
+            <option value="Гардеробная">Гардеробная система</option>
+            <option value="Шкаф">Встроенный шкаф</option>
+            <option value="Комплекс">Мебель во всю квартиру</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-green" style="width: 100%; margin-top: 10px;">
+          Отправить заявку
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function filterGallery(category, btn) {
+      document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      const cards = document.querySelectorAll('.catalog-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function switchCardPhoto(dot, index) {
+      const card = dot.closest('.catalog-card');
+      const slides = card.querySelectorAll('.card-img-slide');
+      const dots = card.querySelectorAll('.photo-square-dot');
+
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+    }
+
+    function stepCardPhoto(arrow, direction) {
+      const card = arrow.closest('.catalog-card');
+      const slides = card.querySelectorAll('.card-img-slide');
+      let cur = Array.from(slides).findIndex(s => s.classList.contains('is-active'));
+      let next = cur + direction;
+      if (next < 0) next = slides.length - 1;
+      if (next >= slides.length) next = 0;
+      const dots = card.querySelectorAll('.photo-square-dot');
+      if (dots[next]) switchCardPhoto(dots[next], next);
+    }
+
+    function openModal() {
+      document.getElementById('calc-modal').classList.add('is-active');
+    }
+
+    function closeModal() {
+      document.getElementById('calc-modal').classList.remove('is-active');
+    }
+
+    function closeModalBackdrop(e) {
+      if (e.target.id === 'calc-modal') closeModal();
+    }
+
+    function handleForm(e) {
+      e.preventDefault();
+      alert('Спасибо! Технолог свяжется с вами в ближайшее время.');
+      closeModal();
+    }
+  </script>
+</body>
+</html>

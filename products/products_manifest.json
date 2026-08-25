@@ -1,0 +1,485 @@
+[
+  {
+    "id": "6882288",
+    "title": "Кухня Александра",
+    "slug": "item_1_kukhnya_alexandra",
+    "category": "Кухни на заказ",
+    "price_rub": 540000,
+    "price_formatted": "540 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-alexandra-215942650-6882288",
+    "description_raw": "ПОД ЗАКАЗ\n*фасады МДФ Fenix суперматовый пластик\n*корпус Эггер\n*столешница Слотекс\n*фурнитура Blum\n*подсветка LED",
+    "specifications": {
+      "Фасады": "фасады МДФ Fenix суперматовый пластик",
+      "Корпус": "корпус Эггер",
+      "Столешница": "столешница Слотекс",
+      "Фурнитура": "фурнитура Blum",
+      "Подсветка": "подсветка LED"
+    },
+    "photos_count": 4,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_1_kukhnya_alexandra/photo_1.jpg",
+        "source_url": "https://sun9-29.vkuserphoto.ru/s/v1/ig2/rCfihAhRZ2SxhG_7H1Cd8Yhs-8uIzo3vRVasYy9_-KXINeghl_NpzL5xAV557dXiB02_Jr9HMPRp3M0__QRdPAnw.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1496x1496&from=bu&u=GAYQEOFj0k-3MH1DOZJvOPqSk3BTDIfd5VhB52F7csY&cs=1496x1496",
+        "sha256": "057bd1af5d2f252cffde07b9f6adbe2877009f18ba9e769a1a530ed4ef559ec0",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 113499
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_1_kukhnya_alexandra/photo_2.jpg",
+        "source_url": "https://sun9-71.vkuserphoto.ru/s/v1/ig2/YBh-Kd30Xa8RNwaD3KzjZCT3bT4RSdmjRQm0CIypgcQ8JOrY-sRsw6I2FNLJY2EUKIrpe5dfsKBHcmUJo-Jpwc5L.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1496x1496&from=bu&u=iHlZp_GDv_4wh-9vwc0J3nIAD4HgwjTwHJL7nTeefjY&cs=1496x1496",
+        "sha256": "9269538e64c1b8478a01a58fd12dec430c86504ab6680107f79c419e018cd4c1",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 128306
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_1_kukhnya_alexandra/photo_3.jpg",
+        "source_url": "https://sun9-32.vkuserphoto.ru/s/v1/ig2/sBUrVpO6RaytQgekR6WIOKbvaRsiueGuYodKFRY0yik2wMhwCDxw57G-uPyajk0uSh74jhCdK8Q-tKRurhLkryBo.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1496x1496&from=bu&u=2o2iRdhSjtNcw02jrqFqENR8yYE5_AXd5qgAD7gsrc8&cs=1496x1496",
+        "sha256": "9ba1e99d6b6ea9a82e40ff4f331dd16053a6862c64d835e75f0ca8596adc5526",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 111364
+      },
+      {
+        "photo_index": 4,
+        "filename": "photo_4.jpg",
+        "local_path": "products/item_1_kukhnya_alexandra/photo_4.jpg",
+        "source_url": "https://sun9-34.vkuserphoto.ru/s/v1/ig2/p6vkqMwkHmdcREsLYxR3-p9xx5zhugpoCmAwA0-wDBP5pJlFgVFeMrPnR_efpHin-ijDKBRlAdv6_DYSr5MZLXog.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1496x1496&from=bu&u=k8gA3dp6bUHwrOBBC5Dp-YR5Sf-3gS7OA5ym0pLiqUA&cs=1496x1496",
+        "sha256": "af642a0574cb559f73d29937d40cefcfe1fc77d16b17a7646de77ec6eee35fa1",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 147014
+      }
+    ]
+  },
+  {
+    "id": "6882298",
+    "title": "Кухня Славена",
+    "slug": "item_2_kukhnya_slavena",
+    "category": "Кухни на заказ",
+    "price_rub": 4500000,
+    "price_formatted": "4 500 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-slavena-215942650-6882298",
+    "description_raw": "НА ЗАКАЗ\n*фасады МДФ пластик\n*корпус Эггер\n*столешница и фартук-искусственный камень\n*профиль Гола (вместо ручек)\n*подсвека LED\nстоимость с доставкой в черте города\nстолешница и фартук -отдельная стоимость",
+    "specifications": {
+      "Фасады": "фасады МДФ пластик",
+      "Корпус": "корпус Эггер",
+      "Столешница": "столешница и фартук -отдельная стоимость"
+    },
+    "photos_count": 5,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_2_kukhnya_slavena/photo_1.jpg",
+        "source_url": "https://sun9-15.vkuserphoto.ru/s/v1/ig2/32FXC3Fu8mt7hJ9HOYiUVc3IHpfjyht0XvPzvEYO3bCVpsXf4S5xQkK8eLJv6uwOve4eB9gxWAIe0dFOGzeX1Bba.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1560x1560&from=bu&u=sOob9uWULLxiGsvQm0gL8g-gL1XC0rOitnA313P5UbA&cs=1560x1560",
+        "sha256": "a2ee3d6da12c0be5ee5324078b9c9c83f961e5cea6bbbd225194c59cc3b9babf",
+        "resolution": "1560x1560",
+        "width": 1560,
+        "height": 1560,
+        "format": "JPEG",
+        "bytes": 389962
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_2_kukhnya_slavena/photo_2.jpg",
+        "source_url": "https://sun9-58.vkuserphoto.ru/s/v1/ig2/uwX3St6nJ7q-hz-Ph-ijQngKd71LES45SNp5Zf_OskZ5Iw0FLIsU6KHgoPCO06cCVbpP3GheNHi4Kh83HkvAUZ-N.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=_dS7SsEH7vS5BqOA6t2OKs44_Imf4Wd0E2W6jg0TaS4&cs=1280x1280",
+        "sha256": "771930f4b09d58c218d9163dbf2ddff009bf84cc8a2c52ec1fae348515f22a79",
+        "resolution": "1280x1280",
+        "width": 1280,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 138132
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_2_kukhnya_slavena/photo_3.jpg",
+        "source_url": "https://sun9-2.vkuserphoto.ru/s/v1/ig2/pZousTd7Dj66aQt4oHOn6-P-Atj9MsMVmlN0QONaPK3WMmw1d2yFppQXdEmsgIJ1181eEIYNCpKHW_auQv39Gh8M.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=MoTACpCMcMlazYPK-FXgXeyO1cCug7x_AlUCzsAenVo&cs=1280x1280",
+        "sha256": "abb764b44045ea260e245b97894d4c93ec3caceee8b5747851c5b16ff57e6813",
+        "resolution": "1280x1280",
+        "width": 1280,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 145704
+      },
+      {
+        "photo_index": 4,
+        "filename": "photo_4.jpg",
+        "local_path": "products/item_2_kukhnya_slavena/photo_4.jpg",
+        "source_url": "https://sun9-78.vkuserphoto.ru/s/v1/ig2/aXS0t16DFzHJ7WQdITtEtCfSnDr_n8sHrbTO-ZI8WeuiFZFvFrmlLlmOBofYgmAAyWUeWPRWvLRiMqmYQdeqYfi9.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=IS_XDYe5-QzNmPb9v3Zsgac9G37P1mMltn8dQNAPYZM&cs=1280x1280",
+        "sha256": "5e1f6c697892312e84424326562d4debc467a9b5648b8fc08993ce2909cf173e",
+        "resolution": "1280x1280",
+        "width": 1280,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 118509
+      },
+      {
+        "photo_index": 5,
+        "filename": "photo_5.jpg",
+        "local_path": "products/item_2_kukhnya_slavena/photo_5.jpg",
+        "source_url": "https://sun9-2.vkuserphoto.ru/s/v1/ig2/HuBFF-yVDc4DqDWG8xu_mjK-rMGYPQlPN6K3n4RPucSpJugVaVoax5ssiPpu5jQd-qQXBxNLq_XQqITFKToRC4uO.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=MKxzzWAuv6_35wcLtP86BKCQRS4fOQk08OqZLFgQmPk&cs=1280x1280",
+        "sha256": "5ddfc75c358ad70e38cf4a5468b147e50cde98c5150b0bd1b7f8e521f306e5ce",
+        "resolution": "1280x1280",
+        "width": 1280,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 97258
+      }
+    ]
+  },
+  {
+    "id": "6882301",
+    "title": "Кухня Стефания",
+    "slug": "item_3_kukhnya_stefania",
+    "category": "Кухни на заказ",
+    "price_rub": 185000,
+    "price_formatted": "185 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-stefania-215942650-6882301",
+    "description_raw": "НА ЗАКАЗ\n*фасады МДФ пластик\n*корпус Эггер\n*столешница под натуральное дерево Эггер\n*фурнитура BLUM\n*профиль Гола на нижних секциях (вместо ручек)\nСтоимость с доставкой в черте города",
+    "specifications": {
+      "Фасады": "фасады МДФ пластик",
+      "Корпус": "корпус Эггер",
+      "Столешница": "столешница под натуральное дерево Эггер",
+      "Фурнитура": "фурнитура BLUM"
+    },
+    "photos_count": 5,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_3_kukhnya_stefania/photo_1.jpg",
+        "source_url": "https://sun9-22.vkuserphoto.ru/s/v1/ig2/P_om_M58WRPHGAAAGy_BqxyMwwRoVdJopMbzqPxcF5JZg7cgGX_FMLsQFOD198e9hK6FU9cP6JZspTYCzseffQZQ.jpg?quality=95&as=32x29%2C48x44%2C72x66%2C108x99%2C160x147%2C240x220%2C360x330%2C480x440%2C540x495%2C640x587%2C720x660%2C750x688&from=bu&u=fXvm_utKIEAj2QzAb0yIrHQQ0Ic7do2RiS8UvL4rOBQ&cs=750x688",
+        "sha256": "634709fbb8223d5bc3e15ba2f8c4145fe8051eec29ad25c1ef8d87602c7b0e69",
+        "resolution": "750x688",
+        "width": 750,
+        "height": 688,
+        "format": "JPEG",
+        "bytes": 153257
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_3_kukhnya_stefania/photo_2.jpg",
+        "source_url": "https://sun9-1.vkuserphoto.ru/s/v1/ig2/Qc1FyRDEjd9dncCIlVr8EP0xqYTvgOc8CGLZdIRPxfn-IvvVIAQKXjGIUaqszKgIbJUcmJdyuAD7D_mDjObIc8ld.jpg?quality=95&as=32x29%2C48x44%2C72x66%2C108x99%2C160x147%2C240x220%2C360x330%2C480x440%2C540x495%2C640x587%2C720x660%2C750x688&from=bu&u=xpS5NyaapVCc2Js-WbfR805FyDj3_Z7fmFcBYeafe60&cs=750x688",
+        "sha256": "d63c0115422fb03a47700c38e1acee426164af9cf04daace2778734e5db371ee",
+        "resolution": "750x688",
+        "width": 750,
+        "height": 688,
+        "format": "JPEG",
+        "bytes": 119327
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_3_kukhnya_stefania/photo_3.jpg",
+        "source_url": "https://sun9-24.vkuserphoto.ru/s/v1/ig2/UbbKMTH2aR7p2AuAco7jPBTgHIAoADbXnKqMhA9NsylTT6CEZKGaMiTX9dpQyofUIh7j4lKloHg9a0C94bAelMYs.jpg?quality=95&as=32x29%2C48x44%2C72x66%2C108x99%2C160x147%2C240x220%2C360x331%2C480x441%2C540x496%2C640x588%2C720x661%2C750x689&from=bu&u=fvpqsQ8SvP0V0vZ-1kfLaTuimDwDHoMh3PIGyI4LH98&cs=750x689",
+        "sha256": "cdcb02871bf75df40631d896a32b8c6a36ed3853bcc434b3164a9d6ccdf0f802",
+        "resolution": "750x689",
+        "width": 750,
+        "height": 689,
+        "format": "JPEG",
+        "bytes": 151200
+      },
+      {
+        "photo_index": 4,
+        "filename": "photo_4.jpg",
+        "local_path": "products/item_3_kukhnya_stefania/photo_4.jpg",
+        "source_url": "https://sun9-35.vkuserphoto.ru/s/v1/ig2/m870-fVCUX4BKkCge8v5OUl2TxJSZNA3evS2jqBvcKUvqMrydKgxA4GfMX2us-GQrp9MAbBrNbBlDufkc9xDClB4.jpg?quality=95&as=32x30%2C48x45%2C72x67%2C108x101%2C160x149%2C240x224%2C360x336%2C480x447%2C540x503%2C640x596%2C720x671%2C750x699&from=bu&u=2M8fj1uv3J_xv2a3mYnJ6OJVFWcNuy5CUMN0xgEm8p0&cs=750x699",
+        "sha256": "d0ea5f66ad26b01994261f202b75281a1770dd97ba83237c79617376ecdf8cd8",
+        "resolution": "750x699",
+        "width": 750,
+        "height": 699,
+        "format": "JPEG",
+        "bytes": 132587
+      },
+      {
+        "photo_index": 5,
+        "filename": "photo_5.jpg",
+        "local_path": "products/item_3_kukhnya_stefania/photo_5.jpg",
+        "source_url": "https://sun9-63.vkuserphoto.ru/s/v1/ig2/BcmQq-FvbuaFycKCTyP-jatbsoKiiLbCIld2XSxGy7pkI8zmVeCLErbkoSF-63RaUO5mtI22txe8-m0dMQqgi-km.jpg?quality=95&as=32x30%2C48x44%2C72x67%2C108x100%2C160x148%2C240x222%2C360x333%2C480x444%2C540x499%2C640x591%2C720x665%2C750x693&from=bu&u=353mpc7VM8XPYsP5fQuDvnbJSWRgSy25FJLMfLXGKts&cs=750x693",
+        "sha256": "5eb09a55db43eedca0651906509b0b9f6f1f5c64e3fc6ad2aacc86dc5e168f2a",
+        "resolution": "750x693",
+        "width": 750,
+        "height": 693,
+        "format": "JPEG",
+        "bytes": 176674
+      }
+    ]
+  },
+  {
+    "id": "6882296",
+    "title": "Кухня Тимофей",
+    "slug": "item_4_kukhnya_timofey",
+    "category": "Кухни на заказ",
+    "price_rub": 234000,
+    "price_formatted": "234 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-timofey-215942650-6882296",
+    "description_raw": "НА ЗАКАЗ\n*фасады МДФ пластик\n*корпус Эггер\n*столешница под натуральное дерево Эггер\n*фурнитура Хеттик с доводчиками\n*подсветка LED\nЦена с доставкой в черте города",
+    "specifications": {
+      "Фасады": "фасады МДФ пластик",
+      "Корпус": "корпус Эггер",
+      "Столешница": "столешница под натуральное дерево Эггер",
+      "Фурнитура": "фурнитура Хеттик с доводчиками",
+      "Подсветка": "подсветка LED"
+    },
+    "photos_count": 5,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_4_kukhnya_timofey/photo_1.jpg",
+        "source_url": "https://sun9-60.vkuserphoto.ru/s/v1/ig2/dd_d4rx_Um1-8BqMJ4cOLNWkHFZO1HXmsYlfy_lSfCYK2XzPIfFpoQ21rw6kwJAHDMvUCR32iX-wj8BxKOsXNUA_.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1468x1468&from=bu&u=ACpFnr_LYMFKPRksSzpuvoCB4Pm9y0V73bfDAEvodY0&cs=1468x1468",
+        "sha256": "5cd2227988c41f8e0122d58ec554020e7f60f0bdcb694924ae3b19109ebcbac5",
+        "resolution": "1468x1468",
+        "width": 1468,
+        "height": 1468,
+        "format": "JPEG",
+        "bytes": 129972
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_4_kukhnya_timofey/photo_2.jpg",
+        "source_url": "https://sun9-61.vkuserphoto.ru/s/v1/ig2/dowOmoeQ-NzmcKbLlQtWGJq6lxkzRfqwPcmq5cf4yVB-SrMkaJFzY94MWz_d34TH_nJ9XO9cYPdLoNcCtI6kaSZt.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1496x1496&from=bu&u=yEIs_lOKry5rnGUCvY4FQVVjzMlbNW2lSz-hIFvRem8&cs=1496x1496",
+        "sha256": "624cd6d49bc0e66eba1c51d3d9d247cbb5bce47187b3236edf4c10a04441e306",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 144329
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_4_kukhnya_timofey/photo_3.jpg",
+        "source_url": "https://sun9-8.vkuserphoto.ru/s/v1/ig2/gPCQ_q6inXi2Wgmd3gFvrIC4rtHUR1cPvQvuzHtI85OwQi_7mrps7pSgHPqMn1J0fojFahzULXrFzkDZQwEwNU7F.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1496x1496&from=bu&u=r0HttHlWsZODq8fsvTM3N2h8D2vH7Q9KQhvzdouRC58&cs=1496x1496",
+        "sha256": "9a5275f5084edb112dffebbbec7dfdb36fea914818584f80297eedd9689d5ba6",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 175896
+      },
+      {
+        "photo_index": 4,
+        "filename": "photo_4.jpg",
+        "local_path": "products/item_4_kukhnya_timofey/photo_4.jpg",
+        "source_url": "https://sun9-72.vkuserphoto.ru/s/v1/ig2/me0IlqMdOcFP99pm-HOaew7UtEn5KdEVFtQ-dMc-shuqrtHyLskSfOHQylps_S5uobEghSbCS64Cc2A_vB7o9df-.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1496x1496&from=bu&u=jdPPsbiiAY0m-7o_qqjnZ81NCNnevYHN-QedP-2FMHo&cs=1496x1496",
+        "sha256": "c9850adfe62bb58fd2cbf6e625660074b4bf8d135a31aa698aae2163485988c4",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 216097
+      },
+      {
+        "photo_index": 5,
+        "filename": "photo_5.jpg",
+        "local_path": "products/item_4_kukhnya_timofey/photo_5.jpg",
+        "source_url": "https://sun9-31.vkuserphoto.ru/s/v1/ig2/Mr-Zb3DuaLC4yGIoEIyay5bLnhCwFgI4ztI_BZovDhKSLiM8HXwI6BVSztDc8sCBYOy0MCrLv50o0yrdNsR7KuHb.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1496x1496&from=bu&u=pmL7_vGUAN0jzHnmDujBanGyrpAyB0VkrSfGkajU15A&cs=1496x1496",
+        "sha256": "f190c491ed90b115e96772f7ae13c8cf52992bc3c8bf43f7cc42dc583cc634d4",
+        "resolution": "1496x1496",
+        "width": 1496,
+        "height": 1496,
+        "format": "JPEG",
+        "bytes": 130213
+      }
+    ]
+  },
+  {
+    "id": "6882283",
+    "title": "Кухня Ульяна",
+    "slug": "item_5_kukhnya_ulyana",
+    "category": "Кухни на заказ",
+    "price_rub": 268000,
+    "price_formatted": "268 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-ulyana-215942650-6882283",
+    "description_raw": "ПОД ЗАКАЗ\n*фасады МДФ пластик белый+ Эггер\n*столешница Эггер\n*стеновая панель Троя белый мрамор\n*подсветка LED с кнопкой сенсорного включения\n(Верхние секции без ручек)",
+    "specifications": {
+      "Фасады": "фасады МДФ пластик белый+ Эггер",
+      "Столешница": "столешница Эггер",
+      "Стеновая панель": "стеновая панель Троя белый мрамор",
+      "Подсветка": "подсветка LED с кнопкой сенсорного включения"
+    },
+    "photos_count": 3,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_5_kukhnya_ulyana/photo_1.jpg",
+        "source_url": "https://sun9-50.vkuserphoto.ru/s/v1/ig2/yY_seZxXjQangmkdskrTt6Ic9DY16UeKCQjxL3MoAnlJrEQ_Fhnbkb3NyaZCL5Q7TnJb4-lt9H27weTSNMSNp-Tf.jpg?quality=95&as=32x40%2C48x60%2C72x90%2C108x135%2C160x199%2C240x299%2C360x448%2C480x598%2C540x673%2C640x797%2C720x897%2C1080x1345%2C1280x1595%2C1440x1794&from=bu&u=ebjLYsxYbkWG_EkYBCkMJ60Qds0MFmROgS9kS-Pbc74&cs=1440x1794",
+        "sha256": "d49d42e8818ff26c7da1219116cbec11ab35b585e336ea5e093e1abe2a9f13aa",
+        "resolution": "1440x1794",
+        "width": 1440,
+        "height": 1794,
+        "format": "JPEG",
+        "bytes": 196467
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_5_kukhnya_ulyana/photo_2.jpg",
+        "source_url": "https://sun9-30.vkuserphoto.ru/s/v1/ig2/wDDyJ3CARPUJNlVax3jOw53AA0FKjo6btcovVjITgX8ewiwbQulUwgOx_OYlgjcmvfM3-S5qQthGyN6HHbcKwNOb.jpg?quality=95&as=32x50%2C48x74%2C72x112%2C108x167%2C160x248%2C240x372%2C360x558%2C480x744%2C540x837%2C640x992%2C720x1116%2C750x1163&from=bu&u=c36O5RCSZg0ZPQPClYSTAn3pPsS9zzQzg8zSzBdMVb8&cs=750x1163",
+        "sha256": "e248e1b44330bfbf12b55f55ff9b9439e9789b92326b9aeda724a9ce0c395f82",
+        "resolution": "750x1163",
+        "width": 750,
+        "height": 1163,
+        "format": "JPEG",
+        "bytes": 229280
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_5_kukhnya_ulyana/photo_3.jpg",
+        "source_url": "https://sun9-82.vkuserphoto.ru/s/v1/ig2/-dRKT36hXE9zQrz4IP3S3DD_qWhNSjXTvMHIIysK9g0xVGKczZDKUgAcxtQFipdzWkQCxC39kBi2ym1yuvaHFG01.jpg?quality=95&as=32x40%2C48x60%2C72x90%2C108x135%2C160x199%2C240x299%2C360x448%2C480x598%2C540x673%2C640x797%2C720x897%2C1080x1345%2C1280x1595%2C1440x1794&from=bu&u=YhW2j_8lbXJ-I06VZh3fIS3SQMkaru4uh16jvdr_RMs&cs=1440x1794",
+        "sha256": "bf31af7b988ccb965bf853fe55f03ad410a687ec8427cf3e2d6aa69231f08150",
+        "resolution": "1440x1794",
+        "width": 1440,
+        "height": 1794,
+        "format": "JPEG",
+        "bytes": 240754
+      }
+    ]
+  },
+  {
+    "id": "6882300",
+    "title": "Кухня Валерия",
+    "slug": "item_6_kukhnya_valeria",
+    "category": "Кухни на заказ",
+    "price_rub": 541000,
+    "price_formatted": "541 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-valeria-215942650-6882300",
+    "description_raw": "НА ЗАКАЗ\nпредставлено два варианта\n1 фото- меньше верхних секций и островная вытяжка\n2 фото- дополнительные верхние секции и полновстроенная вытяжка\n*фасады МДФ эмаль+МДФ пластик матовый\n*корпус Эггер\n*фурнитура BLUM\n*витрина- алюминевая рамка узкая черная\n(на верхних секциях нет ручек)\n*столешница Эггер\nСтоимость с доставкой в черте города\nПоказать ещё",
+    "specifications": {
+      "Фасады": "фасады МДФ эмаль+МДФ пластик матовый",
+      "Корпус": "корпус Эггер",
+      "Фурнитура": "фурнитура BLUM",
+      "Столешница": "столешница Эггер"
+    },
+    "photos_count": 2,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_6_kukhnya_valeria/photo_1.jpg",
+        "source_url": "https://sun9-46.vkuserphoto.ru/s/v1/ig2/sySiKhaasJT4mz_i_dWmBBO7uNVrT2XPk67Pvi37psDIu-KbVN8iDlGc6WQgMmdZ_aRl_elPDiRqa2ECHDDRD04E.jpg?quality=95&as=32x33%2C48x49%2C72x73%2C108x110%2C160x163%2C240x244%2C360x366%2C480x488%2C540x549%2C640x650%2C720x732%2C736x748&from=bu&u=59Byd5BhLx_hwvXiUacR7CVpGAK9AUzGza0WBCy-tgg&cs=736x748",
+        "sha256": "0a1331980a558734d60d64df68803a22a694b4eecb5f83f1bdceb28e47d8a0d4",
+        "resolution": "736x748",
+        "width": 736,
+        "height": 748,
+        "format": "JPEG",
+        "bytes": 159349
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_6_kukhnya_valeria/photo_2.jpg",
+        "source_url": "https://sun9-32.vkuserphoto.ru/s/v1/ig2/efQB9uqk5A11_Z2Z2tn4YtN6kN-MCxe3QHj0qNtOPFeq_1jdogm7RctihG9YOYHPKtBUH2zyGU4eOKcIiZpzAwyX.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x479%2C540x539%2C640x639%2C720x719%2C750x749&from=bu&u=aVmnW4rUFf0p3qgUxCkx6SpjdhA-wypry_zX7sBLOls&cs=750x749",
+        "sha256": "1a9dd9ffbff1775391df5856f5e2727343ee26b60a3e4460bcd5a49597cbc2a8",
+        "resolution": "750x749",
+        "width": 750,
+        "height": 749,
+        "format": "JPEG",
+        "bytes": 159601
+      }
+    ]
+  },
+  {
+    "id": "6902667",
+    "title": "Кухня Виктория",
+    "slug": "item_7_kukhnya_viktoria",
+    "category": "Кухни на заказ",
+    "price_rub": 4500000,
+    "price_formatted": "4 500 000 ₽",
+    "currency": "RUB",
+    "availability": "Под заказ",
+    "permalink": "https://vk.ru/market/product/kukhnya-viktoria-215942650-6902667",
+    "description_raw": "Красивая и нарядная кухня в беспроигрышном сочетании белых молочных фасадов и столешницы под дерево",
+    "specifications": {
+      "Особенности": [
+        "Красивая и нарядная кухня в беспроигрышном сочетании белых молочных фасадов и столешницы под дерево"
+      ]
+    },
+    "photos_count": 4,
+    "photos": [
+      {
+        "photo_index": 1,
+        "filename": "photo_1.jpg",
+        "local_path": "products/item_7_kukhnya_viktoria/photo_1.jpg",
+        "source_url": "https://sun9-21.vkuserphoto.ru/s/v1/ig2/3zNPDAh2-p9mAj8PF9t5EIWd048iK7SXFPBT606c-dFMxgo5FdonBHctj13z2qv5ekNtbBiludwECfTKiLSWrcta.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=PzoPex_rhupSMiw8BxcGbWHcSpjm0t7B3esYo_x5XjE&cs=640x640",
+        "sha256": "56a787ba18a43b210127c68ddcde5b71f41a3e9a4b01b579cbf9be9498640fb4",
+        "resolution": "640x640",
+        "width": 640,
+        "height": 640,
+        "format": "JPEG",
+        "bytes": 71790
+      },
+      {
+        "photo_index": 2,
+        "filename": "photo_2.jpg",
+        "local_path": "products/item_7_kukhnya_viktoria/photo_2.jpg",
+        "source_url": "https://sun9-65.vkuserphoto.ru/s/v1/ig2/-UMksK47-1_N9OvYQfOu8rT2pHuPFAHE0fnFGua_BsZ45LtRzErwP0o0ZNdLkXW-G9KwujW-p1_a4tHRUvfjNp-M.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=1WAFqxWn5eknOExCfH3pG5Gx5w1YXouHiRhztm0eWdM&cs=640x640",
+        "sha256": "906a01070a271e8681354b535663adf9268f7c7285fb0260746125d96f0e64cb",
+        "resolution": "640x640",
+        "width": 640,
+        "height": 640,
+        "format": "JPEG",
+        "bytes": 70621
+      },
+      {
+        "photo_index": 3,
+        "filename": "photo_3.jpg",
+        "local_path": "products/item_7_kukhnya_viktoria/photo_3.jpg",
+        "source_url": "https://sun9-57.vkuserphoto.ru/s/v1/ig2/sjq-uAQ2jdyzzmH6OEJJQXCJuuYpVqhp6fFjYhPbRSglBhP9LanALPBsMBZtRB2EQXFl0kL_cIYIIj2rnVAbvYm7.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=n7MfUB74tQDkXRuxQPNUo4SOX5vzr7IkcWg_zV210as&cs=640x640",
+        "sha256": "f8d22c223067dc5cddd3a15873802226950c8794d18e4d9ff3c83d73bb23cc41",
+        "resolution": "640x640",
+        "width": 640,
+        "height": 640,
+        "format": "JPEG",
+        "bytes": 71976
+      },
+      {
+        "photo_index": 4,
+        "filename": "photo_4.jpg",
+        "local_path": "products/item_7_kukhnya_viktoria/photo_4.jpg",
+        "source_url": "https://sun9-88.vkuserphoto.ru/s/v1/ig2/FuwEXjVD9U-4RAGX4LOqvtwK3Kk8a7-I6zrI7TNedVG9olSL2tkNZTD3jkOSTh52qh00sQ4fTaJFZ2zN6KPcW3d5.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=RmncPcnIeso9-TefoCFsoyLBh7UzcrLen4wHUKU8g28&cs=640x640",
+        "sha256": "d426b6a3bc2c91626986a6bb3925b498634663d61ba235b7d78de128758ce9c0",
+        "resolution": "640x640",
+        "width": 640,
+        "height": 640,
+        "format": "JPEG",
+        "bytes": 75741
+      }
+    ]
+  }
+]

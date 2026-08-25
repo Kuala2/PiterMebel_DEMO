@@ -1,0 +1,14 @@
+[
+  {"file":"F01-jack-home-system.png","source":"jack-trench-desktop-first.png","x":70,"y":0,"width":1300,"height":680},
+  {"file":"F02-jack-work-listing.png","source":"jack-trench-work-desktop-first.png","x":120,"y":120,"width":1200,"height":790},
+  {"file":"F03-jack-detail-story.png","source":"jack-trench-curvilinear-desktop-first.png","x":180,"y":55,"width":1080,"height":855},
+  {"file":"F04-dis-home-offer.png","source":"dis-mebel-desktop-first.png","x":0,"y":0,"width":1180,"height":820},
+  {"file":"F05-dis-portfolio-proof.png","source":"dis-mebel-portfolio-desktop-first.png","x":80,"y":40,"width":1280,"height":850},
+  {"file":"F06-dis-production-materials.png","source":"dis-mebel-production-desktop-first.png","x":80,"y":35,"width":1280,"height":890},
+  {"file":"F07-espada-catalog-grid.png","source":"de-la-espada-products-desktop-first.png","x":70,"y":75,"width":1300,"height":850},
+  {"file":"F08-espada-product-detail.png","source":"de-la-espada-albireo-desktop-first.png","x":70,"y":70,"width":1300,"height":860},
+  {"file":"F09-destroyers-project-grid.png","source":"destroyers-builders-projects-desktop-first.png","x":0,"y":0,"width":1440,"height":920},
+  {"file":"F10-destroyers-project-story.png","source":"destroyers-builders-fluid-desktop-first.png","x":0,"y":0,"width":1440,"height":950},
+  {"file":"F11-jack-mobile-home.png","source":"jack-trench-mobile-first.png","x":0,"y":0,"width":390,"height":844},
+  {"file":"F12-dis-mobile-home.png","source":"dis-mebel-mobile-first.png","x":0,"y":0,"width":390,"height":844}
+]

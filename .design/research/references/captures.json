@@ -1,0 +1,3079 @@
+{
+  "capturedAt": "2026-08-23T10:33:14.450Z",
+  "mode": "urls",
+  "merged": [
+    "london-furniture-studio-projects",
+    "london-furniture-studio-what-we-do"
+  ],
+  "items": [
+    {
+      "name": "anka-bespoke",
+      "url": "https://ankabespoke.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/anka-bespoke-mobile-first.png",
+        "desktopFirst": ".design/research/references/anka-bespoke-desktop-first.png",
+        "desktopFull": ".design/research/references/anka-bespoke-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://ankabespoke.co.uk/",
+      "title": "Anka Bespoke | Luxury Craftsmanship",
+      "dom": {
+        "textLength": 2563,
+        "mediaCount": 22,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 51,
+        "std": 47.8,
+        "edge": 36.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2565,
+        "mediaCount": 22,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 46,
+        "std": 47.3,
+        "edge": 35.2,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://ankabespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://ankabespoke.co.uk/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/finishes",
+          "inNav": true,
+          "text": "Finishes"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/projects",
+          "inNav": true,
+          "text": "Bespoke Commissions"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/press-and-media",
+          "inNav": true,
+          "text": "Blog"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/editions",
+          "inNav": true,
+          "text": "Editions"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://ankabespoke.co.uk/news",
+          "inNav": false,
+          "text": "EXPLORE"
+        },
+        {
+          "href": "tel:+4401225 819132",
+          "inNav": true,
+          "text": "+44 (0)1225 819132"
+        },
+        {
+          "href": "mailto:hello@ankabespoke.co.uk",
+          "inNav": true,
+          "text": "hello@ankabespoke.co.uk"
+        },
+        {
+          "href": "tel:+4402036091034",
+          "inNav": true,
+          "text": "+44 (0)203 6091034"
+        },
+        {
+          "href": "https://www.instagram.com/anka.bespoke/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://uk.linkedin.com/company/anka-metal-coatings-ltd",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.facebook.com/share/1BMfB4wzfK/?mibextid=wwXIfr",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://ankabespoke.co.uk/#",
+          "inNav": true,
+          "text": "Privacy Policy"
+        }
+      ]
+    },
+    {
+      "name": "dis-mebel",
+      "url": "https://dis-mebel.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/dis-mebel-mobile-first.png",
+        "desktopFirst": ".design/research/references/dis-mebel-desktop-first.png",
+        "desktopFull": ".design/research/references/dis-mebel-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://dis-mebel.ru/",
+      "title": "ДИС-Мебель — производство мебели на заказ в Москве и МО",
+      "dom": {
+        "textLength": 2814,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 23,
+        "std": 42.2,
+        "edge": 26.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2809,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 25,
+        "std": 48.5,
+        "edge": 29.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://dis-mebel.ru/index.html",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://dis-mebel.ru/about.html",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://dis-mebel.ru/production.html",
+          "inNav": true,
+          "text": "Производство"
+        },
+        {
+          "href": "https://dis-mebel.ru/contacts.html",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "tel:+79262117676",
+          "inNav": true,
+          "text": "+7 926 211 76 76"
+        },
+        {
+          "href": "https://dis-mebel.ru/#lead",
+          "inNav": false,
+          "text": "Получить консультацию"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private",
+          "inNav": false,
+          "text": "Частные интерьерыКвартиры, загородные дома"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial",
+          "inNav": false,
+          "text": "Коммерческие интерьерыОфисы, общественные пространства, кафе"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive",
+          "inNav": false,
+          "text": "ЭксклюзивWelkom-зоны, ресепшены, работа с массивом ценных пород дерева"
+        },
+        {
+          "href": "https://dis-mebel.ru/privacy.html",
+          "inNav": false,
+          "text": "Политикой конфиденциальности"
+        },
+        {
+          "href": "mailto:info@dis-mebel.ru",
+          "inNav": true,
+          "text": "info@dis-mebel.ru"
+        },
+        {
+          "href": "https://t.me/Stepanov_AD",
+          "inNav": true,
+          "text": "Telegram"
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOLq86pmEeeYbAQl9GqkvS3go059JaM9P2FzO3t9Pi3uM_uByjI",
+          "inNav": true,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "name": "deniart",
+      "url": "https://deniart.design/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/deniart-mobile-first.png",
+        "desktopFirst": ".design/research/references/deniart-desktop-first.png",
+        "desktopFull": ".design/research/references/deniart-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://deniart.design/",
+      "title": "Премиальная дизайнерская мебель на заказ Deni-art®",
+      "dom": {
+        "textLength": 8441,
+        "mediaCount": 64,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 18,
+        "std": 24.2,
+        "edge": 12.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 5889,
+        "mediaCount": 60,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 20,
+        "std": 21.7,
+        "edge": 14.5,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://deniart.design/",
+          "inNav": true,
+          "text": "Главная"
+        },
+        {
+          "href": "https://deniart.design/kukhni/",
+          "inNav": true,
+          "text": "Кухни"
+        },
+        {
+          "href": "https://deniart.design/kukhni/catalog/",
+          "inNav": true,
+          "text": "Каталог"
+        },
+        {
+          "href": "https://deniart.design/mebel/",
+          "inNav": true,
+          "text": "Мебель"
+        },
+        {
+          "href": "https://deniart.design/mebel/shkafy-dlya-khraneniya/",
+          "inNav": true,
+          "text": "Дизайнерские шкафы"
+        },
+        {
+          "href": "https://deniart.design/mebel/garderobnye/",
+          "inNav": true,
+          "text": "Гардеробные"
+        },
+        {
+          "href": "https://deniart.design/mebel/razdvizhnye-dveri/",
+          "inNav": true,
+          "text": "Перегородки"
+        },
+        {
+          "href": "https://deniart.design/mebel/komody-i-tumby/",
+          "inNav": true,
+          "text": "Комоды и тумбы"
+        },
+        {
+          "href": "https://deniart.design/mebel/mebel-dlya-vannoy/",
+          "inNav": true,
+          "text": "Мебель для ванной"
+        },
+        {
+          "href": "https://deniart.design/mebel/eksklyuzivnye-stellazhi/",
+          "inNav": true,
+          "text": "Книжные шкафы и стеллажи"
+        },
+        {
+          "href": "https://deniart.design/mebel/elitnye-shkafy-kupe/",
+          "inNav": true,
+          "text": "Элитные шкафы-купе"
+        },
+        {
+          "href": "https://deniart.design/mebel/mebelnye-komplekty/",
+          "inNav": true,
+          "text": "Мебельные комплекты"
+        },
+        {
+          "href": "https://deniart.design/proekty/",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://deniart.design/news/",
+          "inNav": true,
+          "text": "Новости"
+        },
+        {
+          "href": "https://deniart.design/news/press/",
+          "inNav": true,
+          "text": "СМИ о Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/blog/",
+          "inNav": true,
+          "text": "Журнал Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/sotrudnichestvo/",
+          "inNav": true,
+          "text": "Дизайнерам"
+        },
+        {
+          "href": "https://deniart.design/klientam/",
+          "inNav": true,
+          "text": "Клиентам"
+        },
+        {
+          "href": "https://deniart.design/o-nas/",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://deniart.design/kontakty/",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "https://deniart.design/#",
+          "inNav": true,
+          "text": "Назад"
+        },
+        {
+          "href": "tel:+74957955016",
+          "inNav": true,
+          "text": "+7 495 795-50-16"
+        },
+        {
+          "href": "https://deniart.design/#order",
+          "inNav": false,
+          "text": "Сделать заказ"
+        },
+        {
+          "href": "https://deniart.design/nashi-partnyery/",
+          "inNav": false,
+          "text": "Подробнее"
+        },
+        {
+          "href": "https://api.whatsapp.com/send/?phone=79037955016",
+          "inNav": false,
+          "text": "WhatsApp"
+        },
+        {
+          "href": "https://t.me/deniart_design",
+          "inNav": false,
+          "text": "Телеграм"
+        },
+        {
+          "href": "mailto:info@deni-art.ru",
+          "inNav": false,
+          "text": "Почта"
+        },
+        {
+          "href": "tel:+79037955016",
+          "inNav": false,
+          "text": "Позвонить"
+        },
+        {
+          "href": "https://deniart.design/mebel/shkafy-dlya-khraneniya/shkaf-atelier/",
+          "inNav": false,
+          "text": "Шкаф АТЕЛЬЕР из натуральных обоев"
+        },
+        {
+          "href": "https://deniart.design/news/press/my-vyigrali-publikatsiyu-v-interernom-zhurnale-hi-home/",
+          "inNav": false,
+          "text": "Публикация в интерьерном журнале Hi Home"
+        },
+        {
+          "href": "https://deniart.design/news/press/100-dizayn-proektov-2024/",
+          "inNav": false,
+          "text": "100 Дизайн-Проектов"
+        },
+        {
+          "href": "https://deniart.design/news/deni-art-kollaboratsi-s-tracy-hollidey/",
+          "inNav": false,
+          "text": "Первый международный проект Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/news/deni-art-na-slyete-geroev-v-sochi/",
+          "inNav": false,
+          "text": "Deni-Art на «Слёте героев» в Сочи"
+        },
+        {
+          "href": "https://www.youtube.com/channel/UCOdSnzpxB_4h6TIbTTwyDZg",
+          "inNav": true,
+          "text": "YouTube"
+        },
+        {
+          "href": "https://vk.com/deniart_mebel",
+          "inNav": true,
+          "text": "ВКонтакте"
+        },
+        {
+          "href": "https://deniart.design/politika-konfidentsialnosti/",
+          "inNav": true,
+          "text": "Политика конфиденциальности"
+        }
+      ]
+    },
+    {
+      "name": "de-atelier",
+      "url": "https://de-atelier.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/de-atelier-mobile-first.png",
+        "desktopFirst": ".design/research/references/de-atelier-desktop-first.png",
+        "desktopFull": ".design/research/references/de-atelier-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://de-atelier.ru/",
+      "title": "Мебель на заказ в Москве по дизайн проектам от производителя | Студия De Atelier",
+      "dom": {
+        "textLength": 3693,
+        "mediaCount": 58,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 30,
+        "std": 62.7,
+        "edge": 27.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3676,
+        "mediaCount": 58,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 30,
+        "std": 73.1,
+        "edge": 35,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://de-atelier.ru/#submenu:more",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more2",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/designer_architect",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/about",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://wa.me/79651015777",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://t.me/SergeyNikolaiich",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "tel:+79651015777",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/catalog_kitchen",
+          "inNav": false,
+          "text": "Кухни"
+        },
+        {
+          "href": "https://de-atelier.ru/living",
+          "inNav": false,
+          "text": "Мебель для гостиной"
+        },
+        {
+          "href": "https://de-atelier.ru/garderob_room",
+          "inNav": false,
+          "text": "Гардеробная комната"
+        },
+        {
+          "href": "https://de-atelier.ru/bathroom",
+          "inNav": false,
+          "text": "Мебель для ванной"
+        },
+        {
+          "href": "https://de-atelier.ru/garderob_wardrobe",
+          "inNav": false,
+          "text": "Гардеробные шкафы"
+        },
+        {
+          "href": "https://de-atelier.ru/bedroom",
+          "inNav": false,
+          "text": "Мебель для спальни"
+        },
+        {
+          "href": "https://de-atelier.ru/count",
+          "inNav": false,
+          "text": "Посчитать мебель"
+        },
+        {
+          "href": "https://de-atelier.ru/process",
+          "inNav": false,
+          "text": "Процесс заказа"
+        },
+        {
+          "href": "https://de-atelier.ru/designer_at_home",
+          "inNav": false,
+          "text": "Заказать дизайнера на дом"
+        },
+        {
+          "href": "https://de-atelier.ru/delivery",
+          "inNav": false,
+          "text": "Доставка и сборка мебели"
+        },
+        {
+          "href": "https://de-atelier.ru/measuring",
+          "inNav": false,
+          "text": "Записаться на замер помещения"
+        },
+        {
+          "href": "https://de-atelier.ru/pay",
+          "inNav": false,
+          "text": "Оплата и гарантия"
+        },
+        {
+          "href": "https://de-atelier.ru/#zeromenu",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more6",
+          "inNav": false,
+          "text": "Каталог"
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more5",
+          "inNav": false,
+          "text": "Сервисы"
+        },
+        {
+          "href": "https://de-atelier.ru/#popraschetmob",
+          "inNav": false,
+          "text": "Обсудить проект"
+        },
+        {
+          "href": "https://t.me/De_Atelier",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#zeropopup",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#techno",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#technoblock",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_03",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_01",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_02",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_09",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_07",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_08",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_04",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_10",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_05",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "http://de-atelier.ru/soglasie",
+          "inNav": false,
+          "text": "согласие на обработку персональных данных"
+        },
+        {
+          "href": "https://de-atelier.ru/politika",
+          "inNav": false,
+          "text": "политикой конфиденциальности"
+        },
+        {
+          "href": "https://de-atelier.ru/#sendmyform",
+          "inNav": false,
+          "text": "Отправить"
+        },
+        {
+          "href": "https://de-atelier.ru/#spasibodark",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#uspeh-popup",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "mailto:zakaz5777@gmail.com",
+          "inNav": true,
+          "text": "zakaz5777@gmail.com"
+        },
+        {
+          "href": "https://de-atelier.ru/soglasie",
+          "inNav": true,
+          "text": "Согласие на обработку персональных данных"
+        }
+      ]
+    },
+    {
+      "name": "ft-bespoke",
+      "url": "https://www.ftbespoke.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/ft-bespoke-mobile-first.png",
+        "desktopFirst": ".design/research/references/ft-bespoke-desktop-first.png",
+        "desktopFull": ".design/research/references/ft-bespoke-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.ftbespoke.co.uk/",
+      "title": "FT BESPOKE – Kitchens & Fine Furniture",
+      "dom": {
+        "textLength": 531,
+        "mediaCount": 32,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 51,
+        "std": 64.2,
+        "edge": 37,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 507,
+        "mediaCount": 26,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 41,
+        "std": 75.6,
+        "edge": 30.7,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.ftbespoke.co.uk/#content",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/about/",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/",
+          "inNav": true,
+          "text": "Portfolio"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/contact/",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY0OSIsInRvZ2dsZSI6ZmFsc2V9",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-2-1-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-2-2-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-4-1-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/Asset-5-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bratton-kitchen/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-furniture/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-office/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/toy-house-kitchen/",
+          "inNav": false,
+          "text": "View Project"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/kitchens/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/libraries",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bedrooms",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.instagram.com/ftbespokefurniture/",
+          "inNav": true,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "london-furniture-studio",
+      "url": "https://www.londonfurniturestudio.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/london-furniture-studio-mobile-first.png",
+        "desktopFirst": ".design/research/references/london-furniture-studio-desktop-first.png",
+        "desktopFull": ".design/research/references/london-furniture-studio-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.londonfurniturestudio.com/",
+      "title": "London Furniture Studio — Bespoke Joinery & Fine Cabinetry",
+      "dom": {
+        "textLength": 2794,
+        "mediaCount": 9,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 38,
+        "std": 34.3,
+        "edge": 19.9,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2749,
+        "mediaCount": 10,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 19,
+        "std": 48.1,
+        "edge": 8.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.londonfurniturestudio.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/who-we-are",
+          "inNav": true,
+          "text": "Who We Are"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/what-we-do",
+          "inNav": true,
+          "text": "What We Do"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/projects",
+          "inNav": true,
+          "text": "Projects"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/londonfurniturestudio/",
+          "inNav": false,
+          "text": "View Our Work"
+        },
+        {
+          "href": "mailto:info@londonfurniturestudio.com",
+          "inNav": true,
+          "text": "info@londonfurniturestudio.com"
+        },
+        {
+          "href": "tel:+442080505843",
+          "inNav": true,
+          "text": "020 8050 5843"
+        }
+      ]
+    },
+    {
+      "name": "sterox-studio",
+      "url": "https://steroxstudio.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/sterox-studio-mobile-first.png",
+        "desktopFirst": ".design/research/references/sterox-studio-desktop-first.png",
+        "desktopFull": ".design/research/references/sterox-studio-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://steroxstudio.co.uk/",
+      "title": "Sterox Studio — Bespoke Furniture & Interiors, London",
+      "dom": {
+        "textLength": 3632,
+        "mediaCount": 21,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 38,
+        "std": 27.7,
+        "edge": 15.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3606,
+        "mediaCount": 21,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 36,
+        "std": 54.1,
+        "edge": 17.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://steroxstudio.co.uk/#",
+          "inNav": true,
+          "text": "Sterox Studio London"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#portfolio",
+          "inNav": true,
+          "text": "Work"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#about",
+          "inNav": true,
+          "text": "Studio"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#contact",
+          "inNav": true,
+          "text": "Enquire"
+        },
+        {
+          "href": "mailto:info@steroxstudio.co.uk",
+          "inNav": false,
+          "text": "info@steroxstudio.co.uk"
+        },
+        {
+          "href": "tel:+447766200447",
+          "inNav": false,
+          "text": "+44 7766 200 447"
+        },
+        {
+          "href": "https://instagram.com/steroxstudio",
+          "inNav": false,
+          "text": "@steroxstudio"
+        }
+      ]
+    },
+    {
+      "name": "matthew-cox",
+      "url": "https://www.matthewcox.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references/matthew-cox-mobile-first.png",
+        "desktopFirst": ".design/research/references/matthew-cox-desktop-first.png",
+        "desktopFull": ".design/research/references/matthew-cox-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.matthewcox.com/",
+      "title": "Matthew Cox - Furniture & Lighting Built to Last 100 Years",
+      "dom": {
+        "textLength": 1180,
+        "mediaCount": 35,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 47,
+        "std": 65.6,
+        "edge": 29.1,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1216,
+        "mediaCount": 35,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 22,
+        "std": 67.9,
+        "edge": 25.9,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.matthewcox.com/#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.matthewcox.com/#",
+          "inNav": true,
+          "text": "Made to Measure"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/all",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables",
+          "inNav": true,
+          "text": "Tables"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/seating",
+          "inNav": true,
+          "text": "Seating"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/storage",
+          "inNav": true,
+          "text": "Storage"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/lighting",
+          "inNav": true,
+          "text": "Lighting"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/mirrors",
+          "inNav": true,
+          "text": "Mirrors"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/finish-library",
+          "inNav": true,
+          "text": "Finish library"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/care-guides",
+          "inNav": true,
+          "text": "Care guides"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#seating",
+          "inNav": true,
+          "text": "Table / seating plans"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#furniture",
+          "inNav": true,
+          "text": "Furniture diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#lighting",
+          "inNav": true,
+          "text": "Lighting diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/bespoke",
+          "inNav": true,
+          "text": "Bespoke"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/commissioning",
+          "inNav": true,
+          "text": "Commissioning"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/making",
+          "inNav": true,
+          "text": "Making"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/delivery",
+          "inNav": true,
+          "text": "Delivery"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/faqs",
+          "inNav": true,
+          "text": "FAQs"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/history",
+          "inNav": true,
+          "text": "History"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/100-year-plan",
+          "inNav": true,
+          "text": "100 Year Plan"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/nature",
+          "inNav": true,
+          "text": "Nature"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/careers",
+          "inNav": true,
+          "text": "Careers"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/community",
+          "inNav": true,
+          "text": "Community"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/thanks",
+          "inNav": true,
+          "text": "Thanks"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/friends",
+          "inNav": true,
+          "text": "Friends"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/places",
+          "inNav": true,
+          "text": "Places"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/calendar",
+          "inNav": true,
+          "text": "Calendar"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/matthewcoxetc/",
+          "inNav": true,
+          "text": "Instagram"
+        },
+        {
+          "href": "https://www.matthewcox.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/collections",
+          "inNav": true,
+          "text": "Collections"
+        },
+        {
+          "href": "mailto:studio@matthewcox.com",
+          "inNav": false,
+          "text": "studio@matthewcox.com"
+        },
+        {
+          "href": "tel:+441780481092",
+          "inNav": false,
+          "text": "+44 (0)1780 481092"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table?variant=53633936982240",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/taking-shape-casting-the-fire-table",
+          "inNav": false,
+          "text": "Taking shape – casting the fire table"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/superior-scaffolding",
+          "inNav": false,
+          "text": "Superior scaffolding"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/upholding-traditions-at-kettles-yard",
+          "inNav": false,
+          "text": "Conserving the way we see things at Kettle's Yard"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/woodland-heritage-open-workshop-2026",
+          "inNav": false,
+          "text": "Wonderful things happen when we open doors"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/study-one-the-peacock-garden-seat",
+          "inNav": false,
+          "text": "Study one | the peacock garden seat"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/nature-as-inspiration",
+          "inNav": false,
+          "text": "Nature as Inspiration"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/a-moment-in-time",
+          "inNav": false,
+          "text": "A moment in time for British timber"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/you-re-hired",
+          "inNav": false,
+          "text": "You're hired"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/what-necessity-is",
+          "inNav": false,
+          "text": "What necessity is"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/it-all-lines-up",
+          "inNav": false,
+          "text": "Everything lines up"
+        },
+        {
+          "href": "https://www.matthewcox.com/search",
+          "inNav": true,
+          "text": "Search"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/subscribe",
+          "inNav": true,
+          "text": "Subscribe"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/terms-of-service",
+          "inNav": true,
+          "text": "T&C's"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/privacy-policy",
+          "inNav": true,
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "https://www.studiograft.co.uk/",
+          "inNav": true,
+          "text": "Site by"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-vesper-light",
+          "inNav": false,
+          "text": "The vesper light"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3872",
+          "inNav": false,
+          "text": "The milk table | 3872"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-newlight-mirror",
+          "inNav": false,
+          "text": "The newlight mirror"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-form-lamp-cylinder",
+          "inNav": false,
+          "text": "The form lamp | cylinder"
+        }
+      ]
+    },
+    {
+      "name": "ft-bespoke-portfolio",
+      "url": "https://www.ftbespoke.co.uk/portfolio/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/ft-bespoke-portfolio-desktop-first.png",
+        "desktopFull": ".design/research/references/ft-bespoke-portfolio-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.ftbespoke.co.uk/portfolio/",
+      "title": "Portfolio – FT BESPOKE",
+      "dom": {
+        "textLength": 239,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 64,
+        "std": 46.2,
+        "edge": 35.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/#content",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/about/",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/",
+          "inNav": true,
+          "text": "Portfolio"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/contact/",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY0OSIsInRvZ2dsZSI6ZmFsc2V9",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bratton-kitchen/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-furniture/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/edington-office/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/libraries/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/bedrooms/",
+          "inNav": false,
+          "text": "View Projects"
+        },
+        {
+          "href": "https://www.instagram.com/ftbespokefurniture/",
+          "inNav": true,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "ft-bespoke-bratton-kitchen",
+      "url": "https://www.ftbespoke.co.uk/bratton-kitchen/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/ft-bespoke-bratton-kitchen-desktop-first.png",
+        "desktopFull": ".design/research/references/ft-bespoke-bratton-kitchen-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.ftbespoke.co.uk/kitchens/",
+      "title": "Kitchens – FT BESPOKE",
+      "dom": {
+        "textLength": 97,
+        "mediaCount": 2,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 45,
+        "std": 68.9,
+        "edge": 35.9,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.ftbespoke.co.uk/kitchens/#content",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/about/",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/portfolio/",
+          "inNav": true,
+          "text": "Portfolio"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/contact/",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/kitchens/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjY0OSIsInRvZ2dsZSI6ZmFsc2V9",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/05/Sophie-Lenian_25.04.08_Kitchen-1small-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/05/Sophie-Lenian_25.04.08_Kitchen-2-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/05/Sophie-Lenian_25.04.08_Kitchen-7-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/11.11.24-FT-Kitchens-Shot-2-scaled.jpg",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/11.11.24-FT-Kitchens-Shot-3-scaled.jpg",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/11.11.24-FT-Kitchens-Shot-4-scaled.jpg",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/11.11.24-FT-Kitchens-Shot-5-scaled.jpg",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/fbe156d1-97a7-4244-ab92-5ab7476dd50c.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/9226e344-984b-4c72-b48d-97375ea34b21.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2025/01/8b225d6a-9ead-42f7-9d2c-db06f4806bbb.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/3P6A7379.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/3P6A7379-doors-open.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-9-008.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-16-013-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-11-026-doors-open-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-10-001-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-2-006-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.ftbespoke.co.uk/wp-content/uploads/2024/02/07.12.23-FT-Bespoke-Shot-22-001-scaled.webp",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.instagram.com/ftbespokefurniture/",
+          "inNav": true,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "matthew-cox-tables",
+      "url": "https://www.matthewcox.com/collections/tables",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/matthew-cox-tables-desktop-first.png",
+        "desktopFull": ".design/research/references/matthew-cox-tables-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.matthewcox.com/collections/tables",
+      "title": "Tables – Matthew Cox",
+      "dom": {
+        "textLength": 1546,
+        "mediaCount": 41,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 48,
+        "std": 69,
+        "edge": 23,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.matthewcox.com/collections/tables#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables#",
+          "inNav": true,
+          "text": "Made to Measure"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/all",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables",
+          "inNav": true,
+          "text": "Tables"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/seating",
+          "inNav": true,
+          "text": "Seating"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/storage",
+          "inNav": true,
+          "text": "Storage"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/lighting",
+          "inNav": true,
+          "text": "Lighting"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/mirrors",
+          "inNav": true,
+          "text": "Mirrors"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/finish-library",
+          "inNav": true,
+          "text": "Finish library"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/care-guides",
+          "inNav": true,
+          "text": "Care guides"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#seating",
+          "inNav": true,
+          "text": "Table / seating plans"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#furniture",
+          "inNav": true,
+          "text": "Furniture diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#lighting",
+          "inNav": true,
+          "text": "Lighting diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/bespoke",
+          "inNav": true,
+          "text": "Bespoke"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/commissioning",
+          "inNav": true,
+          "text": "Commissioning"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/making",
+          "inNav": true,
+          "text": "Making"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/delivery",
+          "inNav": true,
+          "text": "Delivery"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/faqs",
+          "inNav": true,
+          "text": "FAQs"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/history",
+          "inNav": true,
+          "text": "History"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/100-year-plan",
+          "inNav": true,
+          "text": "100 Year Plan"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/nature",
+          "inNav": true,
+          "text": "Nature"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/careers",
+          "inNav": true,
+          "text": "Careers"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/community",
+          "inNav": true,
+          "text": "Community"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/thanks",
+          "inNav": true,
+          "text": "Thanks"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/friends",
+          "inNav": true,
+          "text": "Friends"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/places",
+          "inNav": true,
+          "text": "Places"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/calendar",
+          "inNav": true,
+          "text": "Calendar"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/matthewcoxetc/",
+          "inNav": true,
+          "text": "Instagram"
+        },
+        {
+          "href": "https://www.matthewcox.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/collections",
+          "inNav": true,
+          "text": "Collections"
+        },
+        {
+          "href": "mailto:studio@matthewcox.com",
+          "inNav": false,
+          "text": "studio@matthewcox.com"
+        },
+        {
+          "href": "tel:+441780481092",
+          "inNav": false,
+          "text": "+44 (0)1780 481092"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables#ResultsList",
+          "inNav": false,
+          "text": "Skip to results list"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table?variant=53633936982240",
+          "inNav": false,
+          "text": "The fire table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table",
+          "inNav": false,
+          "text": "The fire table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-legacy-table-circular?variant=46011409629408",
+          "inNav": false,
+          "text": "The legacy table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-legacy-table-circular",
+          "inNav": false,
+          "text": "The legacy table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-cellar-table?variant=52916320567520",
+          "inNav": false,
+          "text": "The cellar table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-cellar-table",
+          "inNav": false,
+          "text": "The cellar table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-torii-shelves?variant=47609892634848",
+          "inNav": false,
+          "text": "The torii shelves"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-torii-shelves",
+          "inNav": false,
+          "text": "The torii shelves"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-socle-table?variant=42878270963936",
+          "inNav": false,
+          "text": "The socle table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-socle-table",
+          "inNav": false,
+          "text": "The socle table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3875?variant=52659984269536",
+          "inNav": false,
+          "text": "The milk table | 3875"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3875",
+          "inNav": false,
+          "text": "The milk table | 3875"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-legacy-table?variant=42878262673632",
+          "inNav": false,
+          "text": "The legacy table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-legacy-table",
+          "inNav": false,
+          "text": "The legacy table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table-circular?variant=42779000045792",
+          "inNav": false,
+          "text": "The fotheringhay table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table-circular",
+          "inNav": false,
+          "text": "The fotheringhay table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-torii-table?variant=42878283874528",
+          "inNav": false,
+          "text": "The torii table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-torii-table",
+          "inNav": false,
+          "text": "The torii table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-articulate-table?variant=43231190319328",
+          "inNav": false,
+          "text": "The articulate table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-articulate-table",
+          "inNav": false,
+          "text": "The articulate table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-living-island?variant=42878264115424",
+          "inNav": false,
+          "text": "The living island"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-living-island",
+          "inNav": false,
+          "text": "The living island"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-orangery-table?variant=42878253596896",
+          "inNav": false,
+          "text": "The orangery table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-orangery-table",
+          "inNav": false,
+          "text": "The orangery table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-crane-table?variant=44119783833824",
+          "inNav": false,
+          "text": "The crane table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-crane-table",
+          "inNav": false,
+          "text": "The crane table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3874?variant=52659984072928",
+          "inNav": false,
+          "text": "The milk table | 3874"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3874",
+          "inNav": false,
+          "text": "The milk table | 3874"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table?variant=42790303006944",
+          "inNav": false,
+          "text": "The fotheringhay table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table",
+          "inNav": false,
+          "text": "The fotheringhay table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-pyramid-table?variant=42790268698848",
+          "inNav": false,
+          "text": "The pyramid table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-pyramid-table",
+          "inNav": false,
+          "text": "The pyramid table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-oxburgh-table?variant=42775247945952",
+          "inNav": false,
+          "text": "The oxburgh table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-oxburgh-table",
+          "inNav": false,
+          "text": "The oxburgh table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3873?variant=52659984007392",
+          "inNav": false,
+          "text": "The milk table | 3873"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3873",
+          "inNav": false,
+          "text": "The milk table | 3873"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-plenty-table?variant=43264161612000",
+          "inNav": false,
+          "text": "The plenty table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-plenty-table",
+          "inNav": false,
+          "text": "The plenty table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3872?variant=52659983909088",
+          "inNav": false,
+          "text": "The milk table | 3872"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3872",
+          "inNav": false,
+          "text": "The milk table | 3872"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-sawbuck-table?variant=42787782852832",
+          "inNav": false,
+          "text": "The sawbuck table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-sawbuck-table",
+          "inNav": false,
+          "text": "The sawbuck table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-reunion-table?variant=42790492373216",
+          "inNav": false,
+          "text": "The réunion table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-reunion-table",
+          "inNav": false,
+          "text": "The réunion table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-constant-table?variant=42790299238624",
+          "inNav": false,
+          "text": "The constant table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-constant-table",
+          "inNav": false,
+          "text": "The constant table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-raccolta-table?variant=42790370640096",
+          "inNav": false,
+          "text": "The raccolta table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-raccolta-table",
+          "inNav": false,
+          "text": "The raccolta table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-martello-table?variant=43205519966432",
+          "inNav": false,
+          "text": "The martello table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-martello-table",
+          "inNav": false,
+          "text": "The martello table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3876?variant=52659984335072",
+          "inNav": false,
+          "text": "The milk table | 3876"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3876",
+          "inNav": false,
+          "text": "The milk table | 3876"
+        },
+        {
+          "href": "https://www.matthewcox.com/search",
+          "inNav": true,
+          "text": "Search"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/subscribe",
+          "inNav": true,
+          "text": "Subscribe"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/terms-of-service",
+          "inNav": true,
+          "text": "T&C's"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/privacy-policy",
+          "inNav": true,
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "https://www.studiograft.co.uk/",
+          "inNav": true,
+          "text": "Site by"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-vesper-light",
+          "inNav": false,
+          "text": "The vesper light"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-newlight-mirror",
+          "inNav": false,
+          "text": "The newlight mirror"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-form-lamp-cylinder",
+          "inNav": false,
+          "text": "The form lamp | cylinder"
+        }
+      ]
+    },
+    {
+      "name": "matthew-cox-fire-table",
+      "url": "https://www.matthewcox.com/products/the-fire-table",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/matthew-cox-fire-table-desktop-first.png",
+        "desktopFull": ".design/research/references/matthew-cox-fire-table-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.matthewcox.com/products/the-fire-table",
+      "title": "The Fire Table | Matthew Cox",
+      "dom": {
+        "textLength": 2818,
+        "mediaCount": 47,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 42,
+        "std": 73.6,
+        "edge": 21.8,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table#",
+          "inNav": true,
+          "text": "Made to Measure"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/all",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables",
+          "inNav": true,
+          "text": "Tables"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/seating",
+          "inNav": true,
+          "text": "Seating"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/storage",
+          "inNav": true,
+          "text": "Storage"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/lighting",
+          "inNav": true,
+          "text": "Lighting"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/mirrors",
+          "inNav": true,
+          "text": "Mirrors"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/finish-library",
+          "inNav": true,
+          "text": "Finish library"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/care-guides",
+          "inNav": true,
+          "text": "Care guides"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#seating",
+          "inNav": true,
+          "text": "Table / seating plans"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#furniture",
+          "inNav": true,
+          "text": "Furniture diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#lighting",
+          "inNav": true,
+          "text": "Lighting diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/bespoke",
+          "inNav": true,
+          "text": "Bespoke"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/commissioning",
+          "inNav": true,
+          "text": "Commissioning"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/making",
+          "inNav": true,
+          "text": "Making"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/delivery",
+          "inNav": true,
+          "text": "Delivery"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/faqs",
+          "inNav": true,
+          "text": "FAQs"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/history",
+          "inNav": true,
+          "text": "History"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/100-year-plan",
+          "inNav": true,
+          "text": "100 Year Plan"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/nature",
+          "inNav": true,
+          "text": "Nature"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/careers",
+          "inNav": true,
+          "text": "Careers"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/community",
+          "inNav": true,
+          "text": "Community"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/thanks",
+          "inNav": true,
+          "text": "Thanks"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/friends",
+          "inNav": true,
+          "text": "Friends"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/places",
+          "inNav": true,
+          "text": "Places"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/calendar",
+          "inNav": true,
+          "text": "Calendar"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/matthewcoxetc/",
+          "inNav": true,
+          "text": "Instagram"
+        },
+        {
+          "href": "https://www.matthewcox.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/collections",
+          "inNav": true,
+          "text": "Collections"
+        },
+        {
+          "href": "mailto:studio@matthewcox.com",
+          "inNav": false,
+          "text": "studio@matthewcox.com"
+        },
+        {
+          "href": "tel:+441780481092",
+          "inNav": false,
+          "text": "+44 (0)1780 481092"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table#ProductInformation-template--21755216068832__main",
+          "inNav": false,
+          "text": "Skip to product information"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table?variant=53633936982240",
+          "inNav": false,
+          "text": "The fire table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table#contact",
+          "inNav": false,
+          "text": "Get in touch"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table#info",
+          "inNav": false,
+          "text": "More details"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-articulate-table?variant=43231190319328",
+          "inNav": false,
+          "text": "The articulate table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-articulate-table?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=7789951779040&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The articulate table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table?variant=42790303006944",
+          "inNav": false,
+          "text": "The fotheringhay table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=7573534212320&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The fotheringhay table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-orangery-table?variant=42878253596896",
+          "inNav": false,
+          "text": "The orangery table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-orangery-table?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=7573535654112&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The orangery table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-cellar-table?variant=52916320567520",
+          "inNav": false,
+          "text": "The cellar table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-cellar-table?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=9789894099168&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The cellar table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table-circular?variant=42779000045792",
+          "inNav": false,
+          "text": "The fotheringhay table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fotheringhay-table-circular?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=7573534540000&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The fotheringhay table (circular)"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-martello-table?variant=43205519966432",
+          "inNav": false,
+          "text": "The martello table"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-martello-table?pr_prod_strat=collection_fallback&pr_rec_id=1ba4ac70b&pr_rec_pid=7783298105568&pr_ref_pid=9945618350304&pr_seq=uniform",
+          "inNav": false,
+          "text": "The martello table"
+        },
+        {
+          "href": "https://www.matthewcox.com/search",
+          "inNav": true,
+          "text": "Search"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/subscribe",
+          "inNav": true,
+          "text": "Subscribe"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/terms-of-service",
+          "inNav": true,
+          "text": "T&C's"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/privacy-policy",
+          "inNav": true,
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "https://www.studiograft.co.uk/",
+          "inNav": true,
+          "text": "Site by"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-vesper-light",
+          "inNav": false,
+          "text": "The vesper light"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3872",
+          "inNav": false,
+          "text": "The milk table | 3872"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-newlight-mirror",
+          "inNav": false,
+          "text": "The newlight mirror"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-form-lamp-cylinder",
+          "inNav": false,
+          "text": "The form lamp | cylinder"
+        }
+      ]
+    },
+    {
+      "name": "anka-bespoke-projects",
+      "url": "https://ankabespoke.co.uk/projects",
+      "status": "fail",
+      "reasons": [
+        "page.goto: Timeout 45000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://ankabespoke.co.uk/projects\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ],
+      "files": {},
+      "pageType": "inner"
+    },
+    {
+      "name": "anka-bespoke-liquid-metal",
+      "url": "https://ankabespoke.co.uk/product/metal",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "inner",
+      "finalUrl": "https://ankabespoke.co.uk/product/metal",
+      "title": "Anka",
+      "dom": {
+        "textLength": 6408,
+        "mediaCount": 89,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "dis-mebel-portfolio",
+      "url": "https://dis-mebel.ru/portfolio.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/dis-mebel-portfolio-desktop-first.png",
+        "desktopFull": ".design/research/references/dis-mebel-portfolio-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://dis-mebel.ru/portfolio.html",
+      "title": "Портфолио — ДИС-Мебель",
+      "dom": {
+        "textLength": 2171,
+        "mediaCount": 26,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 40,
+        "std": 59.8,
+        "edge": 24.8,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://dis-mebel.ru/index.html",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://dis-mebel.ru/about.html",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://dis-mebel.ru/production.html",
+          "inNav": true,
+          "text": "Производство"
+        },
+        {
+          "href": "https://dis-mebel.ru/contacts.html",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "tel:+79262117676",
+          "inNav": true,
+          "text": "+7 926 211 76 76"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-felt-office",
+          "inNav": false,
+          "text": "11 фотоКоммерческие интерьерыФетр в интерьере офиса"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-naberezhnaya",
+          "inNav": false,
+          "text": "22 фотоКоммерческие интерьерыОфис на набережной"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-tryumo-spalnya",
+          "inNav": false,
+          "text": "4 фотоЧастные интерьерыТрюмо в спальне"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-it-1",
+          "inNav": false,
+          "text": "17 фотоКоммерческие интерьерыОфис IT-компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-apart",
+          "inNav": false,
+          "text": "29 фотоКоммерческие интерьерыОфис в Москва-Сити"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive-stol-logo",
+          "inNav": false,
+          "text": "7 фотоЭксклюзивСтол с логотипом заказчика"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-akrexin",
+          "inNav": false,
+          "text": "6 фотоКоммерческие интерьерыWelkom-зона компании «Акрехин»"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-mos-kv-1",
+          "inNav": false,
+          "text": "21 фотоЧастные интерьерыКвартира, Москва"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-dom-mo-1",
+          "inNav": false,
+          "text": "6 фотоЧастные интерьерыЧастный дом, М.О. (интерьер второй очереди)"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-astra",
+          "inNav": false,
+          "text": "5 фотоКоммерческие интерьерыОфис «Астра»"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-agency",
+          "inNav": false,
+          "text": "8 фотоКоммерческие интерьерыМаркетинговое агентство"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive-paradnay",
+          "inNav": false,
+          "text": "2 фотоЭксклюзив4 подъезда в дереве"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive-resep-1",
+          "inNav": false,
+          "text": "2 фотоЭксклюзивРесепшен в металле и дереве"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-siti-cafe",
+          "inNav": false,
+          "text": "12 фотоКоммерческие интерьеры«СберСити» — зона кафе"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-top-floor",
+          "inNav": false,
+          "text": "14 фотоКоммерческие интерьерыVIP этаж"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-mos-kv-relef",
+          "inNav": false,
+          "text": "7 фотоЧастные интерьерыСтеновая панель из массива с рельефом"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive-dinosaur",
+          "inNav": false,
+          "text": "1 фотоЭксклюзивВходная группа с металлическим динозавром"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-mos-kv",
+          "inNav": false,
+          "text": "5 фотоЧастные интерьерыКвартира — Москва (студия)"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-massiv-vin",
+          "inNav": false,
+          "text": "7 фотоЧастные интерьерыДом М.О. — мебель из массива"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive-iceberg",
+          "inNav": false,
+          "text": "2 фотоЭксклюзивРесепшен «Айсберг»"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial-ofis",
+          "inNav": false,
+          "text": "3 фотоКоммерческие интерьерыБольшая переговорная"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private-dom-mo-2",
+          "inNav": false,
+          "text": "6 фотоЧастные интерьерыЧастный дом, М.О."
+        },
+        {
+          "href": "https://dis-mebel.ru/privacy.html",
+          "inNav": false,
+          "text": "Политикой конфиденциальности"
+        },
+        {
+          "href": "mailto:info@dis-mebel.ru",
+          "inNav": true,
+          "text": "info@dis-mebel.ru"
+        },
+        {
+          "href": "https://t.me/Stepanov_AD",
+          "inNav": true,
+          "text": "Telegram"
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOLq86pmEeeYbAQl9GqkvS3go059JaM9P2FzO3t9Pi3uM_uByjI",
+          "inNav": true,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "name": "dis-mebel-production",
+      "url": "https://dis-mebel.ru/production.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/dis-mebel-production-desktop-first.png",
+        "desktopFull": ".design/research/references/dis-mebel-production-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://dis-mebel.ru/production.html",
+      "title": "Производство — ДИС-Мебель",
+      "dom": {
+        "textLength": 1892,
+        "mediaCount": 5,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 20,
+        "std": 31.2,
+        "edge": 10.8,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://dis-mebel.ru/index.html",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://dis-mebel.ru/about.html",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://dis-mebel.ru/production.html",
+          "inNav": true,
+          "text": "Производство"
+        },
+        {
+          "href": "https://dis-mebel.ru/contacts.html",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "tel:+79262117676",
+          "inNav": true,
+          "text": "+7 926 211 76 76"
+        },
+        {
+          "href": "https://dis-mebel.ru/privacy.html",
+          "inNav": true,
+          "text": "Политика конфиденциальности"
+        },
+        {
+          "href": "mailto:info@dis-mebel.ru",
+          "inNav": true,
+          "text": "info@dis-mebel.ru"
+        },
+        {
+          "href": "https://t.me/Stepanov_AD",
+          "inNav": true,
+          "text": "Telegram"
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOLq86pmEeeYbAQl9GqkvS3go059JaM9P2FzO3t9Pi3uM_uByjI",
+          "inNav": true,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "name": "london-furniture-studio-projects",
+      "url": "https://www.londonfurniturestudio.com/projects",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/london-furniture-studio-projects-desktop-first.png",
+        "desktopFull": ".design/research/references/london-furniture-studio-projects-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.londonfurniturestudio.com/projects",
+      "title": "Projects — London Furniture Studio",
+      "dom": {
+        "textLength": 1176,
+        "mediaCount": 14,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 65,
+        "std": 79.5,
+        "edge": 39.2,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.londonfurniturestudio.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/who-we-are",
+          "inNav": true,
+          "text": "Who We Are"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/what-we-do",
+          "inNav": true,
+          "text": "What We Do"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/projects",
+          "inNav": true,
+          "text": "Projects"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "mailto:info@londonfurniturestudio.com",
+          "inNav": true,
+          "text": "info@londonfurniturestudio.com"
+        },
+        {
+          "href": "tel:+442080505843",
+          "inNav": true,
+          "text": "020 8050 5843"
+        },
+        {
+          "href": "https://www.instagram.com/londonfurniturestudio/",
+          "inNav": true,
+          "text": "@londonfurniturestudio"
+        }
+      ]
+    },
+    {
+      "name": "london-furniture-studio-what-we-do",
+      "url": "https://www.londonfurniturestudio.com/what-we-do",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "desktopFirst": ".design/research/references/london-furniture-studio-what-we-do-desktop-first.png",
+        "desktopFull": ".design/research/references/london-furniture-studio-what-we-do-desktop-full.png"
+      },
+      "pageType": "inner",
+      "finalUrl": "https://www.londonfurniturestudio.com/what-we-do",
+      "title": "What We Do — London Furniture Studio",
+      "dom": {
+        "textLength": 1467,
+        "mediaCount": 3,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 27,
+        "std": 97.9,
+        "edge": 17.6,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.londonfurniturestudio.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/who-we-are",
+          "inNav": true,
+          "text": "Who We Are"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/what-we-do",
+          "inNav": true,
+          "text": "What We Do"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/projects",
+          "inNav": true,
+          "text": "Projects"
+        },
+        {
+          "href": "https://www.londonfurniturestudio.com/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "mailto:info@londonfurniturestudio.com",
+          "inNav": true,
+          "text": "info@londonfurniturestudio.com"
+        },
+        {
+          "href": "tel:+442080505843",
+          "inNav": true,
+          "text": "020 8050 5843"
+        },
+        {
+          "href": "https://www.instagram.com/londonfurniturestudio/",
+          "inNav": true,
+          "text": "@londonfurniturestudio"
+        }
+      ]
+    }
+  ]
+}

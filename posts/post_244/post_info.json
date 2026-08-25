@@ -1,0 +1,58 @@
+{
+  "post_id": "244",
+  "order_index": 11,
+  "permalink": "https://vk.ru/wall-215942650_244",
+  "date": {
+    "raw": "15 апр",
+    "formatted": "15 апреля 2026",
+    "iso": "2026-04-15",
+    "year": 2026
+  },
+  "text": "Кухня с фасадами МДФ ПВХцвет кашемир серыйстолешница Slotex Ручки и фартук заказчика пока не куплены #кухня #кухняспб #кухняназаказ #мебельназаказспб #питермебель",
+  "hashtags": [
+    "#кухня",
+    "#кухняспб",
+    "#кухняназаказ",
+    "#мебельназаказспб",
+    "#питермебель"
+  ],
+  "photos_count": 3,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_244/photo_1.jpg",
+      "source_url": "https://sun9-76.vkuserphoto.ru/s/v1/ig2/pCZn5a3gEynO1fU1Z_FE3b82oRvx2xPZ25HbaQFL5dNcxkr3ztBH4AnWz_xddbF_kb1CL85_ppJv0wNZ1BP7Fe8x.jpg?quality=95&as=32x24%2C48x36%2C72x54%2C108x81%2C160x120%2C240x180%2C360x270%2C480x360%2C540x405%2C640x480%2C720x540%2C1080x810%2C1178x883&from=bu&u=7jJL3qsxFPurGPpg_YUlX3BK0EzKaCZRZhJL1wn5UMY&cs=1178x883",
+      "sha256": "9bf3f5824a77e35dfea81bbcb818a39fcb69a712c995c6b02e27e0bd0351cdfe",
+      "resolution": "1178x883",
+      "width": 1178,
+      "height": 883,
+      "format": "JPEG",
+      "bytes": 439466
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_244/photo_2.jpg",
+      "source_url": "https://sun9-67.vkuserphoto.ru/s/v1/ig2/kRI2Yn0ZSf3UOsxRooDl8ivCxNr_WhAwgk9_YSueUqfX31E0XqHWRCOk6_G6VmOCot9NbQHBWGPtfhg5xNLgJr-6.jpg?quality=95&as=32x23%2C48x35%2C72x52%2C108x79%2C160x117%2C240x175%2C360x263%2C480x350%2C540x394%2C640x467%2C720x525%2C1080x788%2C1208x881&from=bu&u=1vFFoJJJJ_xoI3h6LbZchYLoz20qbSpjauSEDPGBFmA&cs=1208x881",
+      "sha256": "d011f8f13478708b993a7f42cbf824feac0f4f1d41a51dddb8da8c2628983c25",
+      "resolution": "1208x881",
+      "width": 1208,
+      "height": 881,
+      "format": "JPEG",
+      "bytes": 527568
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "posts/post_244/photo_3.jpg",
+      "source_url": "https://sun9-6.vkuserphoto.ru/s/v1/ig2/493dz93jQ92sGUn-KjvPm7JKbnhCEYIhvfP7uoYr9BHjJImNVoumkMhSP47Lx0GGW2JL0DqfJFX4Lx_UQZUTtHEf.jpg?quality=95&as=32x24%2C48x36%2C72x54%2C108x81%2C160x120%2C240x180%2C360x270%2C480x360%2C540x405%2C640x480%2C720x540%2C1080x810%2C1240x930&from=bu&u=8eA8bw3dkoPst0dYY4cjjqmc57UYVi_Cl5e6EB9zcts&cs=1240x930",
+      "sha256": "c39af867809d243f51204be57dac3927651f258d1292618b5dc99550f215e0ab",
+      "resolution": "1240x930",
+      "width": 1240,
+      "height": 930,
+      "format": "JPEG",
+      "bytes": 476392
+    }
+  ]
+}

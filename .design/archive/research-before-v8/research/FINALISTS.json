@@ -1,0 +1,40 @@
+{
+  "finalists": [
+    {
+      "name": "Jack Trench",
+      "domain": "jacktrench.co.uk",
+      "role": "visual-anchor",
+      "lane": "market",
+      "relevance": "same-niche",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "На главной, в портфолио, продуктовой серии и mobile повторяется единая спокойная система крупных интерьерных фотографий, белого поля и компактной навигации."
+    },
+    {
+      "name": "DIS Мебель",
+      "domain": "dis-mebel.ru",
+      "role": "commercial-ux",
+      "lane": "market",
+      "relevance": "same-niche",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "На русскоязычных кадрах оффер, портфолио, объяснение производства и заметные действия образуют понятный маршрут от интереса к обращению."
+    },
+    {
+      "name": "De La Espada",
+      "domain": "delaespada.com",
+      "role": "product-system",
+      "lane": "product-craft",
+      "relevance": "adjacent-product",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "Каталог и карточка предмета показывают последовательную продуктовую систему: вариативная фотосъёмка, название, цена, описание и материалы читаются как один сценарий."
+    },
+    {
+      "name": "Destroyers / Builders",
+      "domain": "destroyersbuilders.com",
+      "role": "art-direction",
+      "lane": "curated",
+      "relevance": "adjacent-craft",
+      "coverage": ["home", "listing", "detail", "mobile"],
+      "observedReason": "Главная, сетка проектов, отдельный проект и mobile сохраняют материальный характер через крупные предметные кадры, тишину полей и простую служебную типографику."
+    }
+  ]
+}

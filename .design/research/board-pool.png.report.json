@@ -1,0 +1,57 @@
+{
+  "board": ".design/research/board-pool.png",
+  "source": ".design/research/references/captures.json",
+  "pageType": "home",
+  "variant": "desktopFirst",
+  "count": 8,
+  "items": [
+    {
+      "name": "anka-bespoke",
+      "pageType": "home",
+      "file": ".design/research/references/anka-bespoke-desktop-first.png",
+      "finalUrl": "https://ankabespoke.co.uk/"
+    },
+    {
+      "name": "dis-mebel",
+      "pageType": "home",
+      "file": ".design/research/references/dis-mebel-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/"
+    },
+    {
+      "name": "deniart",
+      "pageType": "home",
+      "file": ".design/research/references/deniart-desktop-first.png",
+      "finalUrl": "https://deniart.design/"
+    },
+    {
+      "name": "de-atelier",
+      "pageType": "home",
+      "file": ".design/research/references/de-atelier-desktop-first.png",
+      "finalUrl": "https://de-atelier.ru/"
+    },
+    {
+      "name": "ft-bespoke",
+      "pageType": "home",
+      "file": ".design/research/references/ft-bespoke-desktop-first.png",
+      "finalUrl": "https://www.ftbespoke.co.uk/"
+    },
+    {
+      "name": "london-furniture-studio",
+      "pageType": "home",
+      "file": ".design/research/references/london-furniture-studio-desktop-first.png",
+      "finalUrl": "https://www.londonfurniturestudio.com/"
+    },
+    {
+      "name": "sterox-studio",
+      "pageType": "home",
+      "file": ".design/research/references/sterox-studio-desktop-first.png",
+      "finalUrl": "https://steroxstudio.co.uk/"
+    },
+    {
+      "name": "matthew-cox",
+      "pageType": "home",
+      "file": ".design/research/references/matthew-cox-desktop-first.png",
+      "finalUrl": "https://www.matthewcox.com/"
+    }
+  ]
+}

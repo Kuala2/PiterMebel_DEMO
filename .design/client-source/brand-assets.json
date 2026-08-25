@@ -1,0 +1,33 @@
+{
+  "readiness": "READY",
+  "updated": "2026-08-23",
+  "identity": {
+    "wordMark": "ПитерМебель",
+    "legalName": "Питермебель Волкова-ИП (ИП Волкова Е. А.)",
+    "contact": "Елена Волкова",
+    "city": "Санкт-Петербург",
+    "since": "2005"
+  },
+  "assets": [
+    {
+      "path": "brand/logo_avatar.jpg",
+      "type": "avatar/wordmark",
+      "size": "360×360",
+      "note": "официальный аватар сообщества ПитерМебель (логотип/эмблема на тёмном фоне)",
+      "sha256": "202d645e6e7f3c78427d654a08cf7316dac97a83a8f524b23f80d43314f62cc7"
+    },
+    {
+      "path": "brand/banner_cover.jpg",
+      "type": "community-cover",
+      "size": "1920×768",
+      "note": "рекламная обложка VK; разовое оформление, сознательно не переносится"
+    },
+    {
+      "path": "brand/brand_info.json",
+      "type": "metadata",
+      "size": "—",
+      "note": "реквизиты, контакты, SHA-256, evidence_sources"
+    }
+  ],
+  "brandTreatmentForDirection": "EVOLVE во всех трёх направлениях: сохраняется словесный знак и тёплый/material характер реальных работ; VK-обложка и аватар не воспроизводятся, логотип не перерисовывается."
+}

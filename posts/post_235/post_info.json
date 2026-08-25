@@ -1,0 +1,73 @@
+{
+  "post_id": "235",
+  "order_index": 15,
+  "permalink": "https://vk.ru/wall-215942650_235",
+  "date": {
+    "raw": "29 окт 2025",
+    "formatted": "29 октября 2025",
+    "iso": "2025-10-29",
+    "year": 2025
+  },
+  "text": "Красивая П-образная кухня в теплом бежевом цвете- заказчики скурпулёзно ко всему подошли -выбор цвета, стёкол, 4линии подсветки, подъёмники 2-ого сложения, нашли и выкупили красивые ручки -у нас всё получилось как было задумано  #кухня #кухняназаказ #питермебель #кухняспб #питеркухня #производствомебели #производстовомебелиспб #мебельнахаказспб",
+  "hashtags": [
+    "#кухня",
+    "#кухняназаказ",
+    "#питермебель",
+    "#кухняспб",
+    "#питеркухня",
+    "#производствомебели",
+    "#производстовомебелиспб",
+    "#мебельнахаказспб"
+  ],
+  "photos_count": 4,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_235/photo_1.jpg",
+      "source_url": "https://sun9-40.vkuserphoto.ru/s/v1/ig2/Vyg9df2t3YIloj3IrRFAjN3dSHVy8z_Oj7RkU39JKtLB2PCfU5eS56Ur4EELmblKZ5z-lUXD68meylSleJEU4yGO.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=g0gsr2vE5ldzjAl6Cfst_PXWJ8AZN1uGGNisjLBxqyU&cs=720x1600",
+      "sha256": "9bdb5864372a8766a4b4a0451deb1178715fba64d5f1370d4acacc614aa89af1",
+      "resolution": "720x1600",
+      "width": 720,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 280902
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_235/photo_2.jpg",
+      "source_url": "https://sun9-63.vkuserphoto.ru/s/v1/ig2/x8jTmR-2K3IMizJTx1CEbnVzQXkDc_4yd5JgYhaEpJxFoCaEU70f7kg3408EgEQ0LWJBl402bga4Tahbl8F2egWT.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=mr7WZJtMidH7xjvIFO5BaoBwGXdz_gn6L7XOwNs0rcY&cs=720x1600",
+      "sha256": "7b20b6dfee49f326155c1611e11ac6338f0345d32632c5873c1a20160b8f8563",
+      "resolution": "720x1600",
+      "width": 720,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 224805
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "posts/post_235/photo_3.jpg",
+      "source_url": "https://sun9-69.vkuserphoto.ru/s/v1/ig2/XcmlVrrSkG3OagWAQcnVqp6AwFlZwM52OtVooxlk9khomeJfHRiNRKIgSGrio4O5b3jp8nHPziwjSaN2jMsG72Xz.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=jggf1OQ1UczcIWC5V2DYhRljNCw1G1g8MZ_9cJfpWLM&cs=720x1600",
+      "sha256": "f7c5d567406938c3ba747df8e0c2228a6c4e390801755e5a4054fd4c1879d28e",
+      "resolution": "720x1600",
+      "width": 720,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 235387
+    },
+    {
+      "photo_index": 4,
+      "filename": "photo_4.jpg",
+      "local_path": "posts/post_235/photo_4.jpg",
+      "source_url": "https://sun9-34.vkuserphoto.ru/s/v1/ig2/LN7d3b1av_GX2NlzZ7STyH9vQ0beyKA3PsggguDOQapX0YeQgpvrxWmPDfkgfDP3my6LqMNHovN4O6jC47BdHN7-.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=f2xXQY8sf-LrGU4_vCdnha6Y7nKhVdB5qSxFLizseEo&cs=720x1600",
+      "sha256": "49f51eb1880d9828251d821ab96a6d99febd07a30dd810b78cdd12c5b48c857c",
+      "resolution": "720x1600",
+      "width": 720,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 243197
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "board": ".design/research/board-finalists-deep.png",
+  "source": ".design/research/references/captures.json",
+  "pageType": "inner",
+  "variant": "desktopFirst",
+  "count": 8,
+  "items": [
+    {
+      "name": "jack-trench-work",
+      "pageType": "inner",
+      "file": ".design/research/references/jack-trench-work-desktop-first.png",
+      "finalUrl": "https://www.jacktrench.co.uk/our-work"
+    },
+    {
+      "name": "jack-trench-curvilinear",
+      "pageType": "inner",
+      "file": ".design/research/references/jack-trench-curvilinear-desktop-first.png",
+      "finalUrl": "https://www.jacktrench.co.uk/kitchens-jt-curvilinear"
+    },
+    {
+      "name": "dis-mebel-portfolio",
+      "pageType": "inner",
+      "file": ".design/research/references/dis-mebel-portfolio-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/portfolio.html"
+    },
+    {
+      "name": "dis-mebel-production",
+      "pageType": "inner",
+      "file": ".design/research/references/dis-mebel-production-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/production.html"
+    },
+    {
+      "name": "de-la-espada-products",
+      "pageType": "inner",
+      "file": ".design/research/references/de-la-espada-products-desktop-first.png",
+      "finalUrl": "https://delaespada.com/collections/all"
+    },
+    {
+      "name": "de-la-espada-albireo",
+      "pageType": "inner",
+      "file": ".design/research/references/de-la-espada-albireo-desktop-first.png",
+      "finalUrl": "https://delaespada.com/collections/all/products/182-albireo-sofa-system"
+    },
+    {
+      "name": "destroyers-builders-projects",
+      "pageType": "inner",
+      "file": ".design/research/references/destroyers-builders-projects-desktop-first.png",
+      "finalUrl": "https://destroyersbuilders.com/projects/"
+    },
+    {
+      "name": "destroyers-builders-fluid",
+      "pageType": "inner",
+      "file": ".design/research/references/destroyers-builders-fluid-desktop-first.png",
+      "finalUrl": "https://destroyersbuilders.com/project/fluid-re-collection-milan-design-week-10-corso-como/"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "yanina-mebel",
+    "url": "https://yaninamebel.ru/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "tiptop-mebel",
+    "url": "https://tiptopmebel.ru/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "jack-trench",
+    "url": "https://www.jacktrench.co.uk/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "freeborn-carpentry",
+    "url": "https://www.freeborn-carpentry.co.uk/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "module",
+    "url": "https://moduleinc.com/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "tamart",
+    "url": "https://www.tamartdesign.com/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "gabriel-tan",
+    "url": "https://www.gabriel-tan.com/",
+    "pageType": "home",
+    "mobile": true
+  },
+  {
+    "name": "bodo-sperlein",
+    "url": "https://www.bodosperlein.com/home",
+    "pageType": "home",
+    "mobile": true
+  }
+]

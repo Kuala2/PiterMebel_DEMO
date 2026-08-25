@@ -1,0 +1,18 @@
+[
+  {"name":"dis-mebel","url":"https://dis-mebel.ru/","pageType":"home","mobile":true},
+  {"name":"santafiore","url":"https://santafiore.ru/","pageType":"home","mobile":true},
+  {"name":"jack-trench","url":"https://www.jacktrench.co.uk/","pageType":"home","mobile":true},
+  {"name":"freeborn-carpentry","url":"https://www.freeborn-carpentry.co.uk/","pageType":"home","mobile":true},
+  {"name":"de-la-espada","url":"https://delaespada.com/","pageType":"home","mobile":true},
+  {"name":"arthur-vallin","url":"https://www.arthurvallin.com/","pageType":"home","mobile":true},
+  {"name":"sabine-marcelis","url":"https://sabinemarcelis.com/","pageType":"home","mobile":true},
+  {"name":"destroyers-builders","url":"https://destroyersbuilders.com/","pageType":"home","mobile":true},
+  {"name":"jack-trench-work","url":"https://www.jacktrench.co.uk/our-work","pageType":"inner","mobile":false},
+  {"name":"jack-trench-curvilinear","url":"https://www.jacktrench.co.uk/kitchens-jt-curvilinear","pageType":"inner","mobile":false},
+  {"name":"dis-mebel-portfolio","url":"https://dis-mebel.ru/portfolio.html","pageType":"inner","mobile":false},
+  {"name":"dis-mebel-production","url":"https://dis-mebel.ru/production.html","pageType":"inner","mobile":false},
+  {"name":"de-la-espada-products","url":"https://delaespada.com/collections/all","pageType":"inner","mobile":false},
+  {"name":"de-la-espada-albireo","url":"https://delaespada.com/collections/all/products/182-albireo-sofa-system","pageType":"inner","mobile":false},
+  {"name":"destroyers-builders-projects","url":"https://destroyersbuilders.com/projects/","pageType":"inner","mobile":false},
+  {"name":"destroyers-builders-fluid","url":"https://destroyersbuilders.com/project/fluid-re-collection-milan-design-week-10-corso-como/","pageType":"inner","mobile":false}
+]

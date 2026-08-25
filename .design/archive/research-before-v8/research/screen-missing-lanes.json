@@ -1,0 +1,12 @@
+[
+  {"name":"tpmeb","url":"https://tpmeb.ru/","pageType":"home","mobile":true},
+  {"name":"proektika","url":"https://proektika.pro/","pageType":"home","mobile":true},
+  {"name":"2furn","url":"https://2furn.ru/","pageType":"home","mobile":true},
+  {"name":"karlo","url":"https://karlo.su/","pageType":"home","mobile":true},
+  {"name":"de-la-espada","url":"https://delaespada.com/","pageType":"home","mobile":true},
+  {"name":"karimoku-case","url":"https://www.karimoku-case.com/","pageType":"home","mobile":true},
+  {"name":"joseph-walsh","url":"https://josephwalshstudio.com/","pageType":"home","mobile":true},
+  {"name":"arthur-vallin","url":"https://www.arthurvallin.com/","pageType":"home","mobile":true},
+  {"name":"ahu-studio","url":"https://www.ahustudio.com/","pageType":"home","mobile":true},
+  {"name":"katz-studio","url":"https://www.katz.studio/","pageType":"home","mobile":true}
+]

@@ -1,0 +1,60 @@
+{
+  "post_id": "233",
+  "order_index": 17,
+  "permalink": "https://vk.ru/wall-215942650_233",
+  "date": {
+    "raw": "14 окт 2025",
+    "formatted": "14 октября 2025",
+    "iso": "2025-10-14",
+    "year": 2025
+  },
+  "text": "Яркие краски не только за окном , но и у нас))Сочные цвета для фасадов МДФ эмаль в очень необычной планировке #кухня #кухняназаказ #питермебель #мебельназаказ #питеркухня #кухняназаказспб #кухняпитер",
+  "hashtags": [
+    "#кухня",
+    "#кухняназаказ",
+    "#питермебель",
+    "#мебельназаказ",
+    "#питеркухня",
+    "#кухняназаказспб",
+    "#кухняпитер"
+  ],
+  "photos_count": 3,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_233/photo_1.jpg",
+      "source_url": "https://sun9-1.vkuserphoto.ru/s/v1/ig2/9JMX6ocFQw0ErA5CHEKb7jkFo46Ph_mFUvYRbHfWrfH-ktB0-N3XLkefvWrQLo_1QB7T3VmR2Ryl-_9Xou-2YcNC.jpg?quality=95&as=32x57%2C48x85%2C72x128%2C108x192%2C160x284%2C240x427%2C360x640%2C480x853%2C540x960%2C640x1138%2C720x1280%2C1080x1920%2C1280x2276%2C1440x2560&from=bu&u=jkN4MgSSgdZhtA327xXvFe5jwvPHHu3wYivM8dkWbbE&cs=1440x2560",
+      "sha256": "0806149d1e53d66604fa6e05edbb8cbc7d33bf080a9dbb008ed1ab0e232e8a91",
+      "resolution": "1440x2560",
+      "width": 1440,
+      "height": 2560,
+      "format": "JPEG",
+      "bytes": 1801880
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_233/photo_2.jpg",
+      "source_url": "https://sun9-41.vkuserphoto.ru/s/v1/ig2/98y4QPc7av83gvTBcS5jzcTsKmopLWvzaRUg_5z02adVIcyZ-1SNeuEjut8oVbhWvwXx5Ef5e8Qrnfde-9zyoX8g.jpg?quality=95&as=32x57%2C48x85%2C72x128%2C108x192%2C160x284%2C240x427%2C360x640%2C480x853%2C540x960%2C640x1138%2C720x1280%2C1080x1920%2C1280x2276%2C1440x2560&from=bu&u=3dSwRKxw17XkftFIRn8dwbN3RmWFX1sQu-M5x4gNrFg&cs=1440x2560",
+      "sha256": "689d04eea82e946231a541b4399528d6f8bb978bbd1e07b7e0710ac9ab59a149",
+      "resolution": "1440x2560",
+      "width": 1440,
+      "height": 2560,
+      "format": "JPEG",
+      "bytes": 1980521
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "posts/post_233/photo_3.jpg",
+      "source_url": "https://sun9-71.vkuserphoto.ru/s/v1/ig2/VJkBjmhXW5YO7zkd5wKaOsnQLTp3fA3Ty6y3zT8ne76ZE-63OBnEmnz3lJX7kUc943_PAXnmT_uDl2dJ-sS-wBRD.jpg?quality=95&as=32x57%2C48x85%2C72x128%2C108x192%2C160x284%2C240x427%2C360x640%2C480x853%2C540x960%2C640x1138%2C720x1280%2C1080x1920%2C1280x2276%2C1440x2560&from=bu&u=8tQG_t9LGKt50GWVLXpTG083gf09Hd6C4H3Qel3NNOQ&cs=1440x2560",
+      "sha256": "5371ecefd79ff1d09ceff456c15b866f71c26094bd3ba9756ecb5c24dbe1a7ca",
+      "resolution": "1440x2560",
+      "width": 1440,
+      "height": 2560,
+      "format": "JPEG",
+      "bytes": 2197558
+    }
+  ]
+}

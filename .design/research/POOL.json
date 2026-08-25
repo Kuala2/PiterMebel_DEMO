@@ -1,0 +1,95 @@
+{
+  "stage": "research-pool",
+  "createdAt": "2026-08-23",
+  "selectionPolicy": "Exactly eight strongest clean-capture candidates selected by relevance and transferable visual mechanism; no geographic quotas.",
+  "candidates": [
+    {
+      "name": "DIS Мебель",
+      "domain": "dis-mebel.ru",
+      "url": "https://dis-mebel.ru/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос по производству мебели на заказ и портфолио; home и навигационные поверхности реально открыты.",
+      "observedFirstViewport": "Полноэкранный процессный кадр мастерской, крупный антиквенный тезис, два контрастных CTA и прозрачная навигационная полоса.",
+      "observedMobile": "Hero сохраняет смысловой кадр, заголовок перестраивается в короткие строки, действия идут вертикально, навигация сворачивается в burger.",
+      "internalRoutes": ["https://dis-mebel.ru/portfolio.html", "https://dis-mebel.ru/production.html"],
+      "transferableMechanism": "Связать ремесленный процесс с крупным обещанием и парой действий: консультация как primary, портфолио как secondary."
+    },
+    {
+      "name": "Deni-Art",
+      "domain": "deniart.design",
+      "url": "https://deniart.design/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос по дизайнерской мебели и кухням по индивидуальным проектам; home, portfolio и category routes реально открыты.",
+      "observedFirstViewport": "Строгая двухколоночная editorial-сетка, тонкие рамки, крупный антиквенный заголовок и ряд круглых быстрых входов вместо обычного hero-слайдера.",
+      "observedMobile": "Колонки превращаются в длинную последовательность: заголовок, горизонтальные быстрые входы и текст; тонкая рамочная система остаётся читаемой.",
+      "internalRoutes": ["https://deniart.design/proekty/", "https://deniart.design/kukhni/"],
+      "transferableMechanism": "Использовать рамочную editorial-сетку и компактные входы в доказательные разделы для тихой премиальной подачи без магазинной карточности."
+    },
+    {
+      "name": "De Atelier",
+      "domain": "de-atelier.ru",
+      "url": "https://de-atelier.ru/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос по мебели на заказ по дизайн-проектам; home, portfolio и service route реально открыты.",
+      "observedFirstViewport": "Полноэкранный интерьер под затемнением, крупный тезис слева и отдельная полупрозрачная карточка расчёта справа образуют ясную конверсионную диагональ.",
+      "observedMobile": "Тезис и карточка расчёта накладываются на разные зоны одного кадра, сохраняя и предметность, и коммерческий CTA без бокового переполнения.",
+      "internalRoutes": ["https://de-atelier.ru/portfolio", "https://de-atelier.ru/delivery"],
+      "transferableMechanism": "Отделять эмоциональное обещание от прагматичного следующего шага компактной стеклянной карточкой поверх единого интерьерного кадра."
+    },
+    {
+      "name": "FT Bespoke",
+      "domain": "ftbespoke.co.uk",
+      "url": "https://www.ftbespoke.co.uk/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос bespoke furniture studio portfolio; home, about и portfolio реально открыты на официальном сайте мастерской.",
+      "observedFirstViewport": "Почти безтекстовый полноэкранный интерьер делает готовую мебель единственным центром, а прозрачная шапка оставляет только три спокойных маршрута.",
+      "observedMobile": "Hero становится компактнее, затем сразу появляется центрированный манифест и спокойная кнопка About; контент не имитирует уменьшенный desktop.",
+      "internalRoutes": ["https://www.ftbespoke.co.uk/about/", "https://www.ftbespoke.co.uk/portfolio/"],
+      "transferableMechanism": "Давать фотографии результата максимум площади, а позиционирование и доказательства переносить в следующий белый editorial-блок."
+    },
+    {
+      "name": "Anka Bespoke",
+      "domain": "ankabespoke.co.uk",
+      "url": "https://ankabespoke.co.uk/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос по bespoke craft и specialist finishes; home, finishes и commissions portfolio реально открыты.",
+      "observedFirstViewport": "Экран разделён на две равные макрофотографии материала и детали предмета, каждая ведёт в отдельную смысловую ветку; логотип работает как центральный шов.",
+      "observedMobile": "Две медиаповерхности складываются вертикально, сохраняя собственные подписи и CTA; крупный бренд становится переходным маркером между ними.",
+      "internalRoutes": ["https://ankabespoke.co.uk/finishes", "https://ankabespoke.co.uk/projects"],
+      "transferableMechanism": "Разводить две ключевые компетенции через равноправный split-screen с макродеталью материала и предметной фотографией."
+    },
+    {
+      "name": "London Furniture Studio",
+      "domain": "londonfurniturestudio.com",
+      "url": "https://www.londonfurniturestudio.com/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос по bespoke cabinetry studio; home, studio story и services routes реально открыты.",
+      "observedFirstViewport": "Тёплая встроенная библиотека на весь экран, спокойный центрированный тезис и два равных действия удерживаются внутри тёмно-зелёной брендовой рамки.",
+      "observedMobile": "Медиа переходит в мягкий размытый фон, текст и две кнопки остаются отдельным контрастным центром, навигация сворачивается без потери бренда.",
+      "internalRoutes": ["https://www.londonfurniturestudio.com/who-we-are", "https://www.londonfurniturestudio.com/what-we-do"],
+      "transferableMechanism": "Строить hero как спокойную брендированную рамку вокруг одного качественного проекта и двух равноправных входов: работы и заявка."
+    },
+    {
+      "name": "Sterox Studio",
+      "domain": "steroxstudio.co.uk",
+      "url": "https://steroxstudio.co.uk/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос bespoke furniture studio London; текущий home и реальные внутренние studio/contact surfaces открыты.",
+      "observedFirstViewport": "Киношный архитектурный кадр с красной лаковой панелью, крупная смешанная serif/italic типографика и тонкая золотая навигация создают авторский craft-editorial тон.",
+      "observedMobile": "Кадр меняет фокус и цветовую драматургию, текст получает собственную нижнюю зону, CTA остаётся одним коротким маршрутом без перегруза.",
+      "internalRoutes": ["https://www.steroxstudio.co.uk/about", "https://www.steroxstudio.co.uk/contact"],
+      "transferableMechanism": "Соединять масштаб архитектуры и характер материала через последовательность атмосферных кадров, крупный тезис и один editorial-CTA."
+    },
+    {
+      "name": "Matthew Cox",
+      "domain": "matthewcox.com",
+      "url": "https://www.matthewcox.com/",
+      "sourceType": "organic web search",
+      "sourceDetail": "Запрос handcrafted furniture workshop; home, bespoke и commissioning routes реально открыты на официальном сайте.",
+      "observedFirstViewport": "Тихая журнальная шапка окружает огромный процессный кадр литейной мастерской; производство показано как источник ценности раньше продуктовой сетки.",
+      "observedMobile": "Шапка исчезает из первого кадра, процессное медиа становится высокой самостоятельной полосой с широкими белыми полями и без лишних наложений.",
+      "internalRoutes": ["https://www.matthewcox.com/pages/bespoke", "https://www.matthewcox.com/pages/commissioning"],
+      "transferableMechanism": "Открывать историю бренда честным процессным медиа, а навигацию и продуктовые категории подавать как спокойный музейный каталог."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "post_id": "238",
+  "order_index": 14,
+  "permalink": "https://vk.ru/wall-215942650_238",
+  "date": {
+    "raw": "2 мар",
+    "formatted": "2 марта 2026",
+    "iso": "2026-03-02",
+    "year": 2026
+  },
+  "text": "Детская изготовлена на заказ из материалов Эггер однотонный u705 ангора серая и древесный Н1386 дуб каселла коричневый По стоимости с доставкой и установкой =160тр#мебель #мебельотпроизводителя #мебельспб #мебельназаказспб #студиямебелиеленыволковой",
+  "hashtags": [
+    "#мебель",
+    "#мебельотпроизводителя",
+    "#мебельспб",
+    "#мебельназаказспб",
+    "#студиямебелиеленыволковой"
+  ],
+  "photos_count": 4,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_238/photo_1.jpg",
+      "source_url": "https://sun9-6.vkuserphoto.ru/s/v1/ig2/tv_AoiJQwEgB2mP3610APd06Kl97DyBJYK2lEJDaG6DzJGBS-e5LQiFMwE4o0C53ClSSxGNCQMS_BbsecwAxBZKC.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=vvLPWLHzMWu3rkl9RwnpU1o0MN4ZnSHs1Xolr0ZBKpQ&cs=960x1280",
+      "sha256": "06de89b3e4b6ce50f51157a8b5b2be04dab0c4643fb7bb608271defb9a40964f",
+      "resolution": "960x1280",
+      "width": 960,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 326955
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_238/photo_2.jpg",
+      "source_url": "https://sun9-21.vkuserphoto.ru/s/v1/ig2/wIYUkeLO6pbwDzDU2MEksvF5cSECEhD1_YHoMSb_SdxHHsq7G50-H3ldJwUadve688j1cP6PryoUqtsE4lpLy46B.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=UELZOLsTGNazqpNWvTtvRTC4Dd5keWltNno-4h_ubds&cs=960x1280",
+      "sha256": "5720e9f3a672c23975092998a174bf8168a2d872d98b41928a7b5c721f6b6a1e",
+      "resolution": "960x1280",
+      "width": 960,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 415552
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "posts/post_238/photo_3.jpg",
+      "source_url": "https://sun9-25.vkuserphoto.ru/s/v1/ig2/rpfyTWM4EbpdRkAzyIcQuglOITAkQcOru4gPmMtW1uw0W0I_iyOh0qgSAMfnG0pFZWNSIidPj_cQq1nx1XxvW-xt.jpg?quality=95&as=32x24%2C48x36%2C72x54%2C108x81%2C160x120%2C240x180%2C360x270%2C480x360%2C540x405%2C640x480%2C720x540%2C1080x810%2C1280x960&from=bu&u=i_xohc3Qq1PHDHbsJ3YFWe_mjPUz79Uvskw6iJGiZ0c&cs=1280x960",
+      "sha256": "bcf9e0214d6eb91c11ceacae6d884f2a25677eba1287ef40834c87e34f203ba1",
+      "resolution": "1280x960",
+      "width": 1280,
+      "height": 960,
+      "format": "JPEG",
+      "bytes": 385530
+    },
+    {
+      "photo_index": 4,
+      "filename": "photo_4.jpg",
+      "local_path": "posts/post_238/photo_4.jpg",
+      "source_url": "https://sun9-15.vkuserphoto.ru/s/v1/ig2/P64nXsIEcukNKPx3PjzScJ-1j8nGTVDBd8JuySpQ5_6LBRmdCWL8eaJ7DBAyHmotsXlHauhVeN163q39q6vrliu1.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=1-9C2VnMRkWEUJd6WanMMTtuQxcCu_J79SKeAlRYrL8&cs=960x1280",
+      "sha256": "cc68860817ddde1449e984e8b48c95ed73ac676d3a79366df15b1d1f2434ae9d",
+      "resolution": "960x1280",
+      "width": 960,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 353360
+    }
+  ]
+}

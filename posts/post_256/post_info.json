@@ -1,0 +1,47 @@
+{
+  "post_id": "256",
+  "order_index": 1,
+  "permalink": "https://vk.ru/wall-215942650_256",
+  "date": {
+    "raw": "6 авг",
+    "formatted": "6 августа 2026",
+    "iso": "2026-08-06",
+    "year": 2026
+  },
+  "text": "Зеркальный встроенный шкаф с нишей для обуви Изготовлен на заказ-чётко в размерРучки на торец#шкаф #шкафназаказ #шкафспб #мебельназаказспб #питермебель #студиямебелиеленыволковой",
+  "hashtags": [
+    "#шкаф",
+    "#шкафназаказ",
+    "#шкафспб",
+    "#мебельназаказспб",
+    "#питермебель",
+    "#студиямебелиеленыволковой"
+  ],
+  "photos_count": 2,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_256/photo_1.jpg",
+      "source_url": "https://sun1-91.vkuserphoto.ru/s/v1/ig2/E5y2q_0yYrlBsfFudScw5HAtlKsrLzQXIY4R81WoQYSjFEkgi-nKSOqDQewHxrqTFlYUahSQ1frE8aM0ubfZ22la.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=z46ybEnssNvcSCoeqPH5K0ZmNTs1obeRRf0E3XYYP-U&cs=1200x1600",
+      "sha256": "4aabd909153e6bf09fe4096efd40b89131ffd74b5c223c4af4d8da28d272525f",
+      "resolution": "1200x1600",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 523704
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_256/photo_2.jpg",
+      "source_url": "https://sun9-43.vkuserphoto.ru/s/v1/ig2/lv2d25Ql29B5MUbA4dGHn5EL0WeH71WKTGMr9W63WEscXc4DqKwXs-zoJ5LqIBpzZHR3Cv32UuDGU6Y8LfIzQ7p7.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=W1BtAW6AI7T_Mo_uRMNHY1L7nY8ajG5KUXnq8A8qtIs&cs=1200x1600",
+      "sha256": "de0c8012b01e47e727c218001f7d6221e7ba60364e8de3be5955ca25e508d3b1",
+      "resolution": "1200x1600",
+      "width": 1200,
+      "height": 1600,
+      "format": "JPEG",
+      "bytes": 564317
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "6902667",
+  "title": "Кухня Виктория",
+  "slug": "item_7_kukhnya_viktoria",
+  "category": "Кухни на заказ",
+  "price_rub": 4500000,
+  "price_formatted": "4 500 000 ₽",
+  "currency": "RUB",
+  "availability": "Под заказ",
+  "permalink": "https://vk.ru/market/product/kukhnya-viktoria-215942650-6902667",
+  "description_raw": "Красивая и нарядная кухня в беспроигрышном сочетании белых молочных фасадов и столешницы под дерево",
+  "specifications": {
+    "Особенности": [
+      "Красивая и нарядная кухня в беспроигрышном сочетании белых молочных фасадов и столешницы под дерево"
+    ]
+  },
+  "photos_count": 4,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "products/item_7_kukhnya_viktoria/photo_1.jpg",
+      "source_url": "https://sun9-21.vkuserphoto.ru/s/v1/ig2/3zNPDAh2-p9mAj8PF9t5EIWd048iK7SXFPBT606c-dFMxgo5FdonBHctj13z2qv5ekNtbBiludwECfTKiLSWrcta.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=PzoPex_rhupSMiw8BxcGbWHcSpjm0t7B3esYo_x5XjE&cs=640x640",
+      "sha256": "56a787ba18a43b210127c68ddcde5b71f41a3e9a4b01b579cbf9be9498640fb4",
+      "resolution": "640x640",
+      "width": 640,
+      "height": 640,
+      "format": "JPEG",
+      "bytes": 71790
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "products/item_7_kukhnya_viktoria/photo_2.jpg",
+      "source_url": "https://sun9-65.vkuserphoto.ru/s/v1/ig2/-UMksK47-1_N9OvYQfOu8rT2pHuPFAHE0fnFGua_BsZ45LtRzErwP0o0ZNdLkXW-G9KwujW-p1_a4tHRUvfjNp-M.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=1WAFqxWn5eknOExCfH3pG5Gx5w1YXouHiRhztm0eWdM&cs=640x640",
+      "sha256": "906a01070a271e8681354b535663adf9268f7c7285fb0260746125d96f0e64cb",
+      "resolution": "640x640",
+      "width": 640,
+      "height": 640,
+      "format": "JPEG",
+      "bytes": 70621
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "products/item_7_kukhnya_viktoria/photo_3.jpg",
+      "source_url": "https://sun9-57.vkuserphoto.ru/s/v1/ig2/sjq-uAQ2jdyzzmH6OEJJQXCJuuYpVqhp6fFjYhPbRSglBhP9LanALPBsMBZtRB2EQXFl0kL_cIYIIj2rnVAbvYm7.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=n7MfUB74tQDkXRuxQPNUo4SOX5vzr7IkcWg_zV210as&cs=640x640",
+      "sha256": "f8d22c223067dc5cddd3a15873802226950c8794d18e4d9ff3c83d73bb23cc41",
+      "resolution": "640x640",
+      "width": 640,
+      "height": 640,
+      "format": "JPEG",
+      "bytes": 71976
+    },
+    {
+      "photo_index": 4,
+      "filename": "photo_4.jpg",
+      "local_path": "products/item_7_kukhnya_viktoria/photo_4.jpg",
+      "source_url": "https://sun9-88.vkuserphoto.ru/s/v1/ig2/FuwEXjVD9U-4RAGX4LOqvtwK3Kk8a7-I6zrI7TNedVG9olSL2tkNZTD3jkOSTh52qh00sQ4fTaJFZ2zN6KPcW3d5.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640&from=bu&u=RmncPcnIeso9-TefoCFsoyLBh7UzcrLen4wHUKU8g28&cs=640x640",
+      "sha256": "d426b6a3bc2c91626986a6bb3925b498634663d61ba235b7d78de128758ce9c0",
+      "resolution": "640x640",
+      "width": 640,
+      "height": 640,
+      "format": "JPEG",
+      "bytes": 75741
+    }
+  ]
+}

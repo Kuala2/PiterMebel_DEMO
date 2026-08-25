@@ -1,0 +1,12 @@
+[
+  {"name":"deniart","url":"https://deniart.design/","pageType":"home","mobile":true},
+  {"name":"hardproject","url":"https://hardproject.ru/","pageType":"home","mobile":true},
+  {"name":"woodros","url":"https://woodros.com/moskva/","pageType":"home","mobile":true},
+  {"name":"arius","url":"https://arius-mebel.ru/","pageType":"home","mobile":true},
+  {"name":"agar-mebel","url":"https://agarmebel.ru/","pageType":"home","mobile":true},
+  {"name":"smart-interior","url":"https://www.smart-interior-spb.ru/","pageType":"home","mobile":true},
+  {"name":"de-atelier","url":"https://de-atelier.ru/","pageType":"home","mobile":true},
+  {"name":"mf78","url":"https://mf78.ru/","pageType":"home","mobile":true},
+  {"name":"mebel-nord","url":"https://mebelnord.ru/","pageType":"home","mobile":true},
+  {"name":"sm-project","url":"https://smproject-mebel.ru/","pageType":"home","mobile":true}
+]

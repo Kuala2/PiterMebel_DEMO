@@ -1,0 +1,44 @@
+{
+  "reviewerMode": "independent-read-only",
+  "reviewedAt": "2026-08-23",
+  "concepts": [
+    {
+      "id": "concept-1",
+      "verdict": "advance",
+      "observedStrength": "Самая ясная коммерческая иерархия: мебельный кадр доминирует, обе CTA заметны, mobile перестроен осмысленно, а listing и detail быстро ведут от задачи к решению.",
+      "observedWeakness": "Тяжёлый гротеск и чёрно-янтарная палитра местами делают подачу жёстче предмета; listing использует разнородный stock, поэтому будущая категория проектов потребует более цельного набора клиентских кадров."
+    },
+    {
+      "id": "concept-2",
+      "verdict": "rework",
+      "observedStrength": "Редакционная система наиболее самобытна: асимметричный архив, вертикальный корешок и контраст масштабов убедительно различают home, listing и повествовательный detail.",
+      "observedWeakness": "На mobile два изображения превращены в узкие обрезанные полосы и слабо показывают мебель; огромный заголовок вытесняет продукт, а главный переход остаётся абстрактным «[CTA]», что ослабляет коммерческий сценарий."
+    },
+    {
+      "id": "concept-3",
+      "verdict": "rework",
+      "observedStrength": "Материальная дорожка последовательно связывает фактуру, пространство, процесс и структурированный detail; маркировка демонстрационного stock заметна и не выдаёт изображения за работы бренда.",
+      "observedWeakness": "На первом mobile-экране мебель почти исчезает за макрофактурой и текстом, а listing выглядит как спокойный реестр; материал и процесс становятся важнее результата, хотя бриф требует предметного центра."
+    }
+  ],
+  "recommended": "concept-1",
+  "weakest": "concept-2",
+  "sharedMotifs": [
+    "Во всех трёх направлениях повторяются нумерованные проектные индексы и явные поля неизвестных фактов",
+    "Один и тот же набор демонстрационных stock-кадров интерьера, кухни, хранения и древесной детали используется во всех концептах"
+  ],
+  "evidence": [
+    ".design/style-lab/shots/concept-1-1440x1000-first.png",
+    ".design/style-lab/shots/concept-1-390x844-first.png",
+    ".design/style-lab/shots/concept-1-1440x1000-seg04.png",
+    ".design/style-lab/shots/concept-1-1440x1000-seg05.png",
+    ".design/style-lab/shots/concept-2-1440x1000-first.png",
+    ".design/style-lab/shots/concept-2-390x844-first.png",
+    ".design/style-lab/shots/concept-2-1440x1000-seg04.png",
+    ".design/style-lab/shots/concept-2-1440x1000-seg05.png",
+    ".design/style-lab/shots/concept-3-1440x1000-first.png",
+    ".design/style-lab/shots/concept-3-390x844-first.png",
+    ".design/style-lab/shots/concept-3-1440x1000-seg04.png",
+    ".design/style-lab/shots/concept-3-1440x1000-seg05.png"
+  ]
+}

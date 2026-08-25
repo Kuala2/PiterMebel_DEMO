@@ -1,0 +1,145 @@
+{
+  "capturedAt": "2026-08-23T11:05:09.037Z",
+  "mode": "file",
+  "items": [
+    {
+      "name": "concept-1",
+      "file": ".design/style-lab/concept-1.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-initial/concept-1-1440x1000-first.png",
+          "full": ".design/style-lab/shots-initial/concept-1-1440x1000-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg01.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg02.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg03.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg04.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg05.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg06.png",
+            ".design/style-lab/shots-initial/concept-1-1440x1000-seg07.png"
+          ]
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-initial/concept-1-390x844-first.png",
+          "full": ".design/style-lab/shots-initial/concept-1-390x844-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-1-390x844-seg01.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg02.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg03.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg04.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg05.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg06.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg07.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg08.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg09.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg10.png",
+            ".design/style-lab/shots-initial/concept-1-390x844-seg11.png"
+          ]
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 44,
+        "std": 69.5,
+        "edge": 38.6,
+        "usable": true
+      },
+      "sha256": "19a37e753c3bdb4d33af251910c6a1ce1b10e0dbad0a51ff765ad92611e44157"
+    },
+    {
+      "name": "concept-2",
+      "file": ".design/style-lab/concept-2.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-initial/concept-2-1440x1000-first.png",
+          "full": ".design/style-lab/shots-initial/concept-2-1440x1000-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg01.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg02.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg03.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg04.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg05.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg06.png",
+            ".design/style-lab/shots-initial/concept-2-1440x1000-seg07.png"
+          ]
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-initial/concept-2-390x844-first.png",
+          "full": ".design/style-lab/shots-initial/concept-2-390x844-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-2-390x844-seg01.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg02.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg03.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg04.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg05.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg06.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg07.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg08.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg09.png",
+            ".design/style-lab/shots-initial/concept-2-390x844-seg10.png"
+          ]
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 60,
+        "std": 57.9,
+        "edge": 36.2,
+        "usable": true
+      },
+      "sha256": "13dd0041b07e406440ed5f3d0f911680fa5a665ef4d7dd96ea14e3222a01e385"
+    },
+    {
+      "name": "concept-3",
+      "file": ".design/style-lab/concept-3.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-initial/concept-3-1440x1000-first.png",
+          "full": ".design/style-lab/shots-initial/concept-3-1440x1000-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg01.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg02.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg03.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg04.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg05.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg06.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg07.png",
+            ".design/style-lab/shots-initial/concept-3-1440x1000-seg08.png"
+          ]
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-initial/concept-3-390x844-first.png",
+          "full": ".design/style-lab/shots-initial/concept-3-390x844-full.png",
+          "segments": [
+            ".design/style-lab/shots-initial/concept-3-390x844-seg01.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg02.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg03.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg04.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg05.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg06.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg07.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg08.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg09.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg10.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg11.png",
+            ".design/style-lab/shots-initial/concept-3-390x844-seg12.png"
+          ]
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 60,
+        "std": 87.4,
+        "edge": 34.3,
+        "usable": true
+      },
+      "sha256": "64ec54304c5c62c085eec3b97ef08dc2d27e8a2a0b2feccac98b02e29fa239a1"
+    }
+  ]
+}

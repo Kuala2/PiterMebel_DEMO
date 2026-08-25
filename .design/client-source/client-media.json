@@ -1,0 +1,31 @@
+{
+  "readiness": "READY",
+  "updated": "2026-08-23",
+  "inventory": {
+    "products": "products/ — 7 товаров каталога, 28 фото (до 1560×1560), цены и спецификации в product_info.json",
+    "posts": "posts/ — 20 постов стены, 117 фото (до 1920×2560), post_info.json с ISO-датами",
+    "brand": "brand/ — logo_avatar.jpg 1080×1080, banner_cover.jpg 1920×768, brand_info.json"
+  },
+  "media": [
+    { "path": "products/item_2_kukhnya_slavena/photo_1.jpg", "source": "VK Market 6882298", "usage": "широкий кадр светлой кухни" },
+    { "path": "products/item_1_kukhnya_alexandra/photo_1.jpg", "source": "VK Market 6882288", "usage": "кухня Alexandra, общий план" },
+    { "path": "products/item_1_kukhnya_alexandra/photo_2.jpg", "source": "VK Market 6882288", "usage": "кухня Alexandra, высокий шкаф Fenix" },
+    { "path": "products/item_3_kukhnya_stefania/photo_1.jpg", "source": "VK Market 6882301", "usage": "бюджетная линейка, 185 000 ₽" },
+    { "path": "products/item_4_kukhnya_timofey/photo_1.jpg", "source": "VK Market 6882296", "usage": "кухня Timofey, диагональ" },
+    { "path": "products/item_4_kukhnya_timofey/photo_2.jpg", "source": "VK Market 6882296", "usage": "кухня Timofey, фронталь" },
+    { "path": "products/item_5_kukhnya_ulyana/photo_3.jpg", "source": "VK Market 6882283", "usage": "вертикальный кадр 1440×1794" },
+    { "path": "products/item_6_kukhnya_valeria/photo_1.jpg", "source": "VK Market 6882300", "usage": "кухня Valeria" },
+    { "path": "products/item_7_kukhnya_viktoria/photo_1.jpg", "source": "VK Market 6902667", "usage": "молочная классика" },
+    { "path": "products/item_7_kukhnya_viktoria/photo_2.jpg", "source": "VK Market 6902667", "usage": "фрагмент фасадов" },
+    { "path": "posts/post_254/photo_1.jpg", "source": "VK wall-215942650_254", "usage": "гардеробная СТОПСОЛ, 1920×2560" },
+    { "path": "posts/post_254/photo_3.jpg", "source": "VK wall-215942650_254", "usage": "гардеробная, второй ракурс" },
+    { "path": "posts/post_253/photo_1.jpg", "source": "VK wall-215942650_253", "usage": "тёмная кухня эмаль+шпон, 1920×2560" },
+    { "path": "posts/post_252/photo_1.jpg", "source": "VK wall-215942650_252", "usage": "тёплая кухня шпон дуба" },
+    { "path": "posts/post_250/photo_1.jpg", "source": "VK wall-215942650_250", "usage": "кухня Velvet антипальчиковое" },
+    { "path": "posts/post_256/photo_1.jpg", "source": "VK wall-215942650_256", "usage": "зеркальный шкаф, август 2026" }
+  ],
+  "excluded": [
+    "products/item_5_kukhnya_ulyana/photo_2.jpg — скриншот переписки",
+    "цены 4 500 000 ₽ у «Славены» и «Виктории» — аномалия каталога, не используется как цена проекта"
+  ]
+}

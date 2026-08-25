@@ -1,0 +1,14 @@
+[
+  {
+    "name": "destroyers-projects-probe",
+    "url": "https://destroyersbuilders.com/projects/",
+    "pageType": "inner",
+    "mobile": false
+  },
+  {
+    "name": "de-la-espada-collection-probe",
+    "url": "https://delaespada.com/collections/all",
+    "pageType": "inner",
+    "mobile": false
+  }
+]

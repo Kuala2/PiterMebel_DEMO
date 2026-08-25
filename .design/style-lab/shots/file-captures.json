@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-08-24T14:55:07.704Z",
+  "mode": "file",
+  "items": [
+    {
+      "name": "production",
+      "file": ".design/style-lab/production.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots/production-1440x1000-first.png",
+          "full": ".design/style-lab/shots/production-1440x1000-full.png"
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots/production-390x844-first.png",
+          "full": ".design/style-lab/shots/production-390x844-full.png"
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 45,
+        "std": 50.7,
+        "edge": 30,
+        "usable": true
+      },
+      "sha256": "35caf1e2bbb58a18865c2eb3fb77b425015b713ebbfeab613a7e8ddce1213b4f"
+    }
+  ]
+}

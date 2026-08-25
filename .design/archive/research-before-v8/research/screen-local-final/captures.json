@@ -1,0 +1,251 @@
+{
+  "capturedAt": "2026-08-22T22:15:58.940Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "korpus-pro",
+      "url": "https://korpuspro.ru/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://korpuspro.ru/",
+      "title": "Производство корпусной мебели на заказ в Мытищах. Меблировка квартир под ключ. Дизайн проект",
+      "dom": {
+        "textLength": 1927,
+        "mediaCount": 28,
+        "overlays": 1
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "name": "studio-proff",
+      "url": "https://studioproff.ru/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://studioproff.ru/",
+      "title": "Мебель на заказ в Уфе — СтудияПрофф | Корпусная, встроенная, дизайнерская мебель",
+      "dom": {
+        "textLength": 7529,
+        "mediaCount": 30,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "firmino",
+      "url": "https://firmino.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:345x403:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://firmino.ru/",
+      "title": "Создание и производство мебели на заказ | Студия мебели Фирмино",
+      "dom": {
+        "textLength": 4866,
+        "mediaCount": 13,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 345,
+          "h": 403,
+          "area": 10,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "santafiore",
+      "url": "https://santafiore.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-local-final/santafiore-mobile-first.png",
+        "desktopFirst": ".design/research/screen-local-final/santafiore-desktop-first.png",
+        "desktopFull": ".design/research/screen-local-final/santafiore-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://santafiore.ru/",
+      "title": "Сантафиоре мебель на заказ",
+      "dom": {
+        "textLength": 6499,
+        "mediaCount": 6,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 24,
+        "std": 34.6,
+        "edge": 27.9,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 6498,
+        "mediaCount": 7,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 24,
+        "std": 38,
+        "edge": 24.7,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://santafiore.ru/#services",
+          "inNav": false,
+          "text": "Преимущества"
+        },
+        {
+          "href": "https://santafiore.ru/#about",
+          "inNav": false,
+          "text": "Наша команда"
+        },
+        {
+          "href": "https://santafiore.ru/#projects",
+          "inNav": false,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://santafiore.ru/#costs",
+          "inNav": false,
+          "text": "Материалы"
+        },
+        {
+          "href": "https://santafiore.ru/#steps",
+          "inNav": false,
+          "text": "Как мы работаем"
+        },
+        {
+          "href": "https://santafiore.ru/#contacts",
+          "inNav": false,
+          "text": "Контакты"
+        },
+        {
+          "href": "https://t.me/santafiore_mebel",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "mailto:santafiore@yandex.ru",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://wa.me/79263774477",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://forms.amocrm.ru/rztldtl",
+          "inNav": false,
+          "text": "Заказать расчет #rec667291689 .t-btnflex.t-btnflex_type_button {color:#0d0d0d;background-color:#f1d1"
+        },
+        {
+          "href": "https://dcgallery.ru/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://amur.design/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://xn--80aaplxioclv.xn--p1ai/",
+          "inNav": false,
+          "text": "Перейти в магазин #rec672268108 .t-btnflex.t-btnflex_type_bbutton {color:#ffffff;background-color:#1"
+        },
+        {
+          "href": "https://t.me/Ketchunezzzz",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://santafiore.design/furniture",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOJl07Y-UhMurTb-vAvjbQCScyXaPCndywnme0dyh1wFDtCf_XE",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://tech.yandex.ru/maps/mapsapi/?from=api-maps",
+          "inNav": false,
+          "text": "API"
+        },
+        {
+          "href": "https://yandex.ru/legal/maps_termsofuse/?lang=ru",
+          "inNav": false,
+          "text": "Условия"
+        },
+        {
+          "href": "https://santafiore.ru/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://santafiore.ru/privacy",
+          "inNav": false,
+          "text": "Политика конфиденциальности"
+        },
+        {
+          "href": "https://tilda.cc/",
+          "inNav": false,
+          "text": "Made on Tilda"
+        }
+      ]
+    },
+    {
+      "name": "corpus-group",
+      "url": "https://corpus-gr.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://corpus-gr.ru/",
+      "title": "Мебель на заказ во Владивостоке - corpus group",
+      "dom": {
+        "textLength": 3931,
+        "mediaCount": 73,
+        "overlays": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "generatedAt": "2026-08-24T11:27:12.398Z",
+    "viewport": "1440x900",
+    "description": "Extracted computed CSS tokens from 4 reference benchmark sites"
+  },
+  "sites": {
+    "anka-bespoke": {
+      "name": "Anka Bespoke",
+      "typography": {
+        "h1": {
+          "fontSize": "37.6px",
+          "lineHeight": "45.12px",
+          "letterSpacing": "normal",
+          "fontWeight": "300",
+          "fontFamily": "canela-thin",
+          "color": "#212529"
+        },
+        "h2": {
+          "fontSize": "32px",
+          "lineHeight": "38.4px",
+          "letterSpacing": "normal",
+          "fontWeight": "300",
+          "fontFamily": "canela-thin",
+          "color": "#212529"
+        },
+        "h3": {
+          "fontSize": "28px",
+          "lineHeight": "33.6px",
+          "letterSpacing": "normal",
+          "fontWeight": "500",
+          "color": "#FFFFFF"
+        },
+        "body": {
+          "fontSize": "14.4px",
+          "lineHeight": "21.6px",
+          "letterSpacing": "1px",
+          "fontWeight": "300",
+          "fontFamily": "Inter, sans-serif",
+          "color": "#A89680"
+        },
+        "kicker": {
+          "fontSize": "12px",
+          "lineHeight": "1.4",
+          "letterSpacing": "0.08em",
+          "fontWeight": "600",
+          "textTransform": "uppercase",
+          "color": "#787878"
+        }
+      },
+      "spacingAndLayout": {
+        "sectionPaddingTop": "48px",
+        "sectionPaddingBottom": "48px",
+        "containerMaxWidth": "1320px",
+        "gridGap": "16px",
+        "cardPadding": "0px 0px",
+        "cardBorderRadius": "0px"
+      },
+      "surfacesAndColors": {
+        "backgroundPrimary": "#F4F1E9",
+        "surfaceCard": "#00000000",
+        "borderColor": "#212529",
+        "textPrimary": "#A89680",
+        "buttonPrimary": {
+          "background": "#FFFFFF",
+          "color": "#A89680",
+          "borderRadius": "50%",
+          "padding": "0px 0px"
+        }
+      },
+      "heroGeometry": {
+        "height": "0px",
+        "columnRatio": "55/45",
+        "display": "block",
+        "mediaRatio": "16/9"
+      }
+    },
+    "dis-mebel": {
+      "name": "DiS Mebel",
+      "typography": {
+        "h1": {
+          "fontSize": "88px",
+          "lineHeight": "86.24px",
+          "letterSpacing": "normal",
+          "fontWeight": "500",
+          "fontFamily": "\"Instrument Serif\", Georgia, serif",
+          "color": "#F5F3EF"
+        },
+        "h2": {
+          "fontSize": "56px",
+          "lineHeight": "58.8px",
+          "letterSpacing": "normal",
+          "fontWeight": "500",
+          "fontFamily": "\"Instrument Serif\", Georgia, serif",
+          "color": "#17181A"
+        },
+        "h3": {
+          "fontSize": "39.68px",
+          "lineHeight": "41.664px",
+          "letterSpacing": "normal",
+          "fontWeight": "500",
+          "color": "#17181A"
+        },
+        "body": {
+          "fontSize": "18px",
+          "lineHeight": "27.9px",
+          "letterSpacing": "normal",
+          "fontWeight": "400",
+          "fontFamily": "Switzer, -apple-system, \"Helvetica Neue\", Arial, sans-serif",
+          "color": "#F5F3EF"
+        },
+        "kicker": {
+          "fontSize": "14px",
+          "lineHeight": "21.7px",
+          "letterSpacing": "normal",
+          "fontWeight": "400",
+          "textTransform": "uppercase",
+          "color": "#6E6A63"
+        }
+      },
+      "spacingAndLayout": {
+        "sectionPaddingTop": "112px",
+        "sectionPaddingBottom": "112px",
+        "containerMaxWidth": "1400px",
+        "gridGap": "32px",
+        "cardPadding": "0px 0px",
+        "cardBorderRadius": "4px"
+      },
+      "surfacesAndColors": {
+        "backgroundPrimary": "#F5F3EF",
+        "surfaceCard": "#00000000",
+        "borderColor": "#17181A",
+        "textPrimary": "#F5F3EF",
+        "buttonPrimary": {
+          "background": "#00000000",
+          "color": "#F5F3EF",
+          "borderRadius": "0px",
+          "padding": "8px 8px"
+        }
+      },
+      "heroGeometry": {
+        "height": "75.9688px",
+        "columnRatio": "55/45",
+        "display": "flex",
+        "mediaRatio": "16/9"
+      }
+    },
+    "ft-bespoke": {
+      "name": "FT Bespoke",
+      "typography": {
+        "h1": {
+          "fontSize": "48px",
+          "lineHeight": "1.15",
+          "letterSpacing": "normal",
+          "fontWeight": "400",
+          "fontFamily": "serif",
+          "color": "#1A1D1F"
+        },
+        "h2": {
+          "fontSize": "43.95px",
+          "lineHeight": "52.74px",
+          "letterSpacing": "0.9px",
+          "fontWeight": "400",
+          "fontFamily": "\"MYRIADPRO REGULAR\", sans-serif",
+          "color": "#40534D"
+        },
+        "h3": {
+          "fontSize": "30px",
+          "lineHeight": "42px",
+          "letterSpacing": "normal",
+          "fontWeight": "500",
+          "color": "#4E5D46"
+        },
+        "body": {
+          "fontSize": "18px",
+          "lineHeight": "25.2px",
+          "letterSpacing": "normal",
+          "fontWeight": "400",
+          "fontFamily": "\"MYRIADPRO REGULAR\", sans-serif",
+          "color": "#2F2F2F"
+        },
+        "kicker": {
+          "fontSize": "12px",
+          "lineHeight": "1.4",
+          "letterSpacing": "0.08em",
+          "fontWeight": "600",
+          "textTransform": "uppercase",
+          "color": "#787878"
+        }
+      },
+      "spacingAndLayout": {
+        "sectionPaddingTop": "30px",
+        "sectionPaddingBottom": "4px",
+        "containerMaxWidth": "1250px",
+        "gridGap": "30px",
+        "cardPadding": "0px 0px",
+        "cardBorderRadius": "0px"
+      },
+      "surfacesAndColors": {
+        "backgroundPrimary": "#FFFFFF",
+        "surfaceCard": "#00000000",
+        "borderColor": "#2F2F2F",
+        "textPrimary": "#2F2F2F",
+        "buttonPrimary": {
+          "background": "#02010100",
+          "color": "#000000",
+          "borderRadius": "0px",
+          "padding": "8px 15px"
+        }
+      },
+      "heroGeometry": {
+        "height": "79.3594px",
+        "columnRatio": "55/45",
+        "display": "block",
+        "mediaRatio": "16/9"
+      }
+    },
+    "matthew-cox": {
+      "name": "Matthew Cox",
+      "typography": {
+        "h1": {
+          "fontSize": "44px",
+          "lineHeight": "48.4px",
+          "letterSpacing": "normal",
+          "fontWeight": "300",
+          "fontFamily": "Spectral, Georgia, \"Times New Roman\", serif",
+          "color": "#535353"
+        },
+        "h2": {
+          "fontSize": "30px",
+          "lineHeight": "36px",
+          "letterSpacing": "normal",
+          "fontWeight": "300",
+          "fontFamily": "Spectral, Georgia, \"Times New Roman\", serif",
+          "color": "#535353"
+        },
+        "h3": {
+          "fontSize": "22px",
+          "lineHeight": "26.4px",
+          "letterSpacing": "normal",
+          "fontWeight": "300",
+          "color": "#535353"
+        },
+        "body": {
+          "fontSize": "16px",
+          "lineHeight": "19.2px",
+          "letterSpacing": "2.1px",
+          "fontWeight": "300",
+          "fontFamily": "Spectral, Georgia, \"Times New Roman\", serif",
+          "color": "#535353"
+        },
+        "kicker": {
+          "fontSize": "14px",
+          "lineHeight": "22.4px",
+          "letterSpacing": "normal",
+          "fontWeight": "400",
+          "textTransform": "uppercase",
+          "color": "#535353"
+        }
+      },
+      "spacingAndLayout": {
+        "sectionPaddingTop": "4px",
+        "sectionPaddingBottom": "100px",
+        "containerMaxWidth": "1280px",
+        "gridGap": "10px",
+        "cardPadding": "0px 0px",
+        "cardBorderRadius": "0px"
+      },
+      "surfacesAndColors": {
+        "backgroundPrimary": "#F5F5F4",
+        "surfaceCard": "#F5F5F4",
+        "borderColor": "#535353",
+        "textPrimary": "#535353",
+        "buttonPrimary": {
+          "background": "#00000000",
+          "color": "#535353",
+          "borderRadius": "0px",
+          "padding": "16px 0px"
+        }
+      },
+      "heroGeometry": {
+        "height": "66.375px",
+        "columnRatio": "55/45",
+        "display": "block",
+        "mediaRatio": "16/9"
+      }
+    }
+  }
+}

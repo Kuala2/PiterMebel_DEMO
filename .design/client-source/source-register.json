@@ -1,0 +1,19 @@
+{
+  "project": "ПитерМебель",
+  "mode": "COMMISSIONED",
+  "updated": "2026-08-23",
+  "sources": [
+    {
+      "url": "https://vk.ru/pitermebelcom",
+      "type": "primary-community",
+      "status": "exported-100pct",
+      "note": "Полный локальный экспорт сообщества: товары, посты, бренд, контакты, реквизиты (EXPORT_REPORT.md). Прямой браузерный доступ к vk.ru в среде закрыт политикой безопасности, все данные взяты из выгрузки пользователя."
+    },
+    {
+      "url": "https://pitermebel.com",
+      "type": "claimed-site",
+      "status": "unverified",
+      "note": "Сайт заявлен в описании сообщества; в выгрузку не входит, содержимое не проверялось."
+    }
+  ]
+}

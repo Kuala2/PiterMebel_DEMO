@@ -1,0 +1,221 @@
+{
+  "capturedAt": "2026-08-23T09:58:21.049Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "taylor-furniture",
+      "url": "https://www.taylor-furniture.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/last-clean-captures/taylor-furniture-mobile-first.png",
+        "desktopFirst": ".design/research/last-clean-captures/taylor-furniture-desktop-first.png",
+        "desktopFull": ".design/research/last-clean-captures/taylor-furniture-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.taylor-furniture.co.uk/",
+      "title": "Taylor Furniture Ltd | Bespoke Furniture & Cabinetry Derbyshire",
+      "dom": {
+        "textLength": 5371,
+        "mediaCount": 5,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 13,
+        "std": 15.8,
+        "edge": 3.7,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3742,
+        "mediaCount": 13,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 28,
+        "std": 55.7,
+        "edge": 31.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.taylor-furniture.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/portfolio",
+          "inNav": true,
+          "text": "Portfolio"
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/#About",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/#contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://static.wixstatic.com/media/04107c_ba08f1e08e5b490f9727aa3a03a0e198~mv2.jpg",
+          "inNav": false,
+          "text": "bespoke island kitchen with banquette seating handmade in Derbyshire"
+        },
+        {
+          "href": "https://static.wixstatic.com/media/04107c_d9d0fcb0b235471395eff272253488e1~mv2.jpg",
+          "inNav": false,
+          "text": "bespoke hand -painted fitted wardrobes with drawers and shaker style doors"
+        },
+        {
+          "href": "https://static.wixstatic.com/media/04107c_6a5ba0b1a2004fddbfa9eb3d5c8bd6f7~mv2.png",
+          "inNav": false,
+          "text": "fitted display media cabinetry, hand painted with lighting"
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/faqs#Section",
+          "inNav": false,
+          "text": "View All FAQs"
+        },
+        {
+          "href": "https://www.google.com/maps/place/Taylor+Furniture+Ltd/@53.0681449,-1.5247138,456m/data=!3m2!1e3!4b1!4m6!3m5!1s0x4879f522",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.facebook.com/TaylorFurnitureLtd",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.instagram.com/taylorfurnitureltd/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.findacraftsman.com/listing/taylor-furniture-ltd",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/terms-conditions",
+          "inNav": true,
+          "text": "Terms & Conditions"
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/privacy-policy",
+          "inNav": true,
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "https://www.taylor-furniture.co.uk/accessibility-statement",
+          "inNav": true,
+          "text": "Accessibility Statement"
+        },
+        {
+          "href": "https://uk.pinterest.com/taylorfurniture/",
+          "inNav": true,
+          "text": "Pinterest"
+        }
+      ]
+    },
+    {
+      "name": "timber-tailors",
+      "url": "https://www.timbertailorsfurniture.uk/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (IFRAME:94x94:bottom, IFRAME:94x94:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.timbertailorsfurniture.uk/",
+      "title": "Bespoke furniture and cabinet making specialist | Timber Tailors London",
+      "dom": {
+        "textLength": 3683,
+        "mediaCount": 28,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "IFRAME",
+          "w": 94,
+          "h": 94,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "bottom"
+        },
+        {
+          "tag": "IFRAME",
+          "w": 94,
+          "h": 94,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "ssj-bespoke",
+      "url": "https://www.ssjbespoke.co.uk/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:222x56:bottom, A:56x56:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.ssjbespoke.co.uk/",
+      "title": "Bespoke Joinery London | SSJ Bespoke Joinery",
+      "dom": {
+        "textLength": 5870,
+        "mediaCount": 19,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 222,
+          "h": 56,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        },
+        {
+          "tag": "A",
+          "w": 56,
+          "h": 56,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    }
+  ]
+}

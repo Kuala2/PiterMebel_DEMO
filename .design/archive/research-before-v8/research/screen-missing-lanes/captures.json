@@ -1,0 +1,1059 @@
+{
+  "capturedAt": "2026-08-22T22:11:44.868Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "tpmeb",
+      "url": "https://tpmeb.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:336x42:top, BUTTON:138x42:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://tpmeb.ru/",
+      "title": "TPMEB",
+      "dom": {
+        "textLength": 5096,
+        "mediaCount": 31,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 336,
+          "h": 42,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "BUTTON",
+          "w": 138,
+          "h": 42,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "proektika",
+      "url": "https://proektika.pro/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:600x123:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://proektika.pro/",
+      "title": "Изготовление мебели по индивидуальным проектам в Санкт-Петербурге",
+      "dom": {
+        "textLength": 7273,
+        "mediaCount": 517,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 600,
+          "h": 123,
+          "area": 5,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "2furn",
+      "url": "https://2furn.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:264x50:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://2furn.ru/",
+      "title": "Мебель на заказ в Санкт‑Петербурге по цене производителя 2FURN",
+      "dom": {
+        "textLength": 9617,
+        "mediaCount": 19,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 264,
+          "h": 50,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "karlo",
+      "url": "https://karlo.su/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:141x47:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://karlo.su/",
+      "title": "Мебельная компания \"Папа Карло\" – кухни и шкафы-купе на заказ",
+      "dom": {
+        "textLength": 2072,
+        "mediaCount": 6,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 141,
+          "h": 47,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "de-la-espada",
+      "url": "https://delaespada.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-missing-lanes/de-la-espada-mobile-first.png",
+        "desktopFirst": ".design/research/screen-missing-lanes/de-la-espada-desktop-first.png",
+        "desktopFull": ".design/research/screen-missing-lanes/de-la-espada-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://delaespada.com/",
+      "title": "DE LA ESPADA – De La Espada",
+      "dom": {
+        "textLength": 2631,
+        "mediaCount": 39,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 36,
+        "std": 69.7,
+        "edge": 34.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2622,
+        "mediaCount": 39,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 43,
+        "std": 73.8,
+        "edge": 37,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://delaespada.com/#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://delaespada.com/pages/products",
+          "inNav": false,
+          "text": "PRODUCTS"
+        },
+        {
+          "href": "https://delaespada.com/collections/all",
+          "inNav": false,
+          "text": "VIEW ALL PRODUCTS"
+        },
+        {
+          "href": "https://delaespada.com/collections",
+          "inNav": false,
+          "text": "VIEW PRODUCTS BY TYPE"
+        },
+        {
+          "href": "https://delaespada.com/pages/products-in-depth",
+          "inNav": false,
+          "text": "PRODUCTS IN-DEPTH"
+        },
+        {
+          "href": "https://delaespada.com/pages/furniture-tailoring",
+          "inNav": false,
+          "text": "FURNITURE TAILORING"
+        },
+        {
+          "href": "https://delaespada.com/pages/ensemble-collection",
+          "inNav": false,
+          "text": "LIMITED EDITIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/look-books",
+          "inNav": false,
+          "text": "PUBLICATIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/ready-to-ship",
+          "inNav": false,
+          "text": "QUICK SHIP"
+        },
+        {
+          "href": "https://delaespada.com/pages/projects",
+          "inNav": false,
+          "text": "IN SITU"
+        },
+        {
+          "href": "https://delaespada.com/pages/by-space",
+          "inNav": false,
+          "text": "VIEW BY SPACE"
+        },
+        {
+          "href": "https://delaespada.com/pages/spaces-by-product-type",
+          "inNav": false,
+          "text": "VIEW BY PRODUCT TYPE"
+        },
+        {
+          "href": "https://delaespada.com/pages/spaces-view-all",
+          "inNav": false,
+          "text": "VIEW ALL SPACES"
+        },
+        {
+          "href": "https://delaespada.com/pages/about",
+          "inNav": false,
+          "text": "ABOUT"
+        },
+        {
+          "href": "https://delaespada.com/pages/company",
+          "inNav": false,
+          "text": "COMPANY"
+        },
+        {
+          "href": "https://delaespada.com/pages/de-la-espada-world",
+          "inNav": false,
+          "text": "OUR CREATIVE WORLD"
+        },
+        {
+          "href": "https://delaespada.com/pages/craft2",
+          "inNav": false,
+          "text": "CRAFT"
+        },
+        {
+          "href": "https://delaespada.com/pages/wood",
+          "inNav": false,
+          "text": "WOOD"
+        },
+        {
+          "href": "https://delaespada.com/pages/care-guide",
+          "inNav": false,
+          "text": "CARE"
+        },
+        {
+          "href": "https://delaespada.com/pages/designers",
+          "inNav": false,
+          "text": "DESIGNERS"
+        },
+        {
+          "href": "https://delaespada.com/pages/sustainability",
+          "inNav": false,
+          "text": "SUSTAINABILITY"
+        },
+        {
+          "href": "https://delaespada.com/pages/materials",
+          "inNav": false,
+          "text": "MATERIALS"
+        },
+        {
+          "href": "https://delaespada.com/pages/stories",
+          "inNav": false,
+          "text": "STORIES"
+        },
+        {
+          "href": "https://delaespada.com/pages/events",
+          "inNav": false,
+          "text": "EVENTS"
+        },
+        {
+          "href": "https://delaespada.com/blogs/news",
+          "inNav": false,
+          "text": "JOURNAL"
+        },
+        {
+          "href": "https://delaespada.com/pages/newsletter",
+          "inNav": false,
+          "text": "NEWSLETTER"
+        },
+        {
+          "href": "https://delaespada.com/pages/stories-film",
+          "inNav": false,
+          "text": "FILM"
+        },
+        {
+          "href": "https://delaespada.com/pages/residencies",
+          "inNav": false,
+          "text": "RESIDENCIES"
+        },
+        {
+          "href": "https://delaespada.com/blogs/podcast",
+          "inNav": false,
+          "text": "PODCAST"
+        },
+        {
+          "href": "https://delaespada.com/blogs/opinion",
+          "inNav": false,
+          "text": "OPINION"
+        },
+        {
+          "href": "https://delaespada.com/pages/contact",
+          "inNav": false,
+          "text": "CONTACT"
+        },
+        {
+          "href": "https://delaespada.com/pages/buying-guide",
+          "inNav": false,
+          "text": "BUYING GUIDE"
+        },
+        {
+          "href": "https://delaespada.com/pages/retailers",
+          "inNav": false,
+          "text": "RETAILERS"
+        },
+        {
+          "href": "https://delaespada.presscloud.com/",
+          "inNav": false,
+          "text": "RESOURCE LIBRARY"
+        },
+        {
+          "href": "https://delaespada.com/pages/press",
+          "inNav": false,
+          "text": "PRESS"
+        },
+        {
+          "href": "https://delaespada.com/account",
+          "inNav": false,
+          "text": "Log in"
+        },
+        {
+          "href": "https://www.instagram.com/delaespada/",
+          "inNav": false,
+          "text": "instagram Instagram"
+        },
+        {
+          "href": "https://www.facebook.com/DeLaEspadaFurniture",
+          "inNav": false,
+          "text": "Facebook"
+        },
+        {
+          "href": "https://www.youtube.com/channel/UCJ10utt1UDULCysa6CZAFyA",
+          "inNav": false,
+          "text": "YouTube"
+        },
+        {
+          "href": "https://www.pinterest.com/delaespada/_created/",
+          "inNav": false,
+          "text": "Pinterest"
+        },
+        {
+          "href": "https://www.linkedin.com/company/de-la-espada",
+          "inNav": false,
+          "text": "LinkedIn"
+        },
+        {
+          "href": "https://vimeo.com/delaespada",
+          "inNav": false,
+          "text": "vimeo Vimeo"
+        },
+        {
+          "href": "https://delaespada.com/search",
+          "inNav": true,
+          "text": "icon-search Search"
+        },
+        {
+          "href": "https://delaespada.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/cart",
+          "inNav": true,
+          "text": "Cart"
+        },
+        {
+          "href": "https://delaespada.com/pages/summer-party-london",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/3daysofdesign-2026",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/power-to-surprise",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/october-collection",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/tai-collection",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/collections/beds",
+          "inNav": false,
+          "text": ".collection-image--collection_9JHpgY { object-position: center center; } BEDS"
+        },
+        {
+          "href": "https://delaespada.com/collections/tables",
+          "inNav": false,
+          "text": ".collection-image--collection_zAPmWM { object-position: center center; } DINING TABLES"
+        },
+        {
+          "href": "https://delaespada.com/collections/dining-chairs",
+          "inNav": false,
+          "text": ".collection-image--collection_RkQMtX { object-position: center center; } DINING CHAIRS"
+        },
+        {
+          "href": "https://delaespada.com/collections/sofas",
+          "inNav": false,
+          "text": ".collection-image--collection_M4yyiB { object-position: center center; } SOFAS"
+        },
+        {
+          "href": "https://delaespada.com/collections/desks",
+          "inNav": false,
+          "text": ".collection-image--collection_RJEhUC { object-position: center center; } DESKS"
+        },
+        {
+          "href": "https://delaespada.com/collections/storage",
+          "inNav": false,
+          "text": ".collection-image--collection_Y7ygqR { object-position: center center; } STORAGE"
+        },
+        {
+          "href": "https://delaespada.com/collections/benches",
+          "inNav": false,
+          "text": ".collection-image--collection_j3TMrt { object-position: center center; } BENCHES"
+        },
+        {
+          "href": "https://delaespada.com/collections/large-chairs",
+          "inNav": false,
+          "text": ".collection-image--collection_JzFr43 { object-position: center center; } LOUNGE CHAIRS"
+        },
+        {
+          "href": "https://delaespada.com/collections/manta-lido",
+          "inNav": false,
+          "text": "View all"
+        },
+        {
+          "href": "https://delaespada.com/collections/manta-lido/products/690sz-twenty-five-lounge-armchair-with-manta-lido",
+          "inNav": false,
+          "text": "TWENTY-FIVE LOUNGE ARMCHAIR WITH MANTA LIDOfrom €8.485,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/manta-lido/products/688z-twenty-five-bergere-chair-with-manta-lido",
+          "inNav": false,
+          "text": "TWENTY-FIVE BERGERE CHAIR WITH MANTA LIDOfrom €10.305,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/manta-lido/products/capo-lounge-armchair-with-manta-lido-upholstery",
+          "inNav": false,
+          "text": "CAPO LOUNGE ARMCHAIR WITH MANTA LIDO UPHOLSTERYfrom €5.685,00"
+        },
+        {
+          "href": "https://delaespada.com/collections/manta-lido/products/101z-elysia-lounge-chair-with-manta-lido",
+          "inNav": false,
+          "text": "ELYSIA LOUNGE CHAIR WITH MANTA LIDOfrom €12.540,00"
+        },
+        {
+          "href": "https://delaespada.com/pages/belle-reeve-modular-sofa",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/arts-and-crafts-cabinet-system",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/classon-storage",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/sela",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/blogs/news/luca-nichetto-ideas",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/blogs/news/neri-and-hu-meaning",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/blogs/news/ensemble-sam-baron",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://delaespada.com/pages/terms-and-conditions",
+          "inNav": true,
+          "text": "TERMS AND CONDITIONS"
+        },
+        {
+          "href": "https://delaespada.com/pages/lifetime-repair-service",
+          "inNav": true,
+          "text": "LIFETIME REPAIR SERVICE"
+        },
+        {
+          "href": "https://delaespada.com/pages/warranty",
+          "inNav": true,
+          "text": "WARRANTY"
+        },
+        {
+          "href": "https://delaespada.com/pages/privacy-policy",
+          "inNav": true,
+          "text": "PRIVACY POLICY"
+        },
+        {
+          "href": "https://delaespada.com/pages/shipping",
+          "inNav": true,
+          "text": "SHIPPING"
+        },
+        {
+          "href": "https://delaespada.com/pages/faq",
+          "inNav": true,
+          "text": "FAQ"
+        },
+        {
+          "href": "https://delaespada.com/pages/regional-sites",
+          "inNav": true,
+          "text": "CHANGE REGION"
+        },
+        {
+          "href": "https://www.delaespada.com/pages/newsletter/",
+          "inNav": true,
+          "text": "SIGN UP"
+        }
+      ]
+    },
+    {
+      "name": "karimoku-case",
+      "url": "https://www.karimoku-case.com/",
+      "status": "fail",
+      "reasons": [
+        "mobile-chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.karimoku-case.com/",
+      "title": "KARIMOKU CASE",
+      "dom": {
+        "textLength": 345,
+        "mediaCount": 15,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 29,
+        "std": 57.2,
+        "edge": 18.9,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 272,
+        "mediaCount": 15,
+        "overlays": 2
+      }
+    },
+    {
+      "name": "joseph-walsh",
+      "url": "https://josephwalshstudio.com/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (DIV:1440x60:top, FORM:589x29:top, DIV:1024x194:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://josephwalshstudio.com/",
+      "title": "",
+      "dom": {
+        "textLength": 748,
+        "mediaCount": 2,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 1440,
+          "h": 60,
+          "area": 6,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "FORM",
+          "w": 589,
+          "h": 29,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 1024,
+          "h": 194,
+          "area": 14,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "SPAN",
+          "w": 22,
+          "h": 22,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 515,
+          "h": 29,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "FORM",
+          "w": 515,
+          "h": 29,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 515,
+          "h": 29,
+          "area": 1,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "INPUT",
+          "w": 67,
+          "h": 29,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "arthur-vallin",
+      "url": "https://www.arthurvallin.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-missing-lanes/arthur-vallin-mobile-first.png",
+        "desktopFirst": ".design/research/screen-missing-lanes/arthur-vallin-desktop-first.png",
+        "desktopFull": ".design/research/screen-missing-lanes/arthur-vallin-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.arthurvallin.com/",
+      "title": "Arthur Vallin - Collectible Design",
+      "dom": {
+        "textLength": 1147,
+        "mediaCount": 53,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 26,
+        "std": 65.7,
+        "edge": 24.6,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1124,
+        "mediaCount": 53,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 23,
+        "std": 68.4,
+        "edge": 31,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.arthurvallin.com/cart",
+          "inNav": false,
+          "text": "0"
+        },
+        {
+          "href": "https://www.arthurvallin.com/#page",
+          "inNav": true,
+          "text": "Skip to Content"
+        },
+        {
+          "href": "https://www.arthurvallin.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.arthurvallin.com/spaces",
+          "inNav": true,
+          "text": "Spaces"
+        },
+        {
+          "href": "https://www.arthurvallin.com/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.arthurvallin.com/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.arthurvallin.com/termsandconditions",
+          "inNav": true,
+          "text": "Terms"
+        },
+        {
+          "href": "https://www.instagram.com/arthur_vallin_/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "mailto:studio@arthurvallin.com",
+          "inNav": false,
+          "text": "studio@arthurvallin.com"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/atlas-statement-chair",
+          "inNav": false,
+          "text": "Atlas - Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/atlas-sofa",
+          "inNav": false,
+          "text": "Atlas - Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/pearl-console",
+          "inNav": false,
+          "text": "Pearl - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/toad-table",
+          "inNav": false,
+          "text": "Toad - Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/lulu-chair",
+          "inNav": false,
+          "text": "Lulu - Chair"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/atlas-statement-chair-6rkjb",
+          "inNav": false,
+          "text": "Atlas - Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/pearl-dining",
+          "inNav": false,
+          "text": "Pearl - Dining Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/octane-chair",
+          "inNav": false,
+          "text": "Octane - Accent Chair"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/chubby-coffee-table",
+          "inNav": false,
+          "text": "Chubby - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/antradeas",
+          "inNav": false,
+          "text": "Antradeas - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/ipseite-2",
+          "inNav": false,
+          "text": "Ipséité - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/dodo-sofa",
+          "inNav": false,
+          "text": "DoDo - Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/dodo-chair",
+          "inNav": false,
+          "text": "DoDo - Lounge Chair"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/cloudsofa",
+          "inNav": false,
+          "text": "Cloud Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/octanesofa",
+          "inNav": false,
+          "text": "Octane - Sofa"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/fragments-coffee-table",
+          "inNav": false,
+          "text": "Fragments - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/sculpt-console",
+          "inNav": false,
+          "text": "Sculpt - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/armani-dining",
+          "inNav": false,
+          "text": "Armani - Dining Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/noix",
+          "inNav": false,
+          "text": "Noix - Bench"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/chubby-dining",
+          "inNav": false,
+          "text": "Chubby - Dining Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/atlas",
+          "inNav": false,
+          "text": "Atlas - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/testarossa-console",
+          "inNav": false,
+          "text": "Testarossa - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/chubby-stool",
+          "inNav": false,
+          "text": "Chubby - Stool"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/sculpt",
+          "inNav": false,
+          "text": "Sculpt - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/glyph",
+          "inNav": false,
+          "text": "Glyph - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/ipseite-2-kxkd3",
+          "inNav": false,
+          "text": "Wembé - Dining Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/extrude",
+          "inNav": false,
+          "text": "Extrude - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/romie-duo",
+          "inNav": false,
+          "text": "Romie - Console Duo"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/chubby-coffeetable",
+          "inNav": false,
+          "text": "Chubby - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/chubby-console",
+          "inNav": false,
+          "text": "Chubby - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/ipseite",
+          "inNav": false,
+          "text": "Ipséité - Coffee Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/octane-stool",
+          "inNav": false,
+          "text": "Octane - Stool"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/octane",
+          "inNav": false,
+          "text": "Octane - Side Table"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/romie",
+          "inNav": false,
+          "text": "Romie - Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/mirror",
+          "inNav": false,
+          "text": "Narcissus - Mirror"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/fold",
+          "inNav": false,
+          "text": "Fold Console"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/marshmallow",
+          "inNav": false,
+          "text": "Chubby - Marshmallow"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/iris",
+          "inNav": false,
+          "text": "Iris - Floor Mirror"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/emersion",
+          "inNav": false,
+          "text": "Emersion - Floor Lamp"
+        },
+        {
+          "href": "https://www.arthurvallin.com/work/serra-pelada",
+          "inNav": false,
+          "text": "Serra Pelada - Bench"
+        }
+      ]
+    },
+    {
+      "name": "ahu-studio",
+      "url": "https://www.ahustudio.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.ahustudio.com/",
+      "title": "Ahu | Furniture • Objects • Collectible design",
+      "dom": {
+        "textLength": 3403,
+        "mediaCount": 24,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "katz-studio",
+      "url": "https://www.katz.studio/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.katz.studio/",
+      "title": "Katz Studio | Sculptural Art & Collectible Design",
+      "dom": {
+        "textLength": 872,
+        "mediaCount": 64,
+        "overlays": 3
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    }
+  ]
+}

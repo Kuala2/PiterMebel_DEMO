@@ -1,0 +1,514 @@
+{
+  "capturedAt": "2026-08-23T09:59:31.737Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "object-atelier",
+      "url": "https://www.objectatelier.co.uk/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:50x37:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.objectatelier.co.uk/",
+      "title": "Object Atelier - Bespoke Design",
+      "dom": {
+        "textLength": 3887,
+        "mediaCount": 45,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 52,
+        "std": 40.6,
+        "edge": 36,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3857,
+        "mediaCount": 45,
+        "overlays": 0
+      },
+      "pinnedMobile": [
+        {
+          "tag": "DIV",
+          "w": 50,
+          "h": 37,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "sterox-studio",
+      "url": "https://steroxstudio.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/final-candidate-captures/sterox-studio-mobile-first.png",
+        "desktopFirst": ".design/research/final-candidate-captures/sterox-studio-desktop-first.png",
+        "desktopFull": ".design/research/final-candidate-captures/sterox-studio-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://steroxstudio.co.uk/",
+      "title": "Sterox Studio — Bespoke Furniture & Interiors, London",
+      "dom": {
+        "textLength": 3632,
+        "mediaCount": 21,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 38,
+        "std": 27.7,
+        "edge": 15.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3606,
+        "mediaCount": 21,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 36,
+        "std": 54.1,
+        "edge": 17.5,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://steroxstudio.co.uk/#",
+          "inNav": true,
+          "text": "Sterox Studio London"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#portfolio",
+          "inNav": true,
+          "text": "Work"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#about",
+          "inNav": true,
+          "text": "Studio"
+        },
+        {
+          "href": "https://steroxstudio.co.uk/#contact",
+          "inNav": true,
+          "text": "Enquire"
+        },
+        {
+          "href": "mailto:info@steroxstudio.co.uk",
+          "inNav": false,
+          "text": "info@steroxstudio.co.uk"
+        },
+        {
+          "href": "tel:+447766200447",
+          "inNav": false,
+          "text": "+44 7766 200 447"
+        },
+        {
+          "href": "https://instagram.com/steroxstudio",
+          "inNav": false,
+          "text": "@steroxstudio"
+        }
+      ]
+    },
+    {
+      "name": "matthew-cox",
+      "url": "https://www.matthewcox.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/final-candidate-captures/matthew-cox-mobile-first.png",
+        "desktopFirst": ".design/research/final-candidate-captures/matthew-cox-desktop-first.png",
+        "desktopFull": ".design/research/final-candidate-captures/matthew-cox-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.matthewcox.com/",
+      "title": "Matthew Cox - Furniture & Lighting Built to Last 100 Years",
+      "dom": {
+        "textLength": 1180,
+        "mediaCount": 35,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 31,
+        "std": 58.7,
+        "edge": 24.5,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1216,
+        "mediaCount": 35,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 21,
+        "std": 68.1,
+        "edge": 25.6,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.matthewcox.com/#MainContent",
+          "inNav": false,
+          "text": "Skip to content"
+        },
+        {
+          "href": "https://www.matthewcox.com/#",
+          "inNav": true,
+          "text": "Made to Measure"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/all",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/tables",
+          "inNav": true,
+          "text": "Tables"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/seating",
+          "inNav": true,
+          "text": "Seating"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/storage",
+          "inNav": true,
+          "text": "Storage"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/lighting",
+          "inNav": true,
+          "text": "Lighting"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/mirrors",
+          "inNav": true,
+          "text": "Mirrors"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/re-mc-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/antiques-archive",
+          "inNav": true,
+          "text": "Archive"
+        },
+        {
+          "href": "https://www.matthewcox.com/collections/finish-library",
+          "inNav": true,
+          "text": "Finish library"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/care-guides",
+          "inNav": true,
+          "text": "Care guides"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#seating",
+          "inNav": true,
+          "text": "Table / seating plans"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#furniture",
+          "inNav": true,
+          "text": "Furniture diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/diagrams#lighting",
+          "inNav": true,
+          "text": "Lighting diagrams"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/bespoke",
+          "inNav": true,
+          "text": "Bespoke"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/commissioning",
+          "inNav": true,
+          "text": "Commissioning"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/making",
+          "inNav": true,
+          "text": "Making"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/delivery",
+          "inNav": true,
+          "text": "Delivery"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/faqs",
+          "inNav": true,
+          "text": "FAQs"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/about",
+          "inNav": true,
+          "text": "About"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/history",
+          "inNav": true,
+          "text": "History"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/100-year-plan",
+          "inNav": true,
+          "text": "100 Year Plan"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/nature",
+          "inNav": true,
+          "text": "Nature"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/careers",
+          "inNav": true,
+          "text": "Careers"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/community",
+          "inNav": true,
+          "text": "Community"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/thanks",
+          "inNav": true,
+          "text": "Thanks"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal",
+          "inNav": true,
+          "text": "All"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/craft",
+          "inNav": true,
+          "text": "Craft"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/team",
+          "inNav": true,
+          "text": "Team"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/friends",
+          "inNav": true,
+          "text": "Friends"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/places",
+          "inNav": true,
+          "text": "Places"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/calendar",
+          "inNav": true,
+          "text": "Calendar"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/tagged/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/contact",
+          "inNav": true,
+          "text": "Contact"
+        },
+        {
+          "href": "https://www.instagram.com/matthewcoxetc/",
+          "inNav": true,
+          "text": "Instagram"
+        },
+        {
+          "href": "https://www.matthewcox.com/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/collections",
+          "inNav": true,
+          "text": "Collections"
+        },
+        {
+          "href": "mailto:studio@matthewcox.com",
+          "inNav": false,
+          "text": "studio@matthewcox.com"
+        },
+        {
+          "href": "tel:+441780481092",
+          "inNav": false,
+          "text": "+44 (0)1780 481092"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-fire-table?variant=53633936982240",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/taking-shape-casting-the-fire-table",
+          "inNav": false,
+          "text": "Taking shape – casting the fire table"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/superior-scaffolding",
+          "inNav": false,
+          "text": "Superior scaffolding"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/upholding-traditions-at-kettles-yard",
+          "inNav": false,
+          "text": "Conserving the way we see things at Kettle's Yard"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/woodland-heritage-open-workshop-2026",
+          "inNav": false,
+          "text": "Wonderful things happen when we open doors"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/study-one-the-peacock-garden-seat",
+          "inNav": false,
+          "text": "Study one | the peacock garden seat"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/nature-as-inspiration",
+          "inNav": false,
+          "text": "Nature as Inspiration"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/a-moment-in-time",
+          "inNav": false,
+          "text": "A moment in time for British timber"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/you-re-hired",
+          "inNav": false,
+          "text": "You're hired"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/what-necessity-is",
+          "inNav": false,
+          "text": "What necessity is"
+        },
+        {
+          "href": "https://www.matthewcox.com/blogs/journal/it-all-lines-up",
+          "inNav": false,
+          "text": "Everything lines up"
+        },
+        {
+          "href": "https://www.matthewcox.com/search",
+          "inNav": true,
+          "text": "Search"
+        },
+        {
+          "href": "https://www.matthewcox.com/pages/subscribe",
+          "inNav": true,
+          "text": "Subscribe"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/terms-of-service",
+          "inNav": true,
+          "text": "T&C's"
+        },
+        {
+          "href": "https://www.matthewcox.com/policies/privacy-policy",
+          "inNav": true,
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "https://www.studiograft.co.uk/",
+          "inNav": true,
+          "text": "Site by"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-vesper-light",
+          "inNav": false,
+          "text": "The vesper light"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-milk-table-3872",
+          "inNav": false,
+          "text": "The milk table | 3872"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-newlight-mirror",
+          "inNav": false,
+          "text": "The newlight mirror"
+        },
+        {
+          "href": "https://www.matthewcox.com/products/the-form-lamp-cylinder",
+          "inNav": false,
+          "text": "The form lamp | cylinder"
+        }
+      ]
+    }
+  ]
+}

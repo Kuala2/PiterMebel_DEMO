@@ -1,0 +1,420 @@
+{
+  "capturedAt": "2026-08-22T22:09:18.203Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "yanina-mebel",
+      "url": "https://yaninamebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://yaninamebel.ru/",
+      "title": "Мебель на заказ по индивидуальным размерам - изготовление корпусной мебели, когда важен каждый сантиметр",
+      "dom": {
+        "textLength": 5961,
+        "mediaCount": 36,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "tiptop-mebel",
+      "url": "https://tiptopmebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:300x60:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://tiptopmebel.ru/",
+      "title": "Мебель по индивидуальному заказу в Санкт-Петербурге и Ленинградской области / ТипТопМебель",
+      "dom": {
+        "textLength": 7682,
+        "mediaCount": 37,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 300,
+          "h": 60,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "jack-trench",
+      "url": "https://www.jacktrench.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references-pass2/jack-trench-mobile-first.png",
+        "desktopFirst": ".design/research/references-pass2/jack-trench-desktop-first.png",
+        "desktopFull": ".design/research/references-pass2/jack-trench-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.jacktrench.co.uk/",
+      "title": "Jack Trench Design Bespoke Kitchens & Furniture London | Design Manufacture and Install",
+      "dom": {
+        "textLength": 2780,
+        "mediaCount": 24,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 46,
+        "std": 67.9,
+        "edge": 23.6,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2780,
+        "mediaCount": 36,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 34,
+        "std": 62,
+        "edge": 20.7,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.jacktrench.co.uk/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/what-we-do",
+          "inNav": true,
+          "text": "What We Do"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/our-work",
+          "inNav": true,
+          "text": "Our Work"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/about-us",
+          "inNav": true,
+          "text": "About Us"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/about-testimonials",
+          "inNav": true,
+          "text": "Testimonials"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/press",
+          "inNav": true,
+          "text": "Press"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/kitchens-jt-curvilinear",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/kitchens-jt-classic",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/kitchens-jt-mid-century",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "mailto:info@jacktrench.co.uk?subject=JTD%20Project%20Enquiry",
+          "inNav": false,
+          "text": "Get in touch"
+        },
+        {
+          "href": "https://www.jacktrench.co.uk/cpd-programme-lecturing",
+          "inNav": false,
+          "text": "Learn More"
+        },
+        {
+          "href": "mailto:info@jacktrench.co.uk",
+          "inNav": false,
+          "text": "info@jacktrench.co.uk"
+        },
+        {
+          "href": "mailto:info@jacktrench.co.uk?subject=Hello%20Jack%20Trench%20Design...",
+          "inNav": false,
+          "text": "Get in touch"
+        },
+        {
+          "href": "https://www.instagram.com/jack_trench_ltd/?hl=en",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.pinterest.co.uk/jack_trench/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://www.instagram.com/jacktrench_design/",
+          "inNav": true,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "name": "freeborn-carpentry",
+      "url": "https://www.freeborn-carpentry.co.uk/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/references-pass2/freeborn-carpentry-mobile-first.png",
+        "desktopFirst": ".design/research/references-pass2/freeborn-carpentry-desktop-first.png",
+        "desktopFull": ".design/research/references-pass2/freeborn-carpentry-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://www.freeborn-carpentry.co.uk/",
+      "title": "Fitted Alcove Units in London & South East | Freeborn Carpentry",
+      "dom": {
+        "textLength": 2194,
+        "mediaCount": 40,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 30,
+        "std": 60.3,
+        "edge": 21.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2194,
+        "mediaCount": 40,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 35,
+        "std": 50.5,
+        "edge": 20.2,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/about",
+          "inNav": true,
+          "text": "ABOUT"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/services",
+          "inNav": true,
+          "text": "SERVICES"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/projects",
+          "inNav": true,
+          "text": "PROJECTS"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/contact-8",
+          "inNav": true,
+          "text": "CONTACT"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/customer-reviews",
+          "inNav": true,
+          "text": "REVIEWS"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/#comp-lwap0lub",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/#comp-lwaz15a5",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/#comp-lwaz3m14",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/#comp-lwaz43fz",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "mailto:info@freeborncarpentry.co.uk",
+          "inNav": true,
+          "text": "info@freeborncarpentry.co.uk"
+        },
+        {
+          "href": "https://www.instagram.com/freeborn_carpentry/",
+          "inNav": true,
+          "text": "freeborn_carpentry"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/privacy-page",
+          "inNav": true,
+          "text": "Privacy"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/general-8",
+          "inNav": true,
+          "text": "Cookies"
+        },
+        {
+          "href": "https://www.freeborn-carpentry.co.uk/terms-conditions",
+          "inNav": true,
+          "text": "Terms & Conditions"
+        }
+      ]
+    },
+    {
+      "name": "module",
+      "url": "https://moduleinc.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://moduleinc.com/",
+      "title": "Module - Build customisable & sustainable furniture. – Module Inc",
+      "dom": {
+        "textLength": 1724,
+        "mediaCount": 31,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "tamart",
+      "url": "https://www.tamartdesign.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.tamartdesign.com/",
+      "title": "Tamart | Modernist Furniture, Reimagined",
+      "dom": {
+        "textLength": 3542,
+        "mediaCount": 42,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "gabriel-tan",
+      "url": "https://www.gabriel-tan.com/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:50x37:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.gabriel-tan.com/",
+      "title": "GABRIEL TAN STUDIO",
+      "dom": {
+        "textLength": 1821,
+        "mediaCount": 12,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 58,
+        "std": 62.2,
+        "edge": 32.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1781,
+        "mediaCount": 12,
+        "overlays": 0
+      },
+      "pinnedMobile": [
+        {
+          "tag": "DIV",
+          "w": 50,
+          "h": 37,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "bodo-sperlein",
+      "url": "https://www.bodosperlein.com/home",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.bodosperlein.com/home",
+      "title": "Home — Bodo Sperlein",
+      "dom": {
+        "textLength": 220,
+        "mediaCount": 4,
+        "overlays": 1
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    }
+  ]
+}

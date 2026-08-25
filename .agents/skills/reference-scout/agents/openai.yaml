@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Scout"
+  short_description: "Доказательный отбор реальных веб-референсов"
+  default_prompt: "Используй $reference-scout. Возобнови текущий Reference Research с первого непрошедшего гейта и остановись на ближайшем пользовательском checkpoint."

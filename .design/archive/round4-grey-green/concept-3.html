@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПитерМебель — Разворот (концепт 3)</title>
+<!-- TOKENS:
+  concept: 3 «Разворот» — тема C: графитовый редакционный
+  composition-family: редакционные развороты: типографическое поле + фотополоса снизу, одна графитовая пауза, асимметричная сетка
+  page: #F2F1ED · graphite: #26282D · текст на графите: #EDECE7 (12.5:1)
+  ink: #23252B (13.6:1) · secondary: #565962 (6.2:1) · line: #DDDCD6
+  green (дозированно): ссылка на светлом #3E7A00 (4.7:1); ссылка на графите #A9DC5B (9.2:1); одна акция-этикетка #6AB000 + текст #1E2024 (6.5:1)
+  display: 'Oranienbaum' 400 (антиква, кириллица) · body: 'Golos Text' 400/500 (кириллица)
+  spacing: 4·8·12·16·24·32·48·64·96·128 · radius: 0
+  motion: один load-reveal заголовка 400ms cubic-bezier(.2,.7,.2,1); prefers-reduced-motion обязателен
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --page:#F2F1ED; --graphite:#26282D; --on-graphite:#EDECE7; --ink:#23252B; --sec:#565962;
+    --green:#3E7A00; --green-graphite:#A9DC5B; --lime:#6AB000; --lime-ink:#1E2024;
+    --line:#DDDCD6; --line-graphite:#3A3D44;
+    --disp:'Oranienbaum',serif; --body:'Golos Text',sans-serif;
+    --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--page)}
+  body{font-family:var(--body);color:var(--ink);font-size:17px;line-height:1.6;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 var(--s6)}
+
+  /* ── Колонтитул: графитовая сервис-строка + светлая строка знака ── */
+  .service{background:var(--graphite);color:var(--on-graphite);font-size:12.5px}
+  .service .wrap{display:flex;justify-content:space-between;gap:var(--s4);height:34px;align-items:center}
+  .service span,.service a{letter-spacing:.02em}
+  .service a:hover{color:var(--green-graphite)}
+  .masthead{background:var(--page);border-bottom:1px solid var(--line)}
+  .masthead .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:var(--s3)}
+  .brand img{width:40px;height:40px;border-radius:50%}
+  .brand b{font-family:var(--disp);font-weight:400;font-size:24px;letter-spacing:.02em}
+  .masthead nav{display:flex;gap:var(--s5)}
+  .masthead nav a{font-size:15px;font-weight:500;color:var(--ink);padding:var(--s2) 0}
+  .masthead nav a:hover{color:var(--green)}
+  .masthead .tel{display:none}
+
+  /* ── Hero: светлое поле + фотополоса, врезанная снизу ── */
+  .opening{padding-top:var(--s8)}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sec);margin-bottom:var(--s4)}
+  .opening h1{font-family:var(--disp);font-weight:400;font-size:84px;line-height:1.02;letter-spacing:.005em;max-width:14ch}
+  .opening .lead{display:flex;gap:var(--s8);margin-top:var(--s5);margin-bottom:var(--s6);flex-wrap:wrap}
+  .opening .lead p{max-width:52ch;color:var(--sec);font-size:17.5px}
+  .actions{display:flex;align-items:center;gap:var(--s5);flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 var(--s6);
+    background:var(--graphite);color:var(--on-graphite);font-weight:600;font-size:16px;transition:background .18s ease}
+  .btn:hover{background:#34373E}
+  .arrow{font-weight:600;font-size:15.5px;color:var(--green);border-bottom:1px solid currentColor;padding:var(--s2) 0}
+  .arrow:hover{color:var(--ink);border-color:var(--ink)}
+  .photoband{position:relative;margin-top:var(--s6)}
+  .photoband img{width:100%;height:37vh;min-height:340px;object-fit:cover;object-position:center 45%}
+  .pricetag{position:absolute;left:max(var(--s6),calc((100vw - 1240px)/2 + var(--s6)));bottom:var(--s5);
+    background:var(--graphite);color:var(--on-graphite);padding:var(--s3) var(--s4);font-size:13.5px;letter-spacing:.03em}
+  .pricetag b{font-size:16px;display:block}
+
+  /* ── Графитовая пауза ── */
+  .pause{background:var(--graphite);color:var(--on-graphite);text-align:center;padding:var(--s9) var(--s4)}
+  .pause .kicker{color:#9A9DA5}
+  .pause h2{font-family:var(--disp);font-weight:400;font-size:56px;line-height:1.05;max-width:16ch;margin:0 auto var(--s4)}
+  .pause a{color:var(--green-graphite);font-weight:500;font-size:16px;border-bottom:1px solid currentColor;padding-bottom:2px}
+  .pause a:hover{color:#C6E98F}
+
+  /* ── Редакционный listing: вступление + асимметричная сетка ── */
+  .projects{padding-top:var(--s9)}
+  .projects .cols{display:grid;grid-template-columns:4fr 8fr;gap:var(--s7)}
+  .projects .intro h2{font-family:var(--disp);font-weight:400;font-size:44px;line-height:1.05}
+  .projects .intro p{color:var(--sec);margin-top:var(--s4);font-size:16px}
+  .projects .intro .arrow{display:inline-block;margin-top:var(--s4)}
+  .spread{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s4)}
+  .figure{position:relative}
+  .figure img{width:100%;object-fit:cover}
+  .figure.big{grid-column:1 / -1}
+  .figure.big img{height:430px}
+  .figure.small{grid-column:span 5}
+  .figure.small img{height:430px}
+  .tag{position:absolute;background:var(--graphite);color:var(--on-graphite);font-size:13px;padding:var(--s2) var(--s3);letter-spacing:.02em}
+  .figure.big .tag{left:0;bottom:0}
+  .tag.accent{background:var(--lime);color:var(--lime-ink);font-weight:600;top:0;right:0;left:auto;bottom:auto}
+  .factblock{grid-column:span 7;background:#EAE9E4;border:1px solid var(--line);padding:var(--s6)}
+  .factblock b{font-family:var(--disp);font-weight:400;font-size:64px;line-height:1;display:block}
+  .factblock p{color:var(--sec);margin-top:var(--s3);font-size:15.5px;max-width:44ch}
+
+  /* ── Detail: фото на половину + колонка проекта ── */
+  .detail{padding-top:var(--s10);padding-bottom:var(--s9)}
+  .detail .grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:start}
+  .detail figure img{width:100%;height:560px;object-fit:cover}
+  .detail .tag{position:static;display:inline-block;margin-top:var(--s3)}
+  .detail h2{font-family:var(--disp);font-weight:400;font-size:46px;line-height:1.05}
+  .detail .desc{color:var(--sec);margin-top:var(--s4);max-width:50ch}
+  .specs{margin-top:var(--s5);border-top:1px solid var(--line)}
+  .specs div{display:flex;justify-content:space-between;gap:var(--s4);padding:var(--s3) 0;border-bottom:1px solid var(--line);font-size:15px}
+  .specs dt{color:var(--sec)}
+  .specs dd{font-weight:500;text-align:right}
+  .detail .actions{margin-top:var(--s6)}
+
+  /* ── CTA: графитовая полоса с формой ── */
+  .cta{background:var(--graphite);color:var(--on-graphite);padding:var(--s8) 0}
+  .cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:var(--s7);align-items:center}
+  .cta h2{font-family:var(--disp);font-weight:400;font-size:46px;line-height:1.05}
+  .cta p{color:#B9BCC3;margin-top:var(--s3);font-size:15.5px}
+  .cta form{display:flex;gap:var(--s2)}
+  .cta input{flex:1;min-height:54px;padding:0 var(--s4);background:transparent;color:var(--on-graphite);
+    border:1px solid var(--line-graphite);font-family:var(--body);font-size:16px;border-radius:0}
+  .cta input::placeholder{color:#8B8E96}
+  .cta input:focus-visible{outline:2px solid var(--green-graphite);outline-offset:1px}
+  .cta button{min-height:54px;padding:0 var(--s5);background:var(--lime);color:var(--lime-ink);
+    font-weight:600;font-size:15.5px;border:none;cursor:pointer;font-family:var(--body);white-space:nowrap}
+  .cta button:hover{background:#7CC10D}
+  .cta .note{display:block;margin-top:var(--s3);font-size:13px;color:#9A9DA5}
+  .cta .note a{color:var(--on-graphite);border-bottom:1px solid var(--line-graphite)}
+  .cta .note a:hover{color:var(--green-graphite)}
+  footer{border-top:1px solid var(--line)}
+  footer .wrap{display:flex;justify-content:space-between;gap:var(--s4);padding:var(--s5) 0;font-size:13.5px;color:var(--sec);flex-wrap:wrap}
+
+  @keyframes fadeup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .opening h1{animation:fadeup .4s cubic-bezier(.2,.7,.2,1) both}
+  .opening .lead{animation:fadeup .4s cubic-bezier(.2,.7,.2,1) 60ms both}
+  .opening .actions{animation:fadeup .4s cubic-bezier(.2,.7,.2,1) 120ms both}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  /* ── Mobile 390: своя композиция ── */
+  @media (max-width:760px){
+    .wrap{padding:0 var(--s4)}
+    .service .wrap{height:30px;font-size:11px}
+    .service .addr{display:none}
+    .masthead .wrap{height:58px}
+    .brand b{font-size:20px}
+    .masthead nav{display:none}
+    .masthead .tel{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:14px;color:var(--green)}
+    .opening{padding-top:var(--s5)}
+    .opening{display:grid;padding-top:var(--s3)}
+    .opening .wrap{display:contents}
+    .opening .kicker{grid-row:1;font-size:12px;margin-bottom:var(--s2)}
+    .opening h1{grid-row:2;font-size:31px;max-width:none;line-height:1.06}
+    .opening .photoband{grid-row:3;margin-top:var(--s3)}
+    .opening .lead{grid-row:4;margin-top:var(--s3)}
+    .opening .lead p{font-size:14.5px}
+    .opening .actions{grid-row:5;margin-top:var(--s3)}
+    .opening .lead{gap:var(--s4);margin-top:var(--s4)}
+    .opening .lead p{font-size:15.5px}
+    .actions .btn{width:100%;min-height:48px}
+    .actions .arrow{padding:var(--s1) 0}
+    .photoband{margin-top:var(--s3)}
+    .photoband img{height:52vh;min-height:320px}
+    .pricetag{left:var(--s4);bottom:var(--s4)}
+    .pause h2{font-size:36px}
+    .pause{padding:var(--s8) var(--s4)}
+    .projects .cols{grid-template-columns:1fr;gap:var(--s5)}
+    .projects .intro h2{font-size:34px}
+    .spread{grid-template-columns:1fr;gap:var(--s4)}
+    .figure.big,.figure.small,.factblock{grid-column:1 / -1}
+    .figure.big img,.figure.small img{height:300px}
+    .factblock b{font-size:44px}
+    .detail{padding-top:var(--s8)}
+    .detail .grid{grid-template-columns:1fr;gap:var(--s5)}
+    .detail figure img{height:380px}
+    .detail h2{font-size:34px}
+    .cta .wrap{grid-template-columns:1fr;gap:var(--s5)}
+    .cta h2{font-size:32px}
+    .cta form{flex-direction:column}
+    .cta button{width:100%}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="service">
+    <div class="wrap">
+      <span class="addr">Санкт-Петербург · ул. Трефолева, 1П</span>
+      <a href="tel:+79217840589">+7 (921) 784-05-89</a>
+    </div>
+  </div>
+  <div class="masthead">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="../../brand/logo_avatar.jpg" alt="Логотип ПитерМебель — зелёная оригами-птица" width="40" height="40">
+        <b>ПитерМебель</b>
+      </a>
+      <nav aria-label="Основная навигация">
+        <a href="#projects">Проекты</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <a class="tel" href="tel:+79217840589">Позвонить</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="opening">
+    <div class="wrap">
+      <p class="kicker">Собственное производство · с 2005 года</p>
+      <h1>Кухни и мебель на заказ — напрямую с нашего цеха</h1>
+      <div class="lead">
+        <p>Семь кухонь в действующем каталоге — от 185 до 541 тыс. ₽. Фасады Fenix и эмаль, корпуса Egger, фурнитура Blum: то, из чего собраны 1500+ проектов в Санкт-Петербурге.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#catalog">Смотреть каталог</a>
+        <a class="arrow" href="#contact">Записаться на замер →</a>
+      </div>
+    </div>
+    <div class="photoband">
+      <img src="../../products/item_4_kukhnya_timofey/photo_1.jpg"
+           alt="Кухня «Тимофей»: тёплая светлая кухня с деревянным полом, диагональный ракурс">
+      <span class="pricetag">Каталог 2026 — 7 кухонь<b>от 185 до 541 тыс. ₽</b></span>
+    </div>
+  </section>
+
+  <section class="pause">
+    <p class="kicker">Как мы работаем</p>
+    <h2>Вы мечтаете — мы воплощаем</h2>
+    <a href="#catalog">Путь заказа: замер → проект → цех → монтаж →</a>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap cols">
+      <div class="intro">
+        <h2>Проекты 2026</h2>
+        <p>Работы цеха из публикаций этого года: кухни, гардеробные, зеркальные шкафы. Каждый проект — индивидуальный расчёт под помещение.</p>
+        <a class="arrow" href="#catalog">Каталог кухонь →</a>
+      </div>
+      <div class="spread">
+        <figure class="figure big">
+          <img src="../../posts/post_252/photo_1.jpg"
+               alt="Кухня с фасадами МДФ эмаль и шпоном дуба — тёплый проект цеха">
+          <span class="tag">Кухня — МДФ эмаль + шпон дуба · проект мая 2026</span>
+          <span class="tag accent">Доставка — бесплатно</span>
+        </figure>
+        <figure class="figure small">
+          <img src="../../posts/post_256/photo_1.jpg"
+               alt="Зеркальный встроенный шкаф с нишей для обуви в прихожей">
+          <span class="tag">Зеркальный шкаф · прихожая</span>
+        </figure>
+        <div class="factblock">
+          <b>1500+</b>
+          <p>проектов с 2005 года — от кухонь и гардеробных до детских и ресепшен. Собственное производство на Трефолева, 1П, без посредников.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail" id="catalog">
+    <div class="wrap grid">
+      <figure class="figure">
+        <img src="../../products/item_7_kukhnya_viktoria/photo_1.jpg"
+             alt="Кухня «Виктория»: молочные классические фасады со столешницей под дерево">
+        <span class="tag">Под заказ · расчёт по вашему проекту</span>
+      </figure>
+      <div>
+        <h2>Кухня «Виктория»</h2>
+        <p class="desc">Молочные фасады и столешница под дерево — спокойное сочетание для классических интерьеров. Как и все кухни каталога, собирается под заказ и под ваши размеры.</p>
+        <dl class="specs">
+          <div><dt>Фасады</dt><dd>МДФ, молочные</dd></div>
+          <div><dt>Столешница</dt><dd>под натуральное дерево</dd></div>
+          <div><dt>Комплектация</dt><dd>под заказ, по вашим размерам</dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn" href="#contact">Записаться на замер</a>
+          <a class="arrow" href="#projects">Все работы цеха →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Расскажите о вашей кухне</h2>
+        <p>Оставьте телефон — перезвоним, обсудим задачу и следующий шаг. Запись по телефону и в мессенджерах.</p>
+      </div>
+      <form action="mailto:piter.meb@yandex.ru" method="post" enctype="text/plain">
+        <label class="visually-hidden" for="phone" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Телефон</label>
+        <input id="phone" name="phone" type="tel" placeholder="Ваш телефон" autocomplete="tel" required>
+        <button type="submit">Отправить заявку</button>
+        <span class="note">Или позвоните: <a href="tel:+79217840589">+7 (921) 784-05-89</a> · ул. Трефолева, 1П, м. «Нарвская»</span>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ПитерМебель · мебель на заказ · Санкт-Петербург</span>
+    <span>piter.meb@yandex.ru · доставка по городу бесплатно</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "board": ".design/research/board-finalists-deep.png",
+  "source": ".design/research/references/captures.json",
+  "pageType": "inner",
+  "variant": "desktopFirst",
+  "count": 8,
+  "items": [
+    {
+      "name": "ft-bespoke-portfolio",
+      "pageType": "inner",
+      "file": ".design/research/references/ft-bespoke-portfolio-desktop-first.png",
+      "finalUrl": "https://www.ftbespoke.co.uk/portfolio/"
+    },
+    {
+      "name": "ft-bespoke-bratton-kitchen",
+      "pageType": "inner",
+      "file": ".design/research/references/ft-bespoke-bratton-kitchen-desktop-first.png",
+      "finalUrl": "https://www.ftbespoke.co.uk/kitchens/"
+    },
+    {
+      "name": "matthew-cox-tables",
+      "pageType": "inner",
+      "file": ".design/research/references/matthew-cox-tables-desktop-first.png",
+      "finalUrl": "https://www.matthewcox.com/collections/tables"
+    },
+    {
+      "name": "matthew-cox-fire-table",
+      "pageType": "inner",
+      "file": ".design/research/references/matthew-cox-fire-table-desktop-first.png",
+      "finalUrl": "https://www.matthewcox.com/products/the-fire-table"
+    },
+    {
+      "name": "dis-mebel-portfolio",
+      "pageType": "inner",
+      "file": ".design/research/references/dis-mebel-portfolio-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/portfolio.html"
+    },
+    {
+      "name": "dis-mebel-production",
+      "pageType": "inner",
+      "file": ".design/research/references/dis-mebel-production-desktop-first.png",
+      "finalUrl": "https://dis-mebel.ru/production.html"
+    },
+    {
+      "name": "london-furniture-studio-projects",
+      "pageType": "inner",
+      "file": ".design/research/references/london-furniture-studio-projects-desktop-first.png",
+      "finalUrl": "https://www.londonfurniturestudio.com/projects"
+    },
+    {
+      "name": "london-furniture-studio-what-we-do",
+      "pageType": "inner",
+      "file": ".design/research/references/london-furniture-studio-what-we-do-desktop-first.png",
+      "finalUrl": "https://www.londonfurniturestudio.com/what-we-do"
+    }
+  ]
+}

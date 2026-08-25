@@ -1,0 +1,45 @@
+{
+  "id": "6882300",
+  "title": "Кухня Валерия",
+  "slug": "item_6_kukhnya_valeria",
+  "category": "Кухни на заказ",
+  "price_rub": 541000,
+  "price_formatted": "541 000 ₽",
+  "currency": "RUB",
+  "availability": "Под заказ",
+  "permalink": "https://vk.ru/market/product/kukhnya-valeria-215942650-6882300",
+  "description_raw": "НА ЗАКАЗ\nпредставлено два варианта\n1 фото- меньше верхних секций и островная вытяжка\n2 фото- дополнительные верхние секции и полновстроенная вытяжка\n*фасады МДФ эмаль+МДФ пластик матовый\n*корпус Эггер\n*фурнитура BLUM\n*витрина- алюминевая рамка узкая черная\n(на верхних секциях нет ручек)\n*столешница Эггер\nСтоимость с доставкой в черте города\nПоказать ещё",
+  "specifications": {
+    "Фасады": "фасады МДФ эмаль+МДФ пластик матовый",
+    "Корпус": "корпус Эггер",
+    "Фурнитура": "фурнитура BLUM",
+    "Столешница": "столешница Эггер"
+  },
+  "photos_count": 2,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "products/item_6_kukhnya_valeria/photo_1.jpg",
+      "source_url": "https://sun9-46.vkuserphoto.ru/s/v1/ig2/sySiKhaasJT4mz_i_dWmBBO7uNVrT2XPk67Pvi37psDIu-KbVN8iDlGc6WQgMmdZ_aRl_elPDiRqa2ECHDDRD04E.jpg?quality=95&as=32x33%2C48x49%2C72x73%2C108x110%2C160x163%2C240x244%2C360x366%2C480x488%2C540x549%2C640x650%2C720x732%2C736x748&from=bu&u=59Byd5BhLx_hwvXiUacR7CVpGAK9AUzGza0WBCy-tgg&cs=736x748",
+      "sha256": "0a1331980a558734d60d64df68803a22a694b4eecb5f83f1bdceb28e47d8a0d4",
+      "resolution": "736x748",
+      "width": 736,
+      "height": 748,
+      "format": "JPEG",
+      "bytes": 159349
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "products/item_6_kukhnya_valeria/photo_2.jpg",
+      "source_url": "https://sun9-32.vkuserphoto.ru/s/v1/ig2/efQB9uqk5A11_Z2Z2tn4YtN6kN-MCxe3QHj0qNtOPFeq_1jdogm7RctihG9YOYHPKtBUH2zyGU4eOKcIiZpzAwyX.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x479%2C540x539%2C640x639%2C720x719%2C750x749&from=bu&u=aVmnW4rUFf0p3qgUxCkx6SpjdhA-wypry_zX7sBLOls&cs=750x749",
+      "sha256": "1a9dd9ffbff1775391df5856f5e2727343ee26b60a3e4460bcd5a49597cbc2a8",
+      "resolution": "750x749",
+      "width": 750,
+      "height": 749,
+      "format": "JPEG",
+      "bytes": 159601
+    }
+  ]
+}

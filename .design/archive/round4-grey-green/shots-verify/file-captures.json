@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-08-23T21:27:43.021Z",
+  "mode": "file",
+  "items": [
+    {
+      "name": "concept-1",
+      "file": ".design/style-lab/concept-1.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-verify/concept-1-1440x1000-first.png",
+          "full": ".design/style-lab/shots-verify/concept-1-1440x1000-full.png"
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-verify/concept-1-390x844-first.png",
+          "full": ".design/style-lab/shots-verify/concept-1-390x844-full.png"
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 55,
+        "std": 75.2,
+        "edge": 33.4,
+        "usable": true
+      },
+      "sha256": "bc69034ae015f764c964685a40d5cbdd3ce5f25347c02dc3c32ef90d50355b47"
+    },
+    {
+      "name": "concept-2",
+      "file": ".design/style-lab/concept-2.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-verify/concept-2-1440x1000-first.png",
+          "full": ".design/style-lab/shots-verify/concept-2-1440x1000-full.png"
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-verify/concept-2-390x844-first.png",
+          "full": ".design/style-lab/shots-verify/concept-2-390x844-full.png"
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 40,
+        "std": 57.1,
+        "edge": 23.7,
+        "usable": true
+      },
+      "sha256": "5765e7413224d518213abcf4b37d63792493801eb7549147a372805455f44785"
+    },
+    {
+      "name": "concept-3",
+      "file": ".design/style-lab/concept-3.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x1000": {
+          "first": ".design/style-lab/shots-verify/concept-3-1440x1000-first.png",
+          "full": ".design/style-lab/shots-verify/concept-3-1440x1000-full.png"
+        },
+        "390x844": {
+          "first": ".design/style-lab/shots-verify/concept-3-390x844-first.png",
+          "full": ".design/style-lab/shots-verify/concept-3-390x844-full.png"
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 30,
+        "std": 63.7,
+        "edge": 27,
+        "usable": true
+      },
+      "sha256": "568f505a080a66f3938b645d8aa09d215f418841a9966cc771f963ea189b6a9c"
+    }
+  ]
+}

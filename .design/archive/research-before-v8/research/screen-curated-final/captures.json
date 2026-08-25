@@ -1,0 +1,267 @@
+{
+  "capturedAt": "2026-08-22T22:17:02.394Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "faye-toogood",
+      "url": "https://www.fayetoogood.com/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.fayetoogood.com/",
+      "title": "Home | Faye Toogood",
+      "dom": {
+        "textLength": 1408,
+        "mediaCount": 18,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "sabine-marcelis",
+      "url": "https://sabinemarcelis.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-curated-final/sabine-marcelis-mobile-first.png",
+        "desktopFirst": ".design/research/screen-curated-final/sabine-marcelis-desktop-first.png",
+        "desktopFull": ".design/research/screen-curated-final/sabine-marcelis-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://sabinemarcelis.com/",
+      "title": "Studio Sabine Marcelis",
+      "dom": {
+        "textLength": 564,
+        "mediaCount": 3,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 6,
+        "std": 19,
+        "edge": 7.8,
+        "usable": false
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 565,
+        "mediaCount": 3,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 4,
+        "std": 20.6,
+        "edge": 10.7,
+        "usable": false
+      },
+      "links": [
+        {
+          "href": "https://sabinemarcelis.com/projects",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://sabinemarcelis.com/about",
+          "inNav": false,
+          "text": "About"
+        },
+        {
+          "href": "https://sabinemarcelis.com/imprint",
+          "inNav": false,
+          "text": "Imprint"
+        }
+      ]
+    },
+    {
+      "name": "destroyers-builders",
+      "url": "https://destroyersbuilders.com/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-curated-final/destroyers-builders-mobile-first.png",
+        "desktopFirst": ".design/research/screen-curated-final/destroyers-builders-desktop-first.png",
+        "desktopFull": ".design/research/screen-curated-final/destroyers-builders-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://destroyersbuilders.com/",
+      "title": "destroyers builders",
+      "dom": {
+        "textLength": 116,
+        "mediaCount": 40,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 25,
+        "std": 50.1,
+        "edge": 20.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 100,
+        "mediaCount": 40,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 29,
+        "std": 45.5,
+        "edge": 24.9,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://destroyersbuilders.com/",
+          "inNav": false,
+          "text": "destroyers / builders"
+        },
+        {
+          "href": "https://destroyersbuilders.com/objects/",
+          "inNav": false,
+          "text": "objects"
+        },
+        {
+          "href": "https://destroyersbuilders.com/projects/",
+          "inNav": false,
+          "text": "projects"
+        },
+        {
+          "href": "https://destroyersbuilders.com/open-editions/",
+          "inNav": false,
+          "text": "open editions"
+        },
+        {
+          "href": "https://destroyersbuilders.com/cart/",
+          "inNav": false,
+          "text": "0 cart"
+        },
+        {
+          "href": "https://destroyersbuilders.com/info/",
+          "inNav": false,
+          "text": "info"
+        },
+        {
+          "href": "https://destroyersbuilders.com/objects",
+          "inNav": false,
+          "text": "objects"
+        },
+        {
+          "href": "https://destroyersbuilders.com/projects",
+          "inNav": false,
+          "text": "projects"
+        }
+      ]
+    },
+    {
+      "name": "muller-van-severen",
+      "url": "https://www.mullervanseveren.be/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (DIV:1116x447:top, DIV:558x327:top, DIV:546x254:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.mullervanseveren.be/",
+      "title": "Muller Van Severen | a furniture project by fien muller and hannes van severen",
+      "dom": {
+        "textLength": 6335,
+        "mediaCount": 179,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 1116,
+          "h": 447,
+          "area": 35,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 558,
+          "h": 327,
+          "area": 13,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 546,
+          "h": 254,
+          "area": 10,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "H3",
+          "w": 546,
+          "h": 29,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 546,
+          "h": 183,
+          "area": 7,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "FORM",
+          "w": 546,
+          "h": 183,
+          "area": 7,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "DIV",
+          "w": 546,
+          "h": 43,
+          "area": 2,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "mid"
+        }
+      ]
+    }
+  ]
+}

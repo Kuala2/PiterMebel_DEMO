@@ -1,0 +1,302 @@
+{
+  "capturedAt": "2026-08-22T22:13:15.931Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "intererno",
+      "url": "https://www.intererno.com/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.intererno.com/",
+      "title": "ИНТЕРЬЕРНО - Дизайнерская мебель на заказ в Москве по индивидуальным размерам и ценам | Официальный сайт",
+      "dom": {
+        "textLength": 2435,
+        "mediaCount": 38,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "raum-expert",
+      "url": "https://raum-expert.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:800x103:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://raum-expert.ru/",
+      "title": "Премиальная мебель на заказ в СПб — производство мебели премиум-класса от Raum-Expert",
+      "dom": {
+        "textLength": 5111,
+        "mediaCount": 1,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 800,
+          "h": 103,
+          "area": 6,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "nevskaya-masterskaya",
+      "url": "https://meb98.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://meb98.ru/",
+      "title": "Невская Мастерская - Корпусная мебель на заказ",
+      "dom": {
+        "textLength": 4599,
+        "mediaCount": 16,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "sunday-mebel",
+      "url": "https://sundaymebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:30x30:bottom, DIV:30x30:bottom, DIV:30x30:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://sundaymebel.ru/",
+      "title": "Мебельная студия «Sunday» - делаем мебель на заказ из разных материалов, любых размеров и цветов.",
+      "dom": {
+        "textLength": 1337,
+        "mediaCount": 17,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 30,
+          "h": 30,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        },
+        {
+          "tag": "DIV",
+          "w": 30,
+          "h": 30,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        },
+        {
+          "tag": "DIV",
+          "w": 30,
+          "h": 30,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        },
+        {
+          "tag": "DIV",
+          "w": 30,
+          "h": 30,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "paul-rene",
+      "url": "https://paulrenefurniture.com/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (DIV:1440x1000:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://paulrenefurniture.com/",
+      "title": "Paul Rene Furniture Studio | Sculptural Furniture as Art | Phoenix, AZ",
+      "dom": {
+        "textLength": 4049,
+        "mediaCount": 12,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 1440,
+          "h": 1000,
+          "area": 100,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "popcorn-atelier",
+      "url": "https://popcornatelier.in/",
+      "status": "fail",
+      "reasons": [
+        "HTTP 404",
+        "raster-flat (bins=2, std=4.5)"
+      ],
+      "files": {
+        "mobile": ".design/research/screen-final-gaps/popcorn-atelier-mobile-first.png",
+        "desktopFirst": ".design/research/screen-final-gaps/popcorn-atelier-desktop-first.png",
+        "desktopFull": ".design/research/screen-final-gaps/popcorn-atelier-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://popcornatelier.in/",
+      "title": "Site not found",
+      "dom": {
+        "textLength": 300,
+        "mediaCount": 0,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 2,
+        "std": 4.5,
+        "edge": 1.2,
+        "usable": false
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 300,
+        "mediaCount": 0,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 3,
+        "std": 7.3,
+        "edge": 4.5,
+        "usable": false
+      },
+      "links": [
+        {
+          "href": "https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking",
+          "inNav": false,
+          "text": "“page not found” support guide"
+        }
+      ]
+    },
+    {
+      "name": "materia-aurea",
+      "url": "https://www.materiaaurea.com/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.materiaaurea.com/",
+      "title": "MATERIA AUREA | Italian Collectible Design & Bespoke Furniture",
+      "dom": {
+        "textLength": 1460,
+        "mediaCount": 10,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "collect-studio",
+      "url": "https://www.collect.studio/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (HEADER:1440x102:top, IMG:1440x1000:top, IMG:1440x1000:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.collect.studio/",
+      "title": "Collect.studio ǀ Modern - contemporary furniture and homeware designs",
+      "dom": {
+        "textLength": 4696,
+        "mediaCount": 830,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "HEADER",
+          "w": 1440,
+          "h": 102,
+          "area": 10,
+          "semantic": true,
+          "closeBtn": true,
+          "zone": "top"
+        },
+        {
+          "tag": "IMG",
+          "w": 1440,
+          "h": 1000,
+          "area": 100,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "IMG",
+          "w": 1440,
+          "h": 1000,
+          "area": 100,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "IMG",
+          "w": 1440,
+          "h": 1000,
+          "area": 100,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    }
+  ]
+}

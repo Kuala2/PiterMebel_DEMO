@@ -1,0 +1,96 @@
+{
+  "brand_name": "ПитерМебель",
+  "legal_name": "Питермебель Волкова-Ип",
+  "tagline": "Производство мебели на заказ в Санкт-Петербурге с 2005 года",
+  "status": "Производство мебели на заказ в СПб. Работаем с 2005г. Замер, дизайн-проект, установка под ключ.",
+  "description": "Студия мебели Елены Волковой «ПитерМебель». Производство качественной корпусной и встроенной мебели на заказ в Санкт-Петербурге и ЛО. Кухни, шкафы-купе, гардеробные, детские, мебель для клиник и коммерческих помещений. Более 1500 довольных клиентов.",
+  "advantages": [
+    "Собственное производство с 2005 года",
+    "Качественные современные материалы (Egger, МДФ пластик/эмаль/шпон, Fenix, Slotex, фурнитура Blum)",
+    "Индивидуальный 3D дизайн-проект и визуализация",
+    "Замер, доставка и установка под ключ",
+    "Бесплатная доставка (курьером / СДЭК / Boxberry)",
+    "Более 1500 довольных клиентов"
+  ],
+  "city": "Санкт-Петербург",
+  "address": "ул. Трефолева, д. 1 П, Санкт-Петербург",
+  "metro": "Нарвская",
+  "phone": "+7 (921) 784-05-89",
+  "email": "piter.meb@yandex.ru",
+  "website": "https://pitermebel.com",
+  "vk_community": "https://vk.com/pitermebelcom",
+  "working_hours": "По расписанию / запись на консультацию по телефону, WhatsApp, Viber, Telegram (открывается в 10:00)",
+  "rating": {
+    "score": 5.0,
+    "reviews_count": 4,
+    "five_star_percentage": 100
+  },
+  "community_stats": {
+    "subscribers_count": 263,
+    "total_wall_posts": 166,
+    "total_catalog_products": 7,
+    "created_date": "13 сентября 2022 года"
+  },
+  "key_person": {
+    "name": "Елена Волкова",
+    "role": "Руководитель / Контактное лицо студии",
+    "phone": "+7 (921) 784-05-89",
+    "email": "piter.meb@yandex.ru"
+  },
+  "evidence_sources": {
+    "free_delivery": {
+      "claim": "Бесплатная доставка",
+      "source": "VK Market trust_marks API & main widget",
+      "verbatim": "trust_marks.main_mark: 'Бесплатная доставка' | trust_marks.marks.delivery_info: 'Доставка курьером или СДЭК, Boxberry, Почта России. Есть бесплатная'"
+    },
+    "clients_count_and_experience": {
+      "claim": "Более 1500 довольных клиентов, работаем с 2005 года",
+      "source": "VK Community Description Widget",
+      "verbatim": "Производство мебели на заказ в СПб\\nРаботаем с 2005г\\nКачественные современные материалы\\nОпыт\\nДелаем дизайн-проекты, визуализации\\nЗамер, установка под ключ\\nБолее 1500 довольных клиентов"
+    },
+    "legal_name": {
+      "claim": "Питермебель Волкова-Ип",
+      "source": "VK Community Contacts Widget",
+      "verbatim": "Блок контактов сообщества: 'Питермебель Волкова-Ип'"
+    },
+    "working_hours_and_address": {
+      "claim": "ул. Трефолева, д. 1 П, м. Нарвская, с 10:00 по расписанию",
+      "source": "VK Group addresses API & timetable",
+      "verbatim": "main_address: { 'address': 'Трефолева д1 П', 'city': 'Санкт-Петербург', 'metro': 'Нарвская', 'work_info_status': 'timetable', 'additional_address': 'запись на консультацию по телефону или WhatsApp Viber Telegram' } | Статус на главной: 'Закрыто·Откроется в 10:00'"
+    },
+    "rating_and_reviews": {
+      "claim": "Рейтинг 5.0 (4 отзыва, 100% 5-звездочных)",
+      "source": "VK Group rating API & UI Header",
+      "verbatim": "rating: { 'mark': 5.0, 'review_cnt': 4, 'marks_stat': [{'mark': 5, 'marks_count': 4, 'percentage': 100}] }"
+    },
+    "contact_person": {
+      "claim": "Елена Волкова (руководитель/контактное лицо)",
+      "source": "VK Group Contacts Widget & Description",
+      "verbatim": "Контакты: 'Елена Волкова, +7 (921) 784-05-89, piter.meb@yandex.ru' | Хэштег в постах: '#студиямебелиеленыволковой'"
+    }
+  },
+  "media": {
+    "logo_avatar": {
+      "filename": "logo_avatar.jpg",
+      "local_path": "brand/logo_avatar.jpg",
+      "source_url": "https://sun1-29.vkuserphoto.ru/s/v1/ig2/9ZngOeZwy7RjcgjkqFJFTE6pgFpbB6DWBUiKyJiD1BQrYHYZcDuuRy0SNfIEi_9WyMpTItDGuVI1hXFB1-1Ci3wy.jpg?quality=95&crop=54,54,434,434&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360&ava=1&u=yJFK4oY5_y7jmX0YNFZZhQ58Es7nuyA56P2QSeU5GQ4&cs=360x360",
+      "sha256": "202d645e6e7f3c78427d654a08cf7316dac97a83a8f524b23f80d43314f62cc7",
+      "resolution": "360x360",
+      "width": 360,
+      "height": 360,
+      "format": "JPEG",
+      "bytes": 15889
+    },
+    "banner_cover": {
+      "filename": "banner_cover.jpg",
+      "local_path": "brand/banner_cover.jpg",
+      "source_url": "https://sun9-47.vkuserphoto.ru/impf/3BXDGigCEvjgYX_E-1886_rSHvFZwWhe2sXGeg/7zt0QToigPg.jpg?size=1920x768&quality=95&crop=0,0,1920,767&sign=4fd626317c1ebc367074e9979f18f96e&c_uniq_tag=2JZ2ecBq-_PeTkKEl3hEGhyYKowNvFRG1-cQaiMomZI&type=cover_group",
+      "sha256": "e2b5d8cb36b3496bb2060a7c7cc5676cc15fa1d1c303364653d151468e356cb0",
+      "resolution": "1920x768",
+      "width": 1920,
+      "height": 768,
+      "format": "JPEG",
+      "bytes": 265591
+    }
+  }
+}

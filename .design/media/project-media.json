@@ -1,0 +1,92 @@
+{
+  "mode": "client-real",
+  "source": "VK https://vk.ru/pitermebelcom — полный экспорт 2026-08-23 (EXPORT_REPORT.md, site_dataset.json)",
+  "license": "Права клиента: собственные фото реализованных проектов «ПитерМебель». Разрешены для демонстрации работ студии.",
+  "media": [
+    {
+      "path": "products/item_2_kukhnya_slavena/photo_1.jpg",
+      "source": "VK Market item 6882298 «Кухня Славена»",
+      "usage": "Широкий фронтальный кадр светлой кухни с обеденной зоной; hero-кандидат и listing."
+    },
+    {
+      "path": "products/item_1_kukhnya_alexandra/photo_2.jpg",
+      "source": "VK Market item 6882288 «Кухня Александра»",
+      "usage": "Кухня с высоким шкафом и вертикальной подсветкой; характерный кадр Fenix, hero/detail."
+    },
+    {
+      "path": "products/item_1_kukhnya_alexandra/photo_1.jpg",
+      "source": "VK Market item 6882288 «Кухня Александра»",
+      "usage": "Светлая кухня с зоной под дерево; общий план для listing."
+    },
+    {
+      "path": "products/item_4_kukhnya_timofey/photo_1.jpg",
+      "source": "VK Market item 6882296 «Кухня Тимофей»",
+      "usage": "Светлая кухня с деревянным полом, диагональный ракурс; listing."
+    },
+    {
+      "path": "products/item_4_kukhnya_timofey/photo_2.jpg",
+      "source": "VK Market item 6882296 «Кухня Тимофей»",
+      "usage": "Фронтальный план той же кухни; сравнение ракурсов в listing."
+    },
+    {
+      "path": "products/item_5_kukhnya_ulyana/photo_3.jpg",
+      "source": "VK Market item 6882283 «Кухня Ульяна»",
+      "usage": "Вертикальный кадр 1440×1794; вертикальные панели и mobile-first композиции."
+    },
+    {
+      "path": "products/item_7_kukhnya_viktoria/photo_1.jpg",
+      "source": "VK Market item 6902667 «Кухня Виктория»",
+      "usage": "Молочные классические фасады со столешницей под дерево; разнообразие стиля в listing."
+    },
+    {
+      "path": "products/item_7_kukhnya_viktoria/photo_2.jpg",
+      "source": "VK Market item 6902667 «Кухня Виктория»",
+      "usage": "Фрагмент молочной кухни; detail-модуль."
+    },
+    {
+      "path": "posts/post_254/photo_1.jpg",
+      "source": "VK wall-215942650_254 (17.06.2026) «Гардеробная со стеклом СТОПСОЛ»",
+      "usage": "Гардеробная с зеркальными фасадами и подсветкой, 1920×2560; главный wardrobe-кадр."
+    },
+    {
+      "path": "posts/post_254/photo_3.jpg",
+      "source": "VK wall-215942650_254 (17.06.2026) «Гардеробная со стеклом СТОПСОЛ»",
+      "usage": "Второй ракурс гардеробной; доказательная пара к главному кадру."
+    },
+    {
+      "path": "posts/post_254/photo_10.jpg",
+      "source": "VK wall-215942650_254 (17.06.2026) «Гардеробная со стеклом СТОПСОЛ»",
+      "usage": "Детали полок и фурнитуры гардеробной; макро-доказательство качества."
+    },
+    {
+      "path": "posts/post_253/photo_1.jpg",
+      "source": "VK wall-215942650_253 (08.06.2026) «Кухня МДФ эмаль + шпон»",
+      "usage": "Тёмная кухня с матовыми фасадами и подсветкой полок, 1920×2560; контрастный проект."
+    },
+    {
+      "path": "posts/post_253/photo_3.jpg",
+      "source": "VK wall-215942650_253 (08.06.2026) «Кухня МДФ эмаль + шпон»",
+      "usage": "Деталь подсветки и текстуры шпона дуба; доказательство материалов."
+    },
+    {
+      "path": "posts/post_252/photo_1.jpg",
+      "source": "VK wall-215942650_252 (30.05.2026) «Мебель МДФ эмаль + шпон дуба»",
+      "usage": "Тёплая кухня с натуральными фасадами; listing."
+    },
+    {
+      "path": "posts/post_256/photo_1.jpg",
+      "source": "VK wall-215942650_256 (06.08.2026) «Зеркальный шкаф с нишей для обуви»",
+      "usage": "Зеркальный встроенный шкаф в прихожей; категория «шкафы»."
+    },
+    {
+      "path": "posts/post_250/photo_1.jpg",
+      "source": "VK wall-215942650_250 (21.05.2026) «Кухня с антипальчиковым покрытием»",
+      "usage": "Кухня с фасадами МДФ Velvet; listing/деталь."
+    }
+  ],
+  "excluded": [
+    "products/item_5_kukhnya_ulyana/photo_2.jpg — скриншот переписки, не предметное фото",
+    "products/item_3_kukhnya_stefania/* — низкое разрешение (~750px)",
+    ".design/media/images/* — прежний demo stock (Unsplash), больше не используется"
+  ]
+}

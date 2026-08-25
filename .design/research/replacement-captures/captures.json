@@ -1,0 +1,718 @@
+{
+  "capturedAt": "2026-08-23T09:54:42.331Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "deniart",
+      "url": "https://deniart.design/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/replacement-captures/deniart-mobile-first.png",
+        "desktopFirst": ".design/research/replacement-captures/deniart-desktop-first.png",
+        "desktopFull": ".design/research/replacement-captures/deniart-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://deniart.design/",
+      "title": "Премиальная дизайнерская мебель на заказ Deni-art®",
+      "dom": {
+        "textLength": 8441,
+        "mediaCount": 64,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 18,
+        "std": 24.1,
+        "edge": 12.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 5889,
+        "mediaCount": 60,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 20,
+        "std": 21.7,
+        "edge": 14.5,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://deniart.design/",
+          "inNav": true,
+          "text": "Главная"
+        },
+        {
+          "href": "https://deniart.design/kukhni/",
+          "inNav": true,
+          "text": "Кухни"
+        },
+        {
+          "href": "https://deniart.design/kukhni/catalog/",
+          "inNav": true,
+          "text": "Каталог"
+        },
+        {
+          "href": "https://deniart.design/mebel/",
+          "inNav": true,
+          "text": "Мебель"
+        },
+        {
+          "href": "https://deniart.design/mebel/shkafy-dlya-khraneniya/",
+          "inNav": true,
+          "text": "Дизайнерские шкафы"
+        },
+        {
+          "href": "https://deniart.design/mebel/garderobnye/",
+          "inNav": true,
+          "text": "Гардеробные"
+        },
+        {
+          "href": "https://deniart.design/mebel/razdvizhnye-dveri/",
+          "inNav": true,
+          "text": "Перегородки"
+        },
+        {
+          "href": "https://deniart.design/mebel/komody-i-tumby/",
+          "inNav": true,
+          "text": "Комоды и тумбы"
+        },
+        {
+          "href": "https://deniart.design/mebel/mebel-dlya-vannoy/",
+          "inNav": true,
+          "text": "Мебель для ванной"
+        },
+        {
+          "href": "https://deniart.design/mebel/eksklyuzivnye-stellazhi/",
+          "inNav": true,
+          "text": "Книжные шкафы и стеллажи"
+        },
+        {
+          "href": "https://deniart.design/mebel/elitnye-shkafy-kupe/",
+          "inNav": true,
+          "text": "Элитные шкафы-купе"
+        },
+        {
+          "href": "https://deniart.design/mebel/mebelnye-komplekty/",
+          "inNav": true,
+          "text": "Мебельные комплекты"
+        },
+        {
+          "href": "https://deniart.design/proekty/",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://deniart.design/news/",
+          "inNav": true,
+          "text": "Новости"
+        },
+        {
+          "href": "https://deniart.design/news/press/",
+          "inNav": true,
+          "text": "СМИ о Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/blog/",
+          "inNav": true,
+          "text": "Журнал Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/sotrudnichestvo/",
+          "inNav": true,
+          "text": "Дизайнерам"
+        },
+        {
+          "href": "https://deniart.design/klientam/",
+          "inNav": true,
+          "text": "Клиентам"
+        },
+        {
+          "href": "https://deniart.design/o-nas/",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://deniart.design/kontakty/",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "https://deniart.design/#",
+          "inNav": true,
+          "text": "Назад"
+        },
+        {
+          "href": "tel:+74957955016",
+          "inNav": true,
+          "text": "+7 495 795-50-16"
+        },
+        {
+          "href": "https://deniart.design/#order",
+          "inNav": false,
+          "text": "Сделать заказ"
+        },
+        {
+          "href": "https://deniart.design/nashi-partnyery/",
+          "inNav": false,
+          "text": "Подробнее"
+        },
+        {
+          "href": "https://api.whatsapp.com/send/?phone=79037955016",
+          "inNav": false,
+          "text": "WhatsApp"
+        },
+        {
+          "href": "https://t.me/deniart_design",
+          "inNav": false,
+          "text": "Телеграм"
+        },
+        {
+          "href": "mailto:info@deni-art.ru",
+          "inNav": false,
+          "text": "Почта"
+        },
+        {
+          "href": "tel:+79037955016",
+          "inNav": false,
+          "text": "Позвонить"
+        },
+        {
+          "href": "https://deniart.design/mebel/shkafy-dlya-khraneniya/shkaf-atelier/",
+          "inNav": false,
+          "text": "Шкаф АТЕЛЬЕР из натуральных обоев"
+        },
+        {
+          "href": "https://deniart.design/news/press/my-vyigrali-publikatsiyu-v-interernom-zhurnale-hi-home/",
+          "inNav": false,
+          "text": "Публикация в интерьерном журнале Hi Home"
+        },
+        {
+          "href": "https://deniart.design/news/press/100-dizayn-proektov-2024/",
+          "inNav": false,
+          "text": "100 Дизайн-Проектов"
+        },
+        {
+          "href": "https://deniart.design/news/deni-art-kollaboratsi-s-tracy-hollidey/",
+          "inNav": false,
+          "text": "Первый международный проект Deni-Art"
+        },
+        {
+          "href": "https://deniart.design/news/deni-art-na-slyete-geroev-v-sochi/",
+          "inNav": false,
+          "text": "Deni-Art на «Слёте героев» в Сочи"
+        },
+        {
+          "href": "https://www.youtube.com/channel/UCOdSnzpxB_4h6TIbTTwyDZg",
+          "inNav": true,
+          "text": "YouTube"
+        },
+        {
+          "href": "https://vk.com/deniart_mebel",
+          "inNav": true,
+          "text": "ВКонтакте"
+        },
+        {
+          "href": "https://deniart.design/politika-konfidentsialnosti/",
+          "inNav": true,
+          "text": "Политика конфиденциальности"
+        }
+      ]
+    },
+    {
+      "name": "hardproject",
+      "url": "https://hardproject.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://hardproject.ru/",
+      "title": "Купить мебель на заказ по индивидуальным размерам в Москве",
+      "dom": {
+        "textLength": 6196,
+        "mediaCount": 25,
+        "overlays": 1
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "name": "woodros",
+      "url": "https://woodros.com/moskva/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://woodros.com/moskva/",
+      "title": "Производство элитной мебели на заказ в Москве — WOODROS",
+      "dom": {
+        "textLength": 16390,
+        "mediaCount": 114,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "arius",
+      "url": "https://arius-mebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://arius-mebel.ru/",
+      "title": "Мебель на заказ по индивидуальным проектам - Москва и МО",
+      "dom": {
+        "textLength": 4327,
+        "mediaCount": 7,
+        "overlays": 2
+      }
+    },
+    {
+      "name": "agar-mebel",
+      "url": "https://agarmebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://agarmebel.ru/",
+      "title": "Дизайнерская мебель в СПб — производство стильной и современной мебели",
+      "dom": {
+        "textLength": 2787,
+        "mediaCount": 31,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "smart-interior",
+      "url": "https://www.smart-interior-spb.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (DIV:600x162:bottom)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://www.smart-interior-spb.ru/",
+      "title": "Smart Interior - производство корпусной мебели в Санкт-Петербурге",
+      "dom": {
+        "textLength": 3129,
+        "mediaCount": 2,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 600,
+          "h": 162,
+          "area": 7,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "bottom"
+        }
+      ]
+    },
+    {
+      "name": "de-atelier",
+      "url": "https://de-atelier.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/replacement-captures/de-atelier-mobile-first.png",
+        "desktopFirst": ".design/research/replacement-captures/de-atelier-desktop-first.png",
+        "desktopFull": ".design/research/replacement-captures/de-atelier-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://de-atelier.ru/",
+      "title": "Мебель на заказ в Москве по дизайн проектам от производителя | Студия De Atelier",
+      "dom": {
+        "textLength": 3693,
+        "mediaCount": 58,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 30,
+        "std": 62.7,
+        "edge": 27.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 3676,
+        "mediaCount": 58,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 29,
+        "std": 73,
+        "edge": 35,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://de-atelier.ru/#submenu:more",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more2",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/designer_architect",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/about",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://wa.me/79651015777",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://t.me/SergeyNikolaiich",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "tel:+79651015777",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/catalog_kitchen",
+          "inNav": false,
+          "text": "Кухни"
+        },
+        {
+          "href": "https://de-atelier.ru/living",
+          "inNav": false,
+          "text": "Мебель для гостиной"
+        },
+        {
+          "href": "https://de-atelier.ru/garderob_room",
+          "inNav": false,
+          "text": "Гардеробная комната"
+        },
+        {
+          "href": "https://de-atelier.ru/bathroom",
+          "inNav": false,
+          "text": "Мебель для ванной"
+        },
+        {
+          "href": "https://de-atelier.ru/garderob_wardrobe",
+          "inNav": false,
+          "text": "Гардеробные шкафы"
+        },
+        {
+          "href": "https://de-atelier.ru/bedroom",
+          "inNav": false,
+          "text": "Мебель для спальни"
+        },
+        {
+          "href": "https://de-atelier.ru/count",
+          "inNav": false,
+          "text": "Посчитать мебель"
+        },
+        {
+          "href": "https://de-atelier.ru/process",
+          "inNav": false,
+          "text": "Процесс заказа"
+        },
+        {
+          "href": "https://de-atelier.ru/designer_at_home",
+          "inNav": false,
+          "text": "Заказать дизайнера на дом"
+        },
+        {
+          "href": "https://de-atelier.ru/delivery",
+          "inNav": false,
+          "text": "Доставка и сборка мебели"
+        },
+        {
+          "href": "https://de-atelier.ru/measuring",
+          "inNav": false,
+          "text": "Записаться на замер помещения"
+        },
+        {
+          "href": "https://de-atelier.ru/pay",
+          "inNav": false,
+          "text": "Оплата и гарантия"
+        },
+        {
+          "href": "https://de-atelier.ru/#zeromenu",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more6",
+          "inNav": false,
+          "text": "Каталог"
+        },
+        {
+          "href": "https://de-atelier.ru/#submenu:more5",
+          "inNav": false,
+          "text": "Сервисы"
+        },
+        {
+          "href": "https://de-atelier.ru/#popraschetmob",
+          "inNav": false,
+          "text": "Обсудить проект"
+        },
+        {
+          "href": "https://t.me/De_Atelier",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#zeropopup",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#techno",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#technoblock",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_03",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_01",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_02",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_09",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_07",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_08",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_04",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_10",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/portfolio_project_05",
+          "inNav": false,
+          "text": ""
+        },
+        {
+          "href": "http://de-atelier.ru/soglasie",
+          "inNav": false,
+          "text": "согласие на обработку персональных данных"
+        },
+        {
+          "href": "https://de-atelier.ru/politika",
+          "inNav": false,
+          "text": "политикой конфиденциальности"
+        },
+        {
+          "href": "https://de-atelier.ru/#sendmyform",
+          "inNav": false,
+          "text": "Отправить"
+        },
+        {
+          "href": "https://de-atelier.ru/#spasibodark",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://de-atelier.ru/#uspeh-popup",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "mailto:zakaz5777@gmail.com",
+          "inNav": true,
+          "text": "zakaz5777@gmail.com"
+        },
+        {
+          "href": "https://de-atelier.ru/soglasie",
+          "inNav": true,
+          "text": "Согласие на обработку персональных данных"
+        }
+      ]
+    },
+    {
+      "name": "mf78",
+      "url": "https://mf78.ru/",
+      "status": "fail",
+      "reasons": [
+        "pinned-blocking-overlay (DIV:1440x136:top, BUTTON:180x52:top)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://mf78.ru/",
+      "title": "Производство мебели на заказ. Изготовление торговой и офисной мебели в Санкт-Петербурге – Мебельная фабрика 3+2",
+      "dom": {
+        "textLength": 8237,
+        "mediaCount": 240,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [
+        {
+          "tag": "DIV",
+          "w": 1440,
+          "h": 136,
+          "area": 14,
+          "semantic": true,
+          "closeBtn": false,
+          "zone": "top"
+        },
+        {
+          "tag": "BUTTON",
+          "w": 180,
+          "h": 52,
+          "area": 1,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "top"
+        }
+      ]
+    },
+    {
+      "name": "mebel-nord",
+      "url": "https://mebelnord.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://mebelnord.ru/",
+      "title": "Мебель на заказ от производителя в Санкт-Петербурге - Норд Мебель",
+      "dom": {
+        "textLength": 10328,
+        "mediaCount": 41,
+        "overlays": 2
+      }
+    },
+    {
+      "name": "sm-project",
+      "url": "https://smproject-mebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "mobile-chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://smproject-mebel.ru/",
+      "title": "Изготовление корпусной мебели по индивидуальным проектам. Санкт-Петербург.",
+      "dom": {
+        "textLength": 4314,
+        "mediaCount": 12,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 41,
+        "std": 85.4,
+        "edge": 38.8,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 4308,
+        "mediaCount": 12,
+        "overlays": 1
+      }
+    }
+  ]
+}

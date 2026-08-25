@@ -1,0 +1,19 @@
+{
+  "source": "user",
+  "decision": "continue",
+  "approved": [
+    "ankabespoke.co.uk",
+    "dis-mebel.ru",
+    "steroxstudio.co.uk"
+  ],
+  "rejected": [
+    "deniart.design",
+    "de-atelier.ru"
+  ],
+  "neutral": [
+    "ftbespoke.co.uk",
+    "londonfurniturestudio.com",
+    "matthewcox.com"
+  ],
+  "note": "Пользователь одобрил Anka Bespoke, DIS Мебель и Sterox Studio; Deni-Art и De Atelier явно отклонены; остальные три оставлены нейтральными. Решение — продолжить глубокий Research."
+}

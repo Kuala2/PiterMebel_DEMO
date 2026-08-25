@@ -1,0 +1,30 @@
+{
+  "capturedAt": "2026-08-23T23:22:23.876Z",
+  "mode": "file",
+  "items": [
+    {
+      "name": "concept-1",
+      "file": ".design/style-lab/concept-1.html",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "1440x900": {
+          "first": ".design/capture/concept-1-1440x900-first.png",
+          "full": ".design/capture/concept-1-1440x900-full.png"
+        },
+        "390x844": {
+          "first": ".design/capture/concept-1-390x844-first.png",
+          "full": ".design/capture/concept-1-390x844-full.png"
+        }
+      },
+      "viewports": {},
+      "raster": {
+        "bins": 42,
+        "std": 48.4,
+        "edge": 21.2,
+        "usable": true
+      },
+      "sha256": "36cb884a600cf9a85975a2d28f340c5ea6f8a527b7fa95f6598b16222bd1657b"
+    }
+  ]
+}

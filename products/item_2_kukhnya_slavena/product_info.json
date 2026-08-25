@@ -1,0 +1,80 @@
+{
+  "id": "6882298",
+  "title": "Кухня Славена",
+  "slug": "item_2_kukhnya_slavena",
+  "category": "Кухни на заказ",
+  "price_rub": 4500000,
+  "price_formatted": "4 500 000 ₽",
+  "currency": "RUB",
+  "availability": "Под заказ",
+  "permalink": "https://vk.ru/market/product/kukhnya-slavena-215942650-6882298",
+  "description_raw": "НА ЗАКАЗ\n*фасады МДФ пластик\n*корпус Эггер\n*столешница и фартук-искусственный камень\n*профиль Гола (вместо ручек)\n*подсвека LED\nстоимость с доставкой в черте города\nстолешница и фартук -отдельная стоимость",
+  "specifications": {
+    "Фасады": "фасады МДФ пластик",
+    "Корпус": "корпус Эггер",
+    "Столешница": "столешница и фартук -отдельная стоимость"
+  },
+  "photos_count": 5,
+  "photos": [
+    {
+      "photo_index": 1,
+      "filename": "photo_1.jpg",
+      "local_path": "products/item_2_kukhnya_slavena/photo_1.jpg",
+      "source_url": "https://sun9-15.vkuserphoto.ru/s/v1/ig2/32FXC3Fu8mt7hJ9HOYiUVc3IHpfjyht0XvPzvEYO3bCVpsXf4S5xQkK8eLJv6uwOve4eB9gxWAIe0dFOGzeX1Bba.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280%2C1440x1440%2C1560x1560&from=bu&u=sOob9uWULLxiGsvQm0gL8g-gL1XC0rOitnA313P5UbA&cs=1560x1560",
+      "sha256": "a2ee3d6da12c0be5ee5324078b9c9c83f961e5cea6bbbd225194c59cc3b9babf",
+      "resolution": "1560x1560",
+      "width": 1560,
+      "height": 1560,
+      "format": "JPEG",
+      "bytes": 389962
+    },
+    {
+      "photo_index": 2,
+      "filename": "photo_2.jpg",
+      "local_path": "products/item_2_kukhnya_slavena/photo_2.jpg",
+      "source_url": "https://sun9-58.vkuserphoto.ru/s/v1/ig2/uwX3St6nJ7q-hz-Ph-ijQngKd71LES45SNp5Zf_OskZ5Iw0FLIsU6KHgoPCO06cCVbpP3GheNHi4Kh83HkvAUZ-N.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=_dS7SsEH7vS5BqOA6t2OKs44_Imf4Wd0E2W6jg0TaS4&cs=1280x1280",
+      "sha256": "771930f4b09d58c218d9163dbf2ddff009bf84cc8a2c52ec1fae348515f22a79",
+      "resolution": "1280x1280",
+      "width": 1280,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 138132
+    },
+    {
+      "photo_index": 3,
+      "filename": "photo_3.jpg",
+      "local_path": "products/item_2_kukhnya_slavena/photo_3.jpg",
+      "source_url": "https://sun9-2.vkuserphoto.ru/s/v1/ig2/pZousTd7Dj66aQt4oHOn6-P-Atj9MsMVmlN0QONaPK3WMmw1d2yFppQXdEmsgIJ1181eEIYNCpKHW_auQv39Gh8M.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=MoTACpCMcMlazYPK-FXgXeyO1cCug7x_AlUCzsAenVo&cs=1280x1280",
+      "sha256": "abb764b44045ea260e245b97894d4c93ec3caceee8b5747851c5b16ff57e6813",
+      "resolution": "1280x1280",
+      "width": 1280,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 145704
+    },
+    {
+      "photo_index": 4,
+      "filename": "photo_4.jpg",
+      "local_path": "products/item_2_kukhnya_slavena/photo_4.jpg",
+      "source_url": "https://sun9-78.vkuserphoto.ru/s/v1/ig2/aXS0t16DFzHJ7WQdITtEtCfSnDr_n8sHrbTO-ZI8WeuiFZFvFrmlLlmOBofYgmAAyWUeWPRWvLRiMqmYQdeqYfi9.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=IS_XDYe5-QzNmPb9v3Zsgac9G37P1mMltn8dQNAPYZM&cs=1280x1280",
+      "sha256": "5e1f6c697892312e84424326562d4debc467a9b5648b8fc08993ce2909cf173e",
+      "resolution": "1280x1280",
+      "width": 1280,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 118509
+    },
+    {
+      "photo_index": 5,
+      "filename": "photo_5.jpg",
+      "local_path": "products/item_2_kukhnya_slavena/photo_5.jpg",
+      "source_url": "https://sun9-2.vkuserphoto.ru/s/v1/ig2/HuBFF-yVDc4DqDWG8xu_mjK-rMGYPQlPN6K3n4RPucSpJugVaVoax5ssiPpu5jQd-qQXBxNLq_XQqITFKToRC4uO.jpg?quality=95&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720%2C1080x1080%2C1280x1280&from=bu&u=MKxzzWAuv6_35wcLtP86BKCQRS4fOQk08OqZLFgQmPk&cs=1280x1280",
+      "sha256": "5ddfc75c358ad70e38cf4a5468b147e50cde98c5150b0bd1b7f8e521f306e5ce",
+      "resolution": "1280x1280",
+      "width": 1280,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 97258
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "capturedAt": "2026-08-22T22:14:48.888Z",
+  "mode": "urls",
+  "items": [
+    {
+      "name": "dis-mebel",
+      "url": "https://dis-mebel.ru/",
+      "status": "ok",
+      "reasons": [],
+      "files": {
+        "mobile": ".design/research/screen-last/dis-mebel-mobile-first.png",
+        "desktopFirst": ".design/research/screen-last/dis-mebel-desktop-first.png",
+        "desktopFull": ".design/research/screen-last/dis-mebel-desktop-full.png"
+      },
+      "pageType": "home",
+      "finalUrl": "https://dis-mebel.ru/",
+      "title": "ДИС-Мебель — производство мебели на заказ в Москве и МО",
+      "dom": {
+        "textLength": 2814,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 23,
+        "std": 46.2,
+        "edge": 27.2,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 2809,
+        "mediaCount": 8,
+        "overlays": 0
+      },
+      "pinnedMobile": [],
+      "rasterMobile": {
+        "bins": 25,
+        "std": 48.5,
+        "edge": 29.4,
+        "usable": true
+      },
+      "links": [
+        {
+          "href": "https://dis-mebel.ru/index.html",
+          "inNav": true,
+          "text": ""
+        },
+        {
+          "href": "https://dis-mebel.ru/about.html",
+          "inNav": true,
+          "text": "О компании"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html",
+          "inNav": true,
+          "text": "Портфолио"
+        },
+        {
+          "href": "https://dis-mebel.ru/production.html",
+          "inNav": true,
+          "text": "Производство"
+        },
+        {
+          "href": "https://dis-mebel.ru/contacts.html",
+          "inNav": true,
+          "text": "Контакты"
+        },
+        {
+          "href": "tel:+79262117676",
+          "inNav": true,
+          "text": "+7 926 211 76 76"
+        },
+        {
+          "href": "https://dis-mebel.ru/#lead",
+          "inNav": false,
+          "text": "Получить консультацию"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#private",
+          "inNav": false,
+          "text": "Частные интерьерыКвартиры, загородные дома"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#commercial",
+          "inNav": false,
+          "text": "Коммерческие интерьерыОфисы, общественные пространства, кафе"
+        },
+        {
+          "href": "https://dis-mebel.ru/portfolio.html#exclusive",
+          "inNav": false,
+          "text": "ЭксклюзивWelkom-зоны, ресепшены, работа с массивом ценных пород дерева"
+        },
+        {
+          "href": "https://dis-mebel.ru/privacy.html",
+          "inNav": false,
+          "text": "Политикой конфиденциальности"
+        },
+        {
+          "href": "mailto:info@dis-mebel.ru",
+          "inNav": true,
+          "text": "info@dis-mebel.ru"
+        },
+        {
+          "href": "https://t.me/Stepanov_AD",
+          "inNav": true,
+          "text": "Telegram"
+        },
+        {
+          "href": "https://max.ru/u/f9LHodD0cOLq86pmEeeYbAQl9GqkvS3go059JaM9P2FzO3t9Pi3uM_uByjI",
+          "inNav": true,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "name": "resa",
+      "url": "https://mebel-resa.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://mebel-resa.ru/",
+      "title": "Мебель на заказ. Мебельное бюро РЕСА.",
+      "dom": {
+        "textLength": 4597,
+        "mediaCount": 52,
+        "overlays": 1
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      }
+    },
+    {
+      "name": "shved-mebel",
+      "url": "https://shvedmebel.ru/",
+      "status": "fail",
+      "reasons": [
+        "mobile-chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://shvedmebel.ru/",
+      "title": "ШВЕД - Производство мебели по индивидуальному заказу",
+      "dom": {
+        "textLength": 1718,
+        "mediaCount": 22,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [],
+      "rasterDesktop": {
+        "bins": 25,
+        "std": 70.1,
+        "edge": 24.4,
+        "usable": true
+      },
+      "mobileViewport": {
+        "scrollY": 0,
+        "viewportWidth": 390,
+        "viewportHeight": 844
+      },
+      "mobileDom": {
+        "textLength": 1773,
+        "mediaCount": 22,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "dsm-project",
+      "url": "https://dsmproject.ru/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://dsmproject.ru/",
+      "title": "DSM|Производство мебели на заказ в Москве",
+      "dom": {
+        "textLength": 3177,
+        "mediaCount": 20,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "belado",
+      "url": "https://belado.ru/",
+      "status": "fail",
+      "reasons": [
+        "blocking-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://belado.ru/",
+      "title": "Элитная мебель на заказ – «Belado»",
+      "dom": {
+        "textLength": 3310,
+        "mediaCount": 25,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "jks-studio",
+      "url": "https://www.jkschomann.com/",
+      "status": "fail",
+      "reasons": [
+        "blank"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://jkschomann.com/",
+      "title": "Justus Knut Schomann – JKS Studio | Industrial & Collectible Design",
+      "dom": {
+        "textLength": 0,
+        "mediaCount": 0,
+        "overlays": 0
+      }
+    },
+    {
+      "name": "after-form",
+      "url": "https://after-form.com/",
+      "status": "fail",
+      "reasons": [
+        "chat-widget-overlay"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://after-form.com/",
+      "title": "Parametric Furniture & Computational Design | After-Form",
+      "dom": {
+        "textLength": 2440,
+        "mediaCount": 85,
+        "overlays": 1
+      }
+    },
+    {
+      "name": "eugene-zalan",
+      "url": "https://eugenezalan.com/",
+      "status": "fail",
+      "reasons": [
+        "pinned-chat-widget-overlay (DIV:28x28:mid)"
+      ],
+      "files": {},
+      "pageType": "home",
+      "finalUrl": "https://eugenezalan.com/",
+      "title": "Eugene Zalan - Furniture Design",
+      "dom": {
+        "textLength": 2202,
+        "mediaCount": 14,
+        "overlays": 0
+      },
+      "firstViewport": {
+        "scrollY": 0,
+        "viewportWidth": 1440,
+        "viewportHeight": 1000
+      },
+      "pinnedDesktop": [],
+      "pinnedAfterFull": [
+        {
+          "tag": "DIV",
+          "w": 28,
+          "h": 28,
+          "area": 0,
+          "semantic": false,
+          "closeBtn": false,
+          "zone": "mid"
+        }
+      ]
+    }
+  ]
+}
