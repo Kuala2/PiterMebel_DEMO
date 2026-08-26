@@ -194,8 +194,8 @@ export default function HomePage() {
             <div>
               <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные объекты студии</h2>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-              <div style={{ display: "flex", gap: "6px" }}>
+            <div className="catalog-head-controls">
+              <div className="catalog-arrows-group">
                 <button
                   type="button"
                   className="slider-nav-btn"
