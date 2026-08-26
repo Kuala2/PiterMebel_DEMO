@@ -247,8 +247,8 @@ img {
   z-index: 1000;
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, rgba(9, 11, 14, 0.85) 0%, rgba(9, 11, 14, 0.25) 60%, transparent 100%);
-  border-bottom: 1px solid transparent;
+  background: transparent;
+  border-bottom: none;
   transition: all 0.3s ease;
 }
 
@@ -257,7 +257,7 @@ img {
   background: rgba(9, 11, 14, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
@@ -538,8 +538,13 @@ img {
   right: 0;
   bottom: 0;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(9, 11, 14, 0.35) 0%, rgba(9, 11, 14, 0.82) 100%),
-              linear-gradient(to bottom, rgba(9, 11, 14, 0.70) 0%, rgba(9, 11, 14, 0.20) 45%, rgba(9, 11, 14, 0.95) 100%);
+  background: linear-gradient(180deg, 
+    rgba(9, 11, 14, 0.70) 0%, 
+    rgba(9, 11, 14, 0.35) 25%, 
+    rgba(9, 11, 14, 0.25) 50%, 
+    rgba(9, 11, 14, 0.60) 75%, 
+    rgba(9, 11, 14, 0.96) 100%
+  );
 }
 
 .hero-center-wrapper {
@@ -622,6 +627,9 @@ img {
   .hero-fullscreen {
     padding-top: 0;
     padding-bottom: 16px;
+  }
+  .hero-bg-img {
+    object-position: center 42% !important;
   }
   .hero-center-wrapper {
     padding: calc(env(safe-area-inset-top, 0px) + 64px) 16px 16px;
