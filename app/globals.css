@@ -1075,39 +1075,57 @@ img {
     padding-bottom: 56px;
   }
   .catalog-head-row {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 100%;
   }
   .catalog-head-controls {
     display: flex;
     align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
   }
   .catalog-arrows-group {
     display: flex;
-    gap: 4px;
+    gap: 6px;
   }
   .slider-nav-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     font-size: 14px;
   }
   .catalog-head-controls .btn {
-    padding: 8px 14px;
-    font-size: 11px;
+    padding: 9px 18px;
+    font-size: 12px;
+  }
+  .carousel-outer-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  .carousel-viewport {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x pan-y;
   }
   .carousel-track {
     gap: 14px;
-    padding-left: 16px;
+    padding-left: 0;
     padding-right: 16px;
   }
   .catalog-card {
-    width: 84vw;
-    max-width: 400px;
+    width: 82vw;
+    max-width: 350px;
     scroll-snap-align: start;
     flex-shrink: 0;
   }
@@ -1115,11 +1133,11 @@ img {
     aspect-ratio: 4 / 3;
   }
   .card-body {
-    padding: 18px 18px;
+    padding: 16px;
     gap: 12px;
   }
   .card-title {
-    font-size: 21px !important;
+    font-size: 20px !important;
   }
 }
 
