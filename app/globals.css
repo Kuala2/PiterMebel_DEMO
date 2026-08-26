@@ -1067,27 +1067,41 @@ img {
     padding-bottom: 56px;
   }
   .catalog-head-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 20px;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
   }
   .catalog-head-controls {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
   }
   .catalog-arrows-group {
-    display: none;
+    display: flex;
+    gap: 4px;
+  }
+  .slider-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
   }
   .catalog-head-controls .btn {
-    width: 100%;
+    padding: 8px 14px;
+    font-size: 11px;
   }
   .carousel-track {
     gap: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .catalog-card {
-    width: calc(100vw - 32px);
-    max-width: 440px;
-    scroll-snap-align: center;
+    width: 84vw;
+    max-width: 400px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
   }
   .card-gallery-wrap {
     aspect-ratio: 4 / 3;
