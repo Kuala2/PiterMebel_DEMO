@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState } from "react";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
 import { SITE_CONFIG } from "@/data/site";
 
@@ -13,10 +13,17 @@ interface MeasureFormProps {
 }
 
 export default function MeasureForm({ initialCategory }: MeasureFormProps) {
-  const [state, formAction, isPending] = useActionState(
-    submitMeasureRequest,
-    initialState
-  );
+  const [state, setState] = useState<MeasureFormState>(initialState);
+  const [isPending, setIsPending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsPending(true);
+    const formData = new FormData(e.currentTarget);
+    const result = await submitMeasureRequest(state, formData);
+    setState(result);
+    setIsPending(false);
+  };
 
   return (
     <div id="measure" style={{ width: "100%" }}>
@@ -37,7 +44,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
           </div>
         </div>
       ) : (
-        <form action={formAction}>
+        <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: "18px" }}>
             <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "22px", color: "#FFFFFF", margin: 0 }}>
               Запись на бесплатный замер

@@ -1,5 +1,3 @@
-"use server";
-
 export interface MeasureFormState {
   success: boolean;
   message?: string;
