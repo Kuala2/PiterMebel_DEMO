@@ -115,19 +115,7 @@ export default function ProjectsPortfolioPage() {
       {activeType === "all" && featuredProject && (
         <section style={{ backgroundColor: "var(--bg-dark)", paddingBottom: "50px", paddingTop: "30px" }}>
           <div className="container">
-            <div
-              style={{
-                background: "var(--bg-surface)",
-                border: "1px solid var(--border-subtle)",
-                borderRadius: "var(--radius-md)",
-                overflow: "hidden",
-                display: "grid",
-                gridTemplateColumns: "1.3fr 1fr",
-                gap: "36px",
-                padding: "36px",
-                alignItems: "center",
-              }}
-            >
+            <div className="flagship-project-card">
               {/* Photo Gallery with in-card arrows */}
               <div style={{ position: "relative", aspectRatio: "16 / 10", borderRadius: "var(--radius-sm)", overflow: "hidden", background: "#0A0C0E" }}>
                 <Image
@@ -211,7 +199,7 @@ export default function ProjectsPortfolioPage() {
                   ))}
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginTop: "8px" }}>
+                <div className="flagship-actions-row">
                   <Link href={`/projects/${featuredProject.slug}`} className="btn btn-green">
                     Смотреть проект →
                   </Link>
@@ -242,13 +230,7 @@ export default function ProjectsPortfolioPage() {
             }}
           >
             <div className="container">
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))",
-                  gap: "28px",
-                }}
-              >
+              <div className="projects-pair-grid">
                 {pair.map((project) => {
                   const currentIdx = cardPhoto[project.slug] ?? 0;
                   const photos = project.gallery?.length ? project.gallery : [project.cover];

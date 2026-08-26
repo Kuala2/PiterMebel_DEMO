@@ -47,7 +47,7 @@ export default function ContactsPage() {
             <h2 className="section-title" style={{ marginBottom: 0 }}>Способы связи со студией</h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "20px" }}>
+          <div className="contacts-ways-grid">
             {/* Way 1: Direct Phone */}
             <div
               style={{

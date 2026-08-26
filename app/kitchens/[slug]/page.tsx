@@ -210,13 +210,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               </h2>
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-                gap: "24px",
-              }}
-            >
+            <div className="detail-gallery-grid">
               {otherPhotos.map((img, idx) => (
                 <div
                   key={img + idx}

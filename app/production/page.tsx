@@ -65,13 +65,13 @@ export default function ProductionPage() {
       {/* 3. MACHINERY & EQUIPMENT SHOWCASE (3 Visual Cards with Photography) */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "80px", paddingBottom: "85px" }}>
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "36px", flexWrap: "wrap", gap: "16px" }}>
+          <div className="prod-equip-head-row">
             <div>
               <h2 className="section-title" style={{ marginBottom: 0 }}>
                 Станочный парк и оснащение цеха
               </h2>
             </div>
-            <Link href="#visit" className="btn btn-glass" style={{ padding: "10px 22px", fontSize: "14px" }}>
+            <Link href="#visit" className="btn btn-glass prod-head-btn">
               Записаться на визит в цех →
             </Link>
           </div>

@@ -2554,13 +2554,127 @@ select option {
 
 .detail-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .detail-gallery-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
+
+/* ==========================================================================
+   PROJECTS PORTFOLIO (/projects)
+   ========================================================================== */
+.flagship-project-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 36px;
+  padding: 36px;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.flagship-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.projects-pair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 992px) {
+  .flagship-project-card {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+  .projects-pair-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .flagship-project-card {
+    padding: 16px;
+    gap: 18px;
+  }
+  .flagship-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .flagship-actions-row .btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   PRODUCTION (/production) & CONTACTS (/contacts)
+   ========================================================================== */
+.prod-equip-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.prod-head-btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.contacts-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .contacts-ways-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .prod-equip-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .prod-head-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .contacts-ways-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 

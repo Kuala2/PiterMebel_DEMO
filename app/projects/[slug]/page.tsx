@@ -205,13 +205,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </h2>
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-                gap: "20px",
-              }}
-            >
+            <div className="detail-gallery-grid">
               {otherPhotos.map((img, idx) => (
                 <div
                   key={img + idx}
