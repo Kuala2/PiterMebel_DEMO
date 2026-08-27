@@ -692,7 +692,6 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="mat-body">
-                  <div className="mat-subtitle">{mat.tag}</div>
                   <h3 className="mat-title">{mat.title}</h3>
                   <p className="mat-desc">{mat.description}</p>
                   <span className="mat-link-action">
