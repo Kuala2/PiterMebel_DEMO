@@ -1429,7 +1429,8 @@ img {
   padding: 20px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  min-height: 140px;
   gap: 12px;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   position: relative;
