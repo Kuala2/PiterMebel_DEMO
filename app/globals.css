@@ -1475,7 +1475,7 @@ img {
   font-family: var(--font-main) !important;
   font-size: 18px;
   font-weight: 600;
-  color: #FFFFFF;
+  color: var(--color-green-brand);
   line-height: 1.25;
   margin: 0;
 }
