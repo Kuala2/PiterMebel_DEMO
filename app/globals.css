@@ -662,8 +662,15 @@ img {
 /* ==========================================================================
    HERO STATS STRIP (Clean Architectural Trust Strip)
    ========================================================================== */
-.hero-stats-strip {
+.hero-section-wrapper {
   position: relative;
+}
+
+.hero-stats-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 2;
   background: var(--bg-studio);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -721,6 +728,9 @@ img {
 }
 
 @media (max-width: 900px) {
+  .hero-stats-strip {
+    position: relative;
+  }
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }

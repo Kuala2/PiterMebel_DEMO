@@ -12,14 +12,14 @@ export default function Hero() {
         : "лет";
 
   return (
-    <>
+    <div className="hero-section-wrapper">
       {/* 1. Fullscreen Hero Viewport (Always 100vh / 100dvh) */}
       <section className="hero-fullscreen" id="hero">
         {/* Background Image Container */}
         <div className="hero-bg-container">
           <Image
             src="/img/hero/photo_hero_upscaled.jpg"
-            alt="Кухня матовый Velvet пластик на заказ в СПб"
+            alt="Кухни премум Velvet дерево на заказ СПб"
             fill
             priority
             sizes="100vw"
@@ -35,14 +35,14 @@ export default function Hero() {
             <div className="hero-center-content">
               <h1 className="hero-slogan-title">Вы мечтаете — мы воплощаем</h1>
               <p className="hero-subtitle">
-                Проектирование и изготовление премиальных кухонь и корпусной мебели на собственном производстве в Санкт-Петербурге
+                Производим и реализуем премиальные кухни и корпусную мебель по индивидуальным размерам на собственном производстве
               </p>
               <div className="hero-cta-wrap">
                 <Link href="/calculator" className="btn btn-green">
-                  Рассчитать проект
+                  Рассчитать свой
                 </Link>
                 <Link href="/projects" className="btn btn-glass">
-                  Смотреть объекты
+                  Смотреть работы
                 </Link>
               </div>
             </div>
@@ -92,6 +92,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
