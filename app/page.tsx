@@ -542,21 +542,12 @@ export default function HomePage() {
               />
               <div className="workshop-banner-overlay" />
               
-              <div className="workshop-banner-tag">
-                <span className="live-dot" />
-                <span>Производство</span>
-              </div>
-
               <div className="workshop-banner-hud-compact">
                 <div className="hud-metric-item">
                   <span className="hud-metric-val">850 м²</span>
                   <span className="hud-metric-lbl">Площадь</span>
                 </div>
-                <div className="hud-metric-item">
-                  <span className="hud-metric-val">0.1 мм</span>
-                  <span className="hud-metric-lbl">Точность ЧПУ</span>
                 </div>
-              </div>
             </div>
 
             {/* 2. Card 01 (1x1) */}

@@ -1377,7 +1377,6 @@ img {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  right: 20px;
   background: rgba(9, 11, 14, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -1385,7 +1384,6 @@ img {
   border-radius: var(--radius-sm);
   padding: 14px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   z-index: 2;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -1429,7 +1427,7 @@ img {
   padding: 20px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   min-height: 140px;
   gap: 12px;
   transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
