@@ -564,7 +564,7 @@ export default function CalculatorPage() {
       </section>
 
       {/* 3. Measure Form Section */}
-      <section className="final-section" id="measure" style={{ background: "var(--bg-dark)" }}>
+      <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">

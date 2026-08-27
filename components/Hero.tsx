@@ -48,14 +48,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-
-        {/* Subtle Scroll Indicator */}
-        <a href="#stats" className="hero-scroll-indicator" aria-label="Листать вниз">
-          <span className="hero-scroll-text">Листайте вниз</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
-          </svg>
-        </a>
       </section>
 
       {/* 2. Clean Stately Numeric Facts Bar */}

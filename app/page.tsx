@@ -27,44 +27,68 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const slider = carouselRef.current;
-    if (!slider) return;
-
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-
-    const onMouseDown = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).closest("button, a")) return;
-      isDown = true;
-      slider.classList.add("is-dragging");
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    };
-
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
-    };
-
-    const onMouseUp = () => {
-      if (isDown) {
+    const sliders = document.querySelectorAll('.carousel-viewport');
+    
+    sliders.forEach((slider) => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let isDragging = false;
+      
+      const onMouseDown = (e: MouseEvent) => {
+        if ((e.target as HTMLElement).closest(".photo-square-dot, .card-photo-arrow")) return;
+        isDown = true;
+        isDragging = false;
+        slider.classList.add("is-dragging");
+        startX = e.pageX - (slider as HTMLElement).offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      };
+      
+      const onMouseMove = (e: MouseEvent) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true;
+        const x = e.pageX - (slider as HTMLElement).offsetLeft;
+        const walk = (x - startX) * 1.5;
+        slider.scrollLeft = scrollLeft - walk;
+      };
+      
+      const onMouseUp = () => {
         isDown = false;
         slider.classList.remove("is-dragging");
-      }
-    };
+      };
+      
+      const onMouseLeave = () => {
+        isDown = false;
+        slider.classList.remove("is-dragging");
+      };
 
-    slider.addEventListener("mousedown", onMouseDown);
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onMouseUp);
+      const onClick = (e: MouseEvent) => {
+        if (isDragging) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      };
+      
+      slider.addEventListener("mousedown", onMouseDown as EventListener);
+      slider.addEventListener("mousemove", onMouseMove as EventListener);
+      slider.addEventListener("mouseup", onMouseUp as EventListener);
+      slider.addEventListener("mouseleave", onMouseLeave as EventListener);
+      slider.addEventListener("click", onClick as EventListener, true);
+      
+      (slider as any)._cleanup = () => {
+        slider.removeEventListener("mousedown", onMouseDown as EventListener);
+        slider.removeEventListener("mousemove", onMouseMove as EventListener);
+        slider.removeEventListener("mouseup", onMouseUp as EventListener);
+        slider.removeEventListener("mouseleave", onMouseLeave as EventListener);
+        slider.removeEventListener("click", onClick as EventListener, true);
+      };
+    });
 
     return () => {
-      slider.removeEventListener("mousedown", onMouseDown);
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onMouseUp);
+      sliders.forEach((slider) => {
+        if ((slider as any)._cleanup) (slider as any)._cleanup();
+      });
     };
   }, []);
 
@@ -356,74 +380,211 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. WORKSHOP & PRODUCTION (Bespoke Studio Bento Showcase) */}
+      {/* 2.5 REVIEWS (Отзывы) */}
+      <section className="reviews-section" id="reviews">
+        <div className="container">
+          <div className="section-header row-between" style={{ marginBottom: "32px", display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "space-between", alignItems: "flex-end" }}>
+            <div>
+              <h2 className="section-title" style={{ marginBottom: "8px" }}>Отзывы наших клиентов</h2>
+              <p className="section-desc" style={{ maxWidth: "500px", color: "var(--color-text-secondary)", margin: 0 }}>
+                Мы дорожим репутацией и гордимся каждой реализованной кухней. Читайте отзывы реальных людей на Яндекс.Картах.
+              </p>
+            </div>
+            <a href="https://yandex.ru/maps/org/pitermebel/245406542043/reviews/" target="_blank" rel="noopener noreferrer" className="btn btn-glass" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              Читать все на Яндексе
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+
+          <div className="carousel-outer-wrapper">
+            <div className="carousel-viewport reviews-viewport">
+              <div className="carousel-track" style={{ display: "flex", gap: "24px", width: "max-content" }}>
+                
+                {/* Review 1 */}
+                <div className="review-card">
+                  <div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">марина краснова</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">16 мая 2024</div>
+                  </div>
+                  <p className="review-text">Выражаю огромную благодарность Елене за профессионализм и приятное общение, команда исполнила заказ во всю квартиру четко в срок, на каждом этапе поддержка и помощь! Ольга, спасибо за помощь в понимании технологии, Сергею - за сборку! Наилучшие рекомендации и удачи вашему производству ❤️</p>
+                  <div className="review-footer">
+                    <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=xx9a5e7bmfm58p93tr09f7uft0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+                  </div>
+                </div>
+
+                {/* Review 2 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">Иван Супронов</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">14 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Большое спасибо за классную кухню. Хорошее отношение с первых минут. Отличный дизайн и исполнение в сроки. Отдельное благодарю установщика Сергея за скурпулезный подход к монтажу. Всех благ и процветания команде профессионалов ПитерМебель. Всем рекомендую.</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=49qzx35vjrc7fc81b6nq5rkbr4" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+                {/* Review 3 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">Ольга Шевченко</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">14 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Семья Волковых - это команда мастеров своего дела. Лена и Дима настроили свое производство таким образом, что к ним хочется возвращаться. К клиенту относятся как к себе и делают мебель на совесть. Рекомендую.</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=8znemxc4vaz37k7ct4cmcjea8g" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+                {/* Review 4 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">Ирина Артемьева</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">14 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Огромное спасибо вам, прихожая идеальная. Сделано очень быстро и качественно. Цвет шикарный. Буду рекомендовать вас.</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=0vv1p9m0kbeuk458y5hezfqp80" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+                {/* Review 5 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">Янка Буртанька</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">14 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Заказывали шкаф купе<br />Очень довольна работой этой компании.<br />Качественно, быстро и цена не космическая<br />Учли все мои пожелания)))</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=6zwu69103x2akmtfbthxrzdqp0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+                {/* Review 6 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">Воркута АК111</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">25 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Хорошая организация, все сделали супер. Сборщик Сергей человек с руками! Спасибо большое!!!</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=ppck04ywejarcng3e6qyuwf4cm" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+                {/* Review 7 */}
+                <div className="review-card">
+<div className="review-header">
+                    <div className="review-meta">
+                      <div className="review-name">алексей ефимов</div>
+                      <div className="review-stars">★★★★★</div>
+                    </div>
+                    <div className="review-date">14 декабря 2023</div>
+                  </div>
+                  <p className="review-text">Все очень понравилось. Сделали быстро и качественно.</p>
+                  <div className="review-footer">
+<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=fm93xvxhk3qhw79pz91tmv0wn0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+</div>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. WORKSHOP & PRODUCTION (Bespoke Studio Atelier Showcase) */}
       <section className="workshop-section" id="production">
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "16px" }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>
-              Собственный цех на ул. Трефолева
-            </h2>
-            <Link href="/production" className="btn btn-glass" style={{ padding: "10px 22px", fontSize: "14px" }}>
+          <div className="workshop-head-row">
+            <div>
+              <h2 className="section-title" style={{ marginBottom: 0 }}>
+                Станочный цех на ул. Трефолева
+              </h2>
+            </div>
+            <Link href="/production" className="btn btn-glass workshop-head-btn">
               Подробнее о цехе →
             </Link>
           </div>
 
+          {/* Bento Grid */}
           <div className="workshop-bento-grid">
-            {/* Left: Main Hero CNC Photo */}
-            <div className="workshop-bento-hero">
-              <div className="workshop-hero-photo-wrap">
-                <Image
-                  src="/img/brand/workshop_cnc.jpg"
-                  alt="Фрезерный станочный центр ЧПУ Biesse Rover"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  style={{ objectFit: "cover" }}
-                />
+            
+            {/* 1. Main Visual Showcase (2x2) */}
+            <div className="bento-hero-cell">
+              <Image
+                src="/img/brand/workshop_new.jpg"
+                alt="Современный станочный цех PiterMebel"
+                fill
+                sizes="(max-width: 1024px) 100vw, 600px"
+                className="workshop-banner-img"
+                style={{ objectFit: "cover" }}
+              />
+              <div className="workshop-banner-overlay" />
+              
+              <div className="workshop-banner-tag">
+                <span className="live-dot" />
+                <span>Производство</span>
               </div>
-            </div>
 
-            {/* Right: 4 Precision Value Cards */}
-            <div className="workshop-bento-specs">
-              <div className="workshop-bento-card">
-                <div className="bento-card-num">01</div>
-                <div className="bento-card-content">
-                  <h3 className="bento-card-title">Без наценок салонов</h3>
-                  <p className="bento-card-desc">
-                    Заказывайте мебель напрямую на производстве в СПб без переплат торговым посредникам и шоурумам.
-                  </p>
+              <div className="workshop-banner-hud-compact">
+                <div className="hud-metric-item">
+                  <span className="hud-metric-val">850 м²</span>
+                  <span className="hud-metric-lbl">Площадь</span>
                 </div>
-              </div>
-
-              <div className="workshop-bento-card">
-                <div className="bento-card-num">02</div>
-                <div className="bento-card-content">
-                  <h3 className="bento-card-title">Тестовая сборка в цеху</h3>
-                  <p className="bento-card-desc">
-                    Каждый гарнитур собирается на фабрике до отправки к вам для полной проверки геометрии и фурнитуры.
-                  </p>
-                </div>
-              </div>
-
-              <div className="workshop-bento-card">
-                <div className="bento-card-num">03</div>
-                <div className="bento-card-content">
-                  <h3 className="bento-card-title">Влагостойкий PUR-шов</h3>
-                  <p className="bento-card-desc">
-                    Полиуретановое кромление образует прочный барьер, защищающий торцы плит от пара и расслоения.
-                  </p>
-                </div>
-              </div>
-
-              <div className="workshop-bento-card">
-                <div className="bento-card-num">04</div>
-                <div className="bento-card-content">
-                  <h3 className="bento-card-title">Штатные мастера СПб</h3>
-                  <p className="bento-card-desc">
-                    Единая ответственность: свой инженерный замер, раскрой на станках и аккуратный монтаж под ключ.
-                  </p>
+                <div className="hud-metric-item">
+                  <span className="hud-metric-val">0.1 мм</span>
+                  <span className="hud-metric-lbl">Точность ЧПУ</span>
                 </div>
               </div>
             </div>
+
+            {/* 2. Card 01 (1x1) */}
+            <div className="bento-card-cell">
+              <div className="bento-card-content">
+                <h3 className="adv-card-title">Прямая экономия</h3>
+                <p className="adv-card-desc">Цены от фабрики без наценок и переплат.</p>
+              </div>
+            </div>
+
+            {/* 3. Card 02 (1x1) */}
+            <div className="bento-card-cell">
+              <div className="bento-card-content">
+                <h3 className="adv-card-title">Нулевой шов</h3>
+                <p className="adv-card-desc">Абсолютная влагостойкость PUR-кромления.</p>
+              </div>
+            </div>
+
+            {/* 4. Card 03 (Stacked) */}
+            <div className="bento-card-cell">
+              <div className="bento-card-content">
+                <h3 className="adv-card-title">100% тестовая сборка</h3>
+                <p className="adv-card-desc">
+                  Полная проверка диагоналей и зазоров до отгрузки.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

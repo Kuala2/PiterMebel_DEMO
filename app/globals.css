@@ -843,7 +843,6 @@ img {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
   padding: 4px 0 16px 0;
   width: 100%;
   max-width: 100%;
@@ -853,6 +852,8 @@ img {
 .carousel-viewport.is-dragging {
   cursor: grabbing;
   scroll-behavior: auto;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .carousel-viewport::-webkit-scrollbar { display: none; }
@@ -865,7 +866,7 @@ img {
 
 /* Catalog Card */
 .catalog-card {
-  width: 480px;
+  width: 440px;
   flex-shrink: 0;
   background: var(--bg-surface-elevated);
   border: 1px solid var(--border-subtle);
@@ -874,7 +875,6 @@ img {
   display: flex;
   flex-direction: column;
   transition: var(--transition);
-  scroll-snap-align: start;
 }
 
 .catalog-card:hover {
@@ -884,7 +884,7 @@ img {
 
 .card-gallery-wrap {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #090B0E;
 }
@@ -895,8 +895,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
-  transition: transform 0.3s ease;
+  object-position: center;
+  transition: transform 0.5s ease;
 }
 
 .catalog-card:hover .card-img-slide {
@@ -1115,7 +1115,6 @@ img {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
     touch-action: pan-x pan-y;
   }
   .carousel-track {
@@ -1126,11 +1125,10 @@ img {
   .catalog-card {
     width: 82vw;
     max-width: 350px;
-    scroll-snap-align: start;
     flex-shrink: 0;
   }
   .card-gallery-wrap {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
   }
   .card-body {
     padding: 16px;
@@ -1142,87 +1140,367 @@ img {
 }
 
 /* ==========================================================================
-   WORKSHOP SECTION — BESPOKE ARCHITECTURAL BENTO SHOWCASE
+   WORKSHOP SECTION — BESPOKE ARCHITECTURAL ATELIER SHOWCASE
    ========================================================================== */
 .workshop-section {
   padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: var(--bg-studio);
+  padding-bottom: 85px;
+  background-color: var(--bg-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
+.workshop-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.workshop-head-btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   REVIEWS SECTION
+   ========================================================================== */
+.reviews-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--bg-studio);
+}
+
+.reviews-viewport {
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scrollbar-width: auto !important; /* Force visible on Firefox/modern */
+}
+
+/* Custom styled scrollbar for reviews */
+.reviews-viewport::-webkit-scrollbar {
+  display: block !important;
+  height: 8px !important;
+}
+.reviews-viewport::-webkit-scrollbar-track {
+  background: var(--bg-dark) !important;
+  border-radius: 4px;
+}
+.reviews-viewport::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px;
+}
+.reviews-viewport::-webkit-scrollbar-thumb:hover {
+  background: var(--color-green-brand) !important;
+}
+
+.review-card {
+  width: 380px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  border-color: var(--border-green);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-name {
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.review-stars {
+  color: #FFD700;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.review-date {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.review-text {
+  font-family: var(--font-main);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.review-footer {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.yandex-link {
+  font-size: 13px;
+  color: var(--color-green-brand);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.yandex-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .review-card {
+    width: 85vw;
+    max-width: 320px;
+  }
+}
+
+/* Bento Grid Layout */
 .workshop-bento-grid {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: 1.6fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 16px;
+  width: 100%;
 }
 
-.workshop-bento-hero {
+/* Hero Cell (Image) */
+.bento-hero-cell {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
   position: relative;
-  height: 100%;
-  min-height: 480px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
   border: 1px solid var(--border-subtle);
   background: var(--bg-dark);
-  overflow: hidden;
 }
 
-.workshop-hero-photo-wrap {
-  position: relative;
+.workshop-banner-img {
   width: 100%;
   height: 100%;
-  min-height: 480px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.workshop-hero-photo-wrap::after {
-  content: '';
+.bento-hero-cell:hover .workshop-banner-img {
+  transform: scale(1.03);
+}
+
+.workshop-banner-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 45%, rgba(15, 17, 20, 0.15) 0%, rgba(9, 11, 14, 0.45) 100%);
+  background: linear-gradient(180deg, rgba(9, 11, 14, 0) 0%, rgba(9, 11, 14, 0.1) 60%, rgba(9, 11, 14, 0.7) 100%);
   pointer-events: none;
   z-index: 1;
 }
 
-.workshop-hero-photo-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.88) contrast(1.05);
-  transition: transform 0.4s ease, filter 0.3s ease;
-}
-
-.workshop-bento-hero:hover .workshop-hero-photo-wrap img {
-  transform: scale(1.02);
-  filter: brightness(0.95);
-}
-
-.workshop-hero-badge-top {
+.workshop-banner-tag {
   position: absolute;
   top: 16px;
   left: 16px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 12px;
-  background: rgba(9, 11, 14, 0.90);
-  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
+  background: rgba(9, 11, 14, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-xs);
   font-family: var(--font-main);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #FFFFFF;
-  z-index: 3;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-green-brand);
+  box-shadow: 0 0 8px var(--color-green-brand);
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.workshop-banner-hud-compact {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(9, 11, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.hud-metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.hud-metric-val {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.hud-metric-lbl {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hud-metric-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Bento Card Cells */
+.bento-card-cell {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card-cell:hover {
+  border-color: rgba(62, 142, 80, 0.45);
+  background: var(--bg-surface-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.adv-card-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bento-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-xs);
+  background: rgba(62, 142, 80, 0.1);
+  color: var(--color-green-brand);
+  border: 1px solid rgba(62, 142, 80, 0.2);
+  transition: background 0.25s ease;
+}
+
+.bento-card-cell:hover .bento-icon-box {
+  background: rgba(62, 142, 80, 0.15);
+}
+
+.bento-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.adv-card-title {
+  font-family: var(--font-main) !important;
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.adv-card-desc {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.8;
 }
 
 @media (max-width: 1024px) {
   .workshop-bento-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .workshop-hero-photo-wrap {
-    min-height: 320px;
+  .bento-hero-cell {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    height: 380px;
+  }
+  .bento-card-cell:last-child {
+    grid-column: 1 / 3;
   }
 }
 
@@ -1231,71 +1509,40 @@ img {
     padding-top: 56px;
     padding-bottom: 56px;
   }
-  .workshop-bento-hero {
-    min-height: 220px;
-    height: 220px;
+  .workshop-head-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
   }
-  .workshop-hero-photo-wrap {
-    min-height: 220px;
-    height: 220px;
-    aspect-ratio: 16 / 10;
+  .workshop-head-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .workshop-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-hero-cell {
+    grid-column: 1 / 2;
+    height: 320px;
+  }
+  .bento-card-cell:last-child {
+    grid-column: 1 / 2;
+  }
+  .workshop-banner-tag {
+    top: 16px;
+    left: 16px;
+  }
+  .workshop-banner-hud-compact {
+    bottom: 16px;
+    left: 16px;
+    gap: 20px;
+  }
+  .hud-metric-val {
+    font-size: 24px;
   }
 }
 
-/* Right Stacked Bento Specs */
-.workshop-bento-specs {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: space-between;
-}
-
-.workshop-bento-card {
-  display: flex;
-  gap: 18px;
-  padding: 20px 22px;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
-}
-
-.workshop-bento-card:hover {
-  border-color: rgba(62, 142, 80, 0.45);
-  background: var(--bg-surface-hover);
-  transform: translateY(-3px);
-}
-
-.bento-card-num {
-  font-family: var(--font-main) !important;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  line-height: 1;
-  padding-top: 4px;
-}
-
-.bento-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.bento-card-title {
-  font-family: var(--font-main) !important;
-  font-size: 17px;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.25;
-  margin: 0;
-}
-
-.bento-card-desc {
-  font-family: var(--font-main);
-  font-size: 13.5px;
-  color: var(--color-text-secondary);
-  line-height: 1.55;
-  margin: 0;
-}
 
 /* ==========================================================================
    PROCESS BLUEPRINT TIMELINE
@@ -1305,7 +1552,7 @@ img {
   padding-bottom: 90px;
   position: relative;
   overflow: hidden;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-studio);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1419,7 +1666,7 @@ img {
 .materials-section {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--bg-studio);
+  background-color: var(--bg-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1552,7 +1799,7 @@ img {
 .faq-section {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-studio);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1642,7 +1889,7 @@ img {
 .final-section {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: var(--bg-studio);
+  background-color: var(--bg-dark);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -1967,7 +2214,7 @@ img {
 }
 
 .subpage-intro-bar {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-studio);
   padding-top: 40px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border-subtle);
