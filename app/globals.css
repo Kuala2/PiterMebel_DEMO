@@ -538,12 +538,12 @@ img {
   right: 0;
   bottom: 0;
   inset: 0;
-  background: linear-gradient(180deg, 
-    rgba(34, 37, 42, 0.70) 0%, 
-    rgba(34, 37, 42, 0.35) 25%, 
-    rgba(34, 37, 42, 0.25) 50%, 
-    rgba(34, 37, 42, 0.60) 75%, 
-    rgba(34, 37, 42, 0.96) 100%
+  background: linear-gradient(180deg,
+    rgba(28, 31, 36, 0.62) 0%,
+    rgba(28, 31, 36, 0.30) 24%,
+    rgba(28, 31, 36, 0.52) 48%,
+    rgba(28, 31, 36, 0.70) 74%,
+    rgba(28, 31, 36, 0.96) 100%
   );
 }
 
@@ -2180,13 +2180,29 @@ img {
   z-index: 1;
 }
 
+/* Типографическая шапка внутренних страниц — без фото */
+.page-header {
+  background: var(--bg-dark);
+  padding-top: 130px;
+  padding-bottom: 60px;
+}
+
+.page-header .subpage-hero-title {
+  text-shadow: none;
+}
+
+.page-header .subpage-hero-caption {
+  text-shadow: none;
+  color: var(--color-text-secondary);
+}
+
 .subpage-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, 
-    rgba(34, 37, 42, 0.35) 0%, 
-    rgba(34, 37, 42, 0.55) 55%, 
-    rgba(34, 37, 42, 0.95) 100%
+    rgba(34, 37, 42, 0.16) 0%, 
+    rgba(34, 37, 42, 0.28) 55%, 
+    rgba(34, 37, 42, 0.72) 100%
   );
   z-index: 2;
 }
@@ -2207,6 +2223,403 @@ img {
   margin-bottom: 0;
   letter-spacing: -0.01em;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.85);
+}
+
+/* Строка-факт под заголовком внутреннего баннера */
+.subpage-hero-caption {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  margin-top: 12px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Тихая ссылка возврата на детальных страницах */
+.detail-back-link {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.detail-back-link:hover {
+  color: var(--color-green-brand);
+}
+
+/* ==========================================================================
+   DETAIL PAGES — split header: big photo left, info right
+   ========================================================================== */
+.detail-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.detail-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.detail-task {
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 26px;
+}
+
+.detail-specs {
+  margin-bottom: 30px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detail-solution {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  max-width: 680px;
+  margin: 0;
+}
+
+.detail-story {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-story p {
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* Первый абзац — крупная антиква, «выжимка» кейса */
+.detail-story p:first-child {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+/* Галерея детальной страницы: фото от края до края, целиком,
+   высота окна подстраивается под пропорции кадра */
+.detail-gallery-main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.detail-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background: rgba(28, 31, 36, 0.82);
+  border: 1px solid var(--border-subtle);
+  color: #FFFFFF;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+.detail-gallery-arrow:hover {
+  background: var(--color-green-brand);
+}
+
+.detail-gallery-arrow.arrow-prev {
+  left: 14px;
+}
+
+.detail-gallery-arrow.arrow-next {
+  right: 14px;
+}
+
+.detail-gallery-count {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  background: rgba(28, 31, 36, 0.82);
+  padding: 4px 10px;
+}
+
+@media (max-width: 1024px) {
+  .detail-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================================
+   CASE PAGE — журнальный разворот (детальные объекты/кухни)
+   ========================================================================== */
+.case-title {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(34px, 4.6vw, 58px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.case-lead {
+  font-family: var(--font-main);
+  font-size: 17px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 0 28px;
+}
+
+.case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.case-meta span {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.case-solution-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* Полоса ключевых фактов под галереей кейса */
+.case-info-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding: 26px 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin: 28px 0 32px;
+}
+
+.case-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-info-val {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .case-info-strip {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .case-solution-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+}
+
+/* Фотопечать: ведущее фото, пары со смещением, широкое */
+.photo-story {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-lead {
+  position: relative;
+  height: 620px;
+  background: var(--bg-studio);
+  overflow: hidden;
+}
+
+.story-pair {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.story-ph {
+  position: relative;
+  background: var(--bg-studio);
+  overflow: hidden;
+}
+
+.story-ph-a {
+  height: 500px;
+}
+
+.story-ph-b {
+  height: 560px;
+  margin-top: 56px;
+}
+
+.story-wide {
+  position: relative;
+  height: 560px;
+  background: var(--bg-studio);
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .story-lead {
+    height: 380px;
+  }
+  .story-pair {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .story-ph-a,
+  .story-ph-b {
+    height: 300px;
+    margin-top: 0;
+  }
+  .story-wide {
+    height: 320px;
+    margin-top: 16px;
+  }
+  .photo-story {
+    gap: 16px;
+  }
+}
+
+/* ==========================================================================
+   CONTACTS — editorial layout
+   ========================================================================== */
+.contacts-editorial {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contacts-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-block {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.contact-block:first-child {
+  padding-top: 0;
+}
+
+.contacts-phone {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4.4vw, 52px);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  transition: color 0.2s ease;
+}
+
+.contacts-phone:hover {
+  color: var(--color-green-hover);
+}
+
+.contact-block-title {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.contact-block-desc {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 480px;
+}
+
+.contacts-aside {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 48px;
+}
+
+@media (max-width: 900px) {
+  .contacts-editorial {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .contacts-aside {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+/* Тихая ссылка в карточке вместо кнопки: зелёный текст без рамки */
+.card-open-link {
+  margin-top: auto;
+  padding-top: 4px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-green-brand);
+  transition: color 0.2s ease;
+}
+
+.card-open-link:hover {
+  color: var(--color-green-hover);
+}
+
+.project-card-item .card-body {
+  gap: 10px;
 }
 
 @media (max-width: 768px) {
@@ -2387,29 +2800,22 @@ img {
 .prod-quality-bento {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 36px 48px;
 }
 
+/* Редакционная ячейка вместо плитки: номер антиквой, тонкая линия сверху, без фона */
 .prod-quality-card {
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  padding: 28px 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.prod-quality-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(62, 142, 80, 0.45);
-  background: var(--bg-surface-hover);
 }
 
 .prod-quality-num {
-  font-family: var(--font-main) !important;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: var(--font-serif) !important;
+  font-size: 34px;
+  font-weight: 400;
   color: var(--color-text-muted);
   line-height: 1;
   flex-shrink: 0;
@@ -2418,14 +2824,14 @@ img {
 .prod-quality-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .prod-quality-title {
   font-family: var(--font-main) !important;
-  font-size: 17px;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--color-text-primary);
   line-height: 1.3;
   margin: 0;
 }
@@ -2436,6 +2842,132 @@ img {
   color: var(--color-text-secondary);
   line-height: 1.55;
   margin: 0;
+}
+
+/* Линия процесса на 5 колонок (страница производства) */
+.process-track.process-track--five {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+}
+
+/* Чередующиеся ряды оборудования (производство) */
+.prod-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+/* Строка цифр под вводным текстом производства */
+.prod-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 36px;
+  padding-top: 28px;
+}
+
+.prod-stat-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--color-green-brand);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.prod-stat-label {
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .prod-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+.prod-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.prod-row.is-reversed {
+  grid-template-columns: 1fr 1.25fr;
+}
+
+.prod-row.is-reversed .prod-row-photo {
+  order: 2;
+}
+
+.prod-row.is-reversed .prod-row-info {
+  order: 1;
+}
+
+.prod-row-photo {
+  position: relative;
+  height: 420px;
+  background: var(--bg-studio);
+}
+
+.prod-row-caption {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.prod-row-title {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.prod-row-desc {
+  font-family: var(--font-main);
+  font-size: 14.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 440px;
+}
+
+@media (max-width: 1024px) {
+  .prod-row,
+  .prod-row.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .prod-row.is-reversed .prod-row-photo {
+    order: 1;
+  }
+  .prod-row.is-reversed .prod-row-info {
+    order: 2;
+  }
+  .prod-row-photo {
+    height: 300px;
+  }
+  .prod-row-caption {
+    bottom: 14px;
+    left: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+  }
+  .prod-rows {
+    gap: 56px;
+  }
 }
 
 /* 5-Step Process Pipeline Grid */
@@ -2615,13 +3147,8 @@ select option {
 .kitchen-ladder-item {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
-  gap: 40px;
+  gap: 56px;
   align-items: center;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  padding: 28px;
 }
 
 .kitchen-ladder-item.is-reversed {
@@ -2673,34 +3200,38 @@ select option {
   margin-bottom: 20px;
 }
 
-.ladder-specs-grid {
+.ladder-specs-rows {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+
+.spec-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 24px;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.ladder-spec-item {
-  background: var(--bg-dark);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  padding: 10px 14px;
+.spec-row:first-child {
+  border-top: 1px solid var(--border-subtle);
 }
 
-.ladder-spec-label {
-  display: block;
-  font-size: 10px;
+.spec-row-label {
+  font-size: 10.5px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-green-brand);
-  margin-bottom: 3px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
 }
 
-.ladder-spec-val {
-  font-size: 13px;
-  color: #FFFFFF;
+.spec-row-val {
+  font-size: 13.5px;
+  color: var(--color-text-primary);
   font-weight: 500;
+  line-height: 1.45;
 }
 
 .ladder-actions {
@@ -2714,7 +3245,6 @@ select option {
   .kitchen-ladder-item.is-reversed {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 20px;
   }
   .kitchen-ladder-item.is-reversed .ladder-photo-col {
     order: 1;
@@ -3361,7 +3891,170 @@ select option {
   }
 }
 
+/* Пять колонок: десктоп 5 -> планшет 3 -> мобильный вертикально */
+@media (max-width: 1280px) {
+  .process-track--five {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 28px;
+  }
+  .process-track--five .process-step:nth-child(n + 4)::before {
+    display: none;
+  }
+}
 
+@media (max-width: 1024px) {
+  .process-track--five {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-track--five .process-step:nth-child(n + 4)::before {
+    display: block;
+  }
+  .process-track--five .process-step:nth-child(n + 3)::before {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-track--five {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .process-track--five .process-step:nth-child(n + 3)::before {
+    display: block;
+  }
+  .process-track--five .process-step {
+    padding: 0 0 28px 28px;
+  }
+  .process-track--five .process-step:last-child {
+    padding-bottom: 0;
+  }
+  .process-track--five .process-step::before {
+    top: 16px;
+    left: 3px;
+    right: auto;
+    bottom: 4px;
+    width: 1px;
+    height: auto;
+  }
+  .process-track--five .process-step:last-child::before {
+    display: none;
+  }
+  .process-track--five .process-step::after {
+    top: 2px;
+    left: 0;
+  }
+}
+
+
+
+/* ==========================================================================
+   CALCULATOR WIZARD (step-by-step)
+   ========================================================================== */
+.calc-progress {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.calc-progress-step {
+  background: none;
+  border: none;
+  padding: 26px 0 0;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+}
+
+/* hairline через все шаги */
+.calc-progress-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -16px;
+  height: 1px;
+  background: var(--border-medium);
+}
+
+.calc-progress-step:last-child::before {
+  right: 0;
+}
+
+/* маркер-квадрат */
+.calc-progress-step::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--color-green-brand);
+}
+
+.calc-progress-step.is-future::after {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.calc-progress-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.calc-progress-step.is-future .calc-progress-num {
+  color: var(--color-text-muted);
+}
+
+.calc-progress-label {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-primary);
+}
+
+.calc-progress-step.is-future .calc-progress-label {
+  color: var(--color-text-muted);
+}
+
+.calc-progress-step.is-current .calc-progress-label {
+  color: var(--color-green-brand);
+}
+
+.calc-step-title {
+  font-family: var(--font-main);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 18px;
+}
+
+.calc-nav-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .calc-progress {
+    gap: 10px;
+  }
+  .calc-progress-step::before {
+    right: -10px;
+  }
+  .calc-progress-label {
+    display: none;
+  }
+  .calc-progress-num {
+    font-size: 18px;
+  }
+}
 
 /* ==========================================================================
    CALCULATOR MATERIALS SPECIFICATION LIST (Compact Grid)
@@ -3393,12 +4086,27 @@ select option {
   grid-template-columns: 48px 1fr auto;
   align-items: center;
   gap: 14px;
-  padding: 12px 0;
+  padding: 12px 0 12px 14px;
   border-bottom: 1px solid var(--border-subtle);
+  border-left: 2px solid transparent;
 }
 
 .calc-mat-spec-row:last-child {
   border-bottom: none;
+}
+
+button.calc-mat-spec-row {
+  font-family: var(--font-main);
+  color: inherit;
+}
+
+button.calc-mat-spec-row:hover {
+  background: var(--color-green-subtle);
+}
+
+button.calc-mat-spec-row.is-selected {
+  border-left-color: var(--color-green-brand);
+  background: var(--color-green-subtle);
 }
 
 .calc-mat-thumb {

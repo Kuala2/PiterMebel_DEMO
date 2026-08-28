@@ -38,21 +38,13 @@ export default function KitchensCatalogPage() {
 
   return (
     <div>
-      {/* 1. Subpage Hero Banner (70vh, Aleksandra Fenix NTM background) */}
-      <section className="subpage-hero">
-        <div className="subpage-hero-bg">
-          <Image
-            src="/img/kitchens/aleksandra/photo_1.jpg"
-            alt="Кухни на заказ ПитерМебель"
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center 65%" }}
-          />
-        </div>
-        <div className="subpage-hero-overlay" />
-        <div className="container subpage-hero-content">
+      {/* 1. Page Header */}
+      <section className="page-header">
+        <div className="container">
           <h1 className="subpage-hero-title">Кухни студии «ПитерМебель»</h1>
+          <p className="subpage-hero-caption">
+            {KITCHENS.length} моделей · каждая изготавливается по индивидуальным размерам
+          </p>
         </div>
       </section>
 
@@ -181,37 +173,37 @@ export default function KitchensCatalogPage() {
 
                   <p className="ladder-story">{kitchen.story[0]}</p>
 
-                  <div className="ladder-specs-grid">
-                    <div className="ladder-spec-item">
-                      <span className="ladder-spec-label">Фасады</span>
-                      <span className="ladder-spec-val">{kitchen.facade}</span>
+                  <div className="ladder-specs-rows">
+                    <div className="spec-row">
+                      <span className="spec-row-label">Фасады</span>
+                      <span className="spec-row-val">{kitchen.facade}</span>
                     </div>
-                    <div className="ladder-spec-item">
-                      <span className="ladder-spec-label">Столешница</span>
-                      <span className="ladder-spec-val">{kitchen.worktop}</span>
+                    <div className="spec-row">
+                      <span className="spec-row-label">Столешница</span>
+                      <span className="spec-row-val">{kitchen.worktop}</span>
                     </div>
-                    <div className="ladder-spec-item">
-                      <span className="ladder-spec-label">Особенность</span>
-                      <span className="ladder-spec-val">{kitchen.feature}</span>
+                    <div className="spec-row">
+                      <span className="spec-row-label">Особенность</span>
+                      <span className="spec-row-val">{kitchen.feature}</span>
                     </div>
-                    <div className="ladder-spec-item">
-                      <span className="ladder-spec-label">Кромление</span>
-                      <span className="ladder-spec-val">Влагостойкий PUR-шов</span>
+                    <div className="spec-row">
+                      <span className="spec-row-label">Кромление</span>
+                      <span className="spec-row-val">Влагостойкий PUR-шов</span>
                     </div>
                   </div>
 
                   <div className="ladder-actions">
                     <Link
-                      href={`/kitchens/${kitchen.slug}`}
+                      href="/contacts"
                       className="btn btn-green"
                     >
-                      Подробнее о модели →
+                      Рассчитать эту кухню
                     </Link>
                     <Link
-                      href="/contacts"
+                      href={`/kitchens/${kitchen.slug}`}
                       className="btn btn-glass"
                     >
-                      Рассчитать эту кухню
+                      Подробнее о модели →
                     </Link>
                   </div>
                 </div>

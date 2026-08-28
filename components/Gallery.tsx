@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface GalleryProps {
@@ -10,50 +10,68 @@ interface GalleryProps {
 
 export default function Gallery({ images, title }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  // Автолистание каждые 5 секунд, пауза при наведении
+  useEffect(() => {
+    if (paused || images.length <= 1) return;
+    const timer = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [paused, images.length]);
 
   if (!images || images.length === 0) return null;
 
   const currentImg = images[activeIdx] || images[0];
 
   return (
-    <div>
-      {/* Main Image */}
-      <div className="detail-gallery-main">
-        <Image
-          src={currentImg}
-          alt={`${title} — ракурс ${activeIdx + 1}`}
-          fill
-          priority
-          sizes="(max-width: 1024px) 100vw, 680px"
-          style={{ objectFit: "cover", objectPosition: "center 50%" }}
-        />
-      </div>
+    <div
+      className="detail-gallery-main"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      {/* Фото от края до края, целиком — высота по пропорции кадра,
+          экстремально вертикальные кадры мягко подрезаются снизу/сверху до 85vh */}
+      <Image
+        key={currentImg}
+        src={currentImg}
+        alt={`${title} — фото ${activeIdx + 1}`}
+        width={1920}
+        height={1280}
+        priority
+        sizes="100vw"
+        style={{
+          width: "100%",
+          height: "auto",
+          maxHeight: "85vh",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
 
-      {/* Thumbnails */}
       {images.length > 1 && (
-        <div className="detail-thumbs-grid">
-          {images.map((img, idx) => (
-            <div
-              key={img + idx}
-              className="detail-thumb-item"
-              onClick={() => setActiveIdx(idx)}
-              style={{
-                cursor: "pointer",
-                borderColor: activeIdx === idx ? "var(--color-green-brand)" : undefined,
-                opacity: activeIdx === idx ? 1 : 0.75,
-                transition: "all 0.2s ease",
-              }}
-            >
-              <Image
-                src={img}
-                alt={`${title} — миниатюра ${idx + 1}`}
-                fill
-                sizes="(max-width: 768px) 25vw, 160px"
-                style={{ objectFit: "cover", objectPosition: "center 50%" }}
-              />
-            </div>
-          ))}
-        </div>
+        <>
+          <button
+            type="button"
+            className="detail-gallery-arrow arrow-prev"
+            onClick={() => setActiveIdx((activeIdx - 1 + images.length) % images.length)}
+            aria-label="Предыдущее фото"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            className="detail-gallery-arrow arrow-next"
+            onClick={() => setActiveIdx((activeIdx + 1) % images.length)}
+            aria-label="Следующее фото"
+          >
+            →
+          </button>
+          <span className="detail-gallery-count">
+            {activeIdx + 1} / {images.length}
+          </span>
+        </>
       )}
     </div>
   );

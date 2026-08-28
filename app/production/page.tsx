@@ -13,52 +13,42 @@ export const metadata: Metadata = {
 export default function ProductionPage() {
   return (
     <div>
-      {/* 1. Subpage Hero Banner (Cinema Workshop Interior + HUD metrics) */}
-      <section className="subpage-hero">
-        <div className="subpage-hero-bg">
-          <Image
-            src="/img/brand/workshop_hero.jpg"
-            alt="Производственный цех ПитерМебель на Трефолева"
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center 45%" }}
-          />
-        </div>
-        <div className="subpage-hero-overlay" />
-        <div className="container subpage-hero-content">
+      {/* 1. Page Header */}
+      <section className="page-header">
+        <div className="container">
           <h1 className="subpage-hero-title">
             Собственный цех в Санкт-Петербурге
           </h1>
-
-          {/* Integrated Telemetry HUD Bar */}
-          <div className="prod-hero-stats-bar">
-            <div className="prod-hero-stat-cell">
-              <span className="prod-stat-val">850 м²</span>
-              <span className="prod-stat-lbl">Площадь цеха на Трефолева</span>
-            </div>
-            <div className="prod-hero-stat-cell">
-              <span className="prod-stat-val">0.1 мм</span>
-              <span className="prod-stat-lbl">Допуск раскроя и присадки ЧПУ</span>
-            </div>
-            <div className="prod-hero-stat-cell">
-              <span className="prod-stat-val">PUR</span>
-              <span className="prod-stat-lbl">Влагостойкий клеевой шов</span>
-            </div>
-            <div className="prod-hero-stat-cell">
-              <span className="prod-stat-val">100%</span>
-              <span className="prod-stat-lbl">Тестовая фабричная сборка</span>
-            </div>
-          </div>
+          <p className="subpage-hero-caption">
+            Полный цикл производства · раскрой, кромление, сборка — всё в одном месте
+          </p>
         </div>
       </section>
 
-      {/* 2. Intro Bar */}
+      {/* 2. Intro + Stats Row */}
       <section className="subpage-intro-bar">
         <div className="container">
           <p className="subpage-intro-desc" style={{ marginBottom: 0 }}>
-            {SITE_CONFIG.name} — это полный производственный цикл без посредников с {SITE_CONFIG.foundedYear} года. Мы несем прямую ответственность за каждый этап: от первого лазерного замера до идеальной станочной обработки и чистой установки под ключ.
+            {SITE_CONFIG.name} — это полный производственный цикл без посредников с {SITE_CONFIG.foundedYear} года. Мы несем прямую ответственность за каждый этап: от первого лазерного замера до станочной обработки и чистой установки под ключ.
           </p>
+          <div className="prod-stats-row">
+            <div className="prod-stat">
+              <span className="prod-stat-num">850 м²</span>
+              <span className="prod-stat-label">Площадь цеха на Трефолева</span>
+            </div>
+            <div className="prod-stat">
+              <span className="prod-stat-num">2005</span>
+              <span className="prod-stat-label">Год запуска производства</span>
+            </div>
+            <div className="prod-stat">
+              <span className="prod-stat-num">PUR</span>
+              <span className="prod-stat-label">Влагостойкий клеевой шов</span>
+            </div>
+            <div className="prod-stat">
+              <span className="prod-stat-num">100%</span>
+              <span className="prod-stat-label">Тестовая сборка перед отгрузкой</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -76,103 +66,64 @@ export default function ProductionPage() {
             </Link>
           </div>
 
-          <div className="prod-equip-grid">
-            {/* Card 1: CNC Machining */}
-            <div className="prod-equip-card">
-              <div className="prod-equip-photo-wrap">
+          <div className="prod-rows">
+            {/* Row 1: CNC */}
+            <div className="prod-row">
+              <div className="prod-row-photo">
                 <Image
-                  src="/img/brand/workshop_cnc.jpg"
-                  alt="Фрезерный станочный центр ЧПУ Biesse Rover"
+                  src="/img/production/cnc.jpg"
+                  alt="Станок с ЧПУ в цеху ПитерМебель"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                  style={{ objectFit: "cover" }}
                 />
-                <div className="prod-equip-tag">Biesse Rover • ЧПУ</div>
+                <span className="prod-row-caption">Цех на Трефолева · участок раскроя</span>
               </div>
-              <div className="prod-equip-body">
-                <h3 className="prod-equip-title">Фрезерно-присадочные центры ЧПУ</h3>
-                <p className="prod-equip-desc">
-                  Высокоточный раскрой плитных материалов (Egger, МДФ, шпон) и фигурная 3D-фрезеровка мебельных фасадов с допуском до 0.1 мм без сколов.
+              <div className="prod-row-info">
+                <h3 className="prod-row-title">Станки с ЧПУ</h3>
+                <p className="prod-row-desc">
+                  Точный раскрой плитных материалов — ЛДСП, МДФ, шпон — и аккуратная обработка криволинейных фасадов. Детали выходят со станка с чистой кромкой, без сколов и прижогов.
                 </p>
-                <ul className="prod-equip-specs-list">
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Автоматическая смена инструмента</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Лазерная юстировка осей координат</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Безупречная геометрия углов и пазов</span>
-                  </li>
-                </ul>
               </div>
             </div>
 
-            {/* Card 2: PUR Edge Banding */}
-            <div className="prod-equip-card">
-              <div className="prod-equip-photo-wrap">
+            {/* Row 2: PUR Edge Banding */}
+            <div className="prod-row is-reversed">
+              <div className="prod-row-photo">
                 <Image
-                  src="/img/brand/workshop_edge.jpg"
+                  src="/img/production/edge.jpg"
                   alt="Кромкооблицовочный станок с PUR-узлом"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                  style={{ objectFit: "cover" }}
                 />
-                <div className="prod-equip-tag">PUR Hotmelt • Нулевой шов</div>
+                <span className="prod-row-caption">Участок кромления · PUR</span>
               </div>
-              <div className="prod-equip-body">
-                <h3 className="prod-equip-title">Влагостойкое PUR-кромление</h3>
-                <p className="prod-equip-desc">
-                  Герметизация торцов деталей полиуретановым термоклеем. PUR-шов полностью водонепроницаем и не боится горячего пара от варочной панели и раковины.
+              <div className="prod-row-info">
+                <h3 className="prod-row-title">Влагостойкое PUR-кромление</h3>
+                <p className="prod-row-desc">
+                  Торцы каждой детали герметизируются полиуретановым термоклеем. Такой шов не пропускает влагу и выдерживает горячий пар от варочной панели и раковины — фасады не разбухают годами.
                 </p>
-                <ul className="prod-equip-specs-list">
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>100% защита от пара и вздутия плит</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Невидимая линия клеевого соединения</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Термостойкость к высоким температурам</span>
-                  </li>
-                </ul>
               </div>
             </div>
 
-            {/* Card 3: Test Assembly */}
-            <div className="prod-equip-card">
-              <div className="prod-equip-photo-wrap">
+            {/* Row 3: Test Assembly */}
+            <div className="prod-row">
+              <div className="prod-row-photo">
                 <Image
-                  src="/img/brand/workshop_hero.jpg"
+                  src="/img/production/assembly.jpg"
                   alt="Участок контрольной сборки мебели"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                  style={{ objectFit: "cover" }}
                 />
-                <div className="prod-equip-tag">100% Контрольная сборка</div>
+                <span className="prod-row-caption">Участок контрольной сборки</span>
               </div>
-              <div className="prod-equip-body">
-                <h3 className="prod-equip-title">Тестовая сборка на фабрике</h3>
-                <p className="prod-equip-desc">
-                  Перед отправкой каждый гарнитур собирается в цеху. Мастера проверяют параллельность линий, примыкание фасадов и плавность хода направляющих Blum.
+              <div className="prod-row-info">
+                <h3 className="prod-row-title">Тестовая сборка в цеху</h3>
+                <p className="prod-row-desc">
+                  Перед отправкой каждый гарнитур собирается целиком: проверяем геометрию корпуса, примыкание фасадов и плавность хода фурнитуры Blum. На объект мебель приезжает уже проверенной.
                 </p>
-                <ul className="prod-equip-specs-list">
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Юстировка зазоров и петель на стенде</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Проверка плавности доводчиков и ящиков</span>
-                  </li>
-                  <li>
-                    <span className="check-icon">✓</span>
-                    <span>Нулевой риск ошибок и брака на монтаже</span>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -232,87 +183,47 @@ export default function ProductionPage() {
         </div>
       </section>
 
-      {/* 5. PROCESS PIPELINE (5 Sequential Steps) */}
+      {/* 5. PROCESS LINE */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "80px", paddingBottom: "85px" }}>
         <div className="container">
-          <div style={{ marginBottom: "36px" }}>
+          <div style={{ marginBottom: "44px" }}>
             <h2 className="section-title" style={{ marginBottom: 0 }}>
-              Сквозной процесс: от замера до установки
+              От замера до установки
             </h2>
           </div>
 
-          <div className="prod-pipeline-grid">
-            <div className="prod-pipeline-card">
-              <div className="prod-pipeline-head">
-                <div className="prod-pipeline-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 3L3 21" /><path d="M14 3l7 7-4 4-7-7 4-4z" /><path d="M3 14l7 7 4-4-7-7-4 4z" />
-                  </svg>
-                </div>
-                <span className="prod-pipeline-num">01</span>
-              </div>
-              <h3 className="prod-pipeline-title">Лазерный замер</h3>
-              <p className="prod-pipeline-desc">
+          <div className="process-track process-track--five">
+            <div className="process-step">
+              <h3 className="process-title">Лазерный замер</h3>
+              <p className="process-desc">
                 Инженер сканирует геометрию стен, углы и выводы коммуникаций с чемоданом образцов.
               </p>
             </div>
 
-            <div className="prod-pipeline-card">
-              <div className="prod-pipeline-head">
-                <div className="prod-pipeline-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" />
-                  </svg>
-                </div>
-                <span className="prod-pipeline-num">02</span>
-              </div>
-              <h3 className="prod-pipeline-title">3D-проект и смета</h3>
-              <p className="prod-pipeline-desc">
+            <div className="process-step">
+              <h3 className="process-title">3D-проект и смета</h3>
+              <p className="process-desc">
                 Разработка технологических раскройных карт, интеграция техники и фиксация цены.
               </p>
             </div>
 
-            <div className="prod-pipeline-card">
-              <div className="prod-pipeline-head">
-                <div className="prod-pipeline-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
-                  </svg>
-                </div>
-                <span className="prod-pipeline-num">03</span>
-              </div>
-              <h3 className="prod-pipeline-title">Раскрой и PUR-шов</h3>
-              <p className="prod-pipeline-desc">
+            <div className="process-step">
+              <h3 className="process-title">Раскрой и PUR-шов</h3>
+              <p className="process-desc">
                 Распил на станках ЧПУ и полиуретановая герметизация торцов для защиты от влаги.
               </p>
             </div>
 
-            <div className="prod-pipeline-card">
-              <div className="prod-pipeline-head">
-                <div className="prod-pipeline-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 14 14" />
-                  </svg>
-                </div>
-                <span className="prod-pipeline-num">04</span>
-              </div>
-              <h3 className="prod-pipeline-title">Тестовая сборка</h3>
-              <p className="prod-pipeline-desc">
+            <div className="process-step">
+              <h3 className="process-title">Тестовая сборка</h3>
+              <p className="process-desc">
                 Фабричная проверка геометрии, регулировка петель и зазоров до отправки к вам.
               </p>
             </div>
 
-            <div className="prod-pipeline-card">
-              <div className="prod-pipeline-head">
-                <div className="prod-pipeline-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
-                </div>
-                <span className="prod-pipeline-num">05</span>
-              </div>
-              <h3 className="prod-pipeline-title">Чистый монтаж</h3>
-              <p className="prod-pipeline-desc">
+            <div className="process-step">
+              <h3 className="process-title">Чистый монтаж</h3>
+              <p className="process-desc">
                 Штатная бригада устанавливает гарнитур, подключает технику и убирает мусор.
               </p>
             </div>

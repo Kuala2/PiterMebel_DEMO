@@ -53,21 +53,13 @@ export default function ProjectsPortfolioPage() {
 
   return (
     <div>
-      {/* 1. Subpage Hero Banner (70vh, Stopsol glass wardrobe background) */}
-      <section className="subpage-hero">
-        <div className="subpage-hero-bg">
-          <Image
-            src="/img/projects/glass-wardrobe/photo_1.jpg"
-            alt="Реализованные объекты ПитерМебель"
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center 55%" }}
-          />
-        </div>
-        <div className="subpage-hero-overlay" />
-        <div className="container subpage-hero-content">
+      {/* 1. Page Header */}
+      <section className="page-header">
+        <div className="container">
           <h1 className="subpage-hero-title">Реализованные объекты студии</h1>
+          <p className="subpage-hero-caption">
+            {PROJECTS.length} объектов · всё изготовлено в нашем цеху на Трефолева
+          </p>
         </div>
       </section>
 
@@ -178,20 +170,9 @@ export default function ProjectsPortfolioPage() {
                   <div className="card-body">
                     <h2 className="card-title">{project.title}</h2>
                     <p className="card-desc">{project.task}</p>
-                    <div className="card-specs-tags">
-                      {project.materials.map((m) => (
-                        <span key={m} className="spec-pill">{m}</span>
-                      ))}
-                    </div>
-                    <div className="card-footer">
-                      <div>
-                        <div className="card-price-label">Спецификация</div>
-                        <div className="card-price-val">Индивидуальный заказ</div>
-                      </div>
-                      <Link href={`/projects/${project.slug}`} className="card-btn-action">
-                        Смотреть проект →
-                      </Link>
-                    </div>
+                    <Link href={`/projects/${project.slug}`} className="card-open-link">
+                      Смотреть проект →
+                    </Link>
                   </div>
                 </div>
               );

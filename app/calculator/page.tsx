@@ -156,6 +156,7 @@ const EXTRA_OPTIONS = [
 ];
 
 export default function CalculatorPage() {
+  const [step, setStep] = useState<number>(1);
   const [selectedMainCat, setSelectedMainCat] = useState<string>("kitchens");
   const [selectedType, setSelectedType] = useState<string>("kitchen-corner");
   const [selectedSize, setSelectedSize] = useState<string>("m");
@@ -165,6 +166,14 @@ export default function CalculatorPage() {
     "ceiling",
     "fittings",
   ]);
+
+  const CALC_STEPS = [
+    "Направление",
+    "Планировка",
+    "Размер",
+    "Материал",
+    "Опции",
+  ];
 
   // Handle main category switch and auto-select first subtype
   const handleMainCatChange = (catId: string) => {
@@ -196,6 +205,30 @@ export default function CalculatorPage() {
       complexity = "Премиальная авторская спецификация";
     }
 
+    // Предварительная вилка цены (корпус + фасады, без техники и монтажа)
+    const baseByCategory: Record<string, number> = {
+      kitchens: 190000,
+      wardrobes: 150000,
+      cabinet: 110000,
+    };
+    const sizeMult: Record<string, number> = { s: 0.8, m: 1.0, l: 1.3, xl: 1.6 };
+    const matMult: Record<string, number> = { enamel: 1.15, veneer: 1.4, fenix: 1.25, plastic: 1.0 };
+    const optionPrice: Record<string, number> = {
+      stone: 55000,
+      gola: 18000,
+      stopsol: 38000,
+      ceiling: 24000,
+      fittings: 22000,
+      led: 13000,
+    };
+
+    const base = (baseByCategory[selectedMainCat] ?? 150000) * (sizeMult[selectedSize] ?? 1) * (matMult[selectedMaterial] ?? 1);
+    const optionsSum = selectedOptions.reduce((sum, id) => sum + (optionPrice[id] ?? 0), 0);
+    const total = base + optionsSum;
+    const roundTo10k = (v: number) => Math.round(v / 10000) * 10000;
+    const priceLow = roundTo10k(total * 0.92);
+    const priceHigh = roundTo10k(total * 1.18);
+
     return {
       mainCategoryName: mainCat.name,
       furnitureName: furn.name,
@@ -205,6 +238,8 @@ export default function CalculatorPage() {
       materialName: mat.name,
       tierName: mat.tier,
       complexity,
+      priceLow,
+      priceHigh,
       optionsCount: selectedOptions.length,
       optionsNames: selectedOptions
         .map((id) => EXTRA_OPTIONS.find((o) => o.id === id)?.name)
@@ -214,21 +249,13 @@ export default function CalculatorPage() {
 
   return (
     <div>
-      {/* 1. Subpage Hero Banner (70vh, Valeria kitchen background) */}
-      <section className="subpage-hero">
-        <div className="subpage-hero-bg">
-          <Image
-            src="/img/kitchens/valeria/photo_1.jpg"
-            alt="Калькулятор комплектации мебели ПитерМебель"
-            fill
-            priority
-            sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center 50%" }}
-          />
-        </div>
-        <div className="subpage-hero-overlay" />
-        <div className="container subpage-hero-content">
+      {/* 1. Page Header */}
+      <section className="page-header">
+        <div className="container">
           <h1 className="subpage-hero-title">Калькулятор стоимости мебели</h1>
+          <p className="subpage-hero-caption">
+            5 шагов · предварительная смета без вызова мастера
+          </p>
         </div>
       </section>
 
@@ -245,17 +272,34 @@ export default function CalculatorPage() {
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "50px", paddingBottom: "80px" }}>
         <div className="container">
           <div className="calc-layout-grid">
-            {/* Left Column: Interactive Steps */}
+            {/* Left Column: Step-by-step Wizard */}
             <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
-              
+
+              {/* Progress line: 5 markers in the site language */}
+              <div className="process-track calc-progress">
+                {CALC_STEPS.map((label, i) => {
+                  const n = i + 1;
+                  const state = n === step ? "is-current" : n < step ? "is-done" : "is-future";
+                  return (
+                    <button
+                      key={label}
+                      type="button"
+                      className={`process-step calc-progress-step ${state}`}
+                      onClick={() => setStep(n)}
+                    >
+                      <span className="calc-progress-num">{n}</span>
+                      <span className="calc-progress-label">{label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
               {/* Step 1: Main Category */}
+              {step === 1 && (
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>1</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
-                    Выберите направление мебели
-                  </h3>
-                </div>
+                <h3 className="calc-step-title">
+                  Что будем рассчитывать?
+                </h3>
                 <div className="calc-categories-grid">
                   {MAIN_CATEGORIES.map((cat) => {
                     const isSelected = selectedMainCat === cat.id;
@@ -266,16 +310,16 @@ export default function CalculatorPage() {
                         onClick={() => handleMainCatChange(cat.id)}
                         style={{
                           background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
+                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "18px 16px",
                           textAlign: "left",
                           cursor: "pointer",
                           transition: "var(--transition)",
-                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
+                          boxShadow: "none",
                         }}
                       >
-                        <div style={{ fontSize: "15px", fontWeight: 700, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)", marginBottom: "4px" }}>
+                        <div style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "4px" }}>
                           {cat.name}
                         </div>
                         <div style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: "1.4" }}>
@@ -286,15 +330,14 @@ export default function CalculatorPage() {
                   })}
                 </div>
               </div>
+              )}
 
               {/* Step 2: Subtype / Layout */}
+              {step === 2 && (
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>2</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
-                    Тип и планировка изделия
-                  </h3>
-                </div>
+                <h3 className="calc-step-title">
+                  Тип и планировка изделия
+                </h3>
                 <div className="calc-subtypes-grid">
                   {currentSubtypes.map((type) => {
                     const isSelected = selectedType === type.id;
@@ -305,7 +348,7 @@ export default function CalculatorPage() {
                         onClick={() => setSelectedType(type.id)}
                         style={{
                           background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
+                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "14px",
                           textAlign: "left",
@@ -314,17 +357,17 @@ export default function CalculatorPage() {
                           gap: "14px",
                           cursor: "pointer",
                           transition: "var(--transition)",
-                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
+                          boxShadow: "none",
                         }}
                       >
                         <div style={{ position: "relative", width: "58px", height: "58px", borderRadius: "var(--radius-xs)", overflow: "hidden", flexShrink: 0, background: "var(--bg-studio)", border: "1px solid var(--border-subtle)" }}>
                           <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
                         </div>
                         <div>
-                          <div style={{ fontSize: "14px", fontWeight: isSelected ? 700 : 600, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)", lineHeight: "1.3" }}>
+                          <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: "1.3" }}>
                             {type.name}
                           </div>
-                          <div style={{ fontSize: "12px", color: isSelected ? "var(--color-green-brand)" : "var(--color-text-muted)", marginTop: "3px" }}>
+                          <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "3px" }}>
                             {type.subtitle}
                           </div>
                         </div>
@@ -333,15 +376,14 @@ export default function CalculatorPage() {
                   })}
                 </div>
               </div>
+              )}
 
               {/* Step 3: Size */}
+              {step === 3 && (
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>3</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
-                    Ориентировочный размер
-                  </h3>
-                </div>
+                <h3 className="calc-step-title">
+                  Ориентировочный размер
+                </h3>
                 <div className="calc-sizes-grid">
                   {SIZES.map((size) => {
                     const isSelected = selectedSize === size.id;
@@ -351,9 +393,9 @@ export default function CalculatorPage() {
                         type="button"
                         onClick={() => setSelectedSize(size.id)}
                         style={{
-                          background: isSelected ? "var(--color-green-brand)" : "var(--bg-surface)",
-                          color: isSelected ? "#FFFFFF" : "var(--color-text-primary)",
-                          border: `1px solid ${isSelected ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
+                          background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
+                          color: "var(--color-text-primary)",
+                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "14px 10px",
                           fontWeight: isSelected ? 700 : 500,
@@ -361,7 +403,7 @@ export default function CalculatorPage() {
                           cursor: "pointer",
                           transition: "var(--transition)",
                           textAlign: "center",
-                          boxShadow: isSelected ? "0 2px 10px rgba(76, 140, 46, 0.25)" : "0 1px 4px rgba(0,0,0,0.02)",
+                          boxShadow: "none",
                         }}
                       >
                         <div style={{ fontWeight: 700, fontSize: "14px" }}>{size.name}</div>
@@ -371,15 +413,14 @@ export default function CalculatorPage() {
                   })}
                 </div>
               </div>
+              )}
 
               {/* Step 4: Facade Material */}
+              {step === 4 && (
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>4</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
-                    Материал фасадов и отделки
-                  </h3>
-                </div>
+                <h3 className="calc-step-title">
+                  Материал фасадов и отделки
+                </h3>
                 <div className="calc-materials-grid">
                   {FACADE_MATERIALS.map((mat) => {
                     const isSelected = selectedMaterial === mat.id;
@@ -390,20 +431,20 @@ export default function CalculatorPage() {
                         onClick={() => setSelectedMaterial(mat.id)}
                         style={{
                           background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
+                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "16px",
                           fontWeight: isSelected ? 700 : 500,
                           fontSize: "15px",
-                          color: isSelected ? "var(--color-green-brand)" : "var(--color-text-secondary)",
+                          color: isSelected ? "var(--color-text-primary)" : "var(--color-text-secondary)",
                           cursor: "pointer",
                           transition: "var(--transition)",
                           textAlign: "left",
-                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
+                          boxShadow: "none",
                         }}
                       >
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <span style={{ fontWeight: 700, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)" }}>{mat.name}</span>
+                          <span style={{ fontWeight: 700, color: "var(--color-text-primary)" }}>{mat.name}</span>
                           <span style={{ fontSize: "10px", color: "var(--color-green-brand)", background: "var(--color-green-dark)", border: "1px solid var(--border-green)", padding: "2px 6px", borderRadius: "var(--radius-xs)" }}>{mat.tier}</span>
                         </div>
                         <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "6px" }}>
@@ -414,15 +455,14 @@ export default function CalculatorPage() {
                   })}
                 </div>
               </div>
+              )}
 
               {/* Step 5: Additional Options */}
+              {step === 5 && (
               <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
-                  <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>5</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
-                    Дополнительные опции комплектации
-                  </h3>
-                </div>
+                <h3 className="calc-step-title">
+                  Дополнительные опции комплектации
+                </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {EXTRA_OPTIONS.map((opt) => {
                     const isChecked = selectedOptions.includes(opt.id);
@@ -433,7 +473,7 @@ export default function CalculatorPage() {
                         onClick={() => toggleOption(opt.id)}
                         style={{
                           background: isChecked ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isChecked ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
+                          border: `1px solid ${isChecked ? "var(--border-green)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "16px 20px",
                           display: "flex",
@@ -443,10 +483,10 @@ export default function CalculatorPage() {
                           transition: "var(--transition)",
                           textAlign: "left",
                           width: "100%",
-                          boxShadow: isChecked ? "0 2px 10px rgba(76, 140, 46, 0.12)" : "0 1px 4px rgba(0,0,0,0.02)",
+                          boxShadow: "none",
                         }}
                       >
-                        <span style={{ fontSize: "15px", color: isChecked ? "var(--color-green-brand)" : "var(--color-text-primary)", fontWeight: isChecked ? 600 : 400 }}>
+                        <span style={{ fontSize: "15px", color: "var(--color-text-primary)", fontWeight: isChecked ? 600 : 400 }}>
                           {opt.name}
                         </span>
                         <span
@@ -473,7 +513,86 @@ export default function CalculatorPage() {
                   })}
                 </div>
               </div>
+              )}
 
+              {/* Materials List — кликабельный выбор */}
+              {step === 5 && (
+              <div className="calc-materials-spec-box">
+                <h4 className="calc-materials-spec-title">
+                  Материалы и покрытия
+                </h4>
+                <p style={{ fontSize: "12px", color: "var(--color-text-muted)", margin: "0 0 6px" }}>
+                  Нажмите на материал, чтобы выбрать его для расчёта
+                </p>
+                <div className="calc-materials-spec-list">
+                  {MATERIALS.map((mat) => {
+                    const isFacade = mat.id !== "stopsol";
+                    const isSelected = isFacade
+                      ? selectedMaterial === (mat.id === "velvet" ? "plastic" : mat.id)
+                      : selectedOptions.includes("stopsol");
+                    return (
+                      <button
+                        key={mat.id}
+                        type="button"
+                        className={`calc-mat-spec-row ${isSelected ? "is-selected" : ""}`}
+                        onClick={() => {
+                          if (mat.id === "stopsol") {
+                            if (!selectedOptions.includes("stopsol")) toggleOption("stopsol");
+                          } else {
+                            setSelectedMaterial(mat.id === "velvet" ? "plastic" : mat.id);
+                          }
+                        }}
+                        style={{
+                          textAlign: "left",
+                          cursor: "pointer",
+                          width: "100%",
+                          transition: "var(--transition)",
+                        }}
+                      >
+                        <div className="calc-mat-thumb">
+                          <Image
+                            src={mat.image}
+                            alt={mat.title}
+                            fill
+                            sizes="48px"
+                            style={{ objectFit: "cover" }}
+                          />
+                        </div>
+                        <div className="calc-mat-info">
+                          <span className="calc-mat-name">
+                            {mat.title}
+                            {isSelected && (
+                              <span style={{ color: "var(--color-green-brand)", fontSize: "11px", fontWeight: 600, marginLeft: "10px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                                Выбрано
+                              </span>
+                            )}
+                          </span>
+                          <span className="calc-mat-prop">{mat.description}</span>
+                        </div>
+                        <span className="calc-mat-tag">{mat.tag}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+              )}
+
+              {/* Wizard navigation */}              <div className="calc-nav-row">
+                {step > 1 && (
+                  <button type="button" className="btn btn-glass" onClick={() => setStep(step - 1)}>
+                    ← Назад
+                  </button>
+                )}
+                {step < 5 ? (
+                  <button type="button" className="btn btn-green" onClick={() => setStep(step + 1)}>
+                    Далее →
+                  </button>
+                ) : (
+                  <Link href="#measure" className="btn btn-green">
+                    Записаться на замер по этой комплектации →
+                  </Link>
+                )}
+              </div>
             </div>
 
             {/* Right Column: Sticky Summary & Calculation Card */}
@@ -490,12 +609,17 @@ export default function CalculatorPage() {
                 </p>
               </div>
 
-              {/* Selected Photo Preview */}
-              <div style={{ position: "relative", height: "140px", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)", background: "var(--bg-studio)" }}>
-                <Image key={calculation.furnitureImage} src={calculation.furnitureImage} alt={calculation.furnitureName} fill className="fade-in-img" style={{ objectFit: "cover" }} />
-                <span style={{ position: "absolute", top: "10px", left: "10px", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", background: "rgba(255,255,255,0.92)", color: "var(--color-green-brand)", border: "1px solid var(--border-green)", padding: "3px 8px", borderRadius: "var(--radius-sm)" }}>
-                  {calculation.mainCategoryName}
-                </span>
+              {/* Preliminary Price */}
+              <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "18px" }}>
+                <div style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--color-text-muted)", marginBottom: "8px" }}>
+                  Предварительная стоимость
+                </div>
+                <div style={{ fontFamily: "var(--font-serif)", fontSize: "30px", fontWeight: 500, color: "var(--color-text-primary)", lineHeight: 1.15, marginBottom: "8px" }}>
+                  {calculation.priceLow.toLocaleString("ru-RU")} — {calculation.priceHigh.toLocaleString("ru-RU")} ₽
+                </div>
+                <div style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: "1.5" }}>
+                  Корпус и фасады, без техники и монтажа. Точная смета — после замера инженером.
+                </div>
               </div>
 
               {/* Specification Breakdown */}
@@ -562,33 +686,6 @@ export default function CalculatorPage() {
                 >
                   Записаться на бесплатный замер
                 </a>
-              </div>
-
-              {/* Materials Specification List */}
-              <div className="calc-materials-spec-box">
-                <h4 className="calc-materials-spec-title">
-                  Доступные материалы и покрытия
-                </h4>
-                <div className="calc-materials-spec-list">
-                  {MATERIALS.map((mat) => (
-                    <div key={mat.id} className="calc-mat-spec-row">
-                      <div className="calc-mat-thumb">
-                        <Image
-                          src={mat.image}
-                          alt={mat.title}
-                          fill
-                          sizes="48px"
-                          style={{ objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="calc-mat-info">
-                        <span className="calc-mat-name">{mat.title}</span>
-                        <span className="calc-mat-prop">{mat.description}</span>
-                      </div>
-                      <span className="calc-mat-tag">{mat.tag}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
