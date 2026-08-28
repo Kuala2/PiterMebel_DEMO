@@ -83,7 +83,7 @@ export default function KitchensCatalogPage() {
         const isReversed = idx % 2 === 1;
         const currentIdx = cardPhoto[kitchen.slug] ?? 0;
         const photos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
-        const isDark = idx % 2 === 0;
+        const isDark = idx !== 1;
 
         return (
           <section
@@ -92,7 +92,6 @@ export default function KitchensCatalogPage() {
               backgroundColor: isDark ? "var(--bg-dark)" : "var(--bg-studio)",
               paddingTop: "70px",
               paddingBottom: "70px",
-              borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
             }}
           >
             <div className="container">

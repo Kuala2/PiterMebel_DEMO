@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import VkIcon from "@/components/VkIcon";
 import MeasureForm from "@/components/MeasureForm";
+import { MATERIALS } from "@/data/materials";
 import { SITE_CONFIG } from "@/data/site";
 
 interface MainCategory {
@@ -251,7 +252,7 @@ export default function CalculatorPage() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>1</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF" }}>
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
                     Выберите направление мебели
                   </h3>
                 </div>
@@ -271,10 +272,10 @@ export default function CalculatorPage() {
                           textAlign: "left",
                           cursor: "pointer",
                           transition: "var(--transition)",
-                          boxShadow: isSelected ? "0 4px 16px rgba(0, 0, 0, 0.4)" : "none",
+                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
                         }}
                       >
-                        <div style={{ fontSize: "15px", fontWeight: 700, color: isSelected ? "var(--color-green-brand)" : "#FFFFFF", marginBottom: "4px" }}>
+                        <div style={{ fontSize: "15px", fontWeight: 700, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)", marginBottom: "4px" }}>
                           {cat.name}
                         </div>
                         <div style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: "1.4" }}>
@@ -290,7 +291,7 @@ export default function CalculatorPage() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>2</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF" }}>
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
                     Тип и планировка изделия
                   </h3>
                 </div>
@@ -313,13 +314,14 @@ export default function CalculatorPage() {
                           gap: "14px",
                           cursor: "pointer",
                           transition: "var(--transition)",
+                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
                         }}
                       >
-                        <div style={{ position: "relative", width: "58px", height: "58px", borderRadius: "var(--radius-xs)", overflow: "hidden", flexShrink: 0, background: "#0A0C0E", border: "1px solid var(--border-subtle)" }}>
+                        <div style={{ position: "relative", width: "58px", height: "58px", borderRadius: "var(--radius-xs)", overflow: "hidden", flexShrink: 0, background: "var(--bg-studio)", border: "1px solid var(--border-subtle)" }}>
                           <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
                         </div>
                         <div>
-                          <div style={{ fontSize: "14px", fontWeight: isSelected ? 700 : 600, color: isSelected ? "#FFFFFF" : "var(--color-text-secondary)", lineHeight: "1.3" }}>
+                          <div style={{ fontSize: "14px", fontWeight: isSelected ? 700 : 600, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)", lineHeight: "1.3" }}>
                             {type.name}
                           </div>
                           <div style={{ fontSize: "12px", color: isSelected ? "var(--color-green-brand)" : "var(--color-text-muted)", marginTop: "3px" }}>
@@ -336,7 +338,7 @@ export default function CalculatorPage() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>3</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF" }}>
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
                     Ориентировочный размер
                   </h3>
                 </div>
@@ -350,7 +352,7 @@ export default function CalculatorPage() {
                         onClick={() => setSelectedSize(size.id)}
                         style={{
                           background: isSelected ? "var(--color-green-brand)" : "var(--bg-surface)",
-                          color: isSelected ? "#FFFFFF" : "var(--color-text-secondary)",
+                          color: isSelected ? "#FFFFFF" : "var(--color-text-primary)",
                           border: `1px solid ${isSelected ? "var(--color-green-brand)" : "var(--border-subtle)"}`,
                           borderRadius: "var(--radius-sm)",
                           padding: "14px 10px",
@@ -359,6 +361,7 @@ export default function CalculatorPage() {
                           cursor: "pointer",
                           transition: "var(--transition)",
                           textAlign: "center",
+                          boxShadow: isSelected ? "0 2px 10px rgba(76, 140, 46, 0.25)" : "0 1px 4px rgba(0,0,0,0.02)",
                         }}
                       >
                         <div style={{ fontWeight: 700, fontSize: "14px" }}>{size.name}</div>
@@ -373,7 +376,7 @@ export default function CalculatorPage() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>4</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF" }}>
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
                     Материал фасадов и отделки
                   </h3>
                 </div>
@@ -392,15 +395,16 @@ export default function CalculatorPage() {
                           padding: "16px",
                           fontWeight: isSelected ? 700 : 500,
                           fontSize: "15px",
-                          color: isSelected ? "#FFFFFF" : "var(--color-text-secondary)",
+                          color: isSelected ? "var(--color-green-brand)" : "var(--color-text-secondary)",
                           cursor: "pointer",
                           transition: "var(--transition)",
                           textAlign: "left",
+                          boxShadow: isSelected ? "0 4px 16px rgba(76, 140, 46, 0.15)" : "0 1px 4px rgba(0,0,0,0.02)",
                         }}
                       >
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <span style={{ fontWeight: 700, color: isSelected ? "#FFFFFF" : "var(--color-text-primary)" }}>{mat.name}</span>
-                          <span style={{ fontSize: "10px", color: "var(--color-green-brand)", background: "rgba(62, 142, 80, 0.15)", border: "1px solid var(--border-green)", padding: "2px 6px", borderRadius: "var(--radius-xs)" }}>{mat.tier}</span>
+                          <span style={{ fontWeight: 700, color: isSelected ? "var(--color-green-brand)" : "var(--color-text-primary)" }}>{mat.name}</span>
+                          <span style={{ fontSize: "10px", color: "var(--color-green-brand)", background: "var(--color-green-dark)", border: "1px solid var(--border-green)", padding: "2px 6px", borderRadius: "var(--radius-xs)" }}>{mat.tier}</span>
                         </div>
                         <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "6px" }}>
                           {mat.desc}
@@ -415,7 +419,7 @@ export default function CalculatorPage() {
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
                   <span style={{ width: "26px", height: "26px", borderRadius: "var(--radius-xs)", background: "var(--color-green-brand)", color: "#FFFFFF", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 800 }}>5</span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "#FFFFFF" }}>
+                  <h3 style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)" }}>
                     Дополнительные опции комплектации
                   </h3>
                 </div>
@@ -439,9 +443,10 @@ export default function CalculatorPage() {
                           transition: "var(--transition)",
                           textAlign: "left",
                           width: "100%",
+                          boxShadow: isChecked ? "0 2px 10px rgba(76, 140, 46, 0.12)" : "0 1px 4px rgba(0,0,0,0.02)",
                         }}
                       >
-                        <span style={{ fontSize: "15px", color: isChecked ? "#FFFFFF" : "var(--color-text-secondary)", fontWeight: isChecked ? 600 : 400 }}>
+                        <span style={{ fontSize: "15px", color: isChecked ? "var(--color-green-brand)" : "var(--color-text-primary)", fontWeight: isChecked ? 600 : 400 }}>
                           {opt.name}
                         </span>
                         <span
@@ -477,7 +482,7 @@ export default function CalculatorPage() {
                 <span className="section-kicker" style={{ marginBottom: "6px" }}>
                   Сформированная спецификация
                 </span>
-                <h3 style={{ fontSize: "22px", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+                <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "6px" }}>
                   {calculation.complexity}
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.5" }}>
@@ -486,9 +491,9 @@ export default function CalculatorPage() {
               </div>
 
               {/* Selected Photo Preview */}
-              <div style={{ position: "relative", height: "140px", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)", background: "#0A0C0E" }}>
+              <div style={{ position: "relative", height: "140px", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)", background: "var(--bg-studio)" }}>
                 <Image key={calculation.furnitureImage} src={calculation.furnitureImage} alt={calculation.furnitureName} fill className="fade-in-img" style={{ objectFit: "cover" }} />
-                <span style={{ position: "absolute", top: "10px", left: "10px", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", background: "rgba(10,12,14,0.92)", color: "var(--color-green-brand)", border: "1px solid var(--border-green)", padding: "3px 8px", borderRadius: "var(--radius-sm)" }}>
+                <span style={{ position: "absolute", top: "10px", left: "10px", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", background: "rgba(255,255,255,0.92)", color: "var(--color-green-brand)", border: "1px solid var(--border-green)", padding: "3px 8px", borderRadius: "var(--radius-sm)" }}>
                   {calculation.mainCategoryName}
                 </span>
               </div>
@@ -501,15 +506,15 @@ export default function CalculatorPage() {
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px", fontSize: "13px", color: "var(--color-text-secondary)" }}>
                   <li style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Тип мебели:</span>
-                    <strong style={{ color: "#FFFFFF" }}>{calculation.furnitureName}</strong>
+                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.furnitureName}</strong>
                   </li>
                   <li style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Размер:</span>
-                    <strong style={{ color: "#FFFFFF" }}>{calculation.sizeName}</strong>
+                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.sizeName}</strong>
                   </li>
                   <li style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Фасады:</span>
-                    <strong style={{ color: "#FFFFFF" }}>{calculation.materialName}</strong>
+                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.materialName}</strong>
                   </li>
                   {calculation.optionsNames.length > 0 && (
                     <li style={{ borderTop: "1px dashed var(--border-subtle)", paddingTop: "8px", marginTop: "4px" }}>
@@ -557,6 +562,33 @@ export default function CalculatorPage() {
                 >
                   Записаться на бесплатный замер
                 </a>
+              </div>
+
+              {/* Materials Specification List */}
+              <div className="calc-materials-spec-box">
+                <h4 className="calc-materials-spec-title">
+                  Доступные материалы и покрытия
+                </h4>
+                <div className="calc-materials-spec-list">
+                  {MATERIALS.map((mat) => (
+                    <div key={mat.id} className="calc-mat-spec-row">
+                      <div className="calc-mat-thumb">
+                        <Image
+                          src={mat.image}
+                          alt={mat.title}
+                          fill
+                          sizes="48px"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                      <div className="calc-mat-info">
+                        <span className="calc-mat-name">{mat.title}</span>
+                        <span className="calc-mat-prop">{mat.description}</span>
+                      </div>
+                      <span className="calc-mat-tag">{mat.tag}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

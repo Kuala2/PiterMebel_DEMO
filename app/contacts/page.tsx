@@ -72,7 +72,7 @@ export default function ContactsPage() {
                     Прямой звонок
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "8px" }}>
                   {SITE_CONFIG.phone}
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
@@ -112,7 +112,7 @@ export default function ContactsPage() {
                     Экспресс · ВКонтакте
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "8px" }}>
                   Онлайн-оценка по эскизу
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
@@ -155,7 +155,7 @@ export default function ContactsPage() {
                     Выездной замер · Бесплатно
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "8px" }}>
                   Замер с образцами
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>
@@ -192,7 +192,7 @@ export default function ContactsPage() {
                     Визит на производство
                   </span>
                 </div>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "20px", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "8px" }}>
                   Цех на ул. Трефолева
                 </h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.6", margin: 0 }}>

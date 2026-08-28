@@ -29,7 +29,7 @@ export default function KitchenCard({
 
         <div className="card-body">
           <div>
-            <h3 className="card-title" style={{ fontSize: "18px", fontWeight: 700, color: "#FFFFFF", marginBottom: "6px" }}>
+            <h3 className="card-title" style={{ fontSize: "18px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "6px" }}>
               Кухня «{kitchen.title}»
             </h3>
             <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.5" }}>

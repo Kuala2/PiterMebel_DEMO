@@ -6,7 +6,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
 import VkIcon from "@/components/VkIcon";
-import { MATERIALS } from "@/data/materials";
 import { SITE_CONFIG } from "@/data/site";
 
 export default function HomePage() {
@@ -513,184 +512,178 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. WORKSHOP & PRODUCTION (Bespoke Studio Atelier Showcase) */}
+      {/* 4. TEAM SECTION */}
+      <section className="team-section" id="team">
+        <div className="container">
+          <div className="team-head-block">
+            <h2 className="section-title">Кто делает вашу мебель</h2>
+            <p className="team-lead-text">
+              ПитерМебель — семейная студия. За каждым заказом от первого замера до монтажа следуют одни и те же люди.
+            </p>
+          </div>
+
+          <div className="team-grid">
+            {/* 1. Elena Volkova */}
+            <div className="team-card">
+              <div className="team-card-photo">
+                {/* TODO: реальное вертикальное фото /img/team/elena.jpg */}
+                <span className="team-monogram-placeholder">Е</span>
+              </div>
+              <div className="team-card-body">
+                <h3 className="team-card-name">Елена Волкова</h3>
+                <p className="team-card-role">Консультация, замер и ведение проекта</p>
+                <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="team-card-tel">
+                  +7 (921) 784-05-89 →
+                </a>
+              </div>
+            </div>
+
+            {/* 2. Dmitry */}
+            <div className="team-card">
+              <div className="team-card-photo">
+                {/* TODO: реальное вертикальное фото /img/team/dmitry.jpg */}
+                <span className="team-monogram-placeholder">Д</span>
+              </div>
+              <div className="team-card-body">
+                <h3 className="team-card-name">Дмитрий</h3>
+                <p className="team-card-role">Цех и производство</p>
+              </div>
+            </div>
+
+            {/* 3. Sergey */}
+            <div className="team-card">
+              <div className="team-card-photo">
+                {/* TODO: реальное вертикальное фото /img/team/sergey.jpg */}
+                <span className="team-monogram-placeholder">С</span>
+              </div>
+              <div className="team-card-body">
+                <h3 className="team-card-name">Сергей</h3>
+                <p className="team-card-role">Сборка и монтаж</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. WORKSHOP & PRODUCTION ATELIER */}
       <section className="workshop-section" id="production">
         <div className="container">
-          <div className="workshop-head-row">
-            <div>
-              <h2 className="section-title" style={{ marginBottom: 0 }}>
-                Станочный цех на ул. Трефолева
+          <div className="workshop-editorial-grid">
+            {/* Left Column: Photo & Area Badge */}
+            <div className="workshop-col-media">
+              <div className="workshop-photo-frame">
+                <Image
+                  src="/img/brand/ws_cnc_wood_1.jpg"
+                  alt="Станочный цех PiterMebel — ЧПУ фрезеровка и раскрой"
+                  fill
+                  className="workshop-main-photo"
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  style={{ objectFit: "cover" }}
+                />
+                <div className="workshop-area-badge">
+                  <span className="workshop-area-val">850 м²</span>
+                  <span className="workshop-area-lbl">площадь цеха</span>
+                </div>
+              </div>
+              <div className="workshop-location-caption">
+                ул. Трефолева, 1П · м. Нарвская
+              </div>
+            </div>
+
+            {/* Right Column: Editorial Details */}
+            <div className="workshop-col-content">
+              <h2 className="section-title">
+                Станочный цех на Трефолева
               </h2>
-            </div>
-            <Link href="/production" className="btn btn-glass workshop-head-btn">
-              Подробнее о цехе →
-            </Link>
-          </div>
+              <p className="workshop-lead">
+                Производим сами — поэтому отвечаем за качество на каждом этапе, от раскроя плиты до сборки изделия.
+              </p>
 
-          {/* Bento Grid */}
-          <div className="workshop-bento-grid">
-            
-            {/* 1. Main Visual Showcase (2x2) */}
-            <div className="bento-hero-cell">
-              <Image
-                src="/img/brand/workshop_new.jpg"
-                alt="Современный станочный цех PiterMebel"
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="workshop-banner-img"
-                style={{ objectFit: "cover" }}
-              />
-              <div className="workshop-banner-overlay" />
-              
-              <div className="workshop-banner-hud-compact">
-                <div className="hud-metric-item">
-                  <span className="hud-metric-val">850 м²</span>
-                  <span className="hud-metric-lbl">Площадь</span>
+              <div className="workshop-points-list">
+                <div className="workshop-point-item">
+                  <span className="workshop-point-num">01</span>
+                  <div className="workshop-point-body">
+                    <h3 className="workshop-point-title">Цена от производителя</h3>
+                    <p className="workshop-point-desc">
+                      Заказ идёт напрямую в цех, без наценок салонов и посредников
+                    </p>
+                  </div>
                 </div>
+
+                <div className="workshop-point-item">
+                  <span className="workshop-point-num">02</span>
+                  <div className="workshop-point-body">
+                    <h3 className="workshop-point-title">100% тестовая сборка</h3>
+                    <p className="workshop-point-desc">
+                      Каждое изделие собирается в цеху до отгрузки — на объекте всё встаёт точно
+                    </p>
+                  </div>
                 </div>
-            </div>
 
-            {/* 2. Card 01 (1x1) */}
-            <div className="bento-card-cell">
-              <div className="bento-card-content">
-                <h3 className="adv-card-title">Прямая экономия</h3>
-                <p className="adv-card-desc">Цены от фабрики без наценок и переплат.</p>
+                <div className="workshop-point-item">
+                  <span className="workshop-point-num">03</span>
+                  <div className="workshop-point-body">
+                    <h3 className="workshop-point-title">Нестандарт — без ограничений</h3>
+                    <p className="workshop-point-desc">
+                      Размеры, материалы и решения не привязаны к готовым каталогам
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="workshop-action-wrap">
+                <Link href="/production" className="btn btn-glass">
+                  Подробнее о цехе →
+                </Link>
               </div>
             </div>
-
-            {/* 3. Card 02 (1x1) */}
-            <div className="bento-card-cell">
-              <div className="bento-card-content">
-                <h3 className="adv-card-title">Нулевой шов</h3>
-                <p className="adv-card-desc">Абсолютная влагостойкость PUR-кромления.</p>
-              </div>
-            </div>
-
-            {/* 4. Card 03 (Stacked) */}
-            <div className="bento-card-cell">
-              <div className="bento-card-content">
-                <h3 className="adv-card-title">100% тестовая сборка</h3>
-                <p className="adv-card-desc">
-                  Полная проверка диагоналей и зазоров до отгрузки.
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
-      {/* 4. PROCESS BLUEPRINT TIMELINE */}
+      {/* 6. PROCESS BLUEPRINT TIMELINE */}
       <section className="steps-section" id="steps">
         <div className="container">
-          <div className="steps-header" style={{ marginBottom: "36px" }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>Как создается ваша мебель</h2>
-          </div>
+          <h2 className="section-title steps-title">
+            Как создается ваша мебель
+          </h2>
 
-          <div className="process-pipeline-wrap">
-            <div className="process-pipeline">
-              {/* Step 1 */}
-              <div className="process-node-card">
-                <div className="process-node-body">
-                  <div className="process-node-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 3L3 21" /><path d="M14 3l7 7-4 4-7-7 4-4z" /><path d="M3 14l7 7 4-4-7-7-4 4z" />
-                    </svg>
-                  </div>
-                  <span className="process-node-timing">1 день</span>
-                  <h3 className="process-node-title">Выезд мастера и замер</h3>
-                  <p className="process-node-desc">
-                    Инженер привозит образцы эмалей, шпона и сканирует геометрию стен.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div className="process-node-card">
-                <div className="process-node-body">
-                  <div className="process-node-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" />
-                    </svg>
-                  </div>
-                  <span className="process-node-timing">2–3 дня</span>
-                  <h3 className="process-node-title">3D-проект и смета</h3>
-                  <p className="process-node-desc">
-                    Эргономика, интеграция техники и фиксация стоимости в договоре.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="process-node-card">
-                <div className="process-node-body">
-                  <div className="process-node-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 14 14" />
-                    </svg>
-                  </div>
-                  <span className="process-node-timing">14–21 день</span>
-                  <h3 className="process-node-title">Изготовление в цеху</h3>
-                  <p className="process-node-desc">
-                    Раскрой на ЧПУ, PUR-кромление и обязательная контрольная сборка.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div className="process-node-card">
-                <div className="process-node-body">
-                  <div className="process-node-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                  </div>
-                  <span className="process-node-timing">1 день</span>
-                  <h3 className="process-node-title">Чистый монтаж</h3>
-                  <p className="process-node-desc">
-                    Штатная бригада устанавливает мебель, подключает технику и убирает мусор.
-                  </p>
-                </div>
-              </div>
+          <div className="process-track">
+            {/* Step 1 */}
+            <div className="process-step">
+              <span className="process-day">1 день</span>
+              <h3 className="process-title">Выезд мастера и замер</h3>
+              <p className="process-desc">
+                Инженер привозит образцы эмалей, шпона и сканирует точную геометрию стен.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 5. MATERIALS & FINISHES (4 Columns) */}
-      <section className="materials-section" id="materials">
-        <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "32px", flexWrap: "wrap", gap: "16px" }}>
-            <h2 className="section-title" style={{ marginBottom: 0 }}>Используемые материалы и покрытия</h2>
-            <Link href="/calculator" className="btn btn-glass" style={{ padding: "10px 22px", fontSize: "14px" }}>
-              Подобрать в калькуляторе →
-            </Link>
-          </div>
+            {/* Step 2 */}
+            <div className="process-step">
+              <span className="process-day">2–3 дня</span>
+              <h3 className="process-title">3D-проект и смета</h3>
+              <p className="process-desc">
+                Эргономика, интеграция техники и фиксация неизменной стоимости в договоре.
+              </p>
+            </div>
 
-          <div className="materials-grid">
-            {MATERIALS.slice(0, 4).map((mat) => (
-              <Link key={mat.id} href="/calculator" className="mat-card" style={{ textDecoration: "none" }}>
-                <div className="mat-photo-wrap">
-                  <Image
-                    src={mat.image}
-                    alt={mat.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 300px"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <span className="mat-tag-pill">
-                    {mat.tag}
-                  </span>
-                </div>
-                <div className="mat-body">
-                  <h3 className="mat-title">{mat.title}</h3>
-                  <p className="mat-desc">{mat.description}</p>
-                  <span className="mat-link-action">
-                    Выбрать в проекте →
-                  </span>
-                </div>
-              </Link>
-            ))}
+            {/* Step 3 */}
+            <div className="process-step">
+              <span className="process-day">14–21 день</span>
+              <h3 className="process-title">Изготовление в цеху</h3>
+              <p className="process-desc">
+                Раскрой на ЧПУ, влагостойкое PUR-кромление и обязательная контрольная сборка.
+              </p>
+            </div>
+
+            {/* Step 4 */}
+            <div className="process-step">
+              <span className="process-day">1 день</span>
+              <h3 className="process-title">Чистый монтаж</h3>
+              <p className="process-desc">
+                Штатная бригада устанавливает мебель, подключает технику и убирает весь мусор.
+              </p>
+            </div>
           </div>
         </div>
       </section>

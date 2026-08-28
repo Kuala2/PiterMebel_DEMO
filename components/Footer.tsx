@@ -48,7 +48,7 @@ export default function Footer() {
                 const href = cat.toLowerCase().includes("кухн") ? "/kitchens" : "/projects";
                 return (
                   <li key={cat}>
-                    <Link href={href} style={{ fontSize: "13px", color: "var(--color-text-secondary)" }}>
+                    <Link href={href} style={{ fontSize: "13px", color: "#B2B8C2" }}>
                       {cat}
                     </Link>
                   </li>
@@ -68,7 +68,7 @@ export default function Footer() {
                 {SITE_CONFIG.phone}
               </a>
               <br />
-              <span style={{ fontSize: "12.5px", color: "var(--color-text-muted)" }}>
+              <span style={{ fontSize: "12.5px", color: "#8E98A5" }}>
                 {SITE_CONFIG.workHours}
               </span>
             </p>
@@ -77,8 +77,8 @@ export default function Footer() {
                 href={SITE_CONFIG.vkUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-glass btn-sm"
-                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px" }}
+                className="btn btn-sm"
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "rgba(255,255,255,0.06)", color: "#FFFFFF", border: "1px solid rgba(255,255,255,0.15)" }}
               >
                 <VkIcon />
                 Сообщество ВКонтакте

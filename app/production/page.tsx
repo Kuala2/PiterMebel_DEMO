@@ -321,7 +321,7 @@ export default function ProductionPage() {
       </section>
 
       {/* 6. VISIT WORKSHOP & MEASURE FORM */}
-      <section className="final-section" id="visit" style={{ backgroundColor: "var(--bg-studio)" }}>
+      <section className="final-section" id="visit" style={{ backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">

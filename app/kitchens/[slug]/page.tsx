@@ -253,7 +253,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
         </section>
       )}
 
-      {/* 3. Form Section (Tone 1: Dark) */}
+      {/* 3. Form Section */}
       <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="final-card-container">

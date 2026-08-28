@@ -32,7 +32,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
           <div style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-green-brand)", marginBottom: "8px" }}>
             Заявка принята
           </div>
-          <h3 style={{ fontSize: "20px", fontFamily: "var(--font-serif)", fontWeight: 600, color: "#FFFFFF", marginBottom: "10px" }}>
+          <h3 style={{ fontSize: "20px", fontFamily: "var(--font-serif)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "10px" }}>
             Спасибо за обращение!
           </h3>
           <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.5" }}>
@@ -46,7 +46,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
       ) : (
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: "18px" }}>
-            <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "22px", color: "#FFFFFF", margin: 0 }}>
+            <h3 style={{ fontFamily: "var(--font-serif)", fontWeight: 600, fontSize: "22px", color: "var(--color-text-primary)", margin: 0 }}>
               Запись на бесплатный замер
             </h3>
           </div>

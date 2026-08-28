@@ -10,7 +10,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover",
-  themeColor: "#090B0E",
+  themeColor: "#22252A",
 };
 
 const cormorant = Cormorant_Garamond({

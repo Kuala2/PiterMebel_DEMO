@@ -196,7 +196,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
       {/* 3. Remaining Photos Gallery */}
       {otherPhotos.length > 0 && (
-        <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "60px", paddingBottom: "70px", borderTop: "1px solid var(--border-subtle)", borderBottom: "1px solid var(--border-subtle)" }}>
+        <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "60px", paddingBottom: "70px" }}>
           <div className="container">
             <div style={{ marginBottom: "28px" }}>
               <span className="section-kicker">Фотогалерея</span>
