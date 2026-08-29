@@ -39,7 +39,7 @@
   --radius-full: 9999px;
 
   /* Typography Families */
-  --font-main: 'Montserrat', 'Onest', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-main: 'Onest', 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Cormorant Garamond', Garamond, Georgia, serif;
 
   --container-max: 1680px;
@@ -139,6 +139,19 @@ a {
 /* Spotlight: свет следует за курсором внутри карточки */
 .spotlight-target {
   position: relative;
+}
+
+/* На прозрачных карточках объектов светящаяся рамка не нужна */
+.catalog-card.spotlight-target::before {
+  display: none;
+}
+
+.catalog-card.spotlight-target::after {
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.07),
+    transparent 65%
+  );
 }
 
 .spotlight-target::after {
@@ -393,11 +406,11 @@ img {
    TYPOGRAPHY
    ========================================================================== */
 .section-title {
-  font-family: var(--font-serif) !important;
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-family: var(--font-main) !important;
+  font-size: clamp(30px, 3.4vw, 44px);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
   color: #FFFFFF;
   margin-bottom: 12px;
 }
@@ -641,7 +654,7 @@ img {
 }
 
 .mobile-nav-link {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-main) !important;
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -899,9 +912,9 @@ img {
 }
 
 .stat-num {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-main) !important;
   font-size: 38px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #FFFFFF !important;
   line-height: 1;
   margin-bottom: 6px;
@@ -1046,6 +1059,50 @@ img {
   overflow-x: clip;
 }
 
+/* Стрелки прокрутки объектов: по краям ряда, в нижней трети фото —
+   чтобы не пересекаться со стрелками смены фото внутри карточек */
+.catalog-edge-nav {
+  position: absolute;
+  top: 400px;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(28, 31, 36, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 8;
+  transition: all 0.22s ease;
+}
+
+.catalog-edge-nav:hover {
+  background: var(--color-green-brand);
+  border-color: var(--color-green-brand);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.catalog-edge-nav.prev { left: 14px; }
+.catalog-edge-nav.next { right: 14px; }
+
+/* Крупная кнопка «Все объекты» в шапке секции */
+.catalog-cta-btn {
+  padding: 13px 26px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .catalog-edge-nav {
+    display: none; /* на телефонах карусель листается свайпом */
+  }
+}
+
 .carousel-viewport {
   overflow-x: auto;
   scrollbar-width: none;
@@ -1076,18 +1133,16 @@ img {
 .catalog-card {
   width: 440px;
   flex-shrink: 0;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: var(--transition);
 }
 
-.catalog-card:hover {
-  border-color: var(--border-green);
-  transform: translateY(-3px);
+.catalog-card:hover .card-title {
+  color: var(--color-green-hover);
 }
 
 .card-gallery-wrap {
@@ -1095,6 +1150,7 @@ img {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #22252A;
+  border-radius: 10px;
 }
 
 .card-img-slide {
@@ -1105,6 +1161,16 @@ img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
+}
+
+/* Плавная смена фото на главной: все кадры стопкой, активный проявляется кроссфейдом */
+.catalog-card .card-img-slide {
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.9s ease;
+}
+
+.catalog-card .card-img-slide.is-active {
+  opacity: 1;
 }
 
 .card-badge-top {
@@ -1185,20 +1251,22 @@ img {
 }
 
 .card-body {
-  padding: 22px 24px;
+  padding: 18px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   flex-grow: 1;
 }
 
 .card-title {
-  font-family: var(--font-serif) !important;
-  font-size: 22px;
+  font-family: var(--font-main) !important;
+  font-size: 18px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: #FFFFFF;
   margin-bottom: 0;
-  line-height: 1.25;
+  line-height: 1.35;
+  transition: color 0.22s ease;
 }
 
 .card-desc {
@@ -1233,7 +1301,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -1304,8 +1372,8 @@ img {
     font-size: 14px;
   }
   .catalog-head-controls .btn {
-    padding: 9px 18px;
-    font-size: 12px;
+    padding: 11px 20px;
+    font-size: 13px;
   }
   .carousel-outer-wrapper {
     overflow: hidden;
@@ -1335,11 +1403,11 @@ img {
     aspect-ratio: 4 / 5;
   }
   .card-body {
-    padding: 16px;
+    padding: 16px 0 0;
     gap: 12px;
   }
   .card-title {
-    font-size: 20px !important;
+    font-size: 17px !important;
   }
 }
 
@@ -1601,7 +1669,7 @@ img {
 }
 
 .hud-metric-val {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: 24px;
   font-weight: 600;
   color: #FFFFFF;
@@ -2120,13 +2188,13 @@ img {
 }
 
 .final-headline {
-  font-family: var(--font-serif) !important;
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-family: var(--font-main) !important;
+  font-size: clamp(28px, 3.2vw, 38px);
   font-weight: 600;
   color: #FFFFFF;
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 14px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 
 .final-desc {
@@ -2480,7 +2548,7 @@ img {
 }
 
 .detail-solution {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: clamp(22px, 2.2vw, 28px);
   font-weight: 500;
   color: var(--color-text-primary);
@@ -2506,7 +2574,7 @@ img {
 
 /* Первый абзац — крупная антиква, «выжимка» кейса */
 .detail-story p:first-child {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: clamp(22px, 2.2vw, 28px);
   font-weight: 500;
   color: var(--color-text-primary);
@@ -2575,12 +2643,12 @@ img {
    CASE PAGE — журнальный разворот (детальные объекты/кухни)
    ========================================================================== */
 .case-title {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-main) !important;
   font-size: clamp(34px, 4.6vw, 58px);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-primary);
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin-bottom: 24px;
   max-width: 900px;
 }
@@ -2752,9 +2820,9 @@ img {
 }
 
 .contacts-phone {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: clamp(34px, 4.4vw, 52px);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-primary);
   line-height: 1.1;
   transition: color 0.2s ease;
@@ -2765,9 +2833,10 @@ img {
 }
 
 .contact-block-title {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  font-weight: 500;
+  font-family: var(--font-main);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text-primary);
   line-height: 1.2;
 }
@@ -3007,9 +3076,9 @@ img {
 }
 
 .prod-quality-num {
-  font-family: var(--font-serif) !important;
+  font-family: var(--font-main) !important;
   font-size: 34px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-text-muted);
   line-height: 1;
   flex-shrink: 0;
@@ -3063,9 +3132,9 @@ img {
 
 .prod-stat-num {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-green-brand);
   line-height: 1;
   margin-bottom: 8px;
@@ -3121,9 +3190,10 @@ img {
 }
 
 .prod-row-title {
-  font-family: var(--font-serif);
-  font-size: 30px;
-  font-weight: 500;
+  font-family: var(--font-main);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text-primary);
   line-height: 1.2;
   margin-bottom: 16px;
@@ -3717,15 +3787,13 @@ select option {
 .team-card {
   display: flex;
   flex-direction: column;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  background: transparent;
+  border: none;
   transition: var(--transition);
 }
 
-.team-card:hover {
-  border-color: var(--border-medium);
+.team-card:hover .team-card-name {
+  color: var(--color-green-hover);
 }
 
 .team-card-photo {
@@ -3733,6 +3801,7 @@ select option {
   aspect-ratio: 3 / 4;
   background: var(--bg-studio);
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .team-card-photo img {
@@ -3755,18 +3824,20 @@ select option {
 }
 
 .team-card-body {
-  padding: 20px;
+  padding: 16px 0 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .team-card-name {
-  font-family: var(--font-serif);
-  font-size: 20px;
+  font-family: var(--font-main);
+  font-size: 19px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text-primary);
   margin: 0;
+  transition: color 0.22s ease;
 }
 
 .team-card-role {
@@ -3851,9 +3922,9 @@ select option {
 }
 
 .workshop-area-val {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1;
 }
@@ -3911,9 +3982,10 @@ select option {
 }
 
 .workshop-point-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--color-text-muted);
   line-height: 1;
 }
@@ -4191,9 +4263,9 @@ select option {
 
 .calc-progress-num {
   display: block;
-  font-family: var(--font-serif);
+  font-family: var(--font-main);
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-text-primary);
   line-height: 1;
   margin-bottom: 6px;

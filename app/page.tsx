@@ -12,6 +12,7 @@ import { SITE_CONFIG } from "@/data/site";
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -201,10 +202,39 @@ export default function HomePage() {
     },
   ];
 
+  // Порядок витрины на главной: Тимофей → гардеробная STOPSOL → Славена → остальное
+  const itemOrder = ["timofey", "glass-wardrobe", "slavena", "oak-stone", "aleksandra", "mirror-hall", "brick-wardrobe"];
+  const orderedItems = itemOrder
+    .map((id) => catalogItems.find((item) => item.id === id))
+    .filter((item): item is (typeof catalogItems)[number] => Boolean(item));
+
   const visibleItems =
     activeTab === "all"
-      ? catalogItems
-      : catalogItems.filter((i) => i.category === activeTab);
+      ? orderedItems
+      : orderedItems.filter((i) => i.category === activeTab);
+
+  // Автосмена фото: тик каждые 2.5с двигает ОДНУ карточку по кругу,
+  // так каждая карточка обновляется примерно раз в 15с и на экране
+  // никогда не мигает всё сразу. Наведённая карточка пропускается.
+  const rotateCursor = useRef(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (document.hidden) return;
+      const ids = visibleItems.map((i) => i.id);
+      if (!ids.length) return;
+      for (let attempt = 0; attempt < ids.length; attempt++) {
+        const id = ids[rotateCursor.current % ids.length];
+        rotateCursor.current += 1;
+        if (id === hoveredCard) continue;
+        const item = visibleItems.find((i) => i.id === id);
+        const count = item?.photos.length ?? 1;
+        if (count < 2) continue;
+        setCardPhoto((prev) => ({ ...prev, [id]: ((prev[id] ?? 0) + 1) % count }));
+        return;
+      }
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [visibleItems, hoveredCard]);
 
   return (
     <div>
@@ -219,25 +249,7 @@ export default function HomePage() {
               <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные объекты студии</h2>
             </div>
             <div className="catalog-head-controls">
-              <div className="catalog-arrows-group">
-                <button
-                  type="button"
-                  className="slider-nav-btn"
-                  onClick={scrollLeft}
-                  aria-label="Предыдущие проекты"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  className="slider-nav-btn"
-                  onClick={scrollRight}
-                  aria-label="Следующие проекты"
-                >
-                  →
-                </button>
-              </div>
-              <Link href="/projects" className="btn btn-green btn-sm">
+              <Link href="/projects" className="btn btn-green catalog-cta-btn">
                 Все объекты →
               </Link>
             </div>
@@ -277,6 +289,22 @@ export default function HomePage() {
 
           {/* 1-Line Slider */}
           <div className="carousel-outer-wrapper">
+            <button
+              type="button"
+              className="catalog-edge-nav prev"
+              onClick={scrollLeft}
+              aria-label="Прокрутить влево"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              className="catalog-edge-nav next"
+              onClick={scrollRight}
+              aria-label="Прокрутить вправо"
+            >
+              →
+            </button>
             <div
               className="carousel-viewport"
               ref={carouselRef}
@@ -284,25 +312,29 @@ export default function HomePage() {
               <div className="carousel-track">
                 {visibleItems.map((item) => {
                   const currentIdx = cardPhoto[item.id] ?? 0;
-                  const currentPhotoSrc = item.photos[currentIdx] || item.photos[0];
 
                   return (
                     <div
                       key={item.id}
                       className="catalog-card spotlight-target"
+                      onMouseEnter={() => setHoveredCard(item.id)}
+                      onMouseLeave={() => setHoveredCard((cur) => (cur === item.id ? null : cur))}
                     >
                       <div className="card-gallery-wrap">
-                        <Image
-                          key={currentPhotoSrc}
-                          src={currentPhotoSrc}
-                          alt={item.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, 440px"
-                          className="card-img-slide"
-                          draggable={false}
-                          style={{ pointerEvents: "none", userSelect: "none" }}
-                        />
-                        <span className="card-badge-top">{item.badge}</span>
+                        {/* все фото стопкой, активное проявляется кроссфейдом */}
+                        {item.photos.map((src, pIdx) => (
+                          <Image
+                            key={src}
+                            src={src}
+                            alt={pIdx === currentIdx ? item.title : ""}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 440px"
+                            className={`card-img-slide ${currentIdx === pIdx ? "is-active" : ""}`}
+                            draggable={false}
+                            style={{ pointerEvents: "none", userSelect: "none" }}
+                          />
+                        ))}
+                        {/* бейдж с материалом убран: он дублирует строку под фото */}
 
                         {/* In-Card Left Arrow */}
                         {item.photos.length > 1 && (
