@@ -6,6 +6,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
 import VkIcon from "@/components/VkIcon";
+import SpotlightArea from "@/components/SpotlightArea";
 import { SITE_CONFIG } from "@/data/site";
 
 export default function HomePage() {
@@ -212,7 +213,7 @@ export default function HomePage() {
 
       {/* 2. CATALOG SECTION (1-Line Horizontal Slider) */}
       <section className="catalog-section" id="catalog">
-        <div className="container">
+        <SpotlightArea className="container" selector=".catalog-card">
           <div className="catalog-head-row">
             <div>
               <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные объекты студии</h2>
@@ -288,7 +289,7 @@ export default function HomePage() {
                   return (
                     <div
                       key={item.id}
-                      className="catalog-card"
+                      className="catalog-card spotlight-target"
                     >
                       <div className="card-gallery-wrap">
                         <Image
@@ -376,7 +377,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </SpotlightArea>
       </section>
 
       {/* 2.5 REVIEWS (Отзывы) */}

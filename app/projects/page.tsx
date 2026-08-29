@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
+import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS, Project } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
 
@@ -88,7 +89,7 @@ export default function ProjectsPortfolioPage() {
       {/* 3. Projects 3-Column Portfolio Grid */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "50px", paddingBottom: "70px" }}>
         <div className="container">
-          <div className="projects-grid">
+          <SpotlightArea className="projects-grid" selector=".catalog-card">
             {filteredProjects.map((project) => {
               const currentIdx = cardPhoto[project.slug] ?? 0;
               const photos = project.gallery?.length ? project.gallery : [project.cover];
@@ -96,7 +97,7 @@ export default function ProjectsPortfolioPage() {
               return (
                 <div
                   key={project.slug}
-                  className="catalog-card project-card-item"
+                  className="catalog-card project-card-item spotlight-target"
                 >
                   <div className="card-gallery-wrap">
                     <Image
@@ -177,7 +178,7 @@ export default function ProjectsPortfolioPage() {
                 </div>
               );
             })}
-          </div>
+          </SpotlightArea>
         </div>
       </section>
 

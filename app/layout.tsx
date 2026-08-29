@@ -3,6 +3,10 @@ import { Cormorant_Garamond, Onest } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
+import SmoothScroll from "@/components/SmoothScroll";
+import SilkCanvas from "@/components/SilkCanvas";
+import GlobalSoftbox from "@/components/GlobalSoftbox";
 import { SITE_CONFIG } from "@/data/site";
 
 export const viewport: Viewport = {
@@ -65,9 +69,13 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <SilkCanvas className="global-silk" />
         <Header />
         <main>{children}</main>
         <Footer />
+        <StickyCTA />
+        <SmoothScroll />
+        <GlobalSoftbox />
       </body>
     </html>
   );

@@ -54,7 +54,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: var(--bg-dark);
   max-width: 100vw;
@@ -89,6 +88,159 @@ a {
   color: inherit;
   text-decoration: none;
   transition: var(--transition);
+}
+
+/* Мягкое проявление заголовка героя при загрузке + периодический блик */
+.hero-slogan-title {
+  background: linear-gradient(110deg,
+    #DFE3E8 34%,
+    #FFFFFF 45%,
+    #FFFFFF 49%,
+    #DFE3E8 62%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation:
+    heroTitleIn 1s ease 0.15s both,
+    heroShine 4.5s ease-in-out 1.4s infinite;
+}
+
+@keyframes heroShine {
+  0% { background-position: 130% 0; }
+  45% { background-position: -50% 0; }
+  100% { background-position: -50% 0; }
+}
+
+/* Вращающееся слово в подзаголовке героя */
+.rotating-word {
+  display: inline-block;
+  color: var(--color-green-brand);
+  font-weight: 500;
+  animation: wordSwap 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes wordSwap {
+  from {
+    opacity: 0;
+    transform: translateY(65%);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Spotlight: свет следует за курсором внутри карточки */
+.spotlight-target {
+  position: relative;
+}
+
+.spotlight-target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    340px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.11),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+/* Светящаяся рамка строго у точки курсора */
+.spotlight-target::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    220px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.55),
+    transparent 75%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.spotlight-target:hover::after {
+  opacity: 1;
+}
+
+.spotlight-target:hover::before {
+  opacity: 1;
+}
+
+/* Glare: блик «стекла» на фото при наведении на карточку */
+.card-gallery-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.13) 50%,
+    transparent 58%
+  );
+  transform: translateX(-130%);
+  z-index: 1;
+}
+
+.catalog-card:hover .card-gallery-wrap::after,
+.kitchen-ladder-item:hover .card-gallery-wrap::after,
+.project-card:hover .card-gallery-wrap::after {
+  animation: glareSweep 1s ease;
+}
+
+@keyframes glareSweep {
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+/* Подчёркивание пунктов меню — растёт при наведении */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 0;
+  background: var(--color-green-brand);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 button {
@@ -178,6 +330,44 @@ img {
   background-color: var(--color-green-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Световой пробег по кнопкам при наведении */
+.btn-green,
+.btn-glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-green::after,
+.btn-glass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.16);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-green:hover::after,
+.btn-glass:hover::after {
+  left: 160%;
+}
+
+/* Живые фото: медленный зум карточки при наведении */
+.card-gallery-wrap .card-img-slide {
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.catalog-card:hover .card-img-slide,
+.kitchen-ladder-item:hover .card-img-slide,
+.project-card:hover .card-img-slide {
+  transform: scale(1.07);
 }
 
 .btn-glass {
@@ -547,6 +737,12 @@ img {
   );
 }
 
+/* Magnetic: кнопки-магниты в герое */
+.magnetic {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
 .hero-center-wrapper {
   position: relative;
   z-index: 2;
@@ -849,7 +1045,6 @@ img {
 
 .carousel-viewport {
   overflow-x: auto;
-  scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
@@ -907,10 +1102,6 @@ img {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
-}
-
-.catalog-card:hover .card-img-slide {
-  transform: scale(1.03);
 }
 
 .card-badge-top {
@@ -4158,4 +4349,249 @@ button.calc-mat-spec-row.is-selected {
     grid-column: 2 / 3;
     text-align: left;
   }
+}
+
+/* Кнопка-обёртка фото: открывает лайтбокс */
+.detail-gallery-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+
+/* Лайтбокс: просмотр фото на весь экран */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(9, 11, 14, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxIn 0.25s ease both;
+}
+
+@keyframes lightboxIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: rgba(28, 31, 36, 0.85);
+  border: 1px solid var(--border-subtle);
+  color: #FFFFFF;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--color-green-brand);
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  background: rgba(28, 31, 36, 0.82);
+  padding: 5px 12px;
+}
+
+/* Липкая панель действий на мобильных */
+.sticky-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1500;
+    display: flex;
+    gap: 10px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: var(--bg-header-scrolled);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .sticky-cta .btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  body {
+    padding-bottom: 74px;
+  }
+}
+
+/* Детальные страницы: текст слева, живое фото справа */
+.case-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.case-split .case-title {
+  font-size: clamp(30px, 3.2vw, 44px);
+  margin-bottom: 16px;
+}
+
+.case-split .case-lead {
+  margin-bottom: 28px;
+}
+
+.case-split-photo .detail-gallery-main {
+  background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .case-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .case-split-photo {
+    order: -1;
+  }
+}
+
+/* Плавающее фото материала (FlowingMenu в калькуляторе) */
+.floating-mat {
+  position: fixed;
+  z-index: 1200;
+  width: 230px;
+  height: 150px;
+  object-fit: cover;
+  pointer-events: none;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--border-subtle);
+  animation: floatMatIn 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes floatMatIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Глобальный шёлковый холст: весь сайт стоит на живой текстуре.
+   Один WebGL-контекст на страницу, рендер в полразрешения, пауза вне экрана. */
+.global-silk {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Секции прозрачны — шёлк виден сквозь них; карточки сохраняют свои подложки */
+main section,
+main > div,
+footer,
+.subpage-intro-bar,
+.page-header {
+  background: transparent !important;
+}
+
+/* CAD-кресты-визиры по углам ключевых блоков */
+.final-card-container,
+.prod-stats-row {
+  position: relative;
+}
+
+.final-card-container::before,
+.prod-stats-row::before,
+.final-card-container::after,
+.prod-stats-row::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  pointer-events: none;
+  opacity: 0.55;
+  background:
+    linear-gradient(var(--color-green-brand), var(--color-green-brand)) center / 100% 1px no-repeat,
+    linear-gradient(var(--color-green-brand), var(--color-green-brand)) center / 1px 100% no-repeat;
+}
+
+.final-card-container::before,
+.prod-stats-row::before {
+  top: -6px;
+  left: -6px;
+}
+
+.final-card-container::after,
+.prod-stats-row::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Глобальный софтбокс: слабый студийный свет за курсором на всём окне */
+.global-softbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  pointer-events: none;
+  background: radial-gradient(
+    520px circle at var(--sx, 50%) var(--sy, 38%),
+    rgba(255, 255, 255, 0.055),
+    transparent 70%
+  );
+}
+
+/* Ambient light героя: сильнее глобального софтбокса */
+.hero-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    640px circle at var(--lx, 62%) var(--ly, 42%),
+    rgba(255, 255, 255, 0.10),
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.hero-fullscreen:hover .hero-ambient {
+  opacity: 1;
+}
+
+/* Шапки внутренних страниц с шёлком */
+.page-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 1;
 }

@@ -42,80 +42,21 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
   return (
     <div>
-      {/* 1. Compact Header: только название и подзаголовок */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "130px", paddingBottom: "44px" }}>
-        <div className="container">
-          <div style={{ marginBottom: "28px" }}>
-            <Link href="/kitchens" className="detail-back-link">
-              ← Назад в каталог кухонь
-            </Link>
-          </div>
-
-          <h1 className="case-title">Кухня «{kitchen.title}»</h1>
-          <p className="case-lead" style={{ marginBottom: 0 }}>{kitchen.feature}</p>
-        </div>
-      </section>
-
-      {/* 2. Галерея — сразу за шапкой */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingBottom: "0" }}>
-        <div className="container">
-          <Gallery images={allPhotos} title={`Кухня ${kitchen.title}`} />
-        </div>
-      </section>
-
-      {/* 3. Инфо-полоса под фото + кнопки */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingBottom: "72px" }}>
-        <div className="container">
-          <div className="case-info-strip">
-            <div className="case-info-cell">
-              <span className="spec-row-label">Тип</span>
-              <span className="case-info-val">Кухня на заказ</span>
+      {/* 1. Split: слева текст, справа фото */}
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "130px", paddingBottom: "88px" }}>
+        <div className="container case-split">
+          {/* Текстовая колонка */}
+          <div className="case-split-text">
+            <div style={{ marginBottom: "26px" }}>
+              <Link href="/kitchens" className="detail-back-link">
+                ← Назад в каталог кухонь
+              </Link>
             </div>
-            <div className="case-info-cell">
-              <span className="spec-row-label">Фасады</span>
-              <span className="case-info-val">{kitchen.facade}</span>
-            </div>
-            <div className="case-info-cell">
-              <span className="spec-row-label">Особенность</span>
-              <span className="case-info-val">{kitchen.feature}</span>
-            </div>
-          </div>
 
-          <div className="detail-actions">
-            <Link href="#measure" className="btn btn-green">
-              Заказать расчет по размерам
-            </Link>
-            <a
-              href={SITE_CONFIG.vkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-glass"
-              style={{ gap: "8px" }}
-            >
-              <VkIcon />
-              Консультация в VK
-            </a>
-          </div>
-        </div>
-      </section>
+            <h1 className="case-title">Кухня «{kitchen.title}»</h1>
+            <p className="case-lead">{kitchen.feature}</p>
 
-      {/* 4. О проекте + Характеристики */}
-      <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "72px", paddingBottom: "88px" }}>
-        <div className="container case-solution-grid">
-          <div>
-            <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 18px" }}>
-              О проекте
-            </h3>
-            <div className="detail-story">
-              <p>{kitchen.story[0]}</p>
-              {kitchen.story[1] && <p>{kitchen.story[1]}</p>}
-            </div>
-          </div>
-          <aside>
-            <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 10px" }}>
-              Характеристики
-            </h3>
-            <div>
+            <div className="detail-specs" style={{ marginBottom: "30px" }}>
               <div className="spec-row">
                 <span className="spec-row-label">Фасады</span>
                 <span className="spec-row-val">{kitchen.facade}</span>
@@ -123,10 +64,6 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               <div className="spec-row">
                 <span className="spec-row-label">Столешница</span>
                 <span className="spec-row-val">{kitchen.worktop}</span>
-              </div>
-              <div className="spec-row">
-                <span className="spec-row-label">Особенность</span>
-                <span className="spec-row-val">{kitchen.feature}</span>
               </div>
               <div className="spec-row">
                 <span className="spec-row-label">Фурнитура</span>
@@ -137,7 +74,41 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 <span className="spec-row-val">{SITE_CONFIG.address}</span>
               </div>
             </div>
-          </aside>
+
+            <div className="detail-actions">
+              <Link href="#measure" className="btn btn-green">
+                Заказать расчет по размерам
+              </Link>
+              <a
+                href={SITE_CONFIG.vkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-glass"
+                style={{ gap: "8px" }}
+              >
+                <VkIcon />
+                Консультация в VK
+              </a>
+            </div>
+          </div>
+
+          {/* Фото-колонка */}
+          <div className="case-split-photo">
+            <Gallery images={allPhotos} title={`Кухня ${kitchen.title}`} />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. О проекте */}
+      <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "72px", paddingBottom: "88px" }}>
+        <div className="container">
+          <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 18px" }}>
+            О проекте
+          </h3>
+          <div className="detail-story">
+            <p>{kitchen.story[0]}</p>
+            {kitchen.story[1] && <p>{kitchen.story[1]}</p>}
+          </div>
         </div>
       </section>
 

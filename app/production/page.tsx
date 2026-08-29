@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 export default function ProductionPage() {
   return (
     <div>
-      {/* 1. Page Header */}
-      <section className="page-header">
-        <div className="container">
+      {/* 1. Page Header с «дышащим» шёлковым холстом */}
+      <section className="page-header" style={{ position: "relative", overflow: "hidden" }}>
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <h1 className="subpage-hero-title">
             Собственный цех в Санкт-Петербурге
           </h1>

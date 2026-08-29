@@ -88,7 +88,7 @@ export default function KitchensCatalogPage() {
           >
             <div className="container">
               <div
-                className={`kitchen-ladder-item ${isReversed ? "is-reversed" : ""}`}
+                className={`kitchen-ladder-item spotlight-target ${isReversed ? "is-reversed" : ""}`}
                 style={{ marginBottom: 0 }}
               >
                 {/* Photo Column */}

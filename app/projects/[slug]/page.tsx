@@ -42,77 +42,21 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <div>
-      {/* 1. Compact Header: только название и задача */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "130px", paddingBottom: "44px" }}>
-        <div className="container">
-          <div style={{ marginBottom: "28px" }}>
-            <Link href="/projects" className="detail-back-link">
-              ← Назад в список объектов
-            </Link>
-          </div>
-
-          <h1 className="case-title">{project.title}</h1>
-          <p className="case-lead" style={{ marginBottom: 0 }}>{project.task}</p>
-        </div>
-      </section>
-
-      {/* 2. Галерея — сразу за шапкой */}
-      <section style={{ backgroundColor: "var(--bg-dark)" }}>
-        <div className="container">
-          <Gallery images={allPhotos} title={project.title} />
-        </div>
-      </section>
-
-      {/* 3. Инфо-полоса под фото + кнопки */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingBottom: "72px" }}>
-        <div className="container">
-          <div className="case-info-strip">
-            <div className="case-info-cell">
-              <span className="spec-row-label">Тип</span>
-              <span className="case-info-val">{project.type}</span>
+      {/* 1. Split: слева текст, справа фото */}
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "130px", paddingBottom: "88px" }}>
+        <div className="container case-split">
+          {/* Текстовая колонка */}
+          <div className="case-split-text">
+            <div style={{ marginBottom: "26px" }}>
+              <Link href="/projects" className="detail-back-link">
+                ← Назад в список объектов
+              </Link>
             </div>
-            <div className="case-info-cell">
-              <span className="spec-row-label">Материалы</span>
-              <span className="case-info-val">{project.materials.join(", ")}</span>
-            </div>
-            <div className="case-info-cell">
-              <span className="spec-row-label">Производство</span>
-              <span className="case-info-val">Цех на Трефолева, 1П</span>
-            </div>
-          </div>
 
-          <div className="detail-actions">
-            <Link href="#measure" className="btn btn-green">
-              Заказать аналогичный проект
-            </Link>
-            <a
-              href={SITE_CONFIG.vkUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-glass"
-              style={{ gap: "8px" }}
-            >
-              <VkIcon />
-              Обсудить проект в VK
-            </a>
-          </div>
-        </div>
-      </section>
+            <h1 className="case-title">{project.title}</h1>
+            <p className="case-lead">{project.task}</p>
 
-      {/* 4. О проекте + Параметры */}
-      <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "72px", paddingBottom: "88px" }}>
-        <div className="container case-solution-grid">
-          <div>
-            <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 18px" }}>
-              О проекте
-            </h3>
-            <p className="detail-solution">{project.solution}</p>
-          </div>
-          <aside>
-            <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 10px" }}>
-              Параметры объекта
-            </h3>
-            <div>
+            <div className="detail-specs" style={{ marginBottom: "30px" }}>
               <div className="spec-row">
                 <span className="spec-row-label">Тип</span>
                 <span className="spec-row-val">{project.type}</span>
@@ -130,7 +74,38 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 <span className="spec-row-val">{SITE_CONFIG.address}</span>
               </div>
             </div>
-          </aside>
+
+            <div className="detail-actions">
+              <Link href="#measure" className="btn btn-green">
+                Заказать аналогичный проект
+              </Link>
+              <a
+                href={SITE_CONFIG.vkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-glass"
+                style={{ gap: "8px" }}
+              >
+                <VkIcon />
+                Обсудить проект в VK
+              </a>
+            </div>
+          </div>
+
+          {/* Фото-колонка */}
+          <div className="case-split-photo">
+            <Gallery images={allPhotos} title={project.title} />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. О проекте */}
+      <section style={{ backgroundColor: "var(--bg-studio)", paddingTop: "72px", paddingBottom: "88px" }}>
+        <div className="container">
+          <h3 style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-text-muted)", margin: "0 0 18px" }}>
+            О проекте
+          </h3>
+          <p className="detail-solution">{project.solution}</p>
         </div>
       </section>
       <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-dark)" }}>

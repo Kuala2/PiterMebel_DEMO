@@ -1,8 +1,74 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import CountUp from "@/components/CountUp";
+import RotatingWord from "@/components/RotatingWord";
 import { SITE_CONFIG } from "@/data/site";
 
 export default function Hero() {
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  // Параллакс: фон героя уезжает медленнее контента при скролле
+  useEffect(() => {
+    const bg = document.querySelector(".hero-bg-container");
+    if (!bg) return;
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        (bg as HTMLElement).style.transform = `translateY(${window.scrollY * 0.22}px)`;
+        raf = 0;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  // Ambient light: мягкий студийный свет следует за курсором по первому экрану
+  useEffect(() => {
+    const section = document.querySelector<HTMLElement>(".hero-fullscreen");
+    if (!section) return;
+    const onMove = (e: MouseEvent) => {
+      const r = section.getBoundingClientRect();
+      section.style.setProperty("--lx", `${e.clientX - r.left}px`);
+      section.style.setProperty("--ly", `${e.clientY - r.top}px`);
+    };
+    section.addEventListener("mousemove", onMove);
+    return () => section.removeEventListener("mousemove", onMove);
+  }, []);
+
+  // Magnet: кнопки притягиваются к курсору и отпружинивают назад
+  useEffect(() => {
+    const root = ctaRef.current;
+    if (!root) return;
+    const buttons = Array.from(root.querySelectorAll<HTMLElement>(".magnetic"));
+    const cleanups: Array<() => void> = [];
+
+    buttons.forEach((btn) => {
+      const onMove = (e: MouseEvent) => {
+        const r = btn.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        const cap = (v: number) => Math.max(-10, Math.min(10, v));
+        btn.style.transform = `translate(${cap(dx * 0.16)}px, ${cap(dy * 0.3)}px)`;
+      };
+      const onLeave = () => {
+        btn.style.transform = "translate(0, 0)";
+      };
+      btn.addEventListener("mousemove", onMove);
+      btn.addEventListener("mouseleave", onLeave);
+      cleanups.push(() => {
+        btn.removeEventListener("mousemove", onMove);
+        btn.removeEventListener("mouseleave", onLeave);
+      });
+    });
+
+    return () => cleanups.forEach((fn) => fn());
+  }, []);
+
   const years = new Date().getFullYear() - SITE_CONFIG.foundedYear;
   const yearsWord =
     years % 10 === 1 && years % 100 !== 11
@@ -27,6 +93,7 @@ export default function Hero() {
             style={{ objectFit: "cover", objectPosition: "center 30%" }}
           />
           <div className="hero-bg-overlay"></div>
+          <div className="hero-ambient"></div>
         </div>
 
         {/* Grand Centered Slogan & Action CTA */}
@@ -35,13 +102,22 @@ export default function Hero() {
             <div className="hero-center-content">
               <h1 className="hero-slogan-title">Вы мечтаете — мы воплощаем</h1>
               <p className="hero-subtitle">
-                Производим и реализуем премиальные кухни и корпусную мебель по индивидуальным размерам на собственном производстве
+                Производим и реализуем{" "}
+                <RotatingWord
+                  words={[
+                    "кухни на заказ",
+                    "шкафы и гардеробные",
+                    "корпусную мебель",
+                    "мебель для бизнеса",
+                  ]}
+                />{" "}
+                по индивидуальным размерам на собственном производстве
               </p>
-              <div className="hero-cta-wrap">
-                <Link href="/calculator" className="btn btn-green">
+              <div className="hero-cta-wrap" ref={ctaRef}>
+                <Link href="/calculator" className="btn btn-green magnetic">
                   Рассчитать свой
                 </Link>
-                <Link href="/projects" className="btn btn-glass">
+                <Link href="/projects" className="btn btn-glass magnetic">
                   Смотреть работы
                 </Link>
               </div>
@@ -56,7 +132,7 @@ export default function Hero() {
           <div className="hero-stats-grid">
             <div className="hero-stat-item">
               <div className="stat-num">
-                {years} <span className="stat-unit">{yearsWord}</span>
+                <CountUp to={years} /> <span className="stat-unit">{yearsWord}</span>
               </div>
               <div className="stat-text">
                 Опыт работы на мебельном рынке Санкт-Петербурга
@@ -65,7 +141,7 @@ export default function Hero() {
 
             <div className="hero-stat-item">
               <div className="stat-num">
-                1 500 <span className="stat-unit">+</span>
+                <CountUp to={1500} /> <span className="stat-unit">+</span>
               </div>
               <div className="stat-text">
                 Реализованных проектов мебели под ключ
@@ -74,7 +150,7 @@ export default function Hero() {
 
             <div className="hero-stat-item">
               <div className="stat-num">
-                850 <span className="stat-unit">м²</span>
+                <CountUp to={850} /> <span className="stat-unit">м²</span>
               </div>
               <div className="stat-text">
                 Собственный станочный цех на ул. Трефолева

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import VkIcon from "@/components/VkIcon";
@@ -166,6 +166,26 @@ export default function CalculatorPage() {
     "ceiling",
     "fittings",
   ]);
+  const [copied, setCopied] = useState(false);
+  const [matPreview, setMatPreview] = useState<{ src: string; x: number; y: number } | null>(null);
+
+  // Восстановление комплектации из ссылки (?cat=..&type=..&size=..&mat=..&opts=..)
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const cat = q.get("cat");
+    const type = q.get("type");
+    const size = q.get("size");
+    const mat = q.get("mat");
+    const opts = q.get("opts");
+    if (cat && MAIN_CATEGORIES.some((c) => c.id === cat)) setSelectedMainCat(cat);
+    if (type && FURNITURE_SUBTYPES.some((s) => s.id === type)) setSelectedType(type);
+    if (size && SIZES.some((s) => s.id === size)) setSelectedSize(size);
+    if (mat && FACADE_MATERIALS.some((m) => m.id === mat)) setSelectedMaterial(mat);
+    if (opts !== null) {
+      const list = opts.split(",").filter((id) => EXTRA_OPTIONS.some((o) => o.id === id));
+      setSelectedOptions(list);
+    }
+  }, []);
 
   const CALC_STEPS = [
     "Направление",
@@ -174,6 +194,41 @@ export default function CalculatorPage() {
     "Материал",
     "Опции",
   ];
+
+  // Ссылка на текущую комплектацию — можно отправить мастеру
+  const shareLink = () => {
+    const params = new URLSearchParams({
+      cat: selectedMainCat,
+      type: selectedType,
+      size: selectedSize,
+      mat: selectedMaterial,
+      opts: selectedOptions.join(","),
+    });
+    const url = `${window.location.origin}/calculator/?${params.toString()}`;
+    const done = () => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(done).catch(() => {
+        const ta = document.createElement("textarea");
+        ta.value = url;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+        done();
+      });
+    } else {
+      const ta = document.createElement("textarea");
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      ta.remove();
+      done();
+    }
+  };
 
   // Handle main category switch and auto-select first subtype
   const handleMainCatChange = (catId: string) => {
@@ -515,7 +570,7 @@ export default function CalculatorPage() {
               </div>
               )}
 
-              {/* Materials List — кликабельный выбор */}
+              {/* Materials List — кликабельный выбор с плавающим фото */}
               {step === 5 && (
               <div className="calc-materials-spec-box">
                 <h4 className="calc-materials-spec-title">
@@ -542,6 +597,20 @@ export default function CalculatorPage() {
                             setSelectedMaterial(mat.id === "velvet" ? "plastic" : mat.id);
                           }
                         }}
+                        onMouseEnter={(e) => {
+                          const r = e.currentTarget.getBoundingClientRect();
+                          setMatPreview({
+                            src: mat.image,
+                            x: Math.min(r.right + 24, window.innerWidth - 260),
+                            y: r.top - 40,
+                          });
+                        }}
+                        onMouseMove={(e) => {
+                          setMatPreview((prev) =>
+                            prev ? { ...prev, x: e.clientX + 28, y: e.clientY - 80 } : prev
+                          );
+                        }}
+                        onMouseLeave={() => setMatPreview(null)}
                         style={{
                           textAlign: "left",
                           cursor: "pointer",
@@ -686,6 +755,14 @@ export default function CalculatorPage() {
                 >
                   Записаться на бесплатный замер
                 </a>
+                <button
+                  type="button"
+                  className="btn btn-glass"
+                  style={{ width: "100%", justifyContent: "center" }}
+                  onClick={shareLink}
+                >
+                  {copied ? "Ссылка скопирована ✓" : "Скопировать ссылку на комплектацию"}
+                </button>
               </div>
             </div>
           </div>
@@ -735,6 +812,16 @@ export default function CalculatorPage() {
           </div>
         </div>
       </section>
+
+      {/* Плавающее фото материала (FlowingMenu) */}
+      {matPreview && (
+        <img
+          src={matPreview.src}
+          alt=""
+          className="floating-mat"
+          style={{ left: matPreview.x, top: matPreview.y }}
+        />
+      )}
     </div>
   );
 }
