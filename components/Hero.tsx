@@ -27,19 +27,6 @@ export default function Hero() {
     };
   }, []);
 
-  // Ambient light: мягкий студийный свет следует за курсором по первому экрану
-  useEffect(() => {
-    const section = document.querySelector<HTMLElement>(".hero-fullscreen");
-    if (!section) return;
-    const onMove = (e: MouseEvent) => {
-      const r = section.getBoundingClientRect();
-      section.style.setProperty("--lx", `${e.clientX - r.left}px`);
-      section.style.setProperty("--ly", `${e.clientY - r.top}px`);
-    };
-    section.addEventListener("mousemove", onMove);
-    return () => section.removeEventListener("mousemove", onMove);
-  }, []);
-
   // Magnet: кнопки притягиваются к курсору и отпружинивают назад
   useEffect(() => {
     const root = ctaRef.current;
@@ -93,7 +80,6 @@ export default function Hero() {
             style={{ objectFit: "cover", objectPosition: "center 30%" }}
           />
           <div className="hero-bg-overlay"></div>
-          <div className="hero-ambient"></div>
         </div>
 
         {/* Grand Centered Slogan & Action CTA */}

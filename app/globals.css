@@ -61,7 +61,10 @@ html {
 }
 
 body {
-  background-color: var(--bg-dark);
+  /* Прозрачный фон обязателен: живой слой .global-silk стоит на z-index:-1,
+     непрозрачная заливка body нарисовала бы его обратно (заливку холста
+     держит html). Не возвращать background-color сюда. */
+  background-color: transparent;
   color: var(--color-text-primary);
   font-family: var(--font-main);
   font-size: 15px;
@@ -4502,8 +4505,8 @@ button.calc-mat-spec-row.is-selected {
   }
 }
 
-/* Глобальный шёлковый холст: весь сайт стоит на живой текстуре.
-   Один WebGL-контекст на страницу, рендер в полразрешения, пауза вне экрана. */
+/* Живой фон сайта «течение света»: канвас создаёт компонент
+   AmbientFlowCanvas, слой фиксированный, за контентом. */
 .global-silk {
   position: fixed;
   inset: 0;
@@ -4552,37 +4555,6 @@ footer,
 .prod-stats-row::after {
   bottom: -6px;
   right: -6px;
-}
-
-/* Глобальный софтбокс: слабый студийный свет за курсором на всём окне */
-.global-softbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
-  pointer-events: none;
-  background: radial-gradient(
-    520px circle at var(--sx, 50%) var(--sy, 38%),
-    rgba(255, 255, 255, 0.055),
-    transparent 70%
-  );
-}
-
-/* Ambient light героя: сильнее глобального софтбокса */
-.hero-ambient {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    640px circle at var(--lx, 62%) var(--ly, 42%),
-    rgba(255, 255, 255, 0.10),
-    transparent 68%
-  );
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.hero-fullscreen:hover .hero-ambient {
-  opacity: 1;
 }
 
 /* Шапки внутренних страниц с шёлком */
