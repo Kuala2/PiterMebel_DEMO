@@ -49,10 +49,11 @@ export default function Header() {
           {/* Logo: Origami Bird */}
           <Link href="/" className="brand-link" aria-label={SITE_CONFIG.name} onClick={() => setMobileMenuOpen(false)}>
             <Image
-              src="/img/brand/origami_bird_32.png"
+              src="/img/brand/logo_bird.svg"
               alt={SITE_CONFIG.name}
               width={36}
               height={36}
+              priority
               className="origami-bird-img"
             />
             <span className="brand-title">{SITE_CONFIG.name}</span>

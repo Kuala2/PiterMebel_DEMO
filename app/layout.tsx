@@ -49,6 +49,16 @@ export const metadata: Metadata = {
     description: SITE_CONFIG.slogan,
     locale: "ru_RU",
     type: "website"
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" }
+    ]
   }
 };
 

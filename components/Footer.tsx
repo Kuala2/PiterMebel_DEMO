@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="footer-brand-title">
               <Image
-                src="/img/brand/origami_bird_32.png"
+                src="/img/brand/logo_bird.svg"
                 alt={SITE_CONFIG.name}
                 width={26}
                 height={26}

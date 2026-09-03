@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="100%" height="100%" shape-rendering="geometricPrecision">
+  <!-- Facet 1: Tail & Body Right (shaded underbelly side) -->
+  <polygon points="246,104 316,168 250,208 86,400" fill="#62A902" />
+
+  <!-- Facet 2: Tail & Body Left (bright main spine facet) -->
+  <polygon points="176,160 246,104 86,400" fill="#8CE015" />
+
+  <!-- Facet 3: Head / Neck -->
+  <polygon points="320,32 316,108 316,168 250,208 246,104" fill="#71BB05" />
+
+  <!-- Facet 4: Beak -->
+  <polygon points="320,32 376,104 316,108" fill="#AFEB3C" />
+
+  <!-- Facet 5: Lower Wing Blade -->
+  <polygon points="46,38 246,104 176,160" fill="#84D804" />
+
+  <!-- Facet 6: Upper Wing Blade -->
+  <polygon points="46,38 160,38 246,104" fill="#A8EB37" />
+</svg>
