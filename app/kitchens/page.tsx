@@ -49,9 +49,9 @@ export default function KitchensCatalogPage() {
       </section>
 
       {/* 2. Filter Tabs Bar (Under the line) */}
-      <section className="subpage-intro-bar" style={{ paddingTop: "22px", paddingBottom: "22px", backgroundColor: "var(--bg-dark)", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
+      <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar" style={{ marginBottom: 0 }}>
+          <div className="catalog-tabs-bar">
             {filterTabs.map((tab) => (
               <button
                 key={tab.key}
@@ -158,49 +158,56 @@ export default function KitchensCatalogPage() {
                         />
                       ))}
                     </div>
+
+                    {/* Direct link on photo area */}
+                    <Link
+                      href={`/kitchens/${kitchen.slug}`}
+                      style={{ position: "absolute", inset: 0, zIndex: 2 }}
+                      aria-label={`Подробнее о кухне ${kitchen.title}`}
+                    />
                   </div>
                 </div>
 
-                {/* Info Column */}
+                {/* Info Column (Весь блок кликабелен для перехода к модели) */}
                 <div
                   className="ladder-info-col"
                   style={isReversed ? { justifySelf: "end", marginLeft: "auto", marginRight: 0 } : undefined}
                 >
-                  <div>
-                    <h2 className="ladder-title">Кухня «{kitchen.title}»</h2>
-                  </div>
+                  <Link
+                    href={`/kitchens/${kitchen.slug}`}
+                    className="ladder-content-clickable"
+                    style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", cursor: "pointer" }}
+                  >
+                    <div>
+                      <h2 className="ladder-title">Кухня «{kitchen.title}»</h2>
+                    </div>
 
-                  <p className="ladder-story">{kitchen.story[0]}</p>
+                    <p className="ladder-story">{kitchen.story[0]}</p>
 
-                  <div className="ladder-specs-rows">
-                    <div className="spec-row">
-                      <span className="spec-row-label">Фасады</span>
-                      <span className="spec-row-val">{kitchen.facade}</span>
+                    <div className="ladder-specs-rows">
+                      <div className="spec-row">
+                        <span className="spec-row-label">Фасады</span>
+                        <span className="spec-row-val">{kitchen.facade}</span>
+                      </div>
+                      <div className="spec-row">
+                        <span className="spec-row-label">Столешница</span>
+                        <span className="spec-row-val">{kitchen.worktop}</span>
+                      </div>
+                      <div className="spec-row">
+                        <span className="spec-row-label">Особенность</span>
+                        <span className="spec-row-val">{kitchen.feature}</span>
+                      </div>
+                      <div className="spec-row">
+                        <span className="spec-row-label">Кромление</span>
+                        <span className="spec-row-val">Влагостойкий PUR-шов</span>
+                      </div>
                     </div>
-                    <div className="spec-row">
-                      <span className="spec-row-label">Столешница</span>
-                      <span className="spec-row-val">{kitchen.worktop}</span>
-                    </div>
-                    <div className="spec-row">
-                      <span className="spec-row-label">Особенность</span>
-                      <span className="spec-row-val">{kitchen.feature}</span>
-                    </div>
-                    <div className="spec-row">
-                      <span className="spec-row-label">Кромление</span>
-                      <span className="spec-row-val">Влагостойкий PUR-шов</span>
-                    </div>
-                  </div>
+                  </Link>
 
-                  <div className="ladder-actions">
-                    <Link
-                      href="/contacts"
-                      className="btn btn-green"
-                    >
-                      Рассчитать эту кухню
-                    </Link>
+                  <div className="ladder-actions" style={{ marginTop: "20px" }}>
                     <Link
                       href={`/kitchens/${kitchen.slug}`}
-                      className="btn btn-glass"
+                      className="btn btn-green"
                     >
                       Подробнее о модели →
                     </Link>

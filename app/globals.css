@@ -1003,10 +1003,11 @@ img {
 
 .catalog-tabs-bar {
   display: flex;
+  align-items: center;
   gap: 8px;
   overflow-x: auto;
-  padding-bottom: 12px;
-  margin-bottom: 28px;
+  padding: 0;
+  margin: 0;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -1014,8 +1015,12 @@ img {
 .catalog-tabs-bar::-webkit-scrollbar { display: none; }
 
 .cat-tab {
-  padding: 10px 22px;
-  border-radius: var(--radius-btn);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 0px;
   background: var(--bg-surface-elevated);
   color: var(--color-text-secondary);
   font-family: var(--font-main);
@@ -1025,6 +1030,7 @@ img {
   white-space: nowrap;
   cursor: pointer;
   transition: var(--transition);
+  line-height: 1;
 }
 
 .cat-tab:hover {
@@ -3551,6 +3557,19 @@ select option {
   color: #FFFFFF;
   margin-bottom: 10px;
   line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.ladder-content-clickable:hover .ladder-title {
+  color: var(--color-green-brand);
+}
+
+.card-body:hover .card-title {
+  color: var(--color-green-brand);
+}
+
+.card-body:hover .card-open-link {
+  color: var(--color-green-hover);
 }
 
 .ladder-story {
@@ -5096,6 +5115,610 @@ footer,
 
 .calc-clean-item.is-selected .calc-checkbox-indicator svg {
   stroke: #000000;
+}
+
+/* ==========================================================================
+   PRODUCTION PAGE (Pure Editorial Architecture — 0px Sharp, Tile-Free)
+   ========================================================================== */
+
+/* 1. Intro Lead Bar (Single clean text on canvas with bottom line) */
+.prod-intro-text {
+  font-family: var(--font-main);
+  font-size: 17px;
+  line-height: 1.65;
+  color: #E2E8F0;
+  max-width: 980px;
+  margin: 0;
+}
+
+/* 2. Editorial Stats Row (On canvas, vertical hairline dividers, zero cards) */
+.prod-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 44px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prod-stat-item {
+  padding: 0 36px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prod-stat-item:first-child {
+  padding-left: 0;
+}
+
+.prod-stat-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.prod-stat-num {
+  font-family: var(--font-main);
+  font-size: clamp(34px, 3.6vw, 48px);
+  font-weight: 700;
+  color: var(--color-green-brand);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.prod-stat-label {
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: #94A3B8;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .prod-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 0;
+  }
+  .prod-stat-item {
+    padding: 0 20px;
+  }
+  .prod-stat-item:nth-child(2) {
+    border-right: none;
+  }
+  .prod-stat-item:nth-child(3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+  }
+  .prod-stat-item:nth-child(4) {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+    border-right: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .prod-stats-strip {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .prod-stat-item {
+    padding: 0 !important;
+    border-right: none !important;
+    border-top: none !important;
+  }
+}
+
+/* 3. Showcase Split (Panoramic Photo + Editorial Specs Table on Canvas) */
+.prod-split-showcase {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 48px;
+  align-items: center;
+}
+
+.prod-showcase-photo {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prod-photo-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(14, 17, 22, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.prod-specs-editorial {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-specs-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.prod-specs-lead {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #9BA1B0;
+  margin-bottom: 28px;
+}
+
+.prod-specs-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-specs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+
+.prod-specs-row:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prod-specs-label {
+  color: #8C92A4;
+  flex-shrink: 0;
+}
+
+.prod-specs-val {
+  color: #FFFFFF;
+  font-weight: 600;
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .prod-split-showcase {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* 4. Editorial Comparison Table (PUR vs EVA Data Sheet — Zero Cards) */
+.prod-editorial-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 36px;
+}
+
+.prod-editorial-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 680px;
+}
+
+.prod-editorial-table th {
+  padding: 18px 24px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8C92A4;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+}
+
+.prod-editorial-table th:last-child {
+  color: var(--color-green-brand);
+}
+
+.prod-editorial-table td {
+  padding: 22px 24px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+}
+
+.prod-editorial-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prod-td-param {
+  font-weight: 600;
+  color: #FFFFFF;
+  width: 28%;
+}
+
+.prod-td-eva {
+  color: #94A3B8;
+  width: 36%;
+}
+
+.prod-td-pur {
+  color: #FFFFFF;
+  font-weight: 500;
+  width: 36%;
+}
+
+.prod-td-pur strong {
+  color: var(--color-green-brand);
+  font-weight: 600;
+}
+
+/* 5. Quality Control Split (Real Photo + Editorial Numbered Rows — Zero Cards) */
+.prod-quality-split {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 48px;
+  align-items: center;
+  margin-top: 36px;
+}
+
+.prod-quality-media {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prod-standards-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-standard-item {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 20px;
+}
+
+.prod-standard-item:first-child {
+  padding-top: 0;
+}
+
+.prod-standard-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.prod-standard-num {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-green-brand);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.prod-standard-title {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.prod-standard-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #9BA1B0;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .prod-quality-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* 6. Production Process Horizontal Linear Track */
+.prod-linear-track {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 32px;
+}
+
+.prod-step-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prod-step-num {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-green-brand);
+  letter-spacing: 0.08em;
+}
+
+.prod-step-title {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.35;
+}
+
+.prod-step-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #94A3B8;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .prod-linear-track {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ==========================================================================
+   CONTACTS PAGE (Quiet Luxury — High-Craft Editorial & Zero Noise)
+   ========================================================================== */
+
+/* 1. Quick Action Bar (Direct Focus on Action) */
+.contacts-editorial-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 36px 0;
+}
+
+.contacts-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contacts-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-green-brand);
+}
+
+.contacts-bar-phone {
+  font-family: var(--font-main);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  transition: color 0.2s ease;
+}
+
+.contacts-bar-phone:hover {
+  color: var(--color-green-brand);
+}
+
+.contacts-bar-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #9BA1B0;
+}
+
+.contacts-live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-green-brand);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(114, 195, 36, 0.6);
+}
+
+.contacts-bar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.contacts-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 24px;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+/* 2. Office & Map Showcase Split */
+.contacts-editorial-split {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 56px;
+  align-items: center;
+}
+
+.contacts-map-frame {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  background: #1C1F24;
+}
+
+.contacts-map-frame [class*="map-copyrights-promo"],
+.contacts-map-frame [class*="gotoymaps"],
+.contacts-map-frame [class*="controls__bottom"] {
+  display: none !important;
+}
+
+.contacts-office-editorial {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-office-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-green-brand);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+
+.contacts-office-title {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 2.4vw, 34px);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.contacts-office-address {
+  font-family: var(--font-main);
+  font-size: 16px;
+  color: #CBD5E1;
+  margin-bottom: 24px;
+}
+
+.contacts-office-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.contacts-bullet-item {
+  display: flex;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #94A3B8;
+}
+
+.contacts-bullet-lead {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.contacts-office-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.contacts-email-link {
+  font-size: 14px;
+  color: #94A3B8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.contacts-email-link:hover {
+  color: #FFFFFF;
+}
+
+.contacts-email-link strong {
+  color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .contacts-editorial-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* 3. Three Interaction Scenarios (Clean Editorial 3-Column on Canvas) */
+.contacts-scenarios-editorial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 36px;
+}
+
+.contacts-scenario-col {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding-left: 32px;
+}
+
+.contacts-scenario-col:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.contacts-scenario-num {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-green-brand);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.contacts-scenario-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.contacts-scenario-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #9BA1B0;
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .contacts-scenarios-editorial {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .contacts-scenario-col {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+  }
+  .contacts-scenario-col:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
 }
 
 

@@ -95,7 +95,6 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} «{SITE_CONFIG.name}». {SITE_CONFIG.disclaimer}
           </div>
-          <div>Собственное производство с {SITE_CONFIG.foundedYear} года</div>
         </div>
       </div>
     </footer>

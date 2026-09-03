@@ -65,9 +65,9 @@ export default function ProjectsPortfolioPage() {
       </section>
 
       {/* 2. Filter Tabs Bar (Under the line) */}
-      <section className="subpage-intro-bar" style={{ paddingTop: "22px", paddingBottom: "22px", backgroundColor: "var(--bg-dark)", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
+      <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar" style={{ marginBottom: 0 }}>
+          <div className="catalog-tabs-bar">
             {filterTabs.map((tab) => (
               <button
                 key={tab.key}
@@ -162,15 +162,26 @@ export default function ProjectsPortfolioPage() {
                         ))}
                       </div>
                     )}
+
+                    {/* Direct link on photo area */}
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      style={{ position: "absolute", inset: 0, zIndex: 2 }}
+                      aria-label={`Смотреть проект ${project.title}`}
+                    />
                   </div>
 
-                  <div className="card-body">
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="card-body"
+                    style={{ textDecoration: "none", display: "flex", flexDirection: "column", cursor: "pointer" }}
+                  >
                     <h2 className="card-title">{project.title}</h2>
                     <p className="card-desc">{project.task}</p>
-                    <Link href={`/projects/${project.slug}`} className="card-open-link">
+                    <span className="card-open-link">
                       Смотреть проект →
-                    </Link>
-                  </div>
+                    </span>
+                  </Link>
                 </div>
               );
             })}

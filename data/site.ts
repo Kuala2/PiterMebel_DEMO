@@ -14,6 +14,7 @@ export interface SiteConfig {
   email: string;
   workHours: string;
   vkUrl: string;
+  yandexMapsUrl: string;
   disclaimer: string;
   services: string[];
   productCategories: string[];
@@ -35,6 +36,7 @@ export const SITE_CONFIG: SiteConfig = {
   email: "piter.meb@yandex.ru",
   workHours: "Пн – Пт: с 10:00 до 20:00",
   vkUrl: "https://vk.ru/pitermebelcom",
+  yandexMapsUrl: "https://yandex.ru/maps/org/pitermebel/245406542043/?indoorLevel=1&ll=30.272883%2C59.899907",
   disclaimer: "Демонстрационный концепт сайта. Материалы взяты из открытого сообщества студии ВКонтакте. Не является публичной офертой.",
   services: [
     "Точный замер помещения",
