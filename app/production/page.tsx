@@ -7,7 +7,7 @@ import { SITE_CONFIG } from "@/data/site";
 
 export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-  description: `Собственный мебельный цех с ${SITE_CONFIG.foundedYear} года на ул. Трефолева, 1П. Станочный парк ЧПУ, влагостойкий PUR-шов и тестовая контрольная сборка мебели без посредников.`,
+  description: `Собственный мебельный цех с ${SITE_CONFIG.foundedYear} года в Санкт-Петербурге. Станочный парк ЧПУ, влагостойкий PUR-шов и тестовая контрольная сборка мебели без посредников.`,
 };
 
 export default function ProductionPage() {
@@ -34,7 +34,7 @@ export default function ProductionPage() {
           <div className="prod-stats-row">
             <div className="prod-stat">
               <span className="prod-stat-num">850 м²</span>
-              <span className="prod-stat-label">Площадь цеха на Трефолева</span>
+              <span className="prod-stat-label">Площадь собственного цеха</span>
             </div>
             <div className="prod-stat">
               <span className="prod-stat-num">2005</span>
@@ -61,8 +61,8 @@ export default function ProductionPage() {
                 Станочный парк и оснащение цеха
               </h2>
             </div>
-            <Link href="#visit" className="btn btn-glass prod-head-btn">
-              Записаться на визит в цех →
+            <Link href="#consult" className="btn btn-glass prod-head-btn">
+              Консультация и выезд инженера →
             </Link>
           </div>
 
@@ -77,7 +77,7 @@ export default function ProductionPage() {
                   sizes="(max-width: 1024px) 100vw, 720px"
                   style={{ objectFit: "cover" }}
                 />
-                <span className="prod-row-caption">Цех на Трефолева · участок раскроя</span>
+                <span className="prod-row-caption">Собственное производство · участок раскроя</span>
               </div>
               <div className="prod-row-info">
                 <h3 className="prod-row-title">Станки с ЧПУ</h3>
@@ -231,17 +231,17 @@ export default function ProductionPage() {
         </div>
       </section>
 
-      {/* 6. VISIT WORKSHOP & MEASURE FORM */}
-      <section className="final-section" id="visit" style={{ backgroundColor: "var(--bg-dark)" }}>
+      {/* 6. OFFICE MEETINGS & ENGINEER MEASUREMENT */}
+      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Ждем вас в цеху на Трефолева, 1П
+                  Встречи в офисе студии и бесплатный выезд инженера
                 </h2>
                 <p className="final-desc">
-                  Приезжайте на наше производство в Санкт-Петербурге рядом с метро «Нарвская». Вы сможете своими глазами увидеть работу станков, оценить качество сборки и выбрать материалы из сотен образцов шпона, эмалей и пластиков.
+                  Собственное производство — это закрытая технологическая площадка со строгими нормами безопасности, где непрерывно работают ЧПУ-станки и кромкооблицовочные линии. Для комфортного обсуждения проектов, чашки кофе и подбора материалов из сотен образцов шпона, эмалей и пластиков мы ждем вас в офисе студии по предварительной записи. Либо наш ведущий инженер бесплатно приедет к вам на замер с чемоданом образцов.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -269,11 +269,11 @@ export default function ProductionPage() {
                   </Link>
                 </div>
                 <div style={{ fontSize: "13px", color: "var(--color-text-muted)", marginTop: "14px" }}>
-                  {SITE_CONFIG.address} ({SITE_CONFIG.metro}) · Пн–Сб с 10:00 до 20:00 (по записи)
+                  Офис для встреч по записи · Производство: {SITE_CONFIG.address} (закрытый цех)
                 </div>
               </div>
               <div className="final-info-block">
-                <MeasureForm initialCategory="Визит на производство" />
+                <MeasureForm initialCategory="Консультация и выезд инженера" />
               </div>
             </div>
           </div>

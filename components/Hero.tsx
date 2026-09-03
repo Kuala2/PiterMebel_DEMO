@@ -139,7 +139,7 @@ export default function Hero() {
                 <CountUp to={850} /> <span className="stat-unit">м²</span>
               </div>
               <div className="stat-text">
-                Собственный станочный цех на ул. Трефолева
+                Собственный станочный цех в Санкт-Петербурге
               </div>
             </div>
 

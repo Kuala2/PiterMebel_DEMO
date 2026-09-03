@@ -5,8 +5,8 @@ import VkIcon from "@/components/VkIcon";
 import { SITE_CONFIG } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `Контакты и адрес производства — ${SITE_CONFIG.name}`,
-  description: `Контакты мебельной студии «ПитерМебель» в Санкт-Петербурге: ул. Трефолева, 1П (район метро «Нарвская»). Запись на бесплатный замер и связь через сообщество ВКонтакте.`,
+  title: `Контакты студии — ${SITE_CONFIG.name}`,
+  description: `Контакты мебельной студии «ПитерМебель» в Санкт-Петербурге: ${SITE_CONFIG.address} (${SITE_CONFIG.metro}). Запись на бесплатный замер и консультацию.`,
 };
 
 export default function ContactsPage() {
@@ -17,7 +17,7 @@ export default function ContactsPage() {
         <div className="container">
           <h1 className="subpage-hero-title">Контакты студии «ПитерМебель»</h1>
           <p className="subpage-hero-caption">
-            Производство и приём заказов · Пн–Сб с 10:00 до 20:00
+            Производство и приём заказов · Пн–Пт с 10:00 до 20:00
           </p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default function ContactsPage() {
       <section className="subpage-intro-bar">
         <div className="container">
           <p className="subpage-intro-desc" style={{ marginBottom: 0 }}>
-            Свяжитесь с нами удобным для вас способом: отправьте эскиз или проект в сообщество ВКонтакте, запишитесь на бесплатный выездной замер или приезжайте в цех на Трефолева.
+            Свяжитесь с нами удобным для вас способом: отправьте эскиз или проект в сообщество ВКонтакте, запишитесь на бесплатный выездной замер или согласуйте встречу в нашем офисе для выбора материалов.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function ContactsPage() {
                   {SITE_CONFIG.phone}
                 </a>
                 <p className="contact-block-desc">
-                  Елена Волкова — консультация, расчёт стоимости и вызов мастера на замер. Отвечаем с понедельника по субботу с 10:00 до 20:00.
+                  Елена Волкова — консультация, расчёт стоимости и вызов мастера на замер. Отвечаем с понедельника по пятницу с 10:00 до 20:00.
                 </p>
                 <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="btn btn-green">
                   Позвонить сейчас
@@ -80,12 +80,12 @@ export default function ContactsPage() {
               </div>
             </div>
 
-            {/* Right: workshop address */}
+            {/* Right: office & workshop distinction */}
             <aside className="contacts-aside">
-              <h3 className="spec-row-label" style={{ marginBottom: "14px" }}>Производство</h3>
+              <h3 className="spec-row-label" style={{ marginBottom: "14px" }}>Офис и производство</h3>
               <div>
                 <div className="spec-row">
-                  <span className="spec-row-label">Адрес</span>
+                  <span className="spec-row-label">Офис студии</span>
                   <span className="spec-row-val">{SITE_CONFIG.address}</span>
                 </div>
                 <div className="spec-row">
@@ -93,22 +93,22 @@ export default function ContactsPage() {
                   <span className="spec-row-val">{SITE_CONFIG.metro}</span>
                 </div>
                 <div className="spec-row">
-                  <span className="spec-row-label">Режим</span>
-                  <span className="spec-row-val">Пн–Сб · 10:00–20:00, по записи</span>
+                  <span className="spec-row-label">Производство</span>
+                  <span className="spec-row-val">Собственный цех в СПб (закрытая площадка)</span>
                 </div>
                 <div className="spec-row">
-                  <span className="spec-row-label">Парковка</span>
-                  <span className="spec-row-val">Бесплатная, на закрытой территории</span>
+                  <span className="spec-row-label">Режим</span>
+                  <span className="spec-row-val">Пн–Пт · 10:00–20:00, по записи</span>
                 </div>
               </div>
               <a
-                href="https://yandex.ru/maps/?text=Санкт-Петербург+ул+Трефолева+1П"
+                href="https://yandex.ru/maps/?text=Санкт-Петербург+площадь+Стачек+9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card-open-link"
                 style={{ display: "inline-block", marginTop: "20px" }}
               >
-                Маршрут на карте →
+                Маршрут к офису на карте →
               </a>
             </aside>
           </div>

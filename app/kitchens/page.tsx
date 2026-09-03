@@ -39,22 +39,18 @@ export default function KitchensCatalogPage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header">
+      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <h1 className="subpage-hero-title">Кухни студии «ПитерМебель»</h1>
           <p className="subpage-hero-caption">
-            {KITCHENS.length} моделей · каждая изготавливается по индивидуальным размерам
+            Каждая модель изготавливается по индивидуальным размерам
           </p>
         </div>
       </section>
 
-      {/* 2. Subtitle & Filter Tabs Bar (Below Banner) */}
-      <section className="subpage-intro-bar">
+      {/* 2. Filter Tabs Bar (Under the line) */}
+      <section className="subpage-intro-bar" style={{ paddingTop: "22px", paddingBottom: "22px", backgroundColor: "var(--bg-dark)", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
-          <p className="subpage-intro-desc">
-            Авторские проекты кухонных гарнитуров, созданные для интерьеров Санкт-Петербурга. Каждая модель изготавливается по индивидуальным размерам на улице Трефолева.
-          </p>
-
           <div className="catalog-tabs-bar" style={{ marginBottom: 0 }}>
             {filterTabs.map((tab) => (
               <button
@@ -166,7 +162,10 @@ export default function KitchensCatalogPage() {
                 </div>
 
                 {/* Info Column */}
-                <div className="ladder-info-col">
+                <div
+                  className="ladder-info-col"
+                  style={isReversed ? { justifySelf: "end", marginLeft: "auto", marginRight: 0 } : undefined}
+                >
                   <div>
                     <h2 className="ladder-title">Кухня «{kitchen.title}»</h2>
                   </div>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import VkIcon from "@/components/VkIcon";
 import MeasureForm from "@/components/MeasureForm";
-import { MATERIALS } from "@/data/materials";
 import { SITE_CONFIG } from "@/data/site";
 
 interface MainCategory {
@@ -18,17 +17,17 @@ const MAIN_CATEGORIES: MainCategory[] = [
   {
     id: "kitchens",
     name: "Кухни на заказ",
-    desc: "Линейные, угловые, П-образные и с островом",
+    desc: "Линейные, угловые, П-образные гарнитуры и кухни с островом",
   },
   {
     id: "wardrobes",
     name: "Шкафы и гардеробные",
-    desc: "Встроенные шкафы, гардеробные и смарт-витрины Stopsol",
+    desc: "Встроенные системы в нишу, гардеробные комнаты и витрины Stopsol",
   },
   {
     id: "cabinet",
     name: "Корпусная мебель для дома",
-    desc: "Прихожие, подвесные ТВ-зоны, мебель для ванных и рейки",
+    desc: "Прихожие, подвесные ТВ-зоны, мебель для ванных и стеновые панели",
   },
 ];
 
@@ -45,162 +44,197 @@ const FURNITURE_SUBTYPES: FurnitureSubtype[] = [
   {
     id: "kitchen-straight",
     categoryId: "kitchens",
-    name: "Прямая кухня",
-    subtitle: "Линейная планировка",
+    name: "Прямая (линейная) кухня",
+    subtitle: "Расположение вдоль одной стены, от 2.0 м",
     image: "/img/kitchens/aleksandra/photo_1.jpg",
   },
   {
     id: "kitchen-corner",
     categoryId: "kitchens",
-    name: "Угловая кухня",
-    subtitle: "L-образная планировка",
-    image: "/img/projects/oak-stone/photo_1.jpg",
+    name: "Угловая (Г-образная) кухня",
+    subtitle: "Классическая эргономичная компоновка с мойкой в углу",
+    image: "/img/kitchens/valeria/photo_1.jpg",
   },
   {
     id: "kitchen-u",
     categoryId: "kitchens",
     name: "П-образная кухня",
-    subtitle: "Вместительная с 3 рядами",
+    subtitle: "Максимум рабочей зоны и столешницы по трем стенам",
     image: "/img/kitchens/stefania/photo_1.jpg",
   },
   {
     id: "kitchen-island",
     categoryId: "kitchens",
-    name: "Кухня с островом / барной стойкой",
-    subtitle: "Островная архитектура",
-    image: "/img/projects/island-parquet/photo_1.jpg",
+    name: "Кухня с островом",
+    subtitle: "Основной гарнитур плюс отдельно стоящая островная зона",
+    image: "/img/kitchens/aleksandra/photo_3.jpg",
   },
-
   // Wardrobes
   {
     id: "wardrobe-room",
     categoryId: "wardrobes",
     name: "Гардеробная комната",
-    subtitle: "П-образная с полками под геометрию стен",
-    image: "/img/projects/brick-wardrobe/photo_1.jpg",
+    subtitle: "Индивидуальное зонирование полок, вешалок и ящиков",
+    image: "/img/projects/glass-wardrobe/photo_2.jpg",
   },
   {
-    id: "wardrobe-built",
+    id: "wardrobe-niche",
     categoryId: "wardrobes",
-    name: "Встроенный шкаф-купе в нишу",
-    subtitle: "Точная посадка от пола до потолка",
-    image: "/img/projects/mirror-hall/photo_1.jpg",
+    name: "Встроенный шкаф в нишу",
+    subtitle: "Подгонка от пола до потолка без щелей и зазоров",
+    image: "/img/projects/glass-wardrobe/photo_4.jpg",
   },
   {
     id: "wardrobe-hinged",
     categoryId: "wardrobes",
-    name: "Распашной шкаф в потолок",
-    subtitle: "Классические распашные фасады",
-    image: "/img/projects/bedroom-set/photo_1.jpg",
+    name: "Распашной шкаф",
+    subtitle: "Классические фасады со скрытыми петлями плавного хода",
+    image: "/img/projects/glass-wardrobe/photo_5.jpg",
   },
   {
-    id: "wardrobe-stopsol",
+    id: "wardrobe-glass",
     categoryId: "wardrobes",
-    name: "Витрина со стеклом STOPSOL",
-    subtitle: "Смарт-зеркало с теплой подсветкой",
+    name: "Витрины со стеклом Stopsol",
+    subtitle: "Тонированное зеркальное стекло с подсветкой полок",
     image: "/img/projects/glass-wardrobe/photo_1.jpg",
   },
-
-  // Cabinet furniture
+  // Cabinet
   {
     id: "cabinet-hall",
     categoryId: "cabinet",
-    name: "Прихожая и мягкая обувница",
-    subtitle: "Интегрированная ниша и реечные акценты",
-    image: "/img/projects/mirror-hall/photo_2.jpg",
+    name: "Мебель для прихожей",
+    subtitle: "Шкафы для верхней одежды, обувницы и мягкие банкетки",
+    image: "/img/projects/green-hallway/photo_1.jpg",
   },
   {
     id: "cabinet-bath",
     categoryId: "cabinet",
-    name: "Мебель в ванную комнату",
-    subtitle: "Влагостойкая подвесная тумба под раковину",
-    image: "/img/projects/oak-stone/photo_2.jpg",
+    name: "Тумбы и пеналы в санузел",
+    subtitle: "Влагостойкие фасады и бесшовная интеграция с сантехникой",
+    image: "/img/projects/bathroom-enamel/photo_1.jpg",
   },
   {
     id: "cabinet-tv",
     categoryId: "cabinet",
-    name: "ТВ-зона и подвесной стеллаж",
-    subtitle: "Консоль с кабель-менеджментом",
-    image: "/img/projects/bedroom-set/photo_2.jpg",
+    name: "Подвесная ТВ-зона",
+    subtitle: "Парящие тумбы со скрытой прокладкой кабелей",
+    image: "/img/projects/oak-veneer-panel/photo_3.jpg",
   },
   {
     id: "cabinet-slats",
     categoryId: "cabinet",
-    name: "Стеновые реечные панели из шпона",
-    subtitle: "Декоративное зонирование и акцентные стены",
+    name: "Стеновые панели из шпона",
+    subtitle: "Интерьерная облицовка стен натуральным деревом",
     image: "/img/projects/oak-veneer-panel/photo_1.jpg",
   },
 ];
 
 const SIZES = [
-  { id: "s", name: "До 2.4 м", desc: "Компактный размер" },
-  { id: "m", name: "2.5 – 3.2 м", desc: "Стандартная планировка" },
-  { id: "l", name: "3.3 – 4.2 м", desc: "Просторный гарнитур" },
-  { id: "xl", name: "Более 4.2 м", desc: "Индивидуальный масштаб" },
+  { id: "s", name: "До 2.4 м", desc: "Компактная планировка для студии", meters: 2.4 },
+  { id: "m", name: "2.5 – 3.2 м", desc: "Стандартный гарнитур для квартиры", meters: 3.0 },
+  { id: "l", name: "3.3 – 4.2 м", desc: "Просторная кухня для семьи", meters: 3.8 },
+  { id: "xl", name: "Более 4.2 м", desc: "Большой проект или кухня с островом", meters: 4.8 },
 ];
 
 const FACADE_MATERIALS = [
-  { id: "enamel", name: "Эмаль по палитре RAL", tier: "Дизайнерская серия", desc: "Безупречно гладкая матовая поверхность" },
-  { id: "veneer", name: "Натуральный шпон дуба", tier: "Премиальная серия", desc: "Выразительная текстура благородного дерева" },
-  { id: "fenix", name: "Суперматовый Fenix NTM", tier: "Инновационная серия", desc: "Anti-Fingerprint с защитой от отпечатков" },
-  { id: "plastic", name: "МДФ пластик Velvet", tier: "Базовая серия", desc: "Практичная тактильная микротекстура" },
+  {
+    id: "enamel",
+    name: "Эмаль по палитре RAL / NCS",
+    desc: "Безупречно гладкая матовая поверхность без швов. Более 2000 оттенков палитры RAL и NCS.",
+    image: "/img/materials/enamel.jpg",
+  },
+  {
+    id: "veneer",
+    name: "Натуральный шпон дуба",
+    desc: "Срез натурального дерева под матовым лаком. Выразительный природный рисунок годичных колец.",
+    image: "/img/materials/veneer.jpg",
+  },
+  {
+    id: "fenix",
+    name: "Суперматовый пластик Fenix NTM",
+    desc: "Итальянский нанопластик. Поверхность не собирает отпечатки пальцев и восстанавливается от микроцарапин.",
+    image: "/img/materials/fenix.jpg",
+  },
+  {
+    id: "plastic",
+    name: "Пластик Velvet (матовый)",
+    desc: "Практичная тактильная микротекстура. Высокая стойкость к бытовой химии, влаге и истиранию.",
+    image: "/img/materials/velvet.jpg",
+  },
 ];
 
 const EXTRA_OPTIONS = [
-  { id: "stone", name: "Столешница из искусственного камня с бесшовной склейкой" },
-  { id: "gola", name: "Скрытый профиль Gola (фасады без накладных ручек)" },
-  { id: "stopsol", name: "Смарт-стекло Stopsol с интегрированной подсветкой полок" },
-  { id: "ceiling", name: "Верхний ярус антресолей точно до потолка" },
-  { id: "fittings", name: "Немецкие скрытые направляющие и петли с доводчиками" },
-  { id: "led", name: "Встроенная врезная подсветка рабочей зоны 4000K" },
+  {
+    id: "stone",
+    name: "Столешница из искусственного камня",
+    desc: "Бесшовная монолитная склейка с интегрированной мойкой без стыков",
+  },
+  {
+    id: "gola",
+    name: "Скрытый профиль Gola (без ручек)",
+    desc: "Алюминиевый профиль в цвет корпуса для открывания за фасад",
+  },
+  {
+    id: "stopsol",
+    name: "Витрины со стеклом Stopsol",
+    desc: "Зеркальный эффект при выключенном свете и демонстрация посуды с подсветкой",
+  },
+  {
+    id: "ceiling",
+    name: "Антресольный ярус точно в потолок",
+    desc: "Подгонка без пылевого зазора сверху и максимальный объем хранения",
+  },
+  {
+    id: "fittings",
+    name: "Фурнитура Blum Legrabox и Aventos",
+    desc: "Австрийские механизмы с доводчиками плавного хода (100 000 циклов)",
+  },
+  {
+    id: "led",
+    name: "Врезная теплая подсветка 3000K",
+    desc: "Линейный алюминиевый профиль с бесконтактным сенсором взмаха руки",
+  },
 ];
 
+const CALC_STEPS = ["Направление", "Планировка", "Длина", "Фасады", "Опции"];
+
 export default function CalculatorPage() {
-  const [step, setStep] = useState<number>(1);
-  const [selectedMainCat, setSelectedMainCat] = useState<string>("kitchens");
-  const [selectedType, setSelectedType] = useState<string>("kitchen-corner");
-  const [selectedSize, setSelectedSize] = useState<string>("m");
-  const [selectedMaterial, setSelectedMaterial] = useState<string>("enamel");
+  const [step, setStep] = useState(1);
+  const [selectedMainCat, setSelectedMainCat] = useState("kitchens");
+  const [selectedType, setSelectedType] = useState("kitchen-straight");
+  const [selectedSize, setSelectedSize] = useState("m");
+  const [customMeters, setCustomMeters] = useState(3.0);
+  const [selectedMaterial, setSelectedMaterial] = useState("enamel");
   const [selectedOptions, setSelectedOptions] = useState<string[]>([
     "gola",
-    "ceiling",
     "fittings",
+    "ceiling",
   ]);
   const [copied, setCopied] = useState(false);
-  const [matPreview, setMatPreview] = useState<{ src: string; x: number; y: number } | null>(null);
 
-  // Восстановление комплектации из ссылки (?cat=..&type=..&size=..&mat=..&opts=..)
+  // Restore state from URL query params if present
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search);
-    const cat = q.get("cat");
-    const type = q.get("type");
-    const size = q.get("size");
-    const mat = q.get("mat");
-    const opts = q.get("opts");
+    if (typeof window === "undefined") return;
+    const p = new URLSearchParams(window.location.search);
+    const cat = p.get("cat");
+    const type = p.get("type");
+    const m = p.get("meters");
+    const mat = p.get("mat");
+    const opts = p.get("opts");
+
     if (cat && MAIN_CATEGORIES.some((c) => c.id === cat)) setSelectedMainCat(cat);
     if (type && FURNITURE_SUBTYPES.some((s) => s.id === type)) setSelectedType(type);
-    if (size && SIZES.some((s) => s.id === size)) setSelectedSize(size);
-    if (mat && FACADE_MATERIALS.some((m) => m.id === mat)) setSelectedMaterial(mat);
-    if (opts !== null) {
-      const list = opts.split(",").filter((id) => EXTRA_OPTIONS.some((o) => o.id === id));
-      setSelectedOptions(list);
-    }
+    if (m && !isNaN(parseFloat(m))) setCustomMeters(parseFloat(m));
+    if (mat && FACADE_MATERIALS.some((fm) => fm.id === mat)) setSelectedMaterial(mat);
+    if (opts) setSelectedOptions(opts.split(",").filter(Boolean));
   }, []);
 
-  const CALC_STEPS = [
-    "Направление",
-    "Планировка",
-    "Размер",
-    "Материал",
-    "Опции",
-  ];
-
-  // Ссылка на текущую комплектацию — можно отправить мастеру
   const shareLink = () => {
+    if (typeof window === "undefined") return;
     const params = new URLSearchParams({
       cat: selectedMainCat,
       type: selectedType,
-      size: selectedSize,
+      meters: customMeters.toFixed(1),
       mat: selectedMaterial,
       opts: selectedOptions.join(","),
     });
@@ -210,27 +244,10 @@ export default function CalculatorPage() {
       setTimeout(() => setCopied(false), 2200);
     };
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(done).catch(() => {
-        const ta = document.createElement("textarea");
-        ta.value = url;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand("copy");
-        ta.remove();
-        done();
-      });
-    } else {
-      const ta = document.createElement("textarea");
-      ta.value = url;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      ta.remove();
-      done();
+      navigator.clipboard.writeText(url).then(done).catch(() => {});
     }
   };
 
-  // Handle main category switch and auto-select first subtype
   const handleMainCatChange = (catId: string) => {
     setSelectedMainCat(catId);
     const firstSubtype = FURNITURE_SUBTYPES.find((s) => s.categoryId === catId);
@@ -252,474 +269,403 @@ export default function CalculatorPage() {
   const calculation = useMemo(() => {
     const mainCat = MAIN_CATEGORIES.find((c) => c.id === selectedMainCat) || MAIN_CATEGORIES[0];
     const furn = FURNITURE_SUBTYPES.find((f) => f.id === selectedType) || currentSubtypes[0] || FURNITURE_SUBTYPES[0];
-    const size = SIZES.find((s) => s.id === selectedSize) || SIZES[1];
     const mat = FACADE_MATERIALS.find((m) => m.id === selectedMaterial) || FACADE_MATERIALS[0];
 
-    let complexity = "Оптимальная заводская комплектация";
-    if (selectedOptions.length >= 3 || mat.id === "veneer" || mat.id === "fenix") {
-      complexity = "Премиальная авторская спецификация";
-    }
-
-    // Предварительная вилка цены (корпус + фасады, без техники и монтажа)
-    const baseByCategory: Record<string, number> = {
-      kitchens: 190000,
-      wardrobes: 150000,
-      cabinet: 110000,
+    const basePerMeter: Record<string, number> = {
+      kitchens: 58000,
+      wardrobes: 46000,
+      cabinet: 38000,
     };
-    const sizeMult: Record<string, number> = { s: 0.8, m: 1.0, l: 1.3, xl: 1.6 };
-    const matMult: Record<string, number> = { enamel: 1.15, veneer: 1.4, fenix: 1.25, plastic: 1.0 };
+
+    const matMult: Record<string, number> = {
+      enamel: 1.15,
+      veneer: 1.45,
+      fenix: 1.30,
+      plastic: 1.0,
+    };
+
     const optionPrice: Record<string, number> = {
       stone: 55000,
       gola: 18000,
       stopsol: 38000,
       ceiling: 24000,
       fittings: 22000,
-      led: 13000,
+      led: 14000,
     };
 
-    const base = (baseByCategory[selectedMainCat] ?? 150000) * (sizeMult[selectedSize] ?? 1) * (matMult[selectedMaterial] ?? 1);
-    const optionsSum = selectedOptions.reduce((sum, id) => sum + (optionPrice[id] ?? 0), 0);
-    const total = base + optionsSum;
+    const baseCost = (basePerMeter[selectedMainCat] ?? 50000) * customMeters * (matMult[selectedMaterial] ?? 1);
+    const optionsCost = selectedOptions.reduce((sum, id) => sum + (optionPrice[id] ?? 0), 0);
+    const total = baseCost + optionsCost;
+
     const roundTo10k = (v: number) => Math.round(v / 10000) * 10000;
     const priceLow = roundTo10k(total * 0.92);
-    const priceHigh = roundTo10k(total * 1.18);
+    const priceHigh = roundTo10k(total * 1.15);
 
     return {
       mainCategoryName: mainCat.name,
       furnitureName: furn.name,
       furnitureSubtitle: furn.subtitle,
-      furnitureImage: furn.image,
-      sizeName: size.name,
+      customMeters: customMeters.toFixed(1),
       materialName: mat.name,
-      tierName: mat.tier,
-      complexity,
       priceLow,
       priceHigh,
-      optionsCount: selectedOptions.length,
       optionsNames: selectedOptions
         .map((id) => EXTRA_OPTIONS.find((o) => o.id === id)?.name)
         .filter(Boolean),
     };
-  }, [selectedMainCat, selectedType, currentSubtypes, selectedSize, selectedMaterial, selectedOptions]);
+  }, [selectedMainCat, selectedType, currentSubtypes, customMeters, selectedMaterial, selectedOptions]);
 
   return (
-    <div>
+    <div className="calc-page">
       {/* 1. Page Header */}
       <section className="page-header">
         <div className="container">
-          <h1 className="subpage-hero-title">Калькулятор стоимости мебели</h1>
+          <h1 className="subpage-hero-title">Конфигуратор стоимости мебели</h1>
           <p className="subpage-hero-caption">
-            5 шагов · предварительная смета без вызова мастера
+            Предварительный расчет сметы на собственном производстве без наценок салона
           </p>
         </div>
       </section>
 
-      {/* 2. Subtitle Intro Bar (Below Banner) */}
-      <section className="subpage-intro-bar">
-        <div className="container">
-          <p className="subpage-intro-desc" style={{ marginBottom: 0 }}>
-            Сконфигурируйте планировку, габариты, материалы фасадов и дополнительные опции для расчета предварительной сметы на собственном производстве.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. Calculator Body (Tone 1: #0A0C0E) */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "50px", paddingBottom: "80px" }}>
+      {/* 2. Main Configurator Section */}
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "40px", paddingBottom: "80px" }}>
         <div className="container">
           <div className="calc-layout-grid">
-            {/* Left Column: Step-by-step Wizard */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "36px" }}>
-
-              {/* Progress line: 5 markers in the site language */}
-              <div className="process-track calc-progress">
+            {/* Left Column: Interactive Steps (Tile-free, minimal & clear) */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+              {/* Step Navigation Tabs */}
+              <div className="calc-clean-tabs">
                 {CALC_STEPS.map((label, i) => {
                   const n = i + 1;
-                  const state = n === step ? "is-current" : n < step ? "is-done" : "is-future";
+                  const isActive = n === step;
                   return (
                     <button
                       key={label}
                       type="button"
-                      className={`process-step calc-progress-step ${state}`}
+                      className={`calc-clean-tab ${isActive ? "is-active" : ""}`}
                       onClick={() => setStep(n)}
                     >
-                      <span className="calc-progress-num">{n}</span>
-                      <span className="calc-progress-label">{label}</span>
+                      <span style={{ opacity: isActive ? 1 : 0.6, marginRight: "6px" }}>{n}.</span>
+                      {label}
                     </button>
                   );
                 })}
               </div>
 
-              {/* Step 1: Main Category */}
+              {/* STEP 1: Main Category */}
               {step === 1 && (
-              <div>
-                <h3 className="calc-step-title">
-                  Что будем рассчитывать?
-                </h3>
-                <div className="calc-categories-grid">
-                  {MAIN_CATEGORIES.map((cat) => {
-                    const isSelected = selectedMainCat === cat.id;
-                    return (
-                      <button
-                        key={cat.id}
-                        type="button"
-                        onClick={() => handleMainCatChange(cat.id)}
-                        style={{
-                          background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
-                          borderRadius: "var(--radius-sm)",
-                          padding: "18px 16px",
-                          textAlign: "left",
-                          cursor: "pointer",
-                          transition: "var(--transition)",
-                          boxShadow: "none",
-                        }}
-                      >
-                        <div style={{ fontSize: "15px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "4px" }}>
-                          {cat.name}
+                <div>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                    Что будем проектировать?
+                  </h2>
+                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                    Выберите интерьерное направление мебели.
+                  </p>
+
+                  <div className="calc-clean-list">
+                    {MAIN_CATEGORIES.map((cat) => {
+                      const isSelected = selectedMainCat === cat.id;
+                      return (
+                        <div
+                          key={cat.id}
+                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
+                          onClick={() => handleMainCatChange(cat.id)}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                            <div className="calc-radio-indicator" />
+                            <div>
+                              <div style={{ fontSize: "15.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                                {cat.name}
+                              </div>
+                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                                {cat.desc}
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: "1.4" }}>
-                          {cat.desc}
-                        </div>
-                      </button>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
               )}
 
-              {/* Step 2: Subtype / Layout */}
+              {/* STEP 2: Subtype & Layout */}
               {step === 2 && (
-              <div>
-                <h3 className="calc-step-title">
-                  Тип и планировка изделия
-                </h3>
-                <div className="calc-subtypes-grid">
-                  {currentSubtypes.map((type) => {
-                    const isSelected = selectedType === type.id;
-                    return (
-                      <button
-                        key={type.id}
-                        type="button"
-                        onClick={() => setSelectedType(type.id)}
-                        style={{
-                          background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
-                          borderRadius: "var(--radius-sm)",
-                          padding: "14px",
-                          textAlign: "left",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "14px",
-                          cursor: "pointer",
-                          transition: "var(--transition)",
-                          boxShadow: "none",
-                        }}
-                      >
-                        <div style={{ position: "relative", width: "58px", height: "58px", borderRadius: "var(--radius-xs)", overflow: "hidden", flexShrink: 0, background: "var(--bg-studio)", border: "1px solid var(--border-subtle)" }}>
-                          <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
-                        </div>
-                        <div>
-                          <div style={{ fontSize: "14px", fontWeight: 600, color: "var(--color-text-primary)", lineHeight: "1.3" }}>
-                            {type.name}
-                          </div>
-                          <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "3px" }}>
-                            {type.subtitle}
+                <div>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                    Конфигурация и планировка
+                  </h2>
+                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                    Выберите форму расположения модулей в помещении.
+                  </p>
+
+                  <div className="calc-clean-list">
+                    {currentSubtypes.map((type) => {
+                      const isSelected = selectedType === type.id;
+                      return (
+                        <div
+                          key={type.id}
+                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
+                          onClick={() => setSelectedType(type.id)}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                            <div className="calc-radio-indicator" />
+                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "6px", overflow: "hidden", flexShrink: 0 }}>
+                              <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
+                            </div>
+                            <div>
+                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                                {type.name}
+                              </div>
+                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                                {type.subtitle}
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </button>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
               )}
 
-              {/* Step 3: Size */}
+              {/* STEP 3: Length / Dimensions */}
               {step === 3 && (
-              <div>
-                <h3 className="calc-step-title">
-                  Ориентировочный размер
-                </h3>
-                <div className="calc-sizes-grid">
-                  {SIZES.map((size) => {
-                    const isSelected = selectedSize === size.id;
-                    return (
-                      <button
-                        key={size.id}
-                        type="button"
-                        onClick={() => setSelectedSize(size.id)}
-                        style={{
-                          background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          color: "var(--color-text-primary)",
-                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
-                          borderRadius: "var(--radius-sm)",
-                          padding: "14px 10px",
-                          fontWeight: isSelected ? 700 : 500,
-                          fontSize: "14px",
-                          cursor: "pointer",
-                          transition: "var(--transition)",
-                          textAlign: "center",
-                          boxShadow: "none",
-                        }}
-                      >
-                        <div style={{ fontWeight: 700, fontSize: "14px" }}>{size.name}</div>
-                        <div style={{ fontSize: "11px", opacity: isSelected ? 0.95 : 0.65, marginTop: "3px" }}>{size.desc}</div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              )}
+                <div>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                    Ориентировочная длина по стенам
+                  </h2>
+                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                    Укажите примерную длину стен для расчета количества модулей и столешницы.
+                  </p>
 
-              {/* Step 4: Facade Material */}
-              {step === 4 && (
-              <div>
-                <h3 className="calc-step-title">
-                  Материал фасадов и отделки
-                </h3>
-                <div className="calc-materials-grid">
-                  {FACADE_MATERIALS.map((mat) => {
-                    const isSelected = selectedMaterial === mat.id;
-                    return (
-                      <button
-                        key={mat.id}
-                        type="button"
-                        onClick={() => setSelectedMaterial(mat.id)}
-                        style={{
-                          background: isSelected ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isSelected ? "var(--border-green)" : "var(--border-subtle)"}`,
-                          borderRadius: "var(--radius-sm)",
-                          padding: "16px",
-                          fontWeight: isSelected ? 700 : 500,
-                          fontSize: "15px",
-                          color: isSelected ? "var(--color-text-primary)" : "var(--color-text-secondary)",
-                          cursor: "pointer",
-                          transition: "var(--transition)",
-                          textAlign: "left",
-                          boxShadow: "none",
-                        }}
-                      >
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                          <span style={{ fontWeight: 700, color: "var(--color-text-primary)" }}>{mat.name}</span>
-                          <span style={{ fontSize: "10px", color: "var(--color-green-brand)", background: "var(--color-green-dark)", border: "1px solid var(--border-green)", padding: "2px 6px", borderRadius: "var(--radius-xs)" }}>{mat.tier}</span>
-                        </div>
-                        <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "6px" }}>
-                          {mat.desc}
-                        </div>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              )}
-
-              {/* Step 5: Additional Options */}
-              {step === 5 && (
-              <div>
-                <h3 className="calc-step-title">
-                  Дополнительные опции комплектации
-                </h3>
-                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                  {EXTRA_OPTIONS.map((opt) => {
-                    const isChecked = selectedOptions.includes(opt.id);
-                    return (
-                      <button
-                        key={opt.id}
-                        type="button"
-                        onClick={() => toggleOption(opt.id)}
-                        style={{
-                          background: isChecked ? "var(--bg-surface-elevated)" : "var(--bg-surface)",
-                          border: `1px solid ${isChecked ? "var(--border-green)" : "var(--border-subtle)"}`,
-                          borderRadius: "var(--radius-sm)",
-                          padding: "16px 20px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          cursor: "pointer",
-                          transition: "var(--transition)",
-                          textAlign: "left",
-                          width: "100%",
-                          boxShadow: "none",
-                        }}
-                      >
-                        <span style={{ fontSize: "15px", color: "var(--color-text-primary)", fontWeight: isChecked ? 600 : 400 }}>
-                          {opt.name}
-                        </span>
-                        <span
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "10px", marginBottom: "24px" }}>
+                    {SIZES.map((size) => {
+                      const isSelected = selectedSize === size.id;
+                      return (
+                        <button
+                          key={size.id}
+                          type="button"
+                          onClick={() => {
+                            setSelectedSize(size.id);
+                            setCustomMeters(size.meters);
+                          }}
                           style={{
-                            width: "22px",
-                            height: "22px",
-                            borderRadius: "var(--radius-xs)",
-                            border: `2px solid ${isChecked ? "var(--color-green-brand)" : "var(--border-medium)"}`,
-                            background: isChecked ? "var(--color-green-brand)" : "transparent",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            color: "#FFFFFF",
-                            fontWeight: 800,
-                            fontSize: "13px",
-                            flexShrink: 0,
-                            marginLeft: "16px",
+                            background: isSelected ? "rgba(140, 224, 65, 0.08)" : "transparent",
+                            border: `1px solid ${isSelected ? "var(--color-green-brand)" : "rgba(255, 255, 255, 0.1)"}`,
+                            borderRadius: "8px",
+                            padding: "16px 14px",
+                            cursor: "pointer",
+                            textAlign: "left",
+                            transition: "all 0.15s ease",
                           }}
                         >
-                          {isChecked ? "✓" : ""}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              )}
+                          <div style={{ fontWeight: 600, fontSize: "15px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
+                            {size.name}
+                          </div>
+                          <div style={{ fontSize: "12px", color: "#7E8596", marginTop: "4px" }}>
+                            {size.desc}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
 
-              {/* Materials List — кликабельный выбор с плавающим фото */}
-              {step === 5 && (
-              <div className="calc-materials-spec-box">
-                <h4 className="calc-materials-spec-title">
-                  Материалы и покрытия
-                </h4>
-                <p style={{ fontSize: "12px", color: "var(--color-text-muted)", margin: "0 0 6px" }}>
-                  Нажмите на материал, чтобы выбрать его для расчёта
-                </p>
-                <div className="calc-materials-spec-list">
-                  {MATERIALS.map((mat) => {
-                    const isFacade = mat.id !== "stopsol";
-                    const isSelected = isFacade
-                      ? selectedMaterial === (mat.id === "velvet" ? "plastic" : mat.id)
-                      : selectedOptions.includes("stopsol");
-                    return (
+                  {/* Manual adjustment counter */}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
+                    <span style={{ fontSize: "14px", color: "#8C92A4" }}>
+                      Точная длина:
+                    </span>
+                    <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
                       <button
-                        key={mat.id}
                         type="button"
-                        className={`calc-mat-spec-row ${isSelected ? "is-selected" : ""}`}
-                        onClick={() => {
-                          if (mat.id === "stopsol") {
-                            if (!selectedOptions.includes("stopsol")) toggleOption("stopsol");
-                          } else {
-                            setSelectedMaterial(mat.id === "velvet" ? "plastic" : mat.id);
-                          }
-                        }}
-                        onMouseEnter={(e) => {
-                          const r = e.currentTarget.getBoundingClientRect();
-                          setMatPreview({
-                            src: mat.image,
-                            x: Math.min(r.right + 24, window.innerWidth - 260),
-                            y: r.top - 40,
-                          });
-                        }}
-                        onMouseMove={(e) => {
-                          setMatPreview((prev) =>
-                            prev ? { ...prev, x: e.clientX + 28, y: e.clientY - 80 } : prev
-                          );
-                        }}
-                        onMouseLeave={() => setMatPreview(null)}
+                        onClick={() => setCustomMeters((prev) => Math.max(1.8, +(prev - 0.2).toFixed(1)))}
                         style={{
-                          textAlign: "left",
+                          width: "36px",
+                          height: "36px",
+                          borderRadius: "6px",
+                          background: "rgba(255, 255, 255, 0.06)",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
+                          color: "#FFFFFF",
+                          fontSize: "18px",
                           cursor: "pointer",
-                          width: "100%",
-                          transition: "var(--transition)",
                         }}
                       >
-                        <div className="calc-mat-thumb">
-                          <Image
-                            src={mat.image}
-                            alt={mat.title}
-                            fill
-                            sizes="48px"
-                            style={{ objectFit: "cover" }}
-                          />
-                        </div>
-                        <div className="calc-mat-info">
-                          <span className="calc-mat-name">
-                            {mat.title}
-                            {isSelected && (
-                              <span style={{ color: "var(--color-green-brand)", fontSize: "11px", fontWeight: 600, marginLeft: "10px", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                                Выбрано
-                              </span>
-                            )}
-                          </span>
-                          <span className="calc-mat-prop">{mat.description}</span>
-                        </div>
-                        <span className="calc-mat-tag">{mat.tag}</span>
+                        –
                       </button>
-                    );
-                  })}
+                      <span style={{ fontSize: "20px", fontWeight: 700, color: "#FFFFFF", minWidth: "60px", textAlign: "center" }}>
+                        {customMeters.toFixed(1)} м
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setCustomMeters((prev) => Math.min(7.0, +(prev + 0.2).toFixed(1)))}
+                        style={{
+                          width: "36px",
+                          height: "36px",
+                          borderRadius: "6px",
+                          background: "rgba(255, 255, 255, 0.06)",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
+                          color: "#FFFFFF",
+                          fontSize: "18px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
               )}
 
-              {/* Wizard navigation */}              <div className="calc-nav-row">
+              {/* STEP 4: Facade Materials */}
+              {step === 4 && (
+                <div>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                    Материал фасадов
+                  </h2>
+                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                    Материалы обрабатываются на ЧПУ-станках с влагостойким кромлением PUR-клеем.
+                  </p>
+
+                  <div className="calc-clean-list">
+                    {FACADE_MATERIALS.map((mat) => {
+                      const isSelected = selectedMaterial === mat.id;
+                      return (
+                        <div
+                          key={mat.id}
+                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
+                          onClick={() => setSelectedMaterial(mat.id)}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                            <div className="calc-radio-indicator" />
+                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "6px", overflow: "hidden", flexShrink: 0 }}>
+                              <Image src={mat.image} alt={mat.name} fill style={{ objectFit: "cover" }} />
+                            </div>
+                            <div>
+                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                                {mat.name}
+                              </div>
+                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                                {mat.desc}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 5: Options & Hardware */}
+              {step === 5 && (
+                <div>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                    Комплектация и оснащение
+                  </h2>
+                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                    Отметьте необходимые инженерные решения для долговечности и комфорта.
+                  </p>
+
+                  <div className="calc-clean-list">
+                    {EXTRA_OPTIONS.map((opt) => {
+                      const isSelected = selectedOptions.includes(opt.id);
+                      return (
+                        <div
+                          key={opt.id}
+                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
+                          onClick={() => toggleOption(opt.id)}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                            <div className="calc-checkbox-indicator">
+                              {isSelected && (
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                  <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                              )}
+                            </div>
+                            <div>
+                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                                {opt.name}
+                              </div>
+                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                                {opt.desc}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Step Navigation Buttons */}
+              <div style={{ display: "flex", gap: "12px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
                 {step > 1 && (
-                  <button type="button" className="btn btn-glass" onClick={() => setStep(step - 1)}>
+                  <button
+                    type="button"
+                    className="btn btn-glass"
+                    onClick={() => setStep((s) => s - 1)}
+                  >
                     ← Назад
                   </button>
                 )}
                 {step < 5 ? (
-                  <button type="button" className="btn btn-green" onClick={() => setStep(step + 1)}>
-                    Далее →
+                  <button
+                    type="button"
+                    className="btn btn-green"
+                    onClick={() => setStep((s) => s + 1)}
+                  >
+                    Далее: {CALC_STEPS[step]} →
                   </button>
                 ) : (
-                  <Link href="#measure" className="btn btn-green">
-                    Записаться на замер по этой комплектации →
-                  </Link>
+                  <a href="#measure" className="btn btn-green">
+                    Зафиксировать расчет и вызвать замерщика →
+                  </a>
                 )}
               </div>
             </div>
 
-            {/* Right Column: Sticky Summary & Calculation Card */}
+            {/* Right Column: Lightweight Flat Estimate Sidebar */}
             <div className="calc-summary-card">
               <div>
-                <span className="section-kicker" style={{ marginBottom: "6px" }}>
-                  Сформированная спецификация
-                </span>
-                <h3 style={{ fontSize: "22px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "6px" }}>
-                  {calculation.complexity}
-                </h3>
-                <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: "1.5" }}>
-                  Прямой расчет сметы на собственном производстве на ул. Трефолева, 1П с учетом точной геометрии стен.
-                </p>
-              </div>
-
-              {/* Preliminary Price */}
-              <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "18px" }}>
-                <div style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--color-text-muted)", marginBottom: "8px" }}>
-                  Предварительная стоимость
+                <div style={{ fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8C92A4", marginBottom: "8px" }}>
+                  Ориентир стоимости
                 </div>
-                <div style={{ fontFamily: "var(--font-serif)", fontSize: "30px", fontWeight: 500, color: "var(--color-text-primary)", lineHeight: 1.15, marginBottom: "8px" }}>
+                <div style={{ fontFamily: "var(--font-main)", fontSize: "28px", fontWeight: 700, color: "var(--color-green-brand)", lineHeight: 1.15, marginBottom: "8px", fontVariantNumeric: "tabular-nums lining-nums", letterSpacing: "-0.02em" }}>
                   {calculation.priceLow.toLocaleString("ru-RU")} — {calculation.priceHigh.toLocaleString("ru-RU")} ₽
                 </div>
-                <div style={{ fontSize: "12px", color: "var(--color-text-muted)", lineHeight: "1.5" }}>
-                  Корпус и фасады, без техники и монтажа. Точная смета — после замера инженером.
+                <div style={{ fontSize: "12.5px", color: "#7E8596", lineHeight: "1.5" }}>
+                  Прямой расчет на ЧПУ-производстве в СПб. Включает раскрой, кромление PUR-клеем, фасады и фурнитуру. Без салонных наценок.
                 </div>
               </div>
 
-              {/* Specification Breakdown */}
-              <div style={{ borderTop: "1px solid var(--border-subtle)", paddingTop: "18px" }}>
-                <div style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--color-text-muted)", marginBottom: "12px" }}>
-                  Параметры заказа
+              {/* Specification Parameters */}
+              <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "16px" }}>
+                <div style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8C92A4", marginBottom: "12px" }}>
+                  Параметры спецификации
                 </div>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "8px", fontSize: "13px", color: "var(--color-text-secondary)" }}>
-                  <li style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span>Тип мебели:</span>
-                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.furnitureName}</strong>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", fontSize: "13.5px" }}>
+                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
+                    <span style={{ color: "#7E8596" }}>Тип:</span>
+                    <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.furnitureName}</strong>
                   </li>
-                  <li style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span>Размер:</span>
-                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.sizeName}</strong>
+                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
+                    <span style={{ color: "#7E8596" }}>Длина по стенам:</span>
+                    <strong style={{ color: "#FFFFFF" }}>{calculation.customMeters} м</strong>
                   </li>
-                  <li style={{ display: "flex", justifyContent: "space-between" }}>
-                    <span>Фасады:</span>
-                    <strong style={{ color: "var(--color-text-primary)" }}>{calculation.materialName}</strong>
+                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
+                    <span style={{ color: "#7E8596" }}>Фасады:</span>
+                    <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.materialName}</strong>
                   </li>
                   {calculation.optionsNames.length > 0 && (
-                    <li style={{ borderTop: "1px dashed var(--border-subtle)", paddingTop: "8px", marginTop: "4px" }}>
-                      <span style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "block", marginBottom: "6px" }}>
-                        Выбранные опции ({calculation.optionsCount}):
+                    <li style={{ borderTop: "1px solid rgba(255, 255, 255, 0.06)", paddingTop: "10px", marginTop: "2px" }}>
+                      <span style={{ color: "#7E8596", display: "block", marginBottom: "6px", fontSize: "12px" }}>
+                        Выбранные опции:
                       </span>
-                      <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
-                        {calculation.optionsNames.map((n, i) => (
-                          <span key={i} className="spec-pill" style={{ fontSize: "11px" }}>
-                            {n}
-                          </span>
-                        ))}
+                      <div style={{ fontSize: "12.5px", color: "#C2C7D4", lineHeight: "1.5" }}>
+                        {calculation.optionsNames.join(", ")}
                       </div>
                     </li>
                   )}
@@ -727,33 +673,23 @@ export default function CalculatorPage() {
               </div>
 
               {/* Action Buttons */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingTop: "6px" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingTop: "4px" }}>
                 <a
-                  href={`tel:${SITE_CONFIG.phoneRaw}`}
+                  href="#measure"
                   className="btn btn-green"
-                  style={{ width: "100%", justifyContent: "center", gap: "8px" }}
+                  style={{ width: "100%", justifyContent: "center" }}
                 >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  Обсудить по телефону
+                  Записаться на бесплатный замер
                 </a>
                 <a
                   href={SITE_CONFIG.vkUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-glass"
-                  style={{ width: "100%", justifyContent: "center", gap: "10px" }}
+                  style={{ width: "100%", justifyContent: "center", gap: "8px" }}
                 >
                   <VkIcon />
-                  Отправить спецификацию в VK
-                </a>
-                <a
-                  href="#measure"
-                  className="btn btn-glass"
-                  style={{ width: "100%", justifyContent: "center" }}
-                >
-                  Записаться на бесплатный замер
+                  Обсудить спецификацию в VK
                 </a>
                 <button
                   type="button"
@@ -761,7 +697,7 @@ export default function CalculatorPage() {
                   style={{ width: "100%", justifyContent: "center" }}
                   onClick={shareLink}
                 >
-                  {copied ? "Ссылка скопирована ✓" : "Скопировать ссылку на комплектацию"}
+                  {copied ? "Ссылка скопирована ✓" : "Скопировать ссылку"}
                 </button>
               </div>
             </div>
@@ -775,12 +711,12 @@ export default function CalculatorPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <span className="section-kicker">Бесплатный выезд мастера</span>
+                <span className="section-kicker">Бесплатный выезд инженера</span>
                 <h2 className="final-headline">
-                  Зафиксируйте параметры и вызовите инженера
+                  Зафиксируйте расчет и вызовите специалиста на замер
                 </h2>
                 <p className="final-desc">
-                  Специалист студии приедет с образцами материалов (Fenix, эмаль по RAL, шпон дуба), выполнит точный лазерный замер и рассчитает итоговую спецификацию на ул. Трефолева.
+                  Ведущий инженер студии приедет в Санкт-Петербурге с полным чемоданом образцов (Fenix NTM, эмаль по RAL, шпон дуба, камень), выполнит лазерный замер стен с учетом розеток и вентиляции и подготовит проект под ваши размеры.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -812,16 +748,6 @@ export default function CalculatorPage() {
           </div>
         </div>
       </section>
-
-      {/* Плавающее фото материала (FlowingMenu) */}
-      {matPreview && (
-        <img
-          src={matPreview.src}
-          alt=""
-          className="floating-mat"
-          style={{ left: matPreview.x, top: matPreview.y }}
-        />
-      )}
     </div>
   );
 }

@@ -619,14 +619,14 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="workshop-location-caption">
-                ул. Трефолева, 1П · м. Нарвская
+                Собственное производство в Санкт-Петербурге · 850 м²
               </div>
             </div>
 
             {/* Right Column: Editorial Details */}
             <div className="workshop-col-content">
               <h2 className="section-title">
-                Станочный цех на Трефолева
+                Собственное станочное производство
               </h2>
               <p className="workshop-lead">
                 Производим сами — поэтому отвечаем за качество на каждом этапе, от раскроя плиты до сборки изделия.
@@ -768,42 +768,33 @@ export default function HomePage() {
 
               <div className="final-info-block">
                 <div>
-                  <h3 className="info-block-title">Производство на Трефолева</h3>
+                  <h3 className="info-block-title">Офис и собственное производство</h3>
                   <div className="contact-items-list">
                     <div className="contact-item-row">
-                      <div className="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                      </div>
                       <div className="contact-meta">
-                        <span className="contact-label">Адрес цеха</span>
-                        <strong className="contact-value">{SITE_CONFIG.address}</strong>
-                        <span className="contact-sub">м. «Нарвская» / «Кировский завод»</span>
+                        <span className="contact-label">Офис студии для встреч</span>
+                        <strong className="contact-value">площадь Стачек, 9, этаж 4</strong>
+                        <span className="contact-sub">{SITE_CONFIG.metro} · консультации и выбор образцов по записи</span>
                       </div>
                     </div>
 
                     <div className="contact-item-row">
-                      <div className="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <polyline points="12 6 12 12 16 14" />
-                        </svg>
+                      <div className="contact-meta">
+                        <span className="contact-label">Собственное производство</span>
+                        <strong className="contact-value">Цех 850 м² в Санкт-Петербурге</strong>
+                        <span className="contact-sub">Закрытая станочная площадка с ЧПУ</span>
                       </div>
+                    </div>
+
+                    <div className="contact-item-row">
                       <div className="contact-meta">
                         <span className="contact-label">Режим работы</span>
                         <strong className="contact-value">{SITE_CONFIG.workHours}</strong>
-                        <span className="contact-sub">Посещение производства по предварительной записи</span>
+                        <span className="contact-sub">Бесплатный выезд инженера с чемоданом образцов</span>
                       </div>
                     </div>
 
                     <div className="contact-item-row">
-                      <div className="contact-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                        </svg>
-                      </div>
                       <div className="contact-meta">
                         <span className="contact-label">Прямой телефон</span>
                         <a
@@ -817,10 +808,6 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "14px" }}>
-                  Бесплатная парковка на закрытой территории для посетителей.
                 </div>
               </div>
             </div>

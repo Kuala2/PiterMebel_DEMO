@@ -55,22 +55,18 @@ export default function ProjectsPortfolioPage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header">
+      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
           <h1 className="subpage-hero-title">Реализованные объекты студии</h1>
           <p className="subpage-hero-caption">
-            {PROJECTS.length} объектов · всё изготовлено в нашем цеху на Трефолева
+            Собственное производство полного цикла в Санкт-Петербурге
           </p>
         </div>
       </section>
 
-      {/* 2. Subtitle & Filter Tabs Bar (Below Banner) */}
-      <section className="subpage-intro-bar">
+      {/* 2. Filter Tabs Bar (Under the line) */}
+      <section className="subpage-intro-bar" style={{ paddingTop: "22px", paddingBottom: "22px", backgroundColor: "var(--bg-dark)", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
-          <p className="subpage-intro-desc">
-            Мебель, изготовленная по индивидуальным размерам на собственном производстве на улице Трефолева: кухни, гардеробные, зеркальные шкафы, стеновые панели и мебель для бизнеса.
-          </p>
-
           <div className="catalog-tabs-bar" style={{ marginBottom: 0 }}>
             {filterTabs.map((tab) => (
               <button
@@ -106,7 +102,7 @@ export default function ProjectsPortfolioPage() {
                       alt={project.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-                      className="card-img-slide"
+                      className="card-img-slide is-active"
                     />
                     <span className="card-badge-top">{project.type}</span>
 
