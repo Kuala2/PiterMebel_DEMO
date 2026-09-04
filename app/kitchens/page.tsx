@@ -5,8 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
+import PromoBanner from "@/components/PromoBanner";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
+import { PROMOS } from "@/data/promos";
 
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -43,10 +45,13 @@ export default function KitchensCatalogPage() {
         <div className="container">
           <h1 className="subpage-hero-title">Кухни студии «ПитерМебель»</h1>
           <p className="subpage-hero-caption">
-            Каждая модель изготавливается по индивидуальным размерам
+            Каждая модель изготавливается по индивидуальным размерам на собственном производстве в Санкт-Петербурге
           </p>
         </div>
       </section>
+
+      {/* 1.1. Special Gift Banner: Схема электрики в подарок */}
+      <PromoBanner offer={PROMOS.kitchens} />
 
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
@@ -78,8 +83,8 @@ export default function KitchensCatalogPage() {
             key={kitchen.slug}
             style={{
               backgroundColor: isDark ? "var(--bg-dark)" : "var(--bg-studio)",
-              paddingTop: "70px",
-              paddingBottom: "70px",
+              paddingTop: "112px",
+              paddingBottom: "112px",
             }}
           >
             <div className="container">
@@ -199,7 +204,7 @@ export default function KitchensCatalogPage() {
                       </div>
                       <div className="spec-row">
                         <span className="spec-row-label">Кромление</span>
-                        <span className="spec-row-val">Влагостойкий PUR-шов</span>
+                        <span className="spec-row-val">Влагостойкая кромкооблицовка</span>
                       </div>
                     </div>
                   </Link>
@@ -243,7 +248,7 @@ export default function KitchensCatalogPage() {
                     {SITE_CONFIG.phone}
                   </a>
                   <a
-                    href={SITE_CONFIG.vkUrl}
+                    href={SITE_CONFIG.vkImUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-glass"

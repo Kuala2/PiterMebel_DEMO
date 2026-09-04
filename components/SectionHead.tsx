@@ -19,7 +19,7 @@ export default function SectionHead({
     <div className="section-head-row">
       <div>
         {kicker && (
-          <div style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-green-brand)", marginBottom: "8px" }}>
+          <div style={{ fontSize: "13.5px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-green-brand)", marginBottom: "8px" }}>
             {kicker}
           </div>
         )}

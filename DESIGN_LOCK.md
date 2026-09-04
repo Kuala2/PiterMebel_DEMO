@@ -57,15 +57,18 @@
 | Элемент / Селектор | Шрифт | Размер (Desktop) | Размер (Mobile ≤768px) | Начертание | Line-Height | Регистр |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Hero Slogan (H1)** (`.hero-slogan-title`) | Serif | `clamp(38px, 6.2vw, 84px)` | `36px` | `400` | `1.08` | Sentence case |
-| **Hero Subtitle** (`.hero-subtitle`) | Sans | `17px` | `14px` | `400` | `1.55` | Sentence case |
+| **Hero Subtitle** (`.hero-subtitle`) | Sans | `17.5px` | `15px` | `400` | `1.6` | Sentence case |
 | **Section Title (H2)** (`.section-title`) | Serif | `clamp(28px, 3.8vw, 42px)` | `26px` | `500` | `1.15` | Sentence case |
-| **Subpage Hero Title (H1)** (`.subpage-hero-title`) | Serif | `clamp(34px, 4.5vw, 50px)` | `30px` | `500` | `1.18` | Sentence case |
-| **Card Title (H3)** (`.card-title`) | Serif | `22px` | `18px` | `600` | `1.25` | Sentence case |
-| **Bento Title (H3)** (`.bento-card-title`) | Serif | `20px` | `17px` | `600` | `1.25` | Sentence case |
-| **Stat Number** (`.stat-num`) | Serif | `40px` | `32px` | `500` | `1.0` | Lining numbers |
-| **Buttons** (`.btn`, `.btn-green`, `.btn-glass`) | Sans | `13px` | `12px` | `600` | `1.0` | Sentence case |
-| **Nav Links** (`.nav-link`) | Sans | `12.5px` | `15px` | `600` | `1.0` | Sentence case |
-| **Tags & Badges** (`.card-badge-top`, `.mat-tag-pill`) | Sans | `11px` | `10px` | `600` | `1.0` | Uppercase (0.06em) |
+| **Subpage Hero Title (H1)** (`.subpage-hero-title`) | Serif | `clamp(34px, 4.2vw, 48px)` | `30px` | `500` | `1.18` | Sentence case |
+| **Subpage Hero Caption** (`.subpage-hero-caption`) | Sans | `16.5px` | `14.5px` | `400` | `1.55` | Sentence case |
+| **Card Title (H3)** (`.card-title`) | Sans | `20px` | `18px` | `600` | `1.3` | Sentence case |
+| **Body / Paragraphs** (`body`, `p`, `.card-desc`) | Sans | `16px` | `15px` | `400` | `1.65` | Sentence case |
+| **Buttons** (`.btn`, `.btn-green`, `.btn-glass`) | Sans | `14.5px` | `13.5px` | `600` | `1.0` | Sentence case |
+| **Nav Links** (`.nav-link`) | Sans | `13.5px` | `16px` | `600` | `1.0` | Uppercase (0.05em) |
+| **Header Phone** (`.header-phone-link`) | Sans | `15.5px` | `14px` | `600` | `1.0` | Numbers |
+| **Editorial Guarantees Title** (`.guarantee-title`) | Sans | `18.5px` | `16px` | `600` | `1.3` | Sentence case |
+| **Editorial Guarantees Desc** (`.guarantee-desc`) | Sans | `15px` | `14px` | `400` | `1.6` | Sentence case |
+| **Tags & Badges** (`.card-badge-top`, `.mat-tag-pill`) | Sans | `12px` | `11px` | `600` | `1.0` | Uppercase (0.06em) |
 
 ---
 

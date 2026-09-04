@@ -9,7 +9,7 @@ export default function StickyCTA() {
         Позвонить
       </a>
       <Link href="/contacts#measure" className="btn btn-glass">
-        Записаться на замер
+        Консультация
       </Link>
     </div>
   );

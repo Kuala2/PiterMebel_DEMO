@@ -328,7 +328,7 @@ export default function CalculatorPage() {
       </section>
 
       {/* 2. Main Configurator Section */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "40px", paddingBottom: "80px" }}>
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "64px", paddingBottom: "112px" }}>
         <div className="container">
           <div className="calc-layout-grid">
             {/* Left Column: Interactive Steps (Tile-free, minimal & clear) */}
@@ -355,10 +355,10 @@ export default function CalculatorPage() {
               {/* STEP 1: Main Category */}
               {step === 1 && (
                 <div>
-                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                     Что будем проектировать?
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
                     Выберите интерьерное направление мебели.
                   </p>
 
@@ -374,10 +374,10 @@ export default function CalculatorPage() {
                           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                             <div className="calc-radio-indicator" />
                             <div>
-                              <div style={{ fontSize: "15.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {cat.name}
                               </div>
-                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {cat.desc}
                               </div>
                             </div>
@@ -392,10 +392,10 @@ export default function CalculatorPage() {
               {/* STEP 2: Subtype & Layout */}
               {step === 2 && (
                 <div>
-                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                     Конфигурация и планировка
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
                     Выберите форму расположения модулей в помещении.
                   </p>
 
@@ -410,14 +410,14 @@ export default function CalculatorPage() {
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                             <div className="calc-radio-indicator" />
-                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "6px", overflow: "hidden", flexShrink: 0 }}>
+                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "0px", overflow: "hidden", flexShrink: 0 }}>
                               <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
                             </div>
                             <div>
-                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {type.name}
                               </div>
-                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {type.subtitle}
                               </div>
                             </div>
@@ -432,10 +432,10 @@ export default function CalculatorPage() {
               {/* STEP 3: Length / Dimensions */}
               {step === 3 && (
                 <div>
-                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                     Ориентировочная длина по стенам
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
                     Укажите примерную длину стен для расчета количества модулей и столешницы.
                   </p>
 
@@ -453,17 +453,17 @@ export default function CalculatorPage() {
                           style={{
                             background: isSelected ? "rgba(140, 224, 65, 0.08)" : "transparent",
                             border: `1px solid ${isSelected ? "var(--color-green-brand)" : "rgba(255, 255, 255, 0.1)"}`,
-                            borderRadius: "8px",
+                            borderRadius: "0px",
                             padding: "16px 14px",
                             cursor: "pointer",
                             textAlign: "left",
                             transition: "all 0.15s ease",
                           }}
                         >
-                          <div style={{ fontWeight: 600, fontSize: "15px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
+                          <div style={{ fontWeight: 600, fontSize: "16.5px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
                             {size.name}
                           </div>
-                          <div style={{ fontSize: "12px", color: "#7E8596", marginTop: "4px" }}>
+                          <div style={{ fontSize: "13.5px", color: "#A0A7B5", marginTop: "4px" }}>
                             {size.desc}
                           </div>
                         </button>
@@ -473,7 +473,7 @@ export default function CalculatorPage() {
 
                   {/* Manual adjustment counter */}
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
-                    <span style={{ fontSize: "14px", color: "#8C92A4" }}>
+                    <span style={{ fontSize: "15.5px", color: "#A6ACB8" }}>
                       Точная длина:
                     </span>
                     <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
@@ -481,11 +481,11 @@ export default function CalculatorPage() {
                         type="button"
                         onClick={() => setCustomMeters((prev) => Math.max(1.8, +(prev - 0.2).toFixed(1)))}
                         style={{
-                          width: "36px",
-                          height: "36px",
-                          borderRadius: "6px",
+                          width: "38px",
+                          height: "38px",
+                          borderRadius: "0px",
                           background: "rgba(255, 255, 255, 0.06)",
-                          border: "1px solid rgba(255, 255, 255, 0.1)",
+                          border: "1px solid rgba(255, 255, 255, 0.12)",
                           color: "#FFFFFF",
                           fontSize: "18px",
                           cursor: "pointer",
@@ -493,18 +493,18 @@ export default function CalculatorPage() {
                       >
                         –
                       </button>
-                      <span style={{ fontSize: "20px", fontWeight: 700, color: "#FFFFFF", minWidth: "60px", textAlign: "center" }}>
+                      <span style={{ fontSize: "22px", fontWeight: 700, color: "#FFFFFF", minWidth: "64px", textAlign: "center" }}>
                         {customMeters.toFixed(1)} м
                       </span>
                       <button
                         type="button"
                         onClick={() => setCustomMeters((prev) => Math.min(7.0, +(prev + 0.2).toFixed(1)))}
                         style={{
-                          width: "36px",
-                          height: "36px",
-                          borderRadius: "6px",
+                          width: "38px",
+                          height: "38px",
+                          borderRadius: "0px",
                           background: "rgba(255, 255, 255, 0.06)",
-                          border: "1px solid rgba(255, 255, 255, 0.1)",
+                          border: "1px solid rgba(255, 255, 255, 0.12)",
                           color: "#FFFFFF",
                           fontSize: "18px",
                           cursor: "pointer",
@@ -520,11 +520,11 @@ export default function CalculatorPage() {
               {/* STEP 4: Facade Materials */}
               {step === 4 && (
                 <div>
-                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                     Материал фасадов
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
-                    Материалы обрабатываются на ЧПУ-станках с влагостойким кромлением PUR-клеем.
+                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
+                    Качественные плитные материалы с влагостойкой герметичной обработкой торцов деталей.
                   </p>
 
                   <div className="calc-clean-list">
@@ -538,14 +538,14 @@ export default function CalculatorPage() {
                         >
                           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                             <div className="calc-radio-indicator" />
-                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "6px", overflow: "hidden", flexShrink: 0 }}>
+                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "0px", overflow: "hidden", flexShrink: 0 }}>
                               <Image src={mat.image} alt={mat.name} fill style={{ objectFit: "cover" }} />
                             </div>
                             <div>
-                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {mat.name}
                               </div>
-                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {mat.desc}
                               </div>
                             </div>
@@ -560,10 +560,10 @@ export default function CalculatorPage() {
               {/* STEP 5: Options & Hardware */}
               {step === 5 && (
                 <div>
-                  <h2 style={{ fontSize: "20px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
+                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
                     Комплектация и оснащение
                   </h2>
-                  <p style={{ fontSize: "14px", color: "#8C92A4", marginBottom: "20px" }}>
+                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
                     Отметьте необходимые инженерные решения для долговечности и комфорта.
                   </p>
 
@@ -585,10 +585,10 @@ export default function CalculatorPage() {
                               )}
                             </div>
                             <div>
-                              <div style={{ fontSize: "15px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {opt.name}
                               </div>
-                              <div style={{ fontSize: "13px", color: "#7E8596", marginTop: "2px" }}>
+                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {opt.desc}
                               </div>
                             </div>
@@ -621,7 +621,7 @@ export default function CalculatorPage() {
                   </button>
                 ) : (
                   <a href="#measure" className="btn btn-green">
-                    Зафиксировать расчет и вызвать замерщика →
+                    Отправить конфигурацию на расчет и консультацию →
                   </a>
                 )}
               </div>
@@ -630,41 +630,41 @@ export default function CalculatorPage() {
             {/* Right Column: Lightweight Flat Estimate Sidebar */}
             <div className="calc-summary-card">
               <div>
-                <div style={{ fontSize: "11.5px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8C92A4", marginBottom: "8px" }}>
+                <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A0A7B5", marginBottom: "8px" }}>
                   Ориентир стоимости
                 </div>
-                <div style={{ fontFamily: "var(--font-main)", fontSize: "28px", fontWeight: 700, color: "var(--color-green-brand)", lineHeight: 1.15, marginBottom: "8px", fontVariantNumeric: "tabular-nums lining-nums", letterSpacing: "-0.02em" }}>
+                <div style={{ fontFamily: "var(--font-main)", fontSize: "30px", fontWeight: 700, color: "var(--color-green-brand)", lineHeight: 1.15, marginBottom: "8px", fontVariantNumeric: "tabular-nums lining-nums", letterSpacing: "-0.02em" }}>
                   {calculation.priceLow.toLocaleString("ru-RU")} — {calculation.priceHigh.toLocaleString("ru-RU")} ₽
                 </div>
-                <div style={{ fontSize: "12.5px", color: "#7E8596", lineHeight: "1.5" }}>
-                  Прямой расчет на ЧПУ-производстве в СПб. Включает раскрой, кромление PUR-клеем, фасады и фурнитуру. Без салонных наценок.
+                <div style={{ fontSize: "14px", color: "#A0A7B5", lineHeight: "1.55" }}>
+                  Ориентировочный расчет на собственном производстве в СПб (Петергофское ш., 73). Включает чистовой раскрой, обработку торцов, фасады и фурнитуру. Точная смета согласуется с технологом.
                 </div>
               </div>
 
               {/* Specification Parameters */}
               <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "16px" }}>
-                <div style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8C92A4", marginBottom: "12px" }}>
+                <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A0A7B5", marginBottom: "12px" }}>
                   Параметры спецификации
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px", fontSize: "13.5px" }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px", fontSize: "14.5px" }}>
                   <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#7E8596" }}>Тип:</span>
+                    <span style={{ color: "#8E96A5" }}>Тип:</span>
                     <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.furnitureName}</strong>
                   </li>
                   <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#7E8596" }}>Длина по стенам:</span>
+                    <span style={{ color: "#8E96A5" }}>Длина по стенам:</span>
                     <strong style={{ color: "#FFFFFF" }}>{calculation.customMeters} м</strong>
                   </li>
                   <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#7E8596" }}>Фасады:</span>
+                    <span style={{ color: "#8E96A5" }}>Фасады:</span>
                     <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.materialName}</strong>
                   </li>
                   {calculation.optionsNames.length > 0 && (
                     <li style={{ borderTop: "1px solid rgba(255, 255, 255, 0.06)", paddingTop: "10px", marginTop: "2px" }}>
-                      <span style={{ color: "#7E8596", display: "block", marginBottom: "6px", fontSize: "12px" }}>
+                      <span style={{ color: "#8E96A5", display: "block", marginBottom: "6px", fontSize: "13px" }}>
                         Выбранные опции:
                       </span>
-                      <div style={{ fontSize: "12.5px", color: "#C2C7D4", lineHeight: "1.5" }}>
+                      <div style={{ fontSize: "13.5px", color: "#C2C7D4", lineHeight: "1.5" }}>
                         {calculation.optionsNames.join(", ")}
                       </div>
                     </li>
@@ -679,10 +679,10 @@ export default function CalculatorPage() {
                   className="btn btn-green"
                   style={{ width: "100%", justifyContent: "center" }}
                 >
-                  Записаться на бесплатный замер
+                  Записаться на консультацию
                 </a>
                 <a
-                  href={SITE_CONFIG.vkUrl}
+                  href={SITE_CONFIG.vkImUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-glass"
@@ -711,12 +711,11 @@ export default function CalculatorPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <span className="section-kicker">Бесплатный выезд инженера</span>
                 <h2 className="final-headline">
-                  Зафиксируйте расчет и вызовите специалиста на замер
+                  Зафиксируйте предварительный расчет с технологом
                 </h2>
                 <p className="final-desc">
-                  Ведущий инженер студии приедет в Санкт-Петербурге с полным чемоданом образцов (Fenix NTM, эмаль по RAL, шпон дуба, камень), выполнит лазерный замер стен с учетом розеток и вентиляции и подготовит проект под ваши размеры.
+                  Специалист студии свяжется с вами для обсуждения деталей конфигурации, согласует предварительную смету и пригласит в офис на площади Стачек, 9 (офис 407, по записи) для выбора оттенков эмалей, фактур шпона и фурнитуры.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -730,7 +729,7 @@ export default function CalculatorPage() {
                     {SITE_CONFIG.phone}
                   </a>
                   <a
-                    href={SITE_CONFIG.vkUrl}
+                    href={SITE_CONFIG.vkImUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-glass"

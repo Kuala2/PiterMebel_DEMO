@@ -10,34 +10,34 @@ interface CtaBlockProps {
 
 export default function CtaBlock({
   title = "Готовы обсудить ваш проект мебели?",
-  subtitle = "Запишитесь на бесплатный выезд мастера по Санкт-Петербургу для снятия точных размеров помещения.",
-  buttonText = "Записаться на замер",
-  buttonHref = "#measure",
+  subtitle = "Запишитесь на консультацию в офис на пл. Стачек, 9 или отправьте размеры для предварительного расчета сметы.",
+  buttonText = "Записаться на консультацию",
+  buttonHref = "/contacts#measure",
 }: CtaBlockProps) {
   return (
     <div
       style={{
         background: "var(--bg-surface-elevated)",
         border: "1px solid var(--border-subtle)",
-        borderRadius: "var(--radius-md)",
-        padding: "48px 36px",
-        textAlign: "center",
-        maxWidth: "800px",
+        borderRadius: "0px",
+        padding: "48px 40px",
+        textAlign: "left",
+        maxWidth: "920px",
         margin: "0 auto",
       }}
     >
-      <h2 className="section-title" style={{ marginBottom: "16px" }}>
+      <h2 className="section-title" style={{ marginBottom: "16px", textAlign: "left" }}>
         {title}
       </h2>
-      <p className="section-subtitle" style={{ margin: "0 auto 28px", maxWidth: "600px" }}>
+      <p className="section-subtitle" style={{ margin: "0 0 28px", maxWidth: "680px", textAlign: "left" }}>
         {subtitle}
       </p>
-      <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: "16px", justifyContent: "flex-start", flexWrap: "wrap" }}>
         <Link href={buttonHref} className="btn btn-green">
           {buttonText}
         </Link>
         <a
-          href={SITE_CONFIG.vkUrl}
+          href={SITE_CONFIG.vkImUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-glass"

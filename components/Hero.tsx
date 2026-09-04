@@ -101,10 +101,10 @@ export default function Hero() {
               </p>
               <div className="hero-cta-wrap" ref={ctaRef}>
                 <Link href="/calculator" className="btn btn-green magnetic">
-                  Рассчитать свой
+                  Рассчитать проект
                 </Link>
-                <Link href="/projects" className="btn btn-glass magnetic">
-                  Смотреть работы
+                <Link href="/kitchens" className="btn btn-glass magnetic">
+                  Смотреть каталог
                 </Link>
               </div>
             </div>
@@ -136,10 +136,10 @@ export default function Hero() {
 
             <div className="hero-stat-item">
               <div className="stat-num">
-                <CountUp to={850} /> <span className="stat-unit">м²</span>
+                <CountUp to={100} /> <span className="stat-unit">%</span>
               </div>
               <div className="stat-text">
-                Собственный станочный цех в Санкт-Петербурге
+                Собственное производство в СПб (Петергофское ш., 73)
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export default function Hero() {
                 0 <span className="stat-unit">₽</span>
               </div>
               <div className="stat-text">
-                Бесплатный выезд мастера с образцами по СПб
+                Схема электрики и розеток в подарок при заказе кухни
               </div>
             </div>
           </div>

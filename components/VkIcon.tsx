@@ -1,4 +1,4 @@
-export default function VkIcon({ className = "", size = 20 }: { className?: string; size?: number }) {
+export default function VkIcon({ className = "", size = 18 }: { className?: string; size?: number }) {
   return (
     <svg
       className={className}

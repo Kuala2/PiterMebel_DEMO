@@ -23,8 +23,9 @@ export default function Footer() {
             <p className="footer-desc" style={{ fontStyle: "italic", marginBottom: "8px", color: "#FFFFFF" }}>
               «{SITE_CONFIG.slogan}»
             </p>
-            <p className="footer-desc">
-              {SITE_CONFIG.city}, {SITE_CONFIG.address}
+            <p className="footer-desc" style={{ fontSize: "14.5px", color: "#B2B8C2", lineHeight: 1.6 }}>
+              Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro})<br />
+              Цех: {SITE_CONFIG.productionAddress}
             </p>
           </div>
 
@@ -42,13 +43,15 @@ export default function Footer() {
 
           {/* Col 3: Categories */}
           <div>
-            <div className="footer-col-head">Направления</div>
+            <div className="footer-col-head">Каталог</div>
             <ul className="footer-nav-links">
               {SITE_CONFIG.productCategories.map((cat) => {
-                const href = cat.toLowerCase().includes("кухн") ? "/kitchens" : "/projects";
+                let href = "/custom-furniture";
+                if (cat.toLowerCase().includes("кухн")) href = "/kitchens";
+                else if (cat.toLowerCase().includes("шкаф") || cat.toLowerCase().includes("гардероб")) href = "/wardrobes";
                 return (
                   <li key={cat}>
-                    <Link href={href} style={{ fontSize: "13px", color: "#B2B8C2" }}>
+                    <Link href={href} style={{ fontSize: "14.5px", color: "#B2B8C2" }}>
                       {cat}
                     </Link>
                   </li>
@@ -63,12 +66,12 @@ export default function Footer() {
             <p className="footer-desc" style={{ marginBottom: "10px" }}>
               <a
                 href={`tel:${SITE_CONFIG.phoneRaw}`}
-                style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "15px", textDecoration: "none" }}
+                style={{ color: "#FFFFFF", fontWeight: 600, fontSize: "16px", textDecoration: "none" }}
               >
                 {SITE_CONFIG.phone}
               </a>
               <br />
-              <span style={{ fontSize: "12.5px", color: "#8E98A5" }}>
+              <span style={{ fontSize: "13.5px", color: "#9EABC0" }}>
                 {SITE_CONFIG.workHours}
               </span>
             </p>
@@ -84,7 +87,7 @@ export default function Footer() {
                 Сообщество ВКонтакте
               </a>
               <Link href="/contacts#measure" className="btn btn-green btn-sm">
-                Записаться на замер
+                Записаться на консультацию
               </Link>
             </div>
           </div>

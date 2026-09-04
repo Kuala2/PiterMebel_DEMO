@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
+import MeasureForm from "@/components/MeasureForm";
 import { SITE_CONFIG } from "@/data/site";
 
 export default function HomePage() {
@@ -246,11 +247,11 @@ export default function HomePage() {
         <SpotlightArea className="container" selector=".catalog-card">
           <div className="catalog-head-row">
             <div>
-              <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные объекты студии</h2>
+              <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные проекты студии</h2>
             </div>
             <div className="catalog-head-controls">
               <Link href="/projects" className="btn btn-green catalog-cta-btn">
-                Все объекты →
+                Все проекты мебели →
               </Link>
             </div>
           </div>
@@ -545,6 +546,75 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 3.1. FOUNDER MANIFESTO & SHOWCASE: Честный подход с 2005 года */}
+      <section className="manifesto-section" id="manifesto">
+        <div className="container">
+          <div className="manifesto-grid">
+            {/* Left: Editorial Manifesto & Direct Commitment */}
+            <div className="manifesto-content">
+              <div>
+                <h2 className="section-title">
+                  ПитерМебель с {SITE_CONFIG.foundedYear} года: честный подход к каждому проекту
+                </h2>
+
+                <div className="manifesto-quote-wrap">
+                  <p className="manifesto-quote-text">
+                    «Мы сознательно сохраняем формат семейной студии: я лично проектирую каждый гарнитур, встречаюсь с заказчиками на площади Стачек и фиксирую прозрачную смету в договоре. Никакого конвейера и скрытых наценок — только авторская мебель, созданная служить десятилетиями.»
+                  </p>
+                  <div className="manifesto-author">
+                    <div className="manifesto-author-name">Елена Волкова</div>
+                    <div className="manifesto-author-role">Основатель и ведущий дизайнер студии «ПитерМебель»</div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="manifesto-specs">
+                  <div className="manifesto-spec-row">
+                    <span className="manifesto-spec-metric">19 лет опыта</span>
+                    <span className="manifesto-spec-desc">Семейная студия без ребрендингов и посредников в СПб</span>
+                  </div>
+                  <div className="manifesto-spec-row">
+                    <span className="manifesto-spec-metric">0 ₽ переплат</span>
+                    <span className="manifesto-spec-desc">Фиксированная смета в договоре не растет в процессе</span>
+                  </div>
+                  <div className="manifesto-spec-row">
+                    <span className="manifesto-spec-metric">100% надзор</span>
+                    <span className="manifesto-spec-desc">Личное ведение проекта дизайнером от замера до монтажа</span>
+                  </div>
+                </div>
+
+                <div className="manifesto-actions">
+                  <Link href="/contacts" className="btn btn-glass">
+                    Обсудить проект с Еленой →
+                  </Link>
+                  <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
+                    {SITE_CONFIG.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Panoramic Craft Showcase (65/35 Cinematic Framing) */}
+            <div className="manifesto-media-frame">
+              <div className="manifesto-media-inner">
+                <Image
+                  src="/img/projects/island-parquet/photo_3.jpg"
+                  alt="Индивидуальный проект авторской мебели студии ПитерМебель"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 62vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="manifesto-caption-bar">
+                <span className="manifesto-caption-tag">Островной гарнитур: шпон дуба и камень</span>
+                <span>Реализованный проект · Санкт-Петербург</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 4. TEAM SECTION */}
       <section className="team-section" id="team">
         <div className="container">
@@ -564,7 +634,7 @@ export default function HomePage() {
               </div>
               <div className="team-card-body">
                 <h3 className="team-card-name">Елена Волкова</h3>
-                <p className="team-card-role">Консультация, замер и ведение проекта</p>
+                <p className="team-card-role">Консультация, дизайн-проект и ведение заказа</p>
                 <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="team-card-tel">
                   +7 (921) 784-05-89 →
                 </a>
@@ -607,19 +677,15 @@ export default function HomePage() {
               <div className="workshop-photo-frame">
                 <Image
                   src="/img/brand/ws_cnc_wood_1.jpg"
-                  alt="Станочный цех PiterMebel — ЧПУ фрезеровка и раскрой"
+                  alt="Станочный цех PiterMebel — чистовой раскрой и обработка"
                   fill
                   className="workshop-main-photo"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   style={{ objectFit: "cover" }}
                 />
-                <div className="workshop-area-badge">
-                  <span className="workshop-area-val">850 м²</span>
-                  <span className="workshop-area-lbl">площадь цеха</span>
-                </div>
               </div>
               <div className="workshop-location-caption">
-                Собственное производство в Санкт-Петербурге · 850 м²
+                Собственное производство в Санкт-Петербурге · Петергофское шоссе, 73
               </div>
             </div>
 
@@ -685,18 +751,18 @@ export default function HomePage() {
             {/* Step 1 */}
             <div className="process-step">
               <span className="process-day">1 день</span>
-              <h3 className="process-title">Выезд мастера и замер</h3>
+              <h3 className="process-title">Консультация и расчет</h3>
               <p className="process-desc">
-                Инженер привозит образцы эмалей, шпона и сканирует точную геометрию стен.
+                Обсуждение задач, предварительный расчет сметы и подбор материалов в офисе студии на пл. Стачек.
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="process-step">
               <span className="process-day">2–3 дня</span>
-              <h3 className="process-title">3D-проект и смета</h3>
+              <h3 className="process-title">3D-проект и договор</h3>
               <p className="process-desc">
-                Эргономика, интеграция техники и фиксация неизменной стоимости в договоре.
+                Точный замер, схема электрики в подарок к кухне и фиксация неизменной цены в договоре.
               </p>
             </div>
 
@@ -705,7 +771,7 @@ export default function HomePage() {
               <span className="process-day">14–21 день</span>
               <h3 className="process-title">Изготовление в цеху</h3>
               <p className="process-desc">
-                Раскрой на ЧПУ, влагостойкое PUR-кромление и обязательная контрольная сборка.
+                Чистовой станочный раскрой, влагостойкая герметизация торцов и 100% контрольная сборка.
               </p>
             </div>
 
@@ -730,85 +796,46 @@ export default function HomePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
-                  Обсудите ваш проект со специалистами студии
-                </h2>
-                <p className="final-desc">
-                  Отправьте эскиз от руки, размеры помещения или понравившееся фото. Технологи рассчитают смету и порекомендуют материалы под ваш бюджет.
-                </p>
-                <div className="final-buttons-row">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn btn-green"
-                    style={{ gap: "8px" }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={SITE_CONFIG.vkUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-glass"
-                    style={{ gap: "10px" }}
-                  >
-                    <VkIcon />
-                    ВКонтакте
-                  </a>
-                  <Link href="/contacts#measure" className="btn btn-glass">
-                    Записаться на замер
-                  </Link>
+                <div>
+                  <h2 className="final-headline">
+                    Индивидуальная мебель и кухни без салонных наценок
+                  </h2>
+                  <p className="final-desc">
+                    Отправьте эскиз от руки, размеры помещения или понравившееся фото. Технологи студии рассчитают смету и порекомендуют надежные материалы под ваш бюджет.
+                  </p>
+                  <div className="final-buttons-row">
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneRaw}`}
+                      className="btn btn-green"
+                      style={{ gap: "8px" }}
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                      {SITE_CONFIG.phone}
+                    </a>
+                    <a
+                      href={SITE_CONFIG.vkImUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-glass"
+                      style={{ gap: "10px" }}
+                    >
+                      <VkIcon />
+                      ВКонтакте
+                    </a>
+                    <Link href="/calculator" className="btn btn-glass">
+                      Калькулятор мебели
+                    </Link>
+                  </div>
                 </div>
-                <div style={{ fontSize: "12px", color: "var(--color-text-muted)" }}>
-                  Бесплатный выезд мастера для лазерного замера помещения в Санкт-Петербурге.
+                <div className="final-footnote" style={{ fontSize: "13px", color: "var(--color-text-muted)", marginTop: "24px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
 
               <div className="final-info-block">
-                <div>
-                  <h3 className="info-block-title">Офис и собственное производство</h3>
-                  <div className="contact-items-list">
-                    <div className="contact-item-row">
-                      <div className="contact-meta">
-                        <span className="contact-label">Офис студии для встреч</span>
-                        <strong className="contact-value">площадь Стачек, 9, этаж 4</strong>
-                        <span className="contact-sub">{SITE_CONFIG.metro} · консультации и выбор образцов по записи</span>
-                      </div>
-                    </div>
-
-                    <div className="contact-item-row">
-                      <div className="contact-meta">
-                        <span className="contact-label">Собственное производство</span>
-                        <strong className="contact-value">Цех 850 м² в Санкт-Петербурге</strong>
-                        <span className="contact-sub">Закрытая станочная площадка с ЧПУ</span>
-                      </div>
-                    </div>
-
-                    <div className="contact-item-row">
-                      <div className="contact-meta">
-                        <span className="contact-label">Режим работы</span>
-                        <strong className="contact-value">{SITE_CONFIG.workHours}</strong>
-                        <span className="contact-sub">Бесплатный выезд инженера с чемоданом образцов</span>
-                      </div>
-                    </div>
-
-                    <div className="contact-item-row">
-                      <div className="contact-meta">
-                        <span className="contact-label">Прямой телефон</span>
-                        <a
-                          href={`tel:${SITE_CONFIG.phoneRaw}`}
-                          className="contact-value"
-                          style={{ color: "#FFFFFF", textDecoration: "none" }}
-                        >
-                          {SITE_CONFIG.phone}
-                        </a>
-                        <span className="contact-sub">Елена Волкова • Консультация и вызов мастера</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <MeasureForm initialCategory="Кухня" />
               </div>
             </div>
           </div>

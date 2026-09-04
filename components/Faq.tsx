@@ -32,17 +32,26 @@ export default function Faq() {
                   className="faq-question-btn"
                 >
                   <span className="faq-question-text">{item.question}</span>
-                  <span className="faq-chevron-icon">
-                    {isOpen ? "—" : "+"}
+                  <span className="faq-chevron-icon" aria-hidden="true">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      className="faq-icon-svg"
+                    >
+                      <line x1="6" y1="1" x2="6" y2="11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                      <line x1="1" y1="6" x2="11" y2="6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="square" />
+                    </svg>
                   </span>
                 </button>
-                {isOpen && (
-                  <div className="faq-answer-pane">
+                <div className={`faq-answer-pane ${isOpen ? "is-open" : ""}`}>
+                  <div className="faq-answer-inner">
                     <p className="faq-answer-text">
                       {item.answer}
                     </p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

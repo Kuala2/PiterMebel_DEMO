@@ -6,65 +6,65 @@ import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
-import { PROJECTS, Project } from "@/data/projects";
+import PromoBanner from "@/components/PromoBanner";
+import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
+import { PROMOS } from "@/data/promos";
 
-export default function ProjectsPortfolioPage() {
-  const [activeType, setActiveType] = useState<string>("all");
+export default function CustomFurniturePage() {
+  const [activeSubtype, setActiveSubtype] = useState<string>("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
 
+  // Фильтруем проекты прихожих, панелей, коммерческой мебели и прочих индивидуальных решений
+  const customProjects = PROJECTS.filter(
+    (p) =>
+      p.type === "Прихожая" ||
+      p.type === "Панели" ||
+      p.type === "Коммерческий" ||
+      p.title.toLowerCase().includes("прихож") ||
+      p.title.toLowerCase().includes("панел")
+  );
+
   const filterTabs = [
-    { key: "all", label: "Все проекты", count: PROJECTS.length },
-    {
-      key: "Кухня",
-      label: "Кухни",
-      count: PROJECTS.filter((p) => p.type === "Кухня").length,
-    },
-    {
-      key: "Гардеробная",
-      label: "Гардеробные",
-      count: PROJECTS.filter((p) => p.type === "Гардеробная").length,
-    },
+    { key: "all", label: "Вся корпусная мебель", count: customProjects.length },
     {
       key: "Прихожая",
-      label: "Прихожие",
-      count: PROJECTS.filter((p) => p.type === "Прихожая").length,
-    },
-    {
-      key: "Спальня",
-      label: "Спальни",
-      count: PROJECTS.filter((p) => p.type === "Спальня").length,
+      label: "Прихожие и входные зоны",
+      count: customProjects.filter((p) => p.type === "Прихожая").length,
     },
     {
       key: "Панели",
-      label: "Реечные панели",
-      count: PROJECTS.filter((p) => p.type === "Панели").length,
+      label: "Стеновые реечные панели",
+      count: customProjects.filter((p) => p.type === "Панели").length,
     },
     {
       key: "Коммерческий",
-      label: "Коммерческие",
-      count: PROJECTS.filter((p) => p.type === "Коммерческий").length,
+      label: "Для бизнеса и офисов",
+      count: customProjects.filter((p) => p.type === "Коммерческий").length,
     },
   ];
 
-  const filteredProjects =
-    activeType === "all"
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.type === activeType);
+  const filteredItems =
+    activeSubtype === "all"
+      ? customProjects
+      : customProjects.filter((p) => p.type === activeSubtype);
 
   return (
     <div>
       {/* 1. Page Header */}
       <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
         <div className="container">
-          <h1 className="subpage-hero-title">Реализованные проекты студии</h1>
+          <h1 className="subpage-hero-title">Корпусная мебель на заказ</h1>
           <p className="subpage-hero-caption">
-            Собственное производство полного цикла в Санкт-Петербурге
+            Прихожие, реечные стеновые панели, ТВ-зоны и мебель для бизнеса по индивидуальным размерам в СПб
           </p>
         </div>
       </section>
 
-      {/* 2. Filter Tabs Bar (Under the line) */}
+      {/* 2. Special Offer Banner: Скидка за объем */}
+      <PromoBanner offer={PROMOS.customFurniture} />
+
+      {/* 3. Filter Tabs Bar */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="catalog-tabs-bar">
@@ -72,8 +72,8 @@ export default function ProjectsPortfolioPage() {
               <button
                 key={tab.key}
                 type="button"
-                className={`cat-tab ${activeType === tab.key ? "is-active" : ""}`}
-                onClick={() => setActiveType(tab.key)}
+                className={`cat-tab ${activeSubtype === tab.key ? "is-active" : ""}`}
+                onClick={() => setActiveSubtype(tab.key)}
               >
                 {tab.label}
               </button>
@@ -82,11 +82,11 @@ export default function ProjectsPortfolioPage() {
         </div>
       </section>
 
-      {/* 3. Projects 3-Column Portfolio Grid */}
+      {/* 4. Portfolio Grid */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "56px", paddingBottom: "112px" }}>
         <div className="container">
           <SpotlightArea className="projects-grid" selector=".catalog-card">
-            {filteredProjects.map((project) => {
+            {filteredItems.map((project) => {
               const currentIdx = cardPhoto[project.slug] ?? 0;
               const photos = project.gallery?.length ? project.gallery : [project.cover];
 
@@ -106,7 +106,6 @@ export default function ProjectsPortfolioPage() {
                     />
                     <span className="card-badge-top">{project.type}</span>
 
-                    {/* In-Card Left Arrow */}
                     {photos.length > 1 && (
                       <button
                         type="button"
@@ -125,7 +124,6 @@ export default function ProjectsPortfolioPage() {
                       </button>
                     )}
 
-                    {/* In-Card Right Arrow */}
                     {photos.length > 1 && (
                       <button
                         type="button"
@@ -144,7 +142,6 @@ export default function ProjectsPortfolioPage() {
                       </button>
                     )}
 
-                    {/* In-Card Dots */}
                     {photos.length > 1 && (
                       <div className="card-photo-dots">
                         {photos.map((_, pIdxDot) => (
@@ -163,7 +160,6 @@ export default function ProjectsPortfolioPage() {
                       </div>
                     )}
 
-                    {/* Direct link on photo area */}
                     <Link
                       href={`/projects/${project.slug}`}
                       style={{ position: "absolute", inset: 0, zIndex: 2 }}
@@ -198,17 +194,17 @@ export default function ProjectsPortfolioPage() {
         </div>
       </section>
 
-      {/* 4. Consultation Section */}
-      <section className="final-section" style={{ backgroundColor: "var(--bg-studio)" }}>
+      {/* 5. CANVAS CTA */}
+      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Хотите реализовать похожий проект?
+                  Индивидуальная корпусная мебель без салонных наценок
                 </h2>
                 <p className="final-desc">
-                  Отправьте фото понравившейся мебели или план помещения. Технологи студии «ПитерМебель» рассчитают стоимость и проконсультируют по материалам.
+                  Изготавливаем прихожие, реечные стеновые панели, мебель для ванных комнат и коммерческих помещений на собственном производстве на Петергофском шоссе, 73. Приглашаем на консультацию в офис на площади Стачек, 9 (офис 407, по записи) для обсуждения чертежей и выбора материалов.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -231,10 +227,16 @@ export default function ProjectsPortfolioPage() {
                     <VkIcon />
                     ВКонтакте
                   </a>
+                  <Link href="/calculator" className="btn btn-glass">
+                    Калькулятор мебели
+                  </Link>
+                </div>
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
               <div className="final-info-block">
-                <MeasureForm initialCategory="Индивидуальный проект" />
+                <MeasureForm initialCategory="Корпусная мебель на заказ" />
               </div>
             </div>
           </div>
