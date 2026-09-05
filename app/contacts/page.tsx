@@ -1,9 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import YandexOfficeMap from "@/components/YandexOfficeMap";
 import { SITE_CONFIG } from "@/data/site";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
   title: `Контакты студии — ${SITE_CONFIG.name}`,
@@ -14,18 +14,9 @@ export default function ContactsPage() {
   return (
     <div className="contacts-page">
       {/* 1. Page Header & Direct Channels */}
-      <section
-        className="page-header"
-        style={{ paddingBottom: "48px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}
-      >
-        <div className="container">
-          <h1 className="subpage-hero-title">Контакты и визиты в студию</h1>
-          <p className="subpage-hero-caption">
-            Санкт-Петербург · Офис на площади Стачек, 9 · Собственное производство на Петергофском ш., 73
-          </p>
-
-          {/* Direct Communication Channels (Clean Canvas Actions) */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "28px", alignItems: "center" }}>
+      <PageHeader title="Контакты и визиты в студию">
+        {/* Direct Communication Channels (Clean Canvas Actions) */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "28px", alignItems: "center" }}>
             <a
               href={`tel:${SITE_CONFIG.phoneRaw}`}
               className="btn btn-green"
@@ -58,8 +49,7 @@ export default function ContactsPage() {
               {SITE_CONFIG.email}
             </a>
           </div>
-        </div>
-      </section>
+      </PageHeader>
 
       {/* 2. EDITORIAL GUARANTEES LINE */}
       <section style={{ padding: "64px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", backgroundColor: "var(--bg-dark)" }}>

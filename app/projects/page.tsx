@@ -8,6 +8,7 @@ import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS, Project } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
+import PageHeader from "@/components/PageHeader";
 
 export default function ProjectsPortfolioPage() {
   const [activeType, setActiveType] = useState<string>("all");
@@ -55,14 +56,7 @@ export default function ProjectsPortfolioPage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container">
-          <h1 className="subpage-hero-title">Реализованные проекты студии</h1>
-          <p className="subpage-hero-caption">
-            Собственное производство полного цикла в Санкт-Петербурге
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Реализованные проекты студии" backTo="/" />
 
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>

@@ -9,6 +9,7 @@ import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
 import MeasureForm from "@/components/MeasureForm";
 import { SITE_CONFIG } from "@/data/site";
+import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -29,61 +30,84 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const sliders = document.querySelectorAll('.carousel-viewport');
+    const sliders = document.querySelectorAll<HTMLElement>('.carousel-viewport');
     
     sliders.forEach((slider) => {
       let isDown = false;
       let startX = 0;
       let scrollLeft = 0;
       let isDragging = false;
+      let dragTimer: ReturnType<typeof setTimeout> | null = null;
       
       const onMouseDown = (e: MouseEvent) => {
-        if ((e.target as HTMLElement).closest(".photo-square-dot, .card-photo-arrow")) return;
+        if ((e.target as HTMLElement).closest(".photo-square-dot, .card-photo-arrow, a, button")) {
+          isDown = false;
+          isDragging = false;
+          return;
+        }
         isDown = true;
         isDragging = false;
-        slider.classList.add("is-dragging");
-        startX = e.pageX - (slider as HTMLElement).offsetLeft;
+        startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
       };
       
       const onMouseMove = (e: MouseEvent) => {
         if (!isDown) return;
-        e.preventDefault();
-        isDragging = true;
-        const x = e.pageX - (slider as HTMLElement).offsetLeft;
-        const walk = (x - startX) * 1.5;
-        slider.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - slider.offsetLeft;
+        const walk = x - startX;
+        if (Math.abs(walk) > 5) {
+          isDragging = true;
+          slider.classList.add("is-dragging");
+          slider.scrollLeft = scrollLeft - walk * 1.3;
+        }
       };
       
       const onMouseUp = () => {
+        if (!isDown && !isDragging) return;
         isDown = false;
         slider.classList.remove("is-dragging");
+        if (isDragging) {
+          if (dragTimer) clearTimeout(dragTimer);
+          dragTimer = setTimeout(() => {
+            isDragging = false;
+          }, 60);
+        }
       };
       
       const onMouseLeave = () => {
-        isDown = false;
-        slider.classList.remove("is-dragging");
+        if (isDown) {
+          isDown = false;
+          slider.classList.remove("is-dragging");
+          if (isDragging) {
+            if (dragTimer) clearTimeout(dragTimer);
+            dragTimer = setTimeout(() => {
+              isDragging = false;
+            }, 60);
+          }
+        }
       };
 
       const onClick = (e: MouseEvent) => {
         if (isDragging) {
           e.preventDefault();
           e.stopPropagation();
+          isDragging = false;
         }
       };
       
       slider.addEventListener("mousedown", onMouseDown as EventListener);
       slider.addEventListener("mousemove", onMouseMove as EventListener);
-      slider.addEventListener("mouseup", onMouseUp as EventListener);
+      window.addEventListener("mouseup", onMouseUp as EventListener);
       slider.addEventListener("mouseleave", onMouseLeave as EventListener);
       slider.addEventListener("click", onClick as EventListener, true);
       
       (slider as any)._cleanup = () => {
         slider.removeEventListener("mousedown", onMouseDown as EventListener);
         slider.removeEventListener("mousemove", onMouseMove as EventListener);
-        slider.removeEventListener("mouseup", onMouseUp as EventListener);
+        window.removeEventListener("mouseup", onMouseUp as EventListener);
         slider.removeEventListener("mouseleave", onMouseLeave as EventListener);
         slider.removeEventListener("click", onClick as EventListener, true);
+        if (dragTimer) clearTimeout(dragTimer);
       };
     });
 
@@ -201,10 +225,88 @@ export default function HomePage() {
       ],
       link: "/projects/brick-wardrobe",
     },
+    {
+      id: "emerald-enamel",
+      category: "kitchens",
+      badge: "МДФ Эмаль",
+      title: "Кухня с фасадами МДФ Эмаль",
+      desc: "Изумрудный матовый оттенок по RAL в сочетании с белым верхом, классической фрезеровкой и латунными ручками.",
+      specLabel: "Фасады",
+      specValue: "Эмаль RAL / Витрины",
+      photos: [
+        "/img/projects/emerald-enamel/photo_1.jpg",
+        "/img/projects/emerald-enamel/photo_2.jpg",
+        "/img/projects/emerald-enamel/photo_3.jpg",
+        "/img/projects/emerald-enamel/photo_4.jpg",
+      ],
+      link: "/projects/emerald-enamel",
+    },
+    {
+      id: "velvet-matte",
+      category: "kitchens",
+      badge: "Пластик Velvet",
+      title: "Кухня МДФ пластик Velvet",
+      desc: "Суперматовый антипальчиковый пластик Soft-Touch, скрытый черный профиль Gola и монолитный мраморный фартук.",
+      specLabel: "Профиль",
+      specValue: "Черный Gola / Velvet",
+      photos: [
+        "/img/projects/velvet-matte/photo_1.jpg",
+        "/img/projects/velvet-matte/photo_2.jpg",
+      ],
+      link: "/projects/velvet-matte",
+    },
+    {
+      id: "sherman-cognac",
+      category: "kitchens",
+      badge: "Глянец & Egger",
+      title: "Кухня МДФ Глянец & Эггер Шерман",
+      desc: "Зеркальный белый глянец и глубокая текстура дуба Эггер Шерман коньяк, витрина в черном профиле с теплой подсветкой.",
+      specLabel: "Декор",
+      specValue: "Egger Шерман / Глянец",
+      photos: [
+        "/img/projects/sherman-cognac/photo_1.jpg",
+        "/img/projects/sherman-cognac/photo_2.jpg",
+        "/img/projects/sherman-cognac/photo_3.jpg",
+        "/img/projects/sherman-cognac/photo_4.jpg",
+      ],
+      link: "/projects/sherman-cognac",
+    },
+    {
+      id: "bedroom-set",
+      category: "closets",
+      badge: "Встроенный",
+      title: "Встроенный шкаф в мастер-спальню",
+      desc: "Шкаф в потолок заподлицо со стенами, шелковисто-матовая эмаль, скрытые вертикальные ручки-профили.",
+      specLabel: "Монтаж",
+      specValue: "В нишу / Матовая эмаль",
+      photos: [
+        "/img/projects/bedroom-set/photo_1.jpg",
+        "/img/projects/bedroom-set/photo_2.jpg",
+        "/img/projects/bedroom-set/photo_3.jpg",
+      ],
+      link: "/projects/bedroom-set",
+    },
   ];
 
-  // Порядок витрины на главной: Тимофей → гардеробная STOPSOL → Славена → остальное
-  const itemOrder = ["timofey", "glass-wardrobe", "slavena", "oak-stone", "aleksandra", "mirror-hall", "brick-wardrobe"];
+  // Порядок витрины на главной: на 1-м месте топ-кухня «Шерман»,
+  // затем чередование с премиальными гардеробными и шкафами:
+  // 1. Кухня «Шерман»
+  // 2. Гардеробная со смарт-стеклом STOPSOL
+  // 3. Кухня «Тимофей» Дуб & Белый глянец
+  // 4. Встроенный шкаф в мастер-спальню
+  const itemOrder = [
+    "sherman-cognac", // 1. Кухня «Шерман» (подсвеченная витрина, глянец и теплый дуб Egger)
+    "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
+    "timofey",        // 3. Кухня «Тимофей» (дуб и белый глянец)
+    "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
+    "velvet-matte",   // 5. Кухня Velvet (минимализм Soft-Touch, профиль Gola, мрамор)
+    "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
+    "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
+    "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
+    "slavena",        // 9. Кухня «Славена» (теплый кашемир и камень)
+    "oak-stone",      // 10. Кухня (шпон дуба и мрамор)
+    "aleksandra",     // 11. Кухня «Александра» (Fenix NTM)
+  ];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))
     .filter((item): item is (typeof catalogItems)[number] => Boolean(item));
@@ -787,7 +889,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. FAQ */}
+      {/* 6. KNOWLEDGE BASE: 1 VERTICAL OBJECT CARD (EDITORIAL CRAFT, NO TILES) */}
+      <section className="knowledge-home-section" id="knowledge">
+        <div className="container">
+          <div className="knowledge-home-head">
+            <div>
+              <h2 className="section-title" style={{ marginBottom: "8px" }}>
+                База знаний
+              </h2>
+              <p className="knowledge-home-sub">
+                Технические разборы и регламенты от мастеров нашего цеха
+              </p>
+            </div>
+          </div>
+
+          <div className="knowledge-track-single">
+            <Link
+              href={`/knowledge/${KNOWLEDGE_ARTICLES[0].slug}`}
+              className="knowledge-object-card"
+            >
+              <div className="knowledge-object-media">
+                <Image
+                  src={KNOWLEDGE_ARTICLES[0].placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg"}
+                  alt={KNOWLEDGE_ARTICLES[0].title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 460px"
+                  style={{ objectFit: "cover" }}
+                  className="knowledge-object-img"
+                  priority={false}
+                />
+                <div className="knowledge-read-badge">
+                  Статья · {KNOWLEDGE_ARTICLES[0].readTime}
+                </div>
+              </div>
+
+              <div className="knowledge-object-body">
+                <div className="knowledge-object-meta">
+                  <span className="knowledge-object-cat">{KNOWLEDGE_ARTICLES[0].categoryLabel}</span>
+                  <span className="knowledge-object-dot">·</span>
+                  <span className="knowledge-object-date">{KNOWLEDGE_ARTICLES[0].publishedAt}</span>
+                </div>
+                <h3 className="knowledge-object-title">
+                  {KNOWLEDGE_ARTICLES[0].title}
+                </h3>
+                <div className="knowledge-object-footer">
+                  <span className="knowledge-object-author">
+                    {KNOWLEDGE_ARTICLES[0].author.name} · Технолог цеха
+                  </span>
+                  <span className="knowledge-object-link">
+                    Читать статью →
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FAQ */}
       <Faq />
 
       {/* 7. FINAL CONSULTATION & CONTACTS */}

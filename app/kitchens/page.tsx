@@ -9,6 +9,7 @@ import PromoBanner from "@/components/PromoBanner";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
 import { PROMOS } from "@/data/promos";
+import PageHeader from "@/components/PageHeader";
 
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -23,12 +24,12 @@ export default function KitchensCatalogPage() {
     },
     {
       key: "veneer",
-      label: "Шпон дуба",
+      label: "Шпон & Дерево",
       count: KITCHENS.filter((k) => k.facadeMaterialCategory === "veneer").length,
     },
     {
       key: "fenix",
-      label: "Fenix NTM",
+      label: "Fenix & Velvet",
       count: KITCHENS.filter((k) => k.facadeMaterialCategory === "fenix").length,
     },
   ];
@@ -41,14 +42,7 @@ export default function KitchensCatalogPage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container">
-          <h1 className="subpage-hero-title">Кухни студии «ПитерМебель»</h1>
-          <p className="subpage-hero-caption">
-            Каждая модель изготавливается по индивидуальным размерам на собственном производстве в Санкт-Петербурге
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Кухни студии «ПитерМебель»" />
 
       {/* 1.1. Special Gift Banner: Схема электрики в подарок */}
       <PromoBanner offer={PROMOS.kitchens} />

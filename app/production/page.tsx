@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import { SITE_CONFIG } from "@/data/site";
+import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
@@ -14,14 +15,7 @@ export default function ProductionPage() {
   return (
     <div>
       {/* 1. Page Header (Стандартный заголовок подраздела, как на всех страницах) */}
-      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container">
-          <h1 className="subpage-hero-title">Собственное производство в Санкт-Петербурге</h1>
-          <p className="subpage-hero-caption">
-            Станочный цех на Петергофском шоссе, 73 · Работаем напрямую с {SITE_CONFIG.foundedYear} года
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Собственное производство в Санкт-Петербурге" />
 
       {/* 2. Key Facts Strip (Чистая горизонтальная строка цифр на холсте) */}
       <section style={{ padding: "48px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", backgroundColor: "var(--bg-dark)" }}>

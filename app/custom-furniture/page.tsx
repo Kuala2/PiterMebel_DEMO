@@ -10,6 +10,7 @@ import PromoBanner from "@/components/PromoBanner";
 import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
 import { PROMOS } from "@/data/promos";
+import PageHeader from "@/components/PageHeader";
 
 export default function CustomFurniturePage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -52,14 +53,7 @@ export default function CustomFurniturePage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container">
-          <h1 className="subpage-hero-title">Корпусная мебель на заказ</h1>
-          <p className="subpage-hero-caption">
-            Прихожие, реечные стеновые панели, ТВ-зоны и мебель для бизнеса по индивидуальным размерам в СПб
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Корпусная мебель на заказ" />
 
       {/* 2. Special Offer Banner: Скидка за объем */}
       <PromoBanner offer={PROMOS.customFurniture} />

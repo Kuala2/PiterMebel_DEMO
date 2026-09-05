@@ -2,10 +2,10 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import VkIcon from "@/components/VkIcon";
 import MeasureForm from "@/components/MeasureForm";
 import { SITE_CONFIG } from "@/data/site";
+import PageHeader from "@/components/PageHeader";
 
 interface MainCategory {
   id: string;
@@ -318,14 +318,7 @@ export default function CalculatorPage() {
   return (
     <div className="calc-page">
       {/* 1. Page Header */}
-      <section className="page-header">
-        <div className="container">
-          <h1 className="subpage-hero-title">Конфигуратор стоимости мебели</h1>
-          <p className="subpage-hero-caption">
-            Предварительный расчет сметы на собственном производстве без наценок салона
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Конфигуратор стоимости мебели" />
 
       {/* 2. Main Configurator Section */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "64px", paddingBottom: "112px" }}>

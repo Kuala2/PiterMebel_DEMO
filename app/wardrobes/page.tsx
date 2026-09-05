@@ -10,6 +10,7 @@ import PromoBanner from "@/components/PromoBanner";
 import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
 import { PROMOS } from "@/data/promos";
+import PageHeader from "@/components/PageHeader";
 
 export default function WardrobesPage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -45,14 +46,7 @@ export default function WardrobesPage() {
   return (
     <div>
       {/* 1. Page Header */}
-      <section className="page-header" style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container">
-          <h1 className="subpage-hero-title">Шкафы и гардеробные на заказ</h1>
-          <p className="subpage-hero-caption">
-            Встроенные системы в нишу, гардеробные комнаты и шкафы-витрины от производителя в Санкт-Петербурге
-          </p>
-        </div>
-      </section>
+      <PageHeader title="Шкафы и гардеробные на заказ" />
 
       {/* 2. Special Offer Banner: Скидка за объем */}
       <PromoBanner offer={PROMOS.wardrobes} />
