@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { buildBreadcrumbs } from "@/lib/seo";
 
 interface PageHeaderProps {
   /** Заголовок страницы (H1) */
@@ -13,11 +14,17 @@ interface PageHeaderProps {
 }
 
 export default function PageHeader({ title, backTo, backLabel = "На главную", children }: PageHeaderProps) {
+  const breadcrumbJsonLd = buildBreadcrumbs([{ name: title }]);
+
   return (
     <section
       className="page-header"
       style={{ paddingBottom: "36px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="container">
         {backTo && (
           <Link href={backTo} className="btn btn-glass" style={{ marginBottom: "24px" }}>

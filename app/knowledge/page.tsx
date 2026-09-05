@@ -5,6 +5,7 @@ import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
 import MeasureForm from "@/components/MeasureForm";
 import PageHeader from "@/components/PageHeader";
+import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "База знаний и инженерные руководства | ПитерМебель",
@@ -13,6 +14,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/knowledge",
   },
+  openGraph: buildOg(
+    "База знаний и инженерные руководства | ПитерМебель",
+    "Практические руководства по электрике кухни, фасадам и монтажу от технологов мебельного цеха в СПб.",
+    "/knowledge"
+  ),
 };
 
 export default function KnowledgePage() {

@@ -4,10 +4,19 @@ import VkIcon from "@/components/VkIcon";
 import YandexOfficeMap from "@/components/YandexOfficeMap";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
+import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: `Контакты студии — ${SITE_CONFIG.name}`,
   description: `Контакты мебельной студии «ПитерМебель»: офис на ${SITE_CONFIG.officeAddress} (${SITE_CONFIG.metro}, по предварительной записи) и производство на ${SITE_CONFIG.productionAddress}. Консультации и предварительный расчет проекта.`,
+  alternates: {
+    canonical: "/contacts",
+  },
+  openGraph: buildOg(
+    `Контакты студии — ${SITE_CONFIG.name}`,
+    `Офис: ${SITE_CONFIG.officeAddress} (${SITE_CONFIG.metro}). Производство: ${SITE_CONFIG.productionAddress}.`,
+    "/contacts"
+  ),
 };
 
 export default function ContactsPage() {

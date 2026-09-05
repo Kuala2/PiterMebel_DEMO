@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
 import { SITE_CONFIG } from "@/data/site";
 
@@ -15,6 +16,7 @@ interface MeasureFormProps {
 export default function MeasureForm({ initialCategory }: MeasureFormProps) {
   const [state, setState] = useState<MeasureFormState>(initialState);
   const [isPending, setIsPending] = useState(false);
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,7 +68,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
                 disabled={isPending}
               />
               {state.errors?.name && (
-                <p style={{ color: "#FF5A5A", fontSize: "11px", marginTop: "4px" }}>{state.errors.name}</p>
+                <p style={{ color: "#FF5A5A", fontSize: "12px", marginTop: "4px" }}>{state.errors.name}</p>
               )}
             </div>
 
@@ -84,7 +86,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
                 disabled={isPending}
               />
               {state.errors?.contact && (
-                <p style={{ color: "#FF5A5A", fontSize: "11px", marginTop: "4px" }}>{state.errors.contact}</p>
+                <p style={{ color: "#FF5A5A", fontSize: "12px", marginTop: "4px" }}>{state.errors.contact}</p>
               )}
             </div>
 
@@ -110,11 +112,25 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
           </div>
 
           <div style={{ marginTop: "18px" }}>
+            <label className="form-consent-label">
+              <input
+                type="checkbox"
+                name="consent"
+                required
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                disabled={isPending}
+              />
+              <span>
+                Даю согласие на обработку персональных данных в соответствии с{" "}
+                <Link href="/privacy">политикой конфиденциальности</Link> (ФЗ № 152-ФЗ)
+              </span>
+            </label>
             <button
               type="submit"
               className="btn btn-green"
-              disabled={isPending}
-              style={{ width: "100%", height: "44px", borderRadius: 0, opacity: isPending ? 0.7 : 1 }}
+              disabled={isPending || !consent}
+              style={{ width: "100%", height: "44px", borderRadius: 0, marginTop: "12px", opacity: isPending || !consent ? 0.55 : 1 }}
             >
               {isPending ? "Отправка..." : "Записаться на консультацию"}
             </button>

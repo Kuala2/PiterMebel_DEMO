@@ -230,7 +230,7 @@ export default function CustomFurniturePage() {
                 </div>
               </div>
               <div className="final-info-block">
-                <MeasureForm initialCategory="Корпусная мебель на заказ" />
+                <MeasureForm initialCategory="Прихожая" />
               </div>
             </div>
           </div>

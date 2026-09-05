@@ -518,7 +518,7 @@ img {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
-  padding: 8px 0;
+  padding: 15px 0;
   text-decoration: none;
   transition: var(--transition);
   position: relative;
@@ -3517,14 +3517,45 @@ img {
   margin-bottom: 16px;
 }
 
+.form-consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.form-consent-label input {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0 0;
+  accent-color: var(--color-green-brand);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.form-consent-label a {
+  color: var(--color-green-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form-consent-label a:hover {
+  color: var(--color-green-hover);
+}
+
 .form-label {
   display: block;
   font-family: var(--font-main);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8C94A0;
+  color: #98A1AE;
   margin-bottom: 6px;
 }
 
@@ -6527,7 +6558,7 @@ footer,
 
 /* Smooth content crossfade animation */
 .promo-content-anim {
-  transition: opacity 0.24s ease, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   opacity: 1;
   transform: translateY(0);
 }
@@ -6535,24 +6566,6 @@ footer,
 .promo-content-anim.is-transitioning {
   opacity: 0;
   transform: translateY(4px);
-}
-
-/* Progress indicator line on bottom edge */
-.promo-progress-track {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.06);
-  overflow: hidden;
-}
-
-.promo-progress-fill {
-  height: 100%;
-  background: var(--color-green-brand);
-  width: 0%;
-  transition: width 50ms linear;
 }
 
 .promo-title {
@@ -7264,7 +7277,7 @@ footer,
   padding: 6px 12px;
   border-radius: 0;
   font-family: var(--font-main);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -8176,5 +8189,19 @@ footer,
   }
   .article-figure .blueprint-svg {
     min-width: 560px;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

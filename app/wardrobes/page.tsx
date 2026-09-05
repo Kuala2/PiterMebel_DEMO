@@ -223,7 +223,7 @@ export default function WardrobesPage() {
                 </div>
               </div>
               <div className="final-info-block">
-                <MeasureForm initialCategory="Шкафы и гардеробные" />
+                <MeasureForm initialCategory="Гардеробная" />
               </div>
             </div>
           </div>

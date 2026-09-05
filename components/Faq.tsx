@@ -3,6 +3,16 @@
 import { useState } from "react";
 import { FAQ_ITEMS } from "@/data/faq";
 
+const FAQ_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -12,6 +22,10 @@ export default function Faq() {
 
   return (
     <section className="faq-section" id="faq">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
       <div className="container">
         <div className="faq-head-block">
           <h2 className="section-title">Часто задаваемые вопросы</h2>

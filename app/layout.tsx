@@ -7,6 +7,7 @@ import StickyCTA from "@/components/StickyCTA";
 import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
 import { SITE_CONFIG } from "@/data/site";
+import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -31,9 +32,52 @@ const onest = Onest({
   variable: "--font-onest",
 });
 
+const SITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FurnitureStore",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_CONFIG.name,
+      legalName: SITE_CONFIG.legalEntity,
+      url: SITE_URL,
+      logo: `${SITE_URL}/img/brand/logo_bird.svg`,
+      image: `${SITE_URL}${OG_IMAGE}`,
+      telephone: SITE_CONFIG.phoneRaw,
+      email: SITE_CONFIG.email,
+      foundingDate: String(SITE_CONFIG.foundingYear),
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: SITE_CONFIG.address,
+        addressLocality: SITE_CONFIG.city,
+        addressCountry: "RU",
+      },
+      geo: { "@type": "GeoCoordinates", latitude: 59.899907, longitude: 30.272883 },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "10:00",
+          closes: "18:00",
+        },
+      ],
+      sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_CONFIG.name,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "ru-RU",
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: `${SITE_CONFIG.name} — Индивидуальные кухни и мебель на заказ в СПб | Собственное производство`,
-  description: "Производство кухонь, гардеробных и корпусной мебели на заказ в Санкт-Петербурге. Собственный цех с 2005 года на Петергофском шоссе, 73. Офис: пл. Стачек, 9, офис 407 (по предварительной записи). Консультация и предварительный расчет.",
+  metadataBase: new URL(SITE_URL),
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   keywords: [
     "ПитерМебель",
     "мебель на заказ СПб",
@@ -45,10 +89,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: SITE_CONFIG.name }],
   openGraph: {
-    title: `${SITE_CONFIG.name} — Мебель на заказ в Санкт-Петербурге`,
-    description: SITE_CONFIG.slogan,
+    siteName: SITE_CONFIG.name,
     locale: "ru_RU",
-    type: "website"
+    type: "website",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_CONFIG.name }],
   },
   icons: {
     icon: [
@@ -70,6 +114,10 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${cormorant.variable} ${onest.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSON_LD) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

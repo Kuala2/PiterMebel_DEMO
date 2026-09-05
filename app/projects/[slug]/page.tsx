@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import { PROJECTS } from "@/data/projects";
+import { buildBreadcrumbs, buildOg } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
 
 interface ProjectPageProps {
@@ -28,9 +29,19 @@ export async function generateMetadata({
 
   const priceText = project.price ? ` — от ${project.price.toLocaleString("ru-RU")} ₽` : "";
 
+  const ogTitle = `${project.title}${priceText} | ПитерМебель`;
+  const ogDescription = `${project.title}: индивидуальное изготовление мебели в Санкт-Петербурге. Собственное фабричное производство полного цикла.`;
+
   return {
-    title: `${project.title}${priceText} | ПитерМебель`,
-    description: `${project.title}: индивидуальное изготовление мебели в Санкт-Петербурге. Собственное фабричное производство полного цикла.`,
+    title: ogTitle,
+    description: ogDescription,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      ...buildOg(ogTitle, ogDescription, `/projects/${project.slug}`),
+      images: [{ url: project.cover, alt: project.title }],
+    },
   };
 }
 
@@ -49,8 +60,17 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
   const otherProjects = PROJECTS.filter((p) => p.slug !== slug).slice(0, 3);
 
+  const breadcrumbJsonLd = buildBreadcrumbs([
+    { name: "Проекты", path: "/projects" },
+    { name: project.title },
+  ]);
+
   return (
     <div className="project-detail-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* 1. Above the fold: Split Layout (Desktop 38/62, Mobile order: Title -> Gallery -> Specs) */}
       <section className="detail-page-header">
         <div className="container">

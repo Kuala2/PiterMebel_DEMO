@@ -34,7 +34,7 @@ export default function PromoBanner({
   const [currentIndex, setCurrentIndex] = useState(getInitialIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [cycleKey, setCycleKey] = useState(0);
   const isTransitioningRef = useRef(false);
 
   const goToOffer = useCallback(
@@ -42,13 +42,13 @@ export default function PromoBanner({
       if (isTransitioningRef.current) return;
       isTransitioningRef.current = true;
       setIsTransitioning(true);
-      setProgress(0);
+      setCycleKey((k) => k + 1);
 
       setTimeout(() => {
         setCurrentIndex(newIndex);
         setIsTransitioning(false);
         isTransitioningRef.current = false;
-      }, 240);
+      }, 360);
     },
     []
   );
@@ -69,25 +69,12 @@ export default function PromoBanner({
     });
   }, [allOffers.length, goToOffer]);
 
-  // Smooth auto-rotation with progress timer
+  // Auto-rotation: цикл перезапускается после ручного переключения (cycleKey)
   useEffect(() => {
     if (isPaused || allOffers.length <= 1) return;
-
-    const intervalStep = 50;
-    const totalSteps = autoPlayInterval / intervalStep;
-
-    const intervalId = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          handleNext();
-          return 0;
-        }
-        return prev + 100 / totalSteps;
-      });
-    }, intervalStep);
-
+    const intervalId = setInterval(handleNext, autoPlayInterval);
     return () => clearInterval(intervalId);
-  }, [isPaused, allOffers.length, autoPlayInterval, handleNext]);
+  }, [isPaused, allOffers.length, autoPlayInterval, handleNext, cycleKey]);
 
   const currentOffer = allOffers[currentIndex] || allOffers[0];
   if (!currentOffer) return null;
@@ -100,14 +87,6 @@ export default function PromoBanner({
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Progress hairline indicator */}
-          <div className="promo-progress-track">
-            <div
-              className="promo-progress-fill"
-              style={{ width: `${Math.min(100, Math.max(0, progress))}%` }}
-            />
-          </div>
-
           {/* Left: Content with smooth crossfade animation */}
           <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
             <h3 className="promo-title">{currentOffer.title}</h3>

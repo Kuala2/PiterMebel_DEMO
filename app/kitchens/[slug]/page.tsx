@@ -7,6 +7,7 @@ import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
+import { buildOg, buildBreadcrumbs, SITE_URL } from "@/lib/seo";
 
 interface KitchenPageProps {
   params: Promise<{ slug: string }>;
@@ -26,9 +27,19 @@ export async function generateMetadata({
     return { title: "Кухня не найдена — ПитерМебель" };
   }
 
+  const ogTitle = `Кухня «${kitchen.title}» — цена ${kitchen.price.toLocaleString("ru-RU")} ₽ | ПитерМебель`;
+  const ogDescription = `Кухня «${kitchen.title}» на заказ по индивидуальным размерам в Санкт-Петербурге: ${kitchen.price.toLocaleString("ru-RU")} ₽ (${kitchen.pricePerMeter}). Собственное фабричное производство полного цикла.`;
+
   return {
-    title: `Кухня «${kitchen.title}» — цена ${kitchen.price.toLocaleString("ru-RU")} ₽ | ПитерМебель`,
-    description: `Кухня «${kitchen.title}» на заказ по индивидуальным размерам в Санкт-Петербурге: ${kitchen.price.toLocaleString("ru-RU")} ₽ (${kitchen.pricePerMeter}). Собственное фабричное производство полного цикла.`,
+    title: ogTitle,
+    description: ogDescription,
+    alternates: {
+      canonical: `/kitchens/${kitchen.slug}`,
+    },
+    openGraph: {
+      ...buildOg(ogTitle, ogDescription, `/kitchens/${kitchen.slug}`),
+      images: [{ url: kitchen.cover, alt: `Кухня «${kitchen.title}»` }],
+    },
   };
 }
 
@@ -42,6 +53,22 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
   const allPhotos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `Кухня «${kitchen.title}»`,
+    image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
+    description: kitchen.story?.[0] || kitchen.feature,
+    brand: { "@type": "Brand", name: SITE_CONFIG.name },
+    offers: {
+      "@type": "Offer",
+      url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
+      priceCurrency: "RUB",
+      price: kitchen.price,
+      availability: "https://schema.org/InStock",
+    },
+  };
+
   const currentIndex = KITCHENS.findIndex((k) => k.slug === slug);
   const prevKitchen = KITCHENS[(currentIndex - 1 + KITCHENS.length) % KITCHENS.length];
   const nextKitchen = KITCHENS[(currentIndex + 1) % KITCHENS.length];
@@ -49,6 +76,17 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
   return (
     <div className="kitchen-detail-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbs([
+          { name: "Кухни", path: "/kitchens" },
+          { name: `Кухня «${kitchen.title}»` },
+        ])) }}
+      />
       {/* 1. Above the fold: Split Layout (Desktop 38/62, Mobile order: Title -> Gallery -> Specs) */}
       <section className="detail-page-header">
         <div className="container">

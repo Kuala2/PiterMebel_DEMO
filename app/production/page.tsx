@@ -3,12 +3,21 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
-import { SITE_CONFIG } from "@/data/site";
+import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
+import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
   description: `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundedYear} года в Санкт-Петербурге (Петергофское шоссе, 73). Прямой заказ без салонных наценок и 100% контрольная сборка в цеху.`,
+  alternates: {
+    canonical: "/production",
+  },
+  openGraph: buildOg(
+    `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
+    `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundedYear} года (Петергофское шоссе, 73).`,
+    "/production"
+  ),
 };
 
 export default function ProductionPage() {
@@ -22,7 +31,7 @@ export default function ProductionPage() {
         <div className="container">
           <div className="prod-stats-strip">
             <div className="prod-stat-item">
-              <span className="prod-stat-num">20 лет</span>
+              <span className="prod-stat-num">{yearsInBusiness()}</span>
               <span className="prod-stat-label">Опыт в Санкт-Петербурге с {SITE_CONFIG.foundedYear} г.</span>
             </div>
             <div className="prod-stat-item">

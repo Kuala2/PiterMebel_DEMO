@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { Renderer, Program, Mesh, Triangle } from "ogl";
 
 interface AmbientFlowCanvasProps {
   className?: string;
@@ -21,14 +20,21 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     const canvas = ref.current;
     if (!canvas) return;
 
-    const renderer = new Renderer({
-      canvas,
-      alpha: false,
-      antialias: false,
-      dpr: 1, // рендер в полразрешения — DPR выше не даёт качества на абстракции
-    });
-    const gl = renderer.gl;
-    gl.clearColor(0.133, 0.145, 0.165, 1);
+    let disposed = false;
+    let cleanup = () => {};
+
+    import("ogl")
+      .then(({ Renderer, Program, Mesh, Triangle }) => {
+        if (disposed || !canvas) return;
+
+        const renderer = new Renderer({
+          canvas,
+          alpha: false,
+          antialias: false,
+          dpr: 1, // рендер в полразрешения — DPR выше не даёт качества на абстракции
+        });
+        const gl = renderer.gl;
+        gl.clearColor(0.133, 0.145, 0.165, 1);
 
     const geometry = new Triangle(gl);
     const program = new Program(gl, {
@@ -182,13 +188,18 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
 
     raf = requestAnimationFrame(loop);
 
+        cleanup = () => {
+          window.removeEventListener("resize", resize);
+          io.disconnect();
+          ro.disconnect();
+          cancelAnimationFrame(raf);
+        };
+      })
+      .catch(() => {});
+
     return () => {
-      window.removeEventListener("resize", resize);
-      io.disconnect();
-      ro.disconnect();
-      cancelAnimationFrame(raf);
-      // WEBGL_lose_context не зовём: в StrictMode-remount тот же canvas
-      // получил бы потерянный контекст и рендерил чёрное
+      disposed = true;
+      cleanup();
     };
   }, []);
 

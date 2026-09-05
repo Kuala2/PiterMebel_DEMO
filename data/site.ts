@@ -72,3 +72,17 @@ export const NAVIGATION_LINKS = [
   { href: "/calculator", label: "Калькулятор" },
   { href: "/contacts", label: "Контакты" },
 ];
+
+/**
+ * Возраст студии с правильной формой слова: 21 год / 22 года / 25 лет.
+ * Считается от foundingYear, чтобы цифра не разъезжалась по страницам.
+ */
+export function yearsInBusiness(): string {
+  const years = new Date().getFullYear() - SITE_CONFIG.foundingYear;
+  const mod100 = years % 100;
+  const mod10 = years % 10;
+  if (mod100 >= 11 && mod100 <= 14) return `${years} лет`;
+  if (mod10 === 1) return `${years} год`;
+  if (mod10 >= 2 && mod10 <= 4) return `${years} года`;
+  return `${years} лет`;
+}

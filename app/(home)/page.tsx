@@ -8,7 +8,7 @@ import Faq from "@/components/Faq";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
 import MeasureForm from "@/components/MeasureForm";
-import { SITE_CONFIG } from "@/data/site";
+import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
 export default function HomePage() {
@@ -673,7 +673,7 @@ export default function HomePage() {
               <div>
                 <div className="manifesto-specs">
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">19 лет опыта</span>
+                    <span className="manifesto-spec-metric">{yearsInBusiness()} опыта</span>
                     <span className="manifesto-spec-desc">Семейная студия без ребрендингов и посредников в СПб</span>
                   </div>
                   <div className="manifesto-spec-row">
