@@ -36,3 +36,10 @@ next-env.d.ts
 # temp screenshots
 screenshots/
 .design/
+
+# image backups & audit reports
+img_originals_backup/
+seo-reports/
+.agents/
+_transcript.txt
+

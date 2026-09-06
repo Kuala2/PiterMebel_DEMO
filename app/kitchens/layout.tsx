@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { buildOg } from "@/lib/seo";
+import { buildOg, SITE_URL } from "@/lib/seo";
+import { KITCHENS } from "@/data/kitchens";
 
 export const metadata: Metadata = {
   title: "Кухни на заказ в СПб от производителя | ПитерМебель",
@@ -15,5 +16,26 @@ export default function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: KITCHENS.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.title,
+      url: `${SITE_URL}/kitchens/${item.slug}/`,
+    })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(itemListJsonLd),
+        }}
+      />
+      {children}
+    </>
+  );
 }

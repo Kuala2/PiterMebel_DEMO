@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { KNOWLEDGE_ARTICLES, getArticleBySlug } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
+import { buildOg } from "@/lib/seo";
 import MeasureForm from "@/components/MeasureForm";
 import { ElectricalBlueprint } from "@/components/KnowledgeBlueprints";
 
@@ -36,12 +37,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       canonical: `/knowledge/${article.slug}`,
     },
     openGraph: {
-      title: article.title,
-      description: article.seoDescription,
+      ...buildOg(article.title, article.seoDescription, `/knowledge/${article.slug}`),
       type: "article",
-      locale: "ru_RU",
-      siteName: SITE_CONFIG.name,
       publishedTime: article.publishedAtISO,
+      authors: [article.author.name],
+      section: article.categoryLabel,
+      images: [{ url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg", alt: article.title }],
     },
   };
 }
@@ -55,6 +56,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   const heroImage = article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg";
+  const wordCount = article.sections.reduce(
+    (sum, section) =>
+      sum +
+      section.text.join(" ").split(/\s+/).length +
+      (section.list?.items.reduce((ls, item) => ls + `${item.lead} ${item.label ?? ""} ${item.body}`.split(/\s+/).length, 0) ?? 0),
+    article.keyTakeaways.join(" ").split(/\s+/).length
+  );
 
   // Schema.org TechArticle microdata
   const jsonLd = {
@@ -65,6 +73,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     datePublished: article.publishedAtISO,
     dateModified: article.publishedAtISO,
     image: `https://pitermebel.com${heroImage}`,
+    wordCount,
+    inLanguage: "ru-RU",
+    articleSection: article.categoryLabel,
     author: {
       "@type": "Person",
       name: article.author.name,

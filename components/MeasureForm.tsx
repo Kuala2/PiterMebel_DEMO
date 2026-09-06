@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
+import { reachGoal } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
 
 const initialState: MeasureFormState = {
@@ -23,6 +24,9 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
     setIsPending(true);
     const formData = new FormData(e.currentTarget);
     const result = await submitMeasureRequest(state, formData);
+    if (result.success) {
+      reachGoal("zayavka");
+    }
     setState(result);
     setIsPending(false);
   };

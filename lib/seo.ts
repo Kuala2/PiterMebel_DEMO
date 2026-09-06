@@ -5,6 +5,19 @@ export const SITE_URL = "https://pitermebel.com";
 /** Дефолтная обложка для соцсетей и мессенджеров (1200×630) */
 export const OG_IMAGE = "/img/brand/og-cover.jpg";
 
+/** ID счётчика Яндекс.Метрики */
+export const METRIKA_ID = 112318484;
+
+/**
+ * Отправка цели в Метрику (цель в интерфейсе Метрики должна иметь
+ * тип «JavaScript-событие» с таким же идентификатором).
+ */
+export function reachGoal(goal: string) {
+  if (typeof window === "undefined") return;
+  const ym = (window as unknown as { ym?: (...args: unknown[]) => void }).ym;
+  ym?.(METRIKA_ID, "reachGoal", goal);
+}
+
 export const HOME_TITLE = `${SITE_CONFIG.name} — Индивидуальные кухни и мебель на заказ в СПб | Собственное производство`;
 
 export const HOME_DESCRIPTION =
