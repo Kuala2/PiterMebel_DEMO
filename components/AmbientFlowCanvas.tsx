@@ -36,6 +36,15 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
         const gl = renderer.gl;
         gl.clearColor(0.133, 0.145, 0.165, 1);
 
+        // Программный WebGL (лабораторные браузеры, слабые машины без GPU):
+        // компиляция шейдера там блокирует поток на десятки секунд. Рисуем
+        // один статичный кадр и не запускаем цикл — фон выглядит так же.
+        const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+        const glRenderer = debugInfo
+          ? String(gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+          : "";
+        const isSoftwareGL = /swiftshader|llvmpipe|software|basic render/i.test(glRenderer);
+
     const geometry = new Triangle(gl);
     const program = new Program(gl, {
       vertex: /* glsl */ `
@@ -112,8 +121,17 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
 
     const mesh = new Mesh(gl, { geometry, program });
 
-    // При reduced-motion свечение замирает одним кадром — не анимируется
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // При reduced-motion или программном WebGL свечение замирает одним кадром
+    if (
+      isSoftwareGL ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      const w = Math.max(2, Math.round(canvas.offsetWidth / 2));
+      const h = Math.max(2, Math.round(canvas.offsetHeight / 2));
+      renderer.setSize(w, h);
+      program.uniforms.uResolution.value = [w, h];
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
       program.uniforms.uTime.value = 21;
       renderer.render({ scene: mesh });
       return () => {
