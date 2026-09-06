@@ -43,3 +43,11 @@ seo-reports/
 .agents/
 _transcript.txt
 
+
+# lighthouse/psi локальные артефакты
+.lh-tmp/
+lh_mobile.json
+lh_desktop.json
+psi_mobile.json
+psi_desktop.json
+audit_report.json

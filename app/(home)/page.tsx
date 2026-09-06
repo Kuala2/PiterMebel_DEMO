@@ -359,7 +359,7 @@ export default function HomePage() {
           </div>
 
           {/* Filter Tabs Bar (No util counters) */}
-          <div className="catalog-tabs-bar" role="tablist" style={{ marginBottom: "28px" }}>
+          <div className="catalog-tabs-bar" style={{ marginBottom: "28px" }}>
             <button
               type="button"
               className={`cat-tab ${activeTab === "all" ? "is-active" : ""}`}

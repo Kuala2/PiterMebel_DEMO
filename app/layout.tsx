@@ -40,6 +40,7 @@ const SITE_JSON_LD = {
       "@type": "FurnitureStore",
       "@id": `${SITE_URL}/#organization`,
       name: SITE_CONFIG.name,
+      alternateName: "Питер-Мебель",
       legalName: SITE_CONFIG.legalEntity,
       url: SITE_URL,
       logo: `${SITE_URL}/img/brand/logo_bird.svg`,
@@ -62,7 +63,7 @@ const SITE_JSON_LD = {
           closes: "18:00",
         },
       ],
-      sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl],
+      sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl, "https://www.instagram.com/pitermebel/"],
     },
     {
       "@type": "WebSite",

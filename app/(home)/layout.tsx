@@ -15,5 +15,17 @@ export default function HomeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  // LCP-элемент главной — hero-фото. Preload с высоким приоритетом:
+  // картинка стартует грузиться сразу, не дожидаясь CSS (иначе LCP 13+с на 4G).
+  return (
+    <>
+      <link
+        rel="preload"
+        as="image"
+        href="/img/hero/photo_hero_upscaled.jpg"
+        fetchPriority="high"
+      />
+      {children}
+    </>
+  );
 }
