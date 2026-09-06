@@ -6,6 +6,9 @@ import Lenis from "lenis";
 /** Плавный «бархатный» скролл в стиле доводчиков Blum. Уважает prefers-reduced-motion. */
 export default function SmoothScroll() {
   useEffect(() => {
+    // На мобильных устройствах нативный тач-скролл работает быстрее и с аппаратным ускорением 120Hz
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     const lenis = new Lenis({
       duration: 1.15,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

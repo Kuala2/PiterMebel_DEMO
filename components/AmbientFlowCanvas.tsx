@@ -20,6 +20,9 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     const canvas = ref.current;
     if (!canvas) return;
 
+    // На смартфонах (< 768px) сохраняем ровный архитектурный тон #22252A без WebGL-нагрузки
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     let disposed = false;
     let cleanup = () => {};
 

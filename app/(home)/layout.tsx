@@ -22,7 +22,7 @@ export default function HomeLayout({
       <link
         rel="preload"
         as="image"
-        href="/img/hero/photo_hero_upscaled.jpg"
+        href="/img/hero/photo_hero_upscaled.webp"
         fetchPriority="high"
       />
       {children}

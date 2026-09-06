@@ -71,7 +71,7 @@ export default function Hero() {
         {/* Background Image Container */}
         <div className="hero-bg-container">
           <Image
-            src="/img/hero/photo_hero_upscaled.jpg"
+            src="/img/hero/photo_hero_upscaled.webp"
             alt="Кухни премум Velvet дерево на заказ СПб"
             fill
             priority

@@ -20,15 +20,15 @@ export const viewport: Viewport = {
 
 const cormorant = Cormorant_Garamond({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["500", "600"],
+  style: ["normal"],
   display: "swap",
   variable: "--font-cormorant",
 });
 
 const onest = Onest({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "600", "700"],
   display: "swap",
   variable: "--font-onest",
 });
@@ -134,7 +134,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Script id="yandex-metrika" strategy="afterInteractive">
+        <Script id="yandex-metrika" strategy="lazyOnload">
           {`(function(m,e,t,r,i,k,a){
               m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
               m[i].l=1*new Date();
