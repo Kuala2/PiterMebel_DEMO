@@ -91,7 +91,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: SITE_CONFIG.name }],
   verification: {
-    yandex: "9b67e4d01f90a71c",
+    yandex: "2290ffc6c48b46ac",
     google: "u6GC5nx_1ELGUhayTou1Y6tglbuIYq3KU6GARkCGlig",
   },
   openGraph: {
