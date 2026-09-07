@@ -67,13 +67,15 @@ export default function KitchensCatalogPage() {
         const currentIdx = cardPhoto[kitchen.slug] ?? 0;
         const photos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
         const isDark = idx !== 1;
+        const isFirst = idx === 0;
 
         return (
           <section
             key={kitchen.slug}
-            className="kitchen-ladder-section"
+            className={`kitchen-ladder-section ${isFirst ? "kitchen-ladder-first" : ""}`}
             style={{
               backgroundColor: isDark ? "var(--bg-dark)" : "var(--bg-studio)",
+              ...(isFirst ? { paddingTop: "28px" } : {}),
             }}
           >
             <div className="container">

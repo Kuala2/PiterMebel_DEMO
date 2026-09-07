@@ -3689,8 +3689,9 @@ select option {
   padding-bottom: 36px;
 }
 
-.kitchen-ladder-section:first-of-type {
-  padding-top: 28px;
+.kitchen-ladder-section:first-of-type,
+.kitchen-ladder-first {
+  padding-top: 28px !important;
 }
 
 .kitchen-ladder-section:last-of-type {
