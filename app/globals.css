@@ -3685,8 +3685,16 @@ select option {
    KITCHEN LADDER SHOWCASE (/kitchens)
    ========================================================================== */
 .kitchen-ladder-section {
-  padding-top: 104px;
-  padding-bottom: 104px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.kitchen-ladder-section:first-of-type {
+  padding-top: 14px;
+}
+
+.kitchen-ladder-section:last-of-type {
+  padding-bottom: 56px;
 }
 
 .kitchen-ladder-item {
@@ -3807,13 +3815,19 @@ select option {
 
 @media (max-width: 992px) {
   .kitchen-ladder-section {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .kitchen-ladder-section:first-of-type {
+    padding-top: 10px;
+  }
+  .kitchen-ladder-section:last-of-type {
+    padding-bottom: 40px;
   }
   .kitchen-ladder-item,
   .kitchen-ladder-item.is-reversed {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
   }
   .kitchen-ladder-item.is-reversed .ladder-photo-col {
     order: 1;
@@ -3835,8 +3849,14 @@ select option {
 
 @media (max-width: 640px) {
   .kitchen-ladder-section {
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .kitchen-ladder-section:first-of-type {
+    padding-top: 8px;
+  }
+  .kitchen-ladder-section:last-of-type {
+    padding-bottom: 32px;
   }
   .kitchen-ladder-item,
   .kitchen-ladder-item.is-reversed {

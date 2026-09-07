@@ -43,7 +43,7 @@ export default function KitchensCatalogPage() {
       <PageHeader title="Кухни студии «ПитерМебель»" />
 
       {/* 2. Filter Tabs Bar (Under the line) */}
-      <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
+      <section style={{ paddingTop: "24px", paddingBottom: "14px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="catalog-tabs-bar">
             {filterTabs.map((tab) => (

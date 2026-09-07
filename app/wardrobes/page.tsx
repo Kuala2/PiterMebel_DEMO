@@ -47,7 +47,7 @@ export default function WardrobesPage() {
       <PageHeader title="Шкафы и гардеробные на заказ" />
 
       {/* 3. Filter Tabs Bar */}
-      <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
+      <section style={{ paddingTop: "24px", paddingBottom: "12px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="catalog-tabs-bar">
             {filterTabs.map((tab) => (
@@ -65,7 +65,7 @@ export default function WardrobesPage() {
       </section>
 
       {/* 4. Portfolio Grid */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "56px", paddingBottom: "112px" }}>
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "16px", paddingBottom: "96px" }}>
         <div className="container">
           <SpotlightArea className="projects-grid" selector=".catalog-card">
             {filteredItems.map((project) => {
