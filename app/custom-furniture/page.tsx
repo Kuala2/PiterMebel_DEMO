@@ -6,11 +6,9 @@ import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
-import PromoBanner from "@/components/PromoBanner";
+import PageHeader from "@/components/PageHeader";
 import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
-import { PROMOS } from "@/data/promos";
-import PageHeader from "@/components/PageHeader";
 
 export default function CustomFurniturePage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -188,15 +186,14 @@ export default function CustomFurniturePage() {
       {/* 5. CANVAS CTA */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
-          <PromoBanner offer={PROMOS.customFurniture} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Индивидуальная корпусная мебель без салонных наценок
+                  Нужна мебель по индивидуальным размерам?
                 </h2>
                 <p className="final-desc">
-                  Изготавливаем прихожие, реечные стеновые панели, мебель для ванных комнат и коммерческих помещений на собственном производстве на Петергофском шоссе, 73. Приглашаем на консультацию в офис на площади Стачек, 9 (офис 407, по записи) для обсуждения чертежей и выбора материалов.
+                  Отправьте эскиз, проект дизайнера или размеры помещения — технолог студии подготовит расчет сметы в нескольких вариантах материалов и фурнитуры без салонных наценок.
                 </p>
                 <div className="final-buttons-row">
                   <a

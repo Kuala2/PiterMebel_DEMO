@@ -5,10 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
-import PromoBanner from "@/components/PromoBanner";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
-import { PROMOS } from "@/data/promos";
 import PageHeader from "@/components/PageHeader";
 
 export default function KitchensCatalogPage() {
@@ -218,15 +216,14 @@ export default function KitchensCatalogPage() {
       {/* 3. Consultation Section */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
-          <PromoBanner offer={PROMOS.kitchens} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Индивидуальные кухни на заказ без салонных наценок
+                  Понравилась модель кухни?
                 </h2>
                 <p className="final-desc">
-                  Пришлите план помещения или понравившуюся модель — технолог студии подготовит точный 3D-проект с учетом геометрии стен, коммуникаций и эргономики рабочих зон. Рассчитаем стоимость в нескольких вариантах фасадов и фурнитуры без скрытых переплат.
+                  Отправьте название модели и примерные размеры вашего помещения — технолог студии подготовит расчет сметы в нескольких вариантах фасадов и фурнитуры без салонных наценок.
                 </p>
                 <div className="final-buttons-row">
                   <a

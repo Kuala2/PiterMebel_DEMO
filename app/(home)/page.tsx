@@ -8,6 +8,7 @@ import Faq from "@/components/Faq";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
 import MeasureForm from "@/components/MeasureForm";
+import PromoBanner from "@/components/PromoBanner";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
@@ -952,6 +953,7 @@ export default function HomePage() {
       {/* 7. FINAL CONSULTATION & CONTACTS */}
       <section className="final-section" id="contacts">
         <div className="container">
+          <PromoBanner embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">

@@ -6,10 +6,8 @@ import Image from "next/image";
 import MeasureForm from "@/components/MeasureForm";
 import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
-import PromoBanner from "@/components/PromoBanner";
 import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
-import { PROMOS } from "@/data/promos";
 import PageHeader from "@/components/PageHeader";
 
 export default function WardrobesPage() {
@@ -181,15 +179,14 @@ export default function WardrobesPage() {
       {/* 5. CANVAS CTA */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
-          <PromoBanner offer={PROMOS.wardrobes} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Спроектируем шкаф или гардеробную под ваши размеры
+                  Понравился шкаф или гардеробная?
                 </h2>
                 <p className="final-desc">
-                  Пришлите размеры ниши или эскиз планировки — мы подготовим точный 3D-проект с удобным внутренним наполнением (пантографы, ящики с доводчиками, встроенная подсветка) и рассчитаем стоимость. Ждем вас в офисе студии на пл. Стачек, 9 для подбора материалов.
+                  Пришлите размеры ниши или эскиз планировки — технолог студии подготовит точный 3D-проект с удобным внутренним наполнением (пантографы, ящики с доводчиками, подсветка) и рассчитает смету без скрытых переплат.
                 </p>
                 <div className="final-buttons-row">
                   <a
