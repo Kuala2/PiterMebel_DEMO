@@ -70,10 +70,9 @@ export default function KitchensCatalogPage() {
         return (
           <section
             key={kitchen.slug}
+            className="kitchen-ladder-section"
             style={{
               backgroundColor: isDark ? "var(--bg-dark)" : "var(--bg-studio)",
-              paddingTop: "112px",
-              paddingBottom: "112px",
             }}
           >
             <div className="container">
@@ -163,10 +162,7 @@ export default function KitchensCatalogPage() {
                 </div>
 
                 {/* Info Column (Весь блок кликабелен для перехода к модели) */}
-                <div
-                  className="ladder-info-col"
-                  style={isReversed ? { justifySelf: "end", marginLeft: "auto", marginRight: 0 } : undefined}
-                >
+                <div className="ladder-info-col">
                   <Link
                     href={`/kitchens/${kitchen.slug}`}
                     className="ladder-content-clickable"

@@ -3684,6 +3684,11 @@ select option {
 /* ==========================================================================
    KITCHEN LADDER SHOWCASE (/kitchens)
    ========================================================================== */
+.kitchen-ladder-section {
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
 .kitchen-ladder-item {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
@@ -3715,7 +3720,7 @@ select option {
 .ladder-gallery-wrap {
   position: relative;
   aspect-ratio: 16 / 11;
-  border-radius: var(--radius-md);
+  border-radius: 0px;
   overflow: hidden;
   background: #22252A;
   border: 1px solid var(--border-subtle);
@@ -3725,7 +3730,7 @@ select option {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 80%;
+  max-width: 540px;
 }
 
 .ladder-title {
@@ -3736,6 +3741,7 @@ select option {
   margin-bottom: 10px;
   line-height: 1.25;
   transition: color 0.2s ease;
+  text-align: left;
 }
 
 .ladder-content-clickable:hover .ladder-title {
@@ -3756,6 +3762,7 @@ select option {
   color: var(--color-text-secondary);
   line-height: 1.65;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .ladder-specs-rows {
@@ -3799,16 +3806,71 @@ select option {
 }
 
 @media (max-width: 992px) {
+  .kitchen-ladder-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
   .kitchen-ladder-item,
   .kitchen-ladder-item.is-reversed {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
   }
   .kitchen-ladder-item.is-reversed .ladder-photo-col {
     order: 1;
   }
-  .kitchen-ladder-item.is-reversed .ladder-info-col {
+  .kitchen-ladder-item.is-reversed .ladder-info-col,
+  .ladder-info-col {
     order: 2;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    justify-self: stretch;
+  }
+  .ladder-title,
+  .ladder-story {
+    text-align: left;
+  }
+}
+
+@media (max-width: 640px) {
+  .kitchen-ladder-section {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .kitchen-ladder-item,
+  .kitchen-ladder-item.is-reversed {
+    gap: 18px;
+  }
+  .ladder-title {
+    font-size: clamp(21px, 5.5vw, 24px);
+    margin-bottom: 8px;
+  }
+  .ladder-story {
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .ladder-specs-rows {
+    margin-bottom: 20px;
+  }
+  .spec-row {
+    grid-template-columns: 105px 1fr;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .spec-row-label {
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+  }
+  .spec-row-val {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .ladder-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 
