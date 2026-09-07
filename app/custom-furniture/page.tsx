@@ -55,9 +55,6 @@ export default function CustomFurniturePage() {
       {/* 1. Page Header */}
       <PageHeader title="Корпусная мебель на заказ" />
 
-      {/* 2. Special Offer Banner: Скидка за объем */}
-      <PromoBanner offer={PROMOS.customFurniture} />
-
       {/* 3. Filter Tabs Bar */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
@@ -191,6 +188,7 @@ export default function CustomFurniturePage() {
       {/* 5. CANVAS CTA */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner offer={PROMOS.customFurniture} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">

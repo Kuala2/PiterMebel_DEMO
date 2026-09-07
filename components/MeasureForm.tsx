@@ -72,7 +72,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
                 disabled={isPending}
               />
               {state.errors?.name && (
-                <p style={{ color: "#FF5A5A", fontSize: "12px", marginTop: "4px" }}>{state.errors.name}</p>
+                <p style={{ color: "#FF5A5A", fontSize: "13px", marginTop: "4px" }}>{state.errors.name}</p>
               )}
             </div>
 
@@ -90,7 +90,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
                 disabled={isPending}
               />
               {state.errors?.contact && (
-                <p style={{ color: "#FF5A5A", fontSize: "12px", marginTop: "4px" }}>{state.errors.contact}</p>
+                <p style={{ color: "#FF5A5A", fontSize: "13px", marginTop: "4px" }}>{state.errors.contact}</p>
               )}
             </div>
 
@@ -138,7 +138,7 @@ export default function MeasureForm({ initialCategory }: MeasureFormProps) {
             >
               {isPending ? "Отправка..." : "Записаться на консультацию"}
             </button>
-            <p style={{ fontSize: "13.5px", color: "var(--color-text-secondary)", marginTop: "10px", textAlign: "left", lineHeight: "1.5" }}>
+            <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginTop: "10px", textAlign: "left", lineHeight: "1.5" }}>
               С вами свяжется специалист, чтобы обсудить пожелания для предварительного расчета и согласовать визит в офис.
             </p>
           </div>

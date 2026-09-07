@@ -367,10 +367,10 @@ export default function CalculatorPage() {
                           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
                             <div className="calc-radio-indicator" />
                             <div>
-                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {cat.name}
                               </div>
-                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
+                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {cat.desc}
                               </div>
                             </div>
@@ -407,10 +407,10 @@ export default function CalculatorPage() {
                               <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
                             </div>
                             <div>
-                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {type.name}
                               </div>
-                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
+                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {type.subtitle}
                               </div>
                             </div>
@@ -453,10 +453,10 @@ export default function CalculatorPage() {
                             transition: "all 0.15s ease",
                           }}
                         >
-                          <div style={{ fontWeight: 600, fontSize: "16.5px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
+                          <div style={{ fontWeight: 600, fontSize: "16px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
                             {size.name}
                           </div>
-                          <div style={{ fontSize: "13.5px", color: "#A0A7B5", marginTop: "4px" }}>
+                          <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "4px" }}>
                             {size.desc}
                           </div>
                         </button>
@@ -466,7 +466,7 @@ export default function CalculatorPage() {
 
                   {/* Manual adjustment counter */}
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
-                    <span style={{ fontSize: "15.5px", color: "#A6ACB8" }}>
+                    <span style={{ fontSize: "16px", color: "#A6ACB8" }}>
                       Точная длина:
                     </span>
                     <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
@@ -535,10 +535,10 @@ export default function CalculatorPage() {
                               <Image src={mat.image} alt={mat.name} fill style={{ objectFit: "cover" }} />
                             </div>
                             <div>
-                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {mat.name}
                               </div>
-                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
+                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {mat.desc}
                               </div>
                             </div>
@@ -578,10 +578,10 @@ export default function CalculatorPage() {
                               )}
                             </div>
                             <div>
-                              <div style={{ fontSize: "16.5px", fontWeight: 600, color: "#FFFFFF" }}>
+                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
                                 {opt.name}
                               </div>
-                              <div style={{ fontSize: "14.5px", color: "#A0A7B5", marginTop: "3px" }}>
+                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
                                 {opt.desc}
                               </div>
                             </div>
@@ -639,7 +639,7 @@ export default function CalculatorPage() {
                 <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A0A7B5", marginBottom: "12px" }}>
                   Параметры спецификации
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px", fontSize: "14.5px" }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px", fontSize: "15px" }}>
                   <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
                     <span style={{ color: "#8E96A5" }}>Тип:</span>
                     <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.furnitureName}</strong>
@@ -657,7 +657,7 @@ export default function CalculatorPage() {
                       <span style={{ color: "#8E96A5", display: "block", marginBottom: "6px", fontSize: "13px" }}>
                         Выбранные опции:
                       </span>
-                      <div style={{ fontSize: "13.5px", color: "#C2C7D4", lineHeight: "1.5" }}>
+                      <div style={{ fontSize: "14px", color: "#C2C7D4", lineHeight: "1.5" }}>
                         {calculation.optionsNames.join(", ")}
                       </div>
                     </li>

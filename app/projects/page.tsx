@@ -193,16 +193,16 @@ export default function ProjectsPortfolioPage() {
       </section>
 
       {/* 4. Consultation Section */}
-      <section className="final-section" style={{ backgroundColor: "var(--bg-studio)" }}>
+      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Хотите реализовать похожий проект?
+                  Индивидуальная мебель по вашим размерам
                 </h2>
                 <p className="final-desc">
-                  Отправьте фото понравившейся мебели или план помещения. Технологи студии «ПитерМебель» рассчитают стоимость и проконсультируют по материалам.
+                  Отправьте фото понравившейся мебели или план помещения. Технологи студии «ПитерМебель» рассчитают стоимость, подготовят точный 3D-эскиз и проконсультируют по материалам без салонных наценок.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -225,6 +225,12 @@ export default function ProjectsPortfolioPage() {
                     <VkIcon />
                     ВКонтакте
                   </a>
+                  <Link href="/calculator" className="btn btn-glass">
+                    Калькулятор мебели
+                  </Link>
+                </div>
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
               <div className="final-info-block">

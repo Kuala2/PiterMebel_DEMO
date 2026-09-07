@@ -65,12 +65,12 @@ export const SITE_CONFIG: SiteConfig = {
 };
 
 export const NAVIGATION_LINKS = [
-  { href: "/kitchens", label: "Кухни" },
-  { href: "/wardrobes", label: "Шкафы" },
-  { href: "/custom-furniture", label: "Корпусная мебель" },
-  { href: "/production", label: "Производство" },
-  { href: "/calculator", label: "Калькулятор" },
-  { href: "/contacts", label: "Контакты" },
+  { href: "/kitchens/", label: "Кухни" },
+  { href: "/wardrobes/", label: "Шкафы" },
+  { href: "/custom-furniture/", label: "Корпусная мебель" },
+  { href: "/production/", label: "Производство" },
+  { href: "/calculator/", label: "Калькулятор" },
+  { href: "/contacts/", label: "Контакты" },
 ];
 
 /**

@@ -48,9 +48,6 @@ export default function WardrobesPage() {
       {/* 1. Page Header */}
       <PageHeader title="Шкафы и гардеробные на заказ" />
 
-      {/* 2. Special Offer Banner: Скидка за объем */}
-      <PromoBanner offer={PROMOS.wardrobes} />
-
       {/* 3. Filter Tabs Bar */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
@@ -184,6 +181,7 @@ export default function WardrobesPage() {
       {/* 5. CANVAS CTA */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner offer={PROMOS.wardrobes} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">

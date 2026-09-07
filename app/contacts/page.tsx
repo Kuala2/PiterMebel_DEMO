@@ -110,7 +110,7 @@ export default function ContactsPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-green btn-sm"
-                    style={{ padding: "12px 20px", fontSize: "14.5px" }}
+                    style={{ padding: "12px 20px", fontSize: "15px" }}
                   >
                     Открыть на Яндекс.Картах →
                   </a>

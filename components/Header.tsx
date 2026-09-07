@@ -20,14 +20,37 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const normalizePath = (p: string) => {
+    if (!p) return "/";
+    const cleaned = p.split("?")[0].split("#")[0];
+    return cleaned.endsWith("/") ? cleaned : `${cleaned}/`;
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setMobileMenuOpen(false);
+    const currentNorm = normalizePath(pathname);
+    const targetNorm = normalizePath(href);
+    if (currentNorm === targetNorm) {
+      e.preventDefault();
+      if (typeof window !== "undefined") {
+        const lenis = (window as unknown as { __lenis?: { scrollTo: (t: number) => void } }).__lenis;
+        if (lenis) {
+          lenis.scrollTo(0);
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+    }
+  };
+
   // Multi-page navigation structure (Главная accessed via Logo)
   const navLinks = [
-    { href: "/kitchens", label: "КУХНИ" },
-    { href: "/wardrobes", label: "ШКАФЫ" },
-    { href: "/custom-furniture", label: "КОРПУСНАЯ МЕБЕЛЬ" },
-    { href: "/production", label: "ПРОИЗВОДСТВО" },
-    { href: "/calculator", label: "КАЛЬКУЛЯТОР" },
-    { href: "/contacts", label: "КОНТАКТЫ" },
+    { href: "/kitchens/", label: "КУХНИ" },
+    { href: "/wardrobes/", label: "ШКАФЫ" },
+    { href: "/custom-furniture/", label: "КОРПУСНАЯ МЕБЕЛЬ" },
+    { href: "/production/", label: "ПРОИЗВОДСТВО" },
+    { href: "/calculator/", label: "КАЛЬКУЛЯТОР" },
+    { href: "/contacts/", label: "КОНТАКТЫ" },
   ];
 
   useEffect(() => {
@@ -48,7 +71,12 @@ export default function Header() {
       <div className="container">
         <div className="header-inner">
           {/* Logo: Origami Bird */}
-          <Link href="/" className="brand-link" aria-label={SITE_CONFIG.name} onClick={() => setMobileMenuOpen(false)}>
+          <Link
+            href="/"
+            className="brand-link"
+            aria-label={SITE_CONFIG.name}
+            onClick={(e) => handleNavClick(e, "/")}
+          >
             <Image
               src="/img/brand/logo_bird.svg"
               alt={SITE_CONFIG.name}
@@ -63,15 +91,17 @@ export default function Header() {
           {/* Multi-page Navigation */}
           <nav className="header-nav" aria-label="Основная навигация">
             {navLinks.map((link) => {
+              const currentNorm = normalizePath(pathname);
               const isActive =
                 link.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(link.href);
+                  ? currentNorm === "/"
+                  : currentNorm.startsWith(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`nav-link ${isActive ? "active" : ""}`}
+                  onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.label}
                 </Link>
@@ -129,16 +159,17 @@ export default function Header() {
       <div className={`mobile-nav-drawer ${mobileMenuOpen ? "is-open" : ""}`}>
         <div className="mobile-nav-links">
           {navLinks.map((link) => {
+            const currentNorm = normalizePath(pathname);
             const isActive =
               link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+                ? currentNorm === "/"
+                : currentNorm.startsWith(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`mobile-nav-link ${isActive ? "active" : ""}`}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
               </Link>

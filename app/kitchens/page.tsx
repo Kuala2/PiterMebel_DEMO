@@ -44,9 +44,6 @@ export default function KitchensCatalogPage() {
       {/* 1. Page Header */}
       <PageHeader title="Кухни студии «ПитерМебель»" />
 
-      {/* 1.1. Special Gift Banner: Схема электрики в подарок */}
-      <PromoBanner offer={PROMOS.kitchens} />
-
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "20px", paddingBottom: "20px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
@@ -219,16 +216,17 @@ export default function KitchensCatalogPage() {
       })}
 
       {/* 3. Consultation Section */}
-      <section className="final-section" style={{ backgroundColor: "var(--bg-studio)" }}>
+      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner offer={PROMOS.kitchens} embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
                 <h2 className="final-headline">
-                  Понравилась модель кухни?
+                  Индивидуальные кухни на заказ без салонных наценок
                 </h2>
                 <p className="final-desc">
-                  Отправьте название модели и примерные размеры вашего помещения. Технолог студии подготовит расчет сметы в нескольких вариантах фасадов и фурнитуры.
+                  Пришлите план помещения или понравившуюся модель — технолог студии подготовит точный 3D-проект с учетом геометрии стен, коммуникаций и эргономики рабочих зон. Рассчитаем стоимость в нескольких вариантах фасадов и фурнитуры без скрытых переплат.
                 </p>
                 <div className="final-buttons-row">
                   <a
@@ -251,10 +249,16 @@ export default function KitchensCatalogPage() {
                     <VkIcon />
                     ВКонтакте
                   </a>
+                  <Link href="/calculator" className="btn btn-glass">
+                    Калькулятор кухни
+                  </Link>
+                </div>
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
               <div className="final-info-block">
-                <MeasureForm initialCategory="Кухни" />
+                <MeasureForm initialCategory="Кухня" />
               </div>
             </div>
           </div>

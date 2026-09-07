@@ -16,8 +16,8 @@ export const PROMOS: Record<string, PromoOffer> = {
     title: "Схема электрики в подарок при заказе кухни",
     description: "Инженер разрабатывает детальную схему выводов розеток, силовой проводки и вентиляции под технику. Исключает ошибки строителей при ремонте.",
     valueTag: "Схема электрики в подарок",
-    ctaText: "Обсудить проект кухни →",
-    ctaHref: "/contacts#measure",
+    ctaText: "Получить схему в подарок →",
+    ctaHref: "#measure-form",
     active: true,
   },
   wardrobes: {
@@ -27,7 +27,7 @@ export const PROMOS: Record<string, PromoOffer> = {
     description: "При заказе кухни со шкафом или мебели для двух помещений действует гибкая система скидок производства на весь проект.",
     valueTag: "Скидка на комплект от 2 изделий",
     ctaText: "Рассчитать со скидкой →",
-    ctaHref: "/contacts#measure",
+    ctaHref: "#measure-form",
     active: true,
   },
   customFurniture: {
@@ -36,8 +36,8 @@ export const PROMOS: Record<string, PromoOffer> = {
     title: "Беспроцентная рассрочка и безналичный расчет",
     description: "Рассрочка от банков-партнеров без первого взноса и переплат. Официальный договор фабрики, удобная оплата по безналичному расчету.",
     valueTag: "Беспроцентная рассрочка",
-    ctaText: "Узнать условия фабрики →",
-    ctaHref: "/contacts#measure",
+    ctaText: "Узнать условия рассрочки →",
+    ctaHref: "#measure-form",
     active: true,
   },
 };

@@ -29,10 +29,10 @@ export default function ProjectCard({
 
         <div className="card-body">
           <div>
-            <h3 className="card-title" style={{ fontSize: "19px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "6px" }}>
+            <h3 className="card-title" style={{ fontSize: "20px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "6px" }}>
               {project.title}
             </h3>
-            <p style={{ fontSize: "14.5px", color: "var(--color-text-secondary)", lineHeight: "1.55" }}>
+            <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: "1.55" }}>
               {project.task}
             </p>
           </div>

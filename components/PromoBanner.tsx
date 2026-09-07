@@ -9,6 +9,7 @@ interface PromoBannerProps {
   initialCategory?: "kitchens" | "wardrobes" | "customFurniture";
   className?: string;
   autoPlayInterval?: number;
+  embedded?: boolean;
 }
 
 export default function PromoBanner({
@@ -16,6 +17,7 @@ export default function PromoBanner({
   initialCategory,
   className = "",
   autoPlayInterval = 6000,
+  embedded = false,
 }: PromoBannerProps) {
   const allOffers = Object.values(PROMOS).filter((o) => o.active);
 
@@ -79,58 +81,85 @@ export default function PromoBanner({
   const currentOffer = allOffers[currentIndex] || allOffers[0];
   if (!currentOffer) return null;
 
+  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (currentOffer.ctaHref.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(currentOffer.ctaHref);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        const input = target.querySelector<HTMLInputElement>("input:not([type=hidden])");
+        if (input) {
+          setTimeout(() => input.focus(), 300);
+        }
+      }
+    }
+  };
+
+  const cardContent = (
+    <div
+      className="promo-card"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Left: Content with smooth crossfade animation */}
+      <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
+        <h3 className="promo-title">{currentOffer.title}</h3>
+        <p className="promo-desc">{currentOffer.description}</p>
+      </div>
+
+      {/* Right: Controls & CTA */}
+      <div className="promo-right">
+        {allOffers.length > 1 && (
+          <div className="promo-nav-group">
+            <span className="promo-counter-label">
+              0{currentIndex + 1} / 0{allOffers.length}
+            </span>
+            <div className="promo-arrows">
+              <button
+                type="button"
+                className="promo-nav-arrow"
+                onClick={handlePrev}
+                aria-label="Предыдущая акция"
+                title="Предыдущая акция"
+              >
+                ←
+              </button>
+              <button
+                type="button"
+                className="promo-nav-arrow"
+                onClick={handleNext}
+                aria-label="Следующая акция"
+                title="Следующая акция"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        )}
+
+        <Link
+          href={currentOffer.ctaHref}
+          onClick={handleCtaClick}
+          className={`btn btn-green promo-cta-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
+        >
+          {currentOffer.ctaText}
+        </Link>
+      </div>
+    </div>
+  );
+
+  if (embedded) {
+    return (
+      <div className={`promo-embedded-wrapper ${className}`}>
+        {cardContent}
+      </div>
+    );
+  }
+
   return (
     <section className={`promo-architectural-banner ${className}`}>
       <div className="container">
-        <div
-          className="promo-card"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Left: Content with smooth crossfade animation */}
-          <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
-            <h3 className="promo-title">{currentOffer.title}</h3>
-            <p className="promo-desc">{currentOffer.description}</p>
-          </div>
-
-          {/* Right: Controls & CTA */}
-          <div className="promo-right">
-            {allOffers.length > 1 && (
-              <div className="promo-nav-group">
-                <span className="promo-counter-label">
-                  0{currentIndex + 1} / 0{allOffers.length}
-                </span>
-                <div className="promo-arrows">
-                  <button
-                    type="button"
-                    className="promo-nav-arrow"
-                    onClick={handlePrev}
-                    aria-label="Предыдущая акция"
-                    title="Предыдущая акция"
-                  >
-                    ←
-                  </button>
-                  <button
-                    type="button"
-                    className="promo-nav-arrow"
-                    onClick={handleNext}
-                    aria-label="Следующая акция"
-                    title="Следующая акция"
-                  >
-                    →
-                  </button>
-                </div>
-              </div>
-            )}
-
-            <Link
-              href={currentOffer.ctaHref}
-              className={`btn btn-green promo-cta-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
-            >
-              {currentOffer.ctaText}
-            </Link>
-          </div>
-        </div>
+        {cardContent}
       </div>
     </section>
   );
