@@ -1,0 +1,33 @@
+# Конфигурация Caddy для pitermebel.com (Next.js Static Export)
+
+pitermebel.com, www.pitermebel.com {
+    encode zstd gzip
+
+    # Корневая директория статического экспорта
+    root * /var/www/pitermebel/out
+    file_server
+
+    # 1. HTML-страницы и маршруты: СТРОГО БЕЗ КЭША
+    # Заставляет браузеры всегда запрашивать свежий HTML и новые хеши скриптов
+    @html {
+        path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /privacy/*
+    }
+    header @html Cache-Control "no-cache, no-store, must-revalidate"
+    header @html Pragma "no-cache"
+    header @html Expires "0"
+
+    # 2. Хешированные ассеты Next.js (_next/static/*) — максимальный кэш (хэш в имени меняется при каждой сборке)
+    @static {
+        path /_next/static/*
+    }
+    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    # 3. Медиа и изображения
+    @media {
+        path *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2
+    }
+    header @media Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+
+    # 4. Роутинг для trailingSlash статического экспорта
+    try_files {path} {path}/ {path}.html /index.html
+}
