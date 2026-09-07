@@ -54,7 +54,7 @@ export default function CustomFurniturePage() {
       <PageHeader title="Корпусная мебель на заказ" />
 
       {/* 3. Filter Tabs Bar */}
-      <section style={{ paddingTop: "24px", paddingBottom: "12px", backgroundColor: "var(--bg-dark)" }}>
+      <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="catalog-tabs-bar">
             {filterTabs.map((tab) => (
@@ -72,7 +72,7 @@ export default function CustomFurniturePage() {
       </section>
 
       {/* 4. Portfolio Grid */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "16px", paddingBottom: "96px" }}>
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "28px", paddingBottom: "96px" }}>
         <div className="container">
           <SpotlightArea className="projects-grid" selector=".catalog-card">
             {filteredItems.map((project) => {

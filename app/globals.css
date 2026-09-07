@@ -3690,7 +3690,7 @@ select option {
 }
 
 .kitchen-ladder-section:first-of-type {
-  padding-top: 14px;
+  padding-top: 28px;
 }
 
 .kitchen-ladder-section:last-of-type {
@@ -3819,7 +3819,7 @@ select option {
     padding-bottom: 24px;
   }
   .kitchen-ladder-section:first-of-type {
-    padding-top: 10px;
+    padding-top: 20px;
   }
   .kitchen-ladder-section:last-of-type {
     padding-bottom: 40px;
@@ -3853,7 +3853,7 @@ select option {
     padding-bottom: 18px;
   }
   .kitchen-ladder-section:first-of-type {
-    padding-top: 8px;
+    padding-top: 16px;
   }
   .kitchen-ladder-section:last-of-type {
     padding-bottom: 32px;

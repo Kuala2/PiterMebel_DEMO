@@ -103,6 +103,13 @@ export default function PromoBanner({
     >
       {/* Left: Content with smooth crossfade animation */}
       <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
+        {currentOffer.badge && (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+            <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-green-brand)" }}>
+              АКЦИЯ СТУДИИ · {currentOffer.badge.toUpperCase()}
+            </span>
+          </div>
+        )}
         <h3 className="promo-title">{currentOffer.title}</h3>
         <p className="promo-desc">{currentOffer.description}</p>
       </div>
