@@ -19,7 +19,7 @@ export default function PageHeader({ title, backTo, backLabel = "На главн
   return (
     <section
       className="page-header"
-      style={{ paddingBottom: "28px", borderBottom: "1px solid rgba(255, 255, 255, 0.08)" }}
+      style={{ paddingBottom: "28px", borderBottom: "1px solid rgba(255, 255, 255, 0.12)" }}
     >
       <script
         type="application/ld+json"

@@ -9,6 +9,7 @@ import SpotlightArea from "@/components/SpotlightArea";
 import PageHeader from "@/components/PageHeader";
 import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
+import PromoBanner from "@/components/PromoBanner";
 
 export default function CustomFurniturePage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -186,6 +187,7 @@ export default function CustomFurniturePage() {
       {/* 5. CANVAS CTA */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner initialCategory="customFurniture" embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">

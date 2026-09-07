@@ -8,6 +8,7 @@ import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
+import PromoBanner from "@/components/PromoBanner";
 
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -212,6 +213,7 @@ export default function KitchensCatalogPage() {
       {/* 3. Consultation Section */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner initialCategory="kitchens" embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">

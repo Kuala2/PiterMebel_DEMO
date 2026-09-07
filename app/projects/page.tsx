@@ -9,6 +9,7 @@ import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS, Project } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
+import PromoBanner from "@/components/PromoBanner";
 
 export default function ProjectsPortfolioPage() {
   const [activeType, setActiveType] = useState<string>("all");
@@ -195,6 +196,7 @@ export default function ProjectsPortfolioPage() {
       {/* 4. Consultation Section */}
       <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
+          <PromoBanner embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
