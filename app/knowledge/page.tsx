@@ -4,6 +4,7 @@ import Image from "next/image";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
 import MeasureForm from "@/components/MeasureForm";
+import VkIcon from "@/components/VkIcon";
 import PageHeader from "@/components/PageHeader";
 import { buildOg } from "@/lib/seo";
 
@@ -113,16 +114,18 @@ export default function KnowledgePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-glass"
+                    style={{ gap: "10px" }}
                   >
-                    Написать технологу в VK
+                    <VkIcon />
+                    ВКонтакте
                   </a>
                   <Link href="/calculator" className="btn btn-glass">
                     Калькулятор мебели
                   </Link>
                 </div>
 
-                <div className="final-footnote" style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "24px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}) · Цех: {SITE_CONFIG.productionAddress}
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
 

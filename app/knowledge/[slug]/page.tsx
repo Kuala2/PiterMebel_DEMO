@@ -6,6 +6,7 @@ import { KNOWLEDGE_ARTICLES, getArticleBySlug } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg } from "@/lib/seo";
 import MeasureForm from "@/components/MeasureForm";
+import VkIcon from "@/components/VkIcon";
 import { ElectricalBlueprint } from "@/components/KnowledgeBlueprints";
 
 interface ArticlePageProps {
@@ -360,16 +361,18 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-glass"
+                    style={{ gap: "10px" }}
                   >
-                    Написать технологу в VK
+                    <VkIcon />
+                    ВКонтакте
                   </a>
                   <Link href="/knowledge" className="btn btn-glass">
                     Все статьи базы знаний
                   </Link>
                 </div>
 
-                <div className="final-footnote" style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "24px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}) · Цех: {SITE_CONFIG.productionAddress}
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
 

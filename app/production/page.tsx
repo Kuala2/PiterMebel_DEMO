@@ -227,7 +227,7 @@ export default function ProductionPage() {
       </section>
 
       {/* 6. Финальный блок: Консультация и форма */}
-      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-dark)" }}>
+      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
           <div className="final-card-container">
             <div className="final-grid">

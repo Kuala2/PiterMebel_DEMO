@@ -732,6 +732,9 @@ export default function CalculatorPage() {
                     ВКонтакте
                   </a>
                 </div>
+                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
+                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
+                </div>
               </div>
               <div className="final-info-block">
                 <MeasureForm initialCategory="Параметры из калькулятора" />
