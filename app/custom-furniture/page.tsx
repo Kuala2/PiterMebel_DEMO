@@ -186,6 +186,7 @@ export default function CustomFurniturePage() {
       <ConsultationSection
         id="consult"
         title="Нужна мебель по индивидуальным размерам?"
+        subtitle="Разработаем проект под сложную геометрию стен, ниши и перепады высот с официальной гарантией фабрики"
         initialCategory="customFurniture"
         defaultFurnitureType="Прихожая"
         calculatorText="Калькулятор мебели"

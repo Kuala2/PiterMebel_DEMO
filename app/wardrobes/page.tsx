@@ -179,6 +179,7 @@ export default function WardrobesPage() {
       <ConsultationSection
         id="consult"
         title="Понравился шкаф или гардеробная?"
+        subtitle="Рассчитаем наполнение, системы раздвижения и согласуем выезд замерщика с каталогами материалов"
         initialCategory="wardrobes"
         defaultFurnitureType="Шкаф"
         calculatorText="Калькулятор шкафа"

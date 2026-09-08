@@ -11,6 +11,7 @@ import { reachGoal } from "@/lib/seo";
 interface ConsultationSectionProps {
   id?: string;
   title?: string;
+  subtitle?: string;
   initialCategory?: "kitchens" | "wardrobes" | "customFurniture";
   defaultFurnitureType?: string;
   calculatorText?: string;
@@ -25,6 +26,7 @@ const initialFormState: MeasureFormState = {
 export default function ConsultationSection({
   id = "consult",
   title = "Понравилась модель кухни?",
+  subtitle = "Рассчитаем точную смету в 3 ценовых категориях материалов или согласуем встречу в студии для выбора образцов",
   initialCategory = "kitchens",
   defaultFurnitureType = "Кухня",
   calculatorText = "Калькулятор кухни",
@@ -106,110 +108,80 @@ export default function ConsultationSection({
     <section className={`consult-architectural-section ${className}`} id={id} style={{ backgroundColor: "var(--bg-studio)" }}>
       <div className="container">
         <div className="consult-master-card">
-          {/* LEFT: Active Studio Promo + Fast Contact Channels + Address */}
-          <div
-            className="consult-info-pane"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* Promo Widget */}
-            {currentOffer && (
-              <div className="consult-promo-widget">
-                <div className="consult-promo-head">
-                  <span className="consult-promo-tag">
-                    АКЦИЯ · {currentOffer.badge ? currentOffer.badge.toUpperCase() : "УСЛОВИЯ ФАБРИКИ"}
-                  </span>
-                  {allOffers.length > 1 && (
-                    <div className="consult-promo-nav">
-                      <span className="consult-promo-counter">
-                        0{currentIndex + 1} / 0{allOffers.length}
-                      </span>
-                      <button
-                        type="button"
-                        className="consult-nav-arrow"
-                        onClick={handlePrev}
-                        aria-label="Предыдущая акция"
-                      >
-                        ←
-                      </button>
-                      <button
-                        type="button"
-                        className="consult-nav-arrow"
-                        onClick={handleNext}
-                        aria-label="Следующая акция"
-                      >
-                        →
-                      </button>
-                    </div>
-                  )}
-                </div>
+          {/* 1. TOP ANNOUNCEMENT RIBBON: Factory Special Offer */}
+          {currentOffer && (
+            <div
+              className="consult-promo-ribbon"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <div className="consult-promo-left">
+                <span className="consult-promo-badge-tag">
+                  <span className="consult-promo-accent-dot" />
+                  АКЦИЯ · {currentOffer.badge ? currentOffer.badge.toUpperCase() : "УСЛОВИЯ ФАБРИКИ"}
+                </span>
                 <div className={`consult-promo-title-anim ${isTransitioning ? "is-transitioning" : ""}`}>
-                  <div className="consult-promo-title">{currentOffer.title}</div>
+                  <span className="consult-promo-title-text">{currentOffer.title}</span>
                 </div>
               </div>
-            )}
 
-            {/* Direct Channels Cluster */}
-            <div className="consult-buttons-cluster">
-              <a
-                href={`tel:${SITE_CONFIG.phoneRaw}`}
-                className="btn btn-green"
-                style={{ width: "100%", height: "46px" }}
-              >
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                {SITE_CONFIG.phone}
-              </a>
-              <div className="consult-buttons-row">
-                <a
-                  href={SITE_CONFIG.vkImUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-glass"
-                  style={{ gap: "8px" }}
-                >
-                  <VkIcon />
-                  ВКонтакте
-                </a>
-                <Link href={calculatorHref} className="btn btn-glass">
-                  {calculatorText}
-                </Link>
-              </div>
+              {allOffers.length > 1 && (
+                <div className="consult-promo-controls">
+                  <span className="consult-promo-counter">
+                    0{currentIndex + 1} / 0{allOffers.length}
+                  </span>
+                  <div className="consult-promo-nav-buttons">
+                    <button
+                      type="button"
+                      className="consult-nav-arrow"
+                      onClick={handlePrev}
+                      aria-label="Предыдущая акция"
+                    >
+                      ←
+                    </button>
+                    <button
+                      type="button"
+                      className="consult-nav-arrow"
+                      onClick={handleNext}
+                      aria-label="Следующая акция"
+                    >
+                      →
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
+          )}
 
-            {/* Address Footnote */}
-            <div className="consult-address-footnote">
-              Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-            </div>
-          </div>
-
-          {/* RIGHT: Main Headline + Form fields */}
-          <div className="consult-form-pane">
+          {/* 2. MAIN BODY: Headline Question + Consultation Form */}
+          <div className="consult-main-body">
             {formState.success ? (
-              <div className="form-success-box" style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <div className="form-success-box" style={{ padding: "40px 0", textAlign: "left" }}>
                 <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-green-brand)", marginBottom: "8px" }}>
                   Заявка принята
                 </div>
-                <h3 style={{ fontSize: "24px", fontFamily: "var(--font-main)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "10px" }}>
+                <h3 style={{ fontSize: "26px", fontFamily: "var(--font-main)", fontWeight: 600, color: "#FFFFFF", marginBottom: "12px" }}>
                   Спасибо за обращение!
                 </h3>
-                <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: "1.55" }}>
+                <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: "1.6", maxWidth: "680px" }}>
                   {formState.message ||
                     "Мы свяжемся с вами в ближайшее время для уточнения деталей, предварительного расчета стоимости и согласования встречи в офисе студии."}
                 </p>
-                <div style={{ marginTop: "16px", fontSize: "13px", color: "var(--color-text-muted)" }}>
+                <div style={{ marginTop: "20px", fontSize: "13.5px", color: "var(--color-text-muted)" }}>
                   Студия «{SITE_CONFIG.name}» · {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи)
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-                <div>
-                  <h2 className="consult-headline">
-                    {title}
-                  </h2>
+              <form onSubmit={handleSubmit} className="consult-form-element">
+                {/* Section Header */}
+                <div className="consult-header-block">
+                  <h2 className="consult-headline">{title}</h2>
+                  {subtitle && <p className="consult-subtitle">{subtitle}</p>}
+                </div>
 
-                  <div className="form-group">
+                {/* 3 Inputs Grid */}
+                <div className="consult-fields-grid">
+                  <div className="form-group" style={{ margin: 0 }}>
                     <label htmlFor="consult-name" className="form-label">
                       Ваше имя
                     </label>
@@ -227,16 +199,16 @@ export default function ConsultationSection({
                     )}
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group" style={{ margin: 0 }}>
                     <label htmlFor="consult-contact" className="form-label">
-                      Контакт для связи
+                      Телефон или ник ВКонтакте
                     </label>
                     <input
                       id="consult-contact"
                       name="contact"
                       type="text"
                       required
-                      placeholder="Номер телефона или ник ВКонтакте"
+                      placeholder="+7 (___) ___-__-__"
                       className="form-input"
                       disabled={isPending}
                     />
@@ -245,7 +217,7 @@ export default function ConsultationSection({
                     )}
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group" style={{ margin: 0 }}>
                     <label htmlFor="consult-category" className="form-label">
                       Тип мебели
                     </label>
@@ -266,8 +238,9 @@ export default function ConsultationSection({
                   </div>
                 </div>
 
-                <div style={{ marginTop: "14px" }}>
-                  <label className="form-consent-label">
+                {/* Action Row: Consent + Submit Button */}
+                <div className="consult-action-row">
+                  <label className="form-consent-label" style={{ margin: 0 }}>
                     <input
                       type="checkbox"
                       name="consent"
@@ -278,23 +251,91 @@ export default function ConsultationSection({
                     />
                     <span>
                       Даю согласие на обработку персональных данных в соответствии с{" "}
-                      <Link href="/privacy">политикой конфиденциальности</Link> (ФЗ № 152-ФЗ)
+                      <Link href="/privacy" style={{ color: "var(--color-green-brand)", textDecoration: "underline" }}>
+                        политикой конфиденциальности
+                      </Link>{" "}
+                      (ФЗ № 152-ФЗ)
                     </span>
                   </label>
+
                   <button
                     type="submit"
-                    className="btn btn-green"
+                    className="btn btn-green consult-submit-btn"
                     disabled={isPending || !consent}
-                    style={{ width: "100%", height: "46px", borderRadius: 0, marginTop: "12px", opacity: isPending || !consent ? 0.55 : 1 }}
+                    style={{
+                      opacity: isPending || !consent ? 0.55 : 1,
+                    }}
                   >
                     {isPending ? "Отправка..." : "Записаться на консультацию и расчет"}
                   </button>
-                  <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginTop: "10px", textAlign: "left", lineHeight: "1.45" }}>
-                    С вами свяжется специалист фабрики, чтобы обсудить пожелания для предварительного расчета и согласовать визит в офис.
-                  </p>
                 </div>
               </form>
             )}
+          </div>
+
+          {/* 3. DIRECT CONTACT CHANNELS STRIP (Refined Luxury Rows) */}
+          <div className="consult-direct-strip">
+            <div className="consult-direct-header">
+              <span className="consult-direct-label">Прямая связь с технологом без ожидания:</span>
+            </div>
+
+            <div className="consult-direct-grid">
+              {/* Phone */}
+              <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="consult-direct-card">
+                <div className="consult-direct-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div className="consult-direct-body">
+                  <span className="consult-direct-val">{SITE_CONFIG.phone}</span>
+                  <span className="consult-direct-desc">Звонок на производство · 9:00–21:00</span>
+                </div>
+                <span className="consult-direct-arrow">→</span>
+              </a>
+
+              {/* VK */}
+              <a href={SITE_CONFIG.vkImUrl} target="_blank" rel="noopener noreferrer" className="consult-direct-card">
+                <div className="consult-direct-icon">
+                  <VkIcon />
+                </div>
+                <div className="consult-direct-body">
+                  <span className="consult-direct-val">Чат ВКонтакте</span>
+                  <span className="consult-direct-desc">Отправка эскизов · ответ за 15 мин</span>
+                </div>
+                <span className="consult-direct-arrow">→</span>
+              </a>
+
+              {/* Calculator */}
+              <Link href={calculatorHref} className="consult-direct-card">
+                <div className="consult-direct-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="4" y="2" width="16" height="20" rx="0" />
+                    <line x1="8" y1="6" x2="16" y2="6" />
+                    <line x1="16" y1="14" x2="16" y2="18" />
+                    <path d="M16 10h.01" />
+                    <path d="M12 10h.01" />
+                    <path d="M8 10h.01" />
+                    <path d="M12 14h.01" />
+                    <path d="M8 14h.01" />
+                    <path d="M12 18h.01" />
+                    <path d="M8 18h.01" />
+                  </svg>
+                </div>
+                <div className="consult-direct-body">
+                  <span className="consult-direct-val">{calculatorText}</span>
+                  <span className="consult-direct-desc">Расчет стоимости онлайн за 2 минуты</span>
+                </div>
+                <span className="consult-direct-arrow">→</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* 4. STUDIO & PRODUCTION GEOLOCATION FOOTER */}
+          <div className="consult-footer-bar">
+            <span className="consult-footer-text">
+              Офис студии: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Собственное производство: {SITE_CONFIG.productionAddress}
+            </span>
           </div>
         </div>
       </div>

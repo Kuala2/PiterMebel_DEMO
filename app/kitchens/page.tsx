@@ -209,10 +209,10 @@ export default function KitchensCatalogPage() {
       })}
 
       {/* 3. Consultation Section */}
-      {/* 3. Consultation Section */}
       <ConsultationSection
         id="consult"
         title="Понравилась модель кухни?"
+        subtitle="Рассчитаем смету в 3 вариантах фасадов и фурнитуры или подготовим проект под ваше помещение"
         initialCategory="kitchens"
         defaultFurnitureType="Кухня"
         calculatorText="Калькулятор кухни"

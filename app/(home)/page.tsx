@@ -951,7 +951,8 @@ export default function HomePage() {
       {/* 7. FINAL CONSULTATION & CONTACTS */}
       <ConsultationSection
         id="contacts"
-        title="Индивидуальная мебель и кухни без наценок"
+        title="Понравился проект или хотите расчет по своим размерам?"
+        subtitle="Рассчитаем смету в 3 вариантах материалов или согласуем встречу в студии для выбора образцов"
         initialCategory="kitchens"
         defaultFurnitureType="Кухня"
         calculatorText="Калькулятор мебели"
