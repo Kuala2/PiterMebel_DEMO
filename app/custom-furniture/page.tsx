@@ -191,12 +191,9 @@ export default function CustomFurniturePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Нужна мебель по индивидуальным размерам?
                 </h2>
-                <p className="final-desc">
-                  Отправьте эскиз, проект дизайнера или размеры помещения — технолог студии подготовит расчет сметы в нескольких вариантах материалов и фурнитуры без салонных наценок.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

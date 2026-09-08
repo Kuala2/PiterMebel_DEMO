@@ -184,12 +184,9 @@ export default function WardrobesPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Понравился шкаф или гардеробная?
                 </h2>
-                <p className="final-desc">
-                  Пришлите размеры ниши или эскиз планировки — технолог студии подготовит точный 3D-проект с удобным внутренним наполнением (пантографы, ящики с доводчиками, подсветка) и рассчитает смету без скрытых переплат.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

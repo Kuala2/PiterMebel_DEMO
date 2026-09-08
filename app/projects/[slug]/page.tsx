@@ -233,12 +233,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Заказать индивидуальный расчет проекта
                 </h2>
-                <p className="final-desc">
-                  Приглашаем на консультацию в офис студии на площади Стачек, 9 (по записи). Вживую подберем материалы, согласуем эргономику и рассчитаем смету с точностью до рубля без салонных переплат.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

@@ -704,12 +704,9 @@ export default function CalculatorPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Зафиксируйте предварительный расчет с технологом
                 </h2>
-                <p className="final-desc">
-                  Специалист студии свяжется с вами для обсуждения деталей конфигурации, согласует предварительную смету и пригласит в офис на площади Стачек, 9 (офис 407, по записи) для выбора оттенков эмалей, фактур шпона и фурнитуры.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

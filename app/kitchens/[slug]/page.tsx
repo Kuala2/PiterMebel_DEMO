@@ -243,12 +243,9 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Хотите такую же кухню под размеры вашей квартиры?
                 </h2>
-                <p className="final-desc">
-                  Приглашаем на консультацию в офис студии на площади Стачек, 9 (по записи). Вживую подберем материалы ({kitchen.facade}, эмали RAL, шпон, камень), рассчитаем предварительную смету и подарим инженерную схему электрики под технику.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

@@ -89,15 +89,9 @@ export default function KnowledgePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Бесплатная проверка привязки розеток и коммуникаций
                 </h2>
-                <p className="final-desc">
-                  Делаете ремонт в Санкт-Петербурге? Пришлите эскиз или план помещения от застройщика.
-                  Наш технолог бесплатно проверит расположение выводов электрики и вентиляции
-                  до начала чистовой отделки.
-                </p>
-
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

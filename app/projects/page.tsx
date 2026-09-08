@@ -200,12 +200,9 @@ export default function ProjectsPortfolioPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Индивидуальная мебель по вашим размерам
                 </h2>
-                <p className="final-desc">
-                  Отправьте фото понравившейся мебели или план помещения. Технологи студии «ПитерМебель» рассчитают стоимость, подготовят точный 3D-эскиз и проконсультируют по материалам без салонных наценок.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

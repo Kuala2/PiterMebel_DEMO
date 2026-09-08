@@ -172,10 +172,8 @@ export default function KitchensCatalogPage() {
                     style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", cursor: "pointer" }}
                   >
                     <div>
-                      <h2 className="ladder-title">Кухня «{kitchen.title}»</h2>
+                      <h2 className="ladder-title" style={{ marginBottom: "20px" }}>Кухня «{kitchen.title}»</h2>
                     </div>
-
-                    <p className="ladder-story">{kitchen.story[0]}</p>
 
                     <div className="ladder-specs-rows">
                       <div className="spec-row">
@@ -219,12 +217,9 @@ export default function KitchensCatalogPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Понравилась модель кухни?
                 </h2>
-                <p className="final-desc">
-                  Отправьте название модели и примерные размеры вашего помещения — технолог студии подготовит расчет сметы в нескольких вариантах фасадов и фурнитуры без салонных наценок.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

@@ -232,12 +232,9 @@ export default function ProductionPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Консультация и расчет проекта
                 </h2>
-                <p className="final-desc">
-                  Встречи для обсуждения проекта и подбора материалов проходят в офисе студии на площади Стачек, 9 (по записи). Станочный цех расположен на Петергофском шоссе, 73. Также вы можете отправить размеры для онлайн-расчета сметы.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

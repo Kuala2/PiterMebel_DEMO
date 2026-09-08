@@ -145,12 +145,9 @@ export default function ContactsPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Обсудить проект лично или онлайн
                 </h2>
-                <p className="final-desc">
-                  Оставьте заявку на расчет или свяжитесь напрямую — технолог сориентирует по материалам, срокам и согласует удобное время встречи на площади Стачек, 9.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

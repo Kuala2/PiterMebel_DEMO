@@ -957,12 +957,9 @@ export default function HomePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Индивидуальная мебель и кухни без салонных наценок
                 </h2>
-                <p className="final-desc">
-                  Отправьте эскиз от руки, размеры помещения или понравившееся фото — технологи студии рассчитают смету и порекомендуют надежные материалы под ваш бюджет.
-                </p>
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}

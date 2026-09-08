@@ -337,14 +337,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline">
+                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
                   Бесплатная проверка проекта технологом
                 </h2>
-                <p className="final-desc">
-                  Планируете кухню или шкаф? Отправьте план помещения от застройщика или эскиз от руки.
-                  Технологи «ПитерМебель» бесплатно проверят соответствие розеток, вентканалов и высот потолка.
-                </p>
-
                 <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}
