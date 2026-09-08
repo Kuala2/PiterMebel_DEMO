@@ -28,13 +28,17 @@ export const HOME_DESCRIPTION =
  * Next не мерджит openGraph глубоко, поэтому каждая страница задаёт его целиком.
  */
 export function buildOg(title: string, description: string, path?: string) {
+  let cleanPath = "";
+  if (path && path !== "/") {
+    cleanPath = path.endsWith("/") ? path : `${path}/`;
+  }
   return {
     title,
     description,
     siteName: SITE_CONFIG.name,
     locale: "ru_RU",
     type: "website" as const,
-    url: path ? `${SITE_URL}${path}/` : SITE_URL,
+    url: cleanPath ? `${SITE_URL}${cleanPath}` : `${SITE_URL}/`,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: title }],
   };
 }
