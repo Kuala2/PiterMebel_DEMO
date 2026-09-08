@@ -659,24 +659,30 @@ img {
   }
 }
 
+.site-header.is-menu-open {
+  z-index: 2500 !important;
+  background: #1C1F24 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
 .mobile-nav-drawer {
   display: none;
   position: fixed;
-  top: 62px;
+  top: 64px;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: calc(100dvh - 62px);
-  background: rgba(34, 37, 42, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 999;
-  padding: 24px 20px 32px;
+  height: calc(100dvh - 64px);
+  background: #1C1F24 !important;
+  z-index: 2500;
+  padding: 24px 20px calc(28px + env(safe-area-inset-bottom));
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
-  border-top: 1px solid var(--border-subtle);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .mobile-nav-drawer.is-open {
@@ -5173,6 +5179,18 @@ button.calc-mat-spec-row.is-selected {
   body {
     padding-bottom: 74px;
   }
+
+  body.menu-open .sticky-cta,
+  html.menu-open .sticky-cta {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none !important;
 }
 
 /* Детальные страницы: текст слева, живое фото справа */

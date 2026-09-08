@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { SITE_CONFIG } from "@/data/site";
 
 export default function Header() {
@@ -11,6 +11,7 @@ export default function Header() {
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const scrollYRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,18 +56,38 @@ export default function Header() {
 
   useEffect(() => {
     if (mobileMenuOpen) {
+      scrollYRef.current = window.scrollY;
+      document.body.classList.add("menu-open");
+      document.documentElement.classList.add("menu-open");
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollYRef.current}px`;
+      document.body.style.width = "100%";
       document.body.style.overflow = "hidden";
     } else {
+      const targetScroll = scrollYRef.current;
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
       document.body.style.overflow = "";
+      if (targetScroll > 0) {
+        window.scrollTo(0, targetScroll);
+      }
     }
     return () => {
+      document.body.classList.remove("menu-open");
+      document.documentElement.classList.remove("menu-open");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
       document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
 
   return (
     <header
-      className={`site-header ${isScrolled || !isHome ? "is-scrolled" : ""}`}
+      className={`site-header ${isScrolled || !isHome ? "is-scrolled" : ""} ${mobileMenuOpen ? "is-menu-open" : ""}`}
     >
       <div className="container">
         <div className="header-inner">
