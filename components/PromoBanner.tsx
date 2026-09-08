@@ -208,7 +208,7 @@ export default function PromoBanner({
           <Link
             href={currentOffer.ctaHref}
             onClick={handleCtaClick}
-            className={`btn btn-green promo-cta-card-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
+            className={`promo-cta-card-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
           >
             {currentOffer.ctaText}
           </Link>

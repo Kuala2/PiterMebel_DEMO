@@ -2352,7 +2352,12 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 410px;
+  min-height: 480px;
+}
+
+.final-cta-block .final-headline {
+  margin: 0;
+  margin-bottom: 0;
 }
 
 .final-headline {
@@ -6833,64 +6838,48 @@ footer,
   }
 }
 
-/* Promo Card inside Final CTA Block */
+/* Promo Card inside Final CTA Block (Clean Editorial Style - No Nested Tile) */
 .promo-cta-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--color-green-brand);
+  background: transparent;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  border-left: none;
+  border-right: none;
   border-radius: 0;
-  padding: 24px 28px;
-  margin: 22px 0 28px 0;
+  padding: 28px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 168px;
+  min-height: 175px;
   position: relative;
-  overflow: hidden;
 }
 
 .promo-cta-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    105deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    transparent 100%
-  );
-  pointer-events: none;
-  transition: left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.promo-cta-card:hover::before {
-  left: 150%;
+  display: none;
 }
 
 .promo-cta-card-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: 16px;
 }
 
 .promo-cta-card-badge {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11px;
+  gap: 8px;
+  font-size: 14.5px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-green-brand);
 }
 
 .promo-cta-card-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: var(--color-green-brand);
   display: inline-block;
   border-radius: 0;
@@ -6899,48 +6888,62 @@ footer,
 .promo-cta-card-nav {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+}
+
+.promo-counter-label {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  color: #8E96A5;
 }
 
 .promo-cta-card-title {
   font-family: var(--font-main);
-  font-size: clamp(18px, 1.8vw, 21px);
-  font-weight: 600;
+  font-size: clamp(23px, 2.4vw, 29px);
+  font-weight: 700;
   color: #FFFFFF;
-  line-height: 1.35;
+  line-height: 1.25;
   margin: 0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .promo-cta-card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   height: 42px;
-  padding: 0 24px;
-  font-size: 14px;
+  padding: 0 22px;
+  font-size: 14.5px;
   font-weight: 600;
   border-radius: 0;
   text-decoration: none;
+  background: rgba(142, 203, 50, 0.12) !important;
+  border: 1px solid rgba(142, 203, 50, 0.35) !important;
+  color: var(--color-green-brand) !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.promo-cta-card-btn:hover {
+  background: var(--color-green-brand) !important;
+  color: #16181D !important;
+  border-color: var(--color-green-brand) !important;
 }
 
 @media (max-width: 768px) {
   .promo-cta-card {
-    padding: 20px 20px;
-    margin: 18px 0 22px 0;
-    min-height: 154px;
-  }
-  .promo-cta-card-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 10px;
+    padding: 22px 0;
+    min-height: 160px;
   }
   .promo-cta-card-badge {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 13.5px;
+  }
+  .promo-cta-card-title {
+    font-size: 20px;
   }
   .promo-cta-card-btn {
     width: 100%;
@@ -6949,22 +6952,39 @@ footer,
 
 @media (max-width: 480px) {
   .promo-cta-card {
-    padding: 16px 16px;
+    padding: 18px 0;
     min-height: auto;
   }
   .promo-cta-card-head {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
+    justify-content: space-between;
   }
   .promo-cta-card-badge {
-    font-size: 10.5px;
-    letter-spacing: 0.06em;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  .promo-cta-card-dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
   }
   .promo-cta-card-nav {
-    margin-left: auto;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .promo-cta-card-nav .promo-nav-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+  .promo-counter-label {
+    font-size: 12px;
   }
   .promo-cta-card-title {
-    font-size: 17px;
+    font-size: 19px;
+    line-height: 1.3;
   }
 }
 

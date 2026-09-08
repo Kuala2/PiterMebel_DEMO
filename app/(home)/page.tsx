@@ -956,13 +956,11 @@ export default function HomePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <div>
-                  <h2 className="final-headline" style={{ marginBottom: "16px" }}>
-                    Индивидуальная мебель и кухни без салонных наценок
-                  </h2>
+                <h2 className="final-headline" style={{ margin: 0 }}>
+                  Индивидуальная мебель и кухни без салонных наценок
+                </h2>
 
-                  <PromoBanner variant="cta-card" />
-                </div>
+                <PromoBanner variant="cta-card" />
 
                 <div>
                   <div className="final-buttons-row">
