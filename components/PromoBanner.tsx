@@ -10,6 +10,7 @@ interface PromoBannerProps {
   className?: string;
   autoPlayInterval?: number;
   embedded?: boolean;
+  variant?: "banner" | "cta-card";
 }
 
 export default function PromoBanner({
@@ -18,6 +19,7 @@ export default function PromoBanner({
   className = "",
   autoPlayInterval = 6000,
   embedded = false,
+  variant = "banner",
 }: PromoBannerProps) {
   const allOffers = Object.values(PROMOS).filter((o) => o.active);
 
@@ -153,6 +155,67 @@ export default function PromoBanner({
       </div>
     </div>
   );
+
+  if (variant === "cta-card") {
+    return (
+      <div
+        className={`promo-cta-card ${className}`}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="promo-cta-card-head">
+          {currentOffer.badge && (
+            <div className="promo-cta-card-badge">
+              <span className="promo-cta-card-dot" />
+              АКЦИЯ · {currentOffer.badge.toUpperCase()}
+            </div>
+          )}
+
+          {allOffers.length > 1 && (
+            <div className="promo-cta-card-nav">
+              <span className="promo-counter-label">
+                0{currentIndex + 1} / 0{allOffers.length}
+              </span>
+              <div className="promo-arrows">
+                <button
+                  type="button"
+                  className="promo-nav-arrow"
+                  onClick={handlePrev}
+                  aria-label="Предыдущая акция"
+                  title="Предыдущая акция"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  className="promo-nav-arrow"
+                  onClick={handleNext}
+                  aria-label="Следующая акция"
+                  title="Следующая акция"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className={`promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`} style={{ margin: "16px 0 20px 0" }}>
+          <h3 className="promo-cta-card-title">{currentOffer.title}</h3>
+        </div>
+
+        <div>
+          <Link
+            href={currentOffer.ctaHref}
+            onClick={handleCtaClick}
+            className={`btn btn-green promo-cta-card-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
+          >
+            {currentOffer.ctaText}
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   if (embedded) {
     return (

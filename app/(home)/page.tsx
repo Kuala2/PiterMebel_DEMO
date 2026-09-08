@@ -953,14 +953,19 @@ export default function HomePage() {
       {/* 7. FINAL CONSULTATION & CONTACTS */}
       <section className="final-section" id="contacts" style={{ backgroundColor: "var(--bg-studio)" }}>
         <div className="container">
-          <PromoBanner embedded />
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
-                  Индивидуальная мебель и кухни без салонных наценок
-                </h2>
-                <div className="final-buttons-row">
+                <div>
+                  <h2 className="final-headline" style={{ marginBottom: "16px" }}>
+                    Индивидуальная мебель и кухни без салонных наценок
+                  </h2>
+
+                  <PromoBanner variant="cta-card" />
+                </div>
+
+                <div>
+                  <div className="final-buttons-row">
                   <a
                     href={`tel:${SITE_CONFIG.phoneRaw}`}
                     className="btn btn-green"
@@ -989,6 +994,7 @@ export default function HomePage() {
                   Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
                 </div>
               </div>
+            </div>
 
               <div className="final-info-block">
                 <MeasureForm initialCategory="Кухня" />

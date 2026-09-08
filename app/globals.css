@@ -6833,6 +6833,142 @@ footer,
   }
 }
 
+/* Promo Card inside Final CTA Block */
+.promo-cta-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--color-green-brand);
+  border-radius: 0;
+  padding: 24px 28px;
+  margin: 22px 0 28px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 168px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  transition: left 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.promo-cta-card:hover::before {
+  left: 150%;
+}
+
+.promo-cta-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.promo-cta-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-green-brand);
+}
+
+.promo-cta-card-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-green-brand);
+  display: inline-block;
+  border-radius: 0;
+}
+
+.promo-cta-card-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.promo-cta-card-title {
+  font-family: var(--font-main);
+  font-size: clamp(18px, 1.8vw, 21px);
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.promo-cta-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .promo-cta-card {
+    padding: 20px 20px;
+    margin: 18px 0 22px 0;
+    min-height: 154px;
+  }
+  .promo-cta-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+  .promo-cta-card-badge {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .promo-cta-card-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-cta-card {
+    padding: 16px 16px;
+    min-height: auto;
+  }
+  .promo-cta-card-head {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .promo-cta-card-badge {
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
+  .promo-cta-card-nav {
+    margin-left: auto;
+  }
+  .promo-cta-card-title {
+    font-size: 17px;
+  }
+}
+
+
 /* ==========================================================================
    FINAL CTA CANVAS (Home page - Clean Quiet Luxury Open Architecture)
    ========================================================================== */
