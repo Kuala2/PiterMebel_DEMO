@@ -5,29 +5,43 @@ pitermebel.com, www.pitermebel.com {
 
     # Корневая директория статического экспорта
     root * /var/www/pitermebel/out
-    file_server
 
-    # 1. HTML-страницы и маршруты: СТРОГО БЕЗ КЭША
-    # Заставляет браузеры всегда запрашивать свежий HTML и новые хеши скриптов
-    @html {
-        path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /privacy/*
-    }
-    header @html Cache-Control "no-cache, no-store, must-revalidate"
-    header @html Pragma "no-cache"
-    header @html Expires "0"
+    # 1. Разрешаем отображение сайта во фрейме Вебвизора и Карты кликов Яндекс.Метрики
+    header Content-Security-Policy "frame-ancestors 'self' https://metrika.yandex.ru https://*.metrika.yandex.ru https://webvisor.com https://*.webvisor.com;"
 
-    # 2. Хешированные ассеты Next.js (_next/static/*) — максимальный кэш (хэш в имени меняется при каждой сборке)
+    # 2. Хешированные ассеты Next.js (_next/static/*)
+    # Максимальный кэш (хэш в имени меняется при сборке) + CORS для внешних плееров Метрики
     @static {
         path /_next/static/*
     }
     header @static Cache-Control "public, max-age=31536000, immutable"
+    header @static Access-Control-Allow-Origin "*"
 
-    # 3. Медиа и изображения
+    # 3. Медиа, шрифты и изображения
     @media {
         path *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2
     }
-    header @media Cache-Control "public, max-age=86400, stale-while-revalidate=604800"
+    header @media Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+    header @media Access-Control-Allow-Origin "*"
 
-    # 4. Роутинг для trailingSlash статического экспорта
-    try_files {path} {path}/ {path}.html /index.html
+    # 4. HTML-страницы и маршруты: валидация свежести без агрессивного no-store
+    @html {
+        path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /privacy/*
+    }
+    header @html Cache-Control "no-cache, must-revalidate"
+
+    # 5. Защита статических файлов от превращения в HTML:
+    # Если старый CSS/JS файл не найден, возвращаем 404, а не главную страницу index.html
+    @staticFiles {
+        path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.json *.xml *.txt
+    }
+    handle @staticFiles {
+        file_server
+    }
+
+    # 6. Роутинг для HTML-страниц статического экспорта (trailingSlash)
+    handle {
+        try_files {path} {path}/ {path}.html /index.html
+        file_server
+    }
 }
