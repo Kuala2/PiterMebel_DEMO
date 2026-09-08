@@ -200,18 +200,8 @@ export default function PromoBanner({
           )}
         </div>
 
-        <div className={`promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`} style={{ margin: "16px 0 20px 0" }}>
+        <div className={`promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`} style={{ marginTop: "18px" }}>
           <h3 className="promo-cta-card-title">{currentOffer.title}</h3>
-        </div>
-
-        <div>
-          <Link
-            href={currentOffer.ctaHref}
-            onClick={handleCtaClick}
-            className={`promo-cta-card-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
-          >
-            {currentOffer.ctaText}
-          </Link>
         </div>
       </div>
     );
