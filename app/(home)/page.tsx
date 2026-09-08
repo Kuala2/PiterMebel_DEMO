@@ -5,10 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
-import VkIcon from "@/components/VkIcon";
 import SpotlightArea from "@/components/SpotlightArea";
-import MeasureForm from "@/components/MeasureForm";
-import PromoBanner from "@/components/PromoBanner";
+import ConsultationSection from "@/components/ConsultationSection";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
@@ -951,52 +949,13 @@ export default function HomePage() {
       <Faq />
 
       {/* 7. FINAL CONSULTATION & CONTACTS */}
-      <section className="final-section" id="contacts" style={{ backgroundColor: "var(--bg-studio)" }}>
-        <div className="container">
-          <PromoBanner embedded />
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
-                  Индивидуальная мебель и кухни без салонных наценок
-                </h2>
-                <div className="final-buttons-row">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn btn-green"
-                    style={{ gap: "8px" }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={SITE_CONFIG.vkImUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-glass"
-                    style={{ gap: "10px" }}
-                  >
-                    <VkIcon />
-                    ВКонтакте
-                  </a>
-                  <Link href="/calculator" className="btn btn-glass">
-                    Калькулятор мебели
-                  </Link>
-                </div>
-                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-                </div>
-              </div>
-
-              <div className="final-info-block">
-                <MeasureForm initialCategory="Кухня" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ConsultationSection
+        id="contacts"
+        title="Индивидуальная мебель и кухни без наценок"
+        initialCategory="kitchens"
+        defaultFurnitureType="Кухня"
+        calculatorText="Калькулятор мебели"
+      />
     </div>
   );
 }
