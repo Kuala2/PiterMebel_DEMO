@@ -216,11 +216,13 @@ export default function KitchensCatalogPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline" style={{ margin: 0 }}>
-                  Понравилась модель кухни?
-                </h2>
+                <div>
+                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
+                    Понравилась модель кухни?
+                  </h2>
 
-                <PromoBanner initialCategory="kitchens" variant="cta-card" />
+                  <PromoBanner initialCategory="kitchens" variant="cta-card" />
+                </div>
 
                 <div>
                   <div className="final-buttons-row">

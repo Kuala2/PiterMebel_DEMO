@@ -190,11 +190,13 @@ export default function CustomFurniturePage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline" style={{ margin: 0 }}>
-                  Нужна мебель по индивидуальным размерам?
-                </h2>
+                <div>
+                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
+                    Нужна мебель по индивидуальным размерам?
+                  </h2>
 
-                <PromoBanner initialCategory="customFurniture" variant="cta-card" />
+                  <PromoBanner initialCategory="customFurniture" variant="cta-card" />
+                </div>
 
                 <div>
                   <div className="final-buttons-row">

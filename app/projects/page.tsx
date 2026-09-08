@@ -199,11 +199,13 @@ export default function ProjectsPortfolioPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline" style={{ margin: 0 }}>
-                  Индивидуальная мебель по вашим размерам
-                </h2>
+                <div>
+                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
+                    Индивидуальная мебель по вашим размерам
+                  </h2>
 
-                <PromoBanner variant="cta-card" />
+                  <PromoBanner variant="cta-card" />
+                </div>
 
                 <div>
                   <div className="final-buttons-row">

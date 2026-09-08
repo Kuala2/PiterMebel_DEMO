@@ -183,11 +183,13 @@ export default function WardrobesPage() {
           <div className="final-card-container">
             <div className="final-grid">
               <div className="final-cta-block">
-                <h2 className="final-headline" style={{ margin: 0 }}>
-                  Понравился шкаф или гардеробная?
-                </h2>
+                <div>
+                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
+                    Понравился шкаф или гардеробная?
+                  </h2>
 
-                <PromoBanner initialCategory="wardrobes" variant="cta-card" />
+                  <PromoBanner initialCategory="wardrobes" variant="cta-card" />
+                </div>
 
                 <div>
                   <div className="final-buttons-row">
