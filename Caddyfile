@@ -1,37 +1,56 @@
 # Конфигурация Caddy для pitermebel.com (Next.js Static Export)
 
-pitermebel.com, www.pitermebel.com {
+# 1. HTTP (порт 80): отдаем robots.txt и sitemap.xml с кодом 200 БЕЗ редиректа (жесткое требование Яндекса при переезде сайта)
+http://pitermebel.com, http://www.pitermebel.com {
+    @seoFiles path /robots.txt /sitemap.xml
+    handle @seoFiles {
+        root * /var/www/pitermebel/out
+        file_server
+    }
+
+    # Все остальные страницы штатно редиректим на HTTPS
+    handle {
+        redir https://pitermebel.com{uri} permanent
+    }
+}
+
+# 2. Редирект с HTTPS www на основной HTTPS домен
+https://www.pitermebel.com {
+    redir https://pitermebel.com{uri} permanent
+}
+
+# 3. Основной сайт HTTPS
+https://pitermebel.com {
     encode zstd gzip
 
     # Корневая директория статического экспорта
     root * /var/www/pitermebel/out
 
-    # 1. Разрешаем отображение сайта во фрейме Вебвизора и Карты кликов Яндекс.Метрики
+    # Разрешаем отображение сайта во фрейме Вебвизора и Карты кликов Яндекс.Метрики
     header Content-Security-Policy "frame-ancestors 'self' https://metrika.yandex.ru https://*.metrika.yandex.ru https://webvisor.com https://*.webvisor.com;"
 
-    # 2. Хешированные ассеты Next.js (_next/static/*)
-    # Максимальный кэш (хэш в имени меняется при сборке) + CORS для внешних плееров Метрики
+    # Хешированные ассеты Next.js (_next/static/*)
     @static {
         path /_next/static/*
     }
     header @static Cache-Control "public, max-age=31536000, immutable"
     header @static Access-Control-Allow-Origin "*"
 
-    # 3. Медиа, шрифты и изображения
+    # Медиа, шрифты и изображения
     @media {
         path *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2
     }
     header @media Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
     header @media Access-Control-Allow-Origin "*"
 
-    # 4. HTML-страницы и маршруты: валидация свежести без агрессивного no-store
+    # HTML-страницы и маршруты: валидация свежести
     @html {
         path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /privacy/*
     }
     header @html Cache-Control "no-cache, must-revalidate"
 
-    # 5. Защита статических файлов от превращения в HTML:
-    # Если старый CSS/JS файл не найден, возвращаем 404, а не главную страницу index.html
+    # Защита статических файлов от превращения в HTML:
+    # Если файл не найден, возвращаем 404, а не главную страницу index.html
     @staticFiles {
         path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.json *.xml *.txt
     }
@@ -39,7 +58,7 @@ pitermebel.com, www.pitermebel.com {
         file_server
     }
 
-    # 6. Роутинг для HTML-страниц статического экспорта (trailingSlash)
+    # Роутинг для HTML-страниц статического экспорта (trailingSlash)
     handle {
         try_files {path} {path}/ {path}.html /index.html
         file_server
