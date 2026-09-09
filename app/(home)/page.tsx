@@ -662,7 +662,7 @@ export default function HomePage() {
 
                 <div className="manifesto-quote-wrap">
                   <p className="manifesto-quote-text">
-                    «Мы сознательно сохраняем формат семейной студии: я лично проектирую каждый гарнитур, встречаюсь с заказчиками на площади Стачек и фиксирую прозрачную смету в договоре. Никакого конвейера и скрытых наценок — только авторская мебель, созданная служить десятилетиями.»
+                    «Мы сознательно сохраняем формат семейного производства: я лично проектирую каждый гарнитур, встречаюсь с заказчиками на площади Стачек и фиксирую прозрачную смету в договоре. Все этапы — от замера до сборки, подключения электрики и сантехники — выполняем своей постоянной командой. Никаких сторонних мастеров, скрытых наценок и затянутых сроков.»
                   </p>
                   <div className="manifesto-author">
                     <div className="manifesto-author-name">Елена Волкова</div>
@@ -675,15 +675,15 @@ export default function HomePage() {
                 <div className="manifesto-specs">
                   <div className="manifesto-spec-row">
                     <span className="manifesto-spec-metric">{yearsInBusiness()} опыта</span>
-                    <span className="manifesto-spec-desc">Семейная студия без ребрендингов и посредников в СПб</span>
+                    <span className="manifesto-spec-desc">Семейное производство без ребрендингов и посредников в СПб</span>
                   </div>
                   <div className="manifesto-spec-row">
                     <span className="manifesto-spec-metric">0 ₽ переплат</span>
                     <span className="manifesto-spec-desc">Фиксированная смета в договоре не растет в процессе</span>
                   </div>
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">100% надзор</span>
-                    <span className="manifesto-spec-desc">Личное ведение проекта дизайнером от замера до монтажа</span>
+                    <span className="manifesto-spec-metric">100% под ключ</span>
+                    <span className="manifesto-spec-desc">Своя бригада: монтаж, подключение техники, сантехники и электрики</span>
                   </div>
                 </div>
 
@@ -712,59 +712,6 @@ export default function HomePage() {
               <div className="manifesto-caption-bar">
                 <span className="manifesto-caption-tag">Островной гарнитур: шпон дуба и камень</span>
                 <span>Реализованный проект · Санкт-Петербург</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. TEAM SECTION */}
-      <section className="team-section" id="team">
-        <div className="container">
-          <div className="team-head-block">
-            <h2 className="section-title">Кто делает вашу мебель</h2>
-            <p className="team-lead-text">
-              ПитерМебель — семейная студия. За каждым заказом от первого замера до монтажа следуют одни и те же люди.
-            </p>
-          </div>
-
-          <div className="team-grid">
-            {/* 1. Elena Volkova */}
-            <div className="team-card">
-              <div className="team-card-photo">
-                {/* TODO: реальное вертикальное фото /img/team/elena.jpg */}
-                <span className="team-monogram-placeholder">Е</span>
-              </div>
-              <div className="team-card-body">
-                <h3 className="team-card-name">Елена Волкова</h3>
-                <p className="team-card-role">Консультация, дизайн-проект и ведение заказа</p>
-                <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="team-card-tel">
-                  +7 (921) 784-05-89 →
-                </a>
-              </div>
-            </div>
-
-            {/* 2. Dmitry */}
-            <div className="team-card">
-              <div className="team-card-photo">
-                {/* TODO: реальное вертикальное фото /img/team/dmitry.jpg */}
-                <span className="team-monogram-placeholder">Д</span>
-              </div>
-              <div className="team-card-body">
-                <h3 className="team-card-name">Дмитрий</h3>
-                <p className="team-card-role">Цех и производство</p>
-              </div>
-            </div>
-
-            {/* 3. Sergey */}
-            <div className="team-card">
-              <div className="team-card-photo">
-                {/* TODO: реальное вертикальное фото /img/team/sergey.jpg */}
-                <span className="team-monogram-placeholder">С</span>
-              </div>
-              <div className="team-card-body">
-                <h3 className="team-card-name">Сергей</h3>
-                <p className="team-card-role">Сборка и монтаж</p>
               </div>
             </div>
           </div>
@@ -881,9 +828,9 @@ export default function HomePage() {
             {/* Step 4 */}
             <div className="process-step">
               <span className="process-day">1 день</span>
-              <h3 className="process-title">Чистый монтаж</h3>
+              <h3 className="process-title">Чистый монтаж под ключ</h3>
               <p className="process-desc">
-                Штатная бригада устанавливает мебель, подключает технику и убирает весь мусор.
+                Штатная бригада устанавливает мебель, подключает сантехнику, электрику и встроенную технику без сторонних мастеров.
               </p>
             </div>
           </div>

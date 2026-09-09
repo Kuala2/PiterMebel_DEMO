@@ -2351,7 +2351,8 @@ img {
   padding: 56px 48px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 32px;
   min-height: 480px;
 }
 
@@ -2408,7 +2409,7 @@ img {
 }
 
 @media (max-width: 900px) {
-  .final-cta-block { min-height: auto; }
+  .final-cta-block { min-height: auto; justify-content: flex-start; gap: 28px; }
   .final-info-block {
     border-left: none;
     border-top: 1px solid var(--border-subtle);
