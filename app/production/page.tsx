@@ -1,22 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import MeasureForm from "@/components/MeasureForm";
-import VkIcon from "@/components/VkIcon";
+import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
-import PromoBanner from "@/components/PromoBanner";
 import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-  description: `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundedYear} года в Санкт-Петербурге (Петергофское шоссе, 73). Прямой заказ без салонных наценок и 100% контрольная сборка в цеху.`,
+  description: `Производство мебели по индивидуальным размерам в Санкт-Петербурге с ${SITE_CONFIG.foundingYear} года. Раскрой, сборка, доставка и монтаж под ключ.`,
   alternates: {
     canonical: "/production",
   },
   openGraph: buildOg(
     `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-    `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundedYear} года (Петергофское шоссе, 73).`,
+    `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundingYear} года (Петергофское шоссе, 73).`,
     "/production"
   ),
 };
@@ -33,18 +31,18 @@ export default function ProductionPage() {
           <div className="prod-stats-strip">
             <div className="prod-stat-item">
               <span className="prod-stat-num">{yearsInBusiness()}</span>
-              <span className="prod-stat-label">Опыт в Санкт-Петербурге с {SITE_CONFIG.foundedYear} г.</span>
+              <span className="prod-stat-label">Опыт в Санкт-Петербурге с {SITE_CONFIG.foundingYear} г.</span>
             </div>
             <div className="prod-stat-item">
               <span className="prod-stat-num">1500+</span>
               <span className="prod-stat-label">Установленных проектов мебели под ключ</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">100%</span>
-              <span className="prod-stat-label">Проверка механизмов и зазоров в цеху</span>
+              <span className="prod-stat-num">Перед отгрузкой</span>
+              <span className="prod-stat-label">Проверяем присадку, механизмы и видимые зазоры</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">0 ₽</span>
+              <span className="prod-stat-num">Напрямую</span>
               <span className="prod-stat-label">Без наценок салонов и посредников</span>
             </div>
           </div>
@@ -59,7 +57,7 @@ export default function ProductionPage() {
             <div className="prod-showcase-media">
               <Image
                 src="/img/production/assembly.jpg"
-                alt="Мастер за форматно-раскроечным стапелем в цеху ПитерМебель"
+                alt="Мастер проверяет мебельную деталь на производстве ПитерМебель"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 700px"
@@ -131,7 +129,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">01 · </span>Раскрой плит
               </h3>
               <p className="prod-stage-desc">
-                Чистовой распил ЛДСП Egger и МДФ без сколов.
+                Раскрой ЛДСП и МДФ по карте деталей проекта.
               </p>
             </div>
 
@@ -140,7 +138,7 @@ export default function ProductionPage() {
               <div className="prod-stage-photo">
                 <Image
                   src="/img/production/edge.jpg"
-                  alt="Обработка и влагостойкое кромление торцов"
+                  alt="Кромление торцов мебельной детали"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
@@ -150,7 +148,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">02 · </span>Кромление торцов
               </h3>
               <p className="prod-stage-desc">
-                Влагостойкая защита деталей от пара и влаги.
+                Обработка открытых торцов деталей перед присадкой.
               </p>
             </div>
 
@@ -169,7 +167,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">03 · </span>Присадка и сборка
               </h3>
               <p className="prod-stage-desc">
-                Сверление под фурнитуру Blum и регулировка плавности хода.
+                Сверление по карте присадки и проверка выбранной фурнитуры.
               </p>
             </div>
           </div>
@@ -228,56 +226,11 @@ export default function ProductionPage() {
       </section>
 
       {/* 6. Финальный блок: Консультация и форма */}
-      <section className="final-section" id="consult" style={{ backgroundColor: "var(--bg-studio)" }}>
-        <div className="container">
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <div>
-                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
-                    Консультация и расчет проекта
-                  </h2>
-                  <PromoBanner variant="cta-card" />
-                </div>
-
-                <div>
-                  <div className="final-buttons-row">
-                    <a
-                      href={`tel:${SITE_CONFIG.phoneRaw}`}
-                      className="btn btn-green"
-                      style={{ gap: "8px" }}
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                      {SITE_CONFIG.phone}
-                    </a>
-                    <a
-                      href={SITE_CONFIG.vkImUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-glass"
-                      style={{ gap: "10px" }}
-                    >
-                      <VkIcon />
-                      ВКонтакте
-                    </a>
-                    <Link href="/calculator" className="btn btn-glass">
-                      Калькулятор стоимости
-                    </Link>
-                  </div>
-                  <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                    Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Цех: {SITE_CONFIG.productionAddress}
-                  </div>
-                </div>
-              </div>
-              <div className="final-info-block">
-                <MeasureForm initialCategory="Консультация и расчет проекта" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LeadSection
+        id="consult"
+        title="Рассчитаем проект для производства"
+        source="Производство"
+      />
     </div>
   );
 }

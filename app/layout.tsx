@@ -41,20 +41,17 @@ const SITE_JSON_LD = {
       "@id": `${SITE_URL}/#organization`,
       name: SITE_CONFIG.name,
       alternateName: "Питер-Мебель",
-      legalName: SITE_CONFIG.legalEntity,
       url: SITE_URL,
       logo: `${SITE_URL}/img/brand/logo_bird.svg`,
       image: `${SITE_URL}${OG_IMAGE}`,
       telephone: SITE_CONFIG.phoneRaw,
       email: SITE_CONFIG.email,
-      priceRange: "₽₽",
       currenciesAccepted: "RUB",
       foundingDate: String(SITE_CONFIG.foundingYear),
       address: {
         "@type": "PostalAddress",
         streetAddress: SITE_CONFIG.address,
         addressLocality: SITE_CONFIG.city,
-        postalCode: "198095",
         addressCountry: "RU",
       },
       geo: { "@type": "GeoCoordinates", latitude: 59.899907, longitude: 30.272883 },
@@ -66,7 +63,7 @@ const SITE_JSON_LD = {
           closes: "18:00",
         },
       ],
-      sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl, "https://www.instagram.com/pitermebel/"],
+      sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl],
     },
     {
       "@type": "WebSite",
@@ -166,8 +163,9 @@ export default function RootLayout({
           </div>
         </noscript>
         <AmbientFlowCanvas className="global-silk" />
+        <a className="skip-link" href="#main-content">Перейти к содержимому</a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
         <StickyCTA />
         <SmoothScroll />

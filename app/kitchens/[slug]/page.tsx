@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
-import MeasureForm from "@/components/MeasureForm";
+import LeadSection from "@/components/LeadSection";
 import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
@@ -27,8 +27,8 @@ export async function generateMetadata({
     return { title: "Кухня не найдена — ПитерМебель" };
   }
 
-  const ogTitle = `Кухня «${kitchen.title}» — цена ${kitchen.price.toLocaleString("ru-RU")} ₽ | ПитерМебель`;
-  const ogDescription = `Кухня «${kitchen.title}» на заказ по индивидуальным размерам в Санкт-Петербурге: ${kitchen.price.toLocaleString("ru-RU")} ₽ (${kitchen.pricePerMeter}). Собственное фабричное производство полного цикла.`;
+  const ogTitle = `Кухня «${kitchen.title}» на заказ в Санкт-Петербурге | ПитерМебель`;
+  const ogDescription = `Кухня «${kitchen.title}» по индивидуальным размерам: ${kitchen.facade}, ${kitchen.feature.toLowerCase()}. Проектирование, изготовление и монтаж в Санкт-Петербурге.`;
 
   return {
     title: ogTitle,
@@ -60,13 +60,6 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
     image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
     description: kitchen.story?.[0] || kitchen.feature,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
-    offers: {
-      "@type": "Offer",
-      url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
-      priceCurrency: "RUB",
-      price: kitchen.price,
-      availability: "https://schema.org/InStock",
-    },
   };
 
   const currentIndex = KITCHENS.findIndex((k) => k.slug === slug);
@@ -106,13 +99,13 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 Кухня «{kitchen.title}»
               </h1>
 
-              {/* Real Price Hook */}
+              {/* Стоимость рассчитывается по спецификации проекта */}
               <div className="detail-price-badge">
                 <span className="detail-price-val">
-                  {kitchen.price.toLocaleString("ru-RU")} ₽
+                  Индивидуальный расчёт
                 </span>
                 <span className="detail-price-meter">
-                  ({kitchen.pricePerMeter} под ключ)
+                  по материалам, наполнению и размерам
                 </span>
               </div>
 
@@ -133,19 +126,19 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 </div>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Корпус</span>
-                  <span className="detail-spec-val">Влагостойкая плита Egger 18 мм (класс E1)</span>
+                  <span className="detail-spec-val">По спецификации проекта; среди используемых материалов — влагостойкая ЛДСП Egger класса E1</span>
                 </div>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Фурнитура</span>
-                  <span className="detail-spec-val">Blum (Австрия) — петли и ящики с доводчиками</span>
+                  <span className="detail-spec-val">По спецификации проекта: Blum, Boyard или DTC</span>
                 </div>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Кромление</span>
-                  <span className="detail-spec-val">Влагостойкая герметизация торцов</span>
+                  <span className="detail-spec-val">Технология подбирается по материалу и условиям эксплуатации</span>
                 </div>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Срок изготовления</span>
-                  <span className="detail-spec-val">от 25 рабочих дней (цех: Петергофское ш., 73)</span>
+                  <span className="detail-spec-val">фиксируется в договоре после согласования проекта</span>
                 </div>
               </div>
 
@@ -227,7 +220,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 <div className="detail-nav-card-body">
                   <h3 className="detail-nav-card-name">Кухня «{item.title}»</h3>
                   <div className="detail-nav-card-price">
-                    {item.price.toLocaleString("ru-RU")} ₽
+                    Расчёт по спецификации
                   </div>
                   <p className="detail-nav-card-desc">{item.facade}</p>
                 </div>
@@ -238,50 +231,12 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       </section>
 
       {/* 4. Consultation Booking */}
-      <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-studio)" }}>
-        <div className="container">
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
-                  Хотите такую же кухню под размеры вашей квартиры?
-                </h2>
-                <div className="final-buttons-row">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn btn-green"
-                    style={{ gap: "8px" }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={SITE_CONFIG.vkImUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-glass"
-                    style={{ gap: "10px" }}
-                  >
-                    <VkIcon />
-                    ВКонтакте
-                  </a>
-                  <Link href="/calculator" className="btn btn-glass">
-                    Калькулятор кухни
-                  </Link>
-                </div>
-                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-                </div>
-              </div>
-              <div className="final-info-block">
-                <MeasureForm initialCategory={`Кухня «${kitchen.title}»`} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LeadSection
+        id="measure"
+        initialCategory={`Кухня «${kitchen.title}»`}
+        title="Рассчитаем эту кухню под ваши размеры"
+        source={`Карточка кухни: ${kitchen.title}`}
+      />
     </div>
   );
 }

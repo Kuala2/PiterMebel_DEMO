@@ -26,7 +26,7 @@ export function GET() {
   <channel>
     <title>База знаний «ПитерМебель»</title>
     <link>${SITE_URL}/knowledge/</link>
-    <description>Инженерные руководства от технологов мебельного производства в СПб</description>
+    <description>Практические материалы о проектировании и подготовке мебели на заказ в Санкт-Петербурге</description>
     <language>ru</language>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     ${items}

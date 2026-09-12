@@ -12,6 +12,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const scrollYRef = useRef(0);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const menuDrawerRef = useRef<HTMLElement>(null);
+  const restoreMenuFocusRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,6 +88,46 @@ export default function Header() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const drawer = menuDrawerRef.current;
+    const focusable = () => Array.from(
+      drawer?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])') || []
+    );
+    window.requestAnimationFrame(() => focusable()[0]?.focus());
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        restoreMenuFocusRef.current = true;
+        setMobileMenuOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const elements = focusable();
+      if (!elements.length) return;
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      if (restoreMenuFocusRef.current) {
+        restoreMenuFocusRef.current = false;
+        window.requestAnimationFrame(() => menuButtonRef.current?.focus());
+      }
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className={`site-header ${isScrolled || !isHome ? "is-scrolled" : ""} ${mobileMenuOpen ? "is-menu-open" : ""}`}
@@ -123,6 +166,7 @@ export default function Header() {
                   href={link.href}
                   className={`nav-link ${isActive ? "active" : ""}`}
                   onClick={(e) => handleNavClick(e, link.href)}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -158,11 +202,13 @@ export default function Header() {
             </Link>
 
             <button
+              ref={menuButtonRef}
               type="button"
               className="mobile-menu-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
-              aria-label="Переключить меню"
+              aria-controls="mobile-navigation"
+              aria-label={mobileMenuOpen ? "Закрыть меню" : "Открыть меню"}
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {mobileMenuOpen ? (
@@ -177,7 +223,14 @@ export default function Header() {
       </div>
 
       {/* Mobile Nav Drawer */}
-      <div className={`mobile-nav-drawer ${mobileMenuOpen ? "is-open" : ""}`}>
+      <nav
+        id="mobile-navigation"
+        ref={menuDrawerRef}
+        className={`mobile-nav-drawer ${mobileMenuOpen ? "is-open" : ""}`}
+        aria-label="Мобильная навигация"
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
+      >
         <div className="mobile-nav-links">
           {navLinks.map((link) => {
             const currentNorm = normalizePath(pathname);
@@ -191,6 +244,7 @@ export default function Header() {
                 href={link.href}
                 className={`mobile-nav-link ${isActive ? "active" : ""}`}
                 onClick={(e) => handleNavClick(e, link.href)}
+                aria-current={isActive ? "page" : undefined}
               >
                 {link.label}
               </Link>
@@ -219,7 +273,7 @@ export default function Header() {
             Консультация и расчет
           </Link>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

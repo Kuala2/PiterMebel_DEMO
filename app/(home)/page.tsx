@@ -5,10 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
-import VkIcon from "@/components/VkIcon";
+import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
-import MeasureForm from "@/components/MeasureForm";
-import PromoBanner from "@/components/PromoBanner";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
@@ -322,6 +320,7 @@ export default function HomePage() {
   // никогда не мигает всё сразу. Наведённая карточка пропускается.
   const rotateCursor = useRef(0);
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = setInterval(() => {
       if (document.hidden) return;
       const ids = visibleItems.map((i) => i.id);
@@ -649,7 +648,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3.1. FOUNDER MANIFESTO & SHOWCASE: Честный подход с 2005 года */}
+      {/* 3.1. COMPANY MANIFESTO & SHOWCASE: Честный подход с 2005 года */}
       <section className="manifesto-section" id="manifesto">
         <div className="container">
           <div className="manifesto-grid">
@@ -657,16 +656,18 @@ export default function HomePage() {
             <div className="manifesto-content">
               <div>
                 <h2 className="section-title">
-                  ПитерМебель с {SITE_CONFIG.foundedYear} года: честный подход к каждому проекту
+                  ПитерМебель с {SITE_CONFIG.foundingYear} года: честный подход к каждому проекту
                 </h2>
 
                 <div className="manifesto-quote-wrap">
                   <p className="manifesto-quote-text">
-                    «Мы сознательно сохраняем формат семейного производства: я лично проектирую каждый гарнитур, встречаюсь с заказчиками на площади Стачек и фиксирую прозрачную смету в договоре. Все этапы — от замера до сборки, подключения электрики и сантехники — выполняем своей постоянной командой. Никаких сторонних мастеров, скрытых наценок и затянутых сроков.»
+                    «ПитерМебель» — семейное производство полного цикла. Мы проектируем мебель,
+                    готовим подробную смету, выполняем замер, изготовление и сборку одной командой,
+                    а согласованную стоимость фиксируем в договоре.
                   </p>
                   <div className="manifesto-author">
-                    <div className="manifesto-author-name">Елена Волкова</div>
-                    <div className="manifesto-author-role">Основатель и ведущий дизайнер студии «ПитерМебель»</div>
+                    <div className="manifesto-author-name">Команда «ПитерМебель»</div>
+                    <div className="manifesto-author-role">Проектирование, производство и монтаж мебели на заказ</div>
                   </div>
                 </div>
               </div>
@@ -678,7 +679,7 @@ export default function HomePage() {
                     <span className="manifesto-spec-desc">Семейное производство без ребрендингов и посредников в СПб</span>
                   </div>
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">0 ₽ переплат</span>
+                    <span className="manifesto-spec-metric">Прямая смета</span>
                     <span className="manifesto-spec-desc">Фиксированная смета в договоре не растет в процессе</span>
                   </div>
                   <div className="manifesto-spec-row">
@@ -689,7 +690,7 @@ export default function HomePage() {
 
                 <div className="manifesto-actions">
                   <Link href="/contacts" className="btn btn-glass">
-                    Обсудить проект с Еленой →
+                    Обсудить проект →
                   </Link>
                   <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
                     {SITE_CONFIG.phone}
@@ -727,7 +728,7 @@ export default function HomePage() {
               <div className="workshop-photo-frame">
                 <Image
                   src="/img/brand/ws_cnc_wood_1.jpg"
-                  alt="Станочный цех PiterMebel — чистовой раскрой и обработка"
+                  alt="Работа с мебельной деталью на производстве ПитерМебель"
                   fill
                   className="workshop-main-photo"
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -742,7 +743,7 @@ export default function HomePage() {
             {/* Right Column: Editorial Details */}
             <div className="workshop-col-content">
               <h2 className="section-title">
-                Собственное станочное производство
+                Производство в Санкт-Петербурге
               </h2>
               <p className="workshop-lead">
                 Производим сами — поэтому отвечаем за качество на каждом этапе, от раскроя плиты до сборки изделия.
@@ -762,9 +763,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">02</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">100% тестовая сборка</h3>
+                    <h3 className="workshop-point-title">Контроль перед отгрузкой</h3>
                     <p className="workshop-point-desc">
-                      Каждое изделие собирается в цеху до отгрузки — на объекте всё встаёт точно
+                      Проверяем присадку, работу механизмов и видимые зазоры
                     </p>
                   </div>
                 </div>
@@ -772,9 +773,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">03</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Нестандарт — без ограничений</h3>
+                    <h3 className="workshop-point-title">Под размер помещения</h3>
                     <p className="workshop-point-desc">
-                      Размеры, материалы и решения не привязаны к готовым каталогам
+                      Проектируем под ниши, потолок и расположение коммуникаций
                     </p>
                   </div>
                 </div>
@@ -818,10 +819,10 @@ export default function HomePage() {
 
             {/* Step 3 */}
             <div className="process-step">
-              <span className="process-day">14–21 день</span>
+              <span className="process-day">По договору</span>
               <h3 className="process-title">Изготовление в цеху</h3>
               <p className="process-desc">
-                Чистовой станочный раскрой, влагостойкая герметизация торцов и 100% контрольная сборка.
+                Срок зависит от состава проекта и фиксируется в договоре. Выполняем раскрой, обработку деталей и контрольную сборку.
               </p>
             </div>
 
@@ -882,7 +883,7 @@ export default function HomePage() {
                 </h3>
                 <div className="knowledge-object-footer">
                   <span className="knowledge-object-author">
-                    {KNOWLEDGE_ARTICLES[0].author.name} · Технолог цеха
+                    {KNOWLEDGE_ARTICLES[0].author.name} · {KNOWLEDGE_ARTICLES[0].author.role}
                   </span>
                   <span className="knowledge-object-link">
                     Читать статью →
@@ -898,58 +899,12 @@ export default function HomePage() {
       <Faq />
 
       {/* 7. FINAL CONSULTATION & CONTACTS */}
-      <section className="final-section" id="contacts" style={{ backgroundColor: "var(--bg-studio)" }}>
-        <div className="container">
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <div>
-                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
-                    Индивидуальная мебель и кухни без салонных наценок
-                  </h2>
-
-                  <PromoBanner variant="cta-card" />
-                </div>
-
-                <div>
-                  <div className="final-buttons-row">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn btn-green"
-                    style={{ gap: "8px" }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={SITE_CONFIG.vkImUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-glass"
-                    style={{ gap: "10px" }}
-                  >
-                    <VkIcon />
-                    ВКонтакте
-                  </a>
-                  <Link href="/calculator" className="btn btn-glass">
-                    Калькулятор мебели
-                  </Link>
-                </div>
-                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-                </div>
-              </div>
-            </div>
-
-              <div className="final-info-block">
-                <MeasureForm initialCategory="Кухня" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LeadSection
+        id="contacts"
+        title="Рассчитаем мебель под ваш проект"
+        description="Выберите, что хотите заказать, и оставьте телефон. Специалист уточнит детали и подготовит расчёт."
+        source="Главная страница"
+      />
     </div>
   );
 }

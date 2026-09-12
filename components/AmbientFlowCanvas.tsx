@@ -163,6 +163,7 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     // обновляется каждый кадр rAF — по ней на 60Hz не отрисовалось бы ничего).
     let raf = 0;
     let inView = true;
+    let pageVisible = !document.hidden;
     const start = performance.now();
     let last = start;
     let lastRender = 0;
@@ -175,7 +176,7 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
 
     const loop = (time: number) => {
       raf = requestAnimationFrame(loop);
-      if (!inView) return;
+      if (!inView || !pageVisible) return;
 
       // Темп rAF — метрика нагрузки машины
       const interval = time - last;
@@ -207,10 +208,16 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     });
     io.observe(canvas);
 
+    const handleVisibility = () => {
+      pageVisible = !document.hidden;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
     raf = requestAnimationFrame(loop);
 
         cleanup = () => {
           window.removeEventListener("resize", resize);
+          document.removeEventListener("visibilitychange", handleVisibility);
           io.disconnect();
           ro.disconnect();
           cancelAnimationFrame(raf);

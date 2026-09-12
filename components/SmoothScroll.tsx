@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 /** 
- * Плавный «бархатный» скролл в стиле доводчиков Blum
- * с гарантированным сбросом в начало страницы (0, 0) при любой навигации между вкладками/разделами.
+ * Плавный скролл на desktop. Стандартное восстановление позиции браузером
+ * сохраняется, чтобы кнопка «Назад» возвращала пользователя к месту просмотра.
  */
 export default function SmoothScroll() {
   const pathname = usePathname();
@@ -14,19 +14,19 @@ export default function SmoothScroll() {
 
   // Инициализация Lenis
   useEffect(() => {
-    // Отключаем автоматическое восстановление скролла браузером в пользу чистого SPA-поведения
     if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+      window.history.scrollRestoration = "auto";
     }
 
     if (typeof window === "undefined") return;
 
     // На мобильных устройствах (<768px) нативный тач-скролл работает быстрее (120Hz)
     const isMobile = window.innerWidth < 768;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let lenis: Lenis | null = null;
     let raf = 0;
 
-    if (!isMobile) {
+    if (!isMobile && !reduceMotion) {
       lenis = new Lenis({
         duration: 1.15,
         easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -72,7 +72,7 @@ export default function SmoothScroll() {
     };
   }, []);
 
-  // Сброс скролла в самый верх (0, 0) при любом переходе между страницами/вкладками
+  // Якорные переходы ждут монтирования целевого блока.
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -98,31 +98,6 @@ export default function SmoothScroll() {
         const timer = setTimeout(scrollToHash, 80);
         return () => clearTimeout(timer);
       }
-    } else {
-      // Обычный переход на новую вкладку/страницу — СТРОГО с самого начала
-      const resetScroll = () => {
-        if (lenisRef.current) {
-          lenisRef.current.scrollTo(0, { immediate: true, force: true });
-          lenisRef.current.resize();
-        }
-        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-        document.documentElement.scrollTop = 0;
-        document.body.scrollTop = 0;
-      };
-
-      // 1. Мгновенно синхронно
-      resetScroll();
-
-      // 2. В следующем кадре анимации
-      const rafId = requestAnimationFrame(resetScroll);
-
-      // 3. Через 50ms на случай отложенного монтирования Next.js
-      const timer = setTimeout(resetScroll, 50);
-
-      return () => {
-        cancelAnimationFrame(rafId);
-        clearTimeout(timer);
-      };
     }
   }, [pathname]);
 

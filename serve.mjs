@@ -3,10 +3,10 @@
 // не работает — вместо него запускается: node serve.mjs
 import { createServer } from "http";
 import { readFileSync, existsSync, statSync } from "fs";
-import { join, extname, normalize } from "path";
+import { join, extname, normalize, resolve, sep } from "path";
 
-const ROOT = "out";
-const PORT = process.env.PORT || 3000;
+const ROOT = resolve("out");
+const PORT = process.env.PITER_MEBEL_PORT || process.env.PORT || 3000;
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -29,11 +29,23 @@ const MIME = {
 };
 
 const server = createServer((req, res) => {
-  let pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  let pathname;
+  try {
+    pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  } catch {
+    res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+    res.end("Bad request");
+    return;
+  }
 
   // Защита от path traversal
-  const rel = normalize(pathname).replace(/^(\.\.[/\\])+/, "");
-  let file = join(ROOT, rel);
+  const rel = normalize(pathname).replace(/^[/\\]+/, "");
+  let file = resolve(ROOT, rel);
+  if (file !== ROOT && !file.startsWith(`${ROOT}${sep}`)) {
+    res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+    res.end("Bad request");
+    return;
+  }
 
   if (existsSync(file) && statSync(file).isDirectory()) {
     file = join(file, "index.html");
@@ -46,8 +58,10 @@ const server = createServer((req, res) => {
   if (!existsSync(file) && !extname(pathname)) {
     file = join(ROOT, rel + ".html");
   }
+  let statusCode = 200;
   if (!existsSync(file)) {
     file = join(ROOT, "404.html");
+    statusCode = 404;
   }
 
   if (!existsSync(file)) {
@@ -57,7 +71,7 @@ const server = createServer((req, res) => {
   }
 
   const body = readFileSync(file);
-  res.writeHead(200, {
+  res.writeHead(statusCode, {
     "content-type": MIME[extname(file).toLowerCase()] || "application/octet-stream",
     "cache-control": "no-cache",
   });

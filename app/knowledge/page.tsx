@@ -3,21 +3,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
-import MeasureForm from "@/components/MeasureForm";
-import VkIcon from "@/components/VkIcon";
+import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
 import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "База знаний и инженерные руководства | ПитерМебель",
+  title: "База знаний о проектировании мебели | ПитерМебель",
   description:
-    "Практические руководства по электрике кухни, выбору фасадов, наполнению гардеробных и монтажу мебели в потолок от технологов мебельного цеха в СПб.",
+    "Практические материалы о подготовке кухни, выборе фасадов, наполнении гардеробных и монтаже мебели на заказ в Санкт-Петербурге.",
   alternates: {
     canonical: "/knowledge",
   },
   openGraph: buildOg(
-    "База знаний и инженерные руководства | ПитерМебель",
-    "Практические руководства по электрике кухни, фасадам и монтажу от технологов мебельного цеха в СПб.",
+    "База знаний о проектировании мебели | ПитерМебель",
+    "Практические материалы о подготовке кухни, выборе фасадов и монтаже мебели на заказ.",
     "/knowledge"
   ),
 };
@@ -83,53 +82,13 @@ export default function KnowledgePage() {
         </section>
       )}
 
-      {/* 3. CTA: бесплатная проверка плана */}
-      <section className="knowledge-cta-section" style={{ backgroundColor: "var(--bg-studio)", padding: "112px 0" }}>
-        <div className="container">
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <h2 className="final-headline" style={{ marginBottom: "22px" }}>
-                  Бесплатная проверка привязки розеток и коммуникаций
-                </h2>
-                <div className="final-buttons-row">
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneRaw}`}
-                    className="btn btn-green"
-                    style={{ gap: "8px" }}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    {SITE_CONFIG.phone}
-                  </a>
-                  <a
-                    href={SITE_CONFIG.vkImUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-glass"
-                    style={{ gap: "10px" }}
-                  >
-                    <VkIcon />
-                    ВКонтакте
-                  </a>
-                  <Link href="/calculator" className="btn btn-glass">
-                    Калькулятор мебели
-                  </Link>
-                </div>
-
-                <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                  Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-                </div>
-              </div>
-
-              <div className="final-info-block">
-                <MeasureForm initialCategory="Кухня" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 3. CTA: обсуждение привязки коммуникаций */}
+      <LeadSection
+        id="consult"
+        initialCategory="Кухня"
+        title="Обсудим проект и привязку коммуникаций"
+        source="База знаний"
+      />
     </div>
   );
 }

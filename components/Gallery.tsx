@@ -17,12 +17,13 @@ export default function Gallery({
   objectFit = "cover",
 }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [lightbox, setLightbox] = useState(false);
   const [ratios, setRatios] = useState<Record<string, number>>({});
 
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
+  const galleryTriggerRef = useRef<HTMLDivElement>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   const count = images.length;
 
@@ -34,28 +35,38 @@ export default function Gallery({
     [count]
   );
 
-  // Автолистание каждые 5 секунд, пауза при наведении и в лайтбоксе
-  useEffect(() => {
-    if (paused || lightbox || count <= 1) return;
-    const timer = setInterval(() => {
-      setActiveIdx((i) => (i + 1) % count);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [paused, lightbox, count]);
-
-  // Лайтбокс: стрелки и Esc на клавиатуре + блокировка скролла страницы
+  // Лайтбокс: клавиатура, удержание фокуса и восстановление фокуса после закрытия.
   useEffect(() => {
     if (!lightbox) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setLightbox(false);
       if (e.key === "ArrowRight") go(1);
       if (e.key === "ArrowLeft") go(-1);
+      if (e.key === "Tab") {
+        const controls = Array.from(
+          lightboxRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), [tabindex]:not([tabindex="-1"])') || []
+        );
+        if (!controls.length) return;
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    window.requestAnimationFrame(() => {
+      lightboxRef.current?.querySelector<HTMLElement>(".lightbox-close")?.focus();
+    });
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      window.requestAnimationFrame(() => galleryTriggerRef.current?.focus());
     };
   }, [lightbox, go]);
 
@@ -84,13 +95,12 @@ export default function Gallery({
     <div className="detail-gallery-main">
       {/* Главное окно галереи с адаптивным aspect-ratio под активное фото */}
       <div
+        ref={galleryTriggerRef}
         className="detail-gallery-viewport"
         style={{
           aspectRatio: computedAspectRatio,
           maxHeight: "72vh",
         }}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
         onClick={() => setLightbox(true)}
@@ -183,11 +193,7 @@ export default function Gallery({
               type="button"
               className={`detail-thumb-item ${idx === activeIdx ? "is-active" : ""}`}
               onClick={() => setActiveIdx(idx)}
-              onMouseEnter={() => {
-                setPaused(true);
-                setActiveIdx(idx);
-              }}
-              onMouseLeave={() => setPaused(false)}
+              onMouseEnter={() => setActiveIdx(idx)}
               aria-label={`Перейти к фото ${idx + 1}`}
             >
               <Image
@@ -205,11 +211,13 @@ export default function Gallery({
       {/* Lightbox: полноэкранный просмотр */}
       {lightbox && (
         <div
+          ref={lightboxRef}
           className="lightbox-overlay"
           onClick={() => setLightbox(false)}
           role="dialog"
           aria-modal="true"
           aria-label={`Фото ${title}`}
+          tabIndex={-1}
         >
           <button
             type="button"

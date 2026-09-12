@@ -43,6 +43,7 @@ export default function Faq() {
                   type="button"
                   onClick={() => toggle(idx)}
                   aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${idx}`}
                   className="faq-question-btn"
                 >
                   <span className="faq-question-text">{item.question}</span>
@@ -59,7 +60,12 @@ export default function Faq() {
                     </svg>
                   </span>
                 </button>
-                <div className={`faq-answer-pane ${isOpen ? "is-open" : ""}`}>
+                <div
+                  id={`faq-answer-${idx}`}
+                  className={`faq-answer-pane ${isOpen ? "is-open" : ""}`}
+                  aria-hidden={!isOpen}
+                  inert={!isOpen}
+                >
                   <div className="faq-answer-inner">
                     <p className="faq-answer-text">
                       {item.answer}

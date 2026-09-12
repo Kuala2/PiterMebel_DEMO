@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import VkIcon from "@/components/VkIcon";
 import { SITE_CONFIG, NAVIGATION_LINKS } from "@/data/site";
+import { LEGAL_DETAILS, hasConfirmedLegalDetails } from "@/data/legal";
 
 export default function Footer() {
   return (
@@ -100,6 +101,12 @@ export default function Footer() {
         <div className="footer-bottom-bar">
           <div>
             © {new Date().getFullYear()} «{SITE_CONFIG.name}». {SITE_CONFIG.disclaimer}
+            {hasConfirmedLegalDetails && (
+              <span className="footer-legal-details">
+                {LEGAL_DETAILS.legalStatus} {LEGAL_DETAILS.operatorLegalName} · ИНН {LEGAL_DETAILS.inn}
+                {LEGAL_DETAILS.ogrnOrOgrnip ? ` · ОГРН/ОГРНИП ${LEGAL_DETAILS.ogrnOrOgrnip}` : ""}
+              </span>
+            )}
           </div>
         </div>
       </div>

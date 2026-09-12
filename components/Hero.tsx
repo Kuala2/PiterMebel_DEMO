@@ -56,7 +56,7 @@ export default function Hero() {
     return () => cleanups.forEach((fn) => fn());
   }, []);
 
-  const years = new Date().getFullYear() - SITE_CONFIG.foundedYear;
+  const years = new Date().getFullYear() - SITE_CONFIG.foundingYear;
   const yearsWord =
     years % 10 === 1 && years % 100 !== 11
       ? "год"
@@ -145,7 +145,7 @@ export default function Hero() {
 
             <div className="hero-stat-item">
               <div className="stat-num">
-                0 <span className="stat-unit">₽</span>
+                <span className="stat-unit stat-unit-gift">В подарок</span>
               </div>
               <div className="stat-text">
                 Схема электрики и розеток в подарок при заказе кухни

@@ -1,752 +1,470 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
-import Image from "next/image";
-import VkIcon from "@/components/VkIcon";
-import MeasureForm from "@/components/MeasureForm";
-import PromoBanner from "@/components/PromoBanner";
-import { SITE_CONFIG } from "@/data/site";
+import { useEffect, useMemo, useRef, useState } from "react";
+import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
+import {
+  calculateEstimate,
+  CalculatorCategory,
+  CALCULATOR_PRICING,
+} from "@/data/calculator-pricing";
+import { SITE_CONFIG } from "@/data/site";
 
-interface MainCategory {
-  id: string;
-  name: string;
-  desc: string;
+type Choice = { id: string; name: string; description: string };
+type MaterialId = keyof typeof CALCULATOR_PRICING.materialMultipliers;
+
+const CATEGORIES: Array<Choice & { id: CalculatorCategory }> = [
+  { id: "kitchen", name: "Кухня", description: "Гарнитур по одной или нескольким стенам" },
+  { id: "wardrobe", name: "Шкаф или гардеробная", description: "Встроенная или отдельностоящая система хранения" },
+  { id: "cabinet", name: "Корпусная мебель", description: "Прихожая, ТВ-зона, ванная или несколько изделий" },
+];
+
+const LAYOUTS: Record<CalculatorCategory, Choice[]> = {
+  kitchen: [
+    { id: "straight", name: "Прямая", description: "Одна линия мебели" },
+    { id: "corner", name: "Угловая", description: "Две стены и угловое соединение" },
+    { id: "u-shaped", name: "П-образная", description: "Три рабочие стороны" },
+    { id: "island", name: "С островом", description: "Основной ряд и отдельный остров" },
+  ],
+  wardrobe: [
+    { id: "built-in", name: "Встроенный шкаф", description: "В нишу или от стены до стены" },
+    { id: "freestanding", name: "Отдельный шкаф", description: "С собственными боковинами и крышей" },
+    { id: "walk-in", name: "Гардеробная", description: "Открытая или закрытая система хранения" },
+  ],
+  cabinet: [
+    { id: "single", name: "Одно изделие", description: "Например, тумба или ТВ-зона" },
+    { id: "zone", name: "Одна зона", description: "Комплект мебели для помещения" },
+    { id: "complex", name: "Несколько зон", description: "Комплексный заказ со скидкой за объём" },
+  ],
+};
+
+const SIZE_PRESETS = [
+  { id: "compact", name: "До 2,4 м", description: "Компактный проект", meters: 2.4 },
+  { id: "standard", name: "Около 3 м", description: "Средний размер", meters: 3 },
+  { id: "large", name: "Около 3,8 м", description: "Просторная зона", meters: 3.8 },
+  { id: "xl", name: "От 4,8 м", description: "Большой проект", meters: 4.8 },
+];
+
+const MATERIALS: Array<Choice & { id: MaterialId }> = [
+  { id: "plastic", name: "МДФ в пластике", description: "Практичная поверхность, включая Velvet и супермат" },
+  { id: "enamel", name: "МДФ в эмали", description: "Матовая или глянцевая окраска по RAL / NCS" },
+  { id: "veneer", name: "Натуральный шпон", description: "Дуб, ясень или американский орех" },
+  { id: "unknown", name: "Нужна помощь", description: "Подберём материал по задаче и бюджету" },
+];
+
+const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
+  kitchen: [
+    { id: "worktop", name: "Столешница", description: "Постформинг, компакт-ламинат, акрил или кварц" },
+    { id: "gola", name: "Фасады без ручек", description: "Профиль Gola или другой способ открывания" },
+    { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины, бутылочницы и подъёмники" },
+    { id: "lighting", name: "Встроенная подсветка", description: "Профиль, светодиодная лента и управление" },
+    { id: "ceiling", name: "До потолка", description: "Антресоли и подгонка по высоте" },
+    { id: "connections", name: "Подключение техники", description: "Сантехника и электрика силами одной команды" },
+  ],
+  wardrobe: [
+    { id: "glass", name: "Стекло или зеркало", description: "Витрины, зеркало или тонированное стекло" },
+    { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины и дополнительное наполнение" },
+    { id: "lighting", name: "Встроенная подсветка", description: "Свет внутри секций и витрин" },
+    { id: "ceiling", name: "До потолка", description: "Антресоли и подгонка по высоте" },
+    { id: "fittings", name: "Расширенная фурнитура", description: "Больше механизмов плавного открывания" },
+    { id: "filling", name: "Сложное наполнение", description: "Пантографы, обувницы и специальные секции" },
+  ],
+  cabinet: [
+    { id: "worktop", name: "Столешница", description: "Для тумбы, ванной или рабочей зоны" },
+    { id: "drawers", name: "Выдвижные системы", description: "Ящики и механизмы плавного открывания" },
+    { id: "lighting", name: "Встроенная подсветка", description: "Свет в нишах, витринах или под тумбами" },
+    { id: "ceiling", name: "До потолка", description: "Высокие секции и точная подгонка" },
+    { id: "fittings", name: "Расширенная фурнитура", description: "Дополнительные механизмы и подъёмники" },
+    { id: "mixed", name: "Несколько материалов", description: "Сочетание эмали, шпона, стекла или металла" },
+  ],
+};
+
+const STEPS = [
+  { short: "Изделие", title: "Что будем проектировать?", description: "Выберите основное направление мебели." },
+  { short: "Размер", title: "Какая конфигурация и длина?", description: "Приблизительных размеров достаточно для первого ориентира." },
+  { short: "Фасады", title: "Какие фасады вам ближе?", description: "Если ещё не решили, оставьте подбор материала дизайнеру." },
+  { short: "Оснащение", title: "Что важно учесть в комплектации?", description: "Можно не выбирать ничего: детали всё равно уточним перед сметой." },
+] as const;
+
+function getChoice<T extends Choice>(list: readonly T[], id: string): T {
+  const fallback = list[0];
+  if (!fallback) throw new Error("Список вариантов калькулятора пуст");
+  return list.find((item) => item.id === id) ?? fallback;
 }
 
-const MAIN_CATEGORIES: MainCategory[] = [
-  {
-    id: "kitchens",
-    name: "Кухни на заказ",
-    desc: "Линейные, угловые, П-образные гарнитуры и кухни с островом",
-  },
-  {
-    id: "wardrobes",
-    name: "Шкафы и гардеробные",
-    desc: "Встроенные системы в нишу, гардеробные комнаты и витрины Stopsol",
-  },
-  {
-    id: "cabinet",
-    name: "Корпусная мебель для дома",
-    desc: "Прихожие, подвесные ТВ-зоны, мебель для ванных и стеновые панели",
-  },
-];
-
-interface FurnitureSubtype {
-  id: string;
-  categoryId: string;
-  name: string;
-  subtitle: string;
-  image: string;
+function clampMeters(value: number) {
+  if (!Number.isFinite(value)) return 3;
+  return Math.min(12, Math.max(0.8, Math.round(value * 10) / 10));
 }
 
-const FURNITURE_SUBTYPES: FurnitureSubtype[] = [
-  // Kitchens
-  {
-    id: "kitchen-straight",
-    categoryId: "kitchens",
-    name: "Прямая (линейная) кухня",
-    subtitle: "Расположение вдоль одной стены, от 2.0 м",
-    image: "/img/kitchens/aleksandra/photo_1.jpg",
-  },
-  {
-    id: "kitchen-corner",
-    categoryId: "kitchens",
-    name: "Угловая (Г-образная) кухня",
-    subtitle: "Классическая эргономичная компоновка с мойкой в углу",
-    image: "/img/kitchens/valeria/photo_1.jpg",
-  },
-  {
-    id: "kitchen-u",
-    categoryId: "kitchens",
-    name: "П-образная кухня",
-    subtitle: "Максимум рабочей зоны и столешницы по трем стенам",
-    image: "/img/kitchens/stefania/photo_1.jpg",
-  },
-  {
-    id: "kitchen-island",
-    categoryId: "kitchens",
-    name: "Кухня с островом",
-    subtitle: "Основной гарнитур плюс отдельно стоящая островная зона",
-    image: "/img/kitchens/aleksandra/photo_3.jpg",
-  },
-  // Wardrobes
-  {
-    id: "wardrobe-room",
-    categoryId: "wardrobes",
-    name: "Гардеробная комната",
-    subtitle: "Индивидуальное зонирование полок, вешалок и ящиков",
-    image: "/img/projects/glass-wardrobe/photo_2.jpg",
-  },
-  {
-    id: "wardrobe-niche",
-    categoryId: "wardrobes",
-    name: "Встроенный шкаф в нишу",
-    subtitle: "Подгонка от пола до потолка без щелей и зазоров",
-    image: "/img/projects/glass-wardrobe/photo_4.jpg",
-  },
-  {
-    id: "wardrobe-hinged",
-    categoryId: "wardrobes",
-    name: "Распашной шкаф",
-    subtitle: "Классические фасады со скрытыми петлями плавного хода",
-    image: "/img/projects/glass-wardrobe/photo_5.jpg",
-  },
-  {
-    id: "wardrobe-glass",
-    categoryId: "wardrobes",
-    name: "Витрины со стеклом Stopsol",
-    subtitle: "Тонированное зеркальное стекло с подсветкой полок",
-    image: "/img/projects/glass-wardrobe/photo_1.jpg",
-  },
-  // Cabinet
-  {
-    id: "cabinet-hall",
-    categoryId: "cabinet",
-    name: "Мебель для прихожей",
-    subtitle: "Шкафы для верхней одежды, обувницы и мягкие банкетки",
-    image: "/img/projects/green-hallway/photo_1.jpg",
-  },
-  {
-    id: "cabinet-bath",
-    categoryId: "cabinet",
-    name: "Тумбы и пеналы в санузел",
-    subtitle: "Влагостойкие фасады и бесшовная интеграция с сантехникой",
-    image: "/img/projects/bathroom-enamel/photo_1.jpg",
-  },
-  {
-    id: "cabinet-tv",
-    categoryId: "cabinet",
-    name: "Подвесная ТВ-зона",
-    subtitle: "Парящие тумбы со скрытой прокладкой кабелей",
-    image: "/img/projects/oak-veneer-panel/photo_3.jpg",
-  },
-  {
-    id: "cabinet-slats",
-    categoryId: "cabinet",
-    name: "Стеновые панели из шпона",
-    subtitle: "Интерьерная облицовка стен натуральным деревом",
-    image: "/img/projects/oak-veneer-panel/photo_1.jpg",
-  },
-];
-
-const SIZES = [
-  { id: "s", name: "До 2.4 м", desc: "Компактная планировка для студии", meters: 2.4 },
-  { id: "m", name: "2.5 – 3.2 м", desc: "Стандартный гарнитур для квартиры", meters: 3.0 },
-  { id: "l", name: "3.3 – 4.2 м", desc: "Просторная кухня для семьи", meters: 3.8 },
-  { id: "xl", name: "Более 4.2 м", desc: "Большой проект или кухня с островом", meters: 4.8 },
-];
-
-const FACADE_MATERIALS = [
-  {
-    id: "enamel",
-    name: "Эмаль по палитре RAL / NCS",
-    desc: "Безупречно гладкая матовая поверхность без швов. Более 2000 оттенков палитры RAL и NCS.",
-    image: "/img/materials/enamel.jpg",
-  },
-  {
-    id: "veneer",
-    name: "Натуральный шпон дуба",
-    desc: "Срез натурального дерева под матовым лаком. Выразительный природный рисунок годичных колец.",
-    image: "/img/materials/veneer.jpg",
-  },
-  {
-    id: "fenix",
-    name: "Суперматовый пластик Fenix NTM",
-    desc: "Итальянский нанопластик. Поверхность не собирает отпечатки пальцев и восстанавливается от микроцарапин.",
-    image: "/img/materials/fenix.jpg",
-  },
-  {
-    id: "plastic",
-    name: "Пластик Velvet (матовый)",
-    desc: "Практичная тактильная микротекстура. Высокая стойкость к бытовой химии, влаге и истиранию.",
-    image: "/img/materials/velvet.jpg",
-  },
-];
-
-const EXTRA_OPTIONS = [
-  {
-    id: "stone",
-    name: "Столешница из искусственного камня",
-    desc: "Бесшовная монолитная склейка с интегрированной мойкой без стыков",
-  },
-  {
-    id: "gola",
-    name: "Скрытый профиль Gola (без ручек)",
-    desc: "Алюминиевый профиль в цвет корпуса для открывания за фасад",
-  },
-  {
-    id: "stopsol",
-    name: "Витрины со стеклом Stopsol",
-    desc: "Зеркальный эффект при выключенном свете и демонстрация посуды с подсветкой",
-  },
-  {
-    id: "ceiling",
-    name: "Антресольный ярус точно в потолок",
-    desc: "Подгонка без пылевого зазора сверху и максимальный объем хранения",
-  },
-  {
-    id: "fittings",
-    name: "Фурнитура Blum Legrabox и Aventos",
-    desc: "Австрийские механизмы с доводчиками плавного хода (100 000 циклов)",
-  },
-  {
-    id: "led",
-    name: "Врезная теплая подсветка 3000K",
-    desc: "Линейный алюминиевый профиль с бесконтактным сенсором взмаха руки",
-  },
-];
-
-const CALC_STEPS = ["Направление", "Планировка", "Длина", "Фасады", "Опции"];
+function formatPrice(value: number) {
+  return value.toLocaleString("ru-RU");
+}
 
 export default function CalculatorPage() {
-  const [step, setStep] = useState(1);
-  const [selectedMainCat, setSelectedMainCat] = useState("kitchens");
-  const [selectedType, setSelectedType] = useState("kitchen-straight");
-  const [selectedSize, setSelectedSize] = useState("m");
-  const [customMeters, setCustomMeters] = useState(3.0);
-  const [selectedMaterial, setSelectedMaterial] = useState("enamel");
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([
-    "gola",
-    "fittings",
-    "ceiling",
-  ]);
+  const [step, setStep] = useState(0);
+  const [category, setCategory] = useState<CalculatorCategory>("kitchen");
+  const [layout, setLayout] = useState("straight");
+  const [meters, setMeters] = useState(3);
+  const [material, setMaterial] = useState<MaterialId>("unknown");
+  const [options, setOptions] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
+  const [urlReady, setUrlReady] = useState(false);
+  const stageHeadingRef = useRef<HTMLHeadingElement>(null);
 
-  // Restore state from URL query params if present
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    const p = new URLSearchParams(window.location.search);
-    const cat = p.get("cat");
-    const type = p.get("type");
-    const m = p.get("meters");
-    const mat = p.get("mat");
-    const opts = p.get("opts");
+    const params = new URLSearchParams(window.location.search);
+    const categoryParam = params.get("category");
+    const nextCategory = CATEGORIES.some((item) => item.id === categoryParam)
+      ? categoryParam as CalculatorCategory
+      : "kitchen";
+    const allowedLayouts = LAYOUTS[nextCategory];
+    const layoutParam = params.get("layout");
+    const nextLayout = allowedLayouts.some((item) => item.id === layoutParam)
+      ? layoutParam!
+      : allowedLayouts[0].id;
+    const materialParam = params.get("material");
+    const nextMaterial = MATERIALS.some((item) => item.id === materialParam)
+      ? materialParam as MaterialId
+      : "unknown";
+    const allowedOptionIds = new Set(OPTIONS_BY_CATEGORY[nextCategory].map((item) => item.id));
+    const nextOptions = (params.get("options") || "")
+      .split(",")
+      .filter((id) => allowedOptionIds.has(id));
+    const stepParam = Number(params.get("step"));
 
-    if (cat && MAIN_CATEGORIES.some((c) => c.id === cat)) setSelectedMainCat(cat);
-    if (type && FURNITURE_SUBTYPES.some((s) => s.id === type)) setSelectedType(type);
-    if (m && !isNaN(parseFloat(m))) setCustomMeters(parseFloat(m));
-    if (mat && FACADE_MATERIALS.some((fm) => fm.id === mat)) setSelectedMaterial(mat);
-    if (opts) setSelectedOptions(opts.split(",").filter(Boolean));
+    setCategory(nextCategory);
+    setLayout(nextLayout);
+    setMeters(clampMeters(Number(params.get("meters") || 3)));
+    setMaterial(nextMaterial);
+    setOptions([...new Set(nextOptions)]);
+    if (Number.isInteger(stepParam) && stepParam >= 1 && stepParam <= STEPS.length) {
+      setStep(stepParam - 1);
+    }
+    setUrlReady(true);
   }, []);
 
-  const shareLink = () => {
-    if (typeof window === "undefined") return;
+  useEffect(() => {
+    if (!urlReady) return;
     const params = new URLSearchParams({
-      cat: selectedMainCat,
-      type: selectedType,
-      meters: customMeters.toFixed(1),
-      mat: selectedMaterial,
-      opts: selectedOptions.join(","),
+      category,
+      layout,
+      meters: meters.toFixed(1),
+      material,
+      options: options.join(","),
+      step: String(step + 1),
     });
-    const url = `${window.location.origin}/calculator/?${params.toString()}`;
-    const done = () => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2200);
-    };
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(url).then(done).catch(() => {});
-    }
+    window.history.replaceState(null, "", `${window.location.pathname}?${params.toString()}${window.location.hash}`);
+  }, [category, layout, material, meters, options, step, urlReady]);
+
+  const categoryChoice = getChoice(CATEGORIES, category);
+  const layoutChoices = LAYOUTS[category];
+  const layoutChoice = getChoice(layoutChoices, layout);
+  const materialChoice = getChoice(MATERIALS, material);
+  const availableOptions = OPTIONS_BY_CATEGORY[category];
+  const optionChoices = options
+    .map((id) => availableOptions.find((item) => item.id === id))
+    .filter((item): item is Choice => Boolean(item));
+  const estimate = useMemo(() => calculateEstimate({
+    category,
+    layout,
+    meters,
+    material,
+    options,
+  }), [category, layout, material, meters, options]);
+
+  const priceLabel = `${formatPrice(estimate.low)} — ${formatPrice(estimate.high)} ₽`;
+  const summary = useMemo(() => [
+    `Изделие: ${categoryChoice.name}`,
+    `Конфигурация: ${layoutChoice.name}`,
+    `Ориентировочная длина: ${meters.toFixed(1)} м`,
+    `Фасады: ${materialChoice.name}`,
+    `Дополнительно: ${optionChoices.length ? optionChoices.map((item) => item.name).join(", ") : "без выбранных опций"}`,
+    `Онлайн-ориентир: ${priceLabel}`,
+  ].join("\n"), [categoryChoice.name, layoutChoice.name, materialChoice.name, meters, optionChoices, priceLabel]);
+
+  const focusStage = () => window.requestAnimationFrame(() => stageHeadingRef.current?.focus());
+
+  const goToStep = (nextStep: number) => {
+    setStep(Math.min(STEPS.length - 1, Math.max(0, nextStep)));
+    focusStage();
   };
 
-  const handleMainCatChange = (catId: string) => {
-    setSelectedMainCat(catId);
-    const firstSubtype = FURNITURE_SUBTYPES.find((s) => s.categoryId === catId);
-    if (firstSubtype) {
-      setSelectedType(firstSubtype.id);
-    }
+  const chooseCategory = (id: CalculatorCategory) => {
+    setCategory(id);
+    setLayout(LAYOUTS[id][0].id);
+    const allowedOptionIds = new Set(OPTIONS_BY_CATEGORY[id].map((item) => item.id));
+    setOptions((current) => current.filter((optionId) => allowedOptionIds.has(optionId)));
   };
-
-  const currentSubtypes = useMemo(() => {
-    return FURNITURE_SUBTYPES.filter((s) => s.categoryId === selectedMainCat);
-  }, [selectedMainCat]);
 
   const toggleOption = (id: string) => {
-    setSelectedOptions((prev) =>
-      prev.includes(id) ? prev.filter((o) => o !== id) : [...prev, id]
-    );
+    setOptions((current) => current.includes(id)
+      ? current.filter((optionId) => optionId !== id)
+      : [...current, id]);
   };
 
-  const calculation = useMemo(() => {
-    const mainCat = MAIN_CATEGORIES.find((c) => c.id === selectedMainCat) || MAIN_CATEGORIES[0];
-    const furn = FURNITURE_SUBTYPES.find((f) => f.id === selectedType) || currentSubtypes[0] || FURNITURE_SUBTYPES[0];
-    const mat = FACADE_MATERIALS.find((m) => m.id === selectedMaterial) || FACADE_MATERIALS[0];
-
-    const basePerMeter: Record<string, number> = {
-      kitchens: 58000,
-      wardrobes: 46000,
-      cabinet: 38000,
-    };
-
-    const matMult: Record<string, number> = {
-      enamel: 1.15,
-      veneer: 1.45,
-      fenix: 1.30,
-      plastic: 1.0,
-    };
-
-    const optionPrice: Record<string, number> = {
-      stone: 55000,
-      gola: 18000,
-      stopsol: 38000,
-      ceiling: 24000,
-      fittings: 22000,
-      led: 14000,
-    };
-
-    const baseCost = (basePerMeter[selectedMainCat] ?? 50000) * customMeters * (matMult[selectedMaterial] ?? 1);
-    const optionsCost = selectedOptions.reduce((sum, id) => sum + (optionPrice[id] ?? 0), 0);
-    const total = baseCost + optionsCost;
-
-    const roundTo10k = (v: number) => Math.round(v / 10000) * 10000;
-    const priceLow = roundTo10k(total * 0.92);
-    const priceHigh = roundTo10k(total * 1.15);
-
-    return {
-      mainCategoryName: mainCat.name,
-      furnitureName: furn.name,
-      furnitureSubtitle: furn.subtitle,
-      customMeters: customMeters.toFixed(1),
-      materialName: mat.name,
-      priceLow,
-      priceHigh,
-      optionsNames: selectedOptions
-        .map((id) => EXTRA_OPTIONS.find((o) => o.id === id)?.name)
-        .filter(Boolean),
-    };
-  }, [selectedMainCat, selectedType, currentSubtypes, customMeters, selectedMaterial, selectedOptions]);
+  const copyLink = async () => {
+    const params = new URLSearchParams({
+      category,
+      layout,
+      meters: meters.toFixed(1),
+      material,
+      options: options.join(","),
+      step: String(step + 1),
+    });
+    const url = `${window.location.origin}/calculator/?${params.toString()}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const field = document.createElement("textarea");
+      field.value = url;
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+      document.execCommand("copy");
+      field.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
+  };
 
   return (
     <div className="calc-page">
-      {/* 1. Page Header */}
-      <PageHeader title="Конфигуратор стоимости мебели" />
+      <PageHeader title="Предварительный расчёт мебели" />
 
-      {/* 2. Main Configurator Section */}
-      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "64px", paddingBottom: "112px" }}>
+      <section className="calculator-section" aria-labelledby="calculator-title">
         <div className="container">
-          <div className="calc-layout-grid">
-            {/* Left Column: Interactive Steps (Tile-free, minimal & clear) */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-              {/* Step Navigation Tabs */}
-              <div className="calc-clean-tabs">
-                {CALC_STEPS.map((label, i) => {
-                  const n = i + 1;
-                  const isActive = n === step;
-                  return (
-                    <button
-                      key={label}
-                      type="button"
-                      className={`calc-clean-tab ${isActive ? "is-active" : ""}`}
-                      onClick={() => setStep(n)}
-                    >
-                      <span style={{ opacity: isActive ? 1 : 0.6, marginRight: "6px" }}>{n}.</span>
-                      {label}
-                    </button>
-                  );
-                })}
-              </div>
+          <div className="calculator-intro">
+            <h2 id="calculator-title">Получите ориентир стоимости</h2>
+            <p>
+              Выберите основные параметры. Диапазон будет меняться на каждом шаге,
+              а точную смету студия рассчитает по листам, фасадам, механизмам и работам.
+            </p>
+          </div>
 
-              {/* STEP 1: Main Category */}
+          <nav className="calculator-steps" aria-label="Шаги калькулятора">
+            <ol>
+              {STEPS.map((item, index) => (
+                <li key={item.short} className={index < step ? "is-complete" : ""}>
+                  <button
+                    type="button"
+                    className={index === step ? "is-active" : ""}
+                    aria-current={index === step ? "step" : undefined}
+                    onClick={() => goToStep(index)}
+                  >
+                    <span>{index + 1}</span>
+                    <small>{item.short}</small>
+                  </button>
+                </li>
+              ))}
+            </ol>
+            <div
+              className="calculator-progress"
+              role="progressbar"
+              aria-label="Прогресс заполнения калькулятора"
+              aria-valuemin={1}
+              aria-valuemax={STEPS.length}
+              aria-valuenow={step + 1}
+              aria-valuetext={`Шаг ${step + 1} из ${STEPS.length}: ${STEPS[step].short}`}
+            >
+              <span style={{ transform: `scaleX(${(step + 1) / STEPS.length})` }} />
+            </div>
+          </nav>
+
+          <div className="calculator-layout">
+            <div className="calculator-stage">
+              <header className="calculator-stage-header">
+                <p>Шаг {step + 1} из {STEPS.length}</p>
+                <h3 ref={stageHeadingRef} tabIndex={-1}>{STEPS[step].title}</h3>
+                <span>{STEPS[step].description}</span>
+              </header>
+
+              {step === 0 && (
+                <fieldset className="calculator-group">
+                  <legend className="sr-only">Тип мебели</legend>
+                  <div className="calculator-choice-grid">
+                    {CATEGORIES.map((item) => (
+                      <label key={item.id} className={`calculator-choice ${category === item.id ? "is-selected" : ""}`}>
+                        <input
+                          type="radio"
+                          name="calculator-category"
+                          value={item.id}
+                          checked={category === item.id}
+                          onChange={() => chooseCategory(item.id)}
+                        />
+                        <span className="calculator-choice-marker" aria-hidden="true" />
+                        <span className="calculator-choice-copy">
+                          <strong>{item.name}</strong>
+                          <small>{item.description}</small>
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+              )}
+
               {step === 1 && (
-                <div>
-                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
-                    Что будем проектировать?
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
-                    Выберите интерьерное направление мебели.
-                  </p>
-
-                  <div className="calc-clean-list">
-                    {MAIN_CATEGORIES.map((cat) => {
-                      const isSelected = selectedMainCat === cat.id;
-                      return (
-                        <div
-                          key={cat.id}
-                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
-                          onClick={() => handleMainCatChange(cat.id)}
-                        >
-                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                            <div className="calc-radio-indicator" />
-                            <div>
-                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
-                                {cat.name}
-                              </div>
-                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
-                                {cat.desc}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 2: Subtype & Layout */}
-              {step === 2 && (
-                <div>
-                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
-                    Конфигурация и планировка
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
-                    Выберите форму расположения модулей в помещении.
-                  </p>
-
-                  <div className="calc-clean-list">
-                    {currentSubtypes.map((type) => {
-                      const isSelected = selectedType === type.id;
-                      return (
-                        <div
-                          key={type.id}
-                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
-                          onClick={() => setSelectedType(type.id)}
-                        >
-                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                            <div className="calc-radio-indicator" />
-                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "0px", overflow: "hidden", flexShrink: 0 }}>
-                              <Image src={type.image} alt={type.name} fill style={{ objectFit: "cover" }} />
-                            </div>
-                            <div>
-                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
-                                {type.name}
-                              </div>
-                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
-                                {type.subtitle}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 3: Length / Dimensions */}
-              {step === 3 && (
-                <div>
-                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
-                    Ориентировочная длина по стенам
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
-                    Укажите примерную длину стен для расчета количества модулей и столешницы.
-                  </p>
-
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "10px", marginBottom: "24px" }}>
-                    {SIZES.map((size) => {
-                      const isSelected = selectedSize === size.id;
-                      return (
-                        <button
-                          key={size.id}
-                          type="button"
-                          onClick={() => {
-                            setSelectedSize(size.id);
-                            setCustomMeters(size.meters);
-                          }}
-                          style={{
-                            background: isSelected ? "rgba(140, 224, 65, 0.08)" : "transparent",
-                            border: `1px solid ${isSelected ? "var(--color-green-brand)" : "rgba(255, 255, 255, 0.1)"}`,
-                            borderRadius: "0px",
-                            padding: "16px 14px",
-                            cursor: "pointer",
-                            textAlign: "left",
-                            transition: "all 0.15s ease",
-                          }}
-                        >
-                          <div style={{ fontWeight: 600, fontSize: "16px", color: isSelected ? "var(--color-green-brand)" : "#FFFFFF" }}>
-                            {size.name}
-                          </div>
-                          <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "4px" }}>
-                            {size.desc}
-                          </div>
-                        </button>
-                      );
-                    })}
+                <fieldset className="calculator-group">
+                  <legend className="sr-only">Конфигурация и длина</legend>
+                  <div className="calculator-choice-grid calculator-choice-grid-compact">
+                    {layoutChoices.map((item) => (
+                      <label key={item.id} className={`calculator-choice ${layout === item.id ? "is-selected" : ""}`}>
+                        <input
+                          type="radio"
+                          name="calculator-layout"
+                          value={item.id}
+                          checked={layout === item.id}
+                          onChange={() => setLayout(item.id)}
+                        />
+                        <span className="calculator-choice-marker" aria-hidden="true" />
+                        <span className="calculator-choice-copy">
+                          <strong>{item.name}</strong>
+                          <small>{item.description}</small>
+                        </span>
+                      </label>
+                    ))}
                   </div>
 
-                  {/* Manual adjustment counter */}
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
-                    <span style={{ fontSize: "16px", color: "#A6ACB8" }}>
-                      Точная длина:
-                    </span>
-                    <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+                  <div className="calculator-size-presets" aria-label="Быстрый выбор длины">
+                    {SIZE_PRESETS.map((preset) => (
                       <button
+                        key={preset.id}
                         type="button"
-                        onClick={() => setCustomMeters((prev) => Math.max(1.8, +(prev - 0.2).toFixed(1)))}
-                        style={{
-                          width: "38px",
-                          height: "38px",
-                          borderRadius: "0px",
-                          background: "rgba(255, 255, 255, 0.06)",
-                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                          color: "#FFFFFF",
-                          fontSize: "18px",
-                          cursor: "pointer",
-                        }}
+                        aria-pressed={Math.abs(meters - preset.meters) < 0.05}
+                        onClick={() => setMeters(preset.meters)}
                       >
-                        –
+                        <strong>{preset.name}</strong>
+                        <span>{preset.description}</span>
                       </button>
-                      <span style={{ fontSize: "22px", fontWeight: 700, color: "#FFFFFF", minWidth: "64px", textAlign: "center" }}>
-                        {customMeters.toFixed(1)} м
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setCustomMeters((prev) => Math.min(7.0, +(prev + 0.2).toFixed(1)))}
-                        style={{
-                          width: "38px",
-                          height: "38px",
-                          borderRadius: "0px",
-                          background: "rgba(255, 255, 255, 0.06)",
-                          border: "1px solid rgba(255, 255, 255, 0.12)",
-                          color: "#FFFFFF",
-                          fontSize: "18px",
-                          cursor: "pointer",
-                        }}
-                      >
-                        +
-                      </button>
+                    ))}
+                  </div>
+
+                  <div className="calculator-meter-row">
+                    <label htmlFor="calculator-meters">
+                      Общая длина по стенам
+                      <span id="calculator-meters-help">Если точных размеров нет, укажите примерно.</span>
+                    </label>
+                    <div className="calculator-meter-control">
+                      <button type="button" onClick={() => setMeters((value) => clampMeters(value - 0.2))} aria-label="Уменьшить длину">−</button>
+                      <input
+                        id="calculator-meters"
+                        type="number"
+                        min="0.8"
+                        max="12"
+                        step="0.1"
+                        inputMode="decimal"
+                        value={meters}
+                        aria-describedby="calculator-meters-help"
+                        onChange={(event) => setMeters(clampMeters(Number(event.target.value)))}
+                      />
+                      <span>м</span>
+                      <button type="button" onClick={() => setMeters((value) => clampMeters(value + 0.2))} aria-label="Увеличить длину">+</button>
                     </div>
                   </div>
-                </div>
+                </fieldset>
               )}
 
-              {/* STEP 4: Facade Materials */}
-              {step === 4 && (
-                <div>
-                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
-                    Материал фасадов
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
-                    Качественные плитные материалы с влагостойкой герметичной обработкой торцов деталей.
-                  </p>
-
-                  <div className="calc-clean-list">
-                    {FACADE_MATERIALS.map((mat) => {
-                      const isSelected = selectedMaterial === mat.id;
-                      return (
-                        <div
-                          key={mat.id}
-                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
-                          onClick={() => setSelectedMaterial(mat.id)}
-                        >
-                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                            <div className="calc-radio-indicator" />
-                            <div style={{ position: "relative", width: "48px", height: "48px", borderRadius: "0px", overflow: "hidden", flexShrink: 0 }}>
-                              <Image src={mat.image} alt={mat.name} fill style={{ objectFit: "cover" }} />
-                            </div>
-                            <div>
-                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
-                                {mat.name}
-                              </div>
-                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
-                                {mat.desc}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+              {step === 2 && (
+                <fieldset className="calculator-group">
+                  <legend className="sr-only">Материал фасадов</legend>
+                  <div className="calculator-choice-grid calculator-choice-grid-compact">
+                    {MATERIALS.map((item) => (
+                      <label key={item.id} className={`calculator-choice ${material === item.id ? "is-selected" : ""}`}>
+                        <input
+                          type="radio"
+                          name="calculator-material"
+                          value={item.id}
+                          checked={material === item.id}
+                          onChange={() => setMaterial(item.id)}
+                        />
+                        <span className="calculator-choice-marker" aria-hidden="true" />
+                        <span className="calculator-choice-copy">
+                          <strong>{item.name}</strong>
+                          <small>{item.description}</small>
+                        </span>
+                      </label>
+                    ))}
                   </div>
-                </div>
+                </fieldset>
               )}
 
-              {/* STEP 5: Options & Hardware */}
-              {step === 5 && (
-                <div>
-                  <h2 style={{ fontSize: "22px", fontWeight: 600, color: "#FFFFFF", marginBottom: "8px" }}>
-                    Комплектация и оснащение
-                  </h2>
-                  <p style={{ fontSize: "16px", color: "#A6ACB8", marginBottom: "20px", lineHeight: "1.5" }}>
-                    Отметьте необходимые инженерные решения для долговечности и комфорта.
-                  </p>
-
-                  <div className="calc-clean-list">
-                    {EXTRA_OPTIONS.map((opt) => {
-                      const isSelected = selectedOptions.includes(opt.id);
-                      return (
-                        <div
-                          key={opt.id}
-                          className={`calc-clean-item ${isSelected ? "is-selected" : ""}`}
-                          onClick={() => toggleOption(opt.id)}
-                        >
-                          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                            <div className="calc-checkbox-indicator">
-                              {isSelected && (
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                  <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                              )}
-                            </div>
-                            <div>
-                              <div style={{ fontSize: "16px", fontWeight: 600, color: "#FFFFFF" }}>
-                                {opt.name}
-                              </div>
-                              <div style={{ fontSize: "14px", color: "#A0A7B5", marginTop: "3px" }}>
-                                {opt.desc}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+              {step === 3 && (
+                <fieldset className="calculator-group">
+                  <legend className="sr-only">Дополнительные опции</legend>
+                  <div className="calculator-option-grid">
+                    {availableOptions.map((item) => (
+                      <label key={item.id} className={`calculator-option ${options.includes(item.id) ? "is-selected" : ""}`}>
+                        <input
+                          type="checkbox"
+                          checked={options.includes(item.id)}
+                          onChange={() => toggleOption(item.id)}
+                        />
+                        <span><strong>{item.name}</strong><small>{item.description}</small></span>
+                      </label>
+                    ))}
                   </div>
-                </div>
+                  <p className="calculator-options-note">Без дополнительных опций — тоже нормальный вариант для первого расчёта.</p>
+                </fieldset>
               )}
 
-              {/* Step Navigation Buttons */}
-              <div style={{ display: "flex", gap: "12px", borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "20px" }}>
-                {step > 1 && (
-                  <button
-                    type="button"
-                    className="btn btn-glass"
-                    onClick={() => setStep((s) => s - 1)}
-                  >
-                    ← Назад
+              <div className="calculator-navigation">
+                {step > 0 && (
+                  <button type="button" className="btn btn-glass" onClick={() => goToStep(step - 1)}>
+                    Назад
                   </button>
                 )}
-                {step < 5 ? (
-                  <button
-                    type="button"
-                    className="btn btn-green"
-                    onClick={() => setStep((s) => s + 1)}
-                  >
-                    Далее: {CALC_STEPS[step]} →
+                {step < STEPS.length - 1 ? (
+                  <button type="button" className="btn btn-green" onClick={() => goToStep(step + 1)}>
+                    Далее: {STEPS[step + 1].short}
                   </button>
                 ) : (
-                  <a href="#measure" className="btn btn-green">
-                    Отправить конфигурацию на расчет и консультацию →
-                  </a>
+                  <a href="#measure" className="btn btn-green">Передать параметры на расчёт</a>
                 )}
               </div>
             </div>
 
-            {/* Right Column: Lightweight Flat Estimate Sidebar */}
-            <div className="calc-summary-card">
-              <div>
-                <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A0A7B5", marginBottom: "8px" }}>
-                  Ориентир стоимости
-                </div>
-                <div style={{ fontFamily: "var(--font-main)", fontSize: "30px", fontWeight: 700, color: "var(--color-green-brand)", lineHeight: 1.15, marginBottom: "8px", fontVariantNumeric: "tabular-nums lining-nums", letterSpacing: "-0.02em" }}>
-                  {calculation.priceLow.toLocaleString("ru-RU")} — {calculation.priceHigh.toLocaleString("ru-RU")} ₽
-                </div>
-                <div style={{ fontSize: "14px", color: "#A0A7B5", lineHeight: "1.55" }}>
-                  Ориентировочный расчет на собственном производстве в СПб (Петергофское ш., 73). Включает чистовой раскрой, обработку торцов, фасады и фурнитуру. Точная смета согласуется с технологом.
-                </div>
+            <aside className="calculator-summary" aria-label="Предварительная стоимость и параметры">
+              <div className="calculator-price">
+                <p>Предварительный диапазон</p>
+                <strong>≈ {priceLabel}</strong>
+                <span>Ориентир меняется вместе с выбранными параметрами.</span>
               </div>
 
-              {/* Specification Parameters */}
-              <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "16px" }}>
-                <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#A0A7B5", marginBottom: "12px" }}>
-                  Параметры спецификации
-                </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "12px", fontSize: "15px" }}>
-                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#8E96A5" }}>Тип:</span>
-                    <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.furnitureName}</strong>
-                  </li>
-                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#8E96A5" }}>Длина по стенам:</span>
-                    <strong style={{ color: "#FFFFFF" }}>{calculation.customMeters} м</strong>
-                  </li>
-                  <li style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}>
-                    <span style={{ color: "#8E96A5" }}>Фасады:</span>
-                    <strong style={{ color: "#FFFFFF", textAlign: "right" }}>{calculation.materialName}</strong>
-                  </li>
-                  {calculation.optionsNames.length > 0 && (
-                    <li style={{ borderTop: "1px solid rgba(255, 255, 255, 0.06)", paddingTop: "10px", marginTop: "2px" }}>
-                      <span style={{ color: "#8E96A5", display: "block", marginBottom: "6px", fontSize: "13px" }}>
-                        Выбранные опции:
-                      </span>
-                      <div style={{ fontSize: "14px", color: "#C2C7D4", lineHeight: "1.5" }}>
-                        {calculation.optionsNames.join(", ")}
-                      </div>
-                    </li>
-                  )}
-                </ul>
+              <dl>
+                <div><dt>Изделие</dt><dd>{categoryChoice.name}</dd></div>
+                <div><dt>Конфигурация</dt><dd>{layoutChoice.name}</dd></div>
+                <div><dt>Длина</dt><dd>{meters.toFixed(1)} м</dd></div>
+                <div><dt>Фасады</dt><dd>{materialChoice.name}</dd></div>
+                <div><dt>Опции</dt><dd>{optionChoices.length || "Не выбраны"}</dd></div>
+              </dl>
+
+              <div className="calculator-price-notice">
+                <strong>Это ориентир, не оферта</strong>
+                <p>
+                  Точная сумма зависит от раскроя листов, площади фасадов, числа петель,
+                  механизмов, столешницы и монтажных работ.
+                </p>
               </div>
 
-              {/* Action Buttons */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "10px", paddingTop: "4px" }}>
-                <a
-                  href="#measure"
-                  className="btn btn-green"
-                  style={{ width: "100%", justifyContent: "center" }}
-                >
-                  Записаться на консультацию
-                </a>
-                <a
-                  href={SITE_CONFIG.vkImUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-glass"
-                  style={{ width: "100%", justifyContent: "center", gap: "8px" }}
-                >
-                  <VkIcon />
-                  Обсудить спецификацию в VK
-                </a>
-                <button
-                  type="button"
-                  className="btn btn-glass"
-                  style={{ width: "100%", justifyContent: "center" }}
-                  onClick={shareLink}
-                >
-                  {copied ? "Ссылка скопирована ✓" : "Скопировать ссылку"}
-                </button>
-              </div>
-            </div>
+              <a href="#measure" className="btn btn-green">Получить точный расчёт</a>
+              <button type="button" className="btn btn-glass" onClick={copyLink} aria-live="polite">
+                {copied ? "Ссылка скопирована" : "Скопировать конфигурацию"}
+              </button>
+              <p className="calculator-summary-note">Консультация не обязывает заключать договор.</p>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* 3. Measure Form Section */}
-      <section className="final-section" id="measure" style={{ backgroundColor: "var(--bg-studio)" }}>
-        <div className="container">
-          <div className="final-card-container">
-            <div className="final-grid">
-              <div className="final-cta-block">
-                <div>
-                  <h2 className="final-headline" style={{ marginBottom: "20px" }}>
-                    Зафиксируйте предварительный расчет с технологом
-                  </h2>
-                  <PromoBanner variant="cta-card" />
-                </div>
-
-                <div>
-                  <div className="final-buttons-row">
-                    <a
-                      href={`tel:${SITE_CONFIG.phoneRaw}`}
-                      className="btn btn-green"
-                      style={{ gap: "8px" }}
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                      {SITE_CONFIG.phone}
-                    </a>
-                    <a
-                      href={SITE_CONFIG.vkImUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-glass"
-                      style={{ gap: "10px" }}
-                    >
-                      <VkIcon />
-                      ВКонтакте
-                    </a>
-                  </div>
-                  <div style={{ fontSize: "13.5px", color: "var(--color-text-muted)", marginTop: "18px" }}>
-                    Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи) · Производство: {SITE_CONFIG.productionAddress}
-                  </div>
-                </div>
-              </div>
-              <div className="final-info-block">
-                <MeasureForm initialCategory="Параметры из калькулятора" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <LeadSection
+        id="measure"
+        initialCategory={categoryChoice.name}
+        source="Калькулятор"
+        calculatorSummary={summary}
+        showSketchLink
+        mode="calculator"
+      />
     </div>
   );
 }

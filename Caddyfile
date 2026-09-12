@@ -28,6 +28,10 @@ https://pitermebel.com {
 
     # Разрешаем отображение сайта во фрейме Вебвизора и Карты кликов Яндекс.Метрики
     header Content-Security-Policy "frame-ancestors 'self' https://metrika.yandex.ru https://*.metrika.yandex.ru https://webvisor.com https://*.webvisor.com;"
+    header X-Content-Type-Options "nosniff"
+    header Referrer-Policy "strict-origin-when-cross-origin"
+    header Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    header Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
     # Хешированные ассеты Next.js (_next/static/*)
     @static {
@@ -60,7 +64,12 @@ https://pitermebel.com {
 
     # Роутинг для HTML-страниц статического экспорта (trailingSlash)
     handle {
-        try_files {path} {path}/ {path}.html /index.html
+        try_files {path} {path}/index.html {path}.html
+        file_server
+    }
+
+    handle_errors {
+        rewrite * /404.html
         file_server
     }
 }

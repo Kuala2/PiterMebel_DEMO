@@ -1,149 +1,220 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
 import { reachGoal } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
 
-const initialState: MeasureFormState = {
-  success: false,
-};
+const initialState: MeasureFormState = { success: false };
+
+const CATEGORY_OPTIONS = [
+  { value: "Кухня", label: "Кухня на заказ" },
+  { value: "Шкаф или гардеробная", label: "Шкаф или гардеробная" },
+  { value: "Корпусная мебель", label: "Корпусная мебель" },
+  { value: "Комплексный заказ", label: "Мебель для нескольких зон" },
+  { value: "Консультация", label: "Пока не определились" },
+] as const;
 
 interface MeasureFormProps {
   initialCategory?: string;
+  source?: string;
+  calculatorSummary?: string;
+  showSketchLink?: boolean;
 }
 
-export default function MeasureForm({ initialCategory }: MeasureFormProps) {
+function normalizeCategory(value?: string) {
+  const normalized = value?.toLowerCase() || "";
+  if (normalized.includes("кухн")) return "Кухня";
+  if (normalized.includes("шкаф") || normalized.includes("гардероб")) return "Шкаф или гардеробная";
+  if (
+    normalized.includes("корпус") ||
+    normalized.includes("прихож") ||
+    normalized.includes("панел") ||
+    normalized.includes("ванн")
+  ) return "Корпусная мебель";
+  if (normalized.includes("комплекс") || normalized.includes("нескольк")) return "Комплексный заказ";
+  return "Консультация";
+}
+
+export default function MeasureForm({
+  initialCategory,
+  source,
+  calculatorSummary,
+  showSketchLink = false,
+}: MeasureFormProps) {
+  const uid = useId();
   const [state, setState] = useState<MeasureFormState>(initialState);
   const [isPending, setIsPending] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(() => normalizeCategory(initialCategory));
+  const errorSummaryRef = useRef<HTMLDivElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (state.errors) errorSummaryRef.current?.focus();
+  }, [state.errors]);
+
+  useEffect(() => {
+    setSelectedCategory(normalizeCategory(initialCategory));
+  }, [initialCategory]);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isPending) return;
+
     setIsPending(true);
-    const formData = new FormData(e.currentTarget);
-    const result = await submitMeasureRequest(state, formData);
-    if (result.success) {
-      reachGoal("zayavka");
-    }
+    setState(initialState);
+    const formData = new FormData(event.currentTarget);
+    formData.set("page_url", window.location.href);
+    const result = await submitMeasureRequest(initialState, formData);
+    if (result.success) reachGoal("zayavka");
     setState(result);
     setIsPending(false);
   };
 
+  const contactId = `${uid}-contact`;
+  const categoryId = `${uid}-category`;
+  const messageId = `${uid}-message`;
+  const sketchId = `${uid}-sketch`;
+  const consentId = `${uid}-consent`;
+
+  if (state.success) {
+    return (
+      <div id="measure-form" className="form-success-box" role="status" aria-live="polite">
+        <div className="form-success-kicker">Заявка отправлена</div>
+        <h3>Спасибо за обращение!</h3>
+        <p>{state.message || "Мы свяжемся с вами в ближайшее время."}</p>
+        <div className="form-success-address">
+          Студия «{SITE_CONFIG.name}» · {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи)
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div id="measure-form" style={{ width: "100%" }}>
-      {state.success ? (
-        <div className="form-success-box">
-          <div style={{ fontSize: "13px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--color-green-brand)", marginBottom: "8px" }}>
-            Заявка принята
+      <form onSubmit={handleSubmit} className="measure-form" noValidate>
+        <input type="hidden" name="source" value={source || initialCategory || "Общая форма"} />
+        <input type="hidden" name="calculator_summary" value={calculatorSummary || ""} />
+        <label className="form-honeypot" aria-hidden="true">
+          Не заполняйте это поле
+          <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+        </label>
+
+        <div>
+          <div className="form-heading">
+            <h3>Запросить предварительный расчёт</h3>
+            <p>Оставьте телефон — специалист уточнит детали и подготовит расчёт.</p>
           </div>
-          <h3 style={{ fontSize: "22px", fontFamily: "var(--font-serif)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "10px" }}>
-            Спасибо за обращение!
-          </h3>
-          <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: "1.55" }}>
-            {state.message ||
-              "Мы свяжемся с вами в ближайшее время для уточнения деталей, предварительного расчета стоимости и согласования встречи в офисе студии."}
-          </p>
-          <div style={{ marginTop: "14px", fontSize: "13px", color: "var(--color-text-muted)" }}>
-            Студия «{SITE_CONFIG.name}» · {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи)
-          </div>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%" }}>
-          <div>
-            <div style={{ marginBottom: "18px" }}>
-              <h3 style={{ fontFamily: "var(--font-main)", fontWeight: 700, fontSize: "20px", color: "#FFFFFF", margin: 0, letterSpacing: "-0.01em" }}>
-                Запись на консультацию и расчет
-              </h3>
-            </div>
 
-            <div className="form-group">
-              <label htmlFor="form-name" className="form-label">
-                Ваше имя
-              </label>
-              <input
-                id="form-name"
-                name="name"
-                type="text"
-                required
-                placeholder="Елена"
-                className="form-input"
-                disabled={isPending}
-              />
-              {state.errors?.name && (
-                <p style={{ color: "#FF5A5A", fontSize: "13px", marginTop: "4px" }}>{state.errors.name}</p>
-              )}
+          {state.errors && (
+            <div ref={errorSummaryRef} className="form-error-summary" role="alert" tabIndex={-1}>
+              <strong>Проверьте форму</strong>
+              <p>{state.errors.form || "Исправьте отмеченные поля и отправьте заявку ещё раз."}</p>
             </div>
+          )}
 
+          <div className="form-fields-grid">
             <div className="form-group">
-              <label htmlFor="form-contact" className="form-label">
-                Контакт для связи
-              </label>
-              <input
-                id="form-contact"
-                name="contact"
-                type="text"
-                required
-                placeholder="Номер телефона или ник ВКонтакте"
-                className="form-input"
-                disabled={isPending}
-              />
-              {state.errors?.contact && (
-                <p style={{ color: "#FF5A5A", fontSize: "13px", marginTop: "4px" }}>{state.errors.contact}</p>
-              )}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="form-category" className="form-label">
-                Тип мебели
+              <label htmlFor={categoryId} className="form-label">
+                Что хотите заказать <span className="form-required-mark" aria-hidden="true">*</span>
               </label>
               <select
-                id="form-category"
+                id={categoryId}
                 name="category"
-                defaultValue={initialCategory || "Кухня"}
+                value={selectedCategory}
+                onChange={(event) => setSelectedCategory(event.target.value)}
                 className="form-select"
                 disabled={isPending}
+                required
+                aria-invalid={Boolean(state.errors?.category)}
               >
-                <option value="Кухня">Кухня на заказ</option>
-                <option value="Гардеробная">Гардеробная система</option>
-                <option value="Шкаф">Шкаф-купе / распашной</option>
-                <option value="Прихожая">Прихожая / входная зона</option>
-                <option value="Стеновые панели">Реечные и стеновые панели</option>
-                <option value="Коммерческая мебель">Мебель для бизнеса</option>
+                {CATEGORY_OPTIONS.map((option) => (
+                  <option key={option.value} value={option.value}>{option.label}</option>
+                ))}
               </select>
             </div>
-          </div>
 
-          <div style={{ marginTop: "18px" }}>
-            <label className="form-consent-label">
+            <div className="form-group form-contact-group">
+              <label htmlFor={contactId} className="form-label">
+                Телефон <span className="form-required-mark" aria-hidden="true">*</span>
+              </label>
               <input
-                type="checkbox"
-                name="consent"
+                id={contactId}
+                name="contact"
+                type="tel"
                 required
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
+                minLength={10}
+                autoComplete="tel"
+                inputMode="tel"
+                placeholder="+7 921 000-00-00"
+                className="form-input"
                 disabled={isPending}
+                aria-invalid={Boolean(state.errors?.contact)}
+                aria-describedby={state.errors?.contact ? `${contactId}-error` : undefined}
               />
-              <span>
-                Даю согласие на обработку персональных данных в соответствии с{" "}
-                <Link href="/privacy">политикой конфиденциальности</Link> (ФЗ № 152-ФЗ)
-              </span>
-            </label>
-            <button
-              type="submit"
-              className="btn btn-green"
-              disabled={isPending || !consent}
-              style={{ width: "100%", height: "44px", borderRadius: 0, marginTop: "12px", opacity: isPending || !consent ? 0.55 : 1 }}
-            >
-              {isPending ? "Отправка..." : "Записаться на консультацию"}
-            </button>
-            <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginTop: "10px", textAlign: "left", lineHeight: "1.5" }}>
-              С вами свяжется специалист, чтобы обсудить пожелания для предварительного расчета и согласовать визит в офис.
-            </p>
+              {state.errors?.contact && <p id={`${contactId}-error`} className="form-field-error">{state.errors.contact}</p>}
+            </div>
+
+            <details className="form-details form-group-wide">
+              <summary>
+                <span>Добавить детали проекта</span>
+                <span className="form-details-note">Необязательно</span>
+              </summary>
+              <div className="form-details-content">
+                <div className="form-group">
+                  <label htmlFor={messageId} className="form-label">Коротко о проекте</label>
+                  <textarea
+                    id={messageId}
+                    name="message"
+                    rows={3}
+                    className="form-input form-textarea"
+                    placeholder="Размеры, материалы, техника или удобное время для звонка"
+                    disabled={isPending}
+                  />
+                </div>
+
+                {showSketchLink && (
+                  <div className="form-group">
+                    <label htmlFor={sketchId} className="form-label">Ссылка на эскиз или план</label>
+                    <input
+                      id={sketchId}
+                      name="sketch_url"
+                      type="url"
+                      inputMode="url"
+                      className="form-input"
+                      placeholder="Яндекс Диск, VK или другое облако"
+                      disabled={isPending}
+                    />
+                  </div>
+                )}
+              </div>
+            </details>
           </div>
-        </form>
-      )}
+        </div>
+
+        <div className="form-submit-area">
+          <label htmlFor={consentId} className="form-consent-label">
+            <input
+              id={consentId}
+              type="checkbox"
+              name="consent"
+              required
+              checked={consent}
+              onChange={(event) => setConsent(event.target.checked)}
+              disabled={isPending}
+              aria-invalid={Boolean(state.errors?.consent)}
+            />
+            <span>
+              Согласен на обработку данных согласно <Link href="/privacy/">политике конфиденциальности</Link>
+            </span>
+          </label>
+          {state.errors?.consent && <p className="form-field-error">{state.errors.consent}</p>}
+          <button type="submit" className="btn btn-green form-submit-button" disabled={isPending}>
+            {isPending ? "Отправляем…" : "Запросить расчёт"}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
