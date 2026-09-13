@@ -7,7 +7,7 @@ import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
-import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
+import { SITE_CONFIG } from "@/data/site";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
 
 export default function HomePage() {
@@ -121,11 +121,11 @@ export default function HomePage() {
     {
       id: "oak-stone",
       category: "kitchens",
-      badge: "Шпон & Эмаль",
-      title: "Кухня Шпон Дуба & Мраморный фартук",
-      desc: "Фасады из натурального шпона дуба в сочетании с белой матовой эмалью и акриловым камнем с бесшовной склейкой.",
-      specLabel: "Фасады",
-      specValue: "Шпон дуба / Эмаль RAL",
+      badge: "Эмаль и дуб",
+      title: "Кухня: эмаль и массив дуба",
+      desc: "Фасады из МДФ в эмали и массива дуба. Столешница из кварцевого агломерата.",
+      specLabel: "Материалы",
+      specValue: "Эмаль / Массив дуба",
       photos: [
         "/img/projects/oak-stone/photo_1.jpg",
         "/img/projects/oak-stone/photo_2.jpg",
@@ -138,10 +138,10 @@ export default function HomePage() {
       id: "glass-wardrobe",
       category: "wardrobes",
       badge: "Stopsol",
-      title: "Гардеробная со стеклом STOPSOL",
-      desc: "Смарт-стекло: зеркало при выключенном свете, прозрачная витрина при включении подсветки. Без нижней направляющей.",
+      title: "Гардеробная со стеклом Stopsol",
+      desc: "При выключенной подсветке стекло выглядит как зеркало, при включённой становится прозрачным. Без нижней направляющей.",
       specLabel: "Стекло",
-      specValue: "Stopsol & LED 4000K",
+      specValue: "Stopsol",
       photos: [
         "/img/projects/glass-wardrobe/photo_1.jpg",
         "/img/projects/glass-wardrobe/photo_2.jpg",
@@ -154,9 +154,9 @@ export default function HomePage() {
       category: "kitchens",
       badge: "Fenix NTM",
       title: "Кухня «Александра» Fenix NTM",
-      desc: "Суперматовый нано-пластик Fenix NTM с защитой от отпечатков пальцев, встроенная техника, надежные механизмы.",
-      specLabel: "Материал",
-      specValue: "Fenix NTM супермат",
+      desc: "Фасады из МДФ с суперматовым пластиком Fenix, корпус Egger и столешница Slotex.",
+      specLabel: "Фасады",
+      specValue: "МДФ / Fenix",
       photos: [
         "/img/kitchens/aleksandra/photo_1.jpg",
         "/img/kitchens/aleksandra/photo_2.jpg",
@@ -168,11 +168,11 @@ export default function HomePage() {
     {
       id: "slavena",
       category: "kitchens",
-      badge: "Кашемир",
-      title: "Кухня «Славена» Теплый Кашемир",
-      desc: "Матовый пластик теплый кашемир, монолитная столешница и фартук из искусственного камня, скрытый профиль Gola.",
-      specLabel: "Профиль",
-      specValue: "Скрытый Gola / Камень",
+      badge: "МДФ-пластик",
+      title: "Кухня «Славена»",
+      desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
+      specLabel: "Фасады",
+      specValue: "МДФ-пластик",
       photos: [
         "/img/kitchens/slavena/photo_1.jpg",
         "/img/kitchens/slavena/photo_2.jpg",
@@ -184,10 +184,10 @@ export default function HomePage() {
       id: "mirror-hall",
       category: "closets",
       badge: "Встроенный",
-      title: "Встроенный шкаф в нишу прихожей",
-      desc: "Монтаж точно в размер от пола до потолка, зеркальные полотна, интегрированная мягкая ниша для обуви.",
-      specLabel: "Монтаж",
-      specValue: "Точно в нишу / Зеркало",
+      title: "Зеркальный шкаф с нишей для обуви",
+      desc: "Встроенный зеркальный шкаф с нишей для обуви и торцевыми ручками.",
+      specLabel: "Конструкция",
+      specValue: "Зеркало / Ниша для обуви",
       photos: [
         "/img/projects/mirror-hall/photo_1.jpg",
         "/img/projects/mirror-hall/photo_2.jpg",
@@ -197,11 +197,11 @@ export default function HomePage() {
     {
       id: "timofey",
       category: "kitchens",
-      badge: "Дуб & Глянец",
-      title: "Кухня «Тимофей» Дуб & Белый глянец",
-      desc: "Комбинация светлых фасадов МДФ пластик и древесной текстуры, петли и ящики с плавными доводчиками.",
+      badge: "МДФ-пластик",
+      title: "Кухня «Тимофей»",
+      desc: "Фасады из МДФ-пластика, корпус и столешница Egger, фурнитура Hettich с доводчиками.",
       specLabel: "Фасады",
-      specValue: "Шпон дуба & Пластик",
+      specValue: "МДФ-пластик",
       photos: [
         "/img/kitchens/timofey/photo_1.jpg",
         "/img/kitchens/timofey/photo_2.jpg",
@@ -213,10 +213,10 @@ export default function HomePage() {
       id: "brick-wardrobe",
       category: "wardrobes",
       badge: "П-образная",
-      title: "Гардеробная система со скошенными полками",
-      desc: "П-образная планировка со скошенными полками по шаблону стен, глубокие выдвижные корзины и подсветка штанг.",
-      specLabel: "Планировка",
-      specValue: "П-образная система",
+      title: "П-образная гардеробная со скошенными полками",
+      desc: "Гардеробная из ЛДСП Egger. Для стены со скосом полки изготовлены по шаблону.",
+      specLabel: "Материал",
+      specValue: "ЛДСП Egger H3170",
       photos: [
         "/img/projects/brick-wardrobe/photo_1.jpg",
         "/img/projects/brick-wardrobe/photo_2.jpg",
@@ -229,9 +229,9 @@ export default function HomePage() {
       category: "kitchens",
       badge: "МДФ Эмаль",
       title: "Кухня с фасадами МДФ Эмаль",
-      desc: "Изумрудный матовый оттенок по RAL в сочетании с белым верхом, классической фрезеровкой и латунными ручками.",
+      desc: "Выразительный цвет эмали сочетается с классической геометрией фасадов и светлыми верхними секциями.",
       specLabel: "Фасады",
-      specValue: "Эмаль RAL / Витрины",
+      specValue: "МДФ в эмали",
       photos: [
         "/img/projects/emerald-enamel/photo_1.jpg",
         "/img/projects/emerald-enamel/photo_2.jpg",
@@ -245,9 +245,9 @@ export default function HomePage() {
       category: "kitchens",
       badge: "Пластик Velvet",
       title: "Кухня МДФ пластик Velvet",
-      desc: "Суперматовый антипальчиковый пластик Soft-Touch, скрытый черный профиль Gola и монолитный мраморный фартук.",
-      specLabel: "Профиль",
-      specValue: "Черный Gola / Velvet",
+      desc: "Матовые фасады Velvet и лаконичная геометрия создают спокойный современный образ кухни.",
+      specLabel: "Фасады",
+      specValue: "МДФ-пластик Velvet",
       photos: [
         "/img/projects/velvet-matte/photo_1.jpg",
         "/img/projects/velvet-matte/photo_2.jpg",
@@ -258,10 +258,10 @@ export default function HomePage() {
       id: "sherman-cognac",
       category: "kitchens",
       badge: "Глянец & Egger",
-      title: "Кухня МДФ Глянец & Эггер Шерман",
-      desc: "Зеркальный белый глянец и глубокая текстура дуба Эггер Шерман коньяк, витрина в черном профиле с теплой подсветкой.",
+      title: "Кухня: глянец и Egger Шерман",
+      desc: "Глянцевые фасады из МДФ-пластика сочетаются с древесным декором Egger «Шерман коньяк».",
       specLabel: "Декор",
-      specValue: "Egger Шерман / Глянец",
+      specValue: "Egger Шерман / МДФ-пластик",
       photos: [
         "/img/projects/sherman-cognac/photo_1.jpg",
         "/img/projects/sherman-cognac/photo_2.jpg",
@@ -274,10 +274,10 @@ export default function HomePage() {
       id: "bedroom-set",
       category: "closets",
       badge: "Встроенный",
-      title: "Встроенный шкаф в мастер-спальню",
-      desc: "Шкаф в потолок заподлицо со стенами, шелковисто-матовая эмаль, скрытые вертикальные ручки-профили.",
-      specLabel: "Монтаж",
-      specValue: "В нишу / Матовая эмаль",
+      title: "Шкафы и мебель для спальни",
+      desc: "Шкафы и тумбы выполнены в единой стилистике как часть комплексного заказа мебели для квартиры.",
+      specLabel: "Проект",
+      specValue: "Мебель для спальни",
       photos: [
         "/img/projects/bedroom-set/photo_1.jpg",
         "/img/projects/bedroom-set/photo_2.jpg",
@@ -298,7 +298,7 @@ export default function HomePage() {
     "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
     "timofey",        // 3. Кухня «Тимофей» (дуб и белый глянец)
     "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
-    "velvet-matte",   // 5. Кухня Velvet (минимализм Soft-Touch, профиль Gola, мрамор)
+    "velvet-matte",   // 5. Кухня с фасадами МДФ Velvet
     "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
     "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
     "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
@@ -521,9 +521,6 @@ export default function HomePage() {
           <div className="section-header row-between" style={{ marginBottom: "32px", display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
               <h2 className="section-title" style={{ marginBottom: "8px" }}>Отзывы наших клиентов</h2>
-              <p className="section-desc" style={{ maxWidth: "500px", color: "var(--color-text-secondary)", margin: 0 }}>
-                Мы дорожим репутацией и гордимся каждой реализованной кухней. Читайте отзывы реальных людей на Яндекс.Картах.
-              </p>
             </div>
             <a href="https://yandex.ru/maps/org/pitermebel/245406542043/reviews/" target="_blank" rel="noopener noreferrer" className="btn btn-glass" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
               Читать все на Яндексе
@@ -656,7 +653,7 @@ export default function HomePage() {
             <div className="manifesto-content">
               <div>
                 <h2 className="section-title">
-                  ПитерМебель с {SITE_CONFIG.foundingYear} года: честный подход к каждому проекту
+                  Мебель под ключ — одной командой
                 </h2>
 
                 <div className="manifesto-quote-wrap">
@@ -665,25 +662,21 @@ export default function HomePage() {
                     готовим подробную смету, выполняем замер, изготовление и сборку одной командой,
                     а согласованную стоимость фиксируем в договоре.
                   </p>
-                  <div className="manifesto-author">
-                    <div className="manifesto-author-name">Команда «ПитерМебель»</div>
-                    <div className="manifesto-author-role">Проектирование, производство и монтаж мебели на заказ</div>
-                  </div>
                 </div>
               </div>
 
               <div>
                 <div className="manifesto-specs">
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">{yearsInBusiness()} опыта</span>
-                    <span className="manifesto-spec-desc">Семейное производство без ребрендингов и посредников в СПб</span>
+                    <span className="manifesto-spec-metric">С {SITE_CONFIG.foundingYear} года</span>
+                    <span className="manifesto-spec-desc">Проектируем и изготавливаем мебель в Санкт-Петербурге</span>
                   </div>
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">Прямая смета</span>
-                    <span className="manifesto-spec-desc">Фиксированная смета в договоре не растет в процессе</span>
+                    <span className="manifesto-spec-metric">Подробная смета</span>
+                    <span className="manifesto-spec-desc">Материалы, фасады, фурнитура и работы — до подписания договора</span>
                   </div>
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">100% под ключ</span>
+                    <span className="manifesto-spec-metric">Монтаж под ключ</span>
                     <span className="manifesto-spec-desc">Своя бригада: монтаж, подключение техники, сантехники и электрики</span>
                   </div>
                 </div>
@@ -704,14 +697,14 @@ export default function HomePage() {
               <div className="manifesto-media-inner">
                 <Image
                   src="/img/projects/island-parquet/photo_3.jpg"
-                  alt="Индивидуальный проект авторской мебели студии ПитерМебель"
+                  alt="Мебель по индивидуальному проекту ПитерМебель"
                   fill
                   sizes="(max-width: 1024px) 100vw, 62vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="manifesto-caption-bar">
-                <span className="manifesto-caption-tag">Островной гарнитур: шпон дуба и камень</span>
+                <span className="manifesto-caption-tag">Мебель по индивидуальному проекту</span>
                 <span>Реализованный проект · Санкт-Петербург</span>
               </div>
             </div>
@@ -727,16 +720,13 @@ export default function HomePage() {
             <div className="workshop-col-media">
               <div className="workshop-photo-frame">
                 <Image
-                  src="/img/brand/ws_cnc_wood_1.jpg"
-                  alt="Работа с мебельной деталью на производстве ПитерМебель"
+                  src="/img/production/current/workshop-overview.webp"
+                  alt="Мастер измеряет мебельную деталь в производственном цеху"
                   fill
                   className="workshop-main-photo"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   style={{ objectFit: "cover" }}
                 />
-              </div>
-              <div className="workshop-location-caption">
-                Собственное производство в Санкт-Петербурге · Петергофское шоссе, 73
               </div>
             </div>
 
@@ -746,16 +736,17 @@ export default function HomePage() {
                 Производство в Санкт-Петербурге
               </h2>
               <p className="workshop-lead">
-                Производим сами — поэтому отвечаем за качество на каждом этапе, от раскроя плиты до сборки изделия.
+                Проект проходит через собственный цех и одну команду — от подготовки деталей до установки.
+                Так согласованные решения не теряются между проектированием, производством и монтажом.
               </p>
 
               <div className="workshop-points-list">
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">01</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Цена от производителя</h3>
+                    <h3 className="workshop-point-title">Под конкретный проект</h3>
                     <p className="workshop-point-desc">
-                      Заказ идёт напрямую в цех, без наценок салонов и посредников
+                      Готовим детали по размерам помещения и согласованной конструкции мебели
                     </p>
                   </div>
                 </div>
@@ -763,9 +754,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">02</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Контроль перед отгрузкой</h3>
+                    <h3 className="workshop-point-title">Понятная комплектация</h3>
                     <p className="workshop-point-desc">
-                      Проверяем присадку, работу механизмов и видимые зазоры
+                      В смете учитываем листовые материалы, площадь фасадов, петли и механизмы
                     </p>
                   </div>
                 </div>
@@ -773,9 +764,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">03</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Под размер помещения</h3>
+                    <h3 className="workshop-point-title">Монтаж под ключ</h3>
                     <p className="workshop-point-desc">
-                      Проектируем под ниши, потолок и расположение коммуникаций
+                      Доставляем и устанавливаем мебель, подключаем согласованную технику и коммуникации
                     </p>
                   </div>
                 </div>
@@ -801,37 +792,37 @@ export default function HomePage() {
           <div className="process-track">
             {/* Step 1 */}
             <div className="process-step">
-              <span className="process-day">1 день</span>
-              <h3 className="process-title">Консультация и расчет</h3>
+              <span className="process-day">01</span>
+              <h3 className="process-title">Консультация и расчёт</h3>
               <p className="process-desc">
-                Обсуждение задач, предварительный расчет сметы и подбор материалов в офисе студии на пл. Стачек.
+                Расскажите, какая мебель нужна, и пришлите размеры или эскиз — подготовим предварительный расчёт.
               </p>
             </div>
 
             {/* Step 2 */}
             <div className="process-step">
-              <span className="process-day">2–3 дня</span>
-              <h3 className="process-title">3D-проект и договор</h3>
+              <span className="process-day">02</span>
+              <h3 className="process-title">Проект, замер и договор</h3>
               <p className="process-desc">
-                Точный замер, схема электрики в подарок к кухне и фиксация неизменной цены в договоре.
+                Проработаем планировку, подберём материалы, выполним замер и зафиксируем смету и сроки в договоре.
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="process-step">
-              <span className="process-day">По договору</span>
+              <span className="process-day">03</span>
               <h3 className="process-title">Изготовление в цеху</h3>
               <p className="process-desc">
-                Срок зависит от состава проекта и фиксируется в договоре. Выполняем раскрой, обработку деталей и контрольную сборку.
+                Подготовим детали по проекту, обработаем торцы и укомплектуем мебель выбранной фурнитурой.
               </p>
             </div>
 
             {/* Step 4 */}
             <div className="process-step">
-              <span className="process-day">1 день</span>
-              <h3 className="process-title">Чистый монтаж под ключ</h3>
+              <span className="process-day">04</span>
+              <h3 className="process-title">Доставка и монтаж</h3>
               <p className="process-desc">
-                Штатная бригада устанавливает мебель, подключает сантехнику, электрику и встроенную технику без сторонних мастеров.
+                Привезём и установим мебель, выполним согласованные подключения техники, сантехники и электрики.
               </p>
             </div>
           </div>
@@ -847,7 +838,7 @@ export default function HomePage() {
                 База знаний
               </h2>
               <p className="knowledge-home-sub">
-                Технические разборы и регламенты от мастеров нашего цеха
+                Практические материалы, которые помогают подготовиться к проекту и избежать переделок
               </p>
             </div>
           </div>
@@ -882,9 +873,6 @@ export default function HomePage() {
                   {KNOWLEDGE_ARTICLES[0].title}
                 </h3>
                 <div className="knowledge-object-footer">
-                  <span className="knowledge-object-author">
-                    {KNOWLEDGE_ARTICLES[0].author.name} · {KNOWLEDGE_ARTICLES[0].author.role}
-                  </span>
                   <span className="knowledge-object-link">
                     Читать статью →
                   </span>
@@ -901,8 +889,6 @@ export default function HomePage() {
       {/* 7. FINAL CONSULTATION & CONTACTS */}
       <LeadSection
         id="contacts"
-        title="Рассчитаем мебель под ваш проект"
-        description="Выберите, что хотите заказать, и оставьте телефон. Специалист уточнит детали и подготовит расчёт."
         source="Главная страница"
       />
     </div>

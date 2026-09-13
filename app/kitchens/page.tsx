@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import { KITCHENS } from "@/data/kitchens";
-import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
 
 export default function KitchensCatalogPage() {
@@ -15,31 +14,31 @@ export default function KitchensCatalogPage() {
   const filterTabs = [
     { key: "all", label: "Все кухни", count: KITCHENS.length },
     {
+      key: "plastic",
+      label: "Пластик",
+      count: KITCHENS.filter((k) => k.materialGroup === "plastic").length,
+    },
+    {
       key: "enamel",
-      label: "Эмаль по RAL",
-      count: KITCHENS.filter((k) => k.facadeMaterialCategory === "enamel").length,
+      label: "Эмаль",
+      count: KITCHENS.filter((k) => k.materialGroup === "enamel").length,
     },
     {
-      key: "veneer",
-      label: "Шпон & Дерево",
-      count: KITCHENS.filter((k) => k.facadeMaterialCategory === "veneer").length,
-    },
-    {
-      key: "fenix",
-      label: "Fenix & Velvet",
-      count: KITCHENS.filter((k) => k.facadeMaterialCategory === "fenix").length,
+      key: "combined",
+      label: "Комбинированные",
+      count: KITCHENS.filter((k) => k.materialGroup === "combined").length,
     },
   ];
 
   const filteredKitchens =
     activeCategory === "all"
       ? KITCHENS
-      : KITCHENS.filter((k) => k.facadeMaterialCategory === activeCategory);
+      : KITCHENS.filter((k) => k.materialGroup === activeCategory);
 
   return (
     <div>
       {/* 1. Page Header */}
-      <PageHeader title="Кухни студии «ПитерМебель»" />
+      <PageHeader title="Кухни на заказ" />
 
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
@@ -93,7 +92,7 @@ export default function KitchensCatalogPage() {
                       className="card-img-slide"
                       style={{ objectFit: "cover" }}
                     />
-                    <span className="card-badge-top">Модель на заказ</span>
+                    <span className="card-badge-top">Реализованный проект</span>
 
                     {/* In-Card Left Arrow */}
                     {photos.length > 1 && (
@@ -174,22 +173,12 @@ export default function KitchensCatalogPage() {
                     </div>
 
                     <div className="ladder-specs-rows">
-                      <div className="spec-row">
-                        <span className="spec-row-label">Фасады</span>
-                        <span className="spec-row-val">{kitchen.facade}</span>
-                      </div>
-                      <div className="spec-row">
-                        <span className="spec-row-label">Столешница</span>
-                        <span className="spec-row-val">{kitchen.worktop}</span>
-                      </div>
-                      <div className="spec-row">
-                        <span className="spec-row-label">Особенность</span>
-                        <span className="spec-row-val">{kitchen.feature}</span>
-                      </div>
-                      <div className="spec-row">
-                        <span className="spec-row-label">Кромление</span>
-                        <span className="spec-row-val">Влагостойкая кромкооблицовка</span>
-                      </div>
+                      {kitchen.specs.slice(0, 3).map((spec) => (
+                        <div className="spec-row" key={`${kitchen.slug}-${spec.label}`}>
+                          <span className="spec-row-label">{spec.label}</span>
+                          <span className="spec-row-val">{spec.value}</span>
+                        </div>
+                      ))}
                     </div>
                   </Link>
 
@@ -198,7 +187,7 @@ export default function KitchensCatalogPage() {
                       href={`/kitchens/${kitchen.slug}`}
                       className="btn btn-green"
                     >
-                      Подробнее о модели →
+                      Смотреть проект →
                     </Link>
                   </div>
                 </div>
@@ -212,7 +201,6 @@ export default function KitchensCatalogPage() {
       <LeadSection
         id="consult"
         initialCategory="Кухня"
-        title="Рассчитаем кухню по вашим размерам"
         source="Каталог кухонь"
       />
     </div>

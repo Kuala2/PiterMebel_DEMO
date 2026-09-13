@@ -6,7 +6,6 @@ import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS } from "@/data/projects";
-import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
 
 export default function WardrobesPage() {
@@ -179,7 +178,6 @@ export default function WardrobesPage() {
       <LeadSection
         id="consult"
         initialCategory="Шкаф или гардеробная"
-        title="Рассчитаем шкаф или гардеробную"
         source="Шкафы и гардеробные"
       />
     </div>

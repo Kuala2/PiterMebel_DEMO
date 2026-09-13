@@ -45,26 +45,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Categories */}
-          <div>
-            <div className="footer-col-head">Каталог</div>
-            <ul className="footer-nav-links">
-              {SITE_CONFIG.productCategories.map((cat) => {
-                let href = "/custom-furniture";
-                if (cat.toLowerCase().includes("кухн")) href = "/kitchens";
-                else if (cat.toLowerCase().includes("шкаф") || cat.toLowerCase().includes("гардероб")) href = "/wardrobes";
-                return (
-                  <li key={cat}>
-                    <Link href={href} style={{ fontSize: "15px", color: "#B2B8C2" }}>
-                      {cat}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* Col 4: Contacts */}
+          {/* Col 3: Contacts */}
           <div>
             <div className="footer-col-head">Связь</div>
             <p className="footer-desc" style={{ marginBottom: "10px" }}>

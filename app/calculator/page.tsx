@@ -110,7 +110,9 @@ export default function CalculatorPage() {
   const [options, setOptions] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
+  const stageRef = useRef<HTMLDivElement>(null);
   const stageHeadingRef = useRef<HTMLHeadingElement>(null);
+  const summaryRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -183,7 +185,28 @@ export default function CalculatorPage() {
     `Онлайн-ориентир: ${priceLabel}`,
   ].join("\n"), [categoryChoice.name, layoutChoice.name, materialChoice.name, meters, optionChoices, priceLabel]);
 
-  const focusStage = () => window.requestAnimationFrame(() => stageHeadingRef.current?.focus());
+  const focusStage = () => window.requestAnimationFrame(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (window.matchMedia("(max-width: 960px)").matches) {
+      stageRef.current?.scrollIntoView({
+        behavior: reducedMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    }
+    stageHeadingRef.current?.focus({ preventScroll: true });
+  });
+
+  const showEstimate = () => {
+    const result = summaryRef.current;
+    if (!result) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    result.scrollIntoView({
+      behavior: reducedMotion ? "auto" : "smooth",
+      block: "start",
+    });
+    window.setTimeout(() => result.focus({ preventScroll: true }), reducedMotion ? 0 : 350);
+  };
 
   const goToStep = (nextStep: number) => {
     setStep(Math.min(STEPS.length - 1, Math.max(0, nextStep)));
@@ -233,16 +256,8 @@ export default function CalculatorPage() {
     <div className="calc-page">
       <PageHeader title="Предварительный расчёт мебели" />
 
-      <section className="calculator-section" aria-labelledby="calculator-title">
+      <section className="calculator-section" aria-label="Калькулятор предварительной стоимости">
         <div className="container">
-          <div className="calculator-intro">
-            <h2 id="calculator-title">Получите ориентир стоимости</h2>
-            <p>
-              Выберите основные параметры. Диапазон будет меняться на каждом шаге,
-              а точную смету студия рассчитает по листам, фасадам, механизмам и работам.
-            </p>
-          </div>
-
           <nav className="calculator-steps" aria-label="Шаги калькулятора">
             <ol>
               {STEPS.map((item, index) => (
@@ -273,12 +288,17 @@ export default function CalculatorPage() {
           </nav>
 
           <div className="calculator-layout">
-            <div className="calculator-stage">
+            <div ref={stageRef} className="calculator-stage">
               <header className="calculator-stage-header">
                 <p>Шаг {step + 1} из {STEPS.length}</p>
                 <h3 ref={stageHeadingRef} tabIndex={-1}>{STEPS[step].title}</h3>
                 <span>{STEPS[step].description}</span>
               </header>
+
+              <div className="calculator-mobile-price" aria-live="polite">
+                <span>Ориентировочная стоимость</span>
+                <strong>≈ {priceLabel}</strong>
+              </div>
 
               {step === 0 && (
                 <fieldset className="calculator-group">
@@ -409,22 +429,44 @@ export default function CalculatorPage() {
               )}
 
               <div className="calculator-navigation">
-                {step > 0 && (
-                  <button type="button" className="btn btn-glass" onClick={() => goToStep(step - 1)}>
-                    Назад
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className={`btn btn-glass ${step === 0 ? "calculator-back-placeholder" : ""}`}
+                  onClick={() => goToStep(step - 1)}
+                  disabled={step === 0}
+                  aria-hidden={step === 0}
+                  tabIndex={step === 0 ? -1 : 0}
+                >
+                  Назад
+                </button>
                 {step < STEPS.length - 1 ? (
                   <button type="button" className="btn btn-green" onClick={() => goToStep(step + 1)}>
-                    Далее: {STEPS[step + 1].short}
+                    Далее
                   </button>
                 ) : (
-                  <a href="#measure" className="btn btn-green">Передать параметры на расчёт</a>
+                  <>
+                    <a href="#measure" className="btn btn-green calculator-final-desktop">
+                      Перейти к заявке
+                    </a>
+                    <button
+                      type="button"
+                      className="btn btn-green calculator-final-mobile"
+                      onClick={showEstimate}
+                    >
+                      Показать стоимость
+                    </button>
+                  </>
                 )}
               </div>
             </div>
 
-            <aside className="calculator-summary" aria-label="Предварительная стоимость и параметры">
+            <aside
+              ref={summaryRef}
+              id="calculator-result"
+              className="calculator-summary"
+              aria-label="Предварительная стоимость и параметры"
+              tabIndex={-1}
+            >
               <div className="calculator-price">
                 <p>Предварительный диапазон</p>
                 <strong>≈ {priceLabel}</strong>

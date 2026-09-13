@@ -5,8 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
-import { PROJECTS, Project } from "@/data/projects";
-import { SITE_CONFIG } from "@/data/site";
+import { PROJECTS } from "@/data/projects";
 import PageHeader from "@/components/PageHeader";
 
 export default function ProjectsPortfolioPage() {
@@ -37,8 +36,13 @@ export default function ProjectsPortfolioPage() {
     },
     {
       key: "Панели",
-      label: "Реечные панели",
+      label: "ТВ-зоны",
       count: PROJECTS.filter((p) => p.type === "Панели").length,
+    },
+    {
+      key: "Корпусная мебель",
+      label: "Комплексные проекты",
+      count: PROJECTS.filter((p) => p.type === "Корпусная мебель").length,
     },
     {
       key: "Коммерческий",
@@ -194,7 +198,6 @@ export default function ProjectsPortfolioPage() {
       {/* 4. Consultation Section */}
       <LeadSection
         id="consult"
-        title="Рассчитаем индивидуальный проект"
         source="Портфолио проектов"
       />
     </div>

@@ -68,17 +68,17 @@ export default function ContactsPage() {
             <div className="guarantee-item">
               <span className="guarantee-label">01</span>
               <div className="guarantee-title">Договор и оплата</div>
-              <p className="guarantee-desc">Официальный договор. Оплата на расчетный счет, по реквизитам, по ссылке или через терминал.</p>
+              <p className="guarantee-desc">Заключаем договор с согласованной сметой. Оплатить заказ можно на расчётный счёт, по ссылке или через терминал.</p>
             </div>
             <div className="guarantee-item">
               <span className="guarantee-label">02</span>
-              <div className="guarantee-title">Точные сроки</div>
-              <p className="guarantee-desc">Срок рассчитывается после согласования конструкции и фиксируется в договоре вместе со сметой.</p>
+              <div className="guarantee-title">Сроки в договоре</div>
+              <p className="guarantee-desc">Срок рассчитываем после согласования конструкции и комплектации, затем фиксируем вместе со сметой.</p>
             </div>
             <div className="guarantee-item">
               <span className="guarantee-label">03</span>
-              <div className="guarantee-title">Прямой цех</div>
-              <p className="guarantee-desc">Без наценок салонов, посредников и аренды в торговых центрах.</p>
+              <div className="guarantee-title">Производство в СПб</div>
+              <p className="guarantee-desc">Согласованный проект передаём в собственный цех на Петергофском шоссе, 73.</p>
             </div>
             <div className="guarantee-item">
               <span className="guarantee-label">04</span>
@@ -103,7 +103,8 @@ export default function ContactsPage() {
                   {SITE_CONFIG.metro} (2 мин пешком) · БЦ Кировский
                 </div>
                 <p className="contacts-loc-desc">
-                  Каталоги материалов, образцы фасадов и фурнитуры. Встречи по предварительной записи для детального проектирования.
+                  Здесь обсуждаем планировку, показываем образцы материалов и подбираем комплектацию.
+                  Встречи проводим по предварительной записи, чтобы спокойно уделить время вашему проекту.
                 </p>
                 <div>
                   <a
@@ -123,10 +124,11 @@ export default function ContactsPage() {
                 <span className="contacts-loc-tag">Собственное производство</span>
                 <h3 className="contacts-loc-title">Петергофское шоссе, 73</h3>
                 <div className="contacts-loc-address">
-                  Промышленная зона юго-запада СПб · закрытая территория
+                  Санкт-Петербург
                 </div>
                 <p className="contacts-loc-desc">
-                  Станочный цех чистового раскроя, качественная кромкооблицовка и 100% контрольная сборка перед доставкой заказчику.
+                  Здесь изготавливаем мебель по согласованным проектам. Подбор материалов и встречи
+                  с клиентами проводим отдельно — в офисе на площади Стачек.
                 </p>
               </div>
             </div>
@@ -142,7 +144,6 @@ export default function ContactsPage() {
       {/* 4. Consultation Booking */}
       <LeadSection
         id="measure"
-        title="Обсудим ваш проект лично или онлайн"
         source="Контакты"
       />
     </div>

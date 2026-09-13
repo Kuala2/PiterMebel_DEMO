@@ -137,6 +137,20 @@ check(!homeHtml.includes('<div class="stat-num"><span>0</span>'), "В исход
   await context.close();
 }
 
+{
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseUrl}/calculator/?step=4`, { waitUntil: "domcontentloaded" });
+  await page.waitForFunction(() => document.querySelector(".calculator-final-mobile") instanceof HTMLButtonElement);
+  check(await page.locator(".calculator-mobile-price").isVisible(), "На телефоне не показана текущая ориентировочная цена");
+  check(await page.locator(".calculator-final-mobile").isVisible(), "На телефоне нет кнопки перехода к стоимости");
+  check(!(await page.locator(".calculator-final-desktop").isVisible()), "На телефоне показана desktop-кнопка перехода сразу к заявке");
+  await page.locator(".calculator-final-mobile").click();
+  await page.waitForTimeout(450);
+  check(await page.evaluate(() => document.activeElement?.id === "calculator-result"), "Кнопка на телефоне не перевела пользователя к блоку стоимости");
+  await context.close();
+}
+
 await browser.close();
 
 if (failures.length) {

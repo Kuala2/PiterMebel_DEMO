@@ -1,7 +1,7 @@
 import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright";
 
-const baseUrl = process.env.PITER_MEBEL_TEST_URL || "http://localhost:3001";
+const baseUrl = process.env.PITER_MEBEL_TEST_URL || "http://localhost:3000";
 const outputDir = "tests/.artifacts";
 await mkdir(outputDir, { recursive: true });
 

@@ -28,7 +28,7 @@ export async function generateMetadata({
   }
 
   const ogTitle = `${project.title} | ПитерМебель`;
-  const ogDescription = `${project.title}: индивидуальное изготовление мебели в Санкт-Петербурге. Собственное фабричное производство полного цикла.`;
+  const ogDescription = `${project.summary} Реализованный проект «ПитерМебель».`;
 
   return {
     title: ogTitle,
@@ -93,7 +93,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
               {/* On mobile, CSS reorders: Title -> Price -> Gallery -> Lead -> Specs -> Buttons */}
               <p className="detail-hero-lead">
-                {project.task}. Проектирование с учетом архитектурных ниш, геометрии стен и скрытой проводки.
+                {project.summary}
               </p>
 
               {/* Clean Specifications Table */}
@@ -102,22 +102,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                   <span className="detail-spec-name">Тип изделия</span>
                   <span className="detail-spec-val">{project.type}</span>
                 </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Материалы</span>
-                  <span className="detail-spec-val">{project.materials.join(", ")}</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Фурнитура</span>
-                  <span className="detail-spec-val">Скрытые направляющие плавного хода с доводчиками</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Монтаж</span>
-                  <span className="detail-spec-val">Точная встройка от пола до потолка без щелей</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Производство</span>
-                  <span className="detail-spec-val">фиксируется в договоре после согласования проекта</span>
-                </div>
+                {project.materials.length > 0 && (
+                  <div className="detail-spec-row">
+                    <span className="detail-spec-name">Материалы</span>
+                    <span className="detail-spec-val">{project.materials.join(", ")}</span>
+                  </div>
+                )}
               </div>
 
               {/* Action Buttons */}
@@ -154,26 +144,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      {/* 2. Project Solution Narrative */}
-      <section style={{ backgroundColor: "#0C0F15", paddingTop: "96px", paddingBottom: "96px", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container" style={{ maxWidth: "860px" }}>
-          <h2 className="detail-section-title" style={{ marginBottom: "20px", textAlign: "left" }}>
-            Архитектурное решение и реализация
-          </h2>
-          <div style={{ fontSize: "16px", lineHeight: "1.75", color: "#C2C7D4" }}>
-            <p>{project.solution}</p>
-          </div>
-          {project.relatedKitchenSlug && (
-            <div style={{ marginTop: "24px" }}>
-              <Link href={`/kitchens/${project.relatedKitchenSlug}`} className="btn btn-glass">
-                Смотреть парный кухонный гарнитур →
-              </Link>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* 3. Project Navigator Ribbon */}
+      {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">
         <div className="container">
           <div className="detail-nav-header">
@@ -204,7 +175,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 <div className="detail-nav-card-body">
                   <h3 className="detail-nav-card-name">{item.title}</h3>
                   <div className="detail-nav-card-price">Расчёт по спецификации</div>
-                  <p className="detail-nav-card-desc">{item.materials.slice(0, 2).join(", ")}</p>
+                  {item.materials.length > 0 && (
+                    <p className="detail-nav-card-desc">{item.materials.slice(0, 2).join(", ")}</p>
+                  )}
                 </div>
               </Link>
             ))}
@@ -215,8 +188,13 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       {/* 4. Consultation Booking */}
       <LeadSection
         id="measure"
-        initialCategory={project.title}
-        title="Рассчитаем похожий проект под ваши размеры"
+        initialCategory={
+          project.type === "Кухня"
+            ? "Кухня"
+            : project.type === "Гардеробная" || project.type === "Спальня"
+              ? "Шкаф или гардеробная"
+              : "Корпусная мебель"
+        }
         source={`Карточка проекта: ${project.title}`}
       />
     </div>

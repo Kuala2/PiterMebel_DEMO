@@ -72,7 +72,7 @@ export default function Hero() {
         <div className="hero-bg-container">
           <Image
             src="/img/hero/photo_hero_upscaled.webp"
-            alt="Кухни премум Velvet дерево на заказ СПб"
+            alt="Кухня по индивидуальному проекту ПитерМебель"
             fill
             priority
             sizes="100vw"
@@ -88,7 +88,7 @@ export default function Hero() {
             <div className="hero-center-content">
               <h1 className="hero-slogan-title">Вы мечтаете — мы воплощаем</h1>
               <p className="hero-subtitle">
-                Производим и реализуем{" "}
+                Проектируем и изготавливаем{" "}
                 <RotatingWord
                   words={[
                     "кухни на заказ",
@@ -97,7 +97,7 @@ export default function Hero() {
                     "мебель для бизнеса",
                   ]}
                 />{" "}
-                по индивидуальным размерам на собственном производстве
+                по индивидуальным размерам в Санкт-Петербурге
               </p>
               <div className="hero-cta-wrap" ref={ctaRef}>
                 <Link href="/calculator" className="btn btn-green magnetic">
@@ -136,10 +136,10 @@ export default function Hero() {
 
             <div className="hero-stat-item">
               <div className="stat-num">
-                <CountUp to={100} /> <span className="stat-unit">%</span>
+                <span className="stat-unit stat-unit-gift">Цех в СПб</span>
               </div>
               <div className="stat-text">
-                Собственное производство в СПб (Петергофское ш., 73)
+                Петергофское шоссе, 73
               </div>
             </div>
 

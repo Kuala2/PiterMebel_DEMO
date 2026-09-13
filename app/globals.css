@@ -2550,7 +2550,7 @@ img {
 
 .footer-main-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1.5fr;
   gap: 40px;
   margin-bottom: 40px;
 }
@@ -8556,6 +8556,13 @@ footer,
   outline-offset: 3px;
 }
 
+/* The skip link focuses the page landmark. Do not draw a viewport-wide frame
+   around it: interactive controls retain their visible focus indicators. */
+#main-content:focus,
+#main-content:focus-visible {
+  outline: none !important;
+}
+
 .detail-split-hero {
   grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
 }
@@ -8634,7 +8641,7 @@ textarea::placeholder {
   margin: 0;
   color: #FFFFFF;
   font-family: var(--font-main);
-  font-size: clamp(22px, 2.1vw, 27px);
+  font-size: clamp(27px, 2.3vw, 32px);
   font-weight: 650;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -8644,13 +8651,13 @@ textarea::placeholder {
   margin: 9px 0 0;
   color: var(--color-text-secondary);
   max-width: 520px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
 }
 
 .measure-form .form-label {
   color: #C3C9D3;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
@@ -8664,7 +8671,7 @@ textarea::placeholder {
 
 .measure-form .form-input,
 .measure-form .form-select {
-  height: 52px;
+  height: 56px;
   border-color: rgba(255, 255, 255, 0.14) !important;
   font-size: 16px;
 }
@@ -8715,23 +8722,32 @@ textarea::placeholder {
 
 .form-submit-button {
   width: 100%;
-  min-height: 52px;
+  min-height: 56px;
   margin-top: 14px;
   justify-content: center;
+  font-size: 16px;
 }
 
 .form-details {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-details:hover,
+.form-details[open] {
+  border-color: rgba(114, 195, 36, 0.55);
+  background: rgba(114, 195, 36, 0.045);
 }
 
 .form-details summary {
   display: flex;
   align-items: center;
   gap: 12px;
-  min-height: 50px;
+  min-height: 58px;
+  padding: 0 16px;
   color: #E8EBF0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   list-style: none;
@@ -8745,9 +8761,9 @@ textarea::placeholder {
 .form-details summary::after {
   content: "+";
   display: grid;
-  width: 24px;
-  height: 24px;
-  flex: 0 0 24px;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
   place-items: center;
   color: var(--color-green-brand);
   font-size: 20px;
@@ -8762,13 +8778,26 @@ textarea::placeholder {
 
 .form-details-note {
   margin-left: auto;
-  color: var(--color-text-muted);
-  font-size: 12px;
-  font-weight: 400;
+  color: #B8C0CC;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-details-open {
+  display: none;
+}
+
+.form-details[open] .form-details-closed {
+  display: none;
+}
+
+.form-details[open] .form-details-open {
+  display: inline;
 }
 
 .form-details-content {
-  padding: 8px 0 4px;
+  padding: 14px 16px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .form-details-content .form-group:last-child {
@@ -8858,39 +8887,14 @@ textarea::placeholder {
   background-size: 42px 42px;
 }
 
-.lead-status {
-  display: inline-flex;
-  width: fit-content;
-  align-items: center;
-  gap: 10px;
-  color: #DDE2E9;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.lead-status-mark {
-  display: grid;
-  width: 26px;
-  height: 26px;
-  place-items: center;
-  color: #11150D;
-  background: var(--color-green-brand);
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.lead-copy .final-headline {
+.lead-process-title {
   max-width: 470px;
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.12;
-}
-
-.lead-desc {
-  max-width: 500px;
-  margin: 15px 0 0;
-  color: #BCC3CE;
-  font-size: 16px;
-  line-height: 1.65;
+  margin: 0;
+  color: #FFFFFF;
+  font-size: clamp(28px, 2.6vw, 34px);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
 }
 
 .lead-steps {
@@ -8905,81 +8909,43 @@ textarea::placeholder {
   grid-template-columns: 36px minmax(0, 1fr);
   gap: 12px;
   align-items: center;
-  padding: 13px 0;
+  padding: 15px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   color: #F2F4F7;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
 }
 
 .lead-steps li > span {
   color: var(--color-green-brand);
-  font-size: 12px;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
   font-weight: 700;
 }
 
-.lead-offers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+.lead-promo-carousel {
+  padding: 24px;
+  border: 1px solid rgba(114, 195, 36, 0.34);
+  background: linear-gradient(135deg, rgba(114, 195, 36, 0.12), rgba(114, 195, 36, 0.035));
 }
 
-.lead-offer {
-  min-width: 0;
-  padding: 11px 13px;
-  color: #E6F5D8;
-  background: rgba(140, 224, 65, 0.07);
-  border-left: 2px solid var(--color-green-brand);
+.lead-promo-carousel .promo-cta-card-badge {
+  font-size: 14px;
 }
 
-.lead-offer:only-child {
-  grid-column: 1 / -1;
+.lead-promo-carousel .promo-cta-card-title {
+  max-width: 520px;
+  font-size: clamp(24px, 2.2vw, 30px);
+  line-height: 1.24;
 }
 
-.lead-offer-secondary {
-  background: rgba(255, 255, 255, 0.035);
-  border-left-color: rgba(255, 255, 255, 0.28);
+.lead-promo-carousel .promo-content-anim {
+  margin-top: 14px !important;
+  min-height: 75px;
 }
 
-.lead-offer span,
-.lead-offer strong {
-  display: block;
-}
-
-.lead-offer span {
-  margin-bottom: 3px;
-  color: #98A1AE;
-  font-size: 11px;
-  line-height: 1.3;
-}
-
-.lead-offer strong {
-  color: #F0F4EB;
-  font-size: 12.5px;
-  font-weight: 650;
-  line-height: 1.4;
-}
-
-.lead-contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px 9px;
-  margin: 0;
-  color: #9FA7B4;
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.lead-contact a {
-  color: #FFFFFF;
-  font-weight: 600;
-  text-decoration-color: rgba(140, 224, 65, 0.55);
-  text-underline-offset: 4px;
-}
-
-.lead-contact a:hover {
-  color: var(--color-green-brand);
+.lead-card .form-consent-label {
+  font-size: 14.5px;
 }
 
 .lead-card .final-info-block {
@@ -9017,24 +8983,36 @@ textarea::placeholder {
     background-size: 32px 32px;
   }
 
-  .lead-copy .final-headline {
-    font-size: 29px !important;
+  .lead-process-title {
+    font-size: 27px;
   }
 
-  .lead-desc {
-    font-size: 15px;
+  .lead-promo-carousel {
+    padding: 20px;
   }
 
-  .lead-offers {
-    grid-template-columns: 1fr;
+  .lead-promo-carousel .promo-cta-card-title {
+    font-size: 22px;
   }
 
-  .lead-offer:only-child {
-    grid-column: auto;
+  .lead-promo-carousel .promo-content-anim {
+    min-height: 84px;
   }
 
   .form-details-note {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .lead-promo-carousel .promo-cta-card-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 44px;
+  }
+
+  .lead-promo-carousel .promo-cta-card-badge {
+    white-space: normal;
   }
 }
 
@@ -9053,27 +9031,6 @@ textarea::placeholder {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.calculator-intro {
-  max-width: 760px;
-  margin-bottom: 30px;
-}
-
-.calculator-intro h2 {
-  margin: 8px 0 12px;
-  color: #FFFFFF;
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.08;
-}
-
-.calculator-intro > p:last-child {
-  max-width: 680px;
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: 16px;
-  line-height: 1.65;
 }
 
 .calculator-steps {
@@ -9163,11 +9120,16 @@ textarea::placeholder {
 
 .calculator-stage {
   display: flex;
-  min-height: 510px;
+  min-height: 640px;
   flex-direction: column;
   padding: 30px;
   background: rgba(255, 255, 255, 0.018);
   border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.calculator-mobile-price,
+.calculator-final-mobile {
+  display: none;
 }
 
 .calculator-stage-header {
@@ -9468,11 +9430,23 @@ textarea::placeholder {
 }
 
 .calculator-navigation {
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 240px;
   justify-content: flex-end;
   gap: 10px;
   margin-top: auto;
   padding-top: 28px;
+}
+
+.calculator-navigation .btn {
+  width: 100%;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.calculator-back-placeholder {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .calculator-steps button,
@@ -9495,6 +9469,12 @@ textarea::placeholder {
   background: #15181E;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-top: 2px solid var(--color-green-brand);
+  scroll-margin-top: 96px;
+}
+
+.calculator-summary:focus-visible {
+  outline: 2px solid var(--color-green-brand);
+  outline-offset: 4px;
 }
 
 .calculator-price p {
@@ -9587,15 +9567,40 @@ textarea::placeholder {
   }
   .calculator-stage {
     min-height: 0;
+    scroll-margin-top: 88px;
+  }
+  .calculator-mobile-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin: -4px 0 24px;
+    padding: 15px 16px;
+    background: rgba(114, 195, 36, 0.08);
+    border-left: 3px solid var(--color-green-brand);
+  }
+  .calculator-mobile-price span {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+  }
+  .calculator-mobile-price strong {
+    color: var(--color-green-brand);
+    font-size: clamp(20px, 5.8vw, 27px);
+    font-variant-numeric: tabular-nums lining-nums;
+    line-height: 1.15;
+    text-align: right;
+  }
+  .calculator-final-desktop {
+    display: none;
+  }
+  .calculator-final-mobile {
+    display: inline-flex;
   }
 }
 
 @media (max-width: 680px) {
   .calculator-section {
     padding: 42px 0 72px;
-  }
-  .calculator-intro {
-    margin-bottom: 24px;
   }
   .calculator-steps {
     margin-bottom: 20px;
@@ -9647,8 +9652,16 @@ textarea::placeholder {
   .calculator-summary {
     padding: 22px 18px;
   }
+  .calculator-mobile-price {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .calculator-mobile-price strong {
+    text-align: left;
+  }
   .calculator-navigation {
-    flex-direction: column-reverse;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .calculator-navigation .btn {
     width: 100%;

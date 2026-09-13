@@ -77,9 +77,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     inLanguage: "ru-RU",
     articleSection: article.categoryLabel,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: article.author.name,
-      jobTitle: article.author.role,
     },
     publisher: {
       "@type": "Organization",
@@ -143,7 +142,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               />
             </div>
             <figcaption className="article-figure-caption">
-              Рабочий план привязок: конкретные размеры согласуют по мебели, технике и отметке чистового пола
+              Пример схемы привязок. Размеры определяют по мебели, технике и отметке чистового пола
             </figcaption>
           </div>
         </figure>
@@ -285,9 +284,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
               {/* Back to knowledge hub */}
               <div className="article-end-row">
-                <span className="article-end-note">
-                  Новые разборы выходят по мере работы цеха — фасады, вентиляция и планировки уже в подготовке.
-                </span>
                 <Link href="/knowledge" className="article-back-link">
                   Все руководства базы знаний
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -334,7 +330,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <LeadSection
         id="consult"
         initialCategory="Кухня"
-        title="Обсудим проект и привязку коммуникаций"
         source="Статья базы знаний"
       />
     </div>

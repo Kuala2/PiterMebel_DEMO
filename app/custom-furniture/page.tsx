@@ -7,7 +7,6 @@ import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import PageHeader from "@/components/PageHeader";
 import { PROJECTS } from "@/data/projects";
-import { SITE_CONFIG } from "@/data/site";
 
 export default function CustomFurniturePage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -17,10 +16,9 @@ export default function CustomFurniturePage() {
   const customProjects = PROJECTS.filter(
     (p) =>
       p.type === "Прихожая" ||
+      p.type === "Корпусная мебель" ||
       p.type === "Панели" ||
-      p.type === "Коммерческий" ||
-      p.title.toLowerCase().includes("прихож") ||
-      p.title.toLowerCase().includes("панел")
+      p.type === "Коммерческий"
   );
 
   const filterTabs = [
@@ -32,8 +30,13 @@ export default function CustomFurniturePage() {
     },
     {
       key: "Панели",
-      label: "Стеновые реечные панели",
+      label: "ТВ-зоны",
       count: customProjects.filter((p) => p.type === "Панели").length,
+    },
+    {
+      key: "Корпусная мебель",
+      label: "Комплексные проекты",
+      count: customProjects.filter((p) => p.type === "Корпусная мебель").length,
     },
     {
       key: "Коммерческий",
@@ -186,7 +189,6 @@ export default function CustomFurniturePage() {
       <LeadSection
         id="consult"
         initialCategory="Корпусная мебель"
-        title="Рассчитаем мебель по вашим размерам"
         source="Корпусная мебель"
       />
     </div>

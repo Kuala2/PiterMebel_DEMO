@@ -28,7 +28,7 @@ export async function generateMetadata({
   }
 
   const ogTitle = `Кухня «${kitchen.title}» на заказ в Санкт-Петербурге | ПитерМебель`;
-  const ogDescription = `Кухня «${kitchen.title}» по индивидуальным размерам: ${kitchen.facade}, ${kitchen.feature.toLowerCase()}. Проектирование, изготовление и монтаж в Санкт-Петербурге.`;
+  const ogDescription = `${kitchen.summary} Кухня изготовлена по индивидуальному проекту в Санкт-Петербурге.`;
 
   return {
     title: ogTitle,
@@ -58,7 +58,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
     "@type": "Product",
     name: `Кухня «${kitchen.title}»`,
     image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
-    description: kitchen.story?.[0] || kitchen.feature,
+    description: kitchen.summary,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
   };
 
@@ -111,35 +111,17 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
               {/* On mobile, CSS reorders: Title -> Price -> Gallery -> Lead -> Specs -> Buttons */}
               <p className="detail-hero-lead">
-                {kitchen.feature}. Изготавливается по индивидуальным размерам помещения с подгонкой под потолок и встроенной техникой.
+                {kitchen.summary}
               </p>
 
               {/* Clean Specifications Table */}
               <div className="detail-specs-table">
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Материал фасадов</span>
-                  <span className="detail-spec-val">{kitchen.facade}</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Столешница</span>
-                  <span className="detail-spec-val">{kitchen.worktop}</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Корпус</span>
-                  <span className="detail-spec-val">По спецификации проекта; среди используемых материалов — влагостойкая ЛДСП Egger класса E1</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Фурнитура</span>
-                  <span className="detail-spec-val">По спецификации проекта: Blum, Boyard или DTC</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Кромление</span>
-                  <span className="detail-spec-val">Технология подбирается по материалу и условиям эксплуатации</span>
-                </div>
-                <div className="detail-spec-row">
-                  <span className="detail-spec-name">Срок изготовления</span>
-                  <span className="detail-spec-val">фиксируется в договоре после согласования проекта</span>
-                </div>
+                {kitchen.specs.map((spec) => (
+                  <div className="detail-spec-row" key={`${kitchen.slug}-${spec.label}`}>
+                    <span className="detail-spec-name">{spec.label}</span>
+                    <span className="detail-spec-val">{spec.value}</span>
+                  </div>
+                ))}
               </div>
 
               {/* Action Buttons */}
@@ -176,20 +158,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
         </div>
       </section>
 
-      {/* 2. Project Story & Planning Solution */}
-      <section style={{ backgroundColor: "#0C0F15", paddingTop: "96px", paddingBottom: "96px", borderTop: "1px solid rgba(255, 255, 255, 0.08)" }}>
-        <div className="container" style={{ maxWidth: "860px" }}>
-          <h2 className="detail-section-title" style={{ marginBottom: "20px", textAlign: "left" }}>
-            Особенности проекта и планировки
-          </h2>
-          <div style={{ fontSize: "16px", lineHeight: "1.75", color: "#C2C7D4" }}>
-            <p style={{ marginBottom: "16px" }}>{kitchen.story[0]}</p>
-            {kitchen.story[1] && <p>{kitchen.story[1]}</p>}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Project Navigator Ribbon (No Dead-End!) */}
+      {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">
         <div className="container">
           <div className="detail-nav-header">
@@ -222,7 +191,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                   <div className="detail-nav-card-price">
                     Расчёт по спецификации
                   </div>
-                  <p className="detail-nav-card-desc">{item.facade}</p>
+                  <p className="detail-nav-card-desc">{item.specs[0]?.value}</p>
                 </div>
               </Link>
             ))}
@@ -234,7 +203,6 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       <LeadSection
         id="measure"
         initialCategory={`Кухня «${kitchen.title}»`}
-        title="Рассчитаем эту кухню под ваши размеры"
         source={`Карточка кухни: ${kitchen.title}`}
       />
     </div>

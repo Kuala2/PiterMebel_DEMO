@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { PROMOS, PromoOffer } from "@/data/promos";
 
@@ -13,14 +13,17 @@ interface PromoBannerProps {
   variant?: "banner" | "cta-card";
 }
 
+const ACTIVE_PROMOS = Object.values(PROMOS).filter((promo) => promo.active);
+
 export default function PromoBanner({
   offer,
   initialCategory,
   className = "",
+  autoPlayInterval = 5500,
   embedded = false,
   variant = "banner",
 }: PromoBannerProps) {
-  const allOffers = Object.values(PROMOS).filter((o) => o.active);
+  const allOffers = ACTIVE_PROMOS;
 
   const getInitialIndex = () => {
     if (initialCategory && PROMOS[initialCategory]) {
@@ -36,7 +39,17 @@ export default function PromoBanner({
 
   const [currentIndex, setCurrentIndex] = useState(getInitialIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
   const isTransitioningRef = useRef(false);
+
+  useEffect(() => {
+    const preferredOffer = initialCategory ? PROMOS[initialCategory] : offer;
+    if (!preferredOffer) return;
+
+    const preferredIndex = allOffers.findIndex((item) => item.id === preferredOffer.id);
+    if (preferredIndex !== -1) setCurrentIndex(preferredIndex);
+  }, [initialCategory, offer]);
 
   const goToOffer = useCallback(
     (newIndex: number) => {
@@ -68,7 +81,28 @@ export default function PromoBanner({
     });
   }, [allOffers.length, goToOffer]);
 
-  // Акции переключаются только пользователем: текст не меняется во время чтения.
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (
+      reducedMotion ||
+      isHovered ||
+      hasFocus ||
+      allOffers.length < 2 ||
+      autoPlayInterval <= 0
+    ) return;
+
+    const intervalId = window.setInterval(() => {
+      if (!document.hidden) handleNext();
+    }, autoPlayInterval);
+
+    return () => window.clearInterval(intervalId);
+  }, [allOffers.length, autoPlayInterval, handleNext, hasFocus, isHovered]);
+
+  const handleBlurCapture = useCallback((event: React.FocusEvent<HTMLElement>) => {
+    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+      setHasFocus(false);
+    }
+  }, []);
 
   const currentOffer = allOffers[currentIndex] || allOffers[0];
   if (!currentOffer) return null;
@@ -90,6 +124,10 @@ export default function PromoBanner({
   const cardContent = (
     <div
       className="promo-card"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocusCapture={() => setHasFocus(true)}
+      onBlurCapture={handleBlurCapture}
     >
         {/* Left: Content with smooth crossfade animation */}
         <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
@@ -148,6 +186,10 @@ export default function PromoBanner({
     return (
       <div
         className={`promo-cta-card ${className}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onFocusCapture={() => setHasFocus(true)}
+        onBlurCapture={handleBlurCapture}
       >
         <div className="promo-cta-card-head">
           {currentOffer.badge && (

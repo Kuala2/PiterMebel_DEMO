@@ -8,13 +8,13 @@ import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-  description: `Производство мебели по индивидуальным размерам в Санкт-Петербурге с ${SITE_CONFIG.foundingYear} года. Раскрой, сборка, доставка и монтаж под ключ.`,
+  description: `Производство мебели по индивидуальным размерам в Санкт-Петербурге с ${SITE_CONFIG.foundingYear} года. Цех на Петергофском шоссе, 73.`,
   alternates: {
     canonical: "/production",
   },
   openGraph: buildOg(
     `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-    `Собственное производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundingYear} года (Петергофское шоссе, 73).`,
+    `Производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundingYear} года. Цех на Петергофском шоссе, 73.`,
     "/production"
   ),
 };
@@ -23,7 +23,7 @@ export default function ProductionPage() {
   return (
     <div>
       {/* 1. Page Header (Стандартный заголовок подраздела, как на всех страницах) */}
-      <PageHeader title="Собственное производство в Санкт-Петербурге" />
+      <PageHeader title="Собственное производство мебели в Санкт-Петербурге" />
 
       {/* 2. Key Facts Strip (Чистая горизонтальная строка цифр на холсте) */}
       <section style={{ padding: "48px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", backgroundColor: "var(--bg-dark)" }}>
@@ -35,15 +35,15 @@ export default function ProductionPage() {
             </div>
             <div className="prod-stat-item">
               <span className="prod-stat-num">1500+</span>
-              <span className="prod-stat-label">Установленных проектов мебели под ключ</span>
+              <span className="prod-stat-label">Реализованных проектов мебели</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">Перед отгрузкой</span>
-              <span className="prod-stat-label">Проверяем присадку, механизмы и видимые зазоры</span>
+              <span className="prod-stat-num">По проекту</span>
+              <span className="prod-stat-label">Считаем листы, фасады, петли и механизмы</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">Напрямую</span>
-              <span className="prod-stat-label">Без наценок салонов и посредников</span>
+              <span className="prod-stat-num">Под ключ</span>
+              <span className="prod-stat-label">Доставка, установка и подключения одной командой</span>
             </div>
           </div>
         </div>
@@ -56,49 +56,48 @@ export default function ProductionPage() {
             {/* Левая колонка: Естественное фото мастера в цеху без обрезки */}
             <div className="prod-showcase-media">
               <Image
-                src="/img/production/assembly.jpg"
-                alt="Мастер проверяет мебельную деталь на производстве ПитерМебель"
+                src="/img/production/current/workshop-overview.webp"
+                alt="Мастер измеряет мебельную деталь в производственном цеху"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 700px"
                 style={{ objectFit: "cover" }}
               />
-              <div className="prod-showcase-badge">
-                <span className="dot" />
-                Цех: {SITE_CONFIG.productionAddress}
-              </div>
             </div>
 
             {/* Правая колонка: Единые заголовки без бровей-дубликатов и лишней воды */}
             <div className="prod-showcase-text">
               <h2 className="section-title" style={{ marginBottom: "0" }}>
-                Прямой заказ у производителя
+                От проекта к готовой мебели
               </h2>
 
               <div className="prod-showcase-item">
                 <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">01 · </span>Без наценок салонов
+                  <span className="prod-accent-num">01 · </span>Подробный расчёт
                 </h3>
                 <p className="prod-showcase-desc">
-                  Прямой расчет стоимости без расходов на аренду торговых залов и дилерских комиссий.
+                  Собираем смету по спецификации конкретного проекта: учитываем количество листов,
+                  площадь фасадов, выбранные петли, механизмы и работы.
                 </p>
               </div>
 
               <div className="prod-showcase-item">
                 <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">02 · </span>Контроль механизмов в цеху
+                  <span className="prod-accent-num">02 · </span>Изготовление в цеху
                 </h3>
                 <p className="prod-showcase-desc">
-                  Проверяем точность присадки, плавность хода выдвижных систем и зазоры до отправки на адрес.
+                  После согласования конструкции передаём проект в собственный цех, где подготавливаем
+                  и обрабатываем детали под размеры будущей мебели.
                 </p>
               </div>
 
               <div className="prod-showcase-item">
                 <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">03 · </span>Подгонка под геометрию стен
+                  <span className="prod-accent-num">03 · </span>Монтаж под ключ
                 </h3>
                 <p className="prod-showcase-desc">
-                  Изготовление точно под потолок и ниши с обходом балок, вентшахт и скрытых труб.
+                  Одна бригада отвечает за доставку и установку мебели, а также за заранее согласованные
+                  подключения техники, сантехники и электрики.
                 </p>
               </div>
             </div>
@@ -110,7 +109,7 @@ export default function ProductionPage() {
       <section style={{ backgroundColor: "var(--bg-dark)", padding: "112px 0" }}>
         <div className="container">
           <h2 className="section-title" style={{ marginBottom: "28px" }}>
-            Участки производства
+            Основные этапы производства
           </h2>
 
           <div className="prod-stages-row">
@@ -118,8 +117,8 @@ export default function ProductionPage() {
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/hero.jpg"
-                  alt="Станочный чистовой раскрой плитных материалов"
+                  src="/img/production/current/panel-cutting.webp"
+                  alt="Мастер раскраивает ламинированную мебельную плиту"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
@@ -129,7 +128,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">01 · </span>Раскрой плит
               </h3>
               <p className="prod-stage-desc">
-                Раскрой ЛДСП и МДФ по карте деталей проекта.
+                ЛДСП и МДФ раскраиваем по карте деталей, подготовленной для конкретного проекта.
               </p>
             </div>
 
@@ -137,8 +136,8 @@ export default function ProductionPage() {
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/edge.jpg"
-                  alt="Кромление торцов мебельной детали"
+                  src="/img/production/current/edge-banding.webp"
+                  alt="Мастер наносит кромку на мебельную деталь"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
@@ -148,7 +147,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">02 · </span>Кромление торцов
               </h3>
               <p className="prod-stage-desc">
-                Обработка открытых торцов деталей перед присадкой.
+                Обрабатываем открытые торцы деталей, чтобы подготовить их к присадке и дальнейшей сборке.
               </p>
             </div>
 
@@ -156,8 +155,8 @@ export default function ProductionPage() {
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/cnc.jpg"
-                  alt="Присадка отверстий и проверка фурнитуры"
+                  src="/img/production/current/line-boring.webp"
+                  alt="Мастер выполняет присадку отверстий в мебельной детали"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
@@ -167,7 +166,7 @@ export default function ProductionPage() {
                 <span className="prod-accent-num">03 · </span>Присадка и сборка
               </h3>
               <p className="prod-stage-desc">
-                Сверление по карте присадки и проверка выбранной фурнитуры.
+                Выполняем присадку по проекту и комплектуем детали выбранными петлями и механизмами.
               </p>
             </div>
           </div>
@@ -184,9 +183,9 @@ export default function ProductionPage() {
           <div className="prod-linear-track">
             <div className="prod-step-col">
               <span className="prod-step-num">01</span>
-              <h3 className="prod-step-title">Расчет сметы</h3>
+              <h3 className="prod-step-title">Расчёт сметы</h3>
               <p className="prod-step-desc">
-                По размерам или эскизу
+                Предварительно считаем проект по вашим размерам или эскизу
               </p>
             </div>
 
@@ -194,7 +193,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">02</span>
               <h3 className="prod-step-title">Встреча в офисе</h3>
               <p className="prod-step-desc">
-                Выбор материалов на Стачек, 9
+                Обсуждаем планировку и подбираем материалы на Стачек, 9
               </p>
             </div>
 
@@ -202,7 +201,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">03</span>
               <h3 className="prod-step-title">Точный замер</h3>
               <p className="prod-step-desc">
-                Лазерная съемка помещения
+                Проверяем размеры после предварительного согласования проекта
               </p>
             </div>
 
@@ -210,7 +209,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">04</span>
               <h3 className="prod-step-title">Изготовление</h3>
               <p className="prod-step-desc">
-                В цеху на Петергофском ш., 73
+                Передаём согласованный проект в цех на Петергофском шоссе, 73
               </p>
             </div>
 
@@ -218,7 +217,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">05</span>
               <h3 className="prod-step-title">Монтаж под ключ</h3>
               <p className="prod-step-desc">
-                Сборка, техника, сантехника и свет
+                Доставляем, собираем мебель и выполняем согласованные подключения
               </p>
             </div>
           </div>
@@ -228,7 +227,6 @@ export default function ProductionPage() {
       {/* 6. Финальный блок: Консультация и форма */}
       <LeadSection
         id="consult"
-        title="Рассчитаем проект для производства"
         source="Производство"
       />
     </div>

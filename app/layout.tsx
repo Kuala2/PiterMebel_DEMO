@@ -20,15 +20,15 @@ export const viewport: Viewport = {
 
 const cormorant = Cormorant_Garamond({
   subsets: ["cyrillic", "latin"],
-  weight: ["500", "600"],
-  style: ["normal"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   display: "swap",
   variable: "--font-cormorant",
 });
 
 const onest = Onest({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-onest",
 });

@@ -1,12 +1,9 @@
 import MeasureForm from "@/components/MeasureForm";
-import { PROMOS } from "@/data/promos";
-import { SITE_CONFIG } from "@/data/site";
+import PromoBanner from "@/components/PromoBanner";
 
 interface LeadSectionProps {
   id?: string;
   initialCategory?: string;
-  title?: string;
-  description?: string;
   source?: string;
   calculatorSummary?: string;
   showSketchLink?: boolean;
@@ -16,24 +13,29 @@ interface LeadSectionProps {
 export default function LeadSection({
   id = "consult",
   initialCategory,
-  title,
-  description,
   source,
   calculatorSummary,
   showSketchLink = false,
   mode = "standard",
 }: LeadSectionProps) {
   const isCalculator = mode === "calculator";
-  const isKitchen = initialCategory?.toLowerCase().includes("кухн") ?? false;
+  const normalizedCategory = initialCategory?.toLowerCase() ?? "";
+  const initialPromoCategory = normalizedCategory.includes("кух")
+    ? "kitchens"
+    : normalizedCategory.includes("шкаф") || normalizedCategory.includes("гардероб")
+      ? "wardrobes"
+      : normalizedCategory.includes("корпус") || normalizedCategory.includes("мебел")
+        ? "customFurniture"
+        : "kitchens";
   const steps = isCalculator
     ? [
-        "Конфигурация приложится автоматически",
-        "Специалист сверит детали проекта",
-        "Вы получите точную смету",
+        "Получим выбранные параметры",
+        "Сверим детали проекта",
+        "Подготовим точную смету",
       ]
     : [
-        "Уточним размеры и пожелания",
-        "Подберём материалы и комплектацию",
+        "Уточним задачу и размеры",
+        "Сверим материалы и комплектацию",
         "Подготовим предварительную смету",
       ];
 
@@ -43,21 +45,9 @@ export default function LeadSection({
         <div className="final-card-container lead-card">
           <div className="final-grid">
             <div className="final-cta-block lead-copy">
-              <div className="lead-status">
-                <span className="lead-status-mark" aria-hidden="true">✓</span>
-                {isCalculator ? "Параметры сохранены" : "Как проходит расчёт"}
-              </div>
-
-              <div>
-                <h2 className="final-headline">
-                  {title || (isCalculator ? "Осталось проверить расчёт" : "Рассчитаем ваш проект")}
-                </h2>
-                <p className="lead-desc">
-                  {description || (isCalculator
-                    ? "Передадим выбранную конфигурацию специалисту. Он уточнит детали и назовёт точную стоимость."
-                    : "Специалист разберётся в задаче и подготовит расчёт без обязательств с вашей стороны.")}
-                </p>
-              </div>
+              <h2 className="lead-process-title">
+                {isCalculator ? "Что будет дальше" : "Как проходит расчёт"}
+              </h2>
 
               <ol className="lead-steps" aria-label="Что произойдёт после заявки">
                 {steps.map((step, index) => (
@@ -65,24 +55,11 @@ export default function LeadSection({
                 ))}
               </ol>
 
-              <div className="lead-offers" aria-label="Актуальные условия заказа">
-                <div className="lead-offer">
-                  <span>{PROMOS.wardrobes.badge}</span>
-                  <strong>{PROMOS.wardrobes.valueTag}</strong>
-                </div>
-                {isKitchen && (
-                  <div className="lead-offer lead-offer-secondary">
-                    <span>{PROMOS.kitchens.badge}</span>
-                    <strong>{PROMOS.kitchens.valueTag}</strong>
-                  </div>
-                )}
-              </div>
-
-              <p className="lead-contact">
-                Хотите обсудить сразу? <a href={`tel:${SITE_CONFIG.phoneRaw}`}>{SITE_CONFIG.phone}</a>
-                <span aria-hidden="true">·</span>
-                <a href={SITE_CONFIG.vkImUrl} target="_blank" rel="noopener noreferrer">Написать в VK</a>
-              </p>
+              <PromoBanner
+                initialCategory={initialPromoCategory}
+                variant="cta-card"
+                className="lead-promo-carousel"
+              />
             </div>
 
             <div className="final-info-block">

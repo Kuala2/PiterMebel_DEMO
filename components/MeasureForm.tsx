@@ -104,7 +104,7 @@ export default function MeasureForm({
         <div>
           <div className="form-heading">
             <h3>Запросить предварительный расчёт</h3>
-            <p>Оставьте телефон — специалист уточнит детали и подготовит расчёт.</p>
+            <p>Перезвоним, уточним детали и подготовим расчёт.</p>
           </div>
 
           {state.errors && (
@@ -159,7 +159,10 @@ export default function MeasureForm({
             <details className="form-details form-group-wide">
               <summary>
                 <span>Добавить детали проекта</span>
-                <span className="form-details-note">Необязательно</span>
+                <span className="form-details-note">
+                  <span className="form-details-closed">Необязательно · открыть</span>
+                  <span className="form-details-open">Свернуть</span>
+                </span>
               </summary>
               <div className="form-details-content">
                 <div className="form-group">

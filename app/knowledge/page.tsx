@@ -32,10 +32,6 @@ export default function KnowledgePage() {
       {article && (
         <section className="knowledge-featured-section">
           <div className="container">
-            <div className="knowledge-featured-head">
-              <span className="knowledge-eyebrow">Последняя статья</span>
-            </div>
-
             <Link href={`/knowledge/${article.slug}`} className="knowledge-feature-card">
               <div className="knowledge-feature-media">
                 <Image
@@ -71,9 +67,6 @@ export default function KnowledgePage() {
                 </ul>
 
                 <div className="knowledge-feature-footer">
-                  <span className="knowledge-author-label">
-                    {article.author.name} · {article.author.role}
-                  </span>
                   <span className="knowledge-read-btn">Читать статью →</span>
                 </div>
               </div>
@@ -86,7 +79,6 @@ export default function KnowledgePage() {
       <LeadSection
         id="consult"
         initialCategory="Кухня"
-        title="Обсудим проект и привязку коммуникаций"
         source="База знаний"
       />
     </div>
