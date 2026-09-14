@@ -8,7 +8,6 @@ import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
-import CaseEditorial from "@/components/CaseEditorial";
 
 interface KitchenPageProps {
   params: Promise<{ slug: string }>;
@@ -166,14 +165,6 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
         </div>
       </section>
 
-      <CaseEditorial
-        typeLabel="Кухня по индивидуальному проекту"
-        summary={kitchen.summary}
-        facts={kitchen.specs}
-        catalogHref="/kitchens"
-        catalogLabel="Все кухни"
-      />
-
       {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">
         <div className="container">
@@ -204,10 +195,6 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 </div>
                 <div className="detail-nav-card-body">
                   <h3 className="detail-nav-card-name">Кухня «{item.title}»</h3>
-                  <div className="detail-nav-card-price">
-                    Расчёт по спецификации
-                  </div>
-                  <p className="detail-nav-card-desc">{item.specs[0]?.value}</p>
                 </div>
               </Link>
             ))}

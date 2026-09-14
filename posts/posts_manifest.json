@@ -1,7 +1,103 @@
 [
   {
-    "post_id": "256",
+    "post_id": "261",
     "order_index": 1,
+    "permalink": "https://vk.ru/wall-215942650_261",
+    "date": {
+      "raw": "8 сен 2026",
+      "formatted": "8 сентября 2026",
+      "iso": "2026-09-08",
+      "year": 2026
+    },
+    "text": "Гардеробная на заказ с подсветкой древесный декор\n#питермебель #мебельназаказспб #мебель #гардеробнаяназаказ #гардеробнаяспб #мебельотпроизводителя #студиямебелиеленыволковой",
+    "hashtags": [
+      "#питермебель",
+      "#мебельназаказспб",
+      "#мебель",
+      "#гардеробнаяназаказ",
+      "#гардеробнаяспб",
+      "#мебельотпроизводителя",
+      "#студиямебелиеленыволковой"
+    ],
+    "photos_count": 6,
+    "photos": [
+      {
+        "filename": "photo_1.jpg",
+        "local_path": "posts/post_261/photo_1.jpg",
+        "source_url": "https://sun9-63.vkuserphoto.ru/s/v1/ig2/Jb9g85KG2Kq_iByaDGO1SGPKqqb-xBWG4Nv0wzNpif9jzFKIn9VYjEbX8-nMkDdyXsuZ_gQ6x5V_i6zhKipKo3C2.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560&from=bu&u=2YeAKsTdswVrkZYsf-fTcmqXI9fyqnWWK_a2Eob1SBw&cs=1920x2560",
+        "sha256": "4695285d6c27ec2829cef7f160cfb1121ffc60f49750363ede3258341e9ac34b",
+        "resolution": "1920x2560",
+        "width": 1920,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 3098866,
+        "photo_index": 1
+      },
+      {
+        "filename": "photo_2.jpg",
+        "local_path": "posts/post_261/photo_2.jpg",
+        "source_url": "https://sun9-77.vkuserphoto.ru/s/v1/ig2/S-mBK2xcU90KqYPqpPsv3YpvDjeh5KrKMyewYPR2ZSpID8UZPgSJwumYKglm57hHcEjSPnNhSnZqNrS2EYVq9kPs.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560&from=bu&u=BcWwZZNwb72x5PGhgUVCHAniFPG49AxlO823ZJkbIp4&cs=1920x2560",
+        "sha256": "b23eaf5a1fde3de2984b3c544209f3da7245b9feff006749cec2a59f05964b28",
+        "resolution": "1920x2560",
+        "width": 1920,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 2929642,
+        "photo_index": 2
+      },
+      {
+        "filename": "photo_3.jpg",
+        "local_path": "posts/post_261/photo_3.jpg",
+        "source_url": "https://sun9-26.vkuserphoto.ru/s/v1/ig2/f_4y0gXD5nygbYnZQ0sprgmctVgoAEIE8HTkwg9mIx9-QMRNukB9ycZHYvy06almkRpVeM8eyvJ54YUB3BA7J0sH.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560&from=bu&u=fCKUqZ6cSINdyEIpi9p8T38YtSIvKzXvyGfTnsMXC4o&cs=1920x2560",
+        "sha256": "c678f24b1231c10683eb9f25567fa7e66b9a0d74b044515f0a86f5b465d9ab5e",
+        "resolution": "1920x2560",
+        "width": 1920,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 2992172,
+        "photo_index": 3
+      },
+      {
+        "filename": "photo_4.jpg",
+        "local_path": "posts/post_261/photo_4.jpg",
+        "source_url": "https://sun9-19.vkuserphoto.ru/s/v1/ig2/epGesPEcwArBbbk1saR4HvSu0thcUa1HJ_BSEo9LSGt7z-PAkz5kX0d_8W5zvXUJyWcpZHGgRoagc7096SBCCSUJ.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560&from=bu&u=j8PJSvxOAaFP4y0qL3emTN1k9tTu6idGR1K1KGPb8QM&cs=1920x2560",
+        "sha256": "807f6160396785c32c2be38597353c6cc2d15dc8d46c7fbe8b6cd32fd4f55bc8",
+        "resolution": "1920x2560",
+        "width": 1920,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 3107786,
+        "photo_index": 4
+      },
+      {
+        "filename": "photo_5.jpg",
+        "local_path": "posts/post_261/photo_5.jpg",
+        "source_url": "https://sun9-88.vkuserphoto.ru/s/v1/ig2/WshBmjv1EA3Bk6wmgNr2EKV9dIAUGO17w6m9WS0oKX0Z-kqEfvSXZW-Z1nm3L1a2NhIuI05aKUEohPD8SFSzcdGT.jpg?quality=95&as=32x47%2C48x70%2C72x106%2C108x158%2C160x235%2C240x352%2C360x528%2C480x704%2C540x792%2C640x938%2C720x1056%2C1080x1583%2C1280x1877%2C1440x2111%2C1746x2560&from=bu&u=hfbLjpjRZ9c7ZpJxHN9Se6PysL60Uig94AJtw-nh0fk&cs=1746x2560",
+        "sha256": "15a64a63d02aef1751f7ab6ae89b217b59c66ee2929ca061d63f49ed68f6716e",
+        "resolution": "1746x2560",
+        "width": 1746,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 2398235,
+        "photo_index": 5
+      },
+      {
+        "filename": "photo_6.jpg",
+        "local_path": "posts/post_261/photo_6.jpg",
+        "source_url": "https://sun9-63.vkuserphoto.ru/s/v1/ig2/e6uQ4YNcFX-JhqdU2S284SrQoKP1q030dwsyHafTwyLXkXhtQo_Y1rDZUaJQVGKyYYmYncrGqA1sKitzRh-BUGDv.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560&from=bu&u=o_404T5LN4RwasZLDlERC3Qe8Fk5AwKogniGRwyFJ8A&cs=1920x2560",
+        "sha256": "1c1b4dd128f24dcff70bcf76fd5b6a9ec1bcf346108be6a963c25664989b398e",
+        "resolution": "1920x2560",
+        "width": 1920,
+        "height": 2560,
+        "format": "JPEG",
+        "bytes": 2944018,
+        "photo_index": 6
+      }
+    ]
+  },
+  {
+    "post_id": "256",
+    "order_index": 2,
     "permalink": "https://vk.ru/wall-215942650_256",
     "date": {
       "raw": "6 авг",
@@ -48,7 +144,7 @@
   },
   {
     "post_id": "254",
-    "order_index": 2,
+    "order_index": 3,
     "permalink": "https://vk.ru/wall-215942650_254",
     "date": {
       "raw": "17 июн",
@@ -194,7 +290,7 @@
   },
   {
     "post_id": "253",
-    "order_index": 3,
+    "order_index": 4,
     "permalink": "https://vk.ru/wall-215942650_253",
     "date": {
       "raw": "8 июн",
@@ -268,7 +364,7 @@
   },
   {
     "post_id": "252",
-    "order_index": 4,
+    "order_index": 5,
     "permalink": "https://vk.ru/wall-215942650_252",
     "date": {
       "raw": "30 мая",
@@ -399,7 +495,7 @@
   },
   {
     "post_id": "251",
-    "order_index": 5,
+    "order_index": 6,
     "permalink": "https://vk.ru/wall-215942650_251",
     "date": {
       "raw": "28 мая",
@@ -482,7 +578,7 @@
   },
   {
     "post_id": "250",
-    "order_index": 6,
+    "order_index": 7,
     "permalink": "https://vk.ru/wall-215942650_250",
     "date": {
       "raw": "21 мая",
@@ -589,7 +685,7 @@
   },
   {
     "post_id": "248",
-    "order_index": 7,
+    "order_index": 8,
     "permalink": "https://vk.ru/wall-215942650_248",
     "date": {
       "raw": "2 мая",
@@ -674,7 +770,7 @@
   },
   {
     "post_id": "247",
-    "order_index": 8,
+    "order_index": 9,
     "permalink": "https://vk.ru/wall-215942650_247",
     "date": {
       "raw": "26 апр",
@@ -770,7 +866,7 @@
   },
   {
     "post_id": "246",
-    "order_index": 9,
+    "order_index": 10,
     "permalink": "https://vk.ru/wall-215942650_246",
     "date": {
       "raw": "20 апр",
@@ -854,7 +950,7 @@
   },
   {
     "post_id": "245",
-    "order_index": 10,
+    "order_index": 11,
     "permalink": "https://vk.ru/wall-215942650_245",
     "date": {
       "raw": "18 апр",
@@ -998,7 +1094,7 @@
   },
   {
     "post_id": "244",
-    "order_index": 11,
+    "order_index": 12,
     "permalink": "https://vk.ru/wall-215942650_244",
     "date": {
       "raw": "15 апр",
@@ -1056,7 +1152,7 @@
   },
   {
     "post_id": "243",
-    "order_index": 12,
+    "order_index": 13,
     "permalink": "https://vk.ru/wall-215942650_243",
     "date": {
       "raw": "7 апр",
@@ -1176,7 +1272,7 @@
   },
   {
     "post_id": "242",
-    "order_index": 13,
+    "order_index": 14,
     "permalink": "https://vk.ru/wall-215942650_242",
     "date": {
       "raw": "30 мар",
@@ -1259,7 +1355,7 @@
   },
   {
     "post_id": "238",
-    "order_index": 14,
+    "order_index": 15,
     "permalink": "https://vk.ru/wall-215942650_238",
     "date": {
       "raw": "2 мар",
@@ -1329,7 +1425,7 @@
   },
   {
     "post_id": "235",
-    "order_index": 15,
+    "order_index": 16,
     "permalink": "https://vk.ru/wall-215942650_235",
     "date": {
       "raw": "29 окт 2025",
@@ -1402,7 +1498,7 @@
   },
   {
     "post_id": "234",
-    "order_index": 16,
+    "order_index": 17,
     "permalink": "https://vk.ru/wall-215942650_234",
     "date": {
       "raw": "26 окт 2025",
@@ -1474,7 +1570,7 @@
   },
   {
     "post_id": "233",
-    "order_index": 17,
+    "order_index": 18,
     "permalink": "https://vk.ru/wall-215942650_233",
     "date": {
       "raw": "14 окт 2025",
@@ -1534,7 +1630,7 @@
   },
   {
     "post_id": "232",
-    "order_index": 18,
+    "order_index": 19,
     "permalink": "https://vk.ru/wall-215942650_232",
     "date": {
       "raw": "9 окт 2025",
@@ -1683,7 +1779,7 @@
   },
   {
     "post_id": "231",
-    "order_index": 19,
+    "order_index": 20,
     "permalink": "https://vk.ru/wall-215942650_231",
     "date": {
       "raw": "26 сен 2025",
@@ -1779,8 +1875,80 @@
     ]
   },
   {
+    "post_id": "229",
+    "order_index": 21,
+    "permalink": "https://vk.ru/wall-215942650_229",
+    "date": {
+      "raw": "25 сен 2025",
+      "formatted": "25 сентября 2025",
+      "iso": "2025-09-25",
+      "year": 2025
+    },
+    "text": "Раздвижная перегородка, отделяющая пространство изготавливается на заказ\nСтекло на выбор\nПокрывается прозрачной защитной плёнкой\nПрофиль алюминиевый цвета тоже на выбор\n\nИзготавливается 10 рабочих дней\n\n#перегородка #раздвижнаяперегородка #перегородканазаказ #перегородкиспб #стеклянныеперегородки #перегородки10дней #питермебель",
+    "hashtags": [
+      "#перегородка",
+      "#раздвижнаяперегородка",
+      "#перегородканазаказ",
+      "#перегородкиспб",
+      "#стеклянныеперегородки",
+      "#перегородки10дней",
+      "#питермебель"
+    ],
+    "photos_count": 4,
+    "photos": [
+      {
+        "filename": "photo_1.jpg",
+        "local_path": "posts/post_229/photo_1.jpg",
+        "source_url": "https://sun9-71.vkuserphoto.ru/s/v1/ig2/qCCZB_BznE2J6GzXGrrHB-gn0kqCfRXlD25EmA1ZWKqFrSF0UfdOcLgkbYlf3S8TbamNljZd0iiZbNOZNE2xgAOi.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=BNgIulirNzU_ZGkVu3nxDwlWd_NgGpL0NqH7i0QOTfs&cs=1200x1600",
+        "sha256": "c2c224c1a767531aa4e9863a70fa3efa1fabe077f2a823a48cfeb70e3a160727",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 629275,
+        "photo_index": 1
+      },
+      {
+        "filename": "photo_2.jpg",
+        "local_path": "posts/post_229/photo_2.jpg",
+        "source_url": "https://sun9-52.vkuserphoto.ru/s/v1/ig2/M-rlcO1cj1FR8VKZD7fQ1AIJZ34Koc3bBnY9N3u0ZE9L1PEe7elATDEi0pwehaJ_ujJ9vZT5KcDmuIr5rE-VO48Q.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=Bfr_3YduZ--efjdOZhKL_TAYoJcJCsIYo9spbdOLeqs&cs=1200x1600",
+        "sha256": "d06710c3cb522ed4e81a0c2eb57ee5aecf74cf0cce031564b50f8e94d8ed9aec",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 480354,
+        "photo_index": 2
+      },
+      {
+        "filename": "photo_3.jpg",
+        "local_path": "posts/post_229/photo_3.jpg",
+        "source_url": "https://sun9-54.vkuserphoto.ru/s/v1/ig2/u4pshLtC3qItjy1x5JfLBVIOd-Ypjzqo73owxw28H0Z0rd5rY-WYRN3IFWXsVZ9bdDy0toa4L_vqUtMyKw3GYOlW.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1117x1489&from=bu&u=fnR0Wp7utO6ftxEgdF4PE7i3fQwoDImB96zETuPIO00&cs=1117x1489",
+        "sha256": "175eb2241854054617561282887b1912f1e28c95164a43c2460c286f466f0a1d",
+        "resolution": "1117x1489",
+        "width": 1117,
+        "height": 1489,
+        "format": "JPEG",
+        "bytes": 690406,
+        "photo_index": 3
+      },
+      {
+        "filename": "photo_4.jpg",
+        "local_path": "posts/post_229/photo_4.jpg",
+        "source_url": "https://sun9-69.vkuserphoto.ru/s/v1/ig2/GQrDKvpePa7rHcc3m_jpvQ9c0HSH_91um3gcWZPabiNR8rp8MetD-nKTeMv5H8XEapEJv5hY84MXWn6TfiI6fzJx.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=aUHDP5WGwtK9De5nchlwdzFbygrc_XatynOg_HF0dIg&cs=1200x1600",
+        "sha256": "7a4b5c6673fdfa375e250e0850090c28565aca123cc3d18d47f46b63b57590c8",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 555066,
+        "photo_index": 4
+      }
+    ]
+  },
+  {
     "post_id": "230",
-    "order_index": 20,
+    "order_index": 22,
     "permalink": "https://vk.ru/wall-215942650_230",
     "date": {
       "raw": "25 сен 2025",
@@ -1883,6 +2051,266 @@
         "height": 1280,
         "format": "JPEG",
         "bytes": 163521
+      }
+    ]
+  },
+  {
+    "post_id": "208",
+    "order_index": 23,
+    "permalink": "https://vk.ru/wall-215942650_208",
+    "date": {
+      "raw": "13 июл 2025",
+      "formatted": "13 июля 2025",
+      "iso": "2025-07-13",
+      "year": 2025
+    },
+    "text": "Раздвижные перегородки для того, чтобы отделить пространство, отсечь одно помещение от другого-вместо классической двери\n\nБывают:\nс нижней направляющей\nбез нижней направляющей\n\nсдвигаются в одну сторону/в разные стороны\nсдвигаются каскадом (на последнем видео)\n\nсо вставками зеркало/глухими вставками/стекло рифленое/стекло матовое и тп\n\nцвета рамки : чёрного, белого, серебро или золото, капучино, жемчуг и тп\n\nкрепятся к потолку/стене\n\n#раздвижныеперегородки #спб #питермебель #раздвижныедвери #мебельпитер",
+    "hashtags": [
+      "#раздвижныеперегородки",
+      "#спб",
+      "#питермебель",
+      "#раздвижныедвери",
+      "#мебельпитер"
+    ],
+    "photos_count": 10,
+    "photos": [
+      {
+        "filename": "photo_1.jpg",
+        "local_path": "posts/post_208/photo_1.jpg",
+        "source_url": "https://sun9-67.vkuserphoto.ru/s/v1/ig2/eZ_yyVT9_ob-V7MOI_hrtFHrkOTxcoFqHUSVsm7qpSlTdBKQwQJPSjjvFuNoRcTUcQnHD123Zf-U-0PAy8OlPUEh.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=WdmUQW5BKk_O8BPAhCXZh50W4MHP32dDZ7brBTQb5DQ&cs=720x1600",
+        "sha256": "eebbfa1d42bd84dfc8f8343d75ae1f2836d174fea00622c9902793a3cbde69f7",
+        "resolution": "720x1600",
+        "width": 720,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 186400,
+        "photo_index": 1
+      },
+      {
+        "filename": "photo_2.jpg",
+        "local_path": "posts/post_208/photo_2.jpg",
+        "source_url": "https://sun9-56.vkuserphoto.ru/s/v1/ig2/i0laUw-7LgY4tQ_zEDGnw22TYvJ_rscrtLt8xnoZtNZaMmU9ozHsFZTN7uV_9TdLQSOn5IBl_zAyn8g3YtcWCzTd.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=pBKI-8zKv1STRumW-lPb05qn4J05Y3AJ1Os29fGM2gE&cs=720x1600",
+        "sha256": "1d829c97b72f950258e0788a826407a64bcfd70e69f88f41bfddfd1ce5d0859b",
+        "resolution": "720x1600",
+        "width": 720,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 145392,
+        "photo_index": 2
+      },
+      {
+        "filename": "photo_3.jpg",
+        "local_path": "posts/post_208/photo_3.jpg",
+        "source_url": "https://iv.okcdn.ru/getVideoPreview?id=8751508163090&idx=0&type=39&tkn=ohkBlaNNrYFSJurNBFaZZkgZjGs&fn=vid_t",
+        "sha256": "0e20c42a89c2ad77fd9b9d48a1360d35e7d5a2464f19c834e06dde7333b39f36",
+        "resolution": "320x570",
+        "width": 320,
+        "height": 570,
+        "format": "JPEG",
+        "bytes": 25732,
+        "photo_index": 3
+      },
+      {
+        "filename": "photo_4.jpg",
+        "local_path": "posts/post_208/photo_4.jpg",
+        "source_url": "https://sun9-20.vkuserphoto.ru/s/v1/ig2/ve3DKImwQMOWbLmy3itGndJAtTkx4j4xiGNj0tMFKPH_fvWZOUtc-FRYNnw-bz7ra907XadILMtgrwlDZ4a4aFlN.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=YDFueqA1qYmlsH0b6sArWb6hh2PBQEbVG27EO1rWSRI&cs=720x1600",
+        "sha256": "b8e488ab28c64702afce2ea6c51c12f2fd6d71c73e9fcd08f66b72eb3881917d",
+        "resolution": "720x1600",
+        "width": 720,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 222916,
+        "photo_index": 4
+      },
+      {
+        "filename": "photo_5.jpg",
+        "local_path": "posts/post_208/photo_5.jpg",
+        "source_url": "https://sun9-54.vkuserphoto.ru/s/v1/ig2/dPDhM-x4N0sqaj0QhMrdiFJO0ds50ImCz6XqtAY7w-aksQrsd2eEosLc_Pqnzu647v_O8w3IUtQlktYXYo-LGu5d.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=QuUd3vxgzu95VKxcRwTrSJjrYJyJD6Rl6NWUBmUE4qw&cs=720x1600",
+        "sha256": "b5fe8c19d2816b91b725dd22f6b78d42869abb4aacebcf4ce189a12039aadd89",
+        "resolution": "720x1600",
+        "width": 720,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 249556,
+        "photo_index": 5
+      },
+      {
+        "filename": "photo_6.jpg",
+        "local_path": "posts/post_208/photo_6.jpg",
+        "source_url": "https://sun9-28.vkuserphoto.ru/s/v1/ig2/USeR0nsdaOsC3tjYmKgguc0DeLZ-X4Txph2w3OMrIyAjr-glktSgWPX34CzkB9lqMPFJXzsbELWTl5F3v2_Tl4Jq.jpg?quality=95&as=32x71%2C48x107%2C72x160%2C108x240%2C160x356%2C240x533%2C360x800%2C480x1067%2C540x1200%2C640x1422%2C720x1600&from=bu&u=swamQ-viCrKu_aRLWUMZPqinaKn2Un_KIt3SNwIW_vM&cs=720x1600",
+        "sha256": "3a51ba38683aa878483dde520554f59f466c6820a1640ad73998e6823292f899",
+        "resolution": "720x1600",
+        "width": 720,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 166847,
+        "photo_index": 6
+      },
+      {
+        "filename": "photo_7.jpg",
+        "local_path": "posts/post_208/photo_7.jpg",
+        "source_url": "https://sun9-52.vkuserphoto.ru/s/v1/ig2/oL2P1aSTkyX0uf-jdvmYKyu_4hsrieULhgVQ9UBkgGnWzAlqXQuSqNBkNred0VY8mSpAuEXelx--W-Hg5iMx6x-7.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=U489-5VTJu6_IlWg8KrO65ZeckNMOVBicsEAy_tDtNI&cs=1200x1600",
+        "sha256": "8770bfa03fe527f0e0ff0000b9ec75a40da346abec18adfc7eca90be31326811",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 264612,
+        "photo_index": 7
+      },
+      {
+        "filename": "photo_8.jpg",
+        "local_path": "posts/post_208/photo_8.jpg",
+        "source_url": "https://sun9-48.vkuserphoto.ru/s/v1/ig2/dhnLWbMe7btDcAUP1TQcNbTKjDwq0CUqcLdOvZw7TUr5MDnNcbEj1ZLeFJGGhYo56q36LZW8AjkyrQkG068AJvp9.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=kohUEietKdPB9gJbGP7uNMV2jYdgvwop82InF4gvZMo&cs=1200x1600",
+        "sha256": "e9361f62048f9b8062ddbd3bce3d0b885c0ff532420054ad4a01e39ea002ff44",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 323901,
+        "photo_index": 8
+      },
+      {
+        "filename": "photo_9.jpg",
+        "local_path": "posts/post_208/photo_9.jpg",
+        "source_url": "https://sun9-21.vkuserphoto.ru/s/v1/ig2/NXgsNAzjoFajrkGx-PMSrBakT8TqpZ2xJJtx7jnxE8RbO2VnBIY74zFjqJOiAUXO-3PCOos2yUB_2mH_GTqS1Tfb.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=UGu6C1lv4IOS3Xr8o1xYwTFFrZQzovifSdOJnn3fXIg&cs=1200x1600",
+        "sha256": "570a3cdd73a7ac7c17fb2c64907b4f3393c7911a1134f05d63acd19375747db6",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 335783,
+        "photo_index": 9
+      },
+      {
+        "filename": "photo_10.jpg",
+        "local_path": "posts/post_208/photo_10.jpg",
+        "source_url": "https://iv.okcdn.ru/getVideoPreview?id=8303604927076&idx=5&type=39&tkn=dtN_TUaCW3ERVG6XtaXpFjQNv80&fn=vid_t",
+        "sha256": "d21efc5069b68fb2a8e54db7a361bd444c90704e6255c1235c169fa46911a7a3",
+        "resolution": "320x570",
+        "width": 320,
+        "height": 570,
+        "format": "JPEG",
+        "bytes": 34967,
+        "photo_index": 10
+      }
+    ]
+  },
+  {
+    "post_id": "159",
+    "order_index": 24,
+    "permalink": "https://vk.ru/wall-215942650_159",
+    "date": {
+      "raw": "19 сен 2024",
+      "formatted": "19 сентября 2024",
+      "iso": "2024-09-19",
+      "year": 2024
+    },
+    "text": "Шпон дуба радиусный под лаком\nСвоё производство\nСрок от двух месяцев\nИндивидуальный подход\n\n#питермебель #мебельназаказ #производствомебелиспб #мебельспб #шпон #радиусныефасады #кухняназаказспб",
+    "hashtags": [
+      "#питермебель",
+      "#мебельназаказ",
+      "#производствомебелиспб",
+      "#мебельспб",
+      "#шпон",
+      "#радиусныефасады",
+      "#кухняназаказспб"
+    ],
+    "photos_count": 3,
+    "photos": [
+      {
+        "filename": "photo_1.jpg",
+        "local_path": "posts/post_159/photo_1.jpg",
+        "source_url": "https://sun9-25.vkuserphoto.ru/s/v1/ig2/yQq80IJIQz9eQP7UFpoHk96iQ_nxG-Tyo8s-tSbsaKeQ0yOrAFd9xDtB65wnwC254qv6Bq-gVgWdmn3WqMoFPLh8.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=c__5-Tf1FrRANOabE2y-6kl0iQ0-v4PVZWrq0bxpB7s&cs=1200x1600",
+        "sha256": "10bb574b9959c18b1768ef93c4a10a101082f346bd4de16064e118f8330489d5",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 216519,
+        "photo_index": 1
+      },
+      {
+        "filename": "photo_2.jpg",
+        "local_path": "posts/post_159/photo_2.jpg",
+        "source_url": "https://sun9-82.vkuserphoto.ru/s/v1/ig2/WgvOJZcrQGnmK3a3XS_gaslgUhRiI-LG7-nGHo-aD5zB3AmicalDZyYnFAqs5kwhZZCgaPEemwiKCi-wl0g8oxfP.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=j3CfR-GEJ0Xf2Y6GhBwWWEtwdnQpgy_dAfma9Wp2XF4&cs=1200x1600",
+        "sha256": "4c27ce85cb847075c95839e7a99e0d899165f55646d5c030eb5ed9fb70461ad4",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 254808,
+        "photo_index": 2
+      },
+      {
+        "filename": "photo_3.jpg",
+        "local_path": "posts/post_159/photo_3.jpg",
+        "source_url": "https://sun9-42.vkuserphoto.ru/s/v1/ig2/gIW2EZ0-Kk1PReGOf6aF_o9MH7sFv9HQ2uuypAkEbFnCrVg0sgP8JOYg5sXvL5C2e3OQN2LkzV7-HfDqfc3dEOcR.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1200x1600&from=bu&u=x68E0Ujs9C_mwnHlCQ-4b9dFnezeolbqhCdzRIw9-Vw&cs=1200x1600",
+        "sha256": "2c9c58e59b9fa4537037a1753e4c6dbef0362f886c3535d74b4499c017ee2861",
+        "resolution": "1200x1600",
+        "width": 1200,
+        "height": 1600,
+        "format": "JPEG",
+        "bytes": 157212,
+        "photo_index": 3
+      }
+    ]
+  },
+  {
+    "post_id": "156",
+    "order_index": 25,
+    "permalink": "https://vk.ru/wall-215942650_156",
+    "date": {
+      "raw": "24 авг 2024",
+      "formatted": "24 августа 2024",
+      "iso": "2024-08-24",
+      "year": 2024
+    },
+    "text": "В с/у, ванную комнату рекомендуем материалы с повышенной влагостойкостью- МДФ пластик с PUR клеем\n\n#мебель #мебельназаказ #мебельспб #питермебель #мебельподзаказ",
+    "hashtags": [
+      "#мебель",
+      "#мебельназаказ",
+      "#мебельспб",
+      "#питермебель",
+      "#мебельподзаказ"
+    ],
+    "photos_count": 3,
+    "photos": [
+      {
+        "filename": "photo_1.jpg",
+        "local_path": "posts/post_156/photo_1.jpg",
+        "source_url": "https://sun9-56.vkuserphoto.ru/s/v1/ig2/Ny8Mh69teiz1Z7kyjv3pBn0Ic08GAcXCBvYjT-C9vBVtpC3lhaGRNCehPc41dbyFM9RKKPgUmyuxyKARwI6hutwg.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=KwWMvB40F8AGlVRWTBTy_ChUO5Cc8RGv2TKukjDRM_g&cs=960x1280",
+        "sha256": "32fb8ad38d0310337de2cbd3278cd3bc68ec6dc31e90fb55060033eb3ad21aa0",
+        "resolution": "960x1280",
+        "width": 960,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 270422,
+        "photo_index": 1
+      },
+      {
+        "filename": "photo_2.jpg",
+        "local_path": "posts/post_156/photo_2.jpg",
+        "source_url": "https://sun9-61.vkuserphoto.ru/s/v1/ig2/x6kfX6V3sBF7hwkE05MfOMA60DkxdvzE4iLLPsf6IGv9hwLtdFkClfbtWIqr2TsS_hmA_3EqKrG6jBQr0IFEDPBc.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=M3_N-YUe0qxj0qT6Bz8HMry3b7TYgqy7B6vNTriwq1U&cs=960x1280",
+        "sha256": "33b16013a7ebea469ded18e27a16ba5e5357b4317d7a89df8c878305d24fe3e2",
+        "resolution": "960x1280",
+        "width": 960,
+        "height": 1280,
+        "format": "JPEG",
+        "bytes": 274424,
+        "photo_index": 2
+      },
+      {
+        "filename": "photo_3.jpg",
+        "local_path": "posts/post_156/photo_3.jpg",
+        "source_url": "https://iv.okcdn.ru/getVideoPreview?id=6866390157852&idx=11&type=39&tkn=wiPkU9oZ1ZlRer9JbDaC_lTwMEM&fn=vid_w",
+        "sha256": "ac75cb90d27da15661f1894edb50e5a1258966c586ab924c67821fc9279e3da0",
+        "resolution": "408x720",
+        "width": 408,
+        "height": 720,
+        "format": "JPEG",
+        "bytes": 32710,
+        "photo_index": 3
       }
     ]
   }

@@ -14,12 +14,8 @@ export default function WardrobesPage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
 
-  const wardrobeProjects = PROJECTS.filter(
-    (p) =>
-      p.type === "Гардеробная" ||
-      p.type === "Спальня" ||
-      p.title.toLowerCase().includes("шкаф") ||
-      p.title.toLowerCase().includes("гардероб")
+    const wardrobeProjects = PROJECTS.filter(
+    (p) => p.type === "Гардеробная" || p.type === "Спальня" || p.type === "Прихожая"
   );
 
   const filterTabs = [
@@ -33,6 +29,11 @@ export default function WardrobesPage() {
       key: "Спальня",
       label: "Шкафы в спальню",
       count: wardrobeProjects.filter((p) => p.type === "Спальня").length,
+    },
+    {
+      key: "Прихожая",
+      label: "Шкафы в прихожую",
+      count: wardrobeProjects.filter((p) => p.type === "Прихожая").length,
     },
   ];
 
@@ -176,10 +177,11 @@ export default function WardrobesPage() {
         intro="В подборке есть гардеробные комнаты, шкафы для спальни и прихожей. Описания фиксируют подтверждённую планировку, материалы и заметные конструктивные решения."
         items={[
           { title: "Особенности помещения", text: "В проектах встречаются П-образная планировка, скошенная стена, встроенные шкафы и комплекс мебели для нескольких комнат. Такие особенности учитывают при замере и разработке конструкции." },
-          { title: "Материалы и механика", text: "В подтверждённых карточках указаны ЛДСП Egger, стекло Stopsol, зеркальные фасады, торцевые ручки и другие конкретные решения." },
+          { title: "Материалы и механика", text: "В подтверждённых карточках указаны ЛДСП Egger, смарт-стекло Stopsol без нижней направляющей и скошенные полки по шаблону помещения." },
           { title: "От проекта к монтажу", text: "После согласования размеров и наполнения формируют спецификацию, передают проект в цех и устанавливают готовую мебель на объекте." },
         ]}
         links={[
+          { href: "/projects/light-wood-wardrobe", label: "Гардеробная с подсветкой" },
           { href: "/projects/glass-wardrobe", label: "Гардеробная со стеклом Stopsol" },
           { href: "/projects/brick-wardrobe", label: "П-образная гардеробная" },
           { href: "/calculator?category=wardrobe", label: "Рассчитать шкаф" },

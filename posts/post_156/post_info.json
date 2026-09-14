@@ -1,0 +1,58 @@
+{
+  "post_id": "156",
+  "order_index": 25,
+  "permalink": "https://vk.ru/wall-215942650_156",
+  "date": {
+    "raw": "24 авг 2024",
+    "formatted": "24 августа 2024",
+    "iso": "2024-08-24",
+    "year": 2024
+  },
+  "text": "В с/у, ванную комнату рекомендуем материалы с повышенной влагостойкостью- МДФ пластик с PUR клеем\n\n#мебель #мебельназаказ #мебельспб #питермебель #мебельподзаказ",
+  "hashtags": [
+    "#мебель",
+    "#мебельназаказ",
+    "#мебельспб",
+    "#питермебель",
+    "#мебельподзаказ"
+  ],
+  "photos_count": 3,
+  "photos": [
+    {
+      "filename": "photo_1.jpg",
+      "local_path": "posts/post_156/photo_1.jpg",
+      "source_url": "https://sun9-56.vkuserphoto.ru/s/v1/ig2/Ny8Mh69teiz1Z7kyjv3pBn0Ic08GAcXCBvYjT-C9vBVtpC3lhaGRNCehPc41dbyFM9RKKPgUmyuxyKARwI6hutwg.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=KwWMvB40F8AGlVRWTBTy_ChUO5Cc8RGv2TKukjDRM_g&cs=960x1280",
+      "sha256": "32fb8ad38d0310337de2cbd3278cd3bc68ec6dc31e90fb55060033eb3ad21aa0",
+      "resolution": "960x1280",
+      "width": 960,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 270422,
+      "photo_index": 1
+    },
+    {
+      "filename": "photo_2.jpg",
+      "local_path": "posts/post_156/photo_2.jpg",
+      "source_url": "https://sun9-61.vkuserphoto.ru/s/v1/ig2/x6kfX6V3sBF7hwkE05MfOMA60DkxdvzE4iLLPsf6IGv9hwLtdFkClfbtWIqr2TsS_hmA_3EqKrG6jBQr0IFEDPBc.jpg?quality=95&as=32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C960x1280&from=bu&u=M3_N-YUe0qxj0qT6Bz8HMry3b7TYgqy7B6vNTriwq1U&cs=960x1280",
+      "sha256": "33b16013a7ebea469ded18e27a16ba5e5357b4317d7a89df8c878305d24fe3e2",
+      "resolution": "960x1280",
+      "width": 960,
+      "height": 1280,
+      "format": "JPEG",
+      "bytes": 274424,
+      "photo_index": 2
+    },
+    {
+      "filename": "photo_3.jpg",
+      "local_path": "posts/post_156/photo_3.jpg",
+      "source_url": "https://iv.okcdn.ru/getVideoPreview?id=6866390157852&idx=11&type=39&tkn=wiPkU9oZ1ZlRer9JbDaC_lTwMEM&fn=vid_w",
+      "sha256": "ac75cb90d27da15661f1894edb50e5a1258966c586ab924c67821fc9279e3da0",
+      "resolution": "408x720",
+      "width": 408,
+      "height": 720,
+      "format": "JPEG",
+      "bytes": 32710,
+      "photo_index": 3
+    }
+  ]
+}

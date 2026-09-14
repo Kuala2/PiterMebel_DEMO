@@ -9,7 +9,6 @@ import { PROJECTS } from "@/data/projects";
 import { buildBreadcrumbs, buildOg } from "@/lib/seo";
 import { buildMetaDescription } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
-import CaseEditorial from "@/components/CaseEditorial";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -146,14 +145,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <CaseEditorial
-        typeLabel={project.type}
-        summary={project.summary}
-        facts={project.materials.length > 0 ? [{ label: "Материалы", value: project.materials.join(", ") }] : []}
-        catalogHref="/projects"
-        catalogLabel="Все проекты"
-      />
-
       {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">
         <div className="container">
@@ -184,10 +175,6 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 </div>
                 <div className="detail-nav-card-body">
                   <h3 className="detail-nav-card-name">{item.title}</h3>
-                  <div className="detail-nav-card-price">Расчёт по спецификации</div>
-                  {item.materials.length > 0 && (
-                    <p className="detail-nav-card-desc">{item.materials.slice(0, 2).join(", ")}</p>
-                  )}
                 </div>
               </Link>
             ))}
@@ -201,7 +188,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         initialCategory={
           project.type === "Кухня"
             ? "Кухня"
-            : project.type === "Гардеробная" || project.type === "Спальня"
+            : project.type === "Гардеробная" || project.type === "Спальня" || project.type === "Прихожая"
               ? "Шкаф или гардеробная"
               : "Корпусная мебель"
         }

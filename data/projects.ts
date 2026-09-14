@@ -5,7 +5,9 @@ export type ProjectType =
   | "Прихожая"
   | "Корпусная мебель"
   | "Панели"
-  | "Коммерческий";
+  | "Коммерческий"
+  | "Перегородки"
+  | "Ванная";
 
 export interface Project {
   slug: string;
@@ -274,5 +276,83 @@ export const PROJECTS: Project[] = [
     summary: "Стойка ресепшен спроектирована для клиники и объединяет рабочее место администратора с выразительной входной зоной. В отделке использованы акриловый искусственный камень, рейки из массива бука, МДФ в эмали и LED-подсветка.",
     materials: ["Акриловый камень", "Массив бука", "МДФ в эмали", "LED-подсветка"],
     source: "posts/post_251/post_info.json",
+  },
+  {
+    slug: "light-wood-wardrobe",
+    type: "Гардеробная",
+    title: "Гардеробная с подсветкой и древесным декором",
+    cover: "/img/projects/light-wood-wardrobe/photo_1.jpg",
+    gallery: [
+      "/img/projects/light-wood-wardrobe/photo_1.jpg",
+      "/img/projects/light-wood-wardrobe/photo_2.jpg",
+      "/img/projects/light-wood-wardrobe/photo_3.jpg",
+      "/img/projects/light-wood-wardrobe/photo_4.jpg",
+      "/img/projects/light-wood-wardrobe/photo_5.jpg",
+      "/img/projects/light-wood-wardrobe/photo_6.jpg",
+    ],
+    summary: "Открытая гардеробная система по индивидуальным размерам. Встроенная светодиодная подсветка полок и штанг сочетается с тёплым древесным декором корпуса и выдвижных ящиков.",
+    materials: ["Древесный декор", "LED-подсветка"],
+    source: "posts/post_261/post_info.json",
+  },
+  {
+    slug: "sliding-partition",
+    type: "Перегородки",
+    title: "Раздвижная перегородка для зонирования",
+    cover: "/img/projects/sliding-partition/photo_1.jpg",
+    gallery: [
+      "/img/projects/sliding-partition/photo_1.jpg",
+      "/img/projects/sliding-partition/photo_2.jpg",
+      "/img/projects/sliding-partition/photo_3.jpg",
+      "/img/projects/sliding-partition/photo_4.jpg",
+    ],
+    summary: "Раздвижная межкомнатная перегородка для зонирования жилого пространства. Каркас из прочного алюминиевого профиля с безопасным остеклением в защитной плёнке, срок изготовления от 10 дней.",
+    materials: ["Алюминиевый профиль", "Стекло в защитной плёнке"],
+    source: "posts/post_229/post_info.json",
+  },
+  {
+    slug: "cascade-partitions",
+    type: "Перегородки",
+    title: "Каскадные раздвижные перегородки",
+    cover: "/img/projects/cascade-partitions/photo_1.jpg",
+    gallery: [
+      "/img/projects/cascade-partitions/photo_1.jpg",
+      "/img/projects/cascade-partitions/photo_2.jpg",
+      "/img/projects/cascade-partitions/photo_3.jpg",
+      "/img/projects/cascade-partitions/photo_4.jpg",
+      "/img/projects/cascade-partitions/photo_5.jpg",
+      "/img/projects/cascade-partitions/photo_6.jpg",
+      "/img/projects/cascade-partitions/photo_7.jpg",
+      "/img/projects/cascade-partitions/photo_8.jpg",
+    ],
+    summary: "Система интерьерных раздвижных дверей и перегородок с каскадным открыванием. Возможен беспороговый монтаж без нижней направляющей, варианты глухих, зеркальных и рифлёных вставок.",
+    materials: ["Алюминиевый профиль", "Рифлёное и матовое стекло"],
+    source: "posts/post_208/post_info.json",
+  },
+  {
+    slug: "curved-oak-facades",
+    type: "Корпусная мебель",
+    title: "Радиусные фасады из шпона дуба",
+    cover: "/img/projects/curved-oak-facades/photo_1.jpg",
+    gallery: [
+      "/img/projects/curved-oak-facades/photo_1.jpg",
+      "/img/projects/curved-oak-facades/photo_2.jpg",
+      "/img/projects/curved-oak-facades/photo_3.jpg",
+    ],
+    summary: "Гнутые (радиусные) мебельные фасады из натурального шпона дуба под защитным лаком. Собственное производство элементов сложной геометрии для индивидуальных мебельных композиций.",
+    materials: ["Шпон дуба под лаком", "Радиусные фасады"],
+    source: "posts/post_159/post_info.json",
+  },
+  {
+    slug: "bathroom-pur-vanity",
+    type: "Ванная",
+    title: "Влагостойкая мебель для ванной комнаты",
+    cover: "/img/projects/bathroom-pur-vanity/photo_1.jpg",
+    gallery: [
+      "/img/projects/bathroom-pur-vanity/photo_1.jpg",
+      "/img/projects/bathroom-pur-vanity/photo_2.jpg",
+    ],
+    summary: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с бесшовной обработкой кромок на полиуретановом PUR-клее.",
+    materials: ["МДФ в пластике", "Влагостойкий PUR-клей"],
+    source: "posts/post_156/post_info.json",
   },
 ];

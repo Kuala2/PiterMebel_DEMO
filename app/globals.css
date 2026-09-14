@@ -1456,7 +1456,7 @@ img {
 .card-footer-row {
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2120,8 +2120,8 @@ img {
   padding-top: 80px;
   padding-bottom: 80px;
   background-color: var(--bg-dark);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: none;
+  border-bottom: none;
 }
 
 .materials-grid {
@@ -5452,12 +5452,13 @@ footer,
 }
 
 .detail-hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(32px, 3.8vw, 48px);
-  font-weight: 400;
-  line-height: 1.12;
+  font-family: var(--font-main) !important;
+  font-size: clamp(30px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
   color: #FFFFFF;
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   text-wrap: balance;
 }
 
@@ -5572,9 +5573,10 @@ footer,
 }
 
 .detail-section-title {
-  font-family: var(--font-serif);
-  font-size: clamp(26px, 3vw, 38px);
-  font-weight: 400;
+  font-family: var(--font-main);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: #FFFFFF;
   margin-bottom: 12px;
 }
@@ -6745,7 +6747,7 @@ footer,
    ========================================================================== */
 .promo-architectural-banner {
   background: var(--bg-dark);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: none;
   padding: 24px 0;
 }
 
@@ -6922,8 +6924,8 @@ footer,
 /* Promo Card inside Final CTA Block (Clean Editorial Style - No Nested Tile) */
 .promo-cta-card {
   background: transparent;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  border-top: none;
+  border-bottom: none;
   border-left: none;
   border-right: none;
   border-radius: 0;
@@ -7044,7 +7046,7 @@ footer,
    ========================================================================== */
 .final-canvas-section {
   background: var(--bg-studio);
-  border-top: 1px solid var(--border-subtle);
+  border-top: none;
   padding: clamp(64px, 7vw, 100px) 0;
 }
 
@@ -7332,8 +7334,8 @@ footer,
 
 .detail-editorial-section {
   background: var(--bg-studio);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  border-top: none;
+  border-bottom: none;
   padding: clamp(64px, 7vw, 96px) 0;
 }
 
@@ -7448,7 +7450,7 @@ footer,
 /* Detail Project Navigator Ribbon */
 .detail-navigator-section {
   background: var(--bg-dark);
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: none;
   padding: 96px 0;
 }
 
@@ -7485,20 +7487,13 @@ footer,
 }
 
 .detail-nav-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
+  background: transparent;
+  border: none;
   border-radius: 0px;
-  overflow: hidden;
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s ease, transform 0.2s ease;
   position: relative;
-}
-
-.detail-nav-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
 }
 
 .detail-nav-card-img {
@@ -7508,32 +7503,42 @@ footer,
   background: #11141A;
 }
 
+.detail-nav-card-img img {
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.detail-nav-card:hover .detail-nav-card-img img {
+  transform: scale(1.03);
+}
+
 .detail-nav-card-body {
-  padding: 18px 20px;
+  padding: 16px 0 0 0;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
 .detail-nav-card-name {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 500;
+  font-family: var(--font-main);
+  font-size: clamp(21px, 1.7vw, 24px);
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: #FFFFFF;
   margin: 0;
+  transition: color 0.2s ease;
 }
 
-.detail-nav-card-price {
-  font-family: var(--font-main);
-  font-size: 15px;
-  font-weight: 700;
+.detail-nav-card:hover .detail-nav-card-name {
   color: var(--color-green-brand);
 }
 
+.detail-nav-card-price {
+  display: none;
+}
+
 .detail-nav-card-desc {
-  font-size: 13px;
-  color: #8C92A4;
-  margin: 0;
+  display: none;
 }
 
 /* ==========================================================================
@@ -9772,8 +9777,8 @@ textarea::placeholder {
 .case-editorial-section {
   padding: clamp(64px, 7vw, 96px) 0;
   background: var(--bg-studio);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
+  border-top: none;
+  border-bottom: none;
   content-visibility: auto;
   contain-intrinsic-size: 760px;
 }

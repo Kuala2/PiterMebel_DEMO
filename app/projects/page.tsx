@@ -42,6 +42,16 @@ export default function ProjectsPortfolioPage() {
       count: PROJECTS.filter((p) => p.type === "Панели").length,
     },
     {
+      key: "Перегородки",
+      label: "Перегородки",
+      count: PROJECTS.filter((p) => p.type === "Перегородки").length,
+    },
+    {
+      key: "Ванная",
+      label: "Ванные",
+      count: PROJECTS.filter((p) => p.type === "Ванная").length,
+    },
+    {
       key: "Корпусная мебель",
       label: "Комплексные проекты",
       count: PROJECTS.filter((p) => p.type === "Корпусная мебель").length,
