@@ -86,7 +86,8 @@ export default function Hero() {
         <div className="hero-center-wrapper">
           <div className="container">
             <div className="hero-center-content">
-              <h1 className="hero-slogan-title">Вы мечтаете — мы воплощаем</h1>
+              <h1 className="hero-seo-title">Кухни и мебель на заказ в Санкт-Петербурге</h1>
+              <p className="hero-slogan-title">Вы мечтаете — мы воплощаем</p>
               <p className="hero-subtitle">
                 Проектируем и изготавливаем{" "}
                 <RotatingWord

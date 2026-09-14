@@ -7,6 +7,8 @@ import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS } from "@/data/projects";
 import PageHeader from "@/components/PageHeader";
+import CatalogTabs from "@/components/CatalogTabs";
+import CatalogEditorial from "@/components/CatalogEditorial";
 
 export default function WardrobesPage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -47,18 +49,12 @@ export default function WardrobesPage() {
       {/* 3. Filter Tabs Bar */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar">
-            {filterTabs.map((tab) => (
-              <button
-                key={tab.key}
-                type="button"
-                className={`cat-tab ${activeSubtype === tab.key ? "is-active" : ""}`}
-                onClick={() => setActiveSubtype(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <CatalogTabs
+            tabs={filterTabs}
+            activeKey={activeSubtype}
+            onChange={setActiveSubtype}
+            label="Фильтр шкафов и гардеробных"
+          />
         </div>
       </section>
 
@@ -173,6 +169,26 @@ export default function WardrobesPage() {
           </SpotlightArea>
         </div>
       </section>
+
+      <CatalogEditorial
+        eyebrow="Хранение под помещение"
+        title="Шкафы и гардеробные: на что смотреть в проектах"
+        intro="В подборке есть гардеробные комнаты, шкафы для спальни и прихожей. Описания фиксируют подтверждённую планировку, материалы и заметные конструктивные решения."
+        items={[
+          { title: "Особенности помещения", text: "В проектах встречаются П-образная планировка, скошенная стена, встроенные шкафы и комплекс мебели для нескольких комнат. Такие особенности учитывают при замере и разработке конструкции." },
+          { title: "Материалы и механика", text: "В подтверждённых карточках указаны ЛДСП Egger, стекло Stopsol, зеркальные фасады, торцевые ручки и другие конкретные решения." },
+          { title: "От проекта к монтажу", text: "После согласования размеров и наполнения формируют спецификацию, передают проект в цех и устанавливают готовую мебель на объекте." },
+        ]}
+        links={[
+          { href: "/projects/glass-wardrobe", label: "Гардеробная со стеклом Stopsol" },
+          { href: "/projects/brick-wardrobe", label: "П-образная гардеробная" },
+          { href: "/calculator?category=wardrobe", label: "Рассчитать шкаф" },
+        ]}
+        faq={[
+          { question: "Что нужно подготовить для первого расчёта?", answer: "Полезны примерные размеры, фотографии помещения и список вещей или функций, которые должно поддерживать хранение. Точную привязку делают после согласования проекта." },
+          { question: "Можно ли определить материал только по фото?", answer: "Нет. Поэтому на сайте указаны только материалы, подтверждённые исходным описанием проекта; остальные характеристики уточняют при консультации." },
+        ]}
+      />
 
       {/* 5. CANVAS CTA */}
       <LeadSection

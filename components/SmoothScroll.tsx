@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
+import type Lenis from "lenis";
 
 /** 
  * Плавный скролл на desktop. Стандартное восстановление позиции браузером
@@ -23,25 +23,33 @@ export default function SmoothScroll() {
     // На мобильных устройствах (<768px) нативный тач-скролл работает быстрее (120Hz)
     const isMobile = window.innerWidth < 768;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const saveData = Boolean(
+      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData,
+    );
     let lenis: Lenis | null = null;
     let raf = 0;
+    let disposed = false;
 
-    if (!isMobile && !reduceMotion) {
-      lenis = new Lenis({
-        duration: 1.15,
-        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        autoResize: true,
-        stopInertiaOnNavigate: true,
-      });
+    if (!isMobile && !reduceMotion && !saveData) {
+      void import("lenis").then(({ default: LenisRuntime }) => {
+        if (disposed) return;
 
-      lenisRef.current = lenis;
-      (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+        lenis = new LenisRuntime({
+          duration: 1.15,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          autoResize: true,
+          stopInertiaOnNavigate: true,
+        });
 
-      const loop = (time: number) => {
-        lenis?.raf(time);
+        lenisRef.current = lenis;
+        (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
+
+        const loop = (time: number) => {
+          lenis?.raf(time);
+          raf = requestAnimationFrame(loop);
+        };
         raf = requestAnimationFrame(loop);
-      };
-      raf = requestAnimationFrame(loop);
+      });
     }
 
     // Обработка кликов по якорным ссылкам (#measure и т.д.)
@@ -62,6 +70,7 @@ export default function SmoothScroll() {
     document.addEventListener("click", onClick);
 
     return () => {
+      disposed = true;
       document.removeEventListener("click", onClick);
       if (raf) cancelAnimationFrame(raf);
       if (lenis) {

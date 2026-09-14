@@ -23,6 +23,15 @@ export const HOME_TITLE = `${SITE_CONFIG.name} — кухни и мебель н
 export const HOME_DESCRIPTION =
   "Проектируем и изготавливаем кухни, шкафы и корпусную мебель в Санкт-Петербурге с 2005 года. Договор, доставка и монтаж под ключ.";
 
+/** Собирает уникальное описание сниппета и аккуратно ограничивает его по словам. */
+export function buildMetaDescription(text: string, maxLength = 155) {
+  const normalized = text.replace(/\s+/g, " ").trim();
+  if (normalized.length <= maxLength) return normalized;
+  const shortened = normalized.slice(0, maxLength + 1);
+  const lastSpace = shortened.lastIndexOf(" ");
+  return `${shortened.slice(0, lastSpace > 110 ? lastSpace : maxLength).replace(/[,:;.!?\s]+$/, "")}…`;
+}
+
 /**
  * Единый openGraph-блок для страниц сайта.
  * Next не мерджит openGraph глубоко, поэтому каждая страница задаёт его целиком.

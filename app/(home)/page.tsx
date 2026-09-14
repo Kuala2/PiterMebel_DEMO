@@ -8,7 +8,7 @@ import Faq from "@/components/Faq";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import { SITE_CONFIG } from "@/data/site";
-import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
+import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -859,7 +859,7 @@ export default function HomePage() {
                   priority={false}
                 />
                 <div className="knowledge-read-badge">
-                  Статья · {KNOWLEDGE_ARTICLES[0].readTime}
+                  Статья · {getArticleReadTime(KNOWLEDGE_ARTICLES[0])} мин
                 </div>
               </div>
 

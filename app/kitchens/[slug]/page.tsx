@@ -7,7 +7,8 @@ import LeadSection from "@/components/LeadSection";
 import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
-import { buildOg, buildBreadcrumbs, SITE_URL } from "@/lib/seo";
+import { buildOg, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
+import CaseEditorial from "@/components/CaseEditorial";
 
 interface KitchenPageProps {
   params: Promise<{ slug: string }>;
@@ -27,8 +28,8 @@ export async function generateMetadata({
     return { title: "Кухня не найдена — ПитерМебель" };
   }
 
-  const ogTitle = `Кухня «${kitchen.title}» на заказ в Санкт-Петербурге | ПитерМебель`;
-  const ogDescription = `${kitchen.summary} Кухня изготовлена по индивидуальному проекту в Санкт-Петербурге.`;
+  const ogTitle = `Кухня «${kitchen.title}» на заказ в СПб | ПитерМебель`;
+  const ogDescription = buildMetaDescription(`Кухня «${kitchen.title}»: ${kitchen.summary}`);
 
   return {
     title: ogTitle,
@@ -60,6 +61,13 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
     image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
     description: kitchen.summary,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
+    url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
+    mainEntityOfPage: `${SITE_URL}/kitchens/${kitchen.slug}/`,
+    additionalProperty: kitchen.specs.map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.label,
+      value: spec.value,
+    })),
   };
 
   const currentIndex = KITCHENS.findIndex((k) => k.slug === slug);
@@ -157,6 +165,14 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           </div>
         </div>
       </section>
+
+      <CaseEditorial
+        typeLabel="Кухня по индивидуальному проекту"
+        summary={kitchen.summary}
+        facts={kitchen.specs}
+        catalogHref="/kitchens"
+        catalogLabel="Все кухни"
+      />
 
       {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">

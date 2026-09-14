@@ -20,8 +20,18 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     const canvas = ref.current;
     if (!canvas) return;
 
-    // На смартфонах (< 768px) сохраняем ровный архитектурный тон #22252A без WebGL-нагрузки
-    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean };
+      deviceMemory?: number;
+    }).connection;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const lowPowerDevice =
+      (navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4) ||
+      ((navigator as Navigator & { deviceMemory?: number }).deviceMemory ?? 8) <= 4;
+
+    // На мобильных, при экономии трафика, reduced motion и слабом железе
+    // сохраняем тот же фоновый тон без загрузки и компиляции WebGL.
+    if (window.innerWidth < 768 || connection?.saveData || reduceMotion || lowPowerDevice) return;
 
     let disposed = false;
     let cleanup = () => {};
@@ -127,7 +137,7 @@ export default function AmbientFlowCanvas({ className }: AmbientFlowCanvasProps)
     // При reduced-motion или программном WebGL свечение замирает одним кадром
     if (
       isSoftwareGL ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      reduceMotion
     ) {
       const w = Math.max(2, Math.round(canvas.offsetWidth / 2));
       const h = Math.max(2, Math.round(canvas.offsetHeight / 2));

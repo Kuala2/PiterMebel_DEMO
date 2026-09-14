@@ -7,7 +7,9 @@ import LeadSection from "@/components/LeadSection";
 import VkIcon from "@/components/VkIcon";
 import { PROJECTS } from "@/data/projects";
 import { buildBreadcrumbs, buildOg } from "@/lib/seo";
+import { buildMetaDescription } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
+import CaseEditorial from "@/components/CaseEditorial";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -28,7 +30,7 @@ export async function generateMetadata({
   }
 
   const ogTitle = `${project.title} | ПитерМебель`;
-  const ogDescription = `${project.summary} Реализованный проект «ПитерМебель».`;
+  const ogDescription = buildMetaDescription(`${project.title}: ${project.summary}`);
 
   return {
     title: ogTitle,
@@ -111,7 +113,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Action Buttons */}
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
+              <div className="detail-actions-row" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
                 <Link
                   href="/calculator"
                   className="btn btn-green"
@@ -143,6 +145,14 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           </div>
         </div>
       </section>
+
+      <CaseEditorial
+        typeLabel={project.type}
+        summary={project.summary}
+        facts={project.materials.length > 0 ? [{ label: "Материалы", value: project.materials.join(", ") }] : []}
+        catalogHref="/projects"
+        catalogLabel="Все проекты"
+      />
 
       {/* 2. Project Navigator Ribbon */}
       <section className="detail-navigator-section">

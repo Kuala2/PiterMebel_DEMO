@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { KNOWLEDGE_ARTICLES, getArticleBySlug } from "@/data/knowledge";
+import {
+  KNOWLEDGE_ARTICLES,
+  getArticleBySlug,
+  getArticleReadTime,
+  getArticleWordCount,
+} from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
-import { buildOg } from "@/lib/seo";
+import { buildBreadcrumbs, buildOg, SITE_URL } from "@/lib/seo";
 import LeadSection from "@/components/LeadSection";
 import { ElectricalBlueprint } from "@/components/KnowledgeBlueprints";
 
@@ -31,15 +36,16 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   }
 
   return {
-    title: `${article.title} | База знаний «ПитерМебель»`,
+    title: article.seoTitle,
     description: article.seoDescription,
     alternates: {
       canonical: `/knowledge/${article.slug}`,
     },
     openGraph: {
-      ...buildOg(article.title, article.seoDescription, `/knowledge/${article.slug}`),
+      ...buildOg(article.seoTitle, article.seoDescription, `/knowledge/${article.slug}`),
       type: "article",
       publishedTime: article.publishedAtISO,
+      modifiedTime: article.updatedAtISO,
       authors: [article.author.name],
       section: article.categoryLabel,
       images: [{ url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg", alt: article.title }],
@@ -56,13 +62,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   }
 
   const heroImage = article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg";
-  const wordCount = article.sections.reduce(
-    (sum, section) =>
-      sum +
-      section.text.join(" ").split(/\s+/).length +
-      (section.list?.items.reduce((ls, item) => ls + `${item.lead} ${item.label ?? ""} ${item.body}`.split(/\s+/).length, 0) ?? 0),
-    article.keyTakeaways.join(" ").split(/\s+/).length
-  );
+  const wordCount = getArticleWordCount(article);
+  const readTime = getArticleReadTime(article);
 
   // Schema.org TechArticle microdata
   const jsonLd = {
@@ -71,11 +72,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     headline: article.title,
     description: article.seoDescription,
     datePublished: article.publishedAtISO,
-    dateModified: article.publishedAtISO,
+    dateModified: article.updatedAtISO,
     image: `https://pitermebel.com${heroImage}`,
     wordCount,
     inLanguage: "ru-RU",
     articleSection: article.categoryLabel,
+    mainEntityOfPage: `${SITE_URL}/knowledge/${article.slug}/`,
+    timeRequired: `PT${readTime}M`,
     author: {
       "@type": "Organization",
       name: article.author.name,
@@ -90,11 +93,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     },
   };
 
+  const breadcrumbJsonLd = buildBreadcrumbs([
+    { name: "База знаний", path: "/knowledge" },
+    { name: article.title },
+  ]);
+
   return (
     <div className="article-page" style={{ paddingTop: "120px", minHeight: "100vh" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <article>
@@ -107,9 +119,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
             <div className="article-badge-row">
               <span className="knowledge-card-badge">{article.categoryLabel}</span>
-              <span className="article-read-time">{article.readTime}</span>
+              <span className="article-read-time">{readTime} мин чтения</span>
               <span className="meta-dot">·</span>
-              <span className="article-date">{article.publishedAt}</span>
+              <span className="article-date">Опубликовано {article.publishedAt}</span>
+              <span className="meta-dot">·</span>
+              <span className="article-date">Обновлено {article.updatedAt}</span>
             </div>
 
             <h1 className="article-main-title">{article.title}</h1>
@@ -169,6 +183,24 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             </div>
           </div>
         </section>
+
+        {article.tableOfContents && (
+          <div className="container article-narrow article-mobile-toc-wrap">
+            <details className="article-mobile-toc" data-sticky-cta-suppress>
+              <summary>Содержание статьи</summary>
+              <ol className="article-toc-list">
+                {article.tableOfContents.map((item, idx) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="article-toc-link">
+                      <span className="article-toc-num">{String(idx + 1).padStart(2, "0")}</span>
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </div>
+        )}
 
         {/* 4. CONTENT + STICKY TOC */}
       <section className="article-content-section">
@@ -281,6 +313,81 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                   )}
                 </section>
               ))}
+
+              <aside className="article-download-card" data-sticky-cta-suppress>
+                <div>
+                  <p className="eyebrow">Материал для печати</p>
+                  <h2>Чек-лист перед электромонтажом</h2>
+                  <p>Одна страница A4: исходные данные, таблица точек и финальная сверка для проектировщика, электрика и заказчика.</p>
+                </div>
+                <a href="/downloads/kitchen-electrics-checklist.pdf" className="btn btn-green" download>
+                  Скачать PDF
+                </a>
+              </aside>
+
+              {article.caseStudy && (
+                <section id="case-study" className="article-content-block article-case-study">
+                  <h2 className="article-section-h2">{article.caseStudy.title}</h2>
+                  <div className="article-case-grid">
+                    <div>
+                      <p className="article-paragraph"><strong>Задача:</strong> {article.caseStudy.task}</p>
+                      <p className="article-paragraph"><strong>Конфликт:</strong> {article.caseStudy.conflict}</p>
+                      <p className="article-paragraph"><strong>Решение:</strong> {article.caseStudy.solution}</p>
+                    </div>
+                    <div className="article-case-media">
+                      <Image
+                        src={article.caseStudy.image}
+                        alt={article.caseStudy.imageAlt}
+                        fill
+                        sizes="(max-width: 900px) 100vw, 420px"
+                      />
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              <section id="faq" className="article-content-block" data-sticky-cta-suppress>
+                <h2 className="article-section-h2">Вопросы и ответы</h2>
+                <div className="article-faq-list">
+                  {article.faq.map((item) => (
+                    <details key={item.question}>
+                      <summary>{item.question}</summary>
+                      <p>{item.answer}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+
+              <section id="sources" className="article-content-block" data-sticky-cta-suppress>
+                <h2 className="article-section-h2">Источники и инструкции</h2>
+                <p className="article-paragraph">
+                  Перед монтажом используйте инструкцию именно выбранной модели техники.
+                  Ссылки ниже помогают найти первичные документы, но не заменяют проверку
+                  проектного решения квалифицированным специалистом.
+                </p>
+                <ul className="article-sources-list">
+                  {article.sources.map((source) => (
+                    <li key={source.href}>
+                      <a href={source.href} target="_blank" rel="noopener noreferrer">
+                        {source.title}
+                      </a>
+                      <p>{source.note}</p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <nav className="article-related-links" aria-label="Полезные ссылки по теме" data-sticky-cta-suppress>
+                <h2 className="article-section-h2">Следующие шаги</h2>
+                <div className="article-related-grid">
+                  {article.relatedLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      <strong>{link.title}</strong>
+                      <span>{link.description}</span>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
 
               {/* Back to knowledge hub */}
               <div className="article-end-row">

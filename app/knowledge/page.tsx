@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
+import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
 import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
@@ -26,7 +26,7 @@ export default function KnowledgePage() {
 
   return (
     <div className="knowledge-page" style={{ minHeight: "100vh" }}>
-      <PageHeader title="База знаний" backTo="/" />
+      <PageHeader title="База знаний о мебели на заказ" backTo="/" />
 
       {/* 2. ARTICLE LIST: от новых к старым */}
       {article && (
@@ -47,7 +47,7 @@ export default function KnowledgePage() {
 
               <div className="knowledge-feature-body">
                 <div className="knowledge-card-meta">
-                  <span>{article.readTime}</span>
+                  <span>{getArticleReadTime(article)} мин чтения</span>
                   <span className="meta-dot">·</span>
                   <span>{article.publishedAt}</span>
                 </div>

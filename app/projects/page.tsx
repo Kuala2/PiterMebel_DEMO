@@ -7,6 +7,8 @@ import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS } from "@/data/projects";
 import PageHeader from "@/components/PageHeader";
+import CatalogTabs from "@/components/CatalogTabs";
+import CatalogEditorial from "@/components/CatalogEditorial";
 
 export default function ProjectsPortfolioPage() {
   const [activeType, setActiveType] = useState<string>("all");
@@ -64,18 +66,12 @@ export default function ProjectsPortfolioPage() {
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar">
-            {filterTabs.map((tab) => (
-              <button
-                key={tab.key}
-                type="button"
-                className={`cat-tab ${activeType === tab.key ? "is-active" : ""}`}
-                onClick={() => setActiveType(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <CatalogTabs
+            tabs={filterTabs}
+            activeKey={activeType}
+            onChange={setActiveType}
+            label="Фильтр реализованных проектов"
+          />
         </div>
       </section>
 
@@ -194,6 +190,26 @@ export default function ProjectsPortfolioPage() {
           </SpotlightArea>
         </div>
       </section>
+
+      <CatalogEditorial
+        eyebrow="Портфолио без домыслов"
+        title="Что можно проверить в карточках проектов"
+        intro="Каждая карточка опирается на фотографии и сохранённое описание конкретной работы. Если материал, срок или ограничение не подтверждены, они не добавляются в публичный текст."
+        items={[
+          { title: "Задача и решение", text: "Описание объясняет наблюдаемую задачу проекта: объединить зоны, облегчить крупную композицию, использовать сложную геометрию помещения или собрать хранение в единую линию." },
+          { title: "Материалы", text: "МДФ в эмали, натуральный шпон, массив дуба, HPL, Slotex, стекло Stopsol и другие позиции перечислены только там, где они есть в исходных данных." },
+          { title: "Следующий шаг", text: "Для похожего проекта сначала собирают размеры, пожелания и состав оборудования, затем согласуют конструкцию, смету и договор перед изготовлением и монтажом." },
+        ]}
+        links={[
+          { href: "/kitchens", label: "Каталог кухонь" },
+          { href: "/wardrobes", label: "Шкафы и гардеробные" },
+          { href: "/custom-furniture", label: "Корпусная мебель" },
+        ]}
+        faq={[
+          { question: "Все ли проекты можно изготовить в другом размере?", answer: "Фотографии помогают выбрать направление, но конструкцию заново проверяют по размерам, коммуникациям и наполнению конкретного помещения." },
+          { question: "Где посмотреть материалы конкретного проекта?", answer: "Подтверждённые материалы перечислены в тегах и на детальной странице. Если сведений в исходных данных нет, материал не угадывается по фотографии." },
+        ]}
+      />
 
       {/* 4. Consultation Section */}
       <LeadSection

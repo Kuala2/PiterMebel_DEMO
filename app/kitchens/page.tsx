@@ -6,6 +6,8 @@ import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
+import CatalogTabs from "@/components/CatalogTabs";
+import CatalogEditorial from "@/components/CatalogEditorial";
 
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -43,18 +45,12 @@ export default function KitchensCatalogPage() {
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar">
-            {filterTabs.map((tab) => (
-              <button
-                key={tab.key}
-                type="button"
-                className={`cat-tab ${activeCategory === tab.key ? "is-active" : ""}`}
-                onClick={() => setActiveCategory(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <CatalogTabs
+            tabs={filterTabs}
+            activeKey={activeCategory}
+            onChange={setActiveCategory}
+            label="Фильтр кухонь по материалу фасадов"
+          />
         </div>
       </section>
 
@@ -196,6 +192,26 @@ export default function KitchensCatalogPage() {
           </section>
         );
       })}
+
+      <CatalogEditorial
+        eyebrow="Как пользоваться каталогом"
+        title="Кухни с подтверждёнными материалами и деталями"
+        intro="В каталоге собраны реализованные кухни. В описаниях указаны только те материалы, фурнитура и конструктивные детали, которые подтверждены исходными материалами проекта."
+        items={[
+          { title: "Сравнение решений", text: "Фильтр помогает отдельно посмотреть кухни с пластиком, эмалью и комбинированными фасадами. В карточке проекта перечислены подтверждённые корпус, столешница, фурнитура, подсветка или система открывания." },
+          { title: "Адаптация под помещение", text: "Готовую композицию не копируют по фотографии. Для нового проекта уточняют размеры, технику, коммуникации, сценарии хранения и выбранные материалы, а затем составляют отдельную спецификацию." },
+          { title: "Этапы работы", text: "После предварительного расчёта согласуют проект и точный замер, фиксируют комплектацию в смете и договоре, передают детали в производство, затем выполняют доставку и монтаж." },
+        ]}
+        links={[
+          { href: "/calculator", label: "Рассчитать ориентир" },
+          { href: "/knowledge/rozetki-na-kuhne-shema-vysoty", label: "Подготовить электрику" },
+          { href: "/production", label: "Посмотреть производство" },
+        ]}
+        faq={[
+          { question: "Можно ли повторить кухню из каталога?", answer: "Её можно использовать как визуальный и технический ориентир. Размеры, наполнение и узлы всё равно пересчитывают под конкретное помещение и выбранную технику." },
+          { question: "Почему на странице нет фиксированной цены?", answer: "Каждый показанный проект отличается размерами, материалами и наполнением. Предварительный диапазон можно получить в калькуляторе, а точную смету составляют по согласованной спецификации." },
+        ]}
+      />
 
       {/* 3. Consultation Section */}
       <LeadSection

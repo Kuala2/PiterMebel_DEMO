@@ -2,6 +2,11 @@
 
 # 1. HTTP (порт 80): отдаем robots.txt и sitemap.xml с кодом 200 БЕЗ редиректа (жесткое требование Яндекса при переезде сайта)
 http://pitermebel.com, http://www.pitermebel.com {
+    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    handle @legacyKitchen {
+        redir https://pitermebel.com/kitchens/ permanent
+    }
+
     @seoFiles path /robots.txt /sitemap.xml
     handle @seoFiles {
         root * /var/www/pitermebel/out
@@ -16,7 +21,13 @@ http://pitermebel.com, http://www.pitermebel.com {
 
 # 2. Редирект с HTTPS www на основной HTTPS домен
 https://www.pitermebel.com {
-    redir https://pitermebel.com{uri} permanent
+    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    handle @legacyKitchen {
+        redir https://pitermebel.com/kitchens/ permanent
+    }
+    handle {
+        redir https://pitermebel.com{uri} permanent
+    }
 }
 
 # 3. Основной сайт HTTPS
@@ -31,7 +42,13 @@ https://pitermebel.com {
     header X-Content-Type-Options "nosniff"
     header Referrer-Policy "strict-origin-when-cross-origin"
     header Permissions-Policy "camera=(), microphone=(), geolocation=()"
-    header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # includeSubDomains добавлять только после выпуска и проверки сертификата www.
+    header Strict-Transport-Security "max-age=31536000"
+
+    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    handle @legacyKitchen {
+        redir /kitchens/ permanent
+    }
 
     # Хешированные ассеты Next.js (_next/static/*)
     @static {
@@ -42,7 +59,7 @@ https://pitermebel.com {
 
     # Медиа, шрифты и изображения
     @media {
-        path *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2
+        path *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf
     }
     header @media Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
     header @media Access-Control-Allow-Origin "*"
@@ -56,7 +73,7 @@ https://pitermebel.com {
     # Защита статических файлов от превращения в HTML:
     # Если файл не найден, возвращаем 404, а не главную страницу index.html
     @staticFiles {
-        path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.json *.xml *.txt
+        path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf *.json *.xml *.txt
     }
     handle @staticFiles {
         file_server

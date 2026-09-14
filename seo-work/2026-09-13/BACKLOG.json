@@ -1,0 +1,13 @@
+[
+  {"priority":"P0","task":"Исправить TLS и однократный 308-редирект для www","owner":"server/DNS","evidence":"Confirmed","effort":"S"},
+  {"priority":"P1","task":"Исправить мобильные фильтры каталогов","owner":"frontend","evidence":"Confirmed","effort":"S"},
+  {"priority":"P1","task":"Убрать перекрытие контента мобильной CTA-панелью","owner":"frontend/UX","evidence":"Confirmed","effort":"S-M"},
+  {"priority":"P1","task":"Нормализовать мобильную типографику и токены","owner":"design/frontend","evidence":"Confirmed","effort":"M"},
+  {"priority":"P1","task":"Усилить H1 и сократить длинные метаданные","owner":"SEO/frontend","evidence":"Confirmed","effort":"S"},
+  {"priority":"P1","task":"Расширить и дифференцировать статью о розетках","owner":"expert/editor/frontend","evidence":"Confirmed","effort":"M-L"},
+  {"priority":"P1","task":"Развернуть актуальный Caddyfile и проверить security headers","owner":"server","evidence":"Confirmed","effort":"S"},
+  {"priority":"P2","task":"Усилить уникальный контент услуг и кейсов","owner":"expert/editor","evidence":"Confirmed","effort":"L"},
+  {"priority":"P2","task":"Очистить локальные NAP-расхождения","owner":"business owner/SEO","evidence":"Confirmed","effort":"M"},
+  {"priority":"P2","task":"Пересмотреть schema.org после подтверждения модели бизнеса","owner":"SEO/frontend/owner","evidence":"High-confidence hypothesis","effort":"M"},
+  {"priority":"P2","task":"Повторить production Lighthouse и проверить canvas/main-thread","owner":"frontend","evidence":"Needs verification","effort":"M"}
+]

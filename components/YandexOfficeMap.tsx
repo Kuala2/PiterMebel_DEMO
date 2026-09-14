@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SITE_CONFIG } from "@/data/site";
 
 declare global {
@@ -12,8 +12,26 @@ declare global {
 export default function YandexOfficeMap() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
+    const container = mapContainerRef.current;
+    if (!container || shouldLoad) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [shouldLoad]);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
     let isMounted = true;
 
     function initMap() {
@@ -89,16 +107,25 @@ export default function YandexOfficeMap() {
         mapInstanceRef.current = null;
       }
     };
-  }, []);
+  }, [shouldLoad]);
 
   return (
     <div
       ref={mapContainerRef}
+      data-sticky-cta-suppress
       style={{
         width: "100%",
         height: "100%",
         backgroundColor: "#16191F",
+        display: "grid",
+        placeItems: "center",
       }}
-    />
+    >
+      {!shouldLoad && (
+        <button type="button" className="btn btn-glass" onClick={() => setShouldLoad(true)}>
+          Показать интерактивную карту
+        </button>
+      )}
+    </div>
   );
 }

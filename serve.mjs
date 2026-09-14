@@ -26,6 +26,7 @@ const MIME = {
   ".txt": "text/plain; charset=utf-8",
   ".xml": "application/xml; charset=utf-8",
   ".webmanifest": "application/manifest+json",
+  ".pdf": "application/pdf",
 };
 
 const server = createServer((req, res) => {

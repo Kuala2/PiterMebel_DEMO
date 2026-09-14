@@ -25,7 +25,7 @@ const viewports = [
 
 async function main() {
   const browser = await chromium.launch();
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = process.env.PITER_MEBEL_TEST_URL || 'http://localhost:3000';
 
   for (const vp of viewports) {
     const page = await browser.newPage({

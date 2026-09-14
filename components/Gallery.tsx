@@ -213,7 +213,9 @@ export default function Gallery({
         <div
           ref={lightboxRef}
           className="lightbox-overlay"
-          onClick={() => setLightbox(false)}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) setLightbox(false);
+          }}
           role="dialog"
           aria-modal="true"
           aria-label={`Фото ${title}`}
@@ -228,7 +230,7 @@ export default function Gallery({
             ✕
           </button>
 
-          <div className="lightbox-stage" onClick={(e) => e.stopPropagation()}>
+          <div className="lightbox-stage">
             <Image
               key={images[activeIdx]}
               src={images[activeIdx]}

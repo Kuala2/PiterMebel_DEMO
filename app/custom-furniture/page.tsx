@@ -7,6 +7,8 @@ import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import PageHeader from "@/components/PageHeader";
 import { PROJECTS } from "@/data/projects";
+import CatalogTabs from "@/components/CatalogTabs";
+import CatalogEditorial from "@/components/CatalogEditorial";
 
 export default function CustomFurniturePage() {
   const [activeSubtype, setActiveSubtype] = useState<string>("all");
@@ -58,18 +60,12 @@ export default function CustomFurniturePage() {
       {/* 3. Filter Tabs Bar */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
-          <div className="catalog-tabs-bar">
-            {filterTabs.map((tab) => (
-              <button
-                key={tab.key}
-                type="button"
-                className={`cat-tab ${activeSubtype === tab.key ? "is-active" : ""}`}
-                onClick={() => setActiveSubtype(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+          <CatalogTabs
+            tabs={filterTabs}
+            activeKey={activeSubtype}
+            onChange={setActiveSubtype}
+            label="Фильтр корпусной мебели"
+          />
         </div>
       </section>
 
@@ -184,6 +180,26 @@ export default function CustomFurniturePage() {
           </SpotlightArea>
         </div>
       </section>
+
+      <CatalogEditorial
+        eyebrow="Индивидуальные решения"
+        title="Корпусная мебель для жилых и коммерческих пространств"
+        intro="Здесь собраны подтверждённые проекты прихожих, ТВ-зон, комплексной мебели и стойки ресепшен. Каталог показывает не абстрактные рендеры, а реализованные композиции."
+        items={[
+          { title: "Связь нескольких зон", text: "Комплексные проекты помогают выдержать единый материал и ритм в кухне, стеллаже, шкафах или мебели для разных комнат." },
+          { title: "Подтверждённая отделка", text: "В карточках указаны натуральный шпон дуба, МДФ в эмали, акриловый камень, массив бука, зеркальные фасады и LED-подсветка — только когда эти данные есть в источнике." },
+          { title: "Производственный цикл", text: "Конструкцию и комплектацию согласуют до передачи в цех; после изготовления проект проходит доставку и монтаж одной командой." },
+        ]}
+        links={[
+          { href: "/projects/oak-veneer-panel", label: "ТВ-зона из шпона дуба" },
+          { href: "/projects/office-reception", label: "Стойка ресепшен" },
+          { href: "/production", label: "Этапы производства" },
+        ]}
+        faq={[
+          { question: "Можно ли заказать только один предмет мебели?", answer: "На странице показаны и отдельные изделия, и комплексные решения. Состав проекта уточняют на консультации и фиксируют в спецификации." },
+          { question: "Подходит ли жилой проект для коммерческого помещения?", answer: "Требования помещений отличаются, поэтому назначение, нагрузки, размеры и материалы проверяют отдельно. В портфолио есть подтверждённый пример стойки ресепшен для клиники." },
+        ]}
+      />
 
       {/* 5. CANVAS CTA */}
       <LeadSection

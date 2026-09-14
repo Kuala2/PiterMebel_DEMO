@@ -4,6 +4,7 @@ const baseUrl = process.env.PITER_MEBEL_TEST_URL || "http://localhost:3001";
 const browser = await chromium.launch({ headless: true });
 const failures = [];
 const internalPaths = new Set();
+const pageTitles = new Map();
 
 function check(condition, message) {
   if (!condition) failures.push(message);
@@ -34,6 +35,20 @@ async function testPage(path, viewport) {
     .map((image) => image.getAttribute("src")));
   check(brokenImages.length === 0, `${path}: сломанные изображения ${brokenImages.join(", ")}`);
   if (expectedStatus === 200) {
+    const title = await page.title();
+    const description = await page.locator('meta[name="description"]').getAttribute("content");
+    check(title.length > 12 && title.length <= 70, `${path}: длина title ${title.length}`);
+    check(Boolean(description) && description.length >= 50 && description.length <= 160, `${path}: длина description ${description?.length ?? 0}`);
+    if (pageTitles.has(title) && pageTitles.get(title) !== path) failures.push(`${path}: title дублирует ${pageTitles.get(title)}`);
+    else pageTitles.set(title, path);
+
+    const invalidJsonLd = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) => scripts
+      .map((script) => script.textContent || "")
+      .filter((value) => {
+        try { JSON.parse(value); return false; } catch { return true; }
+      }));
+    check(invalidJsonLd.length === 0, `${path}: невалидный JSON-LD`);
+
     const links = await page.locator("a[href]").evaluateAll((anchors) => anchors.map((anchor) => anchor.href));
     for (const href of links) {
       const url = new URL(href);
@@ -43,6 +58,79 @@ async function testPage(path, viewport) {
   if (expectedStatus === 200) {
     check(consoleErrors.length === 0, `${path}: ошибки console: ${consoleErrors.join(" | ")}`);
   }
+  await context.close();
+}
+
+for (const width of [320, 360, 390, 430]) {
+  for (const path of ["/kitchens/", "/projects/", "/wardrobes/", "/custom-furniture/"]) {
+    const context = await browser.newContext({ viewport: { width, height: 844 } });
+    const page = await context.newPage();
+    await page.goto(`${baseUrl}${path}`, { waitUntil: "domcontentloaded" });
+    const tablist = page.getByRole("tablist");
+    await tablist.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
+    const geometry = await tablist.locator('[role="tab"]').evaluateAll((tabs) => tabs.map((tab) => ({
+      left: tab.offsetLeft,
+      top: tab.offsetTop,
+      width: tab.offsetWidth,
+      shrink: getComputedStyle(tab).flexShrink,
+      textFits: tab.scrollWidth <= tab.clientWidth + 1,
+    })));
+    check(geometry.length >= 3, `${path} (${width}px): недостаточно вкладок фильтра`);
+    check(geometry.every((tab) => tab.shrink === "0"), `${path} (${width}px): вкладка фильтра сжимается`);
+    check(geometry.every((tab) => tab.textFits), `${path} (${width}px): текст вкладки обрезан`);
+    check(geometry.every((tab) => tab.top === geometry[0]?.top), `${path} (${width}px): вкладки перенеслись на новую строку`);
+    check(geometry.every((tab, index) => index === 0 || tab.left >= geometry[index - 1].left + geometry[index - 1].width), `${path} (${width}px): вкладки перекрываются`);
+    check(await page.locator(".catalog-tabs-hint").isVisible(), `${path} (${width}px): нет подсказки о прокрутке`);
+    const tabsOverflow = await tablist.evaluate((element) => element.scrollWidth > element.clientWidth + 1);
+    check(!tabsOverflow || await page.locator(".catalog-tabs-shell.can-scroll-end").count() === 1, `${path} (${width}px): нет правого индиктора продолжения списка`);
+    const selected = tablist.locator('[role="tab"][aria-selected="true"]');
+    await selected.focus();
+    await page.keyboard.press("ArrowRight");
+    await page.waitForTimeout(100);
+    check(await tablist.locator('[role="tab"]').nth(1).evaluate((tab) => tab === document.activeElement), `${path} (${width}px): стрелка вправо не переводит фокус`);
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+    check(overflow <= 1, `${path} (${width}px): страница шире экрана на ${overflow}px`);
+    await context.close();
+  }
+}
+
+{
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseUrl}/production/`, { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(250);
+  check(await page.locator(".sticky-cta").isVisible(), "Sticky CTA не видна в нейтральной зоне мобильной страницы");
+  await page.goto(`${baseUrl}/projects/`, { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(250);
+  await page.getByRole("tablist").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
+  check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA перекрывает фильтры каталога");
+  await page.locator(".catalog-card").first().scrollIntoViewIfNeeded();
+  await page.waitForTimeout(250);
+  check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA перекрывает карточку проекта");
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(250);
+  await page.setViewportSize({ width: 390, height: 500 });
+  await page.waitForTimeout(250);
+  check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA не скрылась при открытии экранной клавиатуры/уменьшении visual viewport");
+  await context.close();
+}
+
+{
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseUrl}/knowledge/rozetki-na-kuhne-shema-vysoty/`, { waitUntil: "domcontentloaded" });
+  const mobileToc = page.locator(".article-mobile-toc");
+  check(await mobileToc.isVisible(), "В статье на телефоне нет доступного содержания");
+  await mobileToc.locator("summary").click();
+  check(await mobileToc.locator("a").first().isVisible(), "Мобильное содержание статьи не раскрывается");
+  check(await page.locator(".article-related-grid a").count() >= 5, "В статье недостаточно связанных внутренних ссылок");
+  const articleSchema = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) => scripts
+    .map((script) => JSON.parse(script.textContent || "{}"))
+    .find((value) => value["@type"] === "TechArticle"));
+  check(articleSchema?.wordCount >= 1500, `Статья остаётся слишком короткой: ${articleSchema?.wordCount ?? 0} слов`);
+  check(/^PT\d+M$/.test(articleSchema?.timeRequired || ""), "В TechArticle нет рассчитанного времени чтения");
   await context.close();
 }
 
