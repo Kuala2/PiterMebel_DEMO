@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Как студия «ПитерМебель» собирает, обрабатывает и защищает персональные данные посетителей сайта в соответствии с Федеральным законом № 152-ФЗ.",
   alternates: {
-    canonical: "/privacy",
+    canonical: "/privacy/",
   },
   openGraph: buildOg(
     "Политика конфиденциальности | ПитерМебель",

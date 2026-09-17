@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Практические материалы о подготовке кухни, выборе фасадов, наполнении гардеробных и монтаже мебели на заказ в Санкт-Петербурге.",
   alternates: {
-    canonical: "/knowledge",
+    canonical: "/knowledge/",
   },
   openGraph: buildOg(
     "База знаний о проектировании мебели | ПитерМебель",

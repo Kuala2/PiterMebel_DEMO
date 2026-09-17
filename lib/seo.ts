@@ -63,7 +63,17 @@ export function buildBreadcrumbs(items: { name: string; path?: string }[]) {
         "@type": "ListItem",
         position: idx + 2,
         name: item.name,
-        ...(item.path ? { item: `${SITE_URL}${item.path}/` } : {}),
+        ...(item.path
+          ? {
+              item: `${SITE_URL}${
+                item.path === "/"
+                  ? "/"
+                  : item.path.endsWith("/")
+                  ? item.path
+                  : `${item.path}/`
+              }`,
+            }
+          : {}),
       })),
     ],
   };

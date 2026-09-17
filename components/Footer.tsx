@@ -40,7 +40,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/privacy">Политика конфиденциальности</Link>
+                <Link href="/privacy/">Политика конфиденциальности</Link>
               </li>
             </ul>
           </div>
@@ -71,7 +71,7 @@ export default function Footer() {
                 <VkIcon />
                 Сообщество ВКонтакте
               </a>
-              <Link href="/contacts#measure" className="btn btn-green btn-sm">
+              <Link href="/contacts/#measure" className="btn btn-green btn-sm">
                 Записаться на консультацию
               </Link>
             </div>

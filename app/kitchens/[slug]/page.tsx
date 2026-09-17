@@ -34,7 +34,7 @@ export async function generateMetadata({
     title: ogTitle,
     description: ogDescription,
     alternates: {
-      canonical: `/kitchens/${kitchen.slug}`,
+      canonical: `/kitchens/${kitchen.slug}/`,
     },
     openGraph: {
       ...buildOg(ogTitle, ogDescription, `/kitchens/${kitchen.slug}`),
@@ -83,7 +83,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbs([
-          { name: "Кухни", path: "/kitchens" },
+          { name: "Кухни", path: "/kitchens/" },
           { name: `Кухня «${kitchen.title}»` },
         ])) }}
       />
@@ -91,10 +91,10 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       <section className="detail-page-header">
         <div className="container">
           <div className="detail-top-nav" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "12px" }}>
-            <Link href="/kitchens" className="btn btn-glass" style={{ gap: "8px" }}>
+            <Link href="/kitchens/" className="btn btn-glass" style={{ gap: "8px" }}>
               ← В каталог кухонь
             </Link>
-            <Link href={`/kitchens/${nextKitchen.slug}`} className="btn btn-glass" style={{ gap: "8px" }}>
+            <Link href={`/kitchens/${nextKitchen.slug}/`} className="btn btn-glass" style={{ gap: "8px" }}>
               Следующая кухня: «{nextKitchen.title}» →
             </Link>
           </div>
@@ -134,7 +134,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               {/* Action Buttons */}
               <div className="detail-actions-row" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
                 <Link
-                  href="/calculator"
+                  href="/calculator/"
                   className="btn btn-green"
                 >
                   Рассчитать проект под размеры
@@ -171,11 +171,11 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           <div className="detail-nav-header">
             <h2 className="detail-nav-title">Другие кухни студии</h2>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-              <Link href={`/kitchens/${prevKitchen.slug}`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/kitchens/${prevKitchen.slug}/`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 ← Предыдущая: «{prevKitchen.title}»
               </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>
-              <Link href={`/kitchens/${nextKitchen.slug}`} style={{ color: "var(--color-green-brand)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/kitchens/${nextKitchen.slug}/`} style={{ color: "var(--color-green-brand)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 Следующая: «{nextKitchen.title}» →
               </Link>
             </div>
@@ -183,7 +183,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
           <div className="detail-nav-cards">
             {otherKitchens.map((item) => (
-              <Link key={item.slug} href={`/kitchens/${item.slug}`} className="detail-nav-card">
+              <Link key={item.slug} href={`/kitchens/${item.slug}/`} className="detail-nav-card">
                 <div className="detail-nav-card-img">
                   <Image
                     src={item.cover}

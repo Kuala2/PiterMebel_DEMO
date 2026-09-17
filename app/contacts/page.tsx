@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: `Контакты студии — ${SITE_CONFIG.name}`,
   description: `Контакты студии «ПитерМебель»: офис на ${SITE_CONFIG.officeAddress}, ${SITE_CONFIG.metro}. Консультации по предварительной записи.`,
   alternates: {
-    canonical: "/contacts",
+    canonical: "/contacts/",
   },
   openGraph: buildOg(
     `Контакты студии — ${SITE_CONFIG.name}`,

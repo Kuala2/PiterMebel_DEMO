@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     title: article.seoTitle,
     description: article.seoDescription,
     alternates: {
-      canonical: `/knowledge/${article.slug}`,
+      canonical: `/knowledge/${article.slug}/`,
     },
     openGraph: {
       ...buildOg(article.seoTitle, article.seoDescription, `/knowledge/${article.slug}`),
@@ -94,7 +94,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   };
 
   const breadcrumbJsonLd = buildBreadcrumbs([
-    { name: "База знаний", path: "/knowledge" },
+    { name: "База знаний", path: "/knowledge/" },
     { name: article.title },
   ]);
 
@@ -113,7 +113,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {/* 1. ARTICLE HEADER */}
         <header className="article-header-section">
           <div className="container article-narrow">
-            <Link href="/knowledge" className="btn btn-glass" style={{ marginBottom: "24px" }}>
+            <Link href="/knowledge/" className="btn btn-glass" style={{ marginBottom: "24px" }}>
               ← База знаний
             </Link>
 
@@ -391,7 +391,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
               {/* Back to knowledge hub */}
               <div className="article-end-row">
-                <Link href="/knowledge" className="article-back-link">
+                <Link href="/knowledge/" className="article-back-link">
                   Все руководства базы знаний
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12" />
@@ -424,7 +424,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <p className="article-aside-card-text">
                   Спроектируем гарнитур с учётом выводов и выдадим схему привязки розеток.
                 </p>
-                <Link href="/kitchens" className="btn btn-glass article-aside-btn">
+                <Link href="/kitchens/" className="btn btn-glass article-aside-btn">
                   Каталог кухонь
                 </Link>
               </div>

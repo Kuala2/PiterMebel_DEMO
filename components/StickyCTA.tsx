@@ -59,7 +59,7 @@ export default function StickyCTA() {
       <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="btn btn-green">
         Позвонить
       </a>
-      <Link href="/contacts#measure" className="btn btn-glass">
+      <Link href="/contacts/#measure" className="btn btn-glass">
         Консультация
       </Link>
     </div>

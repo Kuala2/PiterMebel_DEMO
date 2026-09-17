@@ -197,7 +197,7 @@ export default function Header() {
               </svg>
             </a>
 
-            <Link href="/contacts#measure" className="btn btn-green btn-sm header-desktop-btn">
+            <Link href="/contacts/#measure" className="btn btn-green btn-sm header-desktop-btn">
               Консультация и расчет
             </Link>
 
@@ -265,7 +265,7 @@ export default function Header() {
             {SITE_CONFIG.workHours} · {SITE_CONFIG.metro}
           </p>
           <Link
-            href="/contacts#measure"
+            href="/contacts/#measure"
             className="btn btn-green"
             style={{ width: "100%", padding: "14px 20px" }}
             onClick={() => setMobileMenuOpen(false)}

@@ -352,7 +352,7 @@ export default function HomePage() {
               <h2 className="section-title" style={{ marginBottom: 0 }}>Реализованные проекты студии</h2>
             </div>
             <div className="catalog-head-controls">
-              <Link href="/projects" className="btn btn-green catalog-cta-btn">
+              <Link href="/projects/" className="btn btn-green catalog-cta-btn">
                 Все проекты мебели →
               </Link>
             </div>
@@ -682,7 +682,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="manifesto-actions">
-                  <Link href="/contacts" className="btn btn-glass">
+                  <Link href="/contacts/" className="btn btn-glass">
                     Обсудить проект →
                   </Link>
                   <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
@@ -773,7 +773,7 @@ export default function HomePage() {
               </div>
 
               <div className="workshop-action-wrap">
-                <Link href="/production" className="btn btn-glass">
+                <Link href="/production/" className="btn btn-glass">
                   Подробнее о цехе →
                 </Link>
               </div>

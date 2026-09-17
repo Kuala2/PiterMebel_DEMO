@@ -101,10 +101,10 @@ export default function Hero() {
                 по индивидуальным размерам в Санкт-Петербурге
               </p>
               <div className="hero-cta-wrap" ref={ctaRef}>
-                <Link href="/calculator" className="btn btn-green magnetic">
+                <Link href="/calculator/" className="btn btn-green magnetic">
                   Рассчитать проект
                 </Link>
-                <Link href="/kitchens" className="btn btn-glass magnetic">
+                <Link href="/kitchens/" className="btn btn-glass magnetic">
                   Смотреть каталог
                 </Link>
               </div>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
   description: `Производство мебели по индивидуальным размерам в Санкт-Петербурге с ${SITE_CONFIG.foundingYear} года. Цех на Петергофском шоссе, 73.`,
   alternates: {
-    canonical: "/production",
+    canonical: "/production/",
   },
   openGraph: buildOg(
     `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,

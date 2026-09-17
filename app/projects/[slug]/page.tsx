@@ -35,7 +35,7 @@ export async function generateMetadata({
     title: ogTitle,
     description: ogDescription,
     alternates: {
-      canonical: `/projects/${project.slug}`,
+      canonical: `/projects/${project.slug}/`,
     },
     openGraph: {
       ...buildOg(ogTitle, ogDescription, `/projects/${project.slug}`),
@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const otherProjects = PROJECTS.filter((p) => p.slug !== slug).slice(0, 3);
 
   const breadcrumbJsonLd = buildBreadcrumbs([
-    { name: "Проекты", path: "/projects" },
+    { name: "Проекты", path: "/projects/" },
     { name: project.title },
   ]);
 
@@ -74,10 +74,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="detail-page-header">
         <div className="container">
           <div className="detail-top-nav" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "12px" }}>
-            <Link href="/projects" className="btn btn-glass" style={{ gap: "8px" }}>
+            <Link href="/projects/" className="btn btn-glass" style={{ gap: "8px" }}>
               ← В каталог проектов
             </Link>
-            <Link href={`/projects/${nextProject.slug}`} className="btn btn-glass" style={{ gap: "8px" }}>
+            <Link href={`/projects/${nextProject.slug}/`} className="btn btn-glass" style={{ gap: "8px" }}>
               Следующий проект: «{nextProject.title}» →
             </Link>
           </div>
@@ -114,7 +114,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               {/* Action Buttons */}
               <div className="detail-actions-row" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
                 <Link
-                  href="/calculator"
+                  href="/calculator/"
                   className="btn btn-green"
                 >
                   Рассчитать проект под размеры
@@ -151,11 +151,11 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <div className="detail-nav-header">
             <h2 className="detail-nav-title">Другие реализованные проекты</h2>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-              <Link href={`/projects/${prevProject.slug}`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/projects/${prevProject.slug}/`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 ← Предыдущий: «{prevProject.title}»
               </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>
-              <Link href={`/projects/${nextProject.slug}`} style={{ color: "var(--color-green-brand)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/projects/${nextProject.slug}/`} style={{ color: "var(--color-green-brand)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 Следующий: «{nextProject.title}» →
               </Link>
             </div>
@@ -163,7 +163,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
           <div className="detail-nav-cards">
             {otherProjects.map((item) => (
-              <Link key={item.slug} href={`/projects/${item.slug}`} className="detail-nav-card">
+              <Link key={item.slug} href={`/projects/${item.slug}/`} className="detail-nav-card">
                 <div className="detail-nav-card-img">
                   <Image
                     src={item.cover}
