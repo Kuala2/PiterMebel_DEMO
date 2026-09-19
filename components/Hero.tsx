@@ -144,14 +144,19 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="hero-stat-item">
+            <a
+              href="#all-in-one"
+              className="hero-stat-item"
+              style={{ textDecoration: "none", color: "inherit" }}
+              aria-label="Подробнее об услуге Всё под ключ"
+            >
               <div className="stat-num">
-                <span className="stat-unit stat-unit-gift">В подарок</span>
+                <span className="stat-unit stat-unit-gift">Всё под ключ</span>
               </div>
               <div className="stat-text">
-                Схема электрики и розеток в подарок при заказе кухни
+                Подбор техники, электрика и подключение
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

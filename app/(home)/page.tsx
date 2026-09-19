@@ -7,6 +7,8 @@ import Hero from "@/components/Hero";
 import Faq from "@/components/Faq";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
+import TurnkeyServiceSection from "@/components/TurnkeyServiceSection";
+import HowItWorks09 from "@/components/ui/how-it-works-09";
 import { SITE_CONFIG } from "@/data/site";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 
@@ -501,7 +503,7 @@ export default function HomePage() {
                             <div className="card-price-label">{item.specLabel}</div>
                             <div className="card-price-val">{item.specValue}</div>
                           </div>
-                          <Link href={item.link} className="card-btn-action">
+                          <Link href={item.link} className="card-btn-action catalog-card-btn">
                             Подробнее →
                           </Link>
                         </div>
@@ -514,6 +516,9 @@ export default function HomePage() {
           </div>
         </SpotlightArea>
       </section>
+
+      {/* 2.4. ALL-IN-ONE TURNKEY SERVICE: Всё под ключ одной командой */}
+      <TurnkeyServiceSection />
 
       {/* 2.5 REVIEWS (Отзывы) */}
       <section className="reviews-section" id="reviews">
@@ -653,14 +658,14 @@ export default function HomePage() {
             <div className="manifesto-content">
               <div>
                 <h2 className="section-title">
-                  Мебель под ключ — одной командой
+                  Честное производство с 2005 года
                 </h2>
 
                 <div className="manifesto-quote-wrap">
                   <p className="manifesto-quote-text">
                     «ПитерМебель» — семейное производство полного цикла. Мы проектируем мебель,
-                    готовим подробную смету, выполняем замер, изготовление и сборку одной командой,
-                    а согласованную стоимость фиксируем в договоре.
+                    готовим подробную смету, выполняем замер, изготовление и сборку собственной командой,
+                    а согласованную стоимость фиксируем в договоре без скрытых переплат.
                   </p>
                 </div>
               </div>
@@ -676,8 +681,8 @@ export default function HomePage() {
                     <span className="manifesto-spec-desc">Материалы, фасады, фурнитура и работы — до подписания договора</span>
                   </div>
                   <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">Монтаж под ключ</span>
-                    <span className="manifesto-spec-desc">Своя бригада: монтаж, подключение техники, сантехники и электрики</span>
+                    <span className="manifesto-spec-metric">Фиксация в договоре</span>
+                    <span className="manifesto-spec-desc">Согласованная смета неизменна, официальный договор и безналичный расчёт</span>
                   </div>
                 </div>
 
@@ -782,52 +787,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. PROCESS BLUEPRINT TIMELINE */}
-      <section className="steps-section" id="steps">
-        <div className="container">
-          <h2 className="section-title steps-title">
-            Как создается ваша мебель
-          </h2>
-
-          <div className="process-track">
-            {/* Step 1 */}
-            <div className="process-step">
-              <span className="process-day">01</span>
-              <h3 className="process-title">Консультация и расчёт</h3>
-              <p className="process-desc">
-                Расскажите, какая мебель нужна, и пришлите размеры или эскиз — подготовим предварительный расчёт.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="process-step">
-              <span className="process-day">02</span>
-              <h3 className="process-title">Проект, замер и договор</h3>
-              <p className="process-desc">
-                Проработаем планировку, подберём материалы, выполним замер и зафиксируем смету и сроки в договоре.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="process-step">
-              <span className="process-day">03</span>
-              <h3 className="process-title">Изготовление в цеху</h3>
-              <p className="process-desc">
-                Подготовим детали по проекту, обработаем торцы и укомплектуем мебель выбранной фурнитурой.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="process-step">
-              <span className="process-day">04</span>
-              <h3 className="process-title">Доставка и монтаж</h3>
-              <p className="process-desc">
-                Привезём и установим мебель, выполним согласованные подключения техники, сантехники и электрики.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 6. PROCESS TIMELINE (HOW IT WORKS 09) */}
+      <HowItWorks09 />
 
       {/* 6. KNOWLEDGE BASE: 1 VERTICAL OBJECT CARD (EDITORIAL CRAFT, NO TILES) */}
       <section className="knowledge-home-section" id="knowledge">

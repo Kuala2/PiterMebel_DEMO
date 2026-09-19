@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
           <div className="detail-nav-header">
             <h2 className="detail-nav-title">Другие реализованные проекты</h2>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-              <Link href={`/projects/${prevProject.slug}/`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/projects/${prevProject.slug}/`} style={{ color: "var(--color-text-secondary)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 ← Предыдущий: «{prevProject.title}»
               </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>

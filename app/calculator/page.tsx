@@ -45,24 +45,134 @@ const SIZE_PRESETS = [
   { id: "xl", name: "От 4,8 м", description: "Большой проект", meters: 4.8 },
 ];
 
-const MATERIALS: Array<Choice & { id: MaterialId }> = [
-  { id: "plastic", name: "МДФ в пластике", description: "Практичная поверхность, включая Velvet и супермат" },
-  { id: "enamel", name: "МДФ в эмали", description: "Матовая или глянцевая окраска по RAL / NCS" },
-  { id: "veneer", name: "Натуральный шпон", description: "Дуб, ясень или американский орех" },
-  { id: "unknown", name: "Нужна помощь", description: "Подберём материал по задаче и бюджету" },
+const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: MaterialId }>> = {
+  kitchen: [
+    {
+      id: "egger",
+      name: "ЛДСП Egger (3 категория)",
+      description: "Базовый доступный декор европейского стандарта, практичный в уходе",
+    },
+    {
+      id: "pvc",
+      name: "МДФ ПВХ (плёнка)",
+      description: "Суперматовая плёнка без фрезеровки или с классической выборкой",
+    },
+    {
+      id: "plastic",
+      name: "МДФ пластик: AGT или Velvet",
+      description: "Строго AGT или Velvet — стойкая матовая поверхность с ПУР-кромкой (без Fenix)",
+    },
+    {
+      id: "enamel",
+      name: "Матовая эмаль по RAL / NCS",
+      description: "Матовая окраска по каталогам RAL / NCS (без глянца), гладкая или с фрезеровкой",
+    },
+    {
+      id: "veneer",
+      name: "Натуральный шпон с рамочкой (дуб)",
+      description: "Натуральный шпон с дубовой рамкой (без дорогого американского ореха)",
+    },
+    {
+      id: "unknown",
+      name: "Нужна помощь",
+      description: "Подберём практичные фасады под проект и бюджет",
+    },
+  ],
+  wardrobe: [
+    {
+      id: "egger",
+      name: "ЛДСП Egger (основной выбор — 90% заказов)",
+      description: "Базовый материал для 90% шкафов: надёжная австрийская плита без переплаты",
+    },
+    {
+      id: "pvc",
+      name: "МДФ ПВХ (премиум)",
+      description: "Премиум-опция: матовая плёнка с возможностью декоративной фрезеровки",
+    },
+    {
+      id: "enamel",
+      name: "Матовая эмаль (премиум)",
+      description: "Премиум-опция: матовая окраска по RAL / NCS (без глянца)",
+    },
+    {
+      id: "plastic",
+      name: "МДФ пластик: AGT или Velvet",
+      description: "Стойкие матовые фасады AGT или бархатистый Velvet",
+    },
+    {
+      id: "veneer",
+      name: "Натуральный шпон с рамочкой (дуб)",
+      description: "Натуральный шпон с дубовой рамкой",
+    },
+    {
+      id: "unknown",
+      name: "Нужна помощь",
+      description: "Подберём оптимальные фасады и наполнение под интерьер",
+    },
+  ],
+  cabinet: [
+    {
+      id: "egger",
+      name: "ЛДСП Egger",
+      description: "Базовый практичный материал для корпусной мебели, стеллажей и тумб",
+    },
+    {
+      id: "pvc",
+      name: "МДФ ПВХ (плёнка)",
+      description: "Матовая плёнка с фрезеровкой фасадов под общую стилистику",
+    },
+    {
+      id: "plastic",
+      name: "МДФ пластик: AGT или Velvet",
+      description: "Матовая практичная поверхность AGT или Velvet с ПУР-кромкой",
+    },
+    {
+      id: "enamel",
+      name: "Матовая эмаль по RAL / NCS",
+      description: "Матовая эмаль по RAL / NCS (без глянца)",
+    },
+    {
+      id: "veneer",
+      name: "Натуральный шпон с рамочкой (дуб)",
+      description: "Натуральный шпон с рамочкой (дуб)",
+    },
+    {
+      id: "unknown",
+      name: "Нужна помощь",
+      description: "Подберём материалы по дизайн-проекту или фото помещения",
+    },
+  ],
+};
+
+const ALL_MATERIALS: Array<Choice & { id: MaterialId }> = [
+  { id: "egger", name: "ЛДСП Egger (3 категория)", description: "Базовый доступный декор европейского стандарта" },
+  { id: "pvc", name: "МДФ ПВХ (плёнка)", description: "Суперматовая плёнка без фрезеровки или с выборкой" },
+  { id: "plastic", name: "МДФ пластик: AGT или Velvet", description: "Строго AGT или Velvet — стойкая матовая поверхность (без Fenix)" },
+  { id: "enamel", name: "Матовая эмаль по RAL / NCS", description: "Матовая эмаль по RAL / NCS (без глянца)" },
+  { id: "veneer", name: "Натуральный шпон с рамочкой (дуб)", description: "Натуральный шпон с рамочкой (дуб)" },
+  { id: "unknown", name: "Нужна помощь", description: "Подберём материал под задачу и бюджет" },
 ];
 
 const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
   kitchen: [
-    { id: "worktop", name: "Столешница", description: "Постформинг, компакт-ламинат, акрил или кварц" },
+    {
+      id: "worktop",
+      name: "Влагостойкая столешница Slotex (Слотекс) 38 мм",
+      description: "Доступный практичный выбор: плита 38 мм, HPL-пластик, планки, выпилы и еврозапил",
+    },
+    {
+      id: "worktop_premium",
+      name: "Компакт-ламинат или искусственный камень",
+      description: "Премиальный тонкий HPL компакт-ламинат или искусственный акриловый камень",
+    },
     { id: "gola", name: "Фасады без ручек", description: "Профиль Gola или другой способ открывания" },
     { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины, бутылочницы и подъёмники" },
     { id: "lighting", name: "Встроенная подсветка", description: "Профиль, светодиодная лента и управление" },
     { id: "ceiling", name: "До потолка", description: "Антресоли и подгонка по высоте" },
-    { id: "connections", name: "Подключение техники", description: "Сантехника и электрика силами одной команды" },
+    { id: "connections", name: "Подключение техники и сантехники", description: "Сантехника и электрика силами одной команды" },
   ],
   wardrobe: [
-    { id: "glass", name: "Стекло или зеркало", description: "Витрины, зеркало или тонированное стекло" },
+    { id: "glass", name: "Стекло или зеркало", description: "Витрины со стеклом Stopsol, зеркало или тонированное стекло" },
     { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины и дополнительное наполнение" },
     { id: "lighting", name: "Встроенная подсветка", description: "Свет внутри секций и витрин" },
     { id: "ceiling", name: "До потолка", description: "Антресоли и подгонка по высоте" },
@@ -70,7 +180,7 @@ const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
     { id: "filling", name: "Сложное наполнение", description: "Пантографы, обувницы и специальные секции" },
   ],
   cabinet: [
-    { id: "worktop", name: "Столешница", description: "Для тумбы, ванной или рабочей зоны" },
+    { id: "worktop", name: "Влагостойкая столешница Slotex 38 мм", description: "Для тумбы, ванной или рабочей зоны" },
     { id: "drawers", name: "Выдвижные системы", description: "Ящики и механизмы плавного открывания" },
     { id: "lighting", name: "Встроенная подсветка", description: "Свет в нишах, витринах или под тумбами" },
     { id: "ceiling", name: "До потолка", description: "Высокие секции и точная подгонка" },
@@ -78,6 +188,15 @@ const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
     { id: "mixed", name: "Несколько материалов", description: "Сочетание эмали, шпона, стекла или металла" },
   ],
 };
+
+function sanitizeOptions(rawOptions: string[], cat: CalculatorCategory): string[] {
+  const allowed = new Set(OPTIONS_BY_CATEGORY[cat].map((o) => o.id));
+  let result = [...new Set(rawOptions)].filter((id) => allowed.has(id));
+  if (result.includes("worktop") && result.includes("worktop_premium")) {
+    result = result.filter((id) => id !== "worktop");
+  }
+  return result;
+}
 
 const STEPS = [
   { short: "Изделие", title: "Что будем проектировать?", description: "Выберите основное направление мебели." },
@@ -106,7 +225,7 @@ export default function CalculatorPage() {
   const [category, setCategory] = useState<CalculatorCategory>("kitchen");
   const [layout, setLayout] = useState("straight");
   const [meters, setMeters] = useState(3);
-  const [material, setMaterial] = useState<MaterialId>("unknown");
+  const [material, setMaterial] = useState<MaterialId>("egger");
   const [options, setOptions] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
@@ -126,20 +245,18 @@ export default function CalculatorPage() {
       ? layoutParam!
       : allowedLayouts[0].id;
     const materialParam = params.get("material");
-    const nextMaterial = MATERIALS.some((item) => item.id === materialParam)
+    const nextMaterial = ALL_MATERIALS.some((item) => item.id === materialParam)
       ? materialParam as MaterialId
-      : "unknown";
-    const allowedOptionIds = new Set(OPTIONS_BY_CATEGORY[nextCategory].map((item) => item.id));
-    const nextOptions = (params.get("options") || "")
-      .split(",")
-      .filter((id) => allowedOptionIds.has(id));
+      : "egger";
+    const rawOptions = (params.get("options") || "").split(",").map((s) => s.trim()).filter(Boolean);
+    const nextOptions = sanitizeOptions(rawOptions, nextCategory);
     const stepParam = Number(params.get("step"));
 
     setCategory(nextCategory);
     setLayout(nextLayout);
     setMeters(clampMeters(Number(params.get("meters") || 3)));
     setMaterial(nextMaterial);
-    setOptions([...new Set(nextOptions)]);
+    setOptions(nextOptions);
     if (Number.isInteger(stepParam) && stepParam >= 1 && stepParam <= STEPS.length) {
       setStep(stepParam - 1);
     }
@@ -162,7 +279,10 @@ export default function CalculatorPage() {
   const categoryChoice = getChoice(CATEGORIES, category);
   const layoutChoices = LAYOUTS[category];
   const layoutChoice = getChoice(layoutChoices, layout);
-  const materialChoice = getChoice(MATERIALS, material);
+  const currentMaterials = MATERIALS_BY_CATEGORY[category];
+  const materialChoice = currentMaterials.find((item) => item.id === material)
+    ?? ALL_MATERIALS.find((item) => item.id === material)
+    ?? currentMaterials[0];
   const availableOptions = OPTIONS_BY_CATEGORY[category];
   const optionChoices = options
     .map((id) => availableOptions.find((item) => item.id === id))
@@ -216,14 +336,27 @@ export default function CalculatorPage() {
   const chooseCategory = (id: CalculatorCategory) => {
     setCategory(id);
     setLayout(LAYOUTS[id][0].id);
-    const allowedOptionIds = new Set(OPTIONS_BY_CATEGORY[id].map((item) => item.id));
-    setOptions((current) => current.filter((optionId) => allowedOptionIds.has(optionId)));
+    setOptions((current) => sanitizeOptions(current, id));
+    const allowedMaterialIds = new Set(MATERIALS_BY_CATEGORY[id].map((item) => item.id));
+    if (!allowedMaterialIds.has(material)) {
+      setMaterial("egger");
+    }
   };
 
   const toggleOption = (id: string) => {
-    setOptions((current) => current.includes(id)
-      ? current.filter((optionId) => optionId !== id)
-      : [...current, id]);
+    setOptions((current) => {
+      const exists = current.includes(id);
+      if (exists) {
+        return current.filter((optionId) => optionId !== id);
+      }
+      let next = [...current, id];
+      if (id === "worktop") {
+        next = next.filter((optionId) => optionId !== "worktop_premium");
+      } else if (id === "worktop_premium") {
+        next = next.filter((optionId) => optionId !== "worktop");
+      }
+      return sanitizeOptions(next, category);
+    });
   };
 
   const copyLink = async () => {
@@ -389,7 +522,7 @@ export default function CalculatorPage() {
                 <fieldset className="calculator-group">
                   <legend className="sr-only">Материал фасадов</legend>
                   <div className="calculator-choice-grid calculator-choice-grid-compact">
-                    {MATERIALS.map((item) => (
+                    {currentMaterials.map((item) => (
                       <label key={item.id} className={`calculator-choice ${material === item.id ? "is-selected" : ""}`}>
                         <input
                           type="radio"

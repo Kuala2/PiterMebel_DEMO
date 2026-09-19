@@ -23,7 +23,7 @@ export function ElectricalBlueprint() {
         <rect width="420" height="240" fill="url(#grid-el)" />
 
         {/* Technical Header Data (Placed on right to avoid overlapping top-left HTML badge) */}
-        <text x="404" y="23" fill="#8C92A4" fontSize="9" fontFamily="monospace" letterSpacing="0.06em" textAnchor="end">
+        <text x="404" y="23" fill="var(--color-text-muted)" fontSize="9" fontFamily="monospace" letterSpacing="0.06em" textAnchor="end">
           ПРИНЦИПИАЛЬНАЯ СХЕМА · НЕ ДЛЯ МОНТАЖА
         </text>
         <text x="195" y="23" fill="#72C324" fontSize="9.5" fontFamily="monospace" fontWeight="bold">
@@ -33,7 +33,7 @@ export function ElectricalBlueprint() {
 
         {/* Floor Line (Чистовой пол) */}
         <line x1="36" y1="215" x2="295" y2="215" stroke="#FFFFFF" strokeWidth="1.5" strokeDasharray="4 2" />
-        <text x="180" y="228" fill="#8C92A4" fontSize="8.5" fontFamily="monospace">
+        <text x="180" y="228" fill="var(--color-text-muted)" fontSize="8.5" fontFamily="monospace">
           ±0.000 ЧИСТОВОЙ ПОЛ
         </text>
 
@@ -47,7 +47,7 @@ export function ElectricalBlueprint() {
 
         {/* Backsplash / Tile Zone (Фартук) */}
         <rect x="58" y="85" width="222" height="60" stroke="rgba(114,195,36,0.2)" strokeWidth="1" strokeDasharray="2 2" fill="rgba(114,195,36,0.03)" />
-        <text x="64" y="100" fill="#8C92A4" fontSize="8" fontFamily="monospace">
+        <text x="64" y="100" fill="var(--color-text-muted)" fontSize="8" fontFamily="monospace">
           ЗОНА ФАРТУКА
         </text>
 
@@ -94,14 +94,14 @@ export function ElectricalBlueprint() {
         <line x1="38" y1="46" x2="46" y2="46" stroke="#FFFFFF" strokeWidth="1" />
         <line x1="38" y1="145" x2="46" y2="145" stroke="#FFFFFF" strokeWidth="1" />
         <line x1="38" y1="215" x2="46" y2="215" stroke="#FFFFFF" strokeWidth="1" />
-        <text x="28" y="132" fill="#8C92A4" fontSize="7.5" fontFamily="monospace" transform="rotate(-90 28 132)">
+        <text x="28" y="132" fill="var(--color-text-muted)" fontSize="7.5" fontFamily="monospace" transform="rotate(-90 28 132)">
           ВЫСОТЫ ПО ПРОЕКТУ
         </text>
 
         {/* Blueprint Stamp on Right (Above read-time tag) */}
         <rect x="295" y="135" width="109" height="46" stroke="rgba(255,255,255,0.14)" strokeWidth="1" fill="rgba(20,23,29,0.92)" />
-        <text x="303" y="148" fill="#8C92A4" fontSize="7" fontFamily="monospace">ЭСКИЗ: ЗОНЫ ПОДКЛЮЧЕНИЯ</text>
-        <text x="303" y="160" fill="#8C92A4" fontSize="7" fontFamily="monospace">РАЗМЕРЫ: ПО ПРОЕКТУ</text>
+        <text x="303" y="148" fill="var(--color-text-muted)" fontSize="7" fontFamily="monospace">ЭСКИЗ: ЗОНЫ ПОДКЛЮЧЕНИЯ</text>
+        <text x="303" y="160" fill="var(--color-text-muted)" fontSize="7" fontFamily="monospace">РАЗМЕРЫ: ПО ПРОЕКТУ</text>
         <text x="303" y="172" fill="#72C324" fontSize="8" fontFamily="monospace" fontWeight="bold">СОГЛАСОВАТЬ С ЭЛЕКТРИКОМ</text>
       </svg>
     </div>

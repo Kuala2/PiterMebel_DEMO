@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="footer-desc" style={{ fontStyle: "italic", marginBottom: "8px", color: "#FFFFFF" }}>
               «{SITE_CONFIG.slogan}»
             </p>
-            <p className="footer-desc" style={{ fontSize: "15px", color: "#B2B8C2", lineHeight: 1.6 }}>
+            <p className="footer-desc" style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
               Офис: {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro})<br />
               Цех: {SITE_CONFIG.productionAddress}
             </p>
@@ -56,7 +56,7 @@ export default function Footer() {
                 {SITE_CONFIG.phone}
               </a>
               <br />
-              <span style={{ fontSize: "14px", color: "#9EABC0" }}>
+              <span style={{ fontSize: "14px", color: "var(--color-text-muted)" }}>
                 {SITE_CONFIG.workHours}
               </span>
             </p>

@@ -30,55 +30,78 @@ const MIME = {
 };
 
 const server = createServer((req, res) => {
-  let pathname;
   try {
-    pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
-  } catch {
-    res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
-    res.end("Bad request");
-    return;
-  }
+    let pathname;
+    try {
+      pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
+    } catch {
+      res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+      res.end("Bad request");
+      return;
+    }
 
-  // Защита от path traversal
-  const rel = normalize(pathname).replace(/^[/\\]+/, "");
-  let file = resolve(ROOT, rel);
-  if (file !== ROOT && !file.startsWith(`${ROOT}${sep}`)) {
-    res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
-    res.end("Bad request");
-    return;
-  }
+    // Защита от path traversal
+    const rel = normalize(pathname).replace(/^[/\\]+/, "");
+    let file = resolve(ROOT, rel);
+    if (file !== ROOT && !file.startsWith(`${ROOT}${sep}`)) {
+      res.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+      res.end("Bad request");
+      return;
+    }
 
-  if (existsSync(file) && statSync(file).isDirectory()) {
-    file = join(file, "index.html");
-  }
-  // trailingSlash: true → /knowledge → out/knowledge/index.html
-  if (!existsSync(file) && !extname(pathname)) {
-    file = join(ROOT, rel, "index.html");
-  }
-  // /page → out/page.html (404 и служебные страницы)
-  if (!existsSync(file) && !extname(pathname)) {
-    file = join(ROOT, rel + ".html");
-  }
-  let statusCode = 200;
-  if (!existsSync(file)) {
-    file = join(ROOT, "404.html");
-    statusCode = 404;
-  }
+    if (existsSync(file) && statSync(file).isDirectory()) {
+      file = join(file, "index.html");
+    }
+    // trailingSlash: true → /knowledge → out/knowledge/index.html
+    if (!existsSync(file) && !extname(pathname)) {
+      file = join(ROOT, rel, "index.html");
+    }
+    // /page → out/page.html (404 и служебные страницы)
+    if (!existsSync(file) && !extname(pathname)) {
+      file = join(ROOT, rel + ".html");
+    }
+    let statusCode = 200;
+    if (!existsSync(file)) {
+      file = join(ROOT, "404.html");
+      statusCode = 404;
+    }
 
-  if (!existsSync(file)) {
-    res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
-    res.end("Not found");
-    return;
-  }
+    if (!existsSync(file)) {
+      res.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+      res.end("Not found");
+      return;
+    }
 
-  const body = readFileSync(file);
-  res.writeHead(statusCode, {
-    "content-type": MIME[extname(file).toLowerCase()] || "application/octet-stream",
-    "cache-control": "no-cache",
-  });
-  res.end(body);
+    const body = readFileSync(file);
+    res.writeHead(statusCode, {
+      "content-type": MIME[extname(file).toLowerCase()] || "application/octet-stream",
+      "cache-control": "no-cache",
+    });
+    res.end(body);
+  } catch (err) {
+    console.error("Request error:", err);
+    try {
+      res.writeHead(500, { "content-type": "text/plain; charset=utf-8" });
+      res.end("Internal server error");
+    } catch {}
+  }
+});
+
+server.on("clientError", (err, socket) => {
+  try {
+    socket.end("HTTP/1.1 400 Bad Request\r\n\r\n");
+  } catch {}
+});
+
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught exception:", err);
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error("Unhandled rejection:", reason);
 });
 
 server.listen(PORT, () => {
   console.log(`Serving out/ at http://localhost:${PORT}`);
 });
+

@@ -171,7 +171,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           <div className="detail-nav-header">
             <h2 className="detail-nav-title">Другие кухни студии</h2>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-              <Link href={`/kitchens/${prevKitchen.slug}/`} style={{ color: "#B2B8C4", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
+              <Link href={`/kitchens/${prevKitchen.slug}/`} style={{ color: "var(--color-text-secondary)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
                 ← Предыдущая: «{prevKitchen.title}»
               </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>
