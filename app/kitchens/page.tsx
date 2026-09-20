@@ -82,7 +82,7 @@ export default function KitchensCatalogPage() {
                     <Image
                       key={photos[currentIdx] || photos[0]}
                       src={photos[currentIdx] || photos[0]}
-                      alt={`Кухня ${kitchen.title}`}
+                      alt={kitchen.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 720px"
                       className="card-img-slide"
@@ -152,7 +152,7 @@ export default function KitchensCatalogPage() {
                     <Link
                       href={`/kitchens/${kitchen.slug}`}
                       style={{ position: "absolute", inset: 0, zIndex: 2 }}
-                      aria-label={`Подробнее о кухне ${kitchen.title}`}
+                      aria-label={`Подробнее: ${kitchen.title}`}
                     />
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function KitchensCatalogPage() {
                     style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", cursor: "pointer" }}
                   >
                     <div>
-                      <h2 className="ladder-title" style={{ marginBottom: "20px" }}>Кухня «{kitchen.title}»</h2>
+                      <h2 className="ladder-title" style={{ marginBottom: "20px" }}>{kitchen.title}</h2>
                     </div>
 
                     <div className="ladder-specs-rows">

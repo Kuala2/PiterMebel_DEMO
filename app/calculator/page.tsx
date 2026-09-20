@@ -36,7 +36,7 @@ const LAYOUTS: Record<CalculatorCategory, Choice[]> = {
   cabinet: [
     { id: "single", name: "Одно изделие", description: "Например, тумба или ТВ-зона" },
     { id: "zone", name: "Одна зона", description: "Комплект мебели для помещения" },
-    { id: "complex", name: "Несколько зон", description: "Комплексный заказ со скидкой за объём" },
+    { id: "complex", name: "Несколько зон", description: "Мебель сразу для нескольких комнат или зон" },
   ],
 };
 
@@ -55,7 +55,7 @@ const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: Mat
     {
       id: "plastic",
       name: "МДФ пластик: AGT или Velvet",
-      description: "Строго AGT или Velvet — стойкая матовая поверхность с влагостойкой кромкой (без Fenix)",
+      description: "Матовые фасады AGT или бархатистый Velvet с надёжной влагостойкой кромкой",
     },
     {
       id: "enamel",
@@ -142,7 +142,7 @@ const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: Mat
 const ALL_MATERIALS: Array<Choice & { id: MaterialId }> = [
   { id: "egger", name: "ЛДСП Egger (3 категория)", description: "Базовый доступный декор европейского стандарта" },
   { id: "pvc", name: "МДФ ПВХ (плёнка)", description: "Суперматовая плёнка без фрезеровки или с выборкой" },
-  { id: "plastic", name: "МДФ пластик: AGT или Velvet", description: "Строго AGT или Velvet — стойкая матовая поверхность (без Fenix)" },
+  { id: "plastic", name: "МДФ пластик: AGT или Velvet", description: "Матовые фасады AGT или Velvet с надёжной влагостойкой кромкой" },
   { id: "enamel", name: "Матовая эмаль по RAL / NCS", description: "Матовая эмаль по RAL / NCS (без глянца)" },
   { id: "veneer", name: "Натуральный шпон с рамочкой (дуб)", description: "Натуральный шпон с рамочкой (дуб)" },
   { id: "unknown", name: "Нужна помощь", description: "Подберём материал под задачу и бюджет" },
@@ -151,14 +151,9 @@ const ALL_MATERIALS: Array<Choice & { id: MaterialId }> = [
 const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
   kitchen: [
     {
-      id: "worktop",
-      name: "Влагостойкая столешница Slotex (Слотекс) 38 мм",
-      description: "Доступный практичный выбор: плита 38 мм, HPL-пластик, планки, выпилы и еврозапил",
-    },
-    {
       id: "worktop_premium",
-      name: "Компакт-ламинат или искусственный камень",
-      description: "Премиальный тонкий HPL компакт-ламинат или искусственный акриловый камень",
+      name: "Столешница из компакт-ламината или камня",
+      description: "Премиальный тонкий HPL или акриловый камень (базовая влагостойкая Slotex 38 мм уже в расчёте)",
     },
     { id: "gola", name: "Фасады без ручек", description: "Профиль Gola или другой способ открывания" },
     { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины, бутылочницы и подъёмники" },
@@ -557,7 +552,11 @@ export default function CalculatorPage() {
                       </label>
                     ))}
                   </div>
-                  <p className="calculator-options-note">Без дополнительных опций — тоже нормальный вариант для первого расчёта.</p>
+                  <p className="calculator-options-note">
+                    {category === "kitchen"
+                      ? "В базовый расчёт кухни уже включена влагостойкая столешница Slotex 38 мм с еврозапилом. Дополнительные опции можно не выбирать."
+                      : "Без дополнительных опций — тоже нормальный вариант для первого расчёта."}
+                  </p>
                 </fieldset>
               )}
 

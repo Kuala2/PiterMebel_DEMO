@@ -27,18 +27,20 @@ export async function generateMetadata({
     return { title: "Кухня не найдена — ПитерМебель" };
   }
 
-  const ogTitle = `Кухня «${kitchen.title}» на заказ в СПб | ПитерМебель`;
-  const ogDescription = buildMetaDescription(`Кухня «${kitchen.title}»: ${kitchen.summary}`);
+  const pageTitle = kitchen.title.length + 15 <= 70
+    ? `${kitchen.title} — ПитерМебель`
+    : kitchen.title;
+  const ogDescription = buildMetaDescription(`${kitchen.title}: ${kitchen.summary}`);
 
   return {
-    title: ogTitle,
+    title: pageTitle,
     description: ogDescription,
     alternates: {
       canonical: `/kitchens/${kitchen.slug}/`,
     },
     openGraph: {
-      ...buildOg(ogTitle, ogDescription, `/kitchens/${kitchen.slug}`),
-      images: [{ url: kitchen.cover, alt: `Кухня «${kitchen.title}»` }],
+      ...buildOg(pageTitle, ogDescription, `/kitchens/${kitchen.slug}`),
+      images: [{ url: kitchen.cover, alt: kitchen.title }],
     },
   };
 }
@@ -56,7 +58,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: `Кухня «${kitchen.title}»`,
+    name: kitchen.title,
     image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
     description: kitchen.summary,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
@@ -84,7 +86,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbs([
           { name: "Кухни", path: "/kitchens/" },
-          { name: `Кухня «${kitchen.title}»` },
+          { name: kitchen.title },
         ])) }}
       />
       {/* 1. Above the fold: Split Layout (Desktop 38/62, Mobile order: Title -> Gallery -> Specs) */}
@@ -95,7 +97,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               ← В каталог кухонь
             </Link>
             <Link href={`/kitchens/${nextKitchen.slug}/`} className="btn btn-glass" style={{ gap: "8px" }}>
-              Следующая кухня: «{nextKitchen.title}» →
+              Следующая: {nextKitchen.title} →
             </Link>
           </div>
 
@@ -103,7 +105,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
             {/* Info Column */}
             <div className="detail-info-col">
               <h1 className="detail-hero-title">
-                Кухня «{kitchen.title}»
+                {kitchen.title}
               </h1>
 
               {/* Стоимость рассчитывается по спецификации проекта */}
@@ -172,11 +174,11 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
             <h2 className="detail-nav-title">Другие кухни студии</h2>
             <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
               <Link href={`/kitchens/${prevKitchen.slug}/`} style={{ color: "var(--color-text-secondary)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
-                ← Предыдущая: «{prevKitchen.title}»
+                ← Предыдущая: {prevKitchen.title}
               </Link>
               <span style={{ color: "rgba(255, 255, 255, 0.2)" }}>|</span>
               <Link href={`/kitchens/${nextKitchen.slug}/`} style={{ color: "var(--color-green-brand)", fontSize: "15px", fontWeight: 500, textDecoration: "none" }}>
-                Следующая: «{nextKitchen.title}» →
+                Следующая: {nextKitchen.title} →
               </Link>
             </div>
           </div>
@@ -194,7 +196,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                   />
                 </div>
                 <div className="detail-nav-card-body">
-                  <h3 className="detail-nav-card-name">Кухня «{item.title}»</h3>
+                  <h3 className="detail-nav-card-name">{item.title}</h3>
                 </div>
               </Link>
             ))}
@@ -205,8 +207,8 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       {/* 4. Consultation Booking */}
       <LeadSection
         id="measure"
-        initialCategory={`Кухня «${kitchen.title}»`}
-        source={`Карточка кухни: ${kitchen.title}`}
+        initialCategory={kitchen.title}
+        source={`Карточка: ${kitchen.title}`}
       />
     </div>
   );

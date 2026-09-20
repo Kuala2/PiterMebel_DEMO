@@ -19,7 +19,7 @@ export default function PromoBanner({
   offer,
   initialCategory,
   className = "",
-  autoPlayInterval = 5500,
+  autoPlayInterval = 5000,
   embedded = false,
   variant = "banner",
 }: PromoBannerProps) {
@@ -39,75 +39,136 @@ export default function PromoBanner({
 
   const [currentIndex, setCurrentIndex] = useState(getInitialIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [hasFocus, setHasFocus] = useState(false);
-  const isTransitioningRef = useRef(false);
+  const isInteractiveHoveredRef = useRef(false);
+  const isFocusedRef = useRef(false);
+  const currentIndexRef = useRef(currentIndex);
+  currentIndexRef.current = currentIndex;
+  const timerRef = useRef<number | null>(null);
+  const transitionTimeoutRef = useRef<number | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const bannerControlsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const preferredOffer = initialCategory ? PROMOS[initialCategory] : offer;
     if (!preferredOffer) return;
 
     const preferredIndex = allOffers.findIndex((item) => item.id === preferredOffer.id);
-    if (preferredIndex !== -1) setCurrentIndex(preferredIndex);
-  }, [initialCategory, offer]);
+    if (preferredIndex !== -1) {
+      setCurrentIndex(preferredIndex);
+      currentIndexRef.current = preferredIndex;
+    }
+  }, [initialCategory, offer, allOffers]);
 
   const goToOffer = useCallback(
     (newIndex: number) => {
-      if (isTransitioningRef.current) return;
-      isTransitioningRef.current = true;
+      if (transitionTimeoutRef.current) {
+        window.clearTimeout(transitionTimeoutRef.current);
+        transitionTimeoutRef.current = null;
+      }
       setIsTransitioning(true);
-      setTimeout(() => {
+      transitionTimeoutRef.current = window.setTimeout(() => {
+        currentIndexRef.current = newIndex;
         setCurrentIndex(newIndex);
         setIsTransitioning(false);
-        isTransitioningRef.current = false;
-      }, 360);
+        transitionTimeoutRef.current = null;
+      }, 150);
     },
     []
   );
 
-  const handleNext = useCallback(() => {
-    setCurrentIndex((current) => {
-      const nextIdx = (current + 1) % allOffers.length;
-      goToOffer(nextIdx);
-      return current;
-    });
-  }, [allOffers.length, goToOffer]);
+  const startTimer = useCallback(() => {
+    if (timerRef.current) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+    if (allOffers.length < 2 || autoPlayInterval <= 0) return;
 
-  const handlePrev = useCallback(() => {
-    setCurrentIndex((current) => {
-      const prevIdx = (current - 1 + allOffers.length) % allOffers.length;
-      goToOffer(prevIdx);
-      return current;
-    });
-  }, [allOffers.length, goToOffer]);
-
-  useEffect(() => {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (
-      reducedMotion ||
-      isHovered ||
-      hasFocus ||
-      allOffers.length < 2 ||
-      autoPlayInterval <= 0
-    ) return;
-
-    const intervalId = window.setInterval(() => {
-      if (!document.hidden) handleNext();
+    timerRef.current = window.setTimeout(() => {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!document.hidden && !reducedMotion && !isInteractiveHoveredRef.current && !isFocusedRef.current) {
+        const nextIdx = (currentIndexRef.current + 1) % allOffers.length;
+        goToOffer(nextIdx);
+      }
+      startTimer();
     }, autoPlayInterval);
+  }, [allOffers.length, autoPlayInterval, goToOffer]);
 
-    return () => window.clearInterval(intervalId);
-  }, [allOffers.length, autoPlayInterval, handleNext, hasFocus, isHovered]);
-
-  const handleBlurCapture = useCallback((event: React.FocusEvent<HTMLElement>) => {
-    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-      setHasFocus(false);
+  const pauseTimer = useCallback(() => {
+    if (timerRef.current) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
     }
   }, []);
+
+  const handleNext = useCallback(() => {
+    if (allOffers.length < 2) return;
+    const nextIdx = (currentIndexRef.current + 1) % allOffers.length;
+    goToOffer(nextIdx);
+    startTimer();
+  }, [allOffers.length, goToOffer, startTimer]);
+
+  const handlePrev = useCallback(() => {
+    if (allOffers.length < 2) return;
+    const prevIdx = (currentIndexRef.current - 1 + allOffers.length) % allOffers.length;
+    goToOffer(prevIdx);
+    startTimer();
+  }, [allOffers.length, goToOffer, startTimer]);
+
+  useEffect(() => {
+    startTimer();
+    return () => {
+      pauseTimer();
+      if (transitionTimeoutRef.current) {
+        window.clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, [startTimer, pauseTimer]);
+
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.hidden) {
+        pauseTimer();
+      } else if (!isInteractiveHoveredRef.current && !isFocusedRef.current) {
+        startTimer();
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+    return () => document.removeEventListener("visibilitychange", handleVisibility);
+  }, [pauseTimer, startTimer]);
+
+  const handleInteractiveMouseEnter = () => {
+    isInteractiveHoveredRef.current = true;
+    pauseTimer();
+  };
+
+  const handleInteractiveMouseLeave = (containerEl?: HTMLElement | null) => {
+    isInteractiveHoveredRef.current = false;
+    if (document.activeElement instanceof HTMLElement && containerEl?.contains(document.activeElement)) {
+      document.activeElement.blur();
+      isFocusedRef.current = false;
+    }
+    startTimer();
+  };
+
+  const handleFocusCapture = () => {
+    isFocusedRef.current = true;
+    pauseTimer();
+  };
+
+  const handleBlurCapture = (e: React.FocusEvent<HTMLElement>) => {
+    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+      isFocusedRef.current = false;
+      if (!isInteractiveHoveredRef.current) {
+        startTimer();
+      }
+    }
+  };
 
   const currentOffer = allOffers[currentIndex] || allOffers[0];
   if (!currentOffer) return null;
 
   const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    (e.currentTarget as HTMLElement).blur();
     if (currentOffer.ctaHref.startsWith("#")) {
       e.preventDefault();
       const target = document.querySelector(currentOffer.ctaHref);
@@ -115,34 +176,35 @@ export default function PromoBanner({
         target.scrollIntoView({ behavior: "smooth", block: "start" });
         const input = target.querySelector<HTMLInputElement>("input:not([type=hidden])");
         if (input) {
-          setTimeout(() => input.focus(), 300);
+          window.setTimeout(() => input.focus(), 300);
         }
       }
     }
   };
 
   const cardContent = (
-    <div
-      className="promo-card"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onFocusCapture={() => setHasFocus(true)}
-      onBlurCapture={handleBlurCapture}
-    >
-        {/* Left: Content with smooth crossfade animation */}
-        <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
-          {currentOffer.badge && (
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-              <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-green-brand)" }}>
-                АКЦИЯ СТУДИИ · {currentOffer.badge.toUpperCase()}
-              </span>
-            </div>
-          )}
-          <h3 className="promo-title">{currentOffer.title}</h3>
-        </div>
+    <div className="promo-card">
+      {/* Left: Content with smooth crossfade animation */}
+      <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
+        {currentOffer.badge && (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+            <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-green-brand)" }}>
+              АКЦИЯ СТУДИИ · {currentOffer.badge.toUpperCase()}
+            </span>
+          </div>
+        )}
+        <h3 className="promo-title">{currentOffer.title}</h3>
+      </div>
 
       {/* Right: Controls & CTA */}
-      <div className="promo-right">
+      <div
+        ref={bannerControlsRef}
+        className="promo-right"
+        onMouseEnter={handleInteractiveMouseEnter}
+        onMouseLeave={() => handleInteractiveMouseLeave(bannerControlsRef.current)}
+        onFocusCapture={handleFocusCapture}
+        onBlurCapture={handleBlurCapture}
+      >
         {allOffers.length > 1 && (
           <div className="promo-nav-group">
             <span className="promo-counter-label">
@@ -184,13 +246,7 @@ export default function PromoBanner({
 
   if (variant === "cta-card") {
     return (
-      <div
-        className={`promo-cta-card ${className}`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onFocusCapture={() => setHasFocus(true)}
-        onBlurCapture={handleBlurCapture}
-      >
+      <div className={`promo-cta-card ${className}`}>
         <div className="promo-cta-card-head">
           {currentOffer.badge && (
             <div className="promo-cta-card-badge">
@@ -200,7 +256,14 @@ export default function PromoBanner({
           )}
 
           {allOffers.length > 1 && (
-            <div className="promo-cta-card-nav">
+            <div
+              ref={navRef}
+              className="promo-cta-card-nav"
+              onMouseEnter={handleInteractiveMouseEnter}
+              onMouseLeave={() => handleInteractiveMouseLeave(navRef.current)}
+              onFocusCapture={handleFocusCapture}
+              onBlurCapture={handleBlurCapture}
+            >
               <span className="promo-counter-label">
                 0{currentIndex + 1} / 0{allOffers.length}
               </span>

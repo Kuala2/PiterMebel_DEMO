@@ -154,11 +154,11 @@ export default function HomePage() {
     {
       id: "aleksandra",
       category: "kitchens",
-      badge: "Fenix NTM",
-      title: "Кухня «Александра» Fenix NTM",
-      desc: "Фасады из МДФ с суперматовым пластиком Fenix, корпус Egger и столешница Slotex.",
+      badge: "МДФ-пластик",
+      title: "Кухня из суперматового МДФ-пластика со столешницей Slotex",
+      desc: "Фасады из суперматового МДФ-пластика, корпус Egger, влагостойкая столешница Slotex и фурнитура Blum.",
       specLabel: "Фасады",
-      specValue: "МДФ / Fenix",
+      specValue: "Суперматовый МДФ",
       photos: [
         "/img/kitchens/aleksandra/photo_1.jpg",
         "/img/kitchens/aleksandra/photo_2.jpg",
@@ -171,10 +171,10 @@ export default function HomePage() {
       id: "slavena",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня «Славена»",
+      title: "Кухня из МДФ-пластика с профилем Gola и искусственным камнем",
       desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
       specLabel: "Фасады",
-      specValue: "МДФ-пластик",
+      specValue: "МДФ-пластик / Камень",
       photos: [
         "/img/kitchens/slavena/photo_1.jpg",
         "/img/kitchens/slavena/photo_2.jpg",
@@ -200,10 +200,10 @@ export default function HomePage() {
       id: "timofey",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня «Тимофей»",
-      desc: "Фасады из МДФ-пластика, корпус и столешница Egger, фурнитура Hettich с доводчиками.",
+      title: "Кухня из МДФ-пластика с древесной столешницей Egger",
+      desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
       specLabel: "Фасады",
-      specValue: "МДФ-пластик",
+      specValue: "МДФ-пластик / Дерево",
       photos: [
         "/img/kitchens/timofey/photo_1.jpg",
         "/img/kitchens/timofey/photo_2.jpg",
@@ -246,7 +246,7 @@ export default function HomePage() {
       id: "velvet-matte",
       category: "kitchens",
       badge: "Пластик Velvet",
-      title: "Кухня МДФ пластик Velvet",
+      title: "Кухня с фасадами МДФ пластик Velvet",
       desc: "Матовые фасады Velvet и лаконичная геометрия создают спокойный современный образ кухни.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик Velvet",
@@ -260,10 +260,10 @@ export default function HomePage() {
       id: "sherman-cognac",
       category: "kitchens",
       badge: "Глянец & Egger",
-      title: "Кухня: глянец и Egger Шерман",
-      desc: "Глянцевые фасады из МДФ-пластика сочетаются с древесным декором Egger «Шерман коньяк».",
+      title: "Кухня с глянцевыми фасадами МДФ пластик и декором Egger Шерман коньяк",
+      desc: "Глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый».",
       specLabel: "Декор",
-      specValue: "Egger Шерман / МДФ-пластик",
+      specValue: "Egger Шерман / Пластик",
       photos: [
         "/img/projects/sherman-cognac/photo_1.jpg",
         "/img/projects/sherman-cognac/photo_2.jpg",
@@ -289,24 +289,24 @@ export default function HomePage() {
     },
   ];
 
-  // Порядок витрины на главной: на 1-м месте топ-кухня «Шерман»,
+  // Порядок витрины на главной: на 1-м месте кухня «Глянец & Egger Шерман»,
   // затем чередование с премиальными гардеробными и шкафами:
-  // 1. Кухня «Шерман»
+  // 1. Кухня «Глянец & Egger Шерман»
   // 2. Гардеробная со смарт-стеклом STOPSOL
-  // 3. Кухня «Тимофей» Дуб & Белый глянец
+  // 3. Кухня из МДФ-пластика с древесной столешницей Egger
   // 4. Встроенный шкаф в мастер-спальню
   const itemOrder = [
-    "sherman-cognac", // 1. Кухня «Шерман» (подсвеченная витрина, глянец и теплый дуб Egger)
+    "sherman-cognac", // 1. Кухня «Глянец & Egger Шерман» (подсвеченная витрина, глянец и теплый дуб Egger)
     "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
-    "timofey",        // 3. Кухня «Тимофей» (дуб и белый глянец)
+    "timofey",        // 3. Кухня из МДФ-пластика с древесной столешницей Egger
     "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
     "velvet-matte",   // 5. Кухня с фасадами МДФ Velvet
     "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
-    "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
+    "emerald-enamel", // 7. Кухня с фасадами МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
     "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
-    "slavena",        // 9. Кухня «Славена» (теплый кашемир и камень)
+    "slavena",        // 9. Кухня из МДФ-пластика с профилем Gola и искусственным камнем
     "oak-stone",      // 10. Кухня (шпон дуба и мрамор)
-    "aleksandra",     // 11. Кухня «Александра» (Fenix NTM)
+    "aleksandra",     // 11. Кухня из суперматового МДФ-пластика со столешницей Slotex
   ];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))
@@ -346,7 +346,10 @@ export default function HomePage() {
       {/* 1. HERO SECTION */}
       <Hero />
 
-      {/* 2. CATALOG SECTION (1-Line Horizontal Slider) */}
+      {/* 2. ALL-IN-ONE TURNKEY SERVICE: Всё под ключ от проекта розеток до подключения техники */}
+      <TurnkeyServiceSection />
+
+      {/* 3. CATALOG SECTION (1-Line Horizontal Slider) */}
       <section className="catalog-section" id="catalog">
         <SpotlightArea className="container" selector=".catalog-card">
           <div className="catalog-head-row">
@@ -517,10 +520,7 @@ export default function HomePage() {
         </SpotlightArea>
       </section>
 
-      {/* 2.4. ALL-IN-ONE TURNKEY SERVICE: Всё под ключ одной командой */}
-      <TurnkeyServiceSection />
-
-      {/* 2.5 REVIEWS (Отзывы) */}
+      {/* 4. REVIEWS (Отзывы) */}
       <section className="reviews-section" id="reviews">
         <div className="container">
           <div className="section-header row-between" style={{ marginBottom: "32px", display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "space-between", alignItems: "flex-end" }}>

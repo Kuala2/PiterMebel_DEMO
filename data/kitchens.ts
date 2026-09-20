@@ -18,7 +18,7 @@ export interface Kitchen {
 export const KITCHENS: Kitchen[] = [
   {
     slug: "slavena",
-    title: "Славена",
+    title: "Кухня из МДФ-пластика с профилем Gola и искусственным камнем",
     cover: "/img/kitchens/slavena/photo_1.jpg",
     gallery: [
       "/img/kitchens/slavena/photo_1.jpg",
@@ -40,7 +40,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "aleksandra",
-    title: "Александра",
+    title: "Кухня из суперматового МДФ-пластика со столешницей Slotex",
     cover: "/img/kitchens/aleksandra/photo_1.jpg",
     gallery: [
       "/img/kitchens/aleksandra/photo_1.jpg",
@@ -49,9 +49,9 @@ export const KITCHENS: Kitchen[] = [
       "/img/kitchens/aleksandra/photo_4.jpg",
     ],
     materialGroup: "plastic",
-    summary: "Суперматовые фасады Fenix создают спокойную современную основу, а столешница Slotex добавляет интерьеру выразительную фактуру. Корпус выполнен из материалов Egger, за плавную работу механизмов отвечает фурнитура Blum.",
+    summary: "Суперматовые фасады из МДФ-пластика создают спокойную современную основу, а влагостойкая столешница Slotex добавляет интерьеру выразительную фактуру. Корпус выполнен из материалов Egger, за плавную работу механизмов отвечает фурнитура Blum.",
     specs: [
-      { label: "Фасады", value: "МДФ, суперматовый пластик Fenix" },
+      { label: "Фасады", value: "Суперматовый МДФ-пластик" },
       { label: "Корпус", value: "Egger" },
       { label: "Столешница", value: "Slotex" },
       { label: "Фурнитура", value: "Blum" },
@@ -61,7 +61,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "timofey",
-    title: "Тимофей",
+    title: "Кухня из МДФ-пластика с древесной столешницей Egger",
     cover: "/img/kitchens/timofey/photo_1.jpg",
     gallery: [
       "/img/kitchens/timofey/photo_1.jpg",
@@ -83,7 +83,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "stefania",
-    title: "Стефания",
+    title: "Кухня из МДФ-пластика с профилем Gola и декором под дерево",
     cover: "/img/kitchens/stefania/photo_1.jpg",
     gallery: [
       "/img/kitchens/stefania/photo_1.jpg",
@@ -105,7 +105,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "emerald-enamel",
-    title: "МДФ Эмаль",
+    title: "Кухня с фасадами МДФ Эмаль",
     cover: "/img/kitchens/emerald-enamel/photo_1.jpg",
     gallery: [
       "/img/kitchens/emerald-enamel/photo_1.jpg",
@@ -120,7 +120,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "ulyana",
-    title: "Ульяна",
+    title: "Кухня из белого МДФ-пластика и декора Egger с панелью под мрамор",
     cover: "/img/kitchens/ulyana/photo_1.jpg",
     gallery: [
       "/img/kitchens/ulyana/photo_1.jpg",
@@ -140,7 +140,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "velvet-matte",
-    title: "МДФ Velvet",
+    title: "Кухня с фасадами МДФ пластик Velvet",
     cover: "/img/kitchens/velvet-matte/photo_1.jpg",
     gallery: [
       "/img/kitchens/velvet-matte/photo_1.jpg",
@@ -153,7 +153,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "valeria",
-    title: "Валерия",
+    title: "Кухня из МДФ в эмали и матовом пластике с витриной",
     cover: "/img/kitchens/valeria/photo_1.jpg",
     gallery: [
       "/img/kitchens/valeria/photo_1.jpg",
@@ -174,7 +174,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "sherman-cognac",
-    title: "Глянец и Egger Шерман",
+    title: "Кухня с глянцевыми фасадами МДФ пластик и декором Egger Шерман коньяк",
     cover: "/img/kitchens/sherman-cognac/photo_1.jpg",
     gallery: [
       "/img/kitchens/sherman-cognac/photo_1.jpg",
@@ -192,7 +192,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "viktoria",
-    title: "Виктория",
+    title: "Кухня с молочными фасадами и столешницей под дерево",
     cover: "/img/kitchens/viktoria/photo_1.jpg",
     gallery: [
       "/img/kitchens/viktoria/photo_1.jpg",

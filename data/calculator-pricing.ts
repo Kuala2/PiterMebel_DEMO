@@ -17,7 +17,7 @@ export const CALCULATOR_PRICING = {
   modelVersion: "calibrated-v2",
   categories: {
     kitchen: { perMeter: 72_000, minimum: 160_000 },
-    wardrobe: { perMeter: 48_000, minimum: 75_000 },
+    wardrobe: { perMeter: 65_000, minimum: 80_000 },
     cabinet: { perMeter: 68_000, minimum: 80_000 },
   },
   layoutMultipliers: {
@@ -30,7 +30,7 @@ export const CALCULATOR_PRICING = {
     "walk-in": 1.15,
     single: 0.9,
     zone: 1,
-    complex: 1.10,
+    complex: 1,
   },
   materialMultipliers: {
     egger: 1,
@@ -68,7 +68,7 @@ export const CALCULATOR_PRICING = {
   },
   optionAdditions: {
     worktop: 22_000,
-    worktop_premium: 65_000,
+    worktop_premium: 45_000,
     gola: 18_000,
     drawers: 28_000,
     lighting: 15_000,
@@ -183,6 +183,8 @@ export function calculateEstimate({
     categoryPricing.perMeter * meters * layoutMultiplier * materialMultiplier
   );
   const optionsCost = options.reduce((sum, optionId) => {
+    // В базовую стоимость кухни уже включена влагостойкая столешница Slotex 38 мм
+    if (category === "kitchen" && optionId === "worktop") return sum;
     const addition = CALCULATOR_PRICING.optionAdditions[
       optionId as keyof typeof CALCULATOR_PRICING.optionAdditions
     ] ?? 0;
