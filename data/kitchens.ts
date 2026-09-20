@@ -18,7 +18,7 @@ export interface Kitchen {
 export const KITCHENS: Kitchen[] = [
   {
     slug: "slavena",
-    title: "Кухня из МДФ-пластика с профилем Gola и искусственным камнем",
+    title: "Кухня: пластик и искусственный камень",
     cover: "/img/kitchens/slavena/photo_1.jpg",
     gallery: [
       "/img/kitchens/slavena/photo_1.jpg",
@@ -40,7 +40,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "aleksandra",
-    title: "Кухня из суперматового МДФ-пластика со столешницей Slotex",
+    title: "Кухня: матовый пластик и Slotex",
     cover: "/img/kitchens/aleksandra/photo_1.jpg",
     gallery: [
       "/img/kitchens/aleksandra/photo_1.jpg",
@@ -61,7 +61,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "timofey",
-    title: "Кухня из МДФ-пластика с древесной столешницей Egger",
+    title: "Кухня: матовый пластик и дерево",
     cover: "/img/kitchens/timofey/photo_1.jpg",
     gallery: [
       "/img/kitchens/timofey/photo_1.jpg",
@@ -83,7 +83,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "stefania",
-    title: "Кухня из МДФ-пластика с профилем Gola и декором под дерево",
+    title: "Кухня: пластик с профилем Gola",
     cover: "/img/kitchens/stefania/photo_1.jpg",
     gallery: [
       "/img/kitchens/stefania/photo_1.jpg",
@@ -105,7 +105,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "emerald-enamel",
-    title: "Кухня с фасадами МДФ Эмаль",
+    title: "Кухня МДФ Эмаль",
     cover: "/img/kitchens/emerald-enamel/photo_1.jpg",
     gallery: [
       "/img/kitchens/emerald-enamel/photo_1.jpg",
@@ -120,7 +120,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "ulyana",
-    title: "Кухня из белого МДФ-пластика и декора Egger с панелью под мрамор",
+    title: "Кухня: белый пластик и мрамор",
     cover: "/img/kitchens/ulyana/photo_1.jpg",
     gallery: [
       "/img/kitchens/ulyana/photo_1.jpg",
@@ -140,7 +140,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "velvet-matte",
-    title: "Кухня с фасадами МДФ пластик Velvet",
+    title: "Кухня МДФ Velvet",
     cover: "/img/kitchens/velvet-matte/photo_1.jpg",
     gallery: [
       "/img/kitchens/velvet-matte/photo_1.jpg",
@@ -153,7 +153,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "valeria",
-    title: "Кухня из МДФ в эмали и матовом пластике с витриной",
+    title: "Кухня: эмаль и витрина",
     cover: "/img/kitchens/valeria/photo_1.jpg",
     gallery: [
       "/img/kitchens/valeria/photo_1.jpg",
@@ -174,7 +174,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "sherman-cognac",
-    title: "Кухня с глянцевыми фасадами МДФ пластик и декором Egger Шерман коньяк",
+    title: "Кухня Egger Шерман коньяк",
     cover: "/img/kitchens/sherman-cognac/photo_1.jpg",
     gallery: [
       "/img/kitchens/sherman-cognac/photo_1.jpg",
@@ -192,7 +192,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "viktoria",
-    title: "Кухня с молочными фасадами и столешницей под дерево",
+    title: "Кухня: молочные фасады и дерево",
     cover: "/img/kitchens/viktoria/photo_1.jpg",
     gallery: [
       "/img/kitchens/viktoria/photo_1.jpg",

@@ -104,7 +104,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "emerald-enamel",
     type: "Кухня",
-    title: "Кухня с фасадами МДФ в эмали",
+    title: "Кухня МДФ Эмаль",
     cover: "/img/projects/emerald-enamel/photo_1.jpg",
     gallery: [
       "/img/projects/emerald-enamel/photo_1.jpg",
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "velvet-matte",
     type: "Кухня",
-    title: "Кухня с фасадами МДФ Velvet",
+    title: "Кухня МДФ Velvet",
     cover: "/img/projects/velvet-matte/photo_1.jpg",
     gallery: [
       "/img/projects/velvet-matte/photo_1.jpg",
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "sherman-cognac",
     type: "Кухня",
-    title: "Кухня: глянец и Egger Шерман",
+    title: "Кухня Egger Шерман коньяк",
     cover: "/img/projects/sherman-cognac/photo_1.jpg",
     gallery: [
       "/img/projects/sherman-cognac/photo_1.jpg",

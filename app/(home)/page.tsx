@@ -155,7 +155,7 @@ export default function HomePage() {
       id: "aleksandra",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня из суперматового МДФ-пластика со столешницей Slotex",
+      title: "Кухня: матовый пластик и Slotex",
       desc: "Фасады из суперматового МДФ-пластика, корпус Egger, влагостойкая столешница Slotex и фурнитура Blum.",
       specLabel: "Фасады",
       specValue: "Суперматовый МДФ",
@@ -171,7 +171,7 @@ export default function HomePage() {
       id: "slavena",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня из МДФ-пластика с профилем Gola и искусственным камнем",
+      title: "Кухня: пластик и искусственный камень",
       desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик / Камень",
@@ -200,7 +200,7 @@ export default function HomePage() {
       id: "timofey",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня из МДФ-пластика с древесной столешницей Egger",
+      title: "Кухня: матовый пластик и дерево",
       desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик / Дерево",
@@ -230,7 +230,7 @@ export default function HomePage() {
       id: "emerald-enamel",
       category: "kitchens",
       badge: "МДФ Эмаль",
-      title: "Кухня с фасадами МДФ Эмаль",
+      title: "Кухня МДФ Эмаль",
       desc: "Выразительный цвет эмали сочетается с классической геометрией фасадов и светлыми верхними секциями.",
       specLabel: "Фасады",
       specValue: "МДФ в эмали",
@@ -246,7 +246,7 @@ export default function HomePage() {
       id: "velvet-matte",
       category: "kitchens",
       badge: "Пластик Velvet",
-      title: "Кухня с фасадами МДФ пластик Velvet",
+      title: "Кухня МДФ Velvet",
       desc: "Матовые фасады Velvet и лаконичная геометрия создают спокойный современный образ кухни.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик Velvet",
@@ -260,7 +260,7 @@ export default function HomePage() {
       id: "sherman-cognac",
       category: "kitchens",
       badge: "Глянец & Egger",
-      title: "Кухня с глянцевыми фасадами МДФ пластик и декором Egger Шерман коньяк",
+      title: "Кухня Egger Шерман коньяк",
       desc: "Глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый».",
       specLabel: "Декор",
       specValue: "Egger Шерман / Пластик",
@@ -289,24 +289,24 @@ export default function HomePage() {
     },
   ];
 
-  // Порядок витрины на главной: на 1-м месте кухня «Глянец & Egger Шерман»,
+  // Порядок витрины на главной: на 1-м месте «Кухня Egger Шерман коньяк»,
   // затем чередование с премиальными гардеробными и шкафами:
-  // 1. Кухня «Глянец & Egger Шерман»
+  // 1. Кухня Egger Шерман коньяк
   // 2. Гардеробная со смарт-стеклом STOPSOL
-  // 3. Кухня из МДФ-пластика с древесной столешницей Egger
+  // 3. Кухня: матовый пластик и дерево
   // 4. Встроенный шкаф в мастер-спальню
   const itemOrder = [
-    "sherman-cognac", // 1. Кухня «Глянец & Egger Шерман» (подсвеченная витрина, глянец и теплый дуб Egger)
+    "sherman-cognac", // 1. Кухня Egger Шерман коньяк (подсвеченная витрина, глянец и теплый дуб Egger)
     "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
-    "timofey",        // 3. Кухня из МДФ-пластика с древесной столешницей Egger
+    "timofey",        // 3. Кухня: матовый пластик и дерево
     "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
-    "velvet-matte",   // 5. Кухня с фасадами МДФ Velvet
+    "velvet-matte",   // 5. Кухня МДФ Velvet
     "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
-    "emerald-enamel", // 7. Кухня с фасадами МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
+    "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
     "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
-    "slavena",        // 9. Кухня из МДФ-пластика с профилем Gola и искусственным камнем
-    "oak-stone",      // 10. Кухня (шпон дуба и мрамор)
-    "aleksandra",     // 11. Кухня из суперматового МДФ-пластика со столешницей Slotex
+    "slavena",        // 9. Кухня: пластик и искусственный камень
+    "oak-stone",      // 10. Кухня: эмаль и массив дуба
+    "aleksandra",     // 11. Кухня: матовый пластик и Slotex
   ];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))
@@ -346,10 +346,7 @@ export default function HomePage() {
       {/* 1. HERO SECTION */}
       <Hero />
 
-      {/* 2. ALL-IN-ONE TURNKEY SERVICE: Всё под ключ от проекта розеток до подключения техники */}
-      <TurnkeyServiceSection />
-
-      {/* 3. CATALOG SECTION (1-Line Horizontal Slider) */}
+      {/* 2. CATALOG SECTION (1-Line Horizontal Slider) */}
       <section className="catalog-section" id="catalog">
         <SpotlightArea className="container" selector=".catalog-card">
           <div className="catalog-head-row">
@@ -519,6 +516,9 @@ export default function HomePage() {
           </div>
         </SpotlightArea>
       </section>
+
+      {/* 3. ALL-IN-ONE TURNKEY SERVICE: Всё под ключ от проекта розеток до подключения техники */}
+      <TurnkeyServiceSection />
 
       {/* 4. REVIEWS (Отзывы) */}
       <section className="reviews-section" id="reviews">
