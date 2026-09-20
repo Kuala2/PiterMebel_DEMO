@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "island-parquet",
     type: "Кухня",
-    title: "Кухня: эмаль и натуральный шпон",
+    title: "Кухня эмаль и натуральный шпон",
     cover: "/img/projects/island-parquet/photo_1.jpg",
     gallery: [
       "/img/projects/island-parquet/photo_1.jpg",
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "oak-stone",
     type: "Кухня",
-    title: "Кухня: эмаль и массив дуба",
+    title: "Кухня эмаль и массив дуба",
     cover: "/img/projects/oak-stone/photo_1.jpg",
     gallery: [
       "/img/projects/oak-stone/photo_1.jpg",

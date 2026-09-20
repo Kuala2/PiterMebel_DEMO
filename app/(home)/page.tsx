@@ -124,7 +124,7 @@ export default function HomePage() {
       id: "oak-stone",
       category: "kitchens",
       badge: "Эмаль и дуб",
-      title: "Кухня: эмаль и массив дуба",
+      title: "Кухня эмаль и массив дуба",
       desc: "Фасады из МДФ в эмали и массива дуба. Столешница из кварцевого агломерата.",
       specLabel: "Материалы",
       specValue: "Эмаль / Массив дуба",
@@ -155,7 +155,7 @@ export default function HomePage() {
       id: "aleksandra",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня: матовый пластик и Slotex",
+      title: "Кухня МДФ пластик Slotex",
       desc: "Фасады из суперматового МДФ-пластика, корпус Egger, влагостойкая столешница Slotex и фурнитура Blum.",
       specLabel: "Фасады",
       specValue: "Суперматовый МДФ",
@@ -171,7 +171,7 @@ export default function HomePage() {
       id: "slavena",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня: пластик и искусственный камень",
+      title: "Кухня МДФ пластик Gola",
       desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик / Камень",
@@ -200,7 +200,7 @@ export default function HomePage() {
       id: "timofey",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня: матовый пластик и дерево",
+      title: "Кухня МДФ Egger Дуб",
       desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик / Дерево",
@@ -293,20 +293,20 @@ export default function HomePage() {
   // затем чередование с премиальными гардеробными и шкафами:
   // 1. Кухня Egger Шерман коньяк
   // 2. Гардеробная со смарт-стеклом STOPSOL
-  // 3. Кухня: матовый пластик и дерево
+  // 3. Кухня МДФ Egger Дуб
   // 4. Встроенный шкаф в мастер-спальню
   const itemOrder = [
     "sherman-cognac", // 1. Кухня Egger Шерман коньяк (подсвеченная витрина, глянец и теплый дуб Egger)
     "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
-    "timofey",        // 3. Кухня: матовый пластик и дерево
+    "timofey",        // 3. Кухня МДФ Egger Дуб
     "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
     "velvet-matte",   // 5. Кухня МДФ Velvet
     "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
     "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
     "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
-    "slavena",        // 9. Кухня: пластик и искусственный камень
-    "oak-stone",      // 10. Кухня: эмаль и массив дуба
-    "aleksandra",     // 11. Кухня: матовый пластик и Slotex
+    "slavena",        // 9. Кухня МДФ пластик Gola
+    "oak-stone",      // 10. Кухня эмаль и массив дуба
+    "aleksandra",     // 11. Кухня МДФ пластик Slotex
   ];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))

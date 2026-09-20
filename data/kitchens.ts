@@ -18,7 +18,7 @@ export interface Kitchen {
 export const KITCHENS: Kitchen[] = [
   {
     slug: "slavena",
-    title: "Кухня: пластик и искусственный камень",
+    title: "Кухня МДФ пластик Gola",
     cover: "/img/kitchens/slavena/photo_1.jpg",
     gallery: [
       "/img/kitchens/slavena/photo_1.jpg",
@@ -40,7 +40,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "aleksandra",
-    title: "Кухня: матовый пластик и Slotex",
+    title: "Кухня МДФ пластик Slotex",
     cover: "/img/kitchens/aleksandra/photo_1.jpg",
     gallery: [
       "/img/kitchens/aleksandra/photo_1.jpg",
@@ -61,7 +61,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "timofey",
-    title: "Кухня: матовый пластик и дерево",
+    title: "Кухня МДФ Egger Дуб",
     cover: "/img/kitchens/timofey/photo_1.jpg",
     gallery: [
       "/img/kitchens/timofey/photo_1.jpg",
@@ -83,7 +83,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "stefania",
-    title: "Кухня: пластик с профилем Gola",
+    title: "Кухня МДФ Графит Gola",
     cover: "/img/kitchens/stefania/photo_1.jpg",
     gallery: [
       "/img/kitchens/stefania/photo_1.jpg",
@@ -120,7 +120,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "ulyana",
-    title: "Кухня: белый пластик и мрамор",
+    title: "Кухня МДФ Белый Egger",
     cover: "/img/kitchens/ulyana/photo_1.jpg",
     gallery: [
       "/img/kitchens/ulyana/photo_1.jpg",
@@ -153,7 +153,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "valeria",
-    title: "Кухня: эмаль и витрина",
+    title: "Кухня МДФ Эмаль Витрина",
     cover: "/img/kitchens/valeria/photo_1.jpg",
     gallery: [
       "/img/kitchens/valeria/photo_1.jpg",
@@ -192,7 +192,7 @@ export const KITCHENS: Kitchen[] = [
   },
   {
     slug: "viktoria",
-    title: "Кухня: молочные фасады и дерево",
+    title: "Кухня МДФ Классика Дуб",
     cover: "/img/kitchens/viktoria/photo_1.jpg",
     gallery: [
       "/img/kitchens/viktoria/photo_1.jpg",
