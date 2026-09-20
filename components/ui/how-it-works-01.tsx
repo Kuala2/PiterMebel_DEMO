@@ -149,8 +149,8 @@ export default function HowItWorks01() {
 
         <div className="how-it-works-guarantee">
           <p className="how-it-works-guarantee-text">
-            <strong className="how-it-works-guarantee-strong">Единая ответственность:</strong>{" "}
-            если розетка не совпала или слив упёрся в ящик — за это отвечаем мы, а не отделочники.
+            <strong className="how-it-works-guarantee-strong">Всё в одних руках:</strong>{" "}
+            готовим электрику и сантехнику строго под проект, привозим и подключаем технику — без несостыковок и поиска сторонних мастеров.
           </p>
         </div>
       </div>
