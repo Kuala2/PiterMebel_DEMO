@@ -106,6 +106,40 @@ export const CALCULATOR_PRICING = {
 
 export type CalculatorCategory = keyof typeof CALCULATOR_PRICING.categories;
 
+export interface SizePreset {
+  id: string;
+  name: string;
+  description: string;
+  meters: number;
+}
+
+export const DEFAULT_METERS_BY_CATEGORY: Record<CalculatorCategory, number> = {
+  kitchen: 3.0,
+  wardrobe: 2.0,
+  cabinet: 1.8,
+};
+
+export const SIZE_PRESETS_BY_CATEGORY: Record<CalculatorCategory, SizePreset[]> = {
+  kitchen: [
+    { id: "compact", name: "До 2,4 м", description: "Компактный проект", meters: 2.4 },
+    { id: "standard", name: "Около 3 м", description: "Средний размер", meters: 3.0 },
+    { id: "large", name: "Около 3,8 м", description: "Просторная зона", meters: 3.8 },
+    { id: "xl", name: "От 4,8 м", description: "Большой проект", meters: 4.8 },
+  ],
+  wardrobe: [
+    { id: "compact", name: "1,6 м", description: "2 секции (ниша / компактный)", meters: 1.6 },
+    { id: "standard", name: "2,0 м", description: "3 секции (стандарт)", meters: 2.0 },
+    { id: "large", name: "2,4 м", description: "4 секции (вместительный)", meters: 2.4 },
+    { id: "xl", name: "От 3,0 м", description: "Во всю стену / гардероб", meters: 3.0 },
+  ],
+  cabinet: [
+    { id: "compact", name: "1,2 м", description: "Компактная тумба / ниша", meters: 1.2 },
+    { id: "standard", name: "1,8 м", description: "Стандартная зона хранения", meters: 1.8 },
+    { id: "large", name: "2,4 м", description: "ТВ-зона или прихожая", meters: 2.4 },
+    { id: "xl", name: "От 3,2 м", description: "Комплексная композиция", meters: 3.2 },
+  ],
+};
+
 export interface EstimateInput {
   category: CalculatorCategory;
   layout: string;

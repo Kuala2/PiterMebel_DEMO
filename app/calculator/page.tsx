@@ -7,6 +7,8 @@ import {
   calculateEstimate,
   CalculatorCategory,
   CALCULATOR_PRICING,
+  DEFAULT_METERS_BY_CATEGORY,
+  SIZE_PRESETS_BY_CATEGORY,
 } from "@/data/calculator-pricing";
 import { SITE_CONFIG } from "@/data/site";
 
@@ -38,13 +40,6 @@ const LAYOUTS: Record<CalculatorCategory, Choice[]> = {
   ],
 };
 
-const SIZE_PRESETS = [
-  { id: "compact", name: "До 2,4 м", description: "Компактный проект", meters: 2.4 },
-  { id: "standard", name: "Около 3 м", description: "Средний размер", meters: 3 },
-  { id: "large", name: "Около 3,8 м", description: "Просторная зона", meters: 3.8 },
-  { id: "xl", name: "От 4,8 м", description: "Большой проект", meters: 4.8 },
-];
-
 const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: MaterialId }>> = {
   kitchen: [
     {
@@ -60,7 +55,7 @@ const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: Mat
     {
       id: "plastic",
       name: "МДФ пластик: AGT или Velvet",
-      description: "Строго AGT или Velvet — стойкая матовая поверхность с ПУР-кромкой (без Fenix)",
+      description: "Строго AGT или Velvet — стойкая матовая поверхность с влагостойкой кромкой (без Fenix)",
     },
     {
       id: "enamel",
@@ -124,7 +119,7 @@ const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: Mat
     {
       id: "plastic",
       name: "МДФ пластик: AGT или Velvet",
-      description: "Матовая практичная поверхность AGT или Velvet с ПУР-кромкой",
+      description: "Матовая практичная поверхность AGT или Velvet с влагостойкой кромкой",
     },
     {
       id: "enamel",
@@ -173,9 +168,9 @@ const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
   ],
   wardrobe: [
     { id: "glass", name: "Стекло или зеркало", description: "Витрины со стеклом Stopsol, зеркало или тонированное стекло" },
-    { id: "drawers", name: "Выдвижные системы", description: "Ящики, корзины и дополнительное наполнение" },
+    { id: "drawers", name: "Выдвижные ящики (4–6 шт.)", description: "Ящики и корзины плавного закрывания" },
     { id: "lighting", name: "Встроенная подсветка", description: "Свет внутри секций и витрин" },
-    { id: "ceiling", name: "До потолка", description: "Антресоли и подгонка по высоте" },
+    { id: "ceiling", name: "Под потолок (антресоли)", description: "Антресоли и подгонка по высоте" },
     { id: "fittings", name: "Расширенная фурнитура", description: "Больше механизмов плавного открывания" },
     { id: "filling", name: "Сложное наполнение", description: "Пантографы, обувницы и специальные секции" },
   ],
@@ -211,8 +206,8 @@ function getChoice<T extends Choice>(list: readonly T[], id: string): T {
   return list.find((item) => item.id === id) ?? fallback;
 }
 
-function clampMeters(value: number) {
-  if (!Number.isFinite(value)) return 3;
+function clampMeters(value: number, fallback = 3) {
+  if (!Number.isFinite(value)) return fallback;
   return Math.min(12, Math.max(0.8, Math.round(value * 10) / 10));
 }
 
@@ -224,7 +219,7 @@ export default function CalculatorPage() {
   const [step, setStep] = useState(0);
   const [category, setCategory] = useState<CalculatorCategory>("kitchen");
   const [layout, setLayout] = useState("straight");
-  const [meters, setMeters] = useState(3);
+  const [meters, setMeters] = useState<number>(DEFAULT_METERS_BY_CATEGORY.kitchen);
   const [material, setMaterial] = useState<MaterialId>("egger");
   const [options, setOptions] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
@@ -252,9 +247,13 @@ export default function CalculatorPage() {
     const nextOptions = sanitizeOptions(rawOptions, nextCategory);
     const stepParam = Number(params.get("step"));
 
+    const metersParam = params.get("meters");
+    const parsedMeters = metersParam !== null && metersParam !== "" ? Number(metersParam) : NaN;
+    const nextMeters = clampMeters(parsedMeters, DEFAULT_METERS_BY_CATEGORY[nextCategory]);
+
     setCategory(nextCategory);
     setLayout(nextLayout);
-    setMeters(clampMeters(Number(params.get("meters") || 3)));
+    setMeters(nextMeters);
     setMaterial(nextMaterial);
     setOptions(nextOptions);
     if (Number.isInteger(stepParam) && stepParam >= 1 && stepParam <= STEPS.length) {
@@ -336,6 +335,7 @@ export default function CalculatorPage() {
   const chooseCategory = (id: CalculatorCategory) => {
     setCategory(id);
     setLayout(LAYOUTS[id][0].id);
+    setMeters(DEFAULT_METERS_BY_CATEGORY[id]);
     setOptions((current) => sanitizeOptions(current, id));
     const allowedMaterialIds = new Set(MATERIALS_BY_CATEGORY[id].map((item) => item.id));
     if (!allowedMaterialIds.has(material)) {
@@ -480,7 +480,7 @@ export default function CalculatorPage() {
                   </div>
 
                   <div className="calculator-size-presets" aria-label="Быстрый выбор длины">
-                    {SIZE_PRESETS.map((preset) => (
+                    {SIZE_PRESETS_BY_CATEGORY[category].map((preset) => (
                       <button
                         key={preset.id}
                         type="button"
@@ -509,7 +509,7 @@ export default function CalculatorPage() {
                         inputMode="decimal"
                         value={meters}
                         aria-describedby="calculator-meters-help"
-                        onChange={(event) => setMeters(clampMeters(Number(event.target.value)))}
+                        onChange={(event) => setMeters(clampMeters(Number(event.target.value), DEFAULT_METERS_BY_CATEGORY[category]))}
                       />
                       <span>м</span>
                       <button type="button" onClick={() => setMeters((value) => clampMeters(value + 0.2))} aria-label="Увеличить длину">+</button>

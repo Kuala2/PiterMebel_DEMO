@@ -343,16 +343,16 @@ export const PROJECTS: Project[] = [
     source: "posts/post_159/post_info.json",
   },
   {
-    slug: "bathroom-pur-vanity",
+    slug: "bathroom-vanity",
     type: "Ванная",
     title: "Влагостойкая мебель для ванной комнаты",
-    cover: "/img/projects/bathroom-pur-vanity/photo_1.jpg",
+    cover: "/img/projects/bathroom-vanity/photo_1.jpg",
     gallery: [
-      "/img/projects/bathroom-pur-vanity/photo_1.jpg",
-      "/img/projects/bathroom-pur-vanity/photo_2.jpg",
+      "/img/projects/bathroom-vanity/photo_1.jpg",
+      "/img/projects/bathroom-vanity/photo_2.jpg",
     ],
-    summary: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с бесшовной обработкой кромок на полиуретановом PUR-клее.",
-    materials: ["МДФ в пластике", "Влагостойкий PUR-клей"],
+    summary: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с бесшовной влагостойкой обработкой кромок.",
+    materials: ["МДФ в пластике", "Влагостойкая кромка / кромкооблицовка"],
     source: "posts/post_156/post_info.json",
   },
 ];
