@@ -1950,27 +1950,8 @@ img {
 
 .how-it-works-guarantee {
   max-width: 680px;
-  margin: 48px auto 0 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 22px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  text-align: left;
-}
-
-.how-it-works-guarantee-icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: var(--color-green-dark);
-  color: var(--color-green-brand);
-  display: grid;
-  place-items: center;
-  margin-top: 1px;
+  margin: 40px auto 0 auto;
+  text-align: center;
 }
 
 .how-it-works-guarantee-text {
@@ -2000,7 +1981,7 @@ img {
     max-width: 100%;
   }
   .how-it-works-guarantee {
-    text-align: left;
+    text-align: center;
     margin-top: 32px;
   }
 }
@@ -2018,12 +1999,11 @@ img {
     font-size: 24px;
   }
   .how-it-works-guarantee {
-    margin-top: 32px;
-    padding: 14px 16px;
-    gap: 12px;
+    margin-top: 28px;
+    text-align: center;
   }
   .how-it-works-guarantee-text {
-    font-size: 14.5px;
+    font-size: 14px;
     line-height: 1.55;
   }
 }
