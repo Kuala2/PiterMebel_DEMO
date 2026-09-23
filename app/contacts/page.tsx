@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LeadSection from "@/components/LeadSection";
 import VkIcon from "@/components/VkIcon";
+import TelegramIcon from "@/components/TelegramIcon";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import MaxIcon from "@/components/MaxIcon";
 import YandexOfficeMap from "@/components/YandexOfficeMap";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
@@ -36,6 +39,36 @@ export default function ContactsPage() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               {SITE_CONFIG.phone}
+            </a>
+            <a
+              href={SITE_CONFIG.telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-glass"
+              style={{ gap: "8px" }}
+            >
+              <TelegramIcon />
+              Telegram
+            </a>
+            <a
+              href={SITE_CONFIG.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-glass"
+              style={{ gap: "8px" }}
+            >
+              <WhatsAppIcon />
+              WhatsApp
+            </a>
+            <a
+              href={SITE_CONFIG.maxUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-glass"
+              style={{ gap: "8px" }}
+            >
+              <MaxIcon />
+              Max
             </a>
             <a
               href={SITE_CONFIG.vkImUrl}
@@ -83,7 +116,7 @@ export default function ContactsPage() {
             <div className="guarantee-item">
               <span className="guarantee-label">04</span>
               <div className="guarantee-title">Монтаж под ключ</div>
-              <p className="guarantee-desc">Своя бригада: сборка, подключение сантехники, электрики и техники без сторонних мастеров.</p>
+              <p className="guarantee-desc">Свои бригады: сборка, подключение сантехники, электрики и техники без сторонних мастеров.</p>
             </div>
           </div>
         </div>

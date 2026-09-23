@@ -150,7 +150,7 @@ export default function KitchensCatalogPage() {
 
                     {/* Direct link on photo area */}
                     <Link
-                      href={`/kitchens/${kitchen.slug}`}
+                      href={`/kitchens/${kitchen.slug}/`}
                       style={{ position: "absolute", inset: 0, zIndex: 2 }}
                       aria-label={`Подробнее: ${kitchen.title}`}
                     />
@@ -160,7 +160,7 @@ export default function KitchensCatalogPage() {
                 {/* Info Column (Весь блок кликабелен для перехода к модели) */}
                 <div className="ladder-info-col">
                   <Link
-                    href={`/kitchens/${kitchen.slug}`}
+                    href={`/kitchens/${kitchen.slug}/`}
                     className="ladder-content-clickable"
                     style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", cursor: "pointer" }}
                   >
@@ -180,7 +180,7 @@ export default function KitchensCatalogPage() {
 
                   <div className="ladder-actions" style={{ marginTop: "20px" }}>
                     <Link
-                      href={`/kitchens/${kitchen.slug}`}
+                      href={`/kitchens/${kitchen.slug}/`}
                       className="btn btn-green"
                     >
                       Смотреть проект →

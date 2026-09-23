@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import VkIcon from "@/components/VkIcon";
+import TelegramIcon from "@/components/TelegramIcon";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
+import MaxIcon from "@/components/MaxIcon";
 import { SITE_CONFIG, NAVIGATION_LINKS } from "@/data/site";
 import { LEGAL_DETAILS, hasConfirmedLegalDetails } from "@/data/legal";
 
@@ -60,17 +63,97 @@ export default function Footer() {
                 {SITE_CONFIG.workHours}
               </span>
             </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-              <a
-                href={SITE_CONFIG.vkUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-sm"
-                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", background: "rgba(255,255,255,0.06)", color: "#FFFFFF", border: "1px solid rgba(255,255,255,0.15)" }}
-              >
-                <VkIcon />
-                Сообщество ВКонтакте
-              </a>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+                <a
+                  href={SITE_CONFIG.telegramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    padding: 0,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    color: "#FFFFFF",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "8px",
+                  }}
+                  aria-label="Telegram"
+                  title="Telegram"
+                >
+                  <TelegramIcon size={18} />
+                </a>
+                <a
+                  href={SITE_CONFIG.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    padding: 0,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    color: "#FFFFFF",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "8px",
+                  }}
+                  aria-label="WhatsApp"
+                  title="WhatsApp"
+                >
+                  <WhatsAppIcon size={18} />
+                </a>
+                <a
+                  href={SITE_CONFIG.maxUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    padding: 0,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    color: "#FFFFFF",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "8px",
+                  }}
+                  aria-label="Max"
+                  title="Max"
+                >
+                  <MaxIcon size={18} />
+                </a>
+                <a
+                  href={SITE_CONFIG.vkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm"
+                  style={{
+                    width: "38px",
+                    height: "38px",
+                    padding: 0,
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "rgba(255,255,255,0.06)",
+                    color: "#FFFFFF",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    borderRadius: "8px",
+                  }}
+                  aria-label="Сообщество ВКонтакте"
+                  title="ВКонтакте"
+                >
+                  <VkIcon size={18} />
+                </a>
+              </div>
               <Link href="/contacts/#measure" className="btn btn-green btn-sm">
                 Записаться на консультацию
               </Link>

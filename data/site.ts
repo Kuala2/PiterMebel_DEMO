@@ -16,6 +16,9 @@ export interface SiteConfig {
   workHours: string;
   vkUrl: string;
   vkImUrl: string;
+  telegramUrl: string;
+  maxUrl: string;
+  whatsappUrl: string;
   yandexMapsUrl: string;
   disclaimer: string;
   services: string[];
@@ -40,6 +43,9 @@ export const SITE_CONFIG: SiteConfig = {
   workHours: "Пн – Пт: с 10:00 до 18:00 (по предварительной записи)",
   vkUrl: "https://vk.ru/pitermebelcom",
   vkImUrl: "https://vk.ru/im?sel=-215942650",
+  telegramUrl: "https://t.me/studiyaelenavolkova",
+  maxUrl: "https://max.ru/u/f9LHodD0cOLNOfWA9k-Wxk92y8Qe7tcvfaids8LzEGmQ1sgd3OfYXij6734",
+  whatsappUrl: "https://wa.me/message/6G5V7NPGLPXCB1",
   yandexMapsUrl: "https://yandex.ru/maps/org/pitermebel/245406542043/?indoorLevel=1&ll=30.272883%2C59.899907",
   disclaimer: "Информация на сайте носит справочный характер. Итоговая стоимость и условия фиксируются в договоре после согласования проекта.",
   services: [

@@ -96,7 +96,7 @@ export default function ProductionPage() {
                   <span className="prod-accent-num">03 · </span>Монтаж под ключ
                 </h3>
                 <p className="prod-showcase-desc">
-                  Одна бригада отвечает за доставку и установку мебели, а также за заранее согласованные
+                  Бригады доставки и установки мебели разные, но постоянные. Также выполняем заранее согласованные
                   подключения техники, сантехники и электрики.
                 </p>
               </div>
@@ -193,7 +193,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">02</span>
               <h3 className="prod-step-title">Встреча в офисе</h3>
               <p className="prod-step-desc">
-                Обсуждаем планировку и подбираем материалы на Стачек, 9
+                Обсуждаем планировку и подбираем материалы в офисе на площади Стачек, 9
               </p>
             </div>
 
@@ -209,7 +209,7 @@ export default function ProductionPage() {
               <span className="prod-step-num">04</span>
               <h3 className="prod-step-title">Изготовление</h3>
               <p className="prod-step-desc">
-                Передаём согласованный проект в цех на Петергофском шоссе, 73
+                Передаём согласованный проект на производство
               </p>
             </div>
 

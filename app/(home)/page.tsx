@@ -134,7 +134,7 @@ export default function HomePage() {
         "/img/projects/oak-stone/photo_3.jpg",
         "/img/projects/oak-stone/photo_4.jpg",
       ],
-      link: "/projects/oak-stone",
+      link: "/projects/oak-stone/",
     },
     {
       id: "glass-wardrobe",
@@ -149,7 +149,7 @@ export default function HomePage() {
         "/img/projects/glass-wardrobe/photo_2.jpg",
         "/img/projects/glass-wardrobe/photo_3.jpg",
       ],
-      link: "/projects/glass-wardrobe",
+      link: "/projects/glass-wardrobe/",
     },
     {
       id: "aleksandra",
@@ -165,7 +165,7 @@ export default function HomePage() {
         "/img/kitchens/aleksandra/photo_3.jpg",
         "/img/kitchens/aleksandra/photo_4.jpg",
       ],
-      link: "/kitchens/aleksandra",
+      link: "/kitchens/aleksandra/",
     },
     {
       id: "slavena",
@@ -180,7 +180,7 @@ export default function HomePage() {
         "/img/kitchens/slavena/photo_2.jpg",
         "/img/kitchens/slavena/photo_3.jpg",
       ],
-      link: "/kitchens/slavena",
+      link: "/kitchens/slavena/",
     },
     {
       id: "mirror-hall",
@@ -194,7 +194,7 @@ export default function HomePage() {
         "/img/projects/mirror-hall/photo_1.jpg",
         "/img/projects/mirror-hall/photo_2.jpg",
       ],
-      link: "/projects/mirror-hall",
+      link: "/projects/mirror-hall/",
     },
     {
       id: "timofey",
@@ -209,7 +209,7 @@ export default function HomePage() {
         "/img/kitchens/timofey/photo_2.jpg",
         "/img/kitchens/timofey/photo_3.jpg",
       ],
-      link: "/kitchens/timofey",
+      link: "/kitchens/timofey/",
     },
     {
       id: "brick-wardrobe",
@@ -224,7 +224,7 @@ export default function HomePage() {
         "/img/projects/brick-wardrobe/photo_2.jpg",
         "/img/projects/brick-wardrobe/photo_3.jpg",
       ],
-      link: "/projects/brick-wardrobe",
+      link: "/projects/brick-wardrobe/",
     },
     {
       id: "emerald-enamel",
@@ -240,7 +240,7 @@ export default function HomePage() {
         "/img/projects/emerald-enamel/photo_3.jpg",
         "/img/projects/emerald-enamel/photo_4.jpg",
       ],
-      link: "/projects/emerald-enamel",
+      link: "/projects/emerald-enamel/",
     },
     {
       id: "velvet-matte",
@@ -254,7 +254,7 @@ export default function HomePage() {
         "/img/projects/velvet-matte/photo_1.jpg",
         "/img/projects/velvet-matte/photo_2.jpg",
       ],
-      link: "/projects/velvet-matte",
+      link: "/projects/velvet-matte/",
     },
     {
       id: "sherman-cognac",
@@ -270,7 +270,7 @@ export default function HomePage() {
         "/img/projects/sherman-cognac/photo_3.jpg",
         "/img/projects/sherman-cognac/photo_4.jpg",
       ],
-      link: "/projects/sherman-cognac",
+      link: "/projects/sherman-cognac/",
     },
     {
       id: "bedroom-set",
@@ -285,7 +285,7 @@ export default function HomePage() {
         "/img/projects/bedroom-set/photo_2.jpg",
         "/img/projects/bedroom-set/photo_3.jpg",
       ],
-      link: "/projects/bedroom-set",
+      link: "/projects/bedroom-set/",
     },
   ];
 

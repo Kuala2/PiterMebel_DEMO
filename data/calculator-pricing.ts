@@ -127,9 +127,9 @@ export const SIZE_PRESETS_BY_CATEGORY: Record<CalculatorCategory, SizePreset[]> 
     { id: "xl", name: "От 4,8 м", description: "Большой проект", meters: 4.8 },
   ],
   wardrobe: [
-    { id: "compact", name: "1,6 м", description: "2 секции (ниша / компактный)", meters: 1.6 },
-    { id: "standard", name: "2,0 м", description: "3 секции (стандарт)", meters: 2.0 },
-    { id: "large", name: "2,4 м", description: "4 секции (вместительный)", meters: 2.4 },
+    { id: "compact", name: "1,6 м", description: "Ниша / компактный", meters: 1.6 },
+    { id: "standard", name: "2,0 м", description: "Стандарт", meters: 2.0 },
+    { id: "large", name: "2,4 м", description: "Вместительный", meters: 2.4 },
     { id: "xl", name: "От 3,0 м", description: "Во всю стену / гардероб", meters: 3.0 },
   ],
   cabinet: [
