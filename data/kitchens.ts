@@ -17,7 +17,7 @@ export interface Kitchen {
 
 export const KITCHENS: Kitchen[] = [
   {
-    slug: "slavena",
+    slug: "mdf-plastik-gola",
     title: "Кухня МДФ пластик Gola",
     cover: "/img/kitchens/slavena/photo_1.jpg",
     gallery: [
@@ -39,7 +39,7 @@ export const KITCHENS: Kitchen[] = [
     source: "products/item_2_kukhnya_slavena/product_info.json",
   },
   {
-    slug: "aleksandra",
+    slug: "mdf-plastik-slotex",
     title: "Кухня МДФ пластик Slotex",
     cover: "/img/kitchens/aleksandra/photo_1.jpg",
     gallery: [
@@ -60,8 +60,8 @@ export const KITCHENS: Kitchen[] = [
     source: "products/item_1_kukhnya_alexandra/product_info.json",
   },
   {
-    slug: "timofey",
-    title: "Кухня МДФ Egger Дуб",
+    slug: "mdf-plastik-hettich",
+    title: "Кухня МДФ пластик Hettich",
     cover: "/img/kitchens/timofey/photo_1.jpg",
     gallery: [
       "/img/kitchens/timofey/photo_1.jpg",
@@ -82,7 +82,7 @@ export const KITCHENS: Kitchen[] = [
     source: "products/item_4_kukhnya_timofey/product_info.json",
   },
   {
-    slug: "stefania",
+    slug: "mdf-grafit-gola",
     title: "Кухня МДФ Графит Gola",
     cover: "/img/kitchens/stefania/photo_1.jpg",
     gallery: [
@@ -119,7 +119,7 @@ export const KITCHENS: Kitchen[] = [
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
   },
   {
-    slug: "ulyana",
+    slug: "mdf-belyj-egger",
     title: "Кухня МДФ Белый Egger",
     cover: "/img/kitchens/ulyana/photo_1.jpg",
     gallery: [
@@ -152,7 +152,7 @@ export const KITCHENS: Kitchen[] = [
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
   },
   {
-    slug: "valeria",
+    slug: "mdf-emal-vitrina",
     title: "Кухня МДФ Эмаль Витрина",
     cover: "/img/kitchens/valeria/photo_1.jpg",
     gallery: [
@@ -191,7 +191,7 @@ export const KITCHENS: Kitchen[] = [
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
   },
   {
-    slug: "viktoria",
+    slug: "mdf-klassika-dub",
     title: "Кухня МДФ Классика Дуб",
     cover: "/img/kitchens/viktoria/photo_1.jpg",
     gallery: [

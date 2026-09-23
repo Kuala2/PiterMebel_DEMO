@@ -8,7 +8,7 @@ if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 const routes = [
   { name: 'home', path: '/' },
   { name: 'kitchens', path: '/kitchens' },
-  { name: 'kitchen-aleksandra', path: '/kitchens/aleksandra' },
+  { name: 'kitchen-mdf-plastik-slotex', path: '/kitchens/mdf-plastik-slotex' },
   { name: 'projects', path: '/projects' },
   { name: 'project-island-parquet', path: '/projects/island-parquet' },
   { name: 'production', path: '/production' },

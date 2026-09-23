@@ -152,7 +152,7 @@ export default function HomePage() {
       link: "/projects/glass-wardrobe/",
     },
     {
-      id: "aleksandra",
+      id: "mdf-plastik-slotex",
       category: "kitchens",
       badge: "МДФ-пластик",
       title: "Кухня МДФ пластик Slotex",
@@ -165,10 +165,10 @@ export default function HomePage() {
         "/img/kitchens/aleksandra/photo_3.jpg",
         "/img/kitchens/aleksandra/photo_4.jpg",
       ],
-      link: "/kitchens/aleksandra/",
+      link: "/kitchens/mdf-plastik-slotex/",
     },
     {
-      id: "slavena",
+      id: "mdf-plastik-gola",
       category: "kitchens",
       badge: "МДФ-пластик",
       title: "Кухня МДФ пластик Gola",
@@ -180,7 +180,7 @@ export default function HomePage() {
         "/img/kitchens/slavena/photo_2.jpg",
         "/img/kitchens/slavena/photo_3.jpg",
       ],
-      link: "/kitchens/slavena/",
+      link: "/kitchens/mdf-plastik-gola/",
     },
     {
       id: "mirror-hall",
@@ -197,10 +197,10 @@ export default function HomePage() {
       link: "/projects/mirror-hall/",
     },
     {
-      id: "timofey",
+      id: "mdf-plastik-hettich",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня МДФ Egger Дуб",
+      title: "Кухня МДФ пластик Hettich",
       desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
       specLabel: "Фасады",
       specValue: "МДФ-пластик / Дерево",
@@ -209,7 +209,7 @@ export default function HomePage() {
         "/img/kitchens/timofey/photo_2.jpg",
         "/img/kitchens/timofey/photo_3.jpg",
       ],
-      link: "/kitchens/timofey/",
+      link: "/kitchens/mdf-plastik-hettich/",
     },
     {
       id: "brick-wardrobe",
@@ -293,20 +293,20 @@ export default function HomePage() {
   // затем чередование с премиальными гардеробными и шкафами:
   // 1. Кухня Egger Шерман коньяк
   // 2. Гардеробная со смарт-стеклом STOPSOL
-  // 3. Кухня МДФ Egger Дуб
+  // 3. Кухня МДФ пластик Hettich
   // 4. Встроенный шкаф в мастер-спальню
   const itemOrder = [
     "sherman-cognac", // 1. Кухня Egger Шерман коньяк (подсвеченная витрина, глянец и теплый дуб Egger)
     "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
-    "timofey",        // 3. Кухня МДФ Egger Дуб
+    "mdf-plastik-hettich", // 3. Кухня МДФ пластик Hettich
     "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
     "velvet-matte",   // 5. Кухня МДФ Velvet
     "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
     "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
     "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
-    "slavena",        // 9. Кухня МДФ пластик Gola
+    "mdf-plastik-gola", // 9. Кухня МДФ пластик Gola
     "oak-stone",      // 10. Кухня эмаль и массив дуба
-    "aleksandra",     // 11. Кухня МДФ пластик Slotex
+    "mdf-plastik-slotex", // 11. Кухня МДФ пластик Slotex
   ];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))
