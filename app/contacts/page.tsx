@@ -47,7 +47,7 @@ export default function ContactsPage() {
               className="btn btn-glass"
               style={{ gap: "8px" }}
             >
-              <TelegramIcon />
+              <TelegramIcon size={20} />
               Telegram
             </a>
             <a
@@ -57,7 +57,7 @@ export default function ContactsPage() {
               className="btn btn-glass"
               style={{ gap: "8px" }}
             >
-              <WhatsAppIcon />
+              <WhatsAppIcon size={20} />
               WhatsApp
             </a>
             <a
@@ -67,7 +67,7 @@ export default function ContactsPage() {
               className="btn btn-glass"
               style={{ gap: "8px" }}
             >
-              <MaxIcon />
+              <MaxIcon size={20} />
               Max
             </a>
             <a
@@ -77,7 +77,7 @@ export default function ContactsPage() {
               className="btn btn-glass"
               style={{ gap: "8px" }}
             >
-              <VkIcon />
+              <VkIcon size={20} />
               Написать ВКонтакте
             </a>
             <a

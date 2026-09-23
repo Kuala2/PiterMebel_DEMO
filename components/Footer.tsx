@@ -85,7 +85,7 @@ export default function Footer() {
                   aria-label="Telegram"
                   title="Telegram"
                 >
-                  <TelegramIcon size={18} />
+                  <TelegramIcon size={20} />
                 </a>
                 <a
                   href={SITE_CONFIG.whatsappUrl}
@@ -107,7 +107,7 @@ export default function Footer() {
                   aria-label="WhatsApp"
                   title="WhatsApp"
                 >
-                  <WhatsAppIcon size={18} />
+                  <WhatsAppIcon size={20} />
                 </a>
                 <a
                   href={SITE_CONFIG.maxUrl}
@@ -129,7 +129,7 @@ export default function Footer() {
                   aria-label="Max"
                   title="Max"
                 >
-                  <MaxIcon size={18} />
+                  <MaxIcon size={20} />
                 </a>
                 <a
                   href={SITE_CONFIG.vkUrl}
@@ -151,7 +151,7 @@ export default function Footer() {
                   aria-label="Сообщество ВКонтакте"
                   title="ВКонтакте"
                 >
-                  <VkIcon size={18} />
+                  <VkIcon size={20} />
                 </a>
               </div>
               <Link href="/contacts/#measure" className="btn btn-green btn-sm">
