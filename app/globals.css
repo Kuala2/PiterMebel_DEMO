@@ -6313,7 +6313,27 @@ footer,
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background-color: var(--bg-dark);
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.prod-stage-photo img {
+  transition: transform 0.4s ease;
+}
+
+.prod-stage-col:hover .prod-stage-photo img {
+  transform: scale(1.025);
+}
+
+.prod-stage-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-green-brand);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .prod-stage-title {
@@ -6327,7 +6347,7 @@ footer,
 
 .prod-stage-desc {
   font-family: var(--font-main);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--color-text-secondary);
   margin: 0;
@@ -6337,6 +6357,53 @@ footer,
   .prod-stages-row {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+/* 5. Production Benefits Grid (3 Editorial Points without repetition) */
+.prod-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.prod-benefit-item {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prod-benefit-tag {
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-green-brand);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.prod-benefit-title {
+  font-family: var(--font-main);
+  font-size: 19px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.35;
+}
+
+.prod-benefit-desc {
+  font-family: var(--font-main);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .prod-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 

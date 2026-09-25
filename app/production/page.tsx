@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
@@ -7,14 +6,14 @@ import PageHeader from "@/components/PageHeader";
 import { buildOg } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-  description: `Производство мебели по индивидуальным размерам в Санкт-Петербурге с ${SITE_CONFIG.foundingYear} года. Цех на Петергофском шоссе, 73.`,
+  title: `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`,
+  description: `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру. Мебель на заказ с ${SITE_CONFIG.foundingYear} года.`,
   alternates: {
     canonical: "/production/",
   },
   openGraph: buildOg(
-    `Производство — ${SITE_CONFIG.name} в Санкт-Петербурге`,
-    `Производство мебели по индивидуальным размерам с ${SITE_CONFIG.foundingYear} года. Цех на Петергофском шоссе, 73.`,
+    `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`,
+    `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру с ${SITE_CONFIG.foundingYear} года.`,
     "/production"
   ),
 };
@@ -22,209 +21,145 @@ export const metadata: Metadata = {
 export default function ProductionPage() {
   return (
     <div>
-      {/* 1. Page Header (Стандартный заголовок подраздела, как на всех страницах) */}
+      {/* 1. Page Header */}
       <PageHeader title="Собственное производство мебели в Санкт-Петербурге" />
 
-      {/* 2. Key Facts Strip (Чистая горизонтальная строка цифр на холсте) */}
+      {/* 2. Key Facts Strip */}
       <section style={{ padding: "48px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <div className="prod-stats-strip">
             <div className="prod-stat-item">
               <span className="prod-stat-num">{yearsInBusiness()}</span>
-              <span className="prod-stat-label">Опыт в Санкт-Петербурге с {SITE_CONFIG.foundingYear} г.</span>
+              <span className="prod-stat-label">Опыт работы в Санкт-Петербурге с {SITE_CONFIG.foundingYear} года</span>
             </div>
             <div className="prod-stat-item">
               <span className="prod-stat-num">1500+</span>
               <span className="prod-stat-label">Реализованных проектов мебели</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">По проекту</span>
-              <span className="prod-stat-label">Считаем листы, фасады, петли и механизмы</span>
+              <span className="prod-stat-num">Полный цикл</span>
+              <span className="prod-stat-label">Раскрой, кромление и присадка в своём цеху</span>
             </div>
             <div className="prod-stat-item">
-              <span className="prod-stat-num">Под ключ</span>
-              <span className="prod-stat-label">Доставка, установка и подключения одной командой</span>
+              <span className="prod-stat-num">Любой размер</span>
+              <span className="prod-stat-label">Точный шаг деталей без наценки за нестандарт</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Showcase: Реальность цеха и принципы (Сплит 58/42, естественные пропорции 3:2, без плиток) */}
-      <section style={{ backgroundColor: "var(--bg-studio)", padding: "112px 0" }}>
+      {/* 3. Станочный парк: 3 этапа производства с реальными фото цеха */}
+      <section style={{ backgroundColor: "var(--bg-studio)", padding: "96px 0" }}>
         <div className="container">
-          <div className="prod-showcase-split">
-            {/* Левая колонка: Естественное фото мастера в цеху без обрезки */}
-            <div className="prod-showcase-media">
-              <Image
-                src="/img/production/current/workshop-overview.webp"
-                alt="Мастер измеряет мебельную деталь в производственном цеху"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 700px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-
-            {/* Правая колонка: Единые заголовки без бровей-дубликатов и лишней воды */}
-            <div className="prod-showcase-text">
-              <h2 className="section-title" style={{ marginBottom: "0" }}>
-                От проекта к готовой мебели
-              </h2>
-
-              <div className="prod-showcase-item">
-                <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">01 · </span>Подробный расчёт
-                </h3>
-                <p className="prod-showcase-desc">
-                  Собираем смету по спецификации конкретного проекта: учитываем количество листов,
-                  площадь фасадов, выбранные петли, механизмы и работы.
-                </p>
-              </div>
-
-              <div className="prod-showcase-item">
-                <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">02 · </span>Изготовление в цеху
-                </h3>
-                <p className="prod-showcase-desc">
-                  После согласования конструкции передаём проект в собственный цех, где подготавливаем
-                  и обрабатываем детали под размеры будущей мебели.
-                </p>
-              </div>
-
-              <div className="prod-showcase-item">
-                <h3 className="prod-showcase-title">
-                  <span className="prod-accent-num">03 · </span>Монтаж под ключ
-                </h3>
-                <p className="prod-showcase-desc">
-                  Бригады доставки и установки мебели разные, но постоянные. Также выполняем заранее согласованные
-                  подключения техники, сантехники и электрики.
-                </p>
-              </div>
-            </div>
+          <div style={{ maxWidth: "760px", marginBottom: "48px" }}>
+            <h2 className="section-title" style={{ marginBottom: "12px" }}>
+              Станочный парк цеха
+            </h2>
+            <p style={{ color: "var(--color-text-secondary)", fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
+              Цех на Петергофском шоссе, 73 оснащён оборудованием для полного цикла обработки плитных материалов: от чистового раскроя до точной присадки под фурнитуру.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* 4. Фабричный цикл: 3 этапа с фото в естественных пропорциях 3:2 (Без дубликатов заголовков) */}
-      <section style={{ backgroundColor: "var(--bg-dark)", padding: "112px 0" }}>
-        <div className="container">
-          <h2 className="section-title" style={{ marginBottom: "28px" }}>
-            Основные этапы производства
-          </h2>
 
           <div className="prod-stages-row">
             {/* Этап 1: Раскрой */}
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/current/panel-cutting.webp"
-                  alt="Мастер раскраивает ламинированную мебельную плиту"
+                  src="/img/production/panel-cutting.webp"
+                  alt="Форматно-раскроечный станок для чистового распила ЛДСП и МДФ"
                   fill
+                  priority
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <h3 className="prod-stage-title">
-                <span className="prod-accent-num">01 · </span>Раскрой плит
-              </h3>
+              <div className="prod-stage-badge">01 · Раскрой плит</div>
+              <h3 className="prod-stage-title">Чистовой раскрой</h3>
               <p className="prod-stage-desc">
-                ЛДСП и МДФ раскраиваем по карте деталей, подготовленной для конкретного проекта.
+                Форматно-раскроечный станок с подрезным диском. Распиливаем плиты ЛДСП и МДФ точно по картам кроя под размеры помещения. Подрезной узел исключает появление сколов на ламинате.
               </p>
             </div>
 
-            {/* Этап 2: Кромление */}
+            {/* Этап 2: Кромление с прифуговкой */}
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/current/edge-banding.webp"
-                  alt="Мастер наносит кромку на мебельную деталь"
+                  src="/img/production/edge-banding.webp"
+                  alt="Кромкооблицовочный станок с узлом прифуговки"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <h3 className="prod-stage-title">
-                <span className="prod-accent-num">02 · </span>Кромление торцов
-              </h3>
+              <div className="prod-stage-badge">02 · Кромление торцов</div>
+              <h3 className="prod-stage-title">Кромление с прифуговкой</h3>
               <p className="prod-stage-desc">
-                Обрабатываем открытые торцы деталей, чтобы подготовить их к присадке и дальнейшей сборке.
+                Кромкооблицовочный станок с узлом прифуговки. Алмазная фреза снимает микронеровности перед поклейкой кромки, обеспечивая плотный шов и надёжную защиту плиты от влаги.
               </p>
             </div>
 
-            {/* Этап 3: Присадка и сборка */}
+            {/* Этап 3: Присадка под фурнитуру */}
             <div className="prod-stage-col">
               <div className="prod-stage-photo">
                 <Image
-                  src="/img/production/current/line-boring.webp"
-                  alt="Мастер выполняет присадку отверстий в мебельной детали"
+                  src="/img/production/line-boring.webp"
+                  alt="Мастер студии «ПитерМебель» за присадочным станком в цеху"
                   fill
                   sizes="(max-width: 900px) 100vw, 400px"
                   style={{ objectFit: "cover" }}
                 />
               </div>
-              <h3 className="prod-stage-title">
-                <span className="prod-accent-num">03 · </span>Присадка и сборка
-              </h3>
+              <div className="prod-stage-badge">03 · Отверстия под фурнитуру</div>
+              <h3 className="prod-stage-title">Сверлильно-присадочные станки</h3>
               <p className="prod-stage-desc">
-                Выполняем присадку по проекту и комплектуем детали выбранными петлями и механизмами.
+                Сверлим технологические отверстия под петли, стяжки и направляющие Blum и Hettich строго по чертежам, чтобы корпуса и фасады мебели собирались ровно и без перекосов.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. Порядок работы над заказом (Лаконичная строка без простыней текста) */}
-      <section style={{ backgroundColor: "var(--bg-studio)", padding: "112px 0" }}>
+      {/* 4. Преимущества работы напрямую с цехом: 3 конкретных факта вместо «воды» */}
+      <section style={{ backgroundColor: "var(--bg-dark)", padding: "96px 0" }}>
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: "28px" }}>
-            Порядок работы
-          </h2>
+          <div style={{ maxWidth: "760px", marginBottom: "44px" }}>
+            <h2 className="section-title" style={{ marginBottom: "12px" }}>
+              Преимущества работы напрямую с цехом
+            </h2>
+            <p style={{ color: "var(--color-text-secondary)", fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
+              Изготавливаем мебель под индивидуальные габариты помещения без посреднических наценок и ограничений типовой сетки.
+            </p>
+          </div>
 
-          <div className="prod-linear-track">
-            <div className="prod-step-col">
-              <span className="prod-step-num">01</span>
-              <h3 className="prod-step-title">Расчёт сметы</h3>
-              <p className="prod-step-desc">
-                Предварительно считаем проект по вашим размерам или эскизу
+          <div className="prod-benefits-grid">
+            <div className="prod-benefit-item">
+              <span className="prod-benefit-tag">Точность до миллиметра</span>
+              <h3 className="prod-benefit-title">Без наценки за нестандарт</h3>
+              <p className="prod-benefit-desc">
+                В отличие от серийных фабрик со стандартными шкафами (30, 40, 60 см), мы распиливаем детали под точные размеры вашей ниши по стандартной стоимости материала.
               </p>
             </div>
 
-            <div className="prod-step-col">
-              <span className="prod-step-num">02</span>
-              <h3 className="prod-step-title">Встреча в офисе</h3>
-              <p className="prod-step-desc">
-                Обсуждаем планировку и подбираем материалы в офисе на площади Стачек, 9
+            <div className="prod-benefit-item">
+              <span className="prod-benefit-tag">Безопасность E1</span>
+              <h3 className="prod-benefit-title">Проверенные европейские плиты</h3>
+              <p className="prod-benefit-desc">
+                Работаем с сертифицированным ЛДСП Egger и плотным МДФ с минимальным классом эмиссии. Мебель безопасна для спален и детских комнат.
               </p>
             </div>
 
-            <div className="prod-step-col">
-              <span className="prod-step-num">03</span>
-              <h3 className="prod-step-title">Точный замер</h3>
-              <p className="prod-step-desc">
-                Проверяем размеры после предварительного согласования проекта
-              </p>
-            </div>
-
-            <div className="prod-step-col">
-              <span className="prod-step-num">04</span>
-              <h3 className="prod-step-title">Изготовление</h3>
-              <p className="prod-step-desc">
-                Передаём согласованный проект на производство
-              </p>
-            </div>
-
-            <div className="prod-step-col">
-              <span className="prod-step-num">05</span>
-              <h3 className="prod-step-title">Монтаж под ключ</h3>
-              <p className="prod-step-desc">
-                Доставляем, собираем мебель и выполняем согласованные подключения
+            <div className="prod-benefit-item">
+              <span className="prod-benefit-tag">Комфортная встреча</span>
+              <h3 className="prod-benefit-title">Офис отдельно от цеха</h3>
+              <p className="prod-benefit-desc">
+                Встречи, подбор декоров вживую и проектирование проходят в уютном офисе на площади Стачек, 9. В цех на Петергофском шоссе уходят уже готовые чертежи.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. Финальный блок: Консультация и форма */}
+      {/* 5. Финальный блок: Консультация и форма */}
       <LeadSection
         id="consult"
         source="Производство"

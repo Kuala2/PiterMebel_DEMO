@@ -721,16 +721,17 @@ export default function HomePage() {
       <section className="workshop-section" id="production">
         <div className="container">
           <div className="workshop-editorial-grid">
-            {/* Left Column: Photo & Area Badge */}
+            {/* Left Column: Photo */}
             <div className="workshop-col-media">
               <div className="workshop-photo-frame">
                 <Image
-                  src="/img/production/current/workshop-overview.webp"
-                  alt="Мастер измеряет мебельную деталь в производственном цеху"
+                  src="/img/production/line-boring.webp"
+                  alt="Мастер студии «ПитерМебель» за присадочным станком в мебельном цеху"
                   fill
                   className="workshop-main-photo"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   style={{ objectFit: "cover" }}
+                  priority
                 />
               </div>
             </div>
@@ -738,20 +739,19 @@ export default function HomePage() {
             {/* Right Column: Editorial Details */}
             <div className="workshop-col-content">
               <h2 className="section-title">
-                Производство в Санкт-Петербурге
+                Собственное производство в Санкт-Петербурге
               </h2>
               <p className="workshop-lead">
-                Проект проходит через собственный цех и одну команду — от подготовки деталей до установки.
-                Так согласованные решения не теряются между проектированием, производством и монтажом.
+                Собственный цех на Петергофском шоссе, 73. Мы сами распиливаем плиты, кромим торцы с прифуговкой и делаем присадку по чертежам — без посредников и наценок за нестандарт.
               </p>
 
               <div className="workshop-points-list">
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">01</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Под конкретный проект</h3>
+                    <h3 className="workshop-point-title">Собственные станки</h3>
                     <p className="workshop-point-desc">
-                      Готовим детали по размерам помещения и согласованной конструкции мебели
+                      Форматно-раскроечный станок, кромочник с узлом прифуговки и два присадочных станка Blum
                     </p>
                   </div>
                 </div>
@@ -759,9 +759,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">02</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Понятная комплектация</h3>
+                    <h3 className="workshop-point-title">Открытая спецификация</h3>
                     <p className="workshop-point-desc">
-                      В смете учитываем листовые материалы, площадь фасадов, петли и механизмы
+                      В смете открыто расписываем материалы, фурнитуру и объём работ. Фиксируем цену в договоре
                     </p>
                   </div>
                 </div>
@@ -769,9 +769,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">03</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Монтаж под ключ</h3>
+                    <h3 className="workshop-point-title">Сборка своими мастерами</h3>
                     <p className="workshop-point-desc">
-                      Доставляем и устанавливаем мебель, подключаем согласованную технику и коммуникации
+                      Мебель устанавливают постоянные монтажники студии с подключением бытовой техники
                     </p>
                   </div>
                 </div>
@@ -779,7 +779,7 @@ export default function HomePage() {
 
               <div className="workshop-action-wrap">
                 <Link href="/production/" className="btn btn-glass">
-                  Подробнее о цехе →
+                  Подробнее о производстве →
                 </Link>
               </div>
             </div>
