@@ -6,67 +6,119 @@ import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
 import { PROJECTS } from "@/data/projects";
+import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
 import CatalogTabs from "@/components/CatalogTabs";
 import CatalogEditorial from "@/components/CatalogEditorial";
 
+type MainCategoryKey = "kitchens" | "wardrobes" | "custom";
+
+interface PortfolioCardItem {
+  slug: string;
+  href: string;
+  badge: string;
+  category: MainCategoryKey;
+  title: string;
+  cover: string;
+  gallery: string[];
+  materials: string[];
+}
+
+const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
+  ...KITCHENS.filter(
+    (k) => !PROJECTS.some((p) => p.relatedKitchenSlug === k.slug)
+  ).map((k): PortfolioCardItem => ({
+    slug: `kitchen-${k.slug}`,
+    href: `/kitchens/${k.slug}/`,
+    badge: "Кухня",
+    category: "kitchens",
+    title: k.title,
+    cover: k.cover,
+    gallery: k.gallery,
+    materials: k.specs.slice(0, 3).map((s) => s.value),
+  })),
+  ...PROJECTS.map((p): PortfolioCardItem => {
+    const category: MainCategoryKey =
+      p.type === "Кухня"
+        ? "kitchens"
+        : p.type === "Гардеробная" || p.type === "Спальня" || p.type === "Прихожая"
+          ? "wardrobes"
+          : "custom";
+    return {
+      slug: p.slug,
+      href: `/projects/${p.slug}/`,
+      badge: p.type,
+      category,
+      title: p.title,
+      cover: p.cover,
+      gallery: p.gallery,
+      materials: p.materials,
+    };
+  }),
+];
+
+const PORTFOLIO_ORDER = [
+  "sherman-cognac",
+  "glass-wardrobe",
+  "kitchen-mdf-plastik-hettich",
+  "bedroom-set",
+  "sliding-partition",
+  "kitchen-mdf-plastik-gola",
+  "light-wood-wardrobe",
+  "oak-veneer-panel",
+  "island-parquet",
+  "mirror-hall",
+  "cascade-partitions",
+  "kitchen-mdf-emal-vitrina",
+  "bathroom-vanity",
+  "velvet-matte",
+  "brick-wardrobe",
+  "office-reception",
+  "emerald-enamel",
+  "curved-oak-facades",
+  "kitchen-mdf-belyj-egger",
+  "wardrobe-inside",
+  "oak-stone",
+  "slat-panels",
+  "kitchen-mdf-grafit-gola",
+  "kitchen-mdf-klassika-dub",
+  "kitchen-mdf-plastik-slotex",
+];
+
+const PORTFOLIO_ITEMS: PortfolioCardItem[] = [
+  ...PORTFOLIO_ORDER.map((slug) =>
+    RAW_PORTFOLIO_ITEMS.find((item) => item.slug === slug)
+  ).filter((item): item is PortfolioCardItem => Boolean(item)),
+  ...RAW_PORTFOLIO_ITEMS.filter((item) => !PORTFOLIO_ORDER.includes(item.slug)),
+];
+
 export default function ProjectsPortfolioPage() {
-  const [activeType, setActiveType] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
 
   const filterTabs = [
-    { key: "all", label: "Все проекты", count: PROJECTS.length },
+    { key: "all", label: "Все проекты", count: PORTFOLIO_ITEMS.length },
     {
-      key: "Кухня",
+      key: "kitchens",
       label: "Кухни",
-      count: PROJECTS.filter((p) => p.type === "Кухня").length,
+      count: PORTFOLIO_ITEMS.filter((p) => p.category === "kitchens").length,
     },
     {
-      key: "Гардеробная",
-      label: "Гардеробные",
-      count: PROJECTS.filter((p) => p.type === "Гардеробная").length,
+      key: "wardrobes",
+      label: "Шкафы",
+      count: PORTFOLIO_ITEMS.filter((p) => p.category === "wardrobes").length,
     },
     {
-      key: "Прихожая",
-      label: "Прихожие",
-      count: PROJECTS.filter((p) => p.type === "Прихожая").length,
-    },
-    {
-      key: "Спальня",
-      label: "Спальни",
-      count: PROJECTS.filter((p) => p.type === "Спальня").length,
-    },
-    {
-      key: "Панели",
-      label: "ТВ-зоны",
-      count: PROJECTS.filter((p) => p.type === "Панели").length,
-    },
-    {
-      key: "Перегородки",
-      label: "Перегородки",
-      count: PROJECTS.filter((p) => p.type === "Перегородки").length,
-    },
-    {
-      key: "Ванная",
-      label: "Ванные",
-      count: PROJECTS.filter((p) => p.type === "Ванная").length,
-    },
-    {
-      key: "Корпусная мебель",
-      label: "Комплексные проекты",
-      count: PROJECTS.filter((p) => p.type === "Корпусная мебель").length,
-    },
-    {
-      key: "Коммерческий",
-      label: "Коммерческие",
-      count: PROJECTS.filter((p) => p.type === "Коммерческий").length,
+      key: "custom",
+      label: "Корпусная мебель",
+      count: PORTFOLIO_ITEMS.filter((p) => p.category === "custom").length,
     },
   ];
 
   const filteredProjects =
-    activeType === "all"
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.type === activeType);
+    activeCategory === "all"
+      ? PORTFOLIO_ITEMS
+      : PORTFOLIO_ITEMS.filter((p) => p.category === activeCategory);
 
   return (
     <div>
@@ -78,8 +130,8 @@ export default function ProjectsPortfolioPage() {
         <div className="container">
           <CatalogTabs
             tabs={filterTabs}
-            activeKey={activeType}
-            onChange={setActiveType}
+            activeKey={activeCategory}
+            onChange={setActiveCategory}
             label="Фильтр реализованных проектов"
           />
         </div>
@@ -107,7 +159,7 @@ export default function ProjectsPortfolioPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="card-img-slide is-active"
                     />
-                    <span className="card-badge-top">{project.type}</span>
+                    <span className="card-badge-top">{project.badge}</span>
 
                     {/* In-Card Left Arrow */}
                     {photos.length > 1 && (
@@ -168,14 +220,14 @@ export default function ProjectsPortfolioPage() {
 
                     {/* Direct link on photo area */}
                     <Link
-                      href={`/projects/${project.slug}`}
+                      href={project.href}
                       style={{ position: "absolute", inset: 0, zIndex: 2 }}
                       aria-label={`Смотреть проект ${project.title}`}
                     />
                   </div>
 
                   <Link
-                    href={`/projects/${project.slug}`}
+                    href={project.href}
                     className="card-body"
                     style={{ textDecoration: "none", display: "flex", flexDirection: "column", cursor: "pointer" }}
                   >

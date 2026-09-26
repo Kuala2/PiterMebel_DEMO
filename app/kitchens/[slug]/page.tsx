@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
 import LeadSection from "@/components/LeadSection";
-import VkIcon from "@/components/VkIcon";
 import { KITCHENS } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
@@ -27,9 +26,20 @@ export async function generateMetadata({
     return { title: "Кухня не найдена — ПитерМебель" };
   }
 
-  const pageTitle = kitchen.title.length + 15 <= 70
-    ? `${kitchen.title} — ПитерМебель`
-    : kitchen.title;
+  const hasDuplicateTitle = KITCHENS.some(
+    (k) => k.slug !== kitchen.slug && k.title === kitchen.title
+  );
+  const qualifierSpec =
+    kitchen.specs.find((s) => s.label.toLowerCase().includes("столешниц"))?.value ||
+    kitchen.specs[0]?.value;
+  const distinctTitle =
+    hasDuplicateTitle && qualifierSpec
+      ? `${kitchen.title} (${qualifierSpec})`
+      : kitchen.title;
+
+  const pageTitle = distinctTitle.length + 15 <= 70
+    ? `${distinctTitle} — ПитерМебель`
+    : distinctTitle;
   const ogDescription = buildMetaDescription(`${kitchen.title}: ${kitchen.summary}`);
 
   return {
@@ -89,7 +99,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           { name: kitchen.title },
         ])) }}
       />
-      {/* 1. Above the fold: Split Layout (Desktop 38/62, Mobile order: Title -> Gallery -> Specs) */}
+      {/* 1. Above the fold: Split Layout (Desktop 42/58, Mobile order: Title -> Gallery -> Specs) */}
       <section className="detail-page-header">
         <div className="container">
           <div className="detail-top-nav" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "12px" }}>
@@ -108,17 +118,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                 {kitchen.title}
               </h1>
 
-              {/* Стоимость рассчитывается по спецификации проекта */}
-              <div className="detail-price-badge">
-                <span className="detail-price-val">
-                  Индивидуальный расчёт
-                </span>
-                <span className="detail-price-meter">
-                  по материалам, наполнению и размерам
-                </span>
-              </div>
-
-              {/* On mobile, CSS reorders: Title -> Price -> Gallery -> Lead -> Specs -> Buttons */}
+              {/* On mobile, CSS reorders: Title -> Gallery -> Lead -> Specs -> Buttons */}
               <p className="detail-hero-lead">
                 {kitchen.summary}
               </p>
@@ -134,28 +134,19 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               </div>
 
               {/* Action Buttons */}
-              <div className="detail-actions-row" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
-                <Link
-                  href="/calculator/"
-                  className="btn btn-green"
-                >
-                  Рассчитать проект под размеры
-                </Link>
+              <div className="detail-actions-row">
                 <a
                   href="#measure"
-                  className="btn btn-glass"
+                  className="btn btn-green"
                 >
                   Записаться на консультацию
                 </a>
-                <a
-                  href={SITE_CONFIG.vkImUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/calculator/"
                   className="btn btn-glass"
                 >
-                  <VkIcon />
-                  ВКонтакте
-                </a>
+                  Рассчитать под себя
+                </Link>
               </div>
             </div>
 

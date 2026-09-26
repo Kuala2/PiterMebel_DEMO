@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "sherman-cognac",
     type: "Кухня",
-    title: "Кухня Egger Шерман коньяк",
+    title: "Кухня МДФ пластик+Egger",
     cover: "/img/projects/sherman-cognac/photo_1.jpg",
     gallery: [
       "/img/projects/sherman-cognac/photo_1.jpg",

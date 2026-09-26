@@ -13,6 +13,7 @@ const CATEGORY_OPTIONS = [
   { value: "Шкаф или гардеробная", label: "Шкаф или гардеробная" },
   { value: "Корпусная мебель", label: "Корпусная мебель" },
   { value: "Комплексный заказ", label: "Мебель для нескольких зон" },
+  { value: "Дизайн-проект", label: "Дизайн-проект / услуги дизайнера" },
   { value: "Консультация", label: "Пока не определились" },
 ] as const;
 
@@ -25,6 +26,7 @@ interface MeasureFormProps {
 
 function normalizeCategory(value?: string) {
   const normalized = value?.toLowerCase() || "";
+  if (normalized.includes("дизайн")) return "Дизайн-проект";
   if (normalized.includes("кухн")) return "Кухня";
   if (normalized.includes("шкаф") || normalized.includes("гардероб")) return "Шкаф или гардеробная";
   if (

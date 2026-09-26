@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import BoostVideoPlayer from "@/components/BoostVideoPlayer";
+import DesignPackagesSection from "@/components/DesignPackagesSection";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG } from "@/data/site";
 import { SITE_URL, buildBreadcrumbs, buildOg } from "@/lib/seo";
@@ -111,6 +112,8 @@ export default function ApartmentPage() {
           </div>
         </div>
       </section>
+
+      <DesignPackagesSection ctaHref="#consult" showSectionHeading={true} />
 
       <LeadSection
         id="consult"

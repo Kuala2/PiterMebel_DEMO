@@ -4,11 +4,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
 import LeadSection from "@/components/LeadSection";
-import VkIcon from "@/components/VkIcon";
 import { PROJECTS } from "@/data/projects";
 import { buildBreadcrumbs, buildOg } from "@/lib/seo";
 import { buildMetaDescription } from "@/lib/seo";
-import { SITE_CONFIG } from "@/data/site";
 
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -70,7 +68,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      {/* 1. Above the fold: Split Layout (Desktop 38/62, Mobile order: Title -> Gallery -> Specs) */}
+      {/* 1. Above the fold: Split Layout (Desktop 42/58, Mobile order: Title -> Gallery -> Specs) */}
       <section className="detail-page-header">
         <div className="container">
           <div className="detail-top-nav" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "12px" }}>
@@ -87,12 +85,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <div className="detail-info-col">
               <h1 className="detail-hero-title">{project.title}</h1>
 
-              <div className="detail-price-badge">
-                <span className="detail-price-val">Индивидуальный расчёт</span>
-                <span className="detail-price-meter">по спецификации и размерам проекта</span>
-              </div>
-
-              {/* On mobile, CSS reorders: Title -> Price -> Gallery -> Lead -> Specs -> Buttons */}
+              {/* On mobile, CSS reorders: Title -> Gallery -> Lead -> Specs -> Buttons */}
               <p className="detail-hero-lead">
                 {project.summary}
               </p>
@@ -112,28 +105,19 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               {/* Action Buttons */}
-              <div className="detail-actions-row" style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center" }}>
-                <Link
-                  href="/calculator/"
-                  className="btn btn-green"
-                >
-                  Рассчитать проект под размеры
-                </Link>
+              <div className="detail-actions-row">
                 <a
                   href="#measure"
-                  className="btn btn-glass"
+                  className="btn btn-green"
                 >
                   Записаться на консультацию
                 </a>
-                <a
-                  href={SITE_CONFIG.vkImUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/calculator/"
                   className="btn btn-glass"
                 >
-                  <VkIcon />
-                  ВКонтакте
-                </a>
+                  Рассчитать под себя
+                </Link>
               </div>
             </div>
 

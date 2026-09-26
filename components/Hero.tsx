@@ -104,7 +104,7 @@ export default function Hero() {
                 <Link href="/calculator/" className="btn btn-green magnetic">
                   Рассчитать проект
                 </Link>
-                <Link href="/kitchens/" className="btn btn-glass magnetic">
+                <Link href="/projects/" className="btn btn-glass magnetic">
                   Смотреть каталог
                 </Link>
               </div>

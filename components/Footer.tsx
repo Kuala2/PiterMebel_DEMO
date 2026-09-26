@@ -46,6 +46,9 @@ export default function Footer() {
                 <Link href="/apartment/">Мебель в квартиру за месяц</Link>
               </li>
               <li>
+                <Link href="/design/">Услуги дизайнера интерьера</Link>
+              </li>
+              <li>
                 <Link href="/privacy/">Политика конфиденциальности</Link>
               </li>
             </ul>
@@ -162,6 +165,19 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* Developer credit above the divider line */}
+        <div className="footer-credit-row">
+          <span>Разработка сайта · </span>
+          <a
+            href="https://vk.ru/george_5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-credit-link"
+          >
+            Георгий ↗
+          </a>
         </div>
 
         {/* Disclaimer row */}

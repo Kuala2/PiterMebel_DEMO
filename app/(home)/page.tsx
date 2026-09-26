@@ -121,20 +121,68 @@ export default function HomePage() {
 
   const catalogItems = [
     {
-      id: "oak-stone",
+      id: "mdf-plastik-gola",
       category: "kitchens",
-      badge: "Эмаль и дуб",
-      title: "Кухня эмаль и массив дуба",
-      desc: "Фасады из МДФ в эмали и массива дуба. Столешница из кварцевого агломерата.",
-      specLabel: "Материалы",
-      specValue: "Эмаль / Массив дуба",
+      badge: "МДФ-пластик",
+      title: "Кухня Fenix",
+      desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
+      specLabel: "Фасады",
+      specValue: "МДФ-пластик / Камень",
       photos: [
-        "/img/projects/oak-stone/photo_1.jpg",
-        "/img/projects/oak-stone/photo_2.jpg",
-        "/img/projects/oak-stone/photo_3.jpg",
-        "/img/projects/oak-stone/photo_4.jpg",
+        "/img/kitchens/slavena/photo_1.jpg",
+        "/img/kitchens/slavena/photo_2.jpg",
+        "/img/kitchens/slavena/photo_3.jpg",
+        "/img/kitchens/slavena/photo_4.jpg",
       ],
-      link: "/projects/oak-stone/",
+      link: "/kitchens/mdf-plastik-gola/",
+    },
+    {
+      id: "light-wood-wardrobe",
+      category: "wardrobes",
+      badge: "Гардеробная",
+      title: "Гардеробная с подсветкой и древесным декором",
+      desc: "Открытая гардеробная система со встроенной светодиодной подсветкой полок и штанг.",
+      specLabel: "Оснащение",
+      specValue: "Древесный декор / LED",
+      photos: [
+        "/img/projects/light-wood-wardrobe/photo_1.jpg",
+        "/img/projects/light-wood-wardrobe/photo_2.jpg",
+        "/img/projects/light-wood-wardrobe/photo_3.jpg",
+        "/img/projects/light-wood-wardrobe/photo_4.jpg",
+      ],
+      link: "/projects/light-wood-wardrobe/",
+    },
+    {
+      id: "sliding-partition",
+      category: "custom",
+      badge: "Перегородки",
+      title: "Раздвижная перегородка для зонирования",
+      desc: "Раздвижная межкомнатная перегородка из алюминиевого профиля с безопасным остеклением.",
+      specLabel: "Конструкция",
+      specValue: "Алюминиевый профиль / Стекло",
+      photos: [
+        "/img/projects/sliding-partition/photo_1.jpg",
+        "/img/projects/sliding-partition/photo_2.jpg",
+        "/img/projects/sliding-partition/photo_3.jpg",
+        "/img/projects/sliding-partition/photo_4.jpg",
+      ],
+      link: "/projects/sliding-partition/",
+    },
+    {
+      id: "island-parquet",
+      category: "kitchens",
+      badge: "Эмаль и шпон",
+      title: "Кухня эмаль и натуральный шпон",
+      desc: "Фасады из МДФ в эмали с натуральным шпоном и столешницей из искусственного камня.",
+      specLabel: "Материалы",
+      specValue: "МДФ в эмали / Шпон",
+      photos: [
+        "/img/projects/island-parquet/photo_1.jpg",
+        "/img/projects/island-parquet/photo_2.jpg",
+        "/img/projects/island-parquet/photo_3.jpg",
+        "/img/projects/island-parquet/photo_4.jpg",
+      ],
+      link: "/projects/island-parquet/",
     },
     {
       id: "glass-wardrobe",
@@ -152,10 +200,25 @@ export default function HomePage() {
       link: "/projects/glass-wardrobe/",
     },
     {
+      id: "oak-veneer-panel",
+      category: "custom",
+      badge: "ТВ-зона",
+      title: "ТВ-зона с панелями из шпона дуба",
+      desc: "Панели из натурального шпона дуба сочетаются с МДФ в эмали в составе комплексного проекта.",
+      specLabel: "Материалы",
+      specValue: "Шпон дуба / МДФ в эмали",
+      photos: [
+        "/img/projects/oak-veneer-panel/photo_1.jpg",
+        "/img/projects/oak-veneer-panel/photo_2.jpg",
+        "/img/projects/oak-veneer-panel/photo_3.jpg",
+      ],
+      link: "/projects/oak-veneer-panel/",
+    },
+    {
       id: "mdf-plastik-slotex",
       category: "kitchens",
       badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик Slotex",
+      title: "Кухня МДФ пластик",
       desc: "Фасады из суперматового МДФ-пластика, корпус Egger, влагостойкая столешница Slotex и фурнитура Blum.",
       specLabel: "Фасады",
       specValue: "Суперматовый МДФ",
@@ -168,24 +231,9 @@ export default function HomePage() {
       link: "/kitchens/mdf-plastik-slotex/",
     },
     {
-      id: "mdf-plastik-gola",
-      category: "kitchens",
-      badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик Gola",
-      desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик / Камень",
-      photos: [
-        "/img/kitchens/slavena/photo_1.jpg",
-        "/img/kitchens/slavena/photo_2.jpg",
-        "/img/kitchens/slavena/photo_3.jpg",
-      ],
-      link: "/kitchens/mdf-plastik-gola/",
-    },
-    {
       id: "mirror-hall",
-      category: "closets",
-      badge: "Встроенный",
+      category: "wardrobes",
+      badge: "Прихожая",
       title: "Зеркальный шкаф с нишей для обуви",
       desc: "Встроенный зеркальный шкаф с нишей для обуви и торцевыми ручками.",
       specLabel: "Конструкция",
@@ -197,19 +245,36 @@ export default function HomePage() {
       link: "/projects/mirror-hall/",
     },
     {
-      id: "mdf-plastik-hettich",
-      category: "kitchens",
-      badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик Hettich",
-      desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик / Дерево",
+      id: "cascade-partitions",
+      category: "custom",
+      badge: "Перегородки",
+      title: "Каскадные раздвижные перегородки",
+      desc: "Система интерьерных раздвижных перегородок с каскадным открыванием и беспороговым монтажом.",
+      specLabel: "Конструкция",
+      specValue: "Каскадное открывание",
       photos: [
-        "/img/kitchens/timofey/photo_1.jpg",
-        "/img/kitchens/timofey/photo_2.jpg",
-        "/img/kitchens/timofey/photo_3.jpg",
+        "/img/projects/cascade-partitions/photo_1.jpg",
+        "/img/projects/cascade-partitions/photo_2.jpg",
+        "/img/projects/cascade-partitions/photo_3.jpg",
+        "/img/projects/cascade-partitions/photo_4.jpg",
       ],
-      link: "/kitchens/mdf-plastik-hettich/",
+      link: "/projects/cascade-partitions/",
+    },
+    {
+      id: "mdf-emal-vitrina",
+      category: "kitchens",
+      badge: "МДФ ПВХ",
+      title: "Кухня МДФ ПВХ с фрезеровкой",
+      desc: "Светлые фасады с витриной в узкой чёрной алюминиевой рамке, корпус и столешница Egger.",
+      specLabel: "Оснащение",
+      specValue: "Витрина / Корпус Egger",
+      photos: [
+        "/img/kitchens/valeria/photo_1.jpg",
+        "/img/kitchens/valeria/photo_2.jpg",
+        "/img/kitchens/valeria/photo_3.jpg",
+        "/img/kitchens/valeria/photo_4.jpg",
+      ],
+      link: "/kitchens/mdf-emal-vitrina/",
     },
     {
       id: "brick-wardrobe",
@@ -225,6 +290,156 @@ export default function HomePage() {
         "/img/projects/brick-wardrobe/photo_3.jpg",
       ],
       link: "/projects/brick-wardrobe/",
+    },
+    {
+      id: "bathroom-vanity",
+      category: "custom",
+      badge: "Ванная",
+      title: "Влагостойкая мебель для ванной комнаты",
+      desc: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги и бесшовной обработкой кромок.",
+      specLabel: "Материалы",
+      specValue: "МДФ в пластике / Влагостойкая кромка",
+      photos: [
+        "/img/projects/bathroom-vanity/photo_1.jpg",
+        "/img/projects/bathroom-vanity/photo_2.jpg",
+      ],
+      link: "/projects/bathroom-vanity/",
+    },
+    {
+      id: "oak-stone",
+      category: "kitchens",
+      badge: "Эмаль и дуб",
+      title: "Кухня эмаль и массив дуба",
+      desc: "Фасады из МДФ в эмали и массива дуба. Столешница из кварцевого агломерата.",
+      specLabel: "Материалы",
+      specValue: "Эмаль / Массив дуба",
+      photos: [
+        "/img/projects/oak-stone/photo_1.jpg",
+        "/img/projects/oak-stone/photo_2.jpg",
+        "/img/projects/oak-stone/photo_3.jpg",
+        "/img/projects/oak-stone/photo_4.jpg",
+      ],
+      link: "/projects/oak-stone/",
+    },
+    {
+      id: "wardrobe-inside",
+      category: "wardrobes",
+      badge: "Шкафы",
+      title: "Шкафы для комнаты и прихожей",
+      desc: "Комплект шкафов из ЛДСП Egger U705 «Ангора серая» для нескольких помещений квартиры.",
+      specLabel: "Материал",
+      specValue: "ЛДСП Egger U705",
+      photos: [
+        "/img/projects/wardrobe-inside/photo_1.jpg",
+        "/img/projects/wardrobe-inside/photo_2.jpg",
+        "/img/projects/wardrobe-inside/photo_3.jpg",
+      ],
+      link: "/projects/wardrobe-inside/",
+    },
+    {
+      id: "office-reception",
+      category: "custom",
+      badge: "Коммерческий",
+      title: "Стойка ресепшен для клиники",
+      desc: "Акриловый искусственный камень, рейки из массива бука, МДФ в эмали и LED-подсветка.",
+      specLabel: "Материалы",
+      specValue: "Акриловый камень / Массив бука",
+      photos: [
+        "/img/projects/office-reception/photo_1.jpg",
+        "/img/projects/office-reception/photo_2.jpg",
+        "/img/projects/office-reception/photo_3.jpg",
+      ],
+      link: "/projects/office-reception/",
+    },
+    {
+      id: "mdf-plastik-hettich",
+      category: "kitchens",
+      badge: "МДФ-пластик",
+      title: "Кухня МДФ пластик",
+      desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
+      specLabel: "Фасады",
+      specValue: "МДФ-пластик / Дерево",
+      photos: [
+        "/img/kitchens/timofey/photo_1.jpg",
+        "/img/kitchens/timofey/photo_2.jpg",
+        "/img/kitchens/timofey/photo_3.jpg",
+      ],
+      link: "/kitchens/mdf-plastik-hettich/",
+    },
+    {
+      id: "bedroom-set",
+      category: "wardrobes",
+      badge: "Спальня",
+      title: "Шкафы и мебель для спальни",
+      desc: "Шкафы и тумбы выполнены в единой стилистике как часть комплексного заказа мебели для квартиры.",
+      specLabel: "Проект",
+      specValue: "Мебель для спальни",
+      photos: [
+        "/img/projects/bedroom-set/photo_1.jpg",
+        "/img/projects/bedroom-set/photo_2.jpg",
+        "/img/projects/bedroom-set/photo_3.jpg",
+      ],
+      link: "/projects/bedroom-set/",
+    },
+    {
+      id: "curved-oak-facades",
+      category: "custom",
+      badge: "Фасады",
+      title: "Радиусные фасады из шпона дуба",
+      desc: "Гнутые мебельные фасады из натурального шпона дуба под защитным лаком.",
+      specLabel: "Технология",
+      specValue: "Шпон дуба / Радиусные фасады",
+      photos: [
+        "/img/projects/curved-oak-facades/photo_1.jpg",
+        "/img/projects/curved-oak-facades/photo_2.jpg",
+        "/img/projects/curved-oak-facades/photo_3.jpg",
+      ],
+      link: "/projects/curved-oak-facades/",
+    },
+    {
+      id: "mdf-belyj-egger",
+      category: "kitchens",
+      badge: "Пластик + Egger",
+      title: "Кухня МДФ пластик+Egger",
+      desc: "Белые фасады из МДФ-пластика в сочетании с древесным декором Egger и стеновой панелью под мрамор.",
+      specLabel: "Фасады",
+      specValue: "Белый МДФ-пластик / Egger",
+      photos: [
+        "/img/kitchens/ulyana/photo_1.jpg",
+        "/img/kitchens/ulyana/photo_2.jpg",
+        "/img/kitchens/ulyana/photo_3.jpg",
+      ],
+      link: "/kitchens/mdf-belyj-egger/",
+    },
+    {
+      id: "slat-panels",
+      category: "custom",
+      badge: "Комплексный проект",
+      title: "Кухня, стеллаж и шкаф-купе",
+      desc: "Стеллаж переходит в кухню, а кухня — в шкаф-купе, связывая несколько функциональных зон.",
+      specLabel: "Формат",
+      specValue: "Единая мебельная композиция",
+      photos: [
+        "/img/projects/slat-panels/photo_1.jpg",
+        "/img/projects/slat-panels/photo_2.jpg",
+        "/img/projects/slat-panels/photo_3.jpg",
+      ],
+      link: "/projects/slat-panels/",
+    },
+    {
+      id: "mdf-grafit-gola",
+      category: "kitchens",
+      badge: "МДФ Графит",
+      title: "Кухня МДФ Графит Gola",
+      desc: "Фасады из МДФ-пластика с древесным декором столешницы Egger и профилем Gola на нижних секциях.",
+      specLabel: "Фасады",
+      specValue: "МДФ-пластик / Профиль Gola",
+      photos: [
+        "/img/kitchens/stefania/photo_1.jpg",
+        "/img/kitchens/stefania/photo_2.jpg",
+        "/img/kitchens/stefania/photo_3.jpg",
+      ],
+      link: "/kitchens/mdf-grafit-gola/",
     },
     {
       id: "emerald-enamel",
@@ -257,10 +472,25 @@ export default function HomePage() {
       link: "/projects/velvet-matte/",
     },
     {
+      id: "mdf-klassika-dub",
+      category: "kitchens",
+      badge: "МДФ Эмаль",
+      title: "Кухня МДФ Эмаль матовая",
+      desc: "Светлые молочные фасады в сочетании со столешницей с тёплым древесным декором.",
+      specLabel: "Фасады",
+      specValue: "МДФ Эмаль матовая / Дерево",
+      photos: [
+        "/img/kitchens/viktoria/photo_1.jpg",
+        "/img/kitchens/viktoria/photo_2.jpg",
+        "/img/kitchens/viktoria/photo_3.jpg",
+      ],
+      link: "/kitchens/mdf-klassika-dub/",
+    },
+    {
       id: "sherman-cognac",
       category: "kitchens",
       badge: "Глянец & Egger",
-      title: "Кухня Egger Шерман коньяк",
+      title: "Кухня МДФ пластик+Egger",
       desc: "Глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый».",
       specLabel: "Декор",
       specValue: "Egger Шерман / Пластик",
@@ -272,42 +502,40 @@ export default function HomePage() {
       ],
       link: "/projects/sherman-cognac/",
     },
-    {
-      id: "bedroom-set",
-      category: "closets",
-      badge: "Встроенный",
-      title: "Шкафы и мебель для спальни",
-      desc: "Шкафы и тумбы выполнены в единой стилистике как часть комплексного заказа мебели для квартиры.",
-      specLabel: "Проект",
-      specValue: "Мебель для спальни",
-      photos: [
-        "/img/projects/bedroom-set/photo_1.jpg",
-        "/img/projects/bedroom-set/photo_2.jpg",
-        "/img/projects/bedroom-set/photo_3.jpg",
-      ],
-      link: "/projects/bedroom-set/",
-    },
   ];
 
-  // Порядок витрины на главной: на 1-м месте «Кухня Egger Шерман коньяк»,
-  // затем чередование с премиальными гардеробными и шкафами:
-  // 1. Кухня Egger Шерман коньяк
-  // 2. Гардеробная со смарт-стеклом STOPSOL
-  // 3. Кухня МДФ пластик Hettich
-  // 4. Встроенный шкаф в мастер-спальню
-  const itemOrder = [
-    "sherman-cognac", // 1. Кухня Egger Шерман коньяк (подсвеченная витрина, глянец и теплый дуб Egger)
-    "glass-wardrobe", // 2. Гардеробная со смарт-стеклом STOPSOL (вау-эффект гардеробных)
-    "mdf-plastik-hettich", // 3. Кухня МДФ пластик Hettich
-    "bedroom-set",    // 4. Встроенный шкаф в мастер-спальню (от пола до потолка)
-    "velvet-matte",   // 5. Кухня МДФ Velvet
-    "mirror-hall",    // 6. Зеркальный шкаф в нишу прихожей с парящей обувницей
-    "emerald-enamel", // 7. Кухня МДФ Эмаль (изумрудная неоклассика, витрины со шпросами)
-    "brick-wardrobe", // 8. Гардеробная система (полки, штанги и выдвижные ящики)
-    "mdf-plastik-gola", // 9. Кухня МДФ пластик Gola
-    "oak-stone",      // 10. Кухня эмаль и массив дуба
-    "mdf-plastik-slotex", // 11. Кухня МДФ пластик Slotex
+  const firstFourIds = [
+    "sherman-cognac",
+    "glass-wardrobe",
+    "mdf-plastik-hettich",
+    "bedroom-set",
   ];
+
+  const restOrderIds = [
+    "sliding-partition",
+    "mdf-plastik-gola",
+    "light-wood-wardrobe",
+    "oak-veneer-panel",
+    "island-parquet",
+    "mirror-hall",
+    "cascade-partitions",
+    "mdf-emal-vitrina",
+    "bathroom-vanity",
+    "velvet-matte",
+    "brick-wardrobe",
+    "office-reception",
+    "emerald-enamel",
+    "curved-oak-facades",
+    "mdf-belyj-egger",
+    "wardrobe-inside",
+    "oak-stone",
+    "slat-panels",
+    "mdf-grafit-gola",
+    "mdf-klassika-dub",
+    "mdf-plastik-slotex",
+  ];
+
+  const itemOrder = [...firstFourIds, ...restOrderIds];
   const orderedItems = itemOrder
     .map((id) => catalogItems.find((item) => item.id === id))
     .filter((item): item is (typeof catalogItems)[number] => Boolean(item));
@@ -360,7 +588,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Filter Tabs Bar (No util counters) */}
+          {/* Filter Tabs Bar (3 основные категории как в шапке) */}
           <div className="catalog-tabs-bar" style={{ marginBottom: "28px" }}>
             <button
               type="button"
@@ -381,14 +609,14 @@ export default function HomePage() {
               className={`cat-tab ${activeTab === "wardrobes" ? "is-active" : ""}`}
               onClick={() => setActiveTab("wardrobes")}
             >
-              Гардеробные
+              Шкафы
             </button>
             <button
               type="button"
-              className={`cat-tab ${activeTab === "closets" ? "is-active" : ""}`}
-              onClick={() => setActiveTab("closets")}
+              className={`cat-tab ${activeTab === "custom" ? "is-active" : ""}`}
+              onClick={() => setActiveTab("custom")}
             >
-              Встроенные шкафы
+              Корпусная мебель
             </button>
           </div>
 
@@ -535,183 +763,180 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="carousel-outer-wrapper">
-            <div className="carousel-viewport reviews-viewport">
-              <div className="carousel-track" style={{ display: "flex", gap: "24px", width: "max-content" }}>
-                
-                {/* Review 1 */}
-                <div className="review-card">
-                  <div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">марина краснова</div>
-                      <div className="review-stars">★★★★★</div>
+          <div className="reviews-marquee-viewport">
+            <div className="reviews-marquee-track">
+              {[false, true].map((isDuplicate) => (
+                <div
+                  key={isDuplicate ? "dup" : "main"}
+                  className="reviews-marquee-group"
+                  aria-hidden={isDuplicate ? "true" : undefined}
+                >
+                  {/* Review 0 (New) */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Константин Александрович</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
                     </div>
-                    <div className="review-date">16 мая 2024</div>
+                    <p className="review-text">Широчайший выбор различных мебельных изделий на любой вкус и цвет, всё качественное и из экологически чистых материалов. Персонал добрый(не злой)). Ура товарищи!!!</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/pitermebel/245406542043/reviews/" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
                   </div>
-                  <p className="review-text">Выражаю огромную благодарность Елене за профессионализм и приятное общение, команда исполнила заказ во всю квартиру четко в срок, на каждом этапе поддержка и помощь! Ольга, спасибо за помощь в понимании технологии, Сергею - за сборку! Наилучшие рекомендации и удачи вашему производству ❤️</p>
-                  <div className="review-footer">
-                    <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=xx9a5e7bmfm58p93tr09f7uft0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
+
+                  {/* Review 1 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">марина краснова</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Выражаю огромную благодарность Елене за профессионализм и приятное общение, команда исполнила заказ во всю квартиру четко в срок, на каждом этапе поддержка и помощь! Ольга, спасибо за помощь в понимании технологии, Сергею - за сборку! Наилучшие рекомендации и удачи вашему производству ❤️</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=xx9a5e7bmfm58p93tr09f7uft0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 2 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Иван Супронов</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Большое спасибо за классную кухню. Хорошее отношение с первых минут. Отличный дизайн и исполнение в сроки. Отдельное благодарю установщика Сергея за скурпулезный подход к монтажу. Всех благ и процветания команде профессионалов ПитерМебель. Всем рекомендую.</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=49qzx35vjrc7fc81b6nq5rkbr4" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 3 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Ольга Шевченко</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Семья Волковых - это команда мастеров своего дела. Лена и Дима настроили свое производство таким образом, что к ним хочется возвращаться. К клиенту относятся как к себе и делают мебель на совесть. Рекомендую.</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=8znemxc4vaz37k7ct4cmcjea8g" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 4 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Ирина Артемьева</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Огромное спасибо вам, прихожая идеальная. Сделано очень быстро и качественно. Цвет шикарный. Буду рекомендовать вас.</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=0vv1p9m0kbeuk458y5hezfqp80" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 5 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Янка Буртанька</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Заказывали шкаф купе<br />Очень довольна работой этой компании.<br />Качественно, быстро и цена не космическая<br />Учли все мои пожелания)))</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=6zwu69103x2akmtfbthxrzdqp0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 6 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">Воркута АК111</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Хорошая организация, все сделали супер. Сборщик Сергей человек с руками! Спасибо большое!!!</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=ppck04ywejarcng3e6qyuwf4cm" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
+                  </div>
+
+                  {/* Review 7 */}
+                  <div className="review-card">
+                    <div className="review-header">
+                      <div className="review-meta">
+                        <div className="review-name">алексей ефимов</div>
+                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+                      </div>
+                    </div>
+                    <p className="review-text">Все очень понравилось. Сделали быстро и качественно.</p>
+                    <div className="review-footer">
+                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=fm93xvxhk3qhw79pz91tmv0wn0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
+                    </div>
                   </div>
                 </div>
-
-                {/* Review 2 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">Иван Супронов</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">14 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Большое спасибо за классную кухню. Хорошее отношение с первых минут. Отличный дизайн и исполнение в сроки. Отдельное благодарю установщика Сергея за скурпулезный подход к монтажу. Всех благ и процветания команде профессионалов ПитерМебель. Всем рекомендую.</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=49qzx35vjrc7fc81b6nq5rkbr4" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-                {/* Review 3 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">Ольга Шевченко</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">14 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Семья Волковых - это команда мастеров своего дела. Лена и Дима настроили свое производство таким образом, что к ним хочется возвращаться. К клиенту относятся как к себе и делают мебель на совесть. Рекомендую.</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=8znemxc4vaz37k7ct4cmcjea8g" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-                {/* Review 4 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">Ирина Артемьева</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">14 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Огромное спасибо вам, прихожая идеальная. Сделано очень быстро и качественно. Цвет шикарный. Буду рекомендовать вас.</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=0vv1p9m0kbeuk458y5hezfqp80" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-                {/* Review 5 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">Янка Буртанька</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">14 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Заказывали шкаф купе<br />Очень довольна работой этой компании.<br />Качественно, быстро и цена не космическая<br />Учли все мои пожелания)))</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=6zwu69103x2akmtfbthxrzdqp0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-                {/* Review 6 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">Воркута АК111</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">25 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Хорошая организация, все сделали супер. Сборщик Сергей человек с руками! Спасибо большое!!!</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=ppck04ywejarcng3e6qyuwf4cm" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-                {/* Review 7 */}
-                <div className="review-card">
-<div className="review-header">
-                    <div className="review-meta">
-                      <div className="review-name">алексей ефимов</div>
-                      <div className="review-stars">★★★★★</div>
-                    </div>
-                    <div className="review-date">14 декабря 2023</div>
-                  </div>
-                  <p className="review-text">Все очень понравилось. Сделали быстро и качественно.</p>
-                  <div className="review-footer">
-<a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=fm93xvxhk3qhw79pz91tmv0wn0" target="_blank" rel="noopener noreferrer" className="yandex-link">Читать на Яндекс.Картах →</a>
-</div>
-</div>
-
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3.1. COMPANY MANIFESTO & SHOWCASE: Честный подход с 2005 года */}
+      {/* 3.1. COMPANY MANIFESTO: Честный подход с 2005 года */}
       <section className="manifesto-section" id="manifesto">
         <div className="container">
-          <div className="manifesto-grid">
-            {/* Left: Editorial Manifesto & Direct Commitment */}
-            <div className="manifesto-content">
-              <div>
-                <h2 className="section-title">
-                  Честное производство с 2005 года
-                </h2>
+          <div className="manifesto-stage">
+            {/* Наклейка 1: слева сверху */}
+            <div className="manifesto-sticker manifesto-sticker--top-left">
+              <span className="manifesto-spec-metric">С {SITE_CONFIG.foundingYear} года</span>
+              <span className="manifesto-spec-desc">
+                Проектируем и изготавливаем мебель в Санкт-Петербурге
+              </span>
+            </div>
 
-                <div className="manifesto-quote-wrap">
-                  <p className="manifesto-quote-text">
-                    «ПитерМебель» — семейное производство полного цикла. Мы проектируем мебель,
-                    готовим подробную смету, выполняем замер, изготовление и сборку собственной командой,
-                    а согласованную стоимость фиксируем в договоре без скрытых переплат.
-                  </p>
-                </div>
-              </div>
+            {/* Центральный блок: заголовок, текст и кнопка */}
+            <div className="manifesto-centered">
+              <h2 className="section-title">
+                Честное производство с 2005 года
+              </h2>
 
-              <div>
-                <div className="manifesto-specs">
-                  <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">С {SITE_CONFIG.foundingYear} года</span>
-                    <span className="manifesto-spec-desc">Проектируем и изготавливаем мебель в Санкт-Петербурге</span>
-                  </div>
-                  <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">Подробная смета</span>
-                    <span className="manifesto-spec-desc">Материалы, фасады, фурнитура и работы — до подписания договора</span>
-                  </div>
-                  <div className="manifesto-spec-row">
-                    <span className="manifesto-spec-metric">Фиксация в договоре</span>
-                    <span className="manifesto-spec-desc">Согласованная смета неизменна, официальный договор и безналичный расчёт</span>
-                  </div>
-                </div>
+              <p className="manifesto-quote-text">
+                «ПитерМебель» — семейное производство полного цикла. Мы проектируем мебель,
+                готовим подробную смету, выполняем замер, изготовление и сборку собственной командой,
+                а согласованную стоимость фиксируем в договоре без скрытых переплат.
+              </p>
 
-                <div className="manifesto-actions">
-                  <Link href="/contacts/" className="btn btn-green">
-                    Обсудить проект →
-                  </Link>
-                  <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
-                    {SITE_CONFIG.phone}
-                  </a>
-                </div>
+              <div className="manifesto-actions">
+                <Link href="/contacts/" className="btn btn-green">
+                  Обсудить проект →
+                </Link>
+                <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
+                  {SITE_CONFIG.phone}
+                </a>
               </div>
             </div>
 
-            {/* Right: Panoramic Craft Showcase (65/35 Cinematic Framing) */}
-            <div className="manifesto-media-frame">
-              <div className="manifesto-media-inner">
-                <Image
-                  src="/img/projects/island-parquet/photo_3.jpg"
-                  alt="Мебель по индивидуальному проекту ПитерМебель"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 62vw"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              <div className="manifesto-caption-bar">
-                <span className="manifesto-caption-tag">Кухня: МДФ в эмали и натуральный шпон</span>
-                <span>Столешница из искусственного камня</span>
-              </div>
+            {/* Наклейка 2: посередине справа */}
+            <div className="manifesto-sticker manifesto-sticker--mid-right">
+              <span className="manifesto-spec-metric">Подробная смета</span>
+              <span className="manifesto-spec-desc">
+                Материалы, фасады, фурнитура и работы — до подписания договора
+              </span>
+            </div>
+
+            {/* Наклейка 3: слева чуть под левой частью текста */}
+            <div className="manifesto-sticker manifesto-sticker--bottom-left">
+              <span className="manifesto-spec-metric">Фиксация в договоре</span>
+              <span className="manifesto-spec-desc">
+                Согласованная смета неизменна, официальный договор и безналичный расчёт
+              </span>
             </div>
           </div>
         </div>
