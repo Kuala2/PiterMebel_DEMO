@@ -22,7 +22,10 @@ export default function LeadSection({
   const normalizedCategory = initialCategory?.toLowerCase() ?? "";
   const initialPromoCategory = normalizedCategory.includes("кух")
     ? "kitchens"
-    : normalizedCategory.includes("шкаф") || normalizedCategory.includes("гардероб")
+    : normalizedCategory.includes("шкаф") ||
+        normalizedCategory.includes("гардероб") ||
+        normalizedCategory.includes("комплекс") ||
+        normalizedCategory.includes("нескольк")
       ? "wardrobes"
       : normalizedCategory.includes("корпус") || normalizedCategory.includes("мебел")
         ? "customFurniture"

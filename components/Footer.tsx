@@ -43,6 +43,9 @@ export default function Footer() {
                 </li>
               ))}
               <li>
+                <Link href="/apartment/">Мебель в квартиру за месяц</Link>
+              </li>
+              <li>
                 <Link href="/privacy/">Политика конфиденциальности</Link>
               </li>
             </ul>

@@ -27,6 +27,8 @@ const MIME = {
   ".xml": "application/xml; charset=utf-8",
   ".webmanifest": "application/manifest+json",
   ".pdf": "application/pdf",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
 };
 
 const server = createServer((req, res) => {
@@ -73,11 +75,61 @@ const server = createServer((req, res) => {
     }
 
     const body = readFileSync(file);
+    const contentType = MIME[extname(file).toLowerCase()] || "application/octet-stream";
+    const isHead = req.method === "HEAD";
+    const range = req.headers.range;
+    if (range && statusCode === 200 && range.startsWith("bytes=")) {
+      const spec = range.slice(6).split(",")[0].trim();
+      const [startStr, endStr] = spec.split("-");
+      let start;
+      let end;
+
+      if (startStr === "" && endStr) {
+        const suffixLen = Number.parseInt(endStr, 10);
+        if (Number.isFinite(suffixLen) && suffixLen > 0) {
+          start = Math.max(0, body.length - suffixLen);
+          end = body.length - 1;
+        }
+      } else {
+        const parsedStart = Number.parseInt(startStr, 10);
+        const parsedEnd = endStr ? Number.parseInt(endStr, 10) : body.length - 1;
+        if (Number.isFinite(parsedStart) && Number.isFinite(parsedEnd)) {
+          start = parsedStart;
+          end = Math.min(parsedEnd, body.length - 1);
+        }
+      }
+
+      if (start !== undefined && end !== undefined) {
+        if (start >= 0 && start < body.length && start <= end) {
+          const chunk = body.subarray(start, end + 1);
+          res.writeHead(206, {
+            "content-type": contentType,
+            "content-range": `bytes ${start}-${end}/${body.length}`,
+            "accept-ranges": "bytes",
+            "content-length": chunk.length,
+            "cache-control": "no-cache",
+          });
+          res.end(isHead ? undefined : chunk);
+          return;
+        }
+        res.writeHead(416, {
+          "content-type": "text/plain; charset=utf-8",
+          "content-range": `bytes */${body.length}`,
+          "accept-ranges": "bytes",
+          "cache-control": "no-cache",
+        });
+        res.end();
+        return;
+      }
+    }
+
     res.writeHead(statusCode, {
-      "content-type": MIME[extname(file).toLowerCase()] || "application/octet-stream",
+      "content-type": contentType,
+      "accept-ranges": "bytes",
+      "content-length": body.length,
       "cache-control": "no-cache",
     });
-    res.end(body);
+    res.end(isHead ? undefined : body);
   } catch (err) {
     console.error("Request error:", err);
     try {

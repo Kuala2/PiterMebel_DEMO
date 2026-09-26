@@ -248,12 +248,23 @@ export default function PromoBanner({
     return (
       <div className={`promo-cta-card ${className}`}>
         <div className="promo-cta-card-head">
-          {currentOffer.badge && (
-            <div className="promo-cta-card-badge">
-              <span className="promo-cta-card-dot" />
-              АКЦИЯ · {currentOffer.badge.toUpperCase()}
-            </div>
-          )}
+          <div className={`promo-content-anim promo-content-stack ${isTransitioning ? "is-transitioning" : ""}`}>
+            {allOffers.map((item, idx) =>
+              idx === currentIndex ? (
+                <h3 key={item.id} className="promo-cta-card-title">
+                  {item.title}
+                </h3>
+              ) : (
+                <div
+                  key={item.id}
+                  className="promo-cta-card-ghost"
+                  aria-hidden="true"
+                >
+                  {item.title}
+                </div>
+              )
+            )}
+          </div>
 
           {allOffers.length > 1 && (
             <div
@@ -289,10 +300,6 @@ export default function PromoBanner({
               </div>
             </div>
           )}
-        </div>
-
-        <div className={`promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`} style={{ marginTop: "18px" }}>
-          <h3 className="promo-cta-card-title">{currentOffer.title}</h3>
         </div>
       </div>
     );

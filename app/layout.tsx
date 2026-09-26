@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import ApartmentBoostPopup from "@/components/ApartmentBoostPopup";
 import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
 import { SITE_CONFIG } from "@/data/site";
@@ -167,6 +168,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
+        <ApartmentBoostPopup />
         <StickyCTA />
         <SmoothScroll />
       </body>

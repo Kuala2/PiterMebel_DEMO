@@ -12,9 +12,9 @@ export interface PromoOffer {
 export const PROMOS: Record<string, PromoOffer> = {
   kitchens: {
     id: "kitchens-promo",
-    badge: "В подарок к заказу",
+    badge: "",
     title: "Схема электрики в подарок при заказе кухни",
-    description: "Подготовим схему привязки розеток и коммуникаций к мебели и выбранной технике.",
+    description: "Подготовим план привязки розеток и выводов воды под мебель и выбранную технику до начала ремонта.",
     valueTag: "Схема электрики в подарок",
     ctaText: "Получить схему в подарок →",
     ctaHref: "#measure-form",
@@ -22,9 +22,9 @@ export const PROMOS: Record<string, PromoOffer> = {
   },
   wardrobes: {
     id: "wardrobes-promo",
-    badge: "Скидка за объём",
+    badge: "",
     title: "Скидка на комплект от 2 изделий",
-    description: "При заказе кухни со шкафом или мебели для нескольких помещений действует скидка на весь проект.",
+    description: "При заказе кухни со шкафом или мебели сразу в несколько комнат действует скидка за объём на весь проект.",
     valueTag: "Скидка на комплект от 2 изделий",
     ctaText: "Рассчитать со скидкой →",
     ctaHref: "#measure-form",
@@ -32,9 +32,9 @@ export const PROMOS: Record<string, PromoOffer> = {
   },
   customFurniture: {
     id: "custom-furniture-promo",
-    badge: "Варианты оплаты",
-    title: "Банковская рассрочка и разные способы оплаты",
-    description: "Оплата на расчётный счёт, по ссылке или через терминал. Условия рассрочки зависят от банка.",
+    badge: "",
+    title: "Оплата по счёту, карте или в рассрочку",
+    description: "Официальный договор: оплата на расчётный счёт, по ссылке СБП, через терминал в офисе или в рассрочку от банка.",
     valueTag: "Банковская рассрочка",
     ctaText: "Узнать условия рассрочки →",
     ctaHref: "#measure-form",

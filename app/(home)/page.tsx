@@ -381,7 +381,7 @@ export default function HomePage() {
               className={`cat-tab ${activeTab === "wardrobes" ? "is-active" : ""}`}
               onClick={() => setActiveTab("wardrobes")}
             >
-              Гардеробные STOPSOL
+              Гардеробные
             </button>
             <button
               type="button"
@@ -687,7 +687,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="manifesto-actions">
-                  <Link href="/contacts/" className="btn btn-glass">
+                  <Link href="/contacts/" className="btn btn-green">
                     Обсудить проект →
                   </Link>
                   <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="manifesto-tel">
@@ -709,8 +709,8 @@ export default function HomePage() {
                 />
               </div>
               <div className="manifesto-caption-bar">
-                <span className="manifesto-caption-tag">Мебель по индивидуальному проекту</span>
-                <span>Реализованный проект · Санкт-Петербург</span>
+                <span className="manifesto-caption-tag">Кухня: МДФ в эмали и натуральный шпон</span>
+                <span>Столешница из искусственного камня</span>
               </div>
             </div>
           </div>
@@ -759,9 +759,9 @@ export default function HomePage() {
                 <div className="workshop-point-item">
                   <span className="workshop-point-num">02</span>
                   <div className="workshop-point-body">
-                    <h3 className="workshop-point-title">Открытая спецификация</h3>
+                    <h3 className="workshop-point-title">Раскрой под любой размер</h3>
                     <p className="workshop-point-desc">
-                      В смете открыто расписываем материалы, фурнитуру и объём работ. Фиксируем цену в договоре
+                      Изготавливаем детали с точностью до миллиметра под вашу нишу, выступы стен и короба без доплат за нестандартный шаг
                     </p>
                   </div>
                 </div>
@@ -778,7 +778,7 @@ export default function HomePage() {
               </div>
 
               <div className="workshop-action-wrap">
-                <Link href="/production/" className="btn btn-glass">
+                <Link href="/production/" className="btn btn-green">
                   Подробнее о производстве →
                 </Link>
               </div>

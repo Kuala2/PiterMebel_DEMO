@@ -4,8 +4,7 @@ export default function NotFound() {
   return (
     <section className="not-found-page">
       <div className="container not-found-content">
-        <p className="eyebrow">Ошибка 404</p>
-        <h1>Такой страницы нет</h1>
+        <h1>Страница не найдена (404)</h1>
         <p>Возможно, адрес изменился или в ссылке есть опечатка.</p>
         <div className="not-found-actions">
           <Link href="/" className="btn btn-green">На главную</Link>

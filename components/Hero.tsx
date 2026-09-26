@@ -92,13 +92,13 @@ export default function Hero() {
                 Проектируем и изготавливаем{" "}
                 <RotatingWord
                   words={[
-                    "кухни на заказ",
+                    "кухни",
                     "шкафы и гардеробные",
                     "корпусную мебель",
                     "мебель для бизнеса",
                   ]}
                 />{" "}
-                по индивидуальным размерам в Санкт-Петербурге
+                по индивидуальным размерам — от проекта до установки под ключ
               </p>
               <div className="hero-cta-wrap" ref={ctaRef}>
                 <Link href="/calculator/" className="btn btn-green magnetic">

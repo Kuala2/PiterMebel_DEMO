@@ -81,9 +81,8 @@ export default function MeasureForm({
   if (state.success) {
     return (
       <div id="measure-form" className="form-success-box" role="status" aria-live="polite">
-        <div className="form-success-kicker">Заявка отправлена</div>
-        <h3>Спасибо за обращение!</h3>
-        <p>{state.message || "Мы свяжемся с вами в ближайшее время."}</p>
+        <h3>Заявка отправлена</h3>
+        <p>{state.message || "Спасибо за обращение! Мы свяжемся с вами в ближайшее время."}</p>
         <div className="form-success-address">
           Студия «{SITE_CONFIG.name}» · {SITE_CONFIG.officeAddress} ({SITE_CONFIG.metro}, по записи)
         </div>

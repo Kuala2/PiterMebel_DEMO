@@ -27,6 +27,7 @@ async function testPage(path, viewport) {
   const expectedStatus = path === "/missing-smoke-page/" ? 404 : 200;
   check(response?.status() === expectedStatus, `${path} (${viewport.width}px): HTTP ${response?.status()}, ожидался ${expectedStatus}`);
   check(await page.locator("h1").count() === 1, `${path} (${viewport.width}px): должен быть один H1`);
+  check(await page.locator(".eyebrow").count() === 0, `${path} (${viewport.width}px): на странице остался двойной надзаголовок .eyebrow`);
   check(await page.locator('.skip-link[href="#main-content"]').count() === 1, `${path}: нет skip-link`);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
   check(overflow <= 1, `${path} (${viewport.width}px): горизонтальное переполнение ${overflow}px`);
@@ -101,8 +102,16 @@ for (const width of [320, 360, 390, 430]) {
   await page.goto(`${baseUrl}/production/`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(250);
   check(await page.locator(".sticky-cta").isVisible(), "Sticky CTA не видна в нейтральной зоне мобильной страницы");
+  check(await page.locator(".prod-stage-badge, .prod-benefit-tag, .promo-cta-card-badge").count() === 0, "На /production/ остались двойные надзаголовки (badge/tag)");
+  check(await page.locator(".prod-stage-title").count() === 3, "На /production/ должно быть 3 заголовка этапов производства");
+  check(await page.locator(".prod-benefit-title").count() === 3, "На /production/ должно быть 3 заголовка преимуществ производства");
+  const prodText = await page.locator("main").innerText();
+  check(!prodText.includes("Офис отдельно от цеха") && !prodText.includes("Комфортная встреча"), "На /production/ остался нерелевантный пункт про офис в преимуществах цеха");
   await page.goto(`${baseUrl}/projects/`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(250);
+  const projectsHtml = await page.content();
+  check(!projectsHtml.includes("Кировский завод") && !projectsHtml.includes("во время выезда специалиста на замер"), "На /projects/ осталась неверная станция метро или запрещённое обещание привезти образцы на замер");
+  check(!projectsHtml.includes("Индивидуальный размер"), "На /projects/ остался дублирующийся тег «Индивидуальный размер» на каждой карточке");
   await page.getByRole("tablist").scrollIntoViewIfNeeded();
   await page.waitForTimeout(250);
   check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA перекрывает фильтры каталога");
@@ -114,6 +123,10 @@ for (const width of [320, 360, 390, 430]) {
   await page.setViewportSize({ width: 390, height: 500 });
   await page.waitForTimeout(250);
   check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA не скрылась при открытии экранной клавиатуры/уменьшении visual viewport");
+  await page.goto(`${baseUrl}/kitchens/`, { waitUntil: "domcontentloaded" });
+  check(await page.locator(".card-badge-top").count() === 0, "На /kitchens/ остался повторяющийся бейдж «Реализованный проект» на каждой карточке");
+  const kitchensText = await page.locator("main").innerText();
+  check(!kitchensText.includes("пластике Slotex"), "На /kitchens/ столешницы Slotex ошибочно названы пластиком фасадов");
   await context.close();
 }
 
@@ -126,11 +139,19 @@ for (const width of [320, 360, 390, 430]) {
   await mobileToc.locator("summary").click();
   check(await mobileToc.locator("a").first().isVisible(), "Мобильное содержание статьи не раскрывается");
   check(await page.locator(".article-related-grid a").count() >= 5, "В статье недостаточно связанных внутренних ссылок");
+  check(await page.locator(".article-tier-label").count() === 0, "В статье остались двойные заголовки .article-tier-label");
   const articleSchema = await page.locator('script[type="application/ld+json"]').evaluateAll((scripts) => scripts
     .map((script) => JSON.parse(script.textContent || "{}"))
     .find((value) => value["@type"] === "TechArticle"));
   check(articleSchema?.wordCount >= 1500, `Статья остаётся слишком короткой: ${articleSchema?.wordCount ?? 0} слов`);
   check(/^PT\d+M$/.test(articleSchema?.timeRequired || ""), "В TechArticle нет рассчитанного времени чтения");
+  await page.setViewportSize({ width: 1440, height: 900 });
+  const tiersNoCollision = await page.locator(".article-list-tiers .article-list-item").evaluateAll((items) => items.every((item) => {
+    const marker = item.querySelector(".article-list-marker")?.getBoundingClientRect();
+    const text = item.querySelector(".article-list-text")?.getBoundingClientRect();
+    return Boolean(marker && text && marker.right <= text.left + 1);
+  }));
+  check(tiersNoCollision, "В статье на десктопе левый столбец .article-list-marker налезает на правый текст .article-list-text");
   await context.close();
 }
 
@@ -237,6 +258,93 @@ check(!homeHtml.includes('<div class="stat-num"><span>0</span>'), "В исход
   await page.waitForTimeout(450);
   check(await page.evaluate(() => document.activeElement?.id === "calculator-result"), "Кнопка на телефоне не перевела пользователя к блоку стоимости");
   await context.close();
+}
+
+{
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  await page.goto(`${baseUrl}/`, { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(300);
+  check(await page.locator(".boost-popup").count() === 0, "Всплывающее окно /boost не должно появляться сразу после входа");
+
+  await page.evaluate(() => {
+    window.sessionStorage.setItem("pm_boost_started_at_v1", String(Date.now() - 9400));
+  });
+  await page.reload({ waitUntil: "domcontentloaded" });
+  check(await page.locator(".boost-popup").count() === 0, "Всплывающее окно /boost появилось раньше 10 секунд");
+  await page.waitForSelector(".boost-popup", { state: "visible", timeout: 2000 });
+  check(await page.locator(".boost-popup-title").innerText().then((t) => t.includes("Купили квартиру или готовите её к сдаче?")), "Неверный заголовок во всплывающем окне /apartment");
+  check(await page.locator(".boost-popup-cta").getAttribute("href") === "/apartment/", "Кнопка Подробнее во всплывающем окне должна вести на /apartment/");
+
+  await page.locator(".boost-popup-close").click();
+  await page.waitForTimeout(300);
+  check(await page.locator(".boost-popup").count() === 0, "Кнопка закрытия не скрыла всплывающее окно /apartment");
+
+  await page.goto(`${baseUrl}/?boost=1`, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector(".boost-popup-cta", { state: "visible", timeout: 2000 });
+  await page.setViewportSize({ width: 320, height: 740 });
+  const popupOverflow320 = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  check(popupOverflow320 <= 1, `/?boost=1 (320px): горизонтальное переполнение со всплывающим окном ${popupOverflow320}px`);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator(".boost-popup-cta").click();
+  await page.waitForURL("**/apartment/**");
+  check(await page.locator(".boost-popup").count() === 0, "На самой странице /apartment всплывающее окно должно быть скрыто");
+  check(await page.locator(".sticky-cta").count() === 0, "Sticky CTA не должна перекрывать первый экран /apartment на телефоне");
+  check(await page.locator(".boost-hero-section img").count() === 0, "На странице /apartment не должно быть фотографий рядом с видео");
+  check(await page.locator(".boost-editorial-section").count() === 0, "На странице /apartment не должно быть лишней текстовой секции");
+  const sameHeadingFont = await page.evaluate(() => {
+    const h1 = document.querySelector(".boost-main-title");
+    const accent = document.querySelector(".boost-main-title-accent");
+    return Boolean(h1 && accent && getComputedStyle(h1).fontFamily === getComputedStyle(accent).fontFamily);
+  });
+  check(sameHeadingFont, "В заголовке H1 на /apartment основной текст и акцентная строка должны иметь один шрифт");
+  const videoAboveActionsOnMobile = await page.evaluate(() => {
+    const video = document.querySelector(".boost-video-card")?.getBoundingClientRect();
+    const actions = document.querySelector(".boost-hero-actions")?.getBoundingClientRect();
+    return Boolean(video && actions && video.top < actions.top && video.top < 500);
+  });
+  check(videoAboveActionsOnMobile, "На мобильном экране /apartment видео должно располагаться сразу под заголовком (выше кнопок)");
+  check(await page.locator('.boost-hero-actions a[href*="/calculator/"]').getAttribute("href") === "/calculator/?category=cabinet&layout=complex", "Ссылка на калькулятор с /apartment должна передавать валидные параметры category=cabinet&layout=complex");
+  check(await page.locator("video.boost-video-el").getAttribute("src") === "/video/studio-apartment-720p.mp4", "На странице /apartment не подключено локальное видео обзора");
+  const isAutoLoopMuted = await page.locator("video.boost-video-el").evaluate((video) => video.autoplay && video.muted && video.loop && video.playsInline);
+  check(isAutoLoopMuted, "Видео на /apartment должно быть настроено на автозапуск без звука и зацикливание (autoPlay, muted, loop, playsInline)");
+  check(await page.locator('#measure-form select[name="category"]').inputValue() === "Комплексный заказ", "На странице /apartment в форме должна быть выбрана категория Комплексный заказ");
+  check(await page.locator(".promo-cta-card-title").innerText().then((t) => t.includes("Скидка на комплект от 2 изделий")), "На странице /apartment в блоке формы должна быть выбрана акция скидки за объём");
+
+  await page.setViewportSize({ width: 320, height: 740 });
+  const boostOverflow320 = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  check(boostOverflow320 <= 1, `/apartment/ (320px): горизонтальное переполнение ${boostOverflow320}px`);
+  await context.close();
+}
+
+{
+  // После перехода на /apartment и возврата обратно на главную окно снова отображается
+  const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  const page = await context.newPage();
+  await page.goto(`${baseUrl}/apartment/`, { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => {
+    window.sessionStorage.setItem("pm_boost_started_at_v1", String(Date.now() - 9500));
+  });
+  await page.locator(".boost-back-btn").click();
+  await page.waitForURL(`${baseUrl}/`);
+  await page.waitForSelector(".boost-popup", { state: "visible", timeout: 2000 });
+  check(await page.locator(".boost-popup").isVisible(), "После возврата со страницы /apartment всплывающее окно должно снова отображаться");
+  await context.close();
+}
+
+{
+  const clampedRangeRes = await fetch(`${baseUrl}/video/studio-apartment-720p.mp4`, {
+    headers: { Range: "bytes=0-99999999" },
+  });
+  check(clampedRangeRes.status === 206, `Range bytes=0-99999999: ожидался HTTP 206, получен ${clampedRangeRes.status}`);
+  const suffixRangeRes = await fetch(`${baseUrl}/video/studio-apartment-720p.mp4`, {
+    headers: { Range: "bytes=-1024" },
+  });
+  check(suffixRangeRes.status === 206, `Range bytes=-1024: ожидался HTTP 206, получен ${suffixRangeRes.status}`);
+  const invalidRangeRes = await fetch(`${baseUrl}/video/studio-apartment-720p.mp4`, {
+    headers: { Range: "bytes=99999999-100000000" },
+  });
+  check(invalidRangeRes.status === 416, `Range bytes=99999999-100000000: ожидался HTTP 416, получен ${invalidRangeRes.status}`);
 }
 
 await browser.close();

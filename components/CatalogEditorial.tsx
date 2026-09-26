@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 interface EditorialItem {
   title: string;
   text: string;
@@ -16,27 +14,45 @@ interface EditorialFaq {
 }
 
 interface CatalogEditorialProps {
-  eyebrow: string;
   title: string;
   intro: string;
   items: EditorialItem[];
-  links: EditorialLink[];
-  faq: EditorialFaq[];
+  links?: EditorialLink[];
+  faq?: EditorialFaq[];
 }
 
 export default function CatalogEditorial({
-  eyebrow,
   title,
   intro,
   items,
-  links,
-  faq,
+  faq = [],
 }: CatalogEditorialProps) {
+  const faqJsonLd =
+    faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <section className="catalog-editorial-section" data-sticky-cta-suppress>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <div className="container">
         <div className="catalog-editorial-heading">
-          <p className="eyebrow">{eyebrow}</p>
           <h2>{title}</h2>
           <p>{intro}</p>
         </div>
@@ -47,24 +63,6 @@ export default function CatalogEditorial({
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
-          ))}
-        </div>
-
-        <div className="catalog-editorial-links" aria-label="Полезные следующие шаги">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label} →
-            </Link>
-          ))}
-        </div>
-
-        <div className="catalog-editorial-faq">
-          <h2>Вопросы перед началом проекта</h2>
-          {faq.map((item) => (
-            <details key={item.question}>
-              <summary>{item.question}</summary>
-              <p>{item.answer}</p>
-            </details>
           ))}
         </div>
       </div>

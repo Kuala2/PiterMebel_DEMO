@@ -246,10 +246,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                           )}
                           <span className="article-list-text">
                             {section.list!.style === "tiers" ? (
-                              <>
-                                <span className="article-tier-label">{item.label}</span>
-                                {item.body}
-                              </>
+                              item.body
                             ) : (
                               <>
                                 <strong>{item.lead}.</strong> {item.body}
@@ -316,7 +313,6 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
               <aside className="article-download-card" data-sticky-cta-suppress>
                 <div>
-                  <p className="eyebrow">Материал для печати</p>
                   <h2>Чек-лист перед электромонтажом</h2>
                   <p>Одна страница A4: исходные данные, таблица точек и финальная сверка для проектировщика, электрика и заказчика.</p>
                 </div>
