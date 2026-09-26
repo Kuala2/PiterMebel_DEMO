@@ -7,14 +7,12 @@ interface GalleryProps {
   images: string[];
   title: string;
   aspectRatio?: string;
-  objectFit?: "cover" | "contain";
 }
 
 export default function Gallery({
   images,
   title,
   aspectRatio = "16 / 10",
-  objectFit = "cover",
 }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [lightbox, setLightbox] = useState(false);

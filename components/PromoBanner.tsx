@@ -1,37 +1,26 @@
 "use client";
 
 import { useState, useRef, useCallback, useEffect } from "react";
-import Link from "next/link";
-import { PROMOS, PromoOffer } from "@/data/promos";
+import { PROMOS } from "@/data/promos";
 
 interface PromoBannerProps {
-  offer?: PromoOffer;
   initialCategory?: "kitchens" | "wardrobes" | "customFurniture";
   className?: string;
   autoPlayInterval?: number;
-  embedded?: boolean;
-  variant?: "banner" | "cta-card";
 }
 
 const ACTIVE_PROMOS = Object.values(PROMOS).filter((promo) => promo.active);
 
 export default function PromoBanner({
-  offer,
   initialCategory,
   className = "",
   autoPlayInterval = 5000,
-  embedded = false,
-  variant = "banner",
 }: PromoBannerProps) {
   const allOffers = ACTIVE_PROMOS;
 
   const getInitialIndex = () => {
     if (initialCategory && PROMOS[initialCategory]) {
       const idx = allOffers.findIndex((o) => o.id === PROMOS[initialCategory].id);
-      if (idx !== -1) return idx;
-    }
-    if (offer) {
-      const idx = allOffers.findIndex((o) => o.id === offer.id);
       if (idx !== -1) return idx;
     }
     return 0;
@@ -46,10 +35,9 @@ export default function PromoBanner({
   const timerRef = useRef<number | null>(null);
   const transitionTimeoutRef = useRef<number | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
-  const bannerControlsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const preferredOffer = initialCategory ? PROMOS[initialCategory] : offer;
+    const preferredOffer = initialCategory ? PROMOS[initialCategory] : undefined;
     if (!preferredOffer) return;
 
     const preferredIndex = allOffers.findIndex((item) => item.id === preferredOffer.id);
@@ -57,7 +45,7 @@ export default function PromoBanner({
       setCurrentIndex(preferredIndex);
       currentIndexRef.current = preferredIndex;
     }
-  }, [initialCategory, offer, allOffers]);
+  }, [initialCategory, allOffers]);
 
   const goToOffer = useCallback(
     (newIndex: number) => {
@@ -164,160 +152,48 @@ export default function PromoBanner({
     }
   };
 
-  const currentOffer = allOffers[currentIndex] || allOffers[0];
-  if (!currentOffer) return null;
+  if (allOffers.length === 0) return null;
 
-  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    (e.currentTarget as HTMLElement).blur();
-    if (currentOffer.ctaHref.startsWith("#")) {
-      e.preventDefault();
-      const target = document.querySelector(currentOffer.ctaHref);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        const input = target.querySelector<HTMLInputElement>("input:not([type=hidden])");
-        if (input) {
-          window.setTimeout(() => input.focus(), 300);
-        }
-      }
-    }
-  };
+  return (
+    <div className={`promo-cta-card ${className}`}>
+      <div className="promo-cta-card-head">
+        <div className={`promo-content-anim promo-content-stack ${isTransitioning ? "is-transitioning" : ""}`}>
+          {allOffers.map((item, idx) =>
+            idx === currentIndex ? (
+              <h3 key={item.id} className="promo-cta-card-title">
+                {item.title}
+              </h3>
+            ) : (
+              <div key={item.id} className="promo-cta-card-ghost" aria-hidden="true">
+                {item.title}
+              </div>
+            )
+          )}
+        </div>
 
-  const cardContent = (
-    <div className="promo-card">
-      {/* Left: Content with smooth crossfade animation */}
-      <div className={`promo-left promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}>
-        {currentOffer.badge && (
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-            <span style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--color-green-brand)" }}>
-              АКЦИЯ СТУДИИ · {currentOffer.badge.toUpperCase()}
-            </span>
-          </div>
-        )}
-        <h3 className="promo-title">{currentOffer.title}</h3>
-      </div>
-
-      {/* Right: Controls & CTA */}
-      <div
-        ref={bannerControlsRef}
-        className="promo-right"
-        onMouseEnter={handleInteractiveMouseEnter}
-        onMouseLeave={() => handleInteractiveMouseLeave(bannerControlsRef.current)}
-        onFocusCapture={handleFocusCapture}
-        onBlurCapture={handleBlurCapture}
-      >
         {allOffers.length > 1 && (
-          <div className="promo-nav-group">
+          <div
+            ref={navRef}
+            className="promo-cta-card-nav"
+            onMouseEnter={handleInteractiveMouseEnter}
+            onMouseLeave={() => handleInteractiveMouseLeave(navRef.current)}
+            onFocusCapture={handleFocusCapture}
+            onBlurCapture={handleBlurCapture}
+          >
             <span className="promo-counter-label">
               0{currentIndex + 1} / 0{allOffers.length}
             </span>
             <div className="promo-arrows">
-              <button
-                type="button"
-                className="promo-nav-arrow"
-                onClick={handlePrev}
-                aria-label="Предыдущая акция"
-                title="Предыдущая акция"
-              >
+              <button type="button" className="promo-nav-arrow" onClick={handlePrev} aria-label="Предыдущая акция" title="Предыдущая акция">
                 ←
               </button>
-              <button
-                type="button"
-                className="promo-nav-arrow"
-                onClick={handleNext}
-                aria-label="Следующая акция"
-                title="Следующая акция"
-              >
+              <button type="button" className="promo-nav-arrow" onClick={handleNext} aria-label="Следующая акция" title="Следующая акция">
                 →
               </button>
             </div>
           </div>
         )}
-
-        <Link
-          href={currentOffer.ctaHref}
-          onClick={handleCtaClick}
-          className={`btn btn-green promo-cta-btn promo-content-anim ${isTransitioning ? "is-transitioning" : ""}`}
-        >
-          {currentOffer.ctaText}
-        </Link>
       </div>
     </div>
-  );
-
-  if (variant === "cta-card") {
-    return (
-      <div className={`promo-cta-card ${className}`}>
-        <div className="promo-cta-card-head">
-          <div className={`promo-content-anim promo-content-stack ${isTransitioning ? "is-transitioning" : ""}`}>
-            {allOffers.map((item, idx) =>
-              idx === currentIndex ? (
-                <h3 key={item.id} className="promo-cta-card-title">
-                  {item.title}
-                </h3>
-              ) : (
-                <div
-                  key={item.id}
-                  className="promo-cta-card-ghost"
-                  aria-hidden="true"
-                >
-                  {item.title}
-                </div>
-              )
-            )}
-          </div>
-
-          {allOffers.length > 1 && (
-            <div
-              ref={navRef}
-              className="promo-cta-card-nav"
-              onMouseEnter={handleInteractiveMouseEnter}
-              onMouseLeave={() => handleInteractiveMouseLeave(navRef.current)}
-              onFocusCapture={handleFocusCapture}
-              onBlurCapture={handleBlurCapture}
-            >
-              <span className="promo-counter-label">
-                0{currentIndex + 1} / 0{allOffers.length}
-              </span>
-              <div className="promo-arrows">
-                <button
-                  type="button"
-                  className="promo-nav-arrow"
-                  onClick={handlePrev}
-                  aria-label="Предыдущая акция"
-                  title="Предыдущая акция"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  className="promo-nav-arrow"
-                  onClick={handleNext}
-                  aria-label="Следующая акция"
-                  title="Следующая акция"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  if (embedded) {
-    return (
-      <div className={`promo-embedded-wrapper ${className}`}>
-        {cardContent}
-      </div>
-    );
-  }
-
-  return (
-    <section className={`promo-architectural-banner ${className}`}>
-      <div className="container">
-        {cardContent}
-      </div>
-    </section>
   );
 }

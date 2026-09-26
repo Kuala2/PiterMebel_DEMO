@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
-import { SITE_CONFIG } from "@/data/site";
 import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
 import { buildOg } from "@/lib/seo";

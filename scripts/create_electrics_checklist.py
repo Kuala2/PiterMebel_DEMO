@@ -177,6 +177,7 @@ def build_pdf(path):
     c.save()
 
 
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 build_pdf(OUTPUT)
 PUBLIC_COPY.parent.mkdir(parents=True, exist_ok=True)
 copyfile(OUTPUT, PUBLIC_COPY)

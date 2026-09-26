@@ -60,7 +60,6 @@ export default function LeadSection({
 
               <PromoBanner
                 initialCategory={initialPromoCategory}
-                variant="cta-card"
                 className="lead-promo-carousel"
               />
             </div>

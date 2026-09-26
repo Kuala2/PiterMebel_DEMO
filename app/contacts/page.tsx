@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import LeadSection from "@/components/LeadSection";
 import VkIcon from "@/components/VkIcon";
 import TelegramIcon from "@/components/TelegramIcon";

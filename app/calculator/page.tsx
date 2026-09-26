@@ -10,7 +10,6 @@ import {
   DEFAULT_METERS_BY_CATEGORY,
   SIZE_PRESETS_BY_CATEGORY,
 } from "@/data/calculator-pricing";
-import { SITE_CONFIG } from "@/data/site";
 
 type Choice = { id: string; name: string; description: string };
 type MaterialId = keyof typeof CALCULATOR_PRICING.materialMultipliers;
