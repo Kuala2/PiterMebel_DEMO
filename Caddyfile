@@ -66,7 +66,7 @@ https://pitermebel.com {
 
     # HTML-страницы и маршруты: валидация свежести
     @html {
-        path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /apartment/* /privacy/*
+        path *.html / /kitchens/* /wardrobes/* /custom-furniture/* /projects/* /production/* /contacts/* /calculator/* /knowledge/* /apartment/* /privacy/* /consent/* /analytics-consent/*
     }
     header @html Cache-Control "no-cache, must-revalidate"
 

@@ -1,3 +1,5 @@
+import { hasAnalyticsConsent } from "@/lib/privacy";
+
 export const METRIKA_ID = 112318484;
 
 type MetrikaFunction = ((...args: unknown[]) => void) & {
@@ -12,7 +14,7 @@ type MetrikaWindow = Window & {
 
 /** Queue init, pageviews and goals in order, even before the external tag loads. */
 export function getMetrika() {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasAnalyticsConsent()) return;
   const target = window as MetrikaWindow;
   if (!target.ym) {
     const queued: MetrikaFunction = (...args) => {
@@ -26,14 +28,25 @@ export function getMetrika() {
     target.ym(METRIKA_ID, "init", {
       defer: true,
       ssr: true,
-      webvisor: true,
-      clickmap: true,
-      ecommerce: "dataLayer",
-      accurateTrackBounce: true,
-      trackLinks: true,
+      webvisor: false,
+      clickmap: false,
+      accurateTrackBounce: false,
+      trackLinks: false,
+      disableYtm: true,
+      url: `${window.location.origin}${window.location.pathname}`,
+      referrer: "",
     });
   }
   return target.ym;
+}
+
+export function stopMetrika() {
+  if (typeof window === "undefined") return;
+  const target = window as MetrikaWindow;
+  if (target.piterMetrikaInitialized) target.ym?.(METRIKA_ID, "destruct");
+  // Drop unsent events from a script that has not loaded yet.
+  if (target.ym?.a) target.ym.a = [];
+  target.piterMetrikaInitialized = false;
 }
 
 /** The matching JavaScript-event goal must also exist in the Metrica account. */

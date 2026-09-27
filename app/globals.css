@@ -11093,3 +11093,10 @@ html.menu-open .boost-popup {
     animation: none;
   }
 }
+/* Legal documents keep the existing article layout. */
+.privacy-page .article-paragraph { overflow-wrap: anywhere; }
+.privacy-page .article-paragraph a { text-decoration: underline; text-underline-offset: 3px; }
+.privacy-settings { border: 1px solid rgba(255,255,255,.18); padding: 20px; border-radius: 12px; }
+.privacy-settings-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.privacy-settings-actions .btn { white-space: normal; text-align: center; }
+.privacy-settings-actions .btn:disabled { opacity: .5; cursor: not-allowed; }

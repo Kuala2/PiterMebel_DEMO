@@ -5,6 +5,7 @@ import Link from "next/link";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
 import { reachGoal } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
+import { canReceiveLeads, LEGAL_VERSION } from "@/data/legal";
 
 const initialState: MeasureFormState = { success: false };
 
@@ -51,6 +52,7 @@ export default function MeasureForm({
   const [consent, setConsent] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(() => normalizeCategory(initialCategory));
   const errorSummaryRef = useRef<HTMLDivElement>(null);
+  const submissionIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     if (state.errors) errorSummaryRef.current?.focus();
@@ -67,7 +69,9 @@ export default function MeasureForm({
     setIsPending(true);
     setState(initialState);
     const formData = new FormData(event.currentTarget);
-    formData.set("page_url", window.location.href);
+    submissionIdRef.current ||= crypto.randomUUID();
+    formData.set("submission_id", submissionIdRef.current);
+    formData.set("page_url", `${window.location.origin}${window.location.pathname}`);
     const result = await submitMeasureRequest(initialState, formData);
     if (result.success && result.deliveryAccepted) reachGoal("zayavka");
     setState(result);
@@ -94,12 +98,17 @@ export default function MeasureForm({
 
   return (
     <div id="measure-form" style={{ width: "100%" }}>
-      <form onSubmit={handleSubmit} className="measure-form" noValidate>
+      <form onSubmit={handleSubmit} className="measure-form ym-disable-keys" noValidate>
+        <input type="hidden" name="consent_version" value={LEGAL_VERSION} />
         <input type="hidden" name="source" value={source || initialCategory || "Общая форма"} />
         <input type="hidden" name="calculator_summary" value={calculatorSummary || ""} />
         <label className="form-honeypot" aria-hidden="true">
-          Не заполняйте это поле
-          <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+          Ваш сайт
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+        <label className="form-honeypot" aria-hidden="true">
+          Подтверждаю отправку заявки
+          <input type="checkbox" name="confirm_order" tabIndex={-1} autoComplete="off" />
         </label>
 
         <div>
@@ -107,6 +116,8 @@ export default function MeasureForm({
             <h3>Запросить предварительный расчёт</h3>
             <p>Перезвоним, уточним детали и подготовим расчёт.</p>
           </div>
+          {!canReceiveLeads && <p className="article-paragraph">Онлайн-форма ещё не подключена. Для обращения позвоните
+            {" "}<a href={`tel:${SITE_CONFIG.phoneRaw}`}>{SITE_CONFIG.phone}</a> или воспользуйтесь контактами рядом. Введённые здесь данные не отправляются.</p>}
 
           {state.errors && (
             <div ref={errorSummaryRef} className="form-error-summary" role="alert" tabIndex={-1}>
@@ -210,10 +221,12 @@ export default function MeasureForm({
               aria-invalid={Boolean(state.errors?.consent)}
             />
             <span>
-              Согласен на обработку данных согласно <Link href="/privacy/">политике конфиденциальности</Link>
+              Даю <Link href="/consent/" target="_blank" rel="noopener noreferrer">согласие на обработку персональных данных</Link> для ответа на заявку
             </span>
           </label>
           {state.errors?.consent && <p className="form-field-error">{state.errors.consent}</p>}
+          <p className="form-label"><Link href="/privacy/" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</Link>.
+            {" "}Согласие не включает рекламные рассылки.</p>
           <button type="submit" className="btn btn-green form-submit-button" disabled={isPending}>
             {isPending ? "Отправляем…" : "Запросить расчёт"}
           </button>

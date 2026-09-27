@@ -8,13 +8,17 @@ function load(file, globals) {
   const js = ts.transpileModule(readFileSync(file, "utf8"), {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
   }).outputText;
-  const context = vm.createContext({ exports: {}, ...globals });
+  const context = vm.createContext({ exports: {}, require: (id) => {
+    if (id === "@/data/legal") return { canReceiveLeads: true, canUseAnalytics: true, LEGAL_VERSION: "2026-09-27" };
+    if (id === "@/lib/privacy") return { hasAnalyticsConsent: () => true, pageAddress: (url) => url.split(/[?#]/)[0] };
+    throw new Error(id);
+  }, ...globals });
   vm.runInContext(js, context, { filename: file });
   return context.exports;
 }
 
 test("Metrica queues init once before early goals and pageviews", () => {
-  const window = {};
+  const window = { location: { origin: "https://pitermebel.com", pathname: "/" } };
   const api = load("lib/metrika.ts", { window });
   api.reachGoal("contact_phone");
   api.getMetrika()(api.METRIKA_ID, "hit", "https://pitermebel.com/contacts/");
@@ -22,13 +26,15 @@ test("Metrica queues init once before early goals and pageviews", () => {
   const calls = JSON.parse(JSON.stringify(window.ym.a));
   assert.deepEqual(calls.map((call) => call[1]), ["init", "reachGoal", "hit", "reachGoal"]);
   assert.equal(calls[0][2].defer, true);
+  assert.equal(calls[0][2].webvisor, false);
+  assert.equal(calls[0][2].trackLinks, false);
   assert.equal(calls[0][0], 112318484);
 });
 
 test("Metrica preserves an existing tag and is safe during static rendering", () => {
   let count = 0;
   const ym = () => { count++; };
-  const api = load("lib/metrika.ts", { window: { ym } });
+  const api = load("lib/metrika.ts", { window: { ym, location: { origin: "https://pitermebel.com", pathname: "/" } } });
   assert.equal(api.getMetrika(), ym);
   api.getMetrika();
   assert.equal(count, 1);
@@ -42,14 +48,15 @@ function form(bot = false) {
   data.set("contact", "+7 000 000 00 00");
   data.set("category", "Консультация");
   data.set("consent", "on");
+  data.set("consent_version", "2026-09-27");
   if (bot) data.set("botcheck", "on");
   return data;
 }
 
-function submitter(fetch, key = "local-test-only") {
+function submitter(fetch, key = "/api/leads") {
   return load("app/actions/measure.ts", {
     window: { setTimeout, clearTimeout }, fetch, FormData, AbortController,
-    process: { env: { NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: key } },
+    process: { env: { NEXT_PUBLIC_LEAD_ENDPOINT: key } },
   }).submitMeasureRequest;
 }
 

@@ -44,7 +44,8 @@ export default function StickyCTA() {
     return () => viewport.removeEventListener("resize", updateKeyboardState);
   }, [pathname]);
 
-  const isHidden = pathname.startsWith("/calculator") || isInteractiveZoneVisible || isKeyboardOpen;
+  const isLegalPage = ["/privacy", "/consent", "/analytics-consent"].some(path => pathname.startsWith(path));
+  const isHidden = isLegalPage || pathname.startsWith("/calculator") || isInteractiveZoneVisible || isKeyboardOpen;
 
   useEffect(() => {
     document.body.classList.toggle("has-sticky-cta", !isHidden);

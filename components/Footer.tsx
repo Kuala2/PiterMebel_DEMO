@@ -51,6 +51,8 @@ export default function Footer() {
               <li>
                 <Link href="/privacy/">Политика конфиденциальности</Link>
               </li>
+              <li><Link href="/consent/">Согласие на обработку данных</Link></li>
+              <li><Link href="/privacy/#cookies">Настройки аналитики</Link></li>
             </ul>
           </div>
 

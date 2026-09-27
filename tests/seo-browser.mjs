@@ -1,77 +1,79 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir } from "node:fs/promises";
 
 const base = process.env.PITER_MEBEL_TEST_URL || "http://localhost:3001";
-const destination = "seo-work/2026-09-27/evidence";
+const destination = "output/privacy-2026-09-27";
 await mkdir(destination, { recursive: true });
 const browser = await chromium.launch({ headless: true });
-const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
-// Never send test visits, goals or leads to external services.
-await context.route("**/*", route => new URL(route.request().url()).origin === base ? route.continue() : route.abort());
-const page = await context.newPage();
-const calls = () => page.evaluate(() => (window.ym?.a || []).map(args => Array.from(args)));
-const hits = async () => (await calls()).filter(call => call[1] === "hit");
-
 try {
-  await page.goto(base + "/?utm_source=seo-test", { waitUntil: "networkidle" });
-  await page.waitForFunction(() => window.ym?.a?.some(args => args[1] === "hit"));
-  assert.equal((await hits()).length, 1);
-  assert.equal((await hits())[0][2], base + "/?utm_source=seo-test");
-  assert.equal((await hits())[0][3].title, await page.title());
-  assert.equal(await page.locator('link[rel="preload"][as="image"][href="/img/production/line-boring.webp"]').count(), 0);
-  await page.screenshot({ path: destination + "/home-mobile.png" });
-
-  // Use rendered Next links; a full reload would erase the queue and fail the count.
-  await page.locator('footer a[href="/kitchens/"]').first().click();
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
+  const external = [];
+  await context.route("**/*", route => {
+    if (new URL(route.request().url()).origin === base) return route.continue();
+    external.push(route.request().url());
+    return route.abort();
+  });
+  const page = await context.newPage();
+  const errors = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto(base + "/?phone=private", { waitUntil: "networkidle" });
+  assert.equal(await page.evaluate(() => typeof window.ym), "undefined");
+  assert.equal(external.length, 0, "No third party should load before a choice");
+  await page.locator('footer a[href="/kitchens/"]').click();
   await page.waitForURL(base + "/kitchens/");
-  await page.waitForFunction(() => window.ym.a.filter(args => args[1] === "hit").length === 2);
-  assert.equal((await hits())[1][3].title, await page.title());
-  assert.equal((await hits())[1][3].referer, base + "/?utm_source=seo-test");
   const firstImage = page.locator(".kitchen-ladder-first .card-img-slide");
   assert.notEqual(await firstImage.getAttribute("loading"), "lazy");
-  assert.equal(await page.locator('link[rel="preload"][as="image"][href="/img/kitchens/slavena/photo_1.jpg"]').count(), 1);
-  await page.locator('footer a[href="/contacts/"]').first().click();
+  await page.locator('footer a[href="/contacts/"]').click();
   await page.waitForURL(base + "/contacts/");
-  await page.waitForFunction(() => window.ym.a.filter(args => args[1] === "hit").length === 3);
-  assert.equal((await hits())[2][3].title, await page.title());
-  await page.screenshot({ path: destination + "/contacts-mobile.png" });
-  // Suppress the OS phone handler, while letting the tracking listener observe the click.
-  await page.evaluate(() => document.addEventListener("click", e => {
-    if (e.target.closest?.('a[href^="tel:"]')) e.preventDefault();
-  }, { capture: true }));
-  await page.locator('.contacts-channel-card[href^="tel:"]').click();
-  assert.equal((await calls()).filter(c => c[1] === "reachGoal" && c[2] === "contact_phone").length, 1);
-  await page.evaluate(() => { window.location.hash = "measure"; });
-  await page.waitForTimeout(200);
-  assert.equal((await hits()).length, 3, "An anchor must not create another pageview");
-  await page.goBack(); // Remove the hash.
-  await page.goBack(); // Return to kitchens via browser history.
-  await page.waitForURL(base + "/kitchens/");
-  await page.waitForFunction(() => window.ym.a.filter(args => args[1] === "hit").length === 4);
-  assert.equal((await calls()).filter(c => c[1] === "init").length, 1);
-  const navigationCalls = await calls();
-
-  await page.goto(base + "/contacts/", { waitUntil: "networkidle" });
+  const mapButton = page.getByRole("button", { name: "Показать интерактивную карту" });
+  await mapButton.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(400);
+  assert.equal(external.length, 0, "Scrolling to the map must not load Yandex");
   const form = page.locator("#measure-form form");
+  assert.equal(await form.locator('[name="consent"]').isChecked(), false);
+  assert.equal(await form.locator('a[href="/consent/"]').count(), 1);
+  assert.equal(await form.locator('a[href="/privacy/"]').count(), 1);
   await form.locator('[name="contact"]').fill("+7 000 000 00 00");
+  await form.locator('button[type="submit"]').click();
+  await page.getByText("Нужно согласие на обработку данных", { exact: true }).waitFor();
   await form.locator('[name="consent"]').check();
   await form.locator('button[type="submit"]').click();
-  await page.getByText("Онлайн-форма ещё не подключена.", { exact: false }).waitFor();
-  assert.equal((await calls()).filter(c => c[1] === "reachGoal" && c[2] === "zayavka").length, 0);
-  await form.locator('[name="botcheck"]').evaluate(el => { el.checked = true; });
-  await form.locator('button[type="submit"]').click();
-  await page.getByRole("heading", { name: "Заявка отправлена" }).waitFor();
-  assert.equal((await calls()).filter(c => c[1] === "reachGoal" && c[2] === "zayavka").length, 0);
+  await form.locator(".form-error-summary").filter({ hasText: "Онлайн-форма ещё не подключена" }).waitFor();
+  assert.equal(external.length, 0);
+  assert.equal(await page.evaluate(() => typeof window.ym), "undefined");
+  await mapButton.click();
+  await page.waitForTimeout(250);
+  assert.ok(external.some(url => url.includes("api-maps.yandex.ru")));
 
-  const missing = await page.goto(base + "/seo-test-missing/");
-  assert.equal(missing.status(), 404);
-  await writeFile(destination + "/analytics-browser.json", JSON.stringify({
-    testedAt: new Date().toISOString(), status: "passed", navigationCalls,
-    checks: ["initial URL and query", "SPA transitions", "title and referer", "one init", "back navigation", "no hash duplicate", "contact click", "no lead without delivery", "no honeypot goal", "HTTP 404"],
-    externalRequestsBlocked: true,
-  }, null, 2));
-  console.log("SEO browser: navigation, Metrica queue, mobile contact/form and 404 checks passed.");
-} finally {
-  await browser.close();
-}
+  for (const path of ["/privacy/", "/consent/", "/analytics-consent/"]) {
+    const response = await page.goto(base + path, { waitUntil: "networkidle" });
+    assert.equal(response.status(), 200);
+    assert.equal(await page.locator("h1").count(), 1);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), "https://pitermebel.com" + path);
+    for (const width of [320, 390, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), path + " horizontal overflow at " + width);
+    }
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.screenshot({ path: destination + "/" + path.replaceAll("/", "") + "-mobile.png", fullPage: true });
+    assert.equal(await page.locator(".sticky-cta, .boost-popup").count(), 0, "Legal documents must remain unobstructed");
+  }
+  await page.goto(base + "/privacy/#cookies", { waitUntil: "networkidle" });
+  assert.equal(await page.getByRole("button", { name: "Дать согласие на аналитику" }).isDisabled(), true);
+  await page.getByRole("button", { name: "Отключить аналитику" }).click();
+  const choice = await page.evaluate(() => JSON.parse(localStorage.getItem("pm_privacy_v1")));
+  assert.equal(choice.analytics, false);
+  await page.screenshot({ path: destination + "/privacy-settings-mobile.png" });
+  assert.equal(errors.length, 0, errors.join("\n"));
+  assert.equal((await page.goto(base + "/seo-test-missing/")).status(), 404);
+  await context.close();
+  const noJs = await browser.newContext({ javaScriptEnabled: false });
+  const noJsPage = await noJs.newPage();
+  const trackers = [];
+  noJsPage.on("request", request => { if (/mc\.yandex/.test(request.url())) trackers.push(request.url()); });
+  await noJsPage.goto(base + "/privacy/");
+  assert.equal(trackers.length, 0, "No noscript tracking without consent");
+  await noJs.close();
+  console.log("Browser checks passed: no tracking before consent; no unconfigured leads; separate consent; explicit map activation; legal pages at 320/390/1440; no-JS; HTTP 404.");
+} finally { await browser.close(); }

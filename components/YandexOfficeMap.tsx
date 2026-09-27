@@ -15,22 +15,6 @@ export default function YandexOfficeMap() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    const container = mapContainerRef.current;
-    if (!container || shouldLoad) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, [shouldLoad]);
-
-  useEffect(() => {
     if (!shouldLoad) return;
     let isMounted = true;
 
@@ -122,9 +106,13 @@ export default function YandexOfficeMap() {
       }}
     >
       {!shouldLoad && (
-        <button type="button" className="btn btn-glass" onClick={() => setShouldLoad(true)}>
-          Показать интерактивную карту
-        </button>
+        <div style={{ padding: "24px", textAlign: "center", maxWidth: "420px" }}>
+          <p style={{ marginBottom: "16px", lineHeight: 1.6 }}>При загрузке карты Яндекс получит технические данные вашего браузера.
+            {" "}<a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener noreferrer">Условия обработки</a>.</p>
+          <button type="button" className="btn btn-glass" onClick={() => setShouldLoad(true)}>
+            Показать интерактивную карту
+          </button>
+        </div>
       )}
     </div>
   );

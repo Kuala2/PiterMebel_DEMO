@@ -10,7 +10,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
 import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION, METRIKA_ID } from "@/lib/seo";
+import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -142,15 +142,6 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <YandexMetrika />
         </Suspense>
-        <noscript>
-          <div>
-            <img
-              src={`https://mc.yandex.ru/watch/${METRIKA_ID}`}
-              style={{ position: "absolute", left: "-9999px" }}
-              alt=""
-            />
-          </div>
-        </noscript>
         <AmbientFlowCanvas className="global-silk" />
         <a className="skip-link" href="#main-content">Перейти к содержимому</a>
         <Header />

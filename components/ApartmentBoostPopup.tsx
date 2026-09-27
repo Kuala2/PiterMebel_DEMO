@@ -37,7 +37,7 @@ export default function ApartmentBoostPopup() {
   const [isClosing, setIsClosing] = useState(false);
 
   const isOnBoostPage =
-    (pathname?.startsWith("/apartment") || pathname?.startsWith("/boost")) ?? false;
+    ["/apartment", "/boost", "/privacy", "/consent", "/analytics-consent"].some(path => pathname?.startsWith(path));
 
   const dismissPopup = useCallback((goalName?: string) => {
     memoryDismissed = true;
