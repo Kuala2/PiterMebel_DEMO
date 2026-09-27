@@ -1,0 +1,52 @@
+{
+  "measuredAt": "2026-09-26T23:56:55.573Z",
+  "baseUrl": "http://localhost:3001",
+  "results": [
+    {
+      "name": "home",
+      "path": "/",
+      "profile": "mobile, 4x CPU, 150 ms latency, 1.6 Mbps down",
+      "ttfbMs": 7,
+      "domContentLoadedMs": 5855,
+      "loadMs": 12154,
+      "fcpMs": 5648,
+      "lcpMs": 6536,
+      "lcpElement": {
+        "tag": "P",
+        "className": "hero-slogan-title",
+        "url": "",
+        "size": 71187
+      },
+      "cls": 0.0552,
+      "totalBlockingTimeMs": 216,
+      "longTaskCount": 3,
+      "scriptRequests": 13,
+      "scriptTransferKb": 558,
+      "webglContexts": 0,
+      "documentOverflowPx": 0
+    },
+    {
+      "name": "kitchens",
+      "path": "/kitchens/",
+      "profile": "mobile, 4x CPU, 150 ms latency, 1.6 Mbps down",
+      "ttfbMs": 3,
+      "domContentLoadedMs": 4177,
+      "loadMs": 10109,
+      "fcpMs": 4004,
+      "lcpMs": 9420,
+      "lcpElement": {
+        "tag": "IMG",
+        "className": "card-img-slide",
+        "url": "http://localhost:3001/img/kitchens/slavena/photo_1.jpg",
+        "size": 86741
+      },
+      "cls": 0.0001,
+      "totalBlockingTimeMs": 112,
+      "longTaskCount": 1,
+      "scriptRequests": 12,
+      "scriptTransferKb": 518,
+      "webglContexts": 0,
+      "documentOverflowPx": 0
+    }
+  ]
+}

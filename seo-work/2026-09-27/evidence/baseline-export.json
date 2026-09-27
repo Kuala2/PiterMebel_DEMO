@@ -1,0 +1,1840 @@
+{
+  "captured_at": "2026-09-26T23:46:46.019448+00:00",
+  "scope": "all sitemap URLs, source HTML only",
+  "total_urls": 44,
+  "checked_urls": 44,
+  "issues": [
+    {
+      "url": "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+      "check": "lastmod",
+      "detail": {
+        "sitemap": "2026-08-26T00:00:00.000Z",
+        "article": "2026-09-14"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://pitermebel.com/",
+      "lastmod": null,
+      "file": "index.html",
+      "sha256": "eabb86f8bf2306971a8bea518facf7abfac9b68f4af04ae83e9c1ed577e6d4d7",
+      "title": "ПитерМебель — кухни и мебель на заказ в Санкт-Петербурге",
+      "description": [
+        "Проектируем и изготавливаем кухни, шкафы и корпусную мебель в Санкт-Петербурге с 2005 года. Договор, доставка и монтаж под ключ."
+      ],
+      "canonical": [
+        "https://pitermebel.com/"
+      ],
+      "h1": [
+        "Кухни и мебель на заказ в Санкт-Петербурге"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite"
+      ],
+      "images": 88,
+      "internal_links": [
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/bathroom-vanity/",
+        "https://pitermebel.com/projects/bedroom-set/",
+        "https://pitermebel.com/projects/brick-wardrobe/",
+        "https://pitermebel.com/projects/cascade-partitions/",
+        "https://pitermebel.com/projects/curved-oak-facades/",
+        "https://pitermebel.com/projects/emerald-enamel/",
+        "https://pitermebel.com/projects/glass-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/light-wood-wardrobe/",
+        "https://pitermebel.com/projects/mirror-hall/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/oak-veneer-panel/",
+        "https://pitermebel.com/projects/office-reception/",
+        "https://pitermebel.com/projects/sherman-cognac/",
+        "https://pitermebel.com/projects/slat-panels/",
+        "https://pitermebel.com/projects/sliding-partition/",
+        "https://pitermebel.com/projects/velvet-matte/",
+        "https://pitermebel.com/projects/wardrobe-inside/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/",
+      "lastmod": null,
+      "file": "kitchens\\index.html",
+      "sha256": "467efdb7d2fbe27969a6f37b28b0c359cd750f28b244bfd5c570e950e1498460",
+      "title": "Кухни на заказ в СПб от производителя | ПитерМебель",
+      "description": [
+        "Кухни на заказ по индивидуальным размерам в Санкт-Петербурге: эмаль, пластик и шпон. Проектирование, договор и монтаж под ключ."
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/"
+      ],
+      "h1": [
+        "Кухни на заказ"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "images": 13,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/emerald-enamel/",
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/kitchens/sherman-cognac/",
+        "https://pitermebel.com/kitchens/velvet-matte/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/wardrobes/",
+      "lastmod": null,
+      "file": "wardrobes\\index.html",
+      "sha256": "fc8e2cc3e33d8f3d99b8793fc84ea4c19bcca32c8339eec44a5663df9e8e7089",
+      "title": "Шкафы и гардеробные на заказ в СПб | ПитерМебель",
+      "description": [
+        "Встроенные шкафы и гардеробные на заказ по индивидуальным размерам в Санкт-Петербурге. Проектирование, изготовление и монтаж под ключ."
+      ],
+      "canonical": [
+        "https://pitermebel.com/wardrobes/"
+      ],
+      "h1": [
+        "Шкафы и гардеробные на заказ"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "images": 9,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/bedroom-set/",
+        "https://pitermebel.com/projects/brick-wardrobe/",
+        "https://pitermebel.com/projects/glass-wardrobe/",
+        "https://pitermebel.com/projects/light-wood-wardrobe/",
+        "https://pitermebel.com/projects/mirror-hall/",
+        "https://pitermebel.com/projects/wardrobe-inside/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/custom-furniture/",
+      "lastmod": null,
+      "file": "custom-furniture\\index.html",
+      "sha256": "5c9e6db4f74203d4313e9eeba41e6cf02d559c6eda470475d581a9e96705d8a1",
+      "title": "Корпусная мебель на заказ в СПб | ПитерМебель",
+      "description": [
+        "Прихожие, реечные стеновые панели, ТВ-зоны и мебель для бизнеса по индивидуальным размерам. Производство полного цикла в Санкт-Петербурге с 2005 года."
+      ],
+      "canonical": [
+        "https://pitermebel.com/custom-furniture/"
+      ],
+      "h1": [
+        "Корпусная мебель на заказ"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "images": 10,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/bathroom-vanity/",
+        "https://pitermebel.com/projects/cascade-partitions/",
+        "https://pitermebel.com/projects/curved-oak-facades/",
+        "https://pitermebel.com/projects/oak-veneer-panel/",
+        "https://pitermebel.com/projects/office-reception/",
+        "https://pitermebel.com/projects/slat-panels/",
+        "https://pitermebel.com/projects/sliding-partition/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/production/",
+      "lastmod": null,
+      "file": "production\\index.html",
+      "sha256": "f0e7cfc6a7ed1a6f82cfbaa18207fa096e4d18d5a97714f1a47a2af8837d86af",
+      "title": "Собственное производство мебели — ПитерМебель в СПб",
+      "description": [
+        "Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру. Мебель на заказ с 2005 года."
+      ],
+      "canonical": [
+        "https://pitermebel.com/production/"
+      ],
+      "h1": [
+        "Собственное производство мебели в Санкт-Петербурге"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "images": 6,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/calculator/",
+      "lastmod": null,
+      "file": "calculator\\index.html",
+      "sha256": "1855e75445914504ca2d573b7d5244091419a2cefad5d93ebb8e0da9b49e4aa0",
+      "title": "Калькулятор мебели на заказ | ПитерМебель",
+      "description": [
+        "Рассчитайте примерный диапазон стоимости кухни, шкафа или корпусной мебели по конфигурации, длине, фасадам и наполнению."
+      ],
+      "canonical": [
+        "https://pitermebel.com/calculator/"
+      ],
+      "h1": [
+        "Предварительный расчёт мебели"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "images": 3,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/",
+      "lastmod": null,
+      "file": "projects\\index.html",
+      "sha256": "2be9e8b1c3b53601c7aaad38f1c8187bfd27e762d51a996d7f419a4c63e2aec6",
+      "title": "Портфолио: кухни и мебель на заказ в СПб | ПитерМебель",
+      "description": [
+        "Реализованные кухни, гардеробные и корпусная мебель студии «ПитерМебель». Фотографии, материалы и особенности проектов в Санкт-Петербурге."
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/"
+      ],
+      "h1": [
+        "Реализованные проекты студии"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "images": 31,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/bathroom-vanity/",
+        "https://pitermebel.com/projects/bedroom-set/",
+        "https://pitermebel.com/projects/brick-wardrobe/",
+        "https://pitermebel.com/projects/cascade-partitions/",
+        "https://pitermebel.com/projects/curved-oak-facades/",
+        "https://pitermebel.com/projects/emerald-enamel/",
+        "https://pitermebel.com/projects/glass-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/light-wood-wardrobe/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/projects/mirror-hall/",
+        "https://pitermebel.com/projects/narrow-kitchen/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/oak-veneer-panel/",
+        "https://pitermebel.com/projects/office-reception/",
+        "https://pitermebel.com/projects/sherman-cognac/",
+        "https://pitermebel.com/projects/slat-panels/",
+        "https://pitermebel.com/projects/sliding-partition/",
+        "https://pitermebel.com/projects/velvet-matte/",
+        "https://pitermebel.com/projects/wardrobe-inside/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/contacts/",
+      "lastmod": null,
+      "file": "contacts\\index.html",
+      "sha256": "dd75a1f080889f50bb2dc6d49867bd31f4750d5b4fe81730fe5af7c8fd784065",
+      "title": "Контакты студии — ПитерМебель",
+      "description": [
+        "Контакты студии «ПитерМебель»: офис на пл. Стачек, 9, офис 407, м. «Нарвская». Консультации по предварительной записи."
+      ],
+      "canonical": [
+        "https://pitermebel.com/contacts/"
+      ],
+      "h1": [
+        "Контакты и визиты в студию"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "images": 3,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/knowledge/",
+      "lastmod": null,
+      "file": "knowledge\\index.html",
+      "sha256": "f1f7416d02f3603dc0ddde37b767b41c255c501bf1e80f41591ca53dc0f9c56f",
+      "title": "База знаний о проектировании мебели | ПитерМебель",
+      "description": [
+        "Практические материалы о подготовке кухни, выборе фасадов, наполнении гардеробных и монтаже мебели на заказ в Санкт-Петербурге."
+      ],
+      "canonical": [
+        "https://pitermebel.com/knowledge/"
+      ],
+      "h1": [
+        "База знаний о мебели на заказ"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "images": 4,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/design/",
+      "lastmod": null,
+      "file": "design\\index.html",
+      "sha256": "819231aea0d97d9b4b794fed975a71f642933b60d4cf85e980a5dcc37ba990ea",
+      "title": "Дизайн-проект квартиры в СПб — от 2 500 ₽/м² | ПитерМебель",
+      "description": [
+        "Услуги дизайнеров интерьера в Санкт-Петербурге: рабочий проект планировки и электрики (2 500 ₽/м²) и полный дизайн-проект с 3D-визуализацией (5 000 ₽/м²)."
+      ],
+      "canonical": [
+        "https://pitermebel.com/design/"
+      ],
+      "h1": [
+        "Услуги наших дизайнеров"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList",
+        "Service"
+      ],
+      "images": 3,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/apartment/",
+      "lastmod": null,
+      "file": "apartment\\index.html",
+      "sha256": "a22a2b7b5c1369ac73c7d6110cc57744869e97958b3cba66a86882a8ea90b6bf",
+      "title": "Мебель во всю квартиру за месяц — видеообзор | ПитерМебель",
+      "description": [
+        "Купили квартиру или готовите её к сдаче? Изготовим и установим кухню, шкафы и всю корпусную мебель в квартире за месяц. Видеообзор готового проекта в СПб."
+      ],
+      "canonical": [
+        "https://pitermebel.com/apartment/"
+      ],
+      "h1": [
+        "Купили квартиру или готовите её к сдаче?Сделаем за месяц всю мебель в квартире"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList",
+        "VideoObject"
+      ],
+      "images": 3,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/privacy/",
+      "lastmod": null,
+      "file": "privacy\\index.html",
+      "sha256": "f991e7f73f1156483e8ecaf770b84bb41cdd38e11043b087698e10fb46e43051",
+      "title": "Политика конфиденциальности | ПитерМебель",
+      "description": [
+        "Как студия «ПитерМебель» собирает, обрабатывает и защищает персональные данные посетителей сайта в соответствии с Федеральным законом № 152-ФЗ."
+      ],
+      "canonical": [
+        "https://pitermebel.com/privacy/"
+      ],
+      "h1": [
+        "Политика конфиденциальности"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "BreadcrumbList"
+      ],
+      "images": 3,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-plastik-gola\\index.html",
+      "sha256": "7f348a72c9a6b3554526118a9cef4436477673c37673466ed7b98193c66a0d98",
+      "title": "Кухня Fenix — ПитерМебель",
+      "description": [
+        "Кухня Fenix: Фасады из МДФ-пластика объединены со столешницей и фартуком из искусственного камня. Профиль Gola сохраняет чистую линию фасадов, а встроенная…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/"
+      ],
+      "h1": [
+        "Кухня Fenix"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-plastik-slotex\\index.html",
+      "sha256": "3be4cf360fa8ac5ba084ce29384febaebb7dc8a3049a2e875265cadf7d7aa92c",
+      "title": "Кухня МДФ пластик (Slotex) — ПитерМебель",
+      "description": [
+        "Кухня МДФ пластик: Суперматовые фасады из МДФ-пластика создают спокойную современную основу, а влагостойкая столешница Slotex добавляет интерьеру…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/"
+      ],
+      "h1": [
+        "Кухня МДФ пластик"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-plastik-hettich\\index.html",
+      "sha256": "538ca075130afaca25c3cd401100431a4c874e083546361f2a0f8deee9275a60",
+      "title": "Кухня МДФ пластик (Egger, декор под дерево) — ПитерМебель",
+      "description": [
+        "Кухня МДФ пластик: Светлые фасады из МДФ-пластика уравновешены древесной фактурой столешницы Egger. Фурнитура Hettich с доводчиками и встроенная подсветка…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/"
+      ],
+      "h1": [
+        "Кухня МДФ пластик"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-grafit-gola\\index.html",
+      "sha256": "5918aa2f38523eac43d5e411c716f198557df28f497d750dcee4e7cce3148f6c",
+      "title": "Кухня МДФ Графит Gola — ПитерМебель",
+      "description": [
+        "Кухня МДФ Графит Gola: Практичные фасады из МДФ-пластика дополнены древесным декором столешницы Egger. На нижних секциях используется профиль Gola, поэтому…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/"
+      ],
+      "h1": [
+        "Кухня МДФ Графит Gola"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/emerald-enamel/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/emerald-enamel/",
+      "lastmod": null,
+      "file": "kitchens\\emerald-enamel\\index.html",
+      "sha256": "d81ebb4e5c568f7968b3cfcb619f36e8087bd8cdf397f5144655fddda6261ddc",
+      "title": "Кухня МДФ Эмаль — ПитерМебель",
+      "description": [
+        "Кухня МДФ Эмаль: Кухня с фасадами из МДФ в эмали. Ровное покрытие и глубокий цвет подчёркивают геометрию фасадов и делают композицию выразительной без…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/emerald-enamel/"
+      ],
+      "h1": [
+        "Кухня МДФ Эмаль"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+        "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-belyj-egger\\index.html",
+      "sha256": "63eeade565e43bb7819e7be6f21ce8edbb68e1d41d26406cadb87288ac18973f",
+      "title": "Кухня МДФ пластик+Egger (Egger) — ПитерМебель",
+      "description": [
+        "Кухня МДФ пластик+Egger: Белые фасады из МДФ-пластика сочетаются с древесным декором Egger и стеновой панелью под белый мрамор. Верхние секции выполнены…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/"
+      ],
+      "h1": [
+        "Кухня МДФ пластик+Egger"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 12,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/emerald-enamel/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/kitchens/velvet-matte/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/velvet-matte/",
+      "lastmod": null,
+      "file": "kitchens\\velvet-matte\\index.html",
+      "sha256": "e1ef411d1b272deca3a5d787a37cb5eb874d35b131469ed904de539f730e8bb6",
+      "title": "Кухня МДФ Velvet — ПитерМебель",
+      "description": [
+        "Кухня МДФ Velvet: Фасады из МДФ-пластика Velvet создают спокойную матовую поверхность и поддерживают лаконичный характер кухни. Основной акцент здесь…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/velvet-matte/"
+      ],
+      "h1": [
+        "Кухня МДФ Velvet"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 10,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-emal-vitrina\\index.html",
+      "sha256": "d77790f973c6a23c48c9d1e1a7753e99d62dfcafcbcfb6e51a887315d58822e0",
+      "title": "Кухня МДФ ПВХ с фрезеровкой — ПитерМебель",
+      "description": [
+        "Кухня МДФ ПВХ с фрезеровкой: В этой кухне сочетаются фасады из МДФ в эмали и матовом пластике. Чёрная алюминиевая рамка витрины добавляет графичный акцент…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/"
+      ],
+      "h1": [
+        "Кухня МДФ ПВХ с фрезеровкой"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/kitchens/sherman-cognac/",
+        "https://pitermebel.com/kitchens/velvet-matte/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/sherman-cognac/",
+      "lastmod": null,
+      "file": "kitchens\\sherman-cognac\\index.html",
+      "sha256": "753aba162011fc0bd4e778917deb4ba7031d32f392a9610784bc38deaef36ed4",
+      "title": "Кухня МДФ пластик+Egger (Глянцевый МДФ-пластик) — ПитерМебель",
+      "description": [
+        "Кухня МДФ пластик+Egger: Белые глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый». Контраст гладкой и…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/sherman-cognac/"
+      ],
+      "h1": [
+        "Кухня МДФ пластик+Egger"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+      "lastmod": null,
+      "file": "kitchens\\mdf-klassika-dub\\index.html",
+      "sha256": "1a484a1fffc84911c34460deee8174b0c114a6ae04d0c5be550871b787bcea2b",
+      "title": "Кухня МДФ Эмаль матовая — ПитерМебель",
+      "description": [
+        "Кухня МДФ Эмаль матовая: Молочный оттенок фасадов делает кухню светлее, а столешница с древесным декором добавляет тепла. Спокойное сочетание легко…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/kitchens/mdf-klassika-dub/"
+      ],
+      "h1": [
+        "Кухня МДФ Эмаль матовая"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "Product",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+        "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+        "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+        "https://pitermebel.com/kitchens/sherman-cognac/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/island-parquet/",
+      "lastmod": null,
+      "file": "projects\\island-parquet\\index.html",
+      "sha256": "64dd8ac257f1c47d3de907f016b034f96509a898647ba269e57485910e0e476c",
+      "title": "Кухня эмаль и натуральный шпон | ПитерМебель",
+      "description": [
+        "Кухня эмаль и натуральный шпон: Фасады из МДФ в эмали сочетаются с натуральным шпоном, а столешница из искусственного камня объединяет рабочую зону в…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/island-parquet/"
+      ],
+      "h1": [
+        "Кухня эмаль и натуральный шпон"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/bathroom-vanity/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/oak-stone/",
+      "lastmod": null,
+      "file": "projects\\oak-stone\\index.html",
+      "sha256": "f52d67cb804ebb62e1ef9271ad52dbb1ef0cbfc3681798b65e97842ae2bc64dd",
+      "title": "Кухня эмаль и массив дуба | ПитерМебель",
+      "description": [
+        "Кухня эмаль и массив дуба: Фасады из МДФ в эмали дополнены деталями из массива дуба. Столешница из кварцевого агломерата продолжается на подоконник…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/oak-stone/"
+      ],
+      "h1": [
+        "Кухня эмаль и массив дуба"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/white-showcase/",
+      "lastmod": null,
+      "file": "projects\\white-showcase\\index.html",
+      "sha256": "0e6d8a91b777224d64e9c60729269803fe3d212f2fefcba3127f91d798de91ef",
+      "title": "Белая угловая кухня с витриной | ПитерМебель",
+      "description": [
+        "Белая угловая кухня с витриной: Светлая угловая кухня с высокими секциями помогает собрать хранение и встроенную технику в единую линию. Витрина с…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/white-showcase/"
+      ],
+      "h1": [
+        "Белая угловая кухня с витриной"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/marble-hood/",
+      "lastmod": null,
+      "file": "projects\\marble-hood\\index.html",
+      "sha256": "be272afd23e3f87ac20e3c90f94c1672555ddac8dd82554af0f58c972e40d9e3",
+      "title": "Кухня с тонкой столешницей HPL | ПитерМебель",
+      "description": [
+        "Кухня с тонкой столешницей HPL: Тонкая столешница HPL толщиной 12 мм подчёркивает горизонталь рабочей зоны и поддерживает лаконичный характер кухни…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/marble-hood/"
+      ],
+      "h1": [
+        "Кухня с тонкой столешницей HPL"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/narrow-kitchen/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/narrow-kitchen/",
+      "lastmod": null,
+      "file": "projects\\narrow-kitchen\\index.html",
+      "sha256": "60d731f946e30cc5924eebbd76cd2ad45336cea4bfc4b46ed9b165cb278f7b8b",
+      "title": "Кухня с фасадами МДФ ПВХ | ПитерМебель",
+      "description": [
+        "Кухня с фасадами МДФ ПВХ: Фасады из МДФ ПВХ в оттенке «кашемир серый» создают спокойную нейтральную основу, столешница Slotex добавляет фактуру. Ручки и…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/narrow-kitchen/"
+      ],
+      "h1": [
+        "Кухня с фасадами МДФ ПВХ"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 12,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/emerald-enamel/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/emerald-enamel/",
+      "lastmod": null,
+      "file": "projects\\emerald-enamel\\index.html",
+      "sha256": "5146fa39ebe6e258e6c2c8d0a2022d34663c3d9278ecd7dbed3925ab45c1cc16",
+      "title": "Кухня МДФ Эмаль | ПитерМебель",
+      "description": [
+        "Кухня МДФ Эмаль: Фасады из МДФ в эмали делают цвет главным акцентом кухни. Выразительный оттенок сочетается с классической геометрией фасадов и светлыми…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/emerald-enamel/"
+      ],
+      "h1": [
+        "Кухня МДФ Эмаль"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/narrow-kitchen/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/velvet-matte/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/velvet-matte/",
+      "lastmod": null,
+      "file": "projects\\velvet-matte\\index.html",
+      "sha256": "7dc325bfbdd8de2535eba3069af525e00b8833429eece73f68ab0cb2167cd113",
+      "title": "Кухня МДФ Velvet | ПитерМебель",
+      "description": [
+        "Кухня МДФ Velvet: Фасады из МДФ-пластика Velvet поддерживают спокойный современный образ кухни. Матовая поверхность и лаконичная геометрия позволяют…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/velvet-matte/"
+      ],
+      "h1": [
+        "Кухня МДФ Velvet"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 10,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/emerald-enamel/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/sherman-cognac/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/sherman-cognac/",
+      "lastmod": null,
+      "file": "projects\\sherman-cognac\\index.html",
+      "sha256": "4f7e5b2ad16c7ed131e2cc478d7d8e3d5dc1c390d0125d6b394ad6f38013c7b5",
+      "title": "Кухня МДФ пластик+Egger | ПитерМебель",
+      "description": [
+        "Кухня МДФ пластик+Egger: Белые глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый». Благодаря этому…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/sherman-cognac/"
+      ],
+      "h1": [
+        "Кухня МДФ пластик+Egger"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/glass-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/velvet-matte/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/glass-wardrobe/",
+      "lastmod": null,
+      "file": "projects\\glass-wardrobe\\index.html",
+      "sha256": "1af13d124a4e7993442c03dbe8efa54838487352b6e72585f6b00a3e6868a2ad",
+      "title": "Гардеробная со стеклом Stopsol | ПитерМебель",
+      "description": [
+        "Гардеробная со стеклом Stopsol: Раздвижные перегородки отделяют гардеробную, не утяжеляя пространство спальни. При выключенной подсветке стекло Stopsol…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/glass-wardrobe/"
+      ],
+      "h1": [
+        "Гардеробная со стеклом Stopsol"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/brick-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/sherman-cognac/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/brick-wardrobe/",
+      "lastmod": null,
+      "file": "projects\\brick-wardrobe\\index.html",
+      "sha256": "679d6e4a9147fc3a8fcbc9bca70de3fe82c2ebd486a6caf769dd0123b5a74a17",
+      "title": "П-образная гардеробная со скошенными полками | ПитерМебель",
+      "description": [
+        "П-образная гардеробная со скошенными полками: П-образная планировка использует пространство гардеробной по трём стенам. Секции выполнены из ЛДСП Egger «Дуб…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/brick-wardrobe/"
+      ],
+      "h1": [
+        "П-образная гардеробная со скошенными полками"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/glass-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/wardrobe-inside/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/wardrobe-inside/",
+      "lastmod": null,
+      "file": "projects\\wardrobe-inside\\index.html",
+      "sha256": "f2779be5093a278f9f2238f545adf2839a7ec328157233bc20829e8a5f5d25e0",
+      "title": "Шкафы для комнаты и прихожей | ПитерМебель",
+      "description": [
+        "Шкафы для комнаты и прихожей: Шкафы для комнаты и прихожей выполнены из ЛДСП Egger U705 «Ангора серая». Нейтральный оттенок объединяет мебель в разных…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/wardrobe-inside/"
+      ],
+      "h1": [
+        "Шкафы для комнаты и прихожей"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/bedroom-set/",
+        "https://pitermebel.com/projects/brick-wardrobe/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/bedroom-set/",
+      "lastmod": null,
+      "file": "projects\\bedroom-set\\index.html",
+      "sha256": "9aa49327b51249883561a0044c429f6c53c5024aa5f5a222796297eb53eba004",
+      "title": "Шкафы и мебель для спальни | ПитерМебель",
+      "description": [
+        "Шкафы и мебель для спальни: Мебель для спальни выполнена как часть комплексного заказа для квартиры. Шкафы, тумбы и другие элементы выдержаны в единой…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/bedroom-set/"
+      ],
+      "h1": [
+        "Шкафы и мебель для спальни"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/mirror-hall/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/wardrobe-inside/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/mirror-hall/",
+      "lastmod": null,
+      "file": "projects\\mirror-hall\\index.html",
+      "sha256": "619fe5bedc5bb44cb1e77919a41e2201916907db4e06b2fde955105751c6de28",
+      "title": "Зеркальный шкаф с нишей для обуви | ПитерМебель",
+      "description": [
+        "Зеркальный шкаф с нишей для обуви: Встроенный зеркальный шкаф объединяет хранение и большое зеркало в полный рост. Открытая ниша оставляет удобное место…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/mirror-hall/"
+      ],
+      "h1": [
+        "Зеркальный шкаф с нишей для обуви"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/bedroom-set/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/slat-panels/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/slat-panels/",
+      "lastmod": null,
+      "file": "projects\\slat-panels\\index.html",
+      "sha256": "c189a3b8c5ed882d1991defa4b17ffa27ac6c0f21e5a5b29dc99a29081c3fe42",
+      "title": "Кухня, стеллаж и шкаф-купе | ПитерМебель",
+      "description": [
+        "Кухня, стеллаж и шкаф-купе: Стеллаж переходит в кухню, а кухня — в шкаф-купе, связывая несколько функциональных зон в единую конструкцию. Полки и секции…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/slat-panels/"
+      ],
+      "h1": [
+        "Кухня, стеллаж и шкаф-купе"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/mirror-hall/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/oak-veneer-panel/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/oak-veneer-panel/",
+      "lastmod": null,
+      "file": "projects\\oak-veneer-panel\\index.html",
+      "sha256": "8bbbe2e074017657b21553a9c0c9e182fb6e6802decad6e448ac5434efc5cca6",
+      "title": "ТВ-зона с панелями из шпона дуба | ПитерМебель",
+      "description": [
+        "ТВ-зона с панелями из шпона дуба: ТВ-зона входит в комплексный проект мебели для квартиры. Панели из натурального шпона дуба сочетаются с МДФ в эмали и…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/oak-veneer-panel/"
+      ],
+      "h1": [
+        "ТВ-зона с панелями из шпона дуба"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 12,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/office-reception/",
+        "https://pitermebel.com/projects/slat-panels/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/office-reception/",
+      "lastmod": null,
+      "file": "projects\\office-reception\\index.html",
+      "sha256": "52e0a51881e21bd2933fbbb606a37d199ee63c6c672181aca5ab9f0b24fbe0c8",
+      "title": "Стойка ресепшен для клиники | ПитерМебель",
+      "description": [
+        "Стойка ресепшен для клиники: Стойка ресепшен спроектирована для клиники и объединяет рабочее место администратора с выразительной входной зоной. В отделке…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/office-reception/"
+      ],
+      "h1": [
+        "Стойка ресепшен для клиники"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 16,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/light-wood-wardrobe/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/oak-veneer-panel/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/light-wood-wardrobe/",
+      "lastmod": null,
+      "file": "projects\\light-wood-wardrobe\\index.html",
+      "sha256": "4e9b1cfa5a59a377b964ff207170429c21665a61c33179c12d9602bdd6ded293",
+      "title": "Гардеробная с подсветкой и древесным декором | ПитерМебель",
+      "description": [
+        "Гардеробная с подсветкой и древесным декором: Открытая гардеробная система по индивидуальным размерам. Встроенная светодиодная подсветка полок и штанг…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/light-wood-wardrobe/"
+      ],
+      "h1": [
+        "Гардеробная с подсветкой и древесным декором"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 18,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/office-reception/",
+        "https://pitermebel.com/projects/sliding-partition/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/sliding-partition/",
+      "lastmod": null,
+      "file": "projects\\sliding-partition\\index.html",
+      "sha256": "27c33c3583630020256c105989389b43e0085538d9e5cd1d3198b126b761b456",
+      "title": "Раздвижная перегородка для зонирования | ПитерМебель",
+      "description": [
+        "Раздвижная перегородка для зонирования: Раздвижная межкомнатная перегородка для зонирования жилого пространства. Каркас из прочного алюминиевого профиля с…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/sliding-partition/"
+      ],
+      "h1": [
+        "Раздвижная перегородка для зонирования"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 14,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/cascade-partitions/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/light-wood-wardrobe/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/cascade-partitions/",
+      "lastmod": null,
+      "file": "projects\\cascade-partitions\\index.html",
+      "sha256": "9cff67ea0e31e1e6c0b6a829a2a3a56613abce198f8fe5a3f501dc35be16b4f7",
+      "title": "Каскадные раздвижные перегородки | ПитерМебель",
+      "description": [
+        "Каскадные раздвижные перегородки: Система интерьерных раздвижных дверей и перегородок с каскадным открыванием. Возможен беспороговый монтаж без нижней…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/cascade-partitions/"
+      ],
+      "h1": [
+        "Каскадные раздвижные перегородки"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 22,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/curved-oak-facades/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/sliding-partition/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/curved-oak-facades/",
+      "lastmod": null,
+      "file": "projects\\curved-oak-facades\\index.html",
+      "sha256": "87d74ca0ffc8044529dff43fe478f823265aed980fe8656e5d530ca5af190b8f",
+      "title": "Радиусные фасады из шпона дуба | ПитерМебель",
+      "description": [
+        "Радиусные фасады из шпона дуба: Гнутые (радиусные) мебельные фасады из натурального шпона дуба под защитным лаком. Собственное производство элементов…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/curved-oak-facades/"
+      ],
+      "h1": [
+        "Радиусные фасады из шпона дуба"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 12,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/bathroom-vanity/",
+        "https://pitermebel.com/projects/cascade-partitions/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/projects/bathroom-vanity/",
+      "lastmod": null,
+      "file": "projects\\bathroom-vanity\\index.html",
+      "sha256": "36cc950bd7d571aa523a92102fc31d445afc6ba7c907db22bc03c140d3642568",
+      "title": "Влагостойкая мебель для ванной комнаты | ПитерМебель",
+      "description": [
+        "Влагостойкая мебель для ванной комнаты: Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с бесшовной…"
+      ],
+      "canonical": [
+        "https://pitermebel.com/projects/bathroom-vanity/"
+      ],
+      "h1": [
+        "Влагостойкая мебель для ванной комнаты"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "images": 10,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/",
+        "https://pitermebel.com/projects/curved-oak-facades/",
+        "https://pitermebel.com/projects/island-parquet/",
+        "https://pitermebel.com/projects/oak-stone/",
+        "https://pitermebel.com/projects/white-showcase/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    },
+    {
+      "url": "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+      "lastmod": "2026-08-26T00:00:00.000Z",
+      "file": "knowledge\\rozetki-na-kuhne-shema-vysoty\\index.html",
+      "sha256": "dd5f2d4923c3def61acf458ea627060e242d75ede61e7042c67f1bc8d7ca7e72",
+      "title": "Розетки на кухне: схема до монтажа мебели | ПитерМебель",
+      "description": [
+        "Как согласовать розетки, встроенную технику, остров и подсветку до монтажа кухни. Чек-лист без опасных универсальных размеров."
+      ],
+      "canonical": [
+        "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/"
+      ],
+      "h1": [
+        "Розетки на кухне: как подготовить схему до монтажа мебели"
+      ],
+      "robots": [],
+      "schema_types": [
+        "FurnitureStore",
+        "WebSite",
+        "TechArticle",
+        "BreadcrumbList"
+      ],
+      "images": 4,
+      "internal_links": [
+        "https://pitermebel.com/",
+        "https://pitermebel.com/apartment/",
+        "https://pitermebel.com/calculator/",
+        "https://pitermebel.com/contacts/",
+        "https://pitermebel.com/custom-furniture/",
+        "https://pitermebel.com/design/",
+        "https://pitermebel.com/kitchens/",
+        "https://pitermebel.com/knowledge/",
+        "https://pitermebel.com/privacy/",
+        "https://pitermebel.com/production/",
+        "https://pitermebel.com/projects/marble-hood/",
+        "https://pitermebel.com/wardrobes/"
+      ]
+    }
+  ]
+}

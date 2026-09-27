@@ -1,0 +1,16 @@
+npm notice run pitermebel-site@1.0.0 test:seo
+npm notice run node --test tests/seo-regressions.mjs
+✔ Metrica queues init once before early goals and pageviews (54.6895ms)
+✔ Metrica preserves an existing tag and is safe during static rendering (12.7271ms)
+✔ Honeypot is not delivered and cannot count as a lead (31.5641ms)
+✔ Unconfigured and invalid forms do not count as leads (8.5954ms)
+✔ Only a successful delivery response counts as a lead (21.8022ms)
+✔ Network and malformed-response failures do not count as leads (12.5437ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 476.3296

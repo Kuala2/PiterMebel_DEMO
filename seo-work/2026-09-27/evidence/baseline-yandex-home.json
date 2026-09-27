@@ -1,0 +1,317 @@
+{
+  "version": "1.1.0",
+  "scope": "one_source_html_document",
+  "state": "partial",
+  "url": "https://pitermebel.com/",
+  "fetch": {
+    "source": "out/index.html",
+    "final_url": null,
+    "http_status": null,
+    "headers": {},
+    "retrieved_at": "2026-09-26T23:47:11.124652+00:00",
+    "sha256": "eabb86f8bf2306971a8bea518facf7abfac9b68f4af04ae83e9c1ed577e6d4d7"
+  },
+  "technical": {
+    "titles": [
+      "ПитерМебель — кухни и мебель на заказ в Санкт-Петербурге"
+    ],
+    "descriptions": [
+      "Проектируем и изготавливаем кухни, шкафы и корпусную мебель в Санкт-Петербурге с 2005 года. Договор, доставка и монтаж под ключ."
+    ],
+    "h1": [
+      "Кухни и мебель на заказ в Санкт-Петербурге"
+    ],
+    "canonicals": [
+      {
+        "url": "https://pitermebel.com/",
+        "in_head": true
+      }
+    ],
+    "robots": [],
+    "schema_types": [
+      "FurnitureStore",
+      "GeoCoordinates",
+      "OpeningHoursSpecification",
+      "PostalAddress",
+      "WebSite"
+    ],
+    "schema_types_scope": "jsonld_only",
+    "schema_formats_observed": [
+      "jsonld"
+    ],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "FurnitureStore",
+            "@id": "https://pitermebel.com/#organization",
+            "name": "ПитерМебель",
+            "alternateName": "Питер-Мебель",
+            "url": "https://pitermebel.com",
+            "logo": "https://pitermebel.com/img/brand/logo_bird.svg",
+            "image": "https://pitermebel.com/img/brand/og-cover.jpg",
+            "telephone": "+79217840589",
+            "email": "piter.meb@yandex.ru",
+            "currenciesAccepted": "RUB",
+            "foundingDate": "2005",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "пл. Стачек, 9, офис 407",
+              "addressLocality": "Санкт-Петербург",
+              "addressCountry": "RU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 59.899907,
+              "longitude": 30.272883
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://vk.ru/pitermebelcom",
+              "https://yandex.ru/maps/org/pitermebel/245406542043/?indoorLevel=1&ll=30.272883%2C59.899907"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://pitermebel.com/#website",
+            "url": "https://pitermebel.com",
+            "name": "ПитерМебель",
+            "publisher": {
+              "@id": "https://pitermebel.com/#organization"
+            },
+            "inLanguage": "ru-RU"
+          }
+        ]
+      }
+    ],
+    "image_count": 87,
+    "missing_alt_attribute_count": 0
+  },
+  "observations": [
+    {
+      "check": "requisites",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Checksum does not prove FNS status or ownership"
+    },
+    {
+      "check": "legal_name_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Heuristic, not identity verification"
+    },
+    {
+      "check": "visible_phones",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "+79217840589"
+      ],
+      "note": "Mobile numbers are not penalized; +7 does not establish a country"
+    },
+    {
+      "check": "numeric_price_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Verify context, inclusions, currency, current truthfulness"
+    },
+    {
+      "check": "street_house_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Verify a real address, role and customer access; not just city mention"
+    },
+    {
+      "check": "hours_candidate",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "с 10:00 до 18:00"
+      ],
+      "note": "Verify days, holidays and actual availability"
+    },
+    {
+      "check": "forms",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": 1,
+      "note": "May be login/search; test the lead flow instead of assuming calculator"
+    },
+    {
+      "check": "verification_meta",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": 1,
+      "note": "Absence does not exclude DNS or HTML-file verification"
+    },
+    {
+      "check": "metrika_reference",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Not proof of execution, account access or goals; tag managers/consent may defer code"
+    },
+    {
+      "check": "payment_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "зменна, официальный договор и безналичный расчет\nсобственное производство в санкт-петербурге\nсобственный цех на петергофс",
+        "у, выступы стен и короба без доплат за нестандартный шаг\n03\nсборка своими мастерами\nмебель устанавливают постоянные",
+        " над проектом?\nкак происходит оплата и есть ли рассрочка?\nизготавливаете ли вы только отдельные фасады?\nкакие матери",
+        "к происходит оплата и есть ли рассрочка?\nизготавливаете ли вы только отдельные фасады?\nкакие материалы используются в п"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "delivery_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "ения техники\nподбор техники и доставка\nподбираем технику точно под проект кухни и привозим вместе с гарнитуром.\nгабари",
+        "ариты и вентиляционные зазоры\nдоставка за один рейс с мебелью\nзаводская посадка в модули\nподготовка коммуникаций\nпри н",
+        "ей зоны после подготовки стен\nмонтаж и запуск под ключ\nбригада собирает кухню и сразу подключает все к воде и электр",
+        "мании технологии, сергею - за сборку! наилучшие рекомендации и удачи вашему производству ❤️\nчитать на яндекс.картах ",
+        "ргея за скурпулезный подход к монтажу. всех благ и процветания команде профессионалов питермебель. всем рекомендую.\nч",
+        "полняем замер, изготовление и сборку собственной командой, а согласованную стоимость фиксируем в договоре без скрыты",
+        "оплат за нестандартный шаг\n03\nсборка своими мастерами\nмебель устанавливают постоянные монтажники студии с подключени",
+        "бель устанавливают постоянные монтажники студии с подключением бытовой техники\nподробнее о производстве →\nкак создается ",
+        "бель выбранной фурнитурой.\n04\nдоставка и монтаж\nпривезем и установим мебель, выполним согласованные подключения техник",
+        "ной фурнитурой.\n04\nдоставка и монтаж\nпривезем и установим мебель, выполним согласованные подключения техники, сантех"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "warranty_mentions",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "contract_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "ованную стоимость фиксируем в договоре без скрытых переплат.\nобсудить проект →+7 (921) 784-05-89\nподробная сметаматери",
+        "тура и работы — до подписания договора\nфиксация в договоресогласованная смета неизменна, официальный договор и безнали",
+        "одписания договора\nфиксация в договоресогласованная смета неизменна, официальный договор и безналичный расчет\nсобственное производс",
+        " смета неизменна, официальный договор и безналичный расчет\nсобственное производство в санкт-петербурге\nсобственный це",
+        "ый расчет.\n02\nпроект, замер и договор\nпроработаем планировку, подберем материалы, выполним замер и зафиксируем смету ",
+        "и зафиксируем смету и сроки в договоре.\n03\nизготовление в цеху\nподготовим детали по проекту, обработаем торцы и укомпл",
+        "мость и условия фиксируются в договоре после согласования проекта.\nпозвонитьконсультация"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    }
+  ],
+  "phone_links": [
+    "+79217840589"
+  ],
+  "external_references": {
+    "telegram": [
+      {
+        "href": "https://t.me/studiyaelenavolkova",
+        "text": ""
+      }
+    ],
+    "whatsapp": [
+      {
+        "href": "https://wa.me/message/6G5V7NPGLPXCB1",
+        "text": ""
+      }
+    ],
+    "vk": [],
+    "yandex": [
+      {
+        "href": "https://yandex.ru/maps/org/pitermebel/245406542043/reviews/",
+        "text": "Читать все на Яндексе"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/pitermebel/245406542043/reviews/",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=xx9a5e7bmfm58p93tr09f7uft0",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=49qzx35vjrc7fc81b6nq5rkbr4",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=8znemxc4vaz37k7ct4cmcjea8g",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=0vv1p9m0kbeuk458y5hezfqp80",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=6zwu69103x2akmtfbthxrzdqp0",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=ppck04ywejarcng3e6qyuwf4cm",
+        "text": "Читать на Яндекс.Картах →"
+      },
+      {
+        "href": "https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=fm93xvxhk3qhw79pz91tmv0wn0",
+        "text": "Читать на Яндекс.Картах →"
+      }
+    ],
+    "2gis": []
+  },
+  "candidate_pages_to_review": [
+    {
+      "href": "https://pitermebel.com/contacts/",
+      "text": "КОНТАКТЫ"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Консультация и расчет"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/",
+      "text": "Обсудить проект →"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/",
+      "text": "Контакты"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Записаться на консультацию"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Консультация"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "No JS or computed CSS",
+    "No full-site absence conclusions",
+    "No ranking score or registry lookup",
+    "No robots/sitemap, account, performance, actual map-profile or official schema verification in this command"
+  ],
+  "encoding": "utf-8",
+  "lossy_decode": false
+}

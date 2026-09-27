@@ -86,6 +86,7 @@ export default function KitchensCatalogPage() {
                       fill
                       sizes="(max-width: 1024px) 100vw, 720px"
                       className="card-img-slide"
+                      priority={isFirst && currentIdx === 0}
                       style={{ objectFit: "cover" }}
                     />
 

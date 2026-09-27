@@ -1,0 +1,3 @@
+npm notice run pitermebel-site@1.0.0 test:seo-browser
+npm notice run node tests/seo-browser.mjs
+SEO browser: navigation, Metrica queue, mobile contact/form and 404 checks passed.

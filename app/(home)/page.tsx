@@ -956,7 +956,6 @@ export default function HomePage() {
                   className="workshop-main-photo"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   style={{ objectFit: "cover" }}
-                  priority
                 />
               </div>
             </div>

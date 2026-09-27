@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://pitermebel.com/seo-audit-missing-20260927/",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/seo-audit-missing-20260927/",
+    "title": "ПитерМебель — кухни и мебель на заказ в Санкт-Петербурге",
+    "canonical": "<link rel=\"canonical\" href=\"https://pitermebel.com/\"/>",
+    "server": "Caddy"
+  },
+  {
+    "url": "https://pitermebel.com/not-found-seo-20260927.js",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/not-found-seo-20260927.js",
+    "title": "ПитерМебель — кухни и мебель на заказ в Санкт-Петербурге",
+    "canonical": "<link rel=\"canonical\" href=\"https://pitermebel.com/\"/>",
+    "server": "Caddy"
+  }
+]

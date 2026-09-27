@@ -1,5 +1,7 @@
 export interface MeasureFormState {
   success: boolean;
+  /** True only after the delivery service accepts a real request. */
+  deliveryAccepted?: boolean;
   message?: string;
   errors?: {
     contact?: string;
@@ -92,6 +94,7 @@ export async function submitMeasureRequest(
 
     return {
       success: true,
+      deliveryAccepted: true,
       message: "Заявка отправлена. Специалист свяжется с вами, чтобы уточнить параметры и подготовить предварительный расчёт.",
     };
   } catch {

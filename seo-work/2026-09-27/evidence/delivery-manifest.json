@@ -1,0 +1,77 @@
+{
+  "local_implementation": "verified",
+  "deployed": false,
+  "export_urls": 44,
+  "files": [
+    {
+      "file": "FULL-AUDIT-REPORT.md",
+      "sha256": "56bb99e0d2c1981bbb2de6ae4e3d58e77df361d493b64ff20842d1386888519c"
+    },
+    {
+      "file": "ACTION-PLAN.md",
+      "sha256": "f94d387b9d4a2375c50a1a4f58090bdde87927569b32eac4d9e19cd13bddc4bf"
+    },
+    {
+      "file": "BACKLOG.json",
+      "sha256": "0a260faa0f9807dc4f75f8db81f591858df1249d3dede0cce53355723e54d52f"
+    },
+    {
+      "file": "URL_MAP.json",
+      "sha256": "db5516494a8242a018a5de00e78e59121908c5ff164760174c75b52de46c85bf"
+    },
+    {
+      "file": "CHANGELOG.md",
+      "sha256": "78cb0ca1b0524de90ef2605619f6b2c4929377fdb01c063269817d58030af90c"
+    },
+    {
+      "file": "MEASUREMENT_PLAN.md",
+      "sha256": "a6f603dedf6b9ab1952f9d1872e4e73a9c22435d380cbd318caec6a8577642da"
+    },
+    {
+      "file": "evidence/after-export.json",
+      "sha256": "20fff658f77bcf884021153c61ce547f072d181b54d7e1c2200b272cd3af759d"
+    },
+    {
+      "file": "evidence/schema-all.json",
+      "sha256": "973da50c21a004ae1fefa2edbbcfdd92cea99750cd1a906ea3a8be2ff62d3be6"
+    },
+    {
+      "file": "evidence/analytics-browser.json",
+      "sha256": "459e69c1b1c68aae4061220020f283adbc3f706a18171841ebc3a9958565cb6c"
+    },
+    {
+      "file": "evidence/build.log",
+      "sha256": "85d298104b8c6338d68b09c08a770ffc6e6007eac26d627e9fb923eab68ca95e"
+    },
+    {
+      "file": "evidence/smoke.log",
+      "sha256": "c1058244ad3f16b612a01eed2ba7eba0c9689797a193053c00f4ae2db442fb94"
+    },
+    {
+      "file": "evidence/regressions.log",
+      "sha256": "0652284a3a9180daf6ae7a0181957df1335bff1ddc3a8e8e2f9352a9e4dd14e7"
+    },
+    {
+      "file": "evidence/seo-browser.log",
+      "sha256": "3cd5016e0b13d57bfdff7ad4e1f6a3053b754de480dfab61d7d8eaf38803a390"
+    },
+    {
+      "file": "evidence/production-http-extra.json",
+      "sha256": "594b74ffe3444bb7ba97c72129a0dc144a413792fc82265967eba80074867d0e"
+    },
+    {
+      "file": "evidence/performance-images-before.json",
+      "sha256": "3e31ac705af2c486707efbca8b26a3986bbcdc4d94f5f0908049421cd0b1d972"
+    },
+    {
+      "file": "evidence/performance-images-after.json",
+      "sha256": "d615f17669de5deb7b81ecd030eead184efac8002966f00cbfa863b9aa88707e"
+    }
+  ],
+  "external_followups": [
+    "hosting 404 and legacy redirects",
+    "www TLS diagnosis",
+    "owner Web3Forms connection",
+    "account goal receipt verification"
+  ]
+}

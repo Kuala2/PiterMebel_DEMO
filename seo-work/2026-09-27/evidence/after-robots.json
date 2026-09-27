@@ -1,0 +1,39 @@
+{
+  "state": "lint_only",
+  "rules": [
+    {
+      "directive": "user-agent",
+      "value": "*",
+      "line": 1
+    },
+    {
+      "directive": "allow",
+      "value": "/",
+      "line": 2
+    },
+    {
+      "directive": "sitemap",
+      "value": "https://pitermebel.com/sitemap.xml",
+      "line": 4
+    }
+  ],
+  "groups": [
+    {
+      "agents": [
+        "*"
+      ],
+      "rules": [
+        {
+          "directive": "allow",
+          "value": "/"
+        }
+      ],
+      "has_directives": true
+    }
+  ],
+  "issues": [],
+  "limitations": [
+    "Not a REP emulator; no URL access decision",
+    "Verify important URLs with Yandex Webmaster robots analysis"
+  ]
+}

@@ -69,7 +69,7 @@ export default function MeasureForm({
     const formData = new FormData(event.currentTarget);
     formData.set("page_url", window.location.href);
     const result = await submitMeasureRequest(initialState, formData);
-    if (result.success) reachGoal("zayavka");
+    if (result.success && result.deliveryAccepted) reachGoal("zayavka");
     setState(result);
     setIsPending(false);
   };

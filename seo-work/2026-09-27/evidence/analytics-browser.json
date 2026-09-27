@@ -1,0 +1,73 @@
+{
+  "testedAt": "2026-09-27T00:01:51.363Z",
+  "status": "passed",
+  "navigationCalls": [
+    [
+      112318484,
+      "init",
+      {
+        "defer": true,
+        "ssr": true,
+        "webvisor": true,
+        "clickmap": true,
+        "ecommerce": "dataLayer",
+        "accurateTrackBounce": true,
+        "trackLinks": true
+      }
+    ],
+    [
+      112318484,
+      "hit",
+      "http://localhost:3001/?utm_source=seo-test",
+      {
+        "title": "ПитерМебель — кухни и мебель на заказ в Санкт-Петербурге",
+        "referer": ""
+      }
+    ],
+    [
+      112318484,
+      "hit",
+      "http://localhost:3001/kitchens/",
+      {
+        "title": "Кухни на заказ в СПб от производителя | ПитерМебель",
+        "referer": "http://localhost:3001/?utm_source=seo-test"
+      }
+    ],
+    [
+      112318484,
+      "hit",
+      "http://localhost:3001/contacts/",
+      {
+        "title": "Контакты студии — ПитерМебель",
+        "referer": "http://localhost:3001/kitchens/"
+      }
+    ],
+    [
+      112318484,
+      "reachGoal",
+      "contact_phone"
+    ],
+    [
+      112318484,
+      "hit",
+      "http://localhost:3001/kitchens/",
+      {
+        "title": "Кухни на заказ в СПб от производителя | ПитерМебель",
+        "referer": "http://localhost:3001/contacts/"
+      }
+    ]
+  ],
+  "checks": [
+    "initial URL and query",
+    "SPA transitions",
+    "title and referer",
+    "one init",
+    "back navigation",
+    "no hash duplicate",
+    "contact click",
+    "no lead without delivery",
+    "no honeypot goal",
+    "HTTP 404"
+  ],
+  "externalRequestsBlocked": true
+}

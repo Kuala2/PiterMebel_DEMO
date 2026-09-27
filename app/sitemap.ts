@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { KITCHENS } from "@/data/kitchens";
 import { PROJECTS } from "@/data/projects";
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
-
-const BASE_URL = "https://pitermebel.com";
+import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -25,23 +24,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticPages.map((page) => ({
-      url: `${BASE_URL}${page.path}/`,
+      url: `${SITE_URL}${page.path}/`,
       changeFrequency: page.changeFrequency,
       priority: page.priority,
     })),
     ...KITCHENS.map((kitchen) => ({
-      url: `${BASE_URL}/kitchens/${kitchen.slug}/`,
+      url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
     ...PROJECTS.map((project) => ({
-      url: `${BASE_URL}/projects/${project.slug}/`,
+      url: `${SITE_URL}/projects/${project.slug}/`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
     ...KNOWLEDGE_ARTICLES.map((article) => ({
-      url: `${BASE_URL}/knowledge/${article.slug}/`,
-      lastModified: article.publishedAtISO ? new Date(article.publishedAtISO) : undefined,
+      url: `${SITE_URL}/knowledge/${article.slug}/`,
+      lastModified: new Date(article.updatedAtISO || article.publishedAtISO),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

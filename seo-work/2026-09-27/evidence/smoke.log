@@ -1,0 +1,3 @@
+npm notice run pitermebel-site@1.0.0 test:smoke
+npm notice run node tests/smoke.mjs
+Smoke QA: успешно проверено 45 маршрутов в desktop и mobile, меню, калькулятор и форма.

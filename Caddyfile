@@ -2,7 +2,7 @@
 
 # 1. HTTP (порт 80): отдаем robots.txt и sitemap.xml с кодом 200 БЕЗ редиректа (жесткое требование Яндекса при переезде сайта)
 http://pitermebel.com, http://www.pitermebel.com {
-    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    @legacyKitchen path /catalog/kitchen /catalog/kitchen/
     handle @legacyKitchen {
         redir https://pitermebel.com/kitchens/ permanent
     }
@@ -21,7 +21,7 @@ http://pitermebel.com, http://www.pitermebel.com {
 
 # 2. Редирект с HTTPS www на основной HTTPS домен
 https://www.pitermebel.com {
-    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    @legacyKitchen path /catalog/kitchen /catalog/kitchen/
     handle @legacyKitchen {
         redir https://pitermebel.com/kitchens/ permanent
     }
@@ -45,7 +45,7 @@ https://pitermebel.com {
     # includeSubDomains добавлять только после выпуска и проверки сертификата www.
     header Strict-Transport-Security "max-age=31536000"
 
-    @legacyKitchen path /basket /basket/ /catalog/kitchen /catalog/kitchen/
+    @legacyKitchen path /catalog/kitchen /catalog/kitchen/
     handle @legacyKitchen {
         redir /kitchens/ permanent
     }

@@ -1,15 +1,16 @@
 import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
 
 const baseUrl = process.env.PITER_MEBEL_TEST_URL || "http://localhost:3001";
-const outputPath = "seo-work/2026-09-13/PERFORMANCE-LAB.json";
+const outputPath = process.env.PITER_MEBEL_PERFORMANCE_REPORT || "seo-work/2026-09-13/PERFORMANCE-LAB.json";
 const targets = [
   ["home", "/"],
   ["kitchens", "/kitchens/"],
   ["project", "/projects/marble-hood/"],
   ["article", "/knowledge/rozetki-na-kuhne-shema-vysoty/"],
   ["contacts", "/contacts/"],
-];
+].filter(([name]) => !process.env.PITER_MEBEL_PERFORMANCE_TARGETS || process.env.PITER_MEBEL_PERFORMANCE_TARGETS.split(",").includes(name));
 
 const browser = await chromium.launch({ headless: true });
 const results = [];
@@ -29,6 +30,13 @@ for (const [name, path] of targets) {
     new PerformanceObserver((list) => {
       const entries = list.getEntries();
       window.__auditMetrics.lcp = entries.at(-1)?.startTime || window.__auditMetrics.lcp;
+      const entry = entries.at(-1);
+      window.__auditMetrics.lcpElement = entry ? {
+        tag: entry.element?.tagName,
+        className: entry.element?.className,
+        url: entry.url,
+        size: entry.size,
+      } : null;
     }).observe({ type: "largest-contentful-paint", buffered: true });
     new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
@@ -65,6 +73,7 @@ for (const [name, path] of targets) {
       loadMs: Math.round(navigation.loadEventEnd),
       fcpMs: Math.round(paints["first-contentful-paint"] || 0),
       lcpMs: Math.round(audit.lcp),
+      lcpElement: audit.lcpElement,
       cls: Number(audit.cls.toFixed(4)),
       totalBlockingTimeMs: Math.round(audit.longTasks.reduce((sum, duration) => sum + Math.max(0, duration - 50), 0)),
       longTaskCount: audit.longTasks.length,
@@ -79,7 +88,7 @@ for (const [name, path] of targets) {
 }
 
 await browser.close();
-mkdirSync("seo-work/2026-09-13", { recursive: true });
+mkdirSync(dirname(outputPath), { recursive: true });
 writeFileSync(outputPath, `${JSON.stringify({ measuredAt: new Date().toISOString(), baseUrl, results }, null, 2)}\n`);
 console.table(results.map(({ name, fcpMs, lcpMs, cls, totalBlockingTimeMs, scriptTransferKb, webglContexts }) => ({
   name, fcpMs, lcpMs, cls, totalBlockingTimeMs, scriptTransferKb, webglContexts,

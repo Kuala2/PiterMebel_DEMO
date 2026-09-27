@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://pitermebel.com/",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/",
+    "contentType": "text/html; charset=utf-8",
+    "robots": ""
+  },
+  {
+    "url": "https://pitermebel.com/sitemap.xml",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/sitemap.xml",
+    "contentType": "text/xml; charset=utf-8",
+    "robots": ""
+  },
+  {
+    "url": "http://pitermebel.com/",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/",
+    "contentType": "text/html; charset=utf-8",
+    "robots": ""
+  },
+  {
+    "url": "https://www.pitermebel.com/",
+    "state": "unknown",
+    "error": "The SSL connection could not be established, see inner exception."
+  },
+  {
+    "url": "https://pitermebel.com/seo-audit-missing-20260927/",
+    "status": 200,
+    "finalUrl": "https://pitermebel.com/seo-audit-missing-20260927/",
+    "contentType": "text/html; charset=utf-8",
+    "robots": ""
+  }
+]

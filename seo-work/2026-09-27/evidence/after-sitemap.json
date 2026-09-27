@@ -1,0 +1,10 @@
+{
+  "state": "lint_only",
+  "entries": 44,
+  "issues": [],
+  "limitations": [
+    "5MiB tool limit, not protocol 50MiB limit",
+    "No nested sitemap fetching, HTTP/canonical/indexability validation",
+    "No truthfulness check for lastmod"
+  ]
+}

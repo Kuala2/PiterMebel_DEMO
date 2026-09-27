@@ -1,0 +1,843 @@
+{
+  "date": "2026-09-27",
+  "market": "Санкт-Петербург, РФ",
+  "demand_source": "нет выгрузки Wordstat/Вебмастер; гипотезы по предложению и содержимому",
+  "urls": [
+    {
+      "url": "https://pitermebel.com/",
+      "source": "index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "кухни и мебель на заказ Санкт-Петербург",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/",
+      "source": "kitchens\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "кухни на заказ СПб от производителя",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/wardrobes/",
+      "source": "wardrobes\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "шкафы и гардеробные на заказ СПб",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/wardrobes/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/custom-furniture/",
+      "source": "custom-furniture\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "корпусная мебель на заказ СПб",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/custom-furniture/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/production/",
+      "source": "production\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "производство мебели Санкт-Петербург",
+      "intent": "commercial_trust",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/production/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/calculator/",
+      "source": "calculator\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "рассчитать стоимость мебели на заказ",
+      "intent": "estimate",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/calculator/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/",
+      "source": "projects\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "примеры мебели на заказ ПитерМебель",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/contacts/",
+      "source": "contacts\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "ПитерМебель контакты адрес студии",
+      "intent": "navigation",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/contacts/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/knowledge/",
+      "source": "knowledge\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "советы по проектированию мебели",
+      "intent": "information",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/knowledge/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/design/",
+      "source": "design\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "дизайн проект мебели Санкт-Петербург",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/design/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/apartment/",
+      "source": "apartment\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "мебель для квартиры под ключ Санкт-Петербург",
+      "intent": "commercial",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/apartment/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/privacy/",
+      "source": "privacy\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": null,
+      "intent": "policy",
+      "query_state": "not_applicable",
+      "volume": null,
+      "target_url": "https://pitermebel.com/privacy/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+      "source": "kitchens\\mdf-plastik-gola\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня Fenix",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-plastik-gola/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+      "source": "kitchens\\mdf-plastik-slotex\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ пластик",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-plastik-slotex/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+      "source": "kitchens\\mdf-plastik-hettich\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ пластик",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-plastik-hettich/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+      "source": "kitchens\\mdf-grafit-gola\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Графит Gola",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-grafit-gola/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/emerald-enamel/",
+      "source": "kitchens\\emerald-enamel\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Эмаль",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/emerald-enamel/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+      "source": "kitchens\\mdf-belyj-egger\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ пластик+Egger",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-belyj-egger/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/velvet-matte/",
+      "source": "kitchens\\velvet-matte\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Velvet",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/velvet-matte/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+      "source": "kitchens\\mdf-emal-vitrina\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ ПВХ с фрезеровкой",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-emal-vitrina/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/sherman-cognac/",
+      "source": "kitchens\\sherman-cognac\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ пластик+Egger",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/sherman-cognac/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+      "source": "kitchens\\mdf-klassika-dub\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Эмаль матовая",
+      "intent": "configuration",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/kitchens/mdf-klassika-dub/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/island-parquet/",
+      "source": "projects\\island-parquet\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня эмаль и натуральный шпон",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/island-parquet/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/oak-stone/",
+      "source": "projects\\oak-stone\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня эмаль и массив дуба",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/oak-stone/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/white-showcase/",
+      "source": "projects\\white-showcase\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Белая угловая кухня с витриной",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/white-showcase/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/marble-hood/",
+      "source": "projects\\marble-hood\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня с тонкой столешницей HPL",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/marble-hood/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/narrow-kitchen/",
+      "source": "projects\\narrow-kitchen\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня с фасадами МДФ ПВХ",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/narrow-kitchen/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/emerald-enamel/",
+      "source": "projects\\emerald-enamel\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Эмаль",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/emerald-enamel/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/velvet-matte/",
+      "source": "projects\\velvet-matte\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ Velvet",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/velvet-matte/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/sherman-cognac/",
+      "source": "projects\\sherman-cognac\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня МДФ пластик+Egger",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/sherman-cognac/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/glass-wardrobe/",
+      "source": "projects\\glass-wardrobe\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Гардеробная со стеклом Stopsol",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/glass-wardrobe/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/brick-wardrobe/",
+      "source": "projects\\brick-wardrobe\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "П-образная гардеробная со скошенными полками",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/brick-wardrobe/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/wardrobe-inside/",
+      "source": "projects\\wardrobe-inside\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Шкафы для комнаты и прихожей",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/wardrobe-inside/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/bedroom-set/",
+      "source": "projects\\bedroom-set\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Шкафы и мебель для спальни",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/bedroom-set/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/mirror-hall/",
+      "source": "projects\\mirror-hall\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Зеркальный шкаф с нишей для обуви",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/mirror-hall/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/slat-panels/",
+      "source": "projects\\slat-panels\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Кухня, стеллаж и шкаф-купе",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/slat-panels/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/oak-veneer-panel/",
+      "source": "projects\\oak-veneer-panel\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "ТВ-зона с панелями из шпона дуба",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/oak-veneer-panel/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/office-reception/",
+      "source": "projects\\office-reception\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Стойка ресепшен для клиники",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/office-reception/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/light-wood-wardrobe/",
+      "source": "projects\\light-wood-wardrobe\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Гардеробная с подсветкой и древесным декором",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/light-wood-wardrobe/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/sliding-partition/",
+      "source": "projects\\sliding-partition\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Раздвижная перегородка для зонирования",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/sliding-partition/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/cascade-partitions/",
+      "source": "projects\\cascade-partitions\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Каскадные раздвижные перегородки",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/cascade-partitions/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/curved-oak-facades/",
+      "source": "projects\\curved-oak-facades\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Радиусные фасады из шпона дуба",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/curved-oak-facades/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/projects/bathroom-vanity/",
+      "source": "projects\\bathroom-vanity\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Влагостойкая мебель для ванной комнаты",
+      "intent": "portfolio",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/projects/bathroom-vanity/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    },
+    {
+      "url": "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+      "source": "knowledge\\rozetki-na-kuhne-shema-vysoty\\index.html",
+      "expected_indexability": "indexable",
+      "query_cluster": "Розетки на кухне: как подготовить схему до монтажа мебели",
+      "intent": "information",
+      "query_state": "hypothesis",
+      "volume": null,
+      "target_url": "https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/",
+      "action": "preserve_existing_url",
+      "evidence": [
+        "app routes",
+        "data/kitchens.ts",
+        "data/projects.ts",
+        "data/knowledge.ts",
+        "client_data/FACTS_AND_POSITIONING.md"
+      ],
+      "production_in_sitemap": true
+    }
+  ]
+}

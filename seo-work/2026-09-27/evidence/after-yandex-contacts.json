@@ -1,0 +1,305 @@
+{
+  "version": "1.1.0",
+  "scope": "one_source_html_document",
+  "state": "partial",
+  "url": "https://pitermebel.com/contacts/",
+  "fetch": {
+    "source": "out/contacts/index.html",
+    "final_url": null,
+    "http_status": null,
+    "headers": {},
+    "retrieved_at": "2026-09-26T23:53:53.084152+00:00",
+    "sha256": "30939fdda54a9559e981ef9c21a61b642a8e629c4d09a2647136ed24d1c01f2e"
+  },
+  "technical": {
+    "titles": [
+      "Контакты студии — ПитерМебель"
+    ],
+    "descriptions": [
+      "Контакты студии «ПитерМебель»: офис на пл. Стачек, 9, офис 407, м. «Нарвская». Консультации по предварительной записи."
+    ],
+    "h1": [
+      "Контакты и визиты в студию"
+    ],
+    "canonicals": [
+      {
+        "url": "https://pitermebel.com/contacts/",
+        "in_head": true
+      }
+    ],
+    "robots": [],
+    "schema_types": [
+      "BreadcrumbList",
+      "GeoCoordinates",
+      "ListItem",
+      "LocalBusiness",
+      "OpeningHoursSpecification",
+      "PostalAddress",
+      "WebSite"
+    ],
+    "schema_types_scope": "jsonld_only",
+    "schema_formats_observed": [
+      "jsonld"
+    ],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://pitermebel.com/#organization",
+            "name": "ПитерМебель",
+            "description": "Семейное производство кухонь, шкафов и корпусной мебели на заказ в Санкт-Петербурге. Встречи в студии образцов по предварительной записи.",
+            "alternateName": "Питер-Мебель",
+            "url": "https://pitermebel.com",
+            "logo": "https://pitermebel.com/img/brand/logo_bird.svg",
+            "image": "https://pitermebel.com/img/brand/og-cover.jpg",
+            "telephone": "+79217840589",
+            "email": "piter.meb@yandex.ru",
+            "currenciesAccepted": "RUB",
+            "foundingDate": "2005",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "пл. Стачек, 9, офис 407",
+              "addressLocality": "Санкт-Петербург",
+              "addressCountry": "RU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 59.899907,
+              "longitude": 30.272883
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "10:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://vk.ru/pitermebelcom",
+              "https://yandex.ru/maps/org/pitermebel/245406542043/?indoorLevel=1&ll=30.272883%2C59.899907"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://pitermebel.com/#website",
+            "url": "https://pitermebel.com",
+            "name": "ПитерМебель",
+            "publisher": {
+              "@id": "https://pitermebel.com/#organization"
+            },
+            "inLanguage": "ru-RU"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Главная",
+            "item": "https://pitermebel.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Контакты и визиты в студию"
+          }
+        ]
+      }
+    ],
+    "image_count": 2,
+    "missing_alt_attribute_count": 0
+  },
+  "observations": [
+    {
+      "check": "requisites",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Checksum does not prove FNS status or ownership"
+    },
+    {
+      "check": "legal_name_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Heuristic, not identity verification"
+    },
+    {
+      "check": "visible_phones",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "+79217840589"
+      ],
+      "note": "Mobile numbers are not penalized; +7 does not establish a country"
+    },
+    {
+      "check": "numeric_price_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Verify context, inclusions, currency, current truthfulness"
+    },
+    {
+      "check": "street_house_candidate",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Verify a real address, role and customer access; not just city mention"
+    },
+    {
+      "check": "hours_candidate",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "10:00–18:00",
+        "с 10:00 до 18:00"
+      ],
+      "note": "Verify days, holidays and actual availability"
+    },
+    {
+      "check": "forms",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": 1,
+      "note": "May be login/search; test the lead flow instead of assuming calculator"
+    },
+    {
+      "check": "verification_meta",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": 1,
+      "note": "Absence does not exclude DNS or HTML-file verification"
+    },
+    {
+      "check": "metrika_reference",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Not proof of execution, account access or goals; tag managers/consent may defer code"
+    },
+    {
+      "check": "payment_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "piter.meb@yandex.ru\nдоговор и оплата\nзаключаем договор с согласованной сметой. оплатить заказ можно на расчетный сче",
+        "говор с согласованной сметой. оплатить заказ можно на расчетный счет, по ссылке сбп, через терминал или в рассрочку.\nс",
+        "лке сбп, через терминал или в рассрочку.\nсроки в договоре\nсрок изготовления рассчитываем по выбранным материалам фасадо"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "delivery_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "для точной привязки размеров.\nмонтаж под ключ\nштатная бригада собирает мебель и подключает бытовую технику, сантехни"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "warranty_mentions",
+      "state": "not_observed_in_document",
+      "confidence": "heuristic",
+      "evidence": [],
+      "note": "Mention only: negation and adequacy require review"
+    },
+    {
+      "check": "contract_mentions",
+      "state": "observed",
+      "confidence": "heuristic",
+      "evidence": [
+        "ля эскизовpiter.meb@yandex.ru\nдоговор и оплата\nзаключаем договор с согласованной сметой. оплатить заказ можно на расч",
+        "ru\nдоговор и оплата\nзаключаем договор с согласованной сметой. оплатить заказ можно на расчетный счет, по ссылке сбп, ",
+        "инал или в рассрочку.\nсроки в договоре\nсрок изготовления рассчитываем по выбранным материалам фасадов и комплектации и",
+        "мость и условия фиксируются в договоре после согласования проекта.\nпозвонитьконсультация"
+      ],
+      "note": "Mention only: negation and adequacy require review"
+    }
+  ],
+  "phone_links": [
+    "+79217840589"
+  ],
+  "external_references": {
+    "telegram": [
+      {
+        "href": "https://t.me/studiyaelenavolkova",
+        "text": "МессенджерTelegram"
+      },
+      {
+        "href": "https://t.me/studiyaelenavolkova",
+        "text": ""
+      }
+    ],
+    "whatsapp": [
+      {
+        "href": "https://wa.me/message/6G5V7NPGLPXCB1",
+        "text": "МессенджерWhatsApp"
+      },
+      {
+        "href": "https://wa.me/message/6G5V7NPGLPXCB1",
+        "text": ""
+      }
+    ],
+    "vk": [],
+    "yandex": [
+      {
+        "href": "https://yandex.ru/maps/org/pitermebel/245406542043/?indoorLevel=1&ll=30.272883%2C59.899907",
+        "text": "Открыть на Яндекс.Картах →"
+      }
+    ],
+    "2gis": []
+  },
+  "candidate_pages_to_review": [
+    {
+      "href": "https://pitermebel.com/contacts/#main-content",
+      "text": "Перейти к содержимому"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/",
+      "text": "КОНТАКТЫ"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Консультация и расчет"
+    },
+    {
+      "href": "https://vk.ru/im?sel=-215942650",
+      "text": "Сообщество и диалогНаписать ВКонтакте"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/",
+      "text": "Контакты"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Записаться на консультацию"
+    },
+    {
+      "href": "https://pitermebel.com/contacts/#measure",
+      "text": "Консультация"
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "No JS or computed CSS",
+    "No full-site absence conclusions",
+    "No ranking score or registry lookup",
+    "No robots/sitemap, account, performance, actual map-profile or official schema verification in this command"
+  ],
+  "encoding": "utf-8",
+  "lossy_decode": false
+}

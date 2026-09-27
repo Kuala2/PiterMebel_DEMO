@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
+import { Suspense } from "react";
 import { Cormorant_Garamond, Onest } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -8,6 +8,7 @@ import StickyCTA from "@/components/StickyCTA";
 import ApartmentBoostPopup from "@/components/ApartmentBoostPopup";
 import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
+import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_CONFIG } from "@/data/site";
 import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION, METRIKA_ID } from "@/lib/seo";
 
@@ -38,9 +39,10 @@ const SITE_JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "FurnitureStore",
+      "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#organization`,
       name: SITE_CONFIG.name,
+      description: "Семейное производство кухонь, шкафов и корпусной мебели на заказ в Санкт-Петербурге. Встречи в студии образцов по предварительной записи.",
       alternateName: "Питер-Мебель",
       url: SITE_URL,
       logo: `${SITE_URL}/img/brand/logo_bird.svg`,
@@ -137,23 +139,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Script id="yandex-metrika" strategy="lazyOnload">
-          {`(function(m,e,t,r,i,k,a){
-              m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-              m[i].l=1*new Date();
-              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-          })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}", "ym");
-
-          ym(${METRIKA_ID}, "init", {
-            ssr: true,
-            webvisor: true,
-            clickmap: true,
-            ecommerce: "dataLayer",
-            accurateTrackBounce: true,
-            trackLinks: true,
-          });`}
-        </Script>
+        <Suspense fallback={null}>
+          <YandexMetrika />
+        </Suspense>
         <noscript>
           <div>
             <img
