@@ -10,10 +10,20 @@ const CATEGORIES = new Set([
 ]);
 const MAX_BODY_BYTES = 12 * 1024;
 
-function reply(statusCode, body) {
+function corsHeaders(requestOrigin, allowedOrigin) {
+  const headers = { "Cache-Control": "no-store", Vary: "Origin" };
+  if (allowedOrigin && requestOrigin === allowedOrigin) {
+    headers["Access-Control-Allow-Origin"] = allowedOrigin;
+    headers["Access-Control-Allow-Methods"] = "POST, OPTIONS";
+    headers["Access-Control-Allow-Headers"] = "Content-Type, Accept";
+  }
+  return headers;
+}
+
+function reply(statusCode, body, extraHeaders = {}) {
   return {
     statusCode,
-    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ...extraHeaders },
     body: JSON.stringify(body),
     isBase64Encoded: false,
   };
@@ -89,45 +99,50 @@ function createHandler(deps = {}) {
   const sendMail = deps.notify || mail.notify;
   const clock = deps.now || Date.now;
   return async function main(event, context = {}) {
-    if (event?.httpMethod !== "POST") return reply(405, { success: false });
     const origin = process.env.LEAD_ALLOWED_ORIGIN;
+    const headers = Object.fromEntries(Object.entries(event?.headers || {}).map(([key, value]) => [key.toLowerCase(), value]));
+    const cors = corsHeaders(headers.origin, origin);
+    if (event?.httpMethod === "OPTIONS") {
+      if (!origin || headers.origin !== origin) return reply(403, { success: false }, cors);
+      return { statusCode: 204, headers: cors, body: "", isBase64Encoded: false };
+    }
+    if (event?.httpMethod !== "POST") return reply(405, { success: false }, cors);
     const consentVersion = process.env.LEAD_CONSENT_VERSION;
     const consentText = process.env.LEAD_CONSENT_TEXT;
-    if (process.env.LEAD_ENABLED !== "true" || !origin || !consentVersion || !consentText || consentText.length < 100) return reply(503, { success: false });
-    const headers = Object.fromEntries(Object.entries(event.headers || {}).map(([key, value]) => [key.toLowerCase(), value]));
-    if (headers.origin !== origin) return reply(403, { success: false });
+    if (process.env.LEAD_ENABLED !== "true" || !origin || !consentVersion || !consentText || consentText.length < 100) return reply(503, { success: false }, cors);
+    if (headers.origin !== origin) return reply(403, { success: false }, cors);
     let form, lead;
     try {
       form = await parseForm(event);
-      if (text(form, "website", 200) || text(form, "confirm_order", 8)) return reply(200, { success: true });
+      if (text(form, "website", 200) || text(form, "confirm_order", 8)) return reply(200, { success: true }, cors);
       lead = buildLead(form, clock(), origin, consentVersion, consentText);
-    } catch { return reply(400, { success: false }); }
+    } catch { return reply(400, { success: false }, cors); }
     const token = typeof context.token === "string" ? context.token : context.token?.access_token;
     try {
       const existing = await storage.getLead(lead.id, token);
-      if (existing && existing.notification_status === "sent") return reply(200, { success: true });
+      if (existing && existing.notification_status === "sent") return reply(200, { success: true }, cors);
       if (existing) lead = existing;
       else {
-        if (await storage.isRateLimited(lead.phone, clock(), token)) return reply(429, { success: false });
+        if (await storage.isRateLimited(lead.phone, clock(), token)) return reply(429, { success: false }, cors);
         const inserted = await storage.saveLead(lead, token);
         if (!inserted) {
           lead = await storage.getLead(lead.id, token);
           if (!lead) throw new Error("Lead insert could not be confirmed");
-          if (lead.notification_status === "sent") return reply(200, { success: true });
+          if (lead.notification_status === "sent") return reply(200, { success: true }, cors);
         }
       }
     } catch (error) {
       console.error("Lead storage failed", error.message);
-      return reply(503, { success: false });
+      return reply(503, { success: false }, cors);
     }
     try {
       await sendMail(lead, token);
       await storage.markNotified(lead.id, token);
     } catch (error) {
       console.error("Lead notification pending", lead.id, error.message);
-      return reply(503, { success: false });
+      return reply(503, { success: false }, cors);
     }
-    return reply(200, { success: true });
+    return reply(200, { success: true }, cors);
   };
 }
 

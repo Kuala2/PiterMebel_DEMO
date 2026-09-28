@@ -30,11 +30,10 @@ export function getMetrika() {
       ssr: true,
       webvisor: false,
       clickmap: false,
-      accurateTrackBounce: false,
-      trackLinks: false,
-      disableYtm: true,
-      url: `${window.location.origin}${window.location.pathname}`,
-      referrer: "",
+      accurateTrackBounce: true,
+      trackLinks: true,
+      url: `${window.location.origin}${window.location.pathname}${window.location.search || ""}`,
+      referrer: typeof document !== "undefined" ? document.referrer || "" : "",
     });
   }
   return target.ym;

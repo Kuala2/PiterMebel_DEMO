@@ -27,7 +27,7 @@ test("Metrica queues init once before early goals and pageviews", () => {
   assert.deepEqual(calls.map((call) => call[1]), ["init", "reachGoal", "hit", "reachGoal"]);
   assert.equal(calls[0][2].defer, true);
   assert.equal(calls[0][2].webvisor, false);
-  assert.equal(calls[0][2].trackLinks, false);
+  assert.equal(calls[0][2].trackLinks, true);
   assert.equal(calls[0][0], 112318484);
 });
 
@@ -49,7 +49,7 @@ function form(bot = false) {
   data.set("category", "Консультация");
   data.set("consent", "on");
   data.set("consent_version", "2026-09-27");
-  if (bot) data.set("botcheck", "on");
+  if (bot) data.set("website", "https://spam.example");
   return data;
 }
 
@@ -63,7 +63,7 @@ function submitter(fetch, key = "/api/leads") {
 test("Honeypot is not delivered and cannot count as a lead", async () => {
   const submit = submitter(() => assert.fail("Honeypot must not send a request"));
   const result = await submit({}, form(true));
-  assert.equal(result.success, true);
+  assert.equal(result.success, false);
   assert.notEqual(result.deliveryAccepted, true);
 });
 

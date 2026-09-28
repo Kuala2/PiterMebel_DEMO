@@ -4,12 +4,17 @@ import PageHeader from "@/components/PageHeader";
 import LegalOperator from "@/components/LegalOperator";
 import { LEGAL_DATE, LEGAL_VERSION, PROCESSING_SETUP } from "@/data/legal";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL } from "@/lib/seo";
+import { buildOg, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Согласие на обработку персональных данных | ПитерМебель",
   description: "Отдельное согласие для заявки на расчёт мебели, консультацию и согласование замера в ПитерМебель.",
   alternates: { canonical: "/consent/" },
+  openGraph: buildOg(
+    "Согласие на обработку персональных данных | ПитерМебель",
+    "Отдельное согласие для заявки на расчёт мебели, консультацию и согласование замера в ПитерМебель.",
+    "/consent"
+  ),
 };
 
 export default function ConsentPage() {

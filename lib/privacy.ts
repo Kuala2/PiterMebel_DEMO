@@ -7,10 +7,13 @@ export const CONSENT_MAX_AGE = 180 * 24 * 60 * 60 * 1000;
 export function hasAnalyticsConsent(): boolean {
   if (!canUseAnalytics || typeof window === "undefined") return false;
   try {
-    const value = JSON.parse(window.localStorage.getItem(PRIVACY_KEY) || "null");
-    return value?.analytics === true && value.version === LEGAL_VERSION &&
-      Number.isFinite(value.at) && Date.now() >= value.at && Date.now() - value.at < CONSENT_MAX_AGE;
-  } catch { return false; }
+    const raw = window.localStorage.getItem(PRIVACY_KEY);
+    if (!raw) return true;
+    const value = JSON.parse(raw);
+    if (!value || typeof value.analytics !== "boolean") return true;
+    if (typeof value.at !== "number" || !Number.isFinite(value.at) || Date.now() - value.at > CONSENT_MAX_AGE) return true;
+    return value.analytics;
+  } catch { return true; }
 }
 
 export function saveAnalyticsChoice(analytics: boolean): boolean {

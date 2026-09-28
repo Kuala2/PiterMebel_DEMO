@@ -50,10 +50,15 @@ export async function submitMeasureRequest(
   // Не показываем человеку ложное подтверждение, если поле заполнил автозаполнитель.
   if (botcheck) return { success: false, errors: { form: "Не удалось отправить заявку. Обновите страницу и попробуйте ещё раз." } };
 
-  // Same-origin is a transport restriction, not proof of Russian hosting.
-  // A reviewed Russian backend must be deployed separately from the static export.
+  // Only our same-origin backend or our dedicated Russian-hosted lead endpoint.
+  // The subdomain is activated only after deployment and PROCESSING_SETUP review.
   const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT?.trim();
-  if (!canReceiveLeads || !endpoint || !/^\/api\/[a-zA-Z0-9/_-]+$/.test(endpoint)) {
+  const allowedEndpoint = endpoint && (
+    /^\/api\/[a-zA-Z0-9/_-]+$/.test(endpoint) ||
+    endpoint === "https://leads.pitermebel.com/submit.php" ||
+    /^https:\/\/functions\.yandexcloud\.net\/[a-zA-Z0-9_-]+$/.test(endpoint)
+  );
+  if (!canReceiveLeads || !allowedEndpoint) {
     return {
       success: false,
       errors: {
@@ -90,6 +95,7 @@ export async function submitMeasureRequest(
       signal: controller.signal,
       redirect: "error",
       referrerPolicy: "no-referrer",
+      credentials: "omit",
     });
     const result = (await response.json().catch(() => ({}))) as LeadResponse;
 

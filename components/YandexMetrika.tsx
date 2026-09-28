@@ -10,6 +10,7 @@ import { SITE_CONFIG } from "@/data/site";
 const CONTACT_GOALS = new Map([
   [`tel:${SITE_CONFIG.phoneRaw}`, "contact_phone"],
   [`mailto:${SITE_CONFIG.email}`, "contact_email"],
+  [SITE_CONFIG.vkUrl, "contact_vk"],
   [SITE_CONFIG.vkImUrl, "contact_vk"],
   [SITE_CONFIG.telegramUrl, "contact_telegram"],
   [SITE_CONFIG.whatsappUrl, "contact_whatsapp"],
@@ -28,6 +29,8 @@ export default function YandexMetrika() {
         stopMetrika();
         previousUrl.current = null;
         try { clearAnalyticsStorage(); } catch { /* Storage may be disabled. */ }
+      } else {
+        getMetrika();
       }
       setAllowed(consent);
     };
@@ -46,16 +49,22 @@ export default function YandexMetrika() {
 
   useEffect(() => {
     if (!allowed) return;
-    // Wait for the navigation commit, including the page-specific document title.
-    const frame = requestAnimationFrame(() => {
-      const url = `${window.location.origin}${pathname}`;
+    const sendHit = () => {
+      const url = `${window.location.origin}${pathname}${window.location.search || ""}`;
       if (previousUrl.current === url) return;
       getMetrika()?.(METRIKA_ID, "hit", url, {
         title: document.title,
-        referer: previousUrl.current ?? "",
+        referer: previousUrl.current ?? document.referrer,
       });
       previousUrl.current = url;
-    });
+    };
+    // Queue the initial entry hit (and background-tab hits) immediately so 1-second visits are never lost.
+    if (previousUrl.current === null || document.visibilityState === "hidden") {
+      sendHit();
+      return;
+    }
+    // Wait for the SPA navigation commit, including the page-specific document title.
+    const frame = requestAnimationFrame(sendHit);
     return () => cancelAnimationFrame(frame);
   }, [pathname, allowed]);
 
@@ -74,7 +83,7 @@ export default function YandexMetrika() {
     <Script
       id="yandex-metrika"
       src={`https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}`}
-      strategy="lazyOnload"
+      strategy="afterInteractive"
     />
   );
 }

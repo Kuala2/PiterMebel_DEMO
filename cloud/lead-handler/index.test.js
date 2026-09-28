@@ -61,12 +61,29 @@ test("valid lead is stored before one notification and can be retried idempotent
     sent.push(lead);
   }, now: () => Date.parse("2026-09-27T10:01:00Z") });
   const request = await event();
-  assert.equal((await handler(request, { token: "test" })).statusCode, 200);
+  const firstResponse = await handler(request, { token: "test" });
+  assert.equal(firstResponse.statusCode, 200);
+  assert.equal(firstResponse.headers["Access-Control-Allow-Origin"], "https://pitermebel.com");
+  assert.equal(firstResponse.headers.Vary, "Origin");
   assert.equal((await handler(request, { token: "test" })).statusCode, 200);
   assert.equal(sent.length, 1);
   assert.equal(sent[0].page, "https://pitermebel.com/contacts/");
   assert.equal(storage.leads.size, 1);
   assert.equal(storage.leads.values().next().value.consent_version, "2026-09-27");
+});
+
+test("OPTIONS preflight returns 204 with CORS headers for allowed origin and 403 for disallowed origin", async () => {
+  const handler = createHandler({ db: fakeDb(), notify: async () => assert.fail("unexpected mail") });
+  const preflight = await handler({ httpMethod: "OPTIONS", headers: { Origin: "https://pitermebel.com" } });
+  assert.equal(preflight.statusCode, 204);
+  assert.equal(preflight.headers["Access-Control-Allow-Origin"], "https://pitermebel.com");
+  assert.equal(preflight.headers["Access-Control-Allow-Methods"], "POST, OPTIONS");
+  assert.equal(preflight.headers["Access-Control-Allow-Headers"], "Content-Type, Accept");
+  assert.equal(preflight.headers.Vary, "Origin");
+
+  const denied = await handler({ httpMethod: "OPTIONS", headers: { Origin: "https://attacker.example" } });
+  assert.equal(denied.statusCode, 403);
+  assert.equal(denied.headers["Access-Control-Allow-Origin"], undefined);
 });
 
 test("server rejects direct bot submissions and invalid consent without saving", async () => {

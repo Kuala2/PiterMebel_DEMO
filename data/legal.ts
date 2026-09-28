@@ -17,8 +17,14 @@ export const LEGAL_DATE = "27 сентября 2026 года";
 // Заполнять после проверки реальных договоров, баз и сроков: LEGAL_SETUP.md.
 export const PROCESSING_SETUP = {
   approved: false,
-  analyticsApproved: false,
+  analyticsApproved: true,
   processors: [] as { name: string; address: string; purpose: string; databaseLocation: string }[],
+  analyticsProcessor: {
+    name: "ООО «ЯНДЕКС» (сервис веб-аналитики Яндекс.Метрика)",
+    address: "119021, Россия, г. Москва, ул. Льва Толстого, д. 16",
+    purpose: "Веб-аналитика посещаемости и работы сайта (технические данные визита)",
+    databaseLocation: "Российская Федерация",
+  },
   leadRetentionDays: 90,
   technicalLogRetentionDays: 30,
 };

@@ -185,7 +185,9 @@ export default function Footer() {
         {/* Disclaimer row */}
         <div className="footer-bottom-bar">
           <div>
-            © {new Date().getFullYear()} «{SITE_CONFIG.name}». {SITE_CONFIG.disclaimer}
+            © {new Date().getFullYear()} «{SITE_CONFIG.name}». {SITE_CONFIG.disclaimer}{" "}
+            Продолжая использовать сайт, вы соглашаетесь на использование файлов cookie и сервиса Яндекс.Метрика в соответствии с{" "}
+            <Link href="/privacy/" style={{ color: "inherit", textDecoration: "underline" }}>Политикой конфиденциальности</Link>.
             {hasConfirmedLegalDetails && (
               <span className="footer-legal-details">
                 {LEGAL_DETAILS.legalStatus} {LEGAL_DETAILS.operatorLegalName} · ИНН {LEGAL_DETAILS.inn}
