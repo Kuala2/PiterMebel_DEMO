@@ -1,0 +1,14 @@
+{
+  "testedAt": "2026-09-29T11:30:00.677Z",
+  "externalAnalyticsTransmitted": false,
+  "checks": [
+    "Fresh visit starts automatically; Webvisor and clickmap remain disabled",
+    "Footer opt-out persists through SPA navigation and reload",
+    "Real SDK restarts after destruct three times without reloading",
+    "Policy and footer controls sync with another tab; no bounce event after opt-out",
+    "Footer fits desktop and 390/320px mobile widths",
+    "Old opt-outs survive expiry and policy version changes",
+    "Storage failure still stops the SDK and shows the persistence limitation",
+    "Opt-out during SDK download prevents queued tracking; re-enable still works"
+  ]
+}

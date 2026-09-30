@@ -10,6 +10,7 @@
     "test:smoke": "node tests/smoke.mjs",
     "test:seo": "node --test tests/seo-regressions.mjs",
     "test:privacy": "node --test tests/privacy.mjs",
+    "test:metrika-browser": "node tests/metrika-browser.mjs",
     "test:seo-browser": "node tests/seo-browser.mjs"
   },
   "dependencies": {

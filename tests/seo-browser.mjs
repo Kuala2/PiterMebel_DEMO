@@ -50,7 +50,7 @@ async function ensureServer(defaultBase) {
 }
 
 const { base, close: closeServer } = await ensureServer(process.env.PITER_MEBEL_TEST_URL || "http://localhost:3001");
-const destination = "output/privacy-2026-09-27";
+const destination = "output/privacy-2026-09-29";
 await mkdir(destination, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 try {
@@ -146,22 +146,19 @@ try {
     assert.equal(await page.locator(".sticky-cta, .boost-popup").count(), 0, "Legal documents must remain unobstructed");
   }
   await page.goto(base + "/privacy/#cookies", { waitUntil: "networkidle" });
-  assert.equal(await page.getByRole("button", { name: "Включить аналитику" }).isDisabled(), true);
-  assert.equal(await page.getByRole("button", { name: "Отключить аналитику" }).isDisabled(), false);
-  await page.getByRole("button", { name: "Отключить аналитику" }).click();
+  const settings = page.locator('[data-analytics-settings="page"]');
+  await settings.getByRole("button", { name: "Отключить Яндекс.Метрику для меня" }).click();
   const choice = await page.evaluate(() => JSON.parse(localStorage.getItem("pm_privacy_v1")));
   assert.equal(choice.analytics, false);
   assert.equal(await page.evaluate(() => window.piterMetrikaInitialized), false);
   assert.equal(await page.evaluate(() => (window.ym?.a || []).length), 0);
-  assert.equal(await page.getByRole("button", { name: "Включить аналитику" }).isDisabled(), false);
-  assert.equal(await page.getByRole("button", { name: "Отключить аналитику" }).isDisabled(), true);
-  await page.getByRole("button", { name: "Включить аналитику" }).click();
+  assert.equal(await page.locator('footer').getByRole("button", { name: "Включить Яндекс.Метрику для меня" }).count(), 1);
+  await settings.getByRole("button", { name: "Включить Яндекс.Метрику для меня" }).click();
   const reenabled = await page.evaluate(() => JSON.parse(localStorage.getItem("pm_privacy_v1")));
   assert.equal(reenabled.analytics, true);
   assert.equal(await page.evaluate(() => window.piterMetrikaInitialized), true);
   assert.deepEqual(await page.evaluate(() => (window.ym?.a || []).map(args => args[1])), ["init", "hit"]);
-  assert.equal(await page.getByRole("button", { name: "Включить аналитику" }).isDisabled(), true);
-  assert.equal(await page.getByRole("button", { name: "Отключить аналитику" }).isDisabled(), false);
+  assert.equal(await settings.getByRole("button", { name: "Отключить Яндекс.Метрику для меня" }).isEnabled(), true);
   await page.screenshot({ path: destination + "/privacy-settings-mobile.png" });
   assert.equal(errors.length, 0, errors.join("\n"));
   assert.equal((await page.goto(base + "/seo-test-missing/")).status(), 404);

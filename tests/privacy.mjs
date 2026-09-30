@@ -19,7 +19,7 @@ function runtime({ approved = true, analyticsApproved = true, endpoint = "/api/l
     vm.runInNewContext(js, { exports, window, document, URL, Date, Event, FormData, AbortController, fetch,
       process: { env: { NEXT_PUBLIC_LEAD_ENDPOINT: endpoint } },
       require(id) {
-        if (id === "@/data/legal") return { canReceiveLeads: approved, canUseAnalytics: analyticsApproved, LEGAL_VERSION: VERSION };
+        if (id === "@/data/legal") return { canReceiveLeads: approved, canUseAnalytics: analyticsApproved, LEGAL_VERSION: VERSION, PRIVACY_VERSION: "2026-09-29" };
         if (id.startsWith("@/")) return load(id.slice(2) + ".ts");
         throw new Error(id);
       },
@@ -34,38 +34,70 @@ function form() {
   return data;
 }
 
-test("Analytics is enabled by default when operator setup is active and supports manual opt-out and expiry", () => {
+test("Default analytics respects explicit opt-out regardless of age or document version", () => {
   const { load, window, values } = runtime();
   window.location.search = "?ysclid=12345";
   const privacy = load("lib/privacy.ts");
   const metrika = load("lib/metrika.ts");
-  assert.equal(privacy.hasAnalyticsConsent(), true);
+  assert.equal(privacy.isAnalyticsEnabled(), true);
   metrika.reachGoal("contact_phone");
   assert.equal(window.ym.a[0][1], "init");
   assert.equal(window.ym.a[0][2].webvisor, false);
   assert.equal(window.ym.a[0][2].accurateTrackBounce, true);
   assert.equal(window.ym.a[0][2].url, "https://pitermebel.com/contacts/?ysclid=12345");
   privacy.saveAnalyticsChoice(false);
-  assert.equal(privacy.hasAnalyticsConsent(), false);
+  assert.equal(privacy.isAnalyticsEnabled(), false);
   const count = window.ym.a.length;
   metrika.reachGoal("zayavka");
   assert.equal(window.ym.a.length, count);
   metrika.stopMetrika();
   assert.equal(window.ym.a.length, 0);
-  values.set(privacy.PRIVACY_KEY, JSON.stringify({ analytics: false, version: VERSION, at: Date.now() - privacy.CONSENT_MAX_AGE - 1000 }));
-  assert.equal(privacy.hasAnalyticsConsent(), true);
+  values.set(privacy.PRIVACY_KEY, JSON.stringify({ analytics: false, version: "old-version", at: 1 }));
+  assert.equal(privacy.isAnalyticsEnabled(), false);
   values.set(privacy.PRIVACY_KEY, JSON.stringify({ analytics: false, version: VERSION }));
-  assert.equal(privacy.hasAnalyticsConsent(), true);
+  assert.equal(privacy.isAnalyticsEnabled(), false);
   const blocked = runtime({ analyticsApproved: false });
-  assert.equal(blocked.load("lib/privacy.ts").hasAnalyticsConsent(), false);
+  assert.equal(blocked.load("lib/privacy.ts").isAnalyticsEnabled(), false);
 });
 
 test("Unavailable browser storage still allows default analytics", () => {
   const { load, window } = runtime();
   window.localStorage.getItem = () => { throw new Error("blocked"); };
   window.localStorage.setItem = () => { throw new Error("blocked"); };
-  assert.equal(load("lib/privacy.ts").hasAnalyticsConsent(), true);
+  assert.equal(load("lib/privacy.ts").isAnalyticsEnabled(), true);
   assert.equal(load("lib/privacy.ts").saveAnalyticsChoice(true), false);
+});
+
+test("An opt-out still stops goals and notifies all controls when saving fails", () => {
+  const { load, window } = runtime();
+  const privacy = load("lib/privacy.ts");
+  const metrika = load("lib/metrika.ts");
+  const events = [];
+  window.dispatchEvent = event => events.push(event.type);
+  metrika.reachGoal("before");
+  window.localStorage.setItem = () => { throw new Error("quota exceeded"); };
+  assert.equal(privacy.saveAnalyticsChoice(false), false);
+  assert.equal(privacy.isAnalyticsEnabled(), false);
+  const count = window.ym.a.length;
+  metrika.reachGoal("after");
+  assert.equal(window.ym.a.length, count);
+  assert.deepEqual(events, [privacy.PRIVACY_EVENT]);
+  assert.equal(privacy.saveAnalyticsChoice(true), false);
+  assert.equal(privacy.isAnalyticsEnabled(), true);
+});
+
+test("Stopping preserves SDK queue dispatch so enabling again can send a hit", () => {
+  const { load, window } = runtime();
+  const metrika = load("lib/metrika.ts");
+  metrika.getMetrika();
+  const sdkQueue = window.ym.a;
+  const calls = [];
+  // The real tag wraps push on the existing array; replacing the array disconnects it.
+  sdkQueue.push = (...items) => { calls.push(...items); return Array.prototype.push.apply(sdkQueue, items); };
+  metrika.stopMetrika();
+  metrika.getMetrika()(metrika.METRIKA_ID, "hit", "https://pitermebel.com/");
+  assert.equal(window.ym.a, sdkQueue);
+  assert.deepEqual(calls.map(call => call[1]), ["destruct", "init", "hit"]);
 });
 
 test("Unapproved setup and external or malformed endpoints never transmit leads", async () => {

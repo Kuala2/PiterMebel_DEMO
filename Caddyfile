@@ -37,8 +37,8 @@ https://pitermebel.com {
     # Корневая директория статического экспорта
     root * /var/www/pitermebel/out
 
-    # Разрешаем отображение сайта во фрейме Вебвизора и Карты кликов Яндекс.Метрики
-    header Content-Security-Policy "frame-ancestors 'self' https://metrika.yandex.ru https://*.metrika.yandex.ru https://webvisor.com https://*.webvisor.com;"
+    # Вебвизор и карта кликов отключены; внешний встраиваемый просмотр не требуется.
+    header Content-Security-Policy "frame-ancestors 'self';"
     header X-Content-Type-Options "nosniff"
     header Referrer-Policy "strict-origin-when-cross-origin"
     header Permissions-Policy "camera=(), microphone=(), geolocation=()"

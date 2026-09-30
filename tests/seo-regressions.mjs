@@ -10,7 +10,7 @@ function load(file, globals) {
   }).outputText;
   const context = vm.createContext({ exports: {}, require: (id) => {
     if (id === "@/data/legal") return { canReceiveLeads: true, canUseAnalytics: true, LEGAL_VERSION: "2026-09-27" };
-    if (id === "@/lib/privacy") return { hasAnalyticsConsent: () => true, pageAddress: (url) => url.split(/[?#]/)[0] };
+    if (id === "@/lib/privacy") return { isAnalyticsEnabled: () => true, pageAddress: (url) => url.split(/[?#]/)[0] };
     throw new Error(id);
   }, ...globals });
   vm.runInContext(js, context, { filename: file });

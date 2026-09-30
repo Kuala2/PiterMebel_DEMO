@@ -6,7 +6,7 @@ return [
     'recipient' => 'piter.meb@yandex.ru',
     // Optional verified sender on this hosting account. Empty uses Exim's default.
     'sender' => '',
-    'consent_version' => '2026-09-27',
+    'consent_version' => '2026-09-29',
     // Save the final published consent text here before activation.
     'consent_text' => '',
     'retention_days' => 90,

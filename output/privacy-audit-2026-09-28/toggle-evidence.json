@@ -1,0 +1,77 @@
+{
+  "status": "Статус: Яндекс.Метрика активна.\n\nПодробнее об условиях: согласие на обработку данных веб-аналитики. Вы можете отключить или снова включить аналитику в любое время:\n\nОтключить аналитику\nВключить аналитику",
+  "events": [
+    {
+      "phase": "initial",
+      "path": "/metrika/tag.js"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_check"
+    },
+    {
+      "phase": "initial",
+      "path": "/metrika/advert.gif"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_start"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_decide"
+    },
+    {
+      "phase": "initial",
+      "path": "/watch/112318484"
+    },
+    {
+      "phase": "initial",
+      "path": "/watch/112318484/1"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_check"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_start"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_decide"
+    },
+    {
+      "phase": "initial",
+      "path": "/sync_cookie_image_finish"
+    },
+    {
+      "phase": "initial",
+      "path": "/watch/112318484"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/metrika/tag.js"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/sync_cookie_image_check"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/metrika/advert.gif"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/watch/112318484"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/sync_cookie_image_check"
+    },
+    {
+      "phase": "reload-enabled",
+      "path": "/watch/112318484"
+    }
+  ]
+}

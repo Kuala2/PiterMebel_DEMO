@@ -1,4 +1,4 @@
-import { hasAnalyticsConsent } from "@/lib/privacy";
+import { isAnalyticsEnabled } from "@/lib/privacy";
 
 export const METRIKA_ID = 112318484;
 
@@ -14,7 +14,7 @@ type MetrikaWindow = Window & {
 
 /** Queue init, pageviews and goals in order, even before the external tag loads. */
 export function getMetrika() {
-  if (typeof window === "undefined" || !hasAnalyticsConsent()) return;
+  if (typeof window === "undefined" || !isAnalyticsEnabled()) return;
   const target = window as MetrikaWindow;
   if (!target.ym) {
     const queued: MetrikaFunction = (...args) => {
@@ -43,8 +43,9 @@ export function stopMetrika() {
   if (typeof window === "undefined") return;
   const target = window as MetrikaWindow;
   if (target.piterMetrikaInitialized) target.ym?.(METRIKA_ID, "destruct");
-  // Drop unsent events from a script that has not loaded yet.
-  if (target.ym?.a) target.ym.a = [];
+  // Preserve the queue object: the loaded SDK wraps its push() to dispatch commands.
+  // Replacing it with [] breaks init/hit after destruct. Splice also drops pending events.
+  target.ym?.a?.splice(0);
   target.piterMetrikaInitialized = false;
 }
 

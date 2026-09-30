@@ -4,6 +4,7 @@ import VkIcon from "@/components/VkIcon";
 import TelegramIcon from "@/components/TelegramIcon";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import MaxIcon from "@/components/MaxIcon";
+import PrivacySettings from "@/components/PrivacySettings";
 import { SITE_CONFIG, NAVIGATION_LINKS } from "@/data/site";
 import { LEGAL_DETAILS, hasConfirmedLegalDetails } from "@/data/legal";
 
@@ -183,11 +184,12 @@ export default function Footer() {
         </div>
 
         {/* Disclaimer row */}
-        <div className="footer-bottom-bar">
+        <div className="footer-bottom-bar" data-sticky-cta-suppress>
           <div>
             © {new Date().getFullYear()} «{SITE_CONFIG.name}». {SITE_CONFIG.disclaimer}{" "}
-            Продолжая использовать сайт, вы соглашаетесь на использование файлов cookie и сервиса Яндекс.Метрика в соответствии с{" "}
-            <Link href="/privacy/" style={{ color: "inherit", textDecoration: "underline" }}>Политикой конфиденциальности</Link>.
+            На сайте автоматически работает Яндекс.Метрика: она использует cookie для статистики посещений, источников переходов и времени на сайте.
+            Её можно отключить кнопкой ниже. Подробнее — в{" "}
+            <Link href="/privacy/" style={{ color: "inherit", textDecoration: "underline" }}>Политике конфиденциальности</Link>.
             {hasConfirmedLegalDetails && (
               <span className="footer-legal-details">
                 {LEGAL_DETAILS.legalStatus} {LEGAL_DETAILS.operatorLegalName} · ИНН {LEGAL_DETAILS.inn}
@@ -195,6 +197,7 @@ export default function Footer() {
               </span>
             )}
           </div>
+          <PrivacySettings compact />
         </div>
       </div>
     </footer>

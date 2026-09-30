@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import LegalOperator from "@/components/LegalOperator";
-import { LEGAL_DATE, LEGAL_VERSION, PROCESSING_SETUP } from "@/data/legal";
+import { LEGAL_DATE, LEGAL_VERSION, PROCESSING_SETUP, canReceiveLeads } from "@/data/legal";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg, SITE_URL } from "@/lib/seo";
 
@@ -22,6 +22,8 @@ export default function ConsentPage() {
     <PageHeader title="Согласие на обработку персональных данных" backTo="/privacy/" backLabel="К политике конфиденциальности" />
     <section className="article-content-section"><div className="container article-narrow">
       <p className="article-paragraph">Отдельный документ для заявок на сайте {SITE_URL}. Редакция от {LEGAL_DATE}, версия {LEGAL_VERSION}.</p>
+      {!canReceiveLeads && <p className="article-paragraph">Документ подготовлен для будущего подключения заявок через Yandex Cloud.
+        Сейчас формы не передают заявки и согласие через них не собирается.</p>}
       <section className="article-content-block"><h2 className="article-section-h2">Кому предоставляется согласие</h2><LegalOperator /></section>
       <section className="article-content-block"><h2 className="article-section-h2">Цель и состав данных</h2>
         <p className="article-paragraph">Я свободно, своей волей и в своём интересе разрешаю оператору обработку моих данных для ответа
@@ -35,6 +37,8 @@ export default function ConsentPage() {
         <p className="article-paragraph">Разрешаю сбор, запись, систематизацию, накопление, хранение, уточнение, извлечение, использование,
           предоставление доступа указанным ниже обработчикам в пределах их функций, блокирование, удаление и уничтожение данных
           с применением средств автоматизации и без них.</p>
+        <p className="article-paragraph">При отправке заявки через подключённую форму используются облачная инфраструктура Yandex Cloud и почтовые уведомления оператору
+          в Яндекс Почте. Указанные ниже обработчики получают данные заявки и сведения о согласии в пределах своих функций.</p>
         {PROCESSING_SETUP.processors.length ? PROCESSING_SETUP.processors.map((p) => <p className="article-paragraph" key={p.name}>
           Обработчик по поручению: {p.name}; адрес: {p.address}; функция: {p.purpose}; базы данных: {p.databaseLocation}.
         </p>) : <p className="article-paragraph">Обработчики заявок ещё не подключены. До публикации их сведений и завершения настройки обработки согласие через форму не собирается.</p>}

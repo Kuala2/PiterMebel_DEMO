@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { getMetrika, METRIKA_ID, reachGoal, stopMetrika } from "@/lib/metrika";
-import { clearAnalyticsStorage, hasAnalyticsConsent, PRIVACY_EVENT } from "@/lib/privacy";
+import { clearAnalyticsStorage, isAnalyticsEnabled, PRIVACY_EVENT, PRIVACY_KEY } from "@/lib/privacy";
 import { SITE_CONFIG } from "@/data/site";
 
 const CONTACT_GOALS = new Map([
@@ -24,26 +24,27 @@ export default function YandexMetrika() {
 
   useEffect(() => {
     const sync = () => {
-      const consent = hasAnalyticsConsent();
-      if (!consent) {
+      const enabled = isAnalyticsEnabled();
+      if (!enabled) {
         stopMetrika();
         previousUrl.current = null;
         try { clearAnalyticsStorage(); } catch { /* Storage may be disabled. */ }
       } else {
         getMetrika();
       }
-      setAllowed(consent);
+      setAllowed(enabled);
+    };
+    const syncStorage = (event: StorageEvent) => {
+      if (event.key === PRIVACY_KEY || event.key === null) sync();
     };
     sync();
     window.addEventListener(PRIVACY_EVENT, sync);
-    window.addEventListener("storage", sync);
+    window.addEventListener("storage", syncStorage);
     window.addEventListener("focus", sync);
-    const expiryCheck = window.setInterval(sync, 60_000);
     return () => {
       window.removeEventListener(PRIVACY_EVENT, sync);
-      window.removeEventListener("storage", sync);
+      window.removeEventListener("storage", syncStorage);
       window.removeEventListener("focus", sync);
-      window.clearInterval(expiryCheck);
     };
   }, []);
 

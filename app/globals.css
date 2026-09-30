@@ -11097,6 +11097,26 @@ html.menu-open .boost-popup {
 .privacy-page .article-paragraph { overflow-wrap: anywhere; }
 .privacy-page .article-paragraph a { text-decoration: underline; text-underline-offset: 3px; }
 .privacy-settings { border: 1px solid rgba(255,255,255,.18); padding: 20px; border-radius: 12px; }
-.privacy-settings-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.privacy-settings-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; }
 .privacy-settings-actions .btn { white-space: normal; text-align: center; }
 .privacy-settings-actions .btn:disabled { opacity: .5; cursor: not-allowed; }
+.analytics-status { margin: 0; }
+.analytics-help { margin: 16px 0 0; line-height: 1.65; }
+.footer-analytics { width: 100%; padding-top: 4px; }
+.footer-analytics-button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 10px 0;
+  min-height: 44px;
+  color: var(--color-green-brand);
+  font: inherit;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+.footer-analytics-button:hover { color: var(--color-text-primary); }
+.footer-analytics-button:focus-visible { outline: 2px solid var(--color-green-brand); outline-offset: 4px; border-radius: 2px; }
+.footer-analytics-button:disabled { opacity: .5; cursor: not-allowed; }

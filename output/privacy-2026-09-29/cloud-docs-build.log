@@ -1,0 +1,58 @@
+npm notice run pitermebel-site@1.0.0 build
+npm notice run next build
+   ▲ Next.js 15.5.23
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 4.5s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/52) ...
+   Generating static pages (13/52) 
+   Generating static pages (26/52) 
+   Generating static pages (39/52) 
+ ✓ Generating static pages (52/52)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                        Size  First Load JS
+┌ ○ /                                           22.1 kB         141 kB
+├ ○ /_not-found                                   148 B         103 kB
+├ ○ /analytics-consent                            164 B         106 kB
+├ ○ /apartment                                    705 B         115 kB
+├ ○ /calculator                                 8.29 kB         122 kB
+├ ○ /consent                                      164 B         106 kB
+├ ○ /contacts                                   1.38 kB         116 kB
+├ ○ /custom-furniture                           2.67 kB         129 kB
+├ ○ /design                                       169 B         114 kB
+├ ○ /feed.xml                                     148 B         103 kB
+├ ○ /kitchens                                   6.74 kB         126 kB
+├ ● /kitchens/[slug]                            2.35 kB         122 kB
+├   ├ /kitchens/mdf-plastik-gola
+├   ├ /kitchens/mdf-plastik-slotex
+├   ├ /kitchens/mdf-plastik-hettich
+├   └ [+7 more paths]
+├ ○ /knowledge                                    189 B         120 kB
+├ ● /knowledge/[slug]                           1.59 kB         121 kB
+├   └ /knowledge/rozetki-na-kuhne-shema-vysoty
+├ ○ /privacy                                    2.28 kB         108 kB
+├ ○ /production                                   190 B         120 kB
+├ ○ /projects                                   5.03 kB         131 kB
+├ ● /projects/[slug]                            2.35 kB         122 kB
+├   ├ /projects/island-parquet
+├   ├ /projects/oak-stone
+├   ├ /projects/white-showcase
+├   └ [+18 more paths]
+├ ○ /robots.txt                                   148 B         103 kB
+├ ○ /sitemap.xml                                  148 B         103 kB
+└ ○ /wardrobes                                  2.59 kB         129 kB
++ First Load JS shared by all                    103 kB
+  ├ chunks/255-d999a7d6833d3983.js              46.5 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js         54.2 kB
+  └ other shared chunks (total)                 2.04 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
