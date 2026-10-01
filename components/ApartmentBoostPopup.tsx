@@ -3,7 +3,6 @@
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { reachGoal } from "@/lib/seo";
 
 const POPUP_DELAY_MS = 10_000;
 const STORAGE_DISMISSED_KEY = "pm_boost_dismissed_v1";
@@ -37,11 +36,10 @@ export default function ApartmentBoostPopup() {
   const [isClosing, setIsClosing] = useState(false);
 
   const isOnBoostPage =
-    ["/apartment", "/boost", "/privacy", "/consent", "/analytics-consent"].some(path => pathname?.startsWith(path));
+    ["/apartment", "/boost", "/privacy", "/consent"].some(path => pathname?.startsWith(path));
 
-  const dismissPopup = useCallback((goalName?: string) => {
+  const dismissPopup = useCallback(() => {
     memoryDismissed = true;
-    if (goalName) reachGoal(goalName);
     setIsClosing(true);
     window.setTimeout(() => {
       setIsVisible(false);
@@ -81,7 +79,6 @@ export default function ApartmentBoostPopup() {
       if (memoryDismissed) return;
       setIsClosing(false);
       setIsVisible(true);
-      reachGoal("boost_popup_show");
     }, remaining);
 
     return () => {
@@ -93,7 +90,7 @@ export default function ApartmentBoostPopup() {
     if (!isVisible || isOnBoostPage) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        dismissPopup("boost_popup_close");
+        dismissPopup();
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -110,7 +107,7 @@ export default function ApartmentBoostPopup() {
       <button
         type="button"
         className="boost-popup-close"
-        onClick={() => dismissPopup("boost_popup_close")}
+        onClick={() => dismissPopup()}
         aria-label="Закрыть подсказку"
         title="Закрыть"
       >
@@ -126,7 +123,6 @@ export default function ApartmentBoostPopup() {
           <Link
             href="/apartment/"
             className="btn btn-glass boost-popup-cta"
-            onClick={() => reachGoal("boost_popup_click")}
           >
             Подробнее →
           </Link>

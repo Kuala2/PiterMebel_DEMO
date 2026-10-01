@@ -1,10 +1,9 @@
 import { SITE_CONFIG } from "@/data/site";
-export { METRIKA_ID, reachGoal } from "@/lib/metrika";
 
 export const SITE_URL = "https://pitermebel.com";
 
-/** Дефолтная обложка для соцсетей и мессенджеров (1200×630) */
-export const OG_IMAGE = "/img/brand/og-cover.jpg";
+/** Дефолтная обложка для соцсетей и мессенджеров (фирменное лого птички) */
+export const OG_IMAGE = "/img/brand/og-bird.png";
 
 export const HOME_TITLE = `${SITE_CONFIG.name} — кухни и мебель на заказ в Санкт-Петербурге`;
 
@@ -36,7 +35,7 @@ export function buildOg(title: string, description: string, path?: string) {
     locale: "ru_RU",
     type: "website" as const,
     url: cleanPath ? `${SITE_URL}${cleanPath}` : `${SITE_URL}/`,
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: title }],
+    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: title, type: "image/png" }],
   };
 }
 

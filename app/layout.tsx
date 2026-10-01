@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Suspense } from "react";
 import { Cormorant_Garamond, Onest } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -8,7 +7,6 @@ import StickyCTA from "@/components/StickyCTA";
 import ApartmentBoostPopup from "@/components/ApartmentBoostPopup";
 import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
-import YandexMetrika from "@/components/YandexMetrika";
 import { SITE_CONFIG } from "@/data/site";
 import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
 
@@ -101,7 +99,13 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     locale: "ru_RU",
     type: "website",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_CONFIG.name }],
+    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_CONFIG.name, type: "image/png" }],
+  },
+  twitter: {
+    card: "summary",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_CONFIG.name }],
   },
   alternates: {
     types: {
@@ -139,9 +143,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Suspense fallback={null}>
-          <YandexMetrika />
-        </Suspense>
         <AmbientFlowCanvas className="global-silk" />
         <a className="skip-link" href="#main-content">Перейти к содержимому</a>
         <Header />

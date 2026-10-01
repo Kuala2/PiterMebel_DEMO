@@ -17,31 +17,6 @@ function load(file, globals) {
   return context.exports;
 }
 
-test("Metrica queues init once before early goals and pageviews", () => {
-  const window = { location: { origin: "https://pitermebel.com", pathname: "/" } };
-  const api = load("lib/metrika.ts", { window });
-  api.reachGoal("contact_phone");
-  api.getMetrika()(api.METRIKA_ID, "hit", "https://pitermebel.com/contacts/");
-  api.reachGoal("zayavka");
-  const calls = JSON.parse(JSON.stringify(window.ym.a));
-  assert.deepEqual(calls.map((call) => call[1]), ["init", "reachGoal", "hit", "reachGoal"]);
-  assert.equal(calls[0][2].defer, true);
-  assert.equal(calls[0][2].webvisor, false);
-  assert.equal(calls[0][2].trackLinks, true);
-  assert.equal(calls[0][0], 112318484);
-});
-
-test("Metrica preserves an existing tag and is safe during static rendering", () => {
-  let count = 0;
-  const ym = () => { count++; };
-  const api = load("lib/metrika.ts", { window: { ym, location: { origin: "https://pitermebel.com", pathname: "/" } } });
-  assert.equal(api.getMetrika(), ym);
-  api.getMetrika();
-  assert.equal(count, 1);
-  const serverApi = load("lib/metrika.ts", {});
-  assert.equal(serverApi.getMetrika(), undefined);
-  assert.doesNotThrow(() => serverApi.reachGoal("zayavka"));
-});
 
 function form(bot = false) {
   const data = new FormData();

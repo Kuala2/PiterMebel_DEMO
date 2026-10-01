@@ -3,7 +3,6 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { submitMeasureRequest, MeasureFormState } from "@/app/actions/measure";
-import { reachGoal } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
 import { canReceiveLeads, LEGAL_VERSION } from "@/data/legal";
 
@@ -73,7 +72,6 @@ export default function MeasureForm({
     formData.set("submission_id", submissionIdRef.current);
     formData.set("page_url", `${window.location.origin}${window.location.pathname}`);
     const result = await submitMeasureRequest(initialState, formData);
-    if (result.success && result.deliveryAccepted) reachGoal("zayavka");
     setState(result);
     setIsPending(false);
   };
@@ -98,7 +96,7 @@ export default function MeasureForm({
 
   return (
     <div id="measure-form" style={{ width: "100%" }}>
-      <form onSubmit={handleSubmit} className="measure-form ym-disable-keys" noValidate>
+      <form onSubmit={handleSubmit} className="measure-form" noValidate>
         <input type="hidden" name="consent_version" value={LEGAL_VERSION} />
         <input type="hidden" name="source" value={source || initialCategory || "Общая форма"} />
         <input type="hidden" name="calculator_summary" value={calculatorSummary || ""} />

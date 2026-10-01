@@ -20,7 +20,7 @@ export const PRIVACY_DATE = "29 сентября 2026 года";
 // Заполнять после проверки реальных договоров, баз и сроков: LEGAL_SETUP.md.
 export const PROCESSING_SETUP = {
   approved: false,
-  analyticsApproved: true,
+  analyticsApproved: false,
   // Selected for future connection; approved stays false until deployment is verified.
   processors: [
     {
@@ -36,15 +36,10 @@ export const PROCESSING_SETUP = {
       databaseLocation: "Российская Федерация",
     },
   ] as { name: string; address: string; purpose: string; databaseLocation: string }[],
-  analyticsProcessor: {
-    name: "ООО «ЯНДЕКС» (сервис веб-аналитики Яндекс.Метрика)",
-    address: "119021, Россия, г. Москва, ул. Льва Толстого, д. 16",
-    purpose: "Веб-аналитика посещаемости и работы сайта (технические данные визита)",
-    databaseLocation: "Российская Федерация",
-  },
+  analyticsProcessor: null as { name: string; address: string; purpose: string; databaseLocation: string } | null,
   leadRetentionDays: 90,
   technicalLogRetentionDays: 30,
 };
 
 export const canReceiveLeads = hasConfirmedLegalDetails && PROCESSING_SETUP.approved && PROCESSING_SETUP.processors.length > 0;
-export const canUseAnalytics = hasConfirmedLegalDetails && PROCESSING_SETUP.analyticsApproved;
+export const canUseAnalytics = false;

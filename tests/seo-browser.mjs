@@ -65,18 +65,8 @@ try {
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));
   await page.goto(base + "/?ysclid=test123", { waitUntil: "networkidle" });
-  assert.equal(await page.evaluate(() => typeof window.ym), "function");
-  const initialQueue = await page.evaluate(() => window.ym.a);
-  assert.equal(initialQueue[0][1], "init");
-  assert.equal(initialQueue[0][2].webvisor, false);
-  assert.equal(initialQueue[0][2].clickmap, false);
-  assert.equal(initialQueue[0][2].accurateTrackBounce, true);
-  assert.equal(initialQueue[0][2].trackLinks, true);
-  assert.equal(initialQueue[0][2].url, base + "/?ysclid=test123");
-  assert.equal(initialQueue[1][1], "hit");
-  assert.equal(initialQueue[1][2], base + "/?ysclid=test123");
-  assert.ok(external.some(url => url.includes("mc.yandex.ru/metrika/tag.js?id=112318484")));
-  assert.ok(external.every(url => url.includes("mc.yandex.ru")), "Only Yandex Metrika may load on initial visit");
+  assert.equal(await page.evaluate(() => typeof window.ym), "undefined", "window.ym must be undefined");
+  assert.equal(external.some(url => url.includes("mc.yandex")), false, "No requests to mc.yandex.ru are permitted");
   await page.locator('footer a[href="/kitchens/"]').click();
   await page.waitForURL(base + "/kitchens/");
   const firstImage = page.locator(".kitchen-ladder-first .card-img-slide");
@@ -87,35 +77,7 @@ try {
   await mapButton.scrollIntoViewIfNeeded();
   await page.waitForTimeout(400);
   assert.equal(external.some(url => url.includes("api-maps.yandex.ru")), false, "Scrolling to the map must not load Yandex Maps");
-  const contactGoals = await page.evaluate(() => {
-    const prevent = (e) => e.preventDefault();
-    document.addEventListener("click", prevent, true);
-    const selectors = [
-      '.contacts-channels-grid a[href^="tel:"]',
-      '.contacts-channels-grid a[href*="wa.me"]',
-      '.contacts-channels-grid a[href*="t.me"]',
-      '.contacts-channels-grid a[href*="max.ru"]',
-      '.contacts-channels-grid a[href*="vk.ru/im"]',
-      '.contacts-channels-grid a[href^="mailto:"]',
-      'footer a[href="https://vk.ru/pitermebelcom"]',
-    ];
-    for (const sel of selectors) {
-      const el = document.querySelector(sel);
-      if (!el) throw new Error("Missing contact link: " + sel);
-      el.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
-    }
-    document.removeEventListener("click", prevent, true);
-    return (window.ym?.a || []).filter(args => args[1] === "reachGoal").map(args => args[2]);
-  });
-  assert.deepEqual(contactGoals, [
-    "contact_phone",
-    "contact_whatsapp",
-    "contact_telegram",
-    "contact_max",
-    "contact_vk",
-    "contact_email",
-    "contact_vk",
-  ]);
+
   const form = page.locator("#measure-form form");
   assert.equal(await form.locator('[name="consent"]').isChecked(), false);
   assert.equal(await form.locator('a[href="/consent/"]').count(), 1);
@@ -126,13 +88,12 @@ try {
   await form.locator('[name="consent"]').check();
   await form.locator('button[type="submit"]').click();
   await form.locator(".form-error-summary").filter({ hasText: "Онлайн-форма ещё не подключена" }).waitFor();
-  assert.equal(external.some(url => !url.includes("mc.yandex.ru")), false);
-  assert.equal(await page.evaluate(() => (window.ym?.a || []).some(args => args[1] === "reachGoal" && args[2] === "zayavka")), false);
+  assert.equal(external.some(url => url.includes("mc.yandex")), false);
   await mapButton.click();
   await page.waitForTimeout(250);
   assert.ok(external.some(url => url.includes("api-maps.yandex.ru")));
 
-  for (const path of ["/privacy/", "/consent/", "/analytics-consent/"]) {
+  for (const path of ["/privacy/", "/consent/"]) {
     const response = await page.goto(base + path, { waitUntil: "networkidle" });
     assert.equal(response.status(), 200);
     assert.equal(await page.locator("h1").count(), 1);
@@ -145,21 +106,7 @@ try {
     await page.screenshot({ path: destination + "/" + path.replaceAll("/", "") + "-mobile.png", fullPage: true });
     assert.equal(await page.locator(".sticky-cta, .boost-popup").count(), 0, "Legal documents must remain unobstructed");
   }
-  await page.goto(base + "/privacy/#cookies", { waitUntil: "networkidle" });
-  const settings = page.locator('[data-analytics-settings="page"]');
-  await settings.getByRole("button", { name: "Отключить Яндекс.Метрику для меня" }).click();
-  const choice = await page.evaluate(() => JSON.parse(localStorage.getItem("pm_privacy_v1")));
-  assert.equal(choice.analytics, false);
-  assert.equal(await page.evaluate(() => window.piterMetrikaInitialized), false);
-  assert.equal(await page.evaluate(() => (window.ym?.a || []).length), 0);
-  assert.equal(await page.locator('footer').getByRole("button", { name: "Включить Яндекс.Метрику для меня" }).count(), 1);
-  await settings.getByRole("button", { name: "Включить Яндекс.Метрику для меня" }).click();
-  const reenabled = await page.evaluate(() => JSON.parse(localStorage.getItem("pm_privacy_v1")));
-  assert.equal(reenabled.analytics, true);
-  assert.equal(await page.evaluate(() => window.piterMetrikaInitialized), true);
-  assert.deepEqual(await page.evaluate(() => (window.ym?.a || []).map(args => args[1])), ["init", "hit"]);
-  assert.equal(await settings.getByRole("button", { name: "Отключить Яндекс.Метрику для меня" }).isEnabled(), true);
-  await page.screenshot({ path: destination + "/privacy-settings-mobile.png" });
+
   assert.equal(errors.length, 0, errors.join("\n"));
   assert.equal((await page.goto(base + "/seo-test-missing/")).status(), 404);
   await context.close();
@@ -170,7 +117,7 @@ try {
   await noJsPage.goto(base + "/privacy/");
   assert.equal(trackers.length, 0, "No noscript tracking pixel in static HTML");
   await noJs.close();
-  console.log("Browser checks passed: default Metrika init+hit; all contact goals; manual opt-out; no unconfigured leads; separate consent; explicit map activation; legal pages at 320/390/1440; no-JS; HTTP 404.");
+  console.log("Browser checks passed: Metrika completely absent; no mc.yandex requests; legal pages at 320/390/1440; no-JS; HTTP 404.");
 } finally {
   await browser.close();
   await closeServer();
