@@ -61,3 +61,4 @@ lh_*.json
 SEO_*.md
 output/imagegen/
 output/pdf/
+/tmp/

@@ -1,4 +1,0 @@
-Options -Indexes
-<FilesMatch "^(?!submit\.php$).+">
-    Require all denied
-</FilesMatch>

@@ -14,8 +14,9 @@ export const hasConfirmedLegalDetails = Boolean(
 export const LEGAL_VERSION = "2026-09-29";
 export const LEGAL_DATE = "29 сентября 2026 года";
 // Privacy and lead consent revisions are maintained independently.
-export const PRIVACY_VERSION = "2026-09-29";
-export const PRIVACY_DATE = "29 сентября 2026 года";
+// 2026-10-04: policy updated for the light lead scheme (no cloud storage, mail-only retention).
+export const PRIVACY_VERSION = "2026-10-04";
+export const PRIVACY_DATE = "4 октября 2026 года";
 
 // Заполнять после проверки реальных договоров, баз и сроков: LEGAL_SETUP.md.
 export const PROCESSING_SETUP = {
@@ -26,7 +27,7 @@ export const PROCESSING_SETUP = {
     {
       name: "ООО «Яндекс.Облако» (Yandex Cloud)",
       address: "119021, Россия, г. Москва, ул. Льва Толстого, д. 16, пом. 528",
-      purpose: "Облачный приём и хранение заявок и сведений о согласии, обработка запросов и отправка уведомлений оператору",
+      purpose: "Приём и серверная проверка заявок и сведений о согласии, отправка почтовых уведомлений оператору; заявки в облаке не хранятся",
       databaseLocation: "Российская Федерация",
     },
     {
