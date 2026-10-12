@@ -28,7 +28,7 @@
 После подключения и проверки сверить уже заполненный `PROCESSING_SETUP.processors` с реальными сервисами, включить `PROCESSING_SETUP.approved` в `data/legal.ts` и задать:
 
 ```env
-NEXT_PUBLIC_LEAD_ENDPOINT=/api/leads
+NEXT_PUBLIC_LEAD_ENDPOINT=https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d
 ```
 
 Пересобрать и развернуть сайт. Проверить тестовой заявкой: серверную запись, доказательство согласия, ответ, срок удаления и обработку отзыва. Цель zayavka отправляется только после успешного ответа сервера (если посетитель не отключил аналитику в настройках конфиденциальности).

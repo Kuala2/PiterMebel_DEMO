@@ -5,7 +5,15 @@ import vm from "node:vm";
 import ts from "typescript";
 
 const VERSION = "2026-09-27";
-function runtime({ approved = true, analyticsApproved = true, endpoint = "/api/leads", useRealLegal = false, fetch = () => assert.fail("Unexpected request") } = {}) {
+function runtime(options = {}) {
+  const {
+    approved = true,
+    analyticsApproved = true,
+    endpoint = "endpoint" in options ? options.endpoint : "/api/leads",
+    useRealLegal = false,
+    fetch = () => assert.fail("Unexpected request"),
+  } = options;
+
   const values = new Map();
   const localStorage = { getItem: key => values.get(key) || null, setItem: (key, value) => values.set(key, value) };
   const window = { localStorage, dispatchEvent() {}, location: { origin: "https://pitermebel.com", pathname: "/contacts/" }, setTimeout, clearTimeout };
@@ -133,4 +141,34 @@ test("Live data/legal configuration enables lead reception and passes real integ
   assert.equal(sentBody.get("consent"), "true");
   assert.equal(sentBody.get("consent_document"), "/consent/");
 });
+
+test("Default Yandex Cloud lead endpoint works out of the box without environment variables", async () => {
+  let requestedUrl = null;
+  let sentBody = null;
+  const runner = runtime({
+    useRealLegal: true,
+    endpoint: undefined,
+    fetch: async (url, options) => {
+      requestedUrl = url;
+      sentBody = options.body;
+      return { ok: true, json: async () => ({ success: true }) };
+    },
+  });
+  const submitWithDefault = runner.load("app/actions/measure.ts").submitMeasureRequest;
+  const testForm = new FormData();
+  testForm.set("contact", "+79217840589");
+  testForm.set("category", "Кухня");
+  testForm.set("consent", "on");
+  testForm.set("consent_version", "2026-09-29");
+  testForm.set("submission_id", "7e2b9c1a-3d4f-4e5a-9b8c-1d2e3f4a5b6c");
+  testForm.set("page_url", "https://pitermebel.com/contacts/");
+
+  const result = await submitWithDefault({}, testForm);
+  assert.equal(result.success, true);
+  assert.equal(result.deliveryAccepted, true);
+  assert.equal(requestedUrl, "https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d");
+  assert.equal(sentBody.get("consent_version"), "2026-09-29");
+  assert.equal(sentBody.get("Тип мебели"), "Кухня");
+});
+
 

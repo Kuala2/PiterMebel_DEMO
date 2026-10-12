@@ -42,5 +42,8 @@ export const PROCESSING_SETUP = {
   technicalLogRetentionDays: 30,
 };
 
+export const DEFAULT_LEAD_ENDPOINT = "https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d";
+
 export const canReceiveLeads = hasConfirmedLegalDetails && PROCESSING_SETUP.approved && PROCESSING_SETUP.processors.length > 0;
 export const canUseAnalytics = false;
+

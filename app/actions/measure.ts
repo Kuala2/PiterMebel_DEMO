@@ -1,5 +1,9 @@
-import { canReceiveLeads, LEGAL_VERSION } from "@/data/legal";
+import { canReceiveLeads, LEGAL_VERSION, DEFAULT_LEAD_ENDPOINT as LEGAL_DEFAULT_LEAD_ENDPOINT } from "@/data/legal";
 import { pageAddress } from "@/lib/privacy";
+
+export const DEFAULT_LEAD_ENDPOINT =
+  LEGAL_DEFAULT_LEAD_ENDPOINT || "https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d";
+
 
 export interface MeasureFormState {
   success: boolean;
@@ -52,7 +56,8 @@ export async function submitMeasureRequest(
 
   // Only our same-origin backend or our dedicated Russian-hosted lead endpoint.
   // The subdomain is activated only after deployment and PROCESSING_SETUP review.
-  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT?.trim();
+  const rawEndpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT;
+  const endpoint = (rawEndpoint !== undefined ? rawEndpoint : DEFAULT_LEAD_ENDPOINT).trim();
   const allowedEndpoint = endpoint && (
     /^\/api\/[a-zA-Z0-9/_-]+$/.test(endpoint) ||
     endpoint === "https://leads.pitermebel.com/submit.php" ||
