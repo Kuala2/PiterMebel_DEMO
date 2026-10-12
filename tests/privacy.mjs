@@ -29,7 +29,13 @@ function runtime(options = {}) {
       require(id) {
         if (id === "@/data/legal") {
           if (useRealLegal) return load("data/legal.ts");
-          return { canReceiveLeads: approved, canUseAnalytics: analyticsApproved, LEGAL_VERSION: VERSION, PRIVACY_VERSION: "2026-09-29" };
+          return {
+            canReceiveLeads: approved,
+            canUseAnalytics: analyticsApproved,
+            LEGAL_VERSION: VERSION,
+            PRIVACY_VERSION: "2026-09-29",
+            DEFAULT_LEAD_ENDPOINT: "https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d",
+          };
         }
         if (id.startsWith("@/")) return load(id.slice(2) + ".ts");
         throw new Error(id);
