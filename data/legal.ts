@@ -20,9 +20,9 @@ export const PRIVACY_DATE = "4 октября 2026 года";
 
 // Заполнять после проверки реальных договоров, баз и сроков: LEGAL_SETUP.md.
 export const PROCESSING_SETUP = {
-  approved: false,
+  approved: true,
   analyticsApproved: false,
-  // Selected for future connection; approved stays false until deployment is verified.
+  // Включено: обработчик развёрнут, уведомление в Роскомнадзор отправлено.
   processors: [
     {
       name: "ООО «Яндекс.Облако» (Yandex Cloud)",

@@ -5,7 +5,7 @@ import vm from "node:vm";
 import ts from "typescript";
 
 const VERSION = "2026-09-27";
-function runtime({ approved = true, analyticsApproved = true, endpoint = "/api/leads", fetch = () => assert.fail("Unexpected request") } = {}) {
+function runtime({ approved = true, analyticsApproved = true, endpoint = "/api/leads", useRealLegal = false, fetch = () => assert.fail("Unexpected request") } = {}) {
   const values = new Map();
   const localStorage = { getItem: key => values.get(key) || null, setItem: (key, value) => values.set(key, value) };
   const window = { localStorage, dispatchEvent() {}, location: { origin: "https://pitermebel.com", pathname: "/contacts/" }, setTimeout, clearTimeout };
@@ -19,7 +19,10 @@ function runtime({ approved = true, analyticsApproved = true, endpoint = "/api/l
     vm.runInNewContext(js, { exports, window, document, URL, Date, Event, FormData, AbortController, fetch,
       process: { env: { NEXT_PUBLIC_LEAD_ENDPOINT: endpoint } },
       require(id) {
-        if (id === "@/data/legal") return { canReceiveLeads: approved, canUseAnalytics: analyticsApproved, LEGAL_VERSION: VERSION, PRIVACY_VERSION: "2026-09-29" };
+        if (id === "@/data/legal") {
+          if (useRealLegal) return load("data/legal.ts");
+          return { canReceiveLeads: approved, canUseAnalytics: analyticsApproved, LEGAL_VERSION: VERSION, PRIVACY_VERSION: "2026-09-29" };
+        }
         if (id.startsWith("@/")) return load(id.slice(2) + ".ts");
         throw new Error(id);
       },
@@ -94,3 +97,40 @@ test("Truthy strings from a malformed backend are not accepted as success", asyn
   const { load } = runtime({ fetch: async () => ({ ok: true, json: async () => ({ success: "false" }) }) });
   assert.equal((await load("app/actions/measure.ts").submitMeasureRequest({}, form())).success, false);
 });
+
+test("Live data/legal configuration enables lead reception and passes real integration checks", async () => {
+  const realLegal = runtime().load("data/legal.ts");
+  assert.equal(realLegal.PROCESSING_SETUP.approved, true, "approved flag must be true");
+  assert.equal(realLegal.canReceiveLeads, true, "canReceiveLeads must be true");
+  assert.equal(realLegal.hasConfirmedLegalDetails, true, "legal operator details must be present");
+  assert.equal(realLegal.LEGAL_VERSION, "2026-09-29", "consent revision must match 2026-09-29");
+  assert.equal(realLegal.PRIVACY_VERSION, "2026-10-04", "privacy policy revision must match 2026-10-04");
+  assert.ok(realLegal.PROCESSING_SETUP.processors.length >= 2, "must include cloud and email processors");
+
+  let sentBody = null;
+  const runner = runtime({
+    useRealLegal: true,
+    endpoint: "https://functions.yandexcloud.net/d4eca99gj9rscbeuju4d",
+    fetch: async (_url, options) => {
+      sentBody = options.body;
+      return { ok: true, json: async () => ({ success: true }) };
+    },
+  });
+  const submitWithRealLegal = runner.load("app/actions/measure.ts").submitMeasureRequest;
+  const testForm = new FormData();
+  testForm.set("contact", "+79217840589");
+  testForm.set("category", "Кухня");
+  testForm.set("consent", "on");
+  testForm.set("consent_version", realLegal.LEGAL_VERSION);
+  testForm.set("submission_id", "7e2b9c1a-3d4f-4e5a-9b8c-1d2e3f4a5b6c");
+  testForm.set("page_url", "https://pitermebel.com/contacts/");
+
+  const result = await submitWithRealLegal({}, testForm);
+  assert.equal(result.success, true);
+  assert.equal(result.deliveryAccepted, true);
+  assert.equal(sentBody.get("consent_version"), "2026-09-29");
+  assert.equal(sentBody.get("Тип мебели"), "Кухня");
+  assert.equal(sentBody.get("consent"), "true");
+  assert.equal(sentBody.get("consent_document"), "/consent/");
+});
+
