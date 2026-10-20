@@ -39,6 +39,32 @@ function normalizeCategory(value?: string) {
   return "Консультация";
 }
 
+function formatPhone(input: string): string {
+  const digitsOnly = input.replace(/\D/g, "");
+  if (!digitsOnly) return "";
+
+  let body = digitsOnly;
+  if (body.startsWith("7") || body.startsWith("8")) {
+    body = body.slice(1);
+  }
+  body = body.slice(0, 10);
+
+  let formatted = "+7";
+  if (body.length > 0) {
+    formatted += " " + body.slice(0, 3);
+  }
+  if (body.length > 3) {
+    formatted += " " + body.slice(3, 6);
+  }
+  if (body.length > 6) {
+    formatted += "-" + body.slice(6, 8);
+  }
+  if (body.length > 8) {
+    formatted += "-" + body.slice(8, 10);
+  }
+  return formatted;
+}
+
 export default function MeasureForm({
   initialCategory,
   source,
@@ -49,9 +75,42 @@ export default function MeasureForm({
   const [state, setState] = useState<MeasureFormState>(initialState);
   const [isPending, setIsPending] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [phone, setPhone] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(() => normalizeCategory(initialCategory));
   const errorSummaryRef = useRef<HTMLDivElement>(null);
   const submissionIdRef = useRef<string | null>(null);
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    if (!val || val === "+") {
+      setPhone("");
+      return;
+    }
+    setPhone(formatPhone(val));
+  };
+
+  const handlePhoneKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace") {
+      const digits = phone.replace(/\D/g, "");
+      if (digits.length <= 1) {
+        e.preventDefault();
+        setPhone("");
+      }
+    }
+  };
+
+  const handlePhoneFocus = () => {
+    if (!phone) {
+      setPhone("+7 ");
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length <= 1) {
+      setPhone("");
+    }
+  };
 
   useEffect(() => {
     if (state.errors) errorSummaryRef.current?.focus();
@@ -153,11 +212,16 @@ export default function MeasureForm({
                 id={contactId}
                 name="contact"
                 type="tel"
+                value={phone}
+                onChange={handlePhoneChange}
+                onKeyDown={handlePhoneKeyDown}
+                onFocus={handlePhoneFocus}
+                onBlur={handlePhoneBlur}
                 required
                 minLength={10}
                 autoComplete="tel"
                 inputMode="tel"
-                placeholder="+7 921 000-00-00"
+                placeholder="+7 ___ ___-__-__"
                 className="form-input"
                 disabled={isPending}
                 aria-invalid={Boolean(state.errors?.contact)}

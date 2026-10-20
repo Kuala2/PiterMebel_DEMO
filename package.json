@@ -13,7 +13,6 @@
     "test:seo-browser": "node tests/seo-browser.mjs"
   },
   "dependencies": {
-    "lenis": "^1.3.26",
     "next": "^15.1.0",
     "ogl": "^1.0.11",
     "react": "^19.0.0",

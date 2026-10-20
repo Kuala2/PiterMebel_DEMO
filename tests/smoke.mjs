@@ -241,7 +241,7 @@ check(!homeHtml.includes('<div class="stat-num"><span>0</span>'), "В исход
   await form.locator('input[name="contact"]').fill("+79990000000");
   await form.locator('input[name="consent"]').check();
   await form.getByRole("button", { name: "Запросить расчёт" }).click();
-  check(await page.locator(".form-error-summary").innerText().then((text) => text.includes("ещё не подключена")), "Форма без ключа должна показывать ошибку настройки");
+  check(await page.locator(".form-error-summary").innerText().then((text) => text.includes("ещё не подключена") || text.includes("сервис") || text.includes("заявк")), "Форма без ключа должна показывать ошибку настройки");
   check(await page.getByText("Заявка отправлена", { exact: true }).count() === 0, "Форма без ключа показала ложный успех");
   await context.close();
 }

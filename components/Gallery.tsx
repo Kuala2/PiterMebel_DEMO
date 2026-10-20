@@ -17,6 +17,7 @@ export default function Gallery({
   const [activeIdx, setActiveIdx] = useState(0);
   const [lightbox, setLightbox] = useState(false);
   const [ratios, setRatios] = useState<Record<string, number>>({});
+  const [isPaused, setIsPaused] = useState(false);
 
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -32,6 +33,21 @@ export default function Gallery({
     (dir: number) => setActiveIdx((i) => (i + dir + count) % count),
     [count]
   );
+
+  // Автолистание каждые 5 секунд с паузой при наведении курсора, таче, фокусе или открытом лайтбоксе.
+  // При ручном переключении слайда таймер перезапускается.
+  useEffect(() => {
+    if (count <= 1 || isPaused || lightbox) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % count);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [count, isPaused, lightbox, activeIdx]);
 
   // Лайтбокс: клавиатура, удержание фокуса и восстановление фокуса после закрытия.
   useEffect(() => {
@@ -90,7 +106,19 @@ export default function Gallery({
   };
 
   return (
-    <div className="detail-gallery-main">
+    <div
+      className="detail-gallery-main"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setIsPaused(false);
+        }
+      }}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
+    >
       {/* Главное окно галереи с адаптивным aspect-ratio под активное фото */}
       <div
         ref={galleryTriggerRef}

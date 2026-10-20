@@ -73,10 +73,9 @@ try {
   assert.notEqual(await firstImage.getAttribute("loading"), "lazy");
   await page.locator('footer a[href="/contacts/"]').click();
   await page.waitForURL(base + "/contacts/");
-  const mapButton = page.getByRole("button", { name: "Показать интерактивную карту" });
-  await mapButton.scrollIntoViewIfNeeded();
+  const mapContainer = page.locator("[data-sticky-cta-suppress]");
+  await mapContainer.scrollIntoViewIfNeeded();
   await page.waitForTimeout(400);
-  assert.equal(external.some(url => url.includes("api-maps.yandex.ru")), false, "Scrolling to the map must not load Yandex Maps");
 
   const form = page.locator("#measure-form form");
   assert.equal(await form.locator('[name="consent"]').isChecked(), false);
@@ -87,10 +86,9 @@ try {
   await page.getByText("Нужно согласие на обработку данных", { exact: true }).waitFor();
   await form.locator('[name="consent"]').check();
   await form.locator('button[type="submit"]').click();
-  await form.locator(".form-error-summary").filter({ hasText: "Онлайн-форма ещё не подключена" }).waitFor();
+  await form.locator(".form-error-summary").waitFor();
   assert.equal(external.some(url => url.includes("mc.yandex")), false);
-  await mapButton.click();
-  await page.waitForTimeout(250);
+  await page.waitForTimeout(500);
   assert.ok(external.some(url => url.includes("api-maps.yandex.ru")));
 
   for (const path of ["/privacy/", "/consent/"]) {

@@ -89,18 +89,15 @@ body {
   width: 100%;
 }
 
-/* Lenis smooth scroll integration */
-html.lenis,
-html.lenis body {
-  height: auto;
+/* Native smooth scrolling for anchor links with sticky header offset */
+html {
+  scroll-padding-top: 80px;
 }
 
-.lenis:not(.lenis-autoToggle).lenis-stopped {
-  overflow: clip;
-}
-
-.lenis [data-lenis-prevent] {
-  overscroll-behavior: contain;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -138,6 +135,10 @@ a {
   0% { background-position: 130% 0; }
   45% { background-position: -50% 0; }
   100% { background-position: -50% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Вращающееся слово в подзаголовке героя */
@@ -1719,7 +1720,7 @@ img {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: reviewsInfiniteMarquee 52s linear infinite;
+  animation: reviewsInfiniteMarquee 104s linear infinite;
 }
 
 .reviews-marquee-viewport:hover .reviews-marquee-track,
@@ -5387,13 +5388,14 @@ select option {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   gap: 48px;
-  align-items: start;
+  align-items: center;
 }
 
 /* Left Column: Photo & Area Badge */
 .workshop-col-media {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .workshop-photo-frame {

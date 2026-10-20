@@ -37,12 +37,7 @@ export default function Header() {
     if (currentNorm === targetNorm) {
       e.preventDefault();
       if (typeof window !== "undefined") {
-        const lenis = (window as unknown as { __lenis?: { scrollTo: (t: number) => void } }).__lenis;
-        if (lenis) {
-          lenis.scrollTo(0);
-        } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
   };

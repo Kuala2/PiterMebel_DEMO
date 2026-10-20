@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import ApartmentBoostPopup from "@/components/ApartmentBoostPopup";
-import SmoothScroll from "@/components/SmoothScroll";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
 import { SITE_CONFIG } from "@/data/site";
 import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
@@ -150,7 +149,6 @@ export default function RootLayout({
         <Footer />
         <ApartmentBoostPopup />
         <StickyCTA />
-        <SmoothScroll />
       </body>
     </html>
   );

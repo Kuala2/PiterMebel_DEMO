@@ -1020,10 +1020,10 @@ export default function HomePage() {
           <div className="knowledge-home-head">
             <div>
               <h2 className="section-title" style={{ marginBottom: "8px" }}>
-                База знаний
+                Наши статьи
               </h2>
               <p className="knowledge-home-sub">
-                Практические материалы, которые помогают подготовиться к проекту и избежать переделок
+                Практические советы и руководства перед заказом
               </p>
             </div>
           </div>
