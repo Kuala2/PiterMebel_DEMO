@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { Fragment, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
@@ -11,12 +11,22 @@ import TurnkeyServiceSection from "@/components/TurnkeyServiceSection";
 import HowItWorks09 from "@/components/ui/how-it-works-09";
 import { SITE_CONFIG } from "@/data/site";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
+import { CLIENT_REVIEWS, YANDEX_REVIEWS_URL } from "@/data/reviews";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const reviewFocusRafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (reviewFocusRafRef.current !== null) {
+        cancelAnimationFrame(reviewFocusRafRef.current);
+      }
+    };
+  }, []);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -749,21 +759,68 @@ export default function HomePage() {
       <TurnkeyServiceSection />
 
       {/* 4. REVIEWS (Отзывы) */}
-      <section className="reviews-section" id="reviews">
+      <section className="reviews-section" id="reviews" aria-labelledby="reviews-heading">
         <div className="container">
           <div className="section-header row-between" style={{ marginBottom: "32px", display: "flex", flexWrap: "wrap", gap: "16px", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
-              <h2 className="section-title" style={{ marginBottom: "8px" }}>Отзывы наших клиентов</h2>
+              <h2 id="reviews-heading" className="section-title" style={{ marginBottom: "8px" }}>Отзывы наших клиентов</h2>
             </div>
-            <a href="https://yandex.ru/maps/org/pitermebel/245406542043/reviews/" target="_blank" rel="noopener noreferrer" className="btn btn-glass" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+            <a href={YANDEX_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-glass" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
               Читать все на Яндексе
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </a>
           </div>
 
-          <div className="reviews-marquee-viewport">
+          <div
+            className="reviews-marquee-viewport"
+            onFocus={(e) => {
+              const viewport = e.currentTarget;
+              const target = e.target;
+              if (reviewFocusRafRef.current !== null) {
+                cancelAnimationFrame(reviewFocusRafRef.current);
+                reviewFocusRafRef.current = null;
+              }
+              if (target instanceof HTMLElement && target.matches(":focus-visible")) {
+                reviewFocusRafRef.current = requestAnimationFrame(() => {
+                  reviewFocusRafRef.current = null;
+                  if (!viewport.contains(document.activeElement)) return;
+                  const vpRect = viewport.getBoundingClientRect();
+                  const cardRect = (target.closest(".review-card") ?? target).getBoundingClientRect();
+                  if (cardRect.left < vpRect.left) {
+                    viewport.scrollLeft += cardRect.left - vpRect.left - 16;
+                  } else if (cardRect.right > vpRect.right) {
+                    viewport.scrollLeft += cardRect.right - vpRect.right + 16;
+                  }
+                });
+              }
+            }}
+            onBlur={(e) => {
+              const viewport = e.currentTarget;
+              const nextTarget = e.relatedTarget as Node | null;
+              const resetIfLeft = () => {
+                if (reviewFocusRafRef.current !== null) {
+                  cancelAnimationFrame(reviewFocusRafRef.current);
+                  reviewFocusRafRef.current = null;
+                }
+                viewport.scrollLeft = 0;
+              };
+              if (nextTarget) {
+                if (!viewport.contains(nextTarget)) {
+                  resetIfLeft();
+                }
+              } else if (!viewport.contains(document.activeElement)) {
+                resetIfLeft();
+              } else {
+                queueMicrotask(() => {
+                  if (!viewport.contains(document.activeElement)) {
+                    resetIfLeft();
+                  }
+                });
+              }
+            }}
+          >
             <div className="reviews-marquee-track">
               {[false, true].map((isDuplicate) => (
                 <div
@@ -771,117 +828,75 @@ export default function HomePage() {
                   className="reviews-marquee-group"
                   aria-hidden={isDuplicate ? "true" : undefined}
                 >
-                  {/* Review 0 (New) */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Константин Александрович</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Широчайший выбор различных мебельных изделий на любой вкус и цвет, всё качественное и из экологически чистых материалов. Персонал добрый(не злой)). Ура товарищи!!!</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/pitermebel/245406542043/reviews/" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
+                  {CLIENT_REVIEWS.map((review) => {
+                    const stars = "★".repeat(review.rating);
+                    const textBody = review.lines.map((line, lineIdx) => (
+                      <Fragment key={lineIdx}>
+                        {lineIdx > 0 && <br />}
+                        {line}
+                      </Fragment>
+                    ));
 
-                  {/* Review 1 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">марина краснова</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Выражаю огромную благодарность Елене за профессионализм и приятное общение, команда исполнила заказ во всю квартиру четко в срок, на каждом этапе поддержка и помощь! Ольга, спасибо за помощь в понимании технологии, Сергею - за сборку! Наилучшие рекомендации и удачи вашему производству ❤️</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=xx9a5e7bmfm58p93tr09f7uft0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
+                    if (isDuplicate) {
+                      return (
+                        <div key={`${review.id}-dup`} className="review-card">
+                          <div className="review-header">
+                            <div className="review-meta">
+                              <div className="review-name">{review.author}</div>
+                              <div className="review-stars">{stars}</div>
+                            </div>
+                          </div>
+                          <p className="review-text">{textBody}</p>
+                          <div className="review-footer">
+                            <a
+                              href={review.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              tabIndex={-1}
+                              className="yandex-link"
+                            >
+                              Читать на Яндекс.Картах →
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    }
 
-                  {/* Review 2 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Иван Супронов</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Большое спасибо за классную кухню. Хорошее отношение с первых минут. Отличный дизайн и исполнение в сроки. Отдельное благодарю установщика Сергея за скурпулезный подход к монтажу. Всех благ и процветания команде профессионалов ПитерМебель. Всем рекомендую.</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=49qzx35vjrc7fc81b6nq5rkbr4" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
-
-                  {/* Review 3 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Ольга Шевченко</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Семья Волковых - это команда мастеров своего дела. Лена и Дима настроили свое производство таким образом, что к ним хочется возвращаться. К клиенту относятся как к себе и делают мебель на совесть. Рекомендую.</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=8znemxc4vaz37k7ct4cmcjea8g" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
-
-                  {/* Review 4 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Ирина Артемьева</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Огромное спасибо вам, прихожая идеальная. Сделано очень быстро и качественно. Цвет шикарный. Буду рекомендовать вас.</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=0vv1p9m0kbeuk458y5hezfqp80" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
-
-                  {/* Review 5 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Янка Буртанька</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Заказывали шкаф купе<br />Очень довольна работой этой компании.<br />Качественно, быстро и цена не космическая<br />Учли все мои пожелания)))</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=6zwu69103x2akmtfbthxrzdqp0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
-
-                  {/* Review 6 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">Воркута АК111</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Хорошая организация, все сделали супер. Сборщик Сергей человек с руками! Спасибо большое!!!</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=ppck04ywejarcng3e6qyuwf4cm" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
-
-                  {/* Review 7 */}
-                  <div className="review-card">
-                    <div className="review-header">
-                      <div className="review-meta">
-                        <div className="review-name">алексей ефимов</div>
-                        <div className="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
-                      </div>
-                    </div>
-                    <p className="review-text">Все очень понравилось. Сделали быстро и качественно.</p>
-                    <div className="review-footer">
-                      <a href="https://yandex.ru/maps/org/245406542043/reviews?reviews%5BpublicId%5D=fm93xvxhk3qhw79pz91tmv0wn0" target="_blank" rel="noopener noreferrer" tabIndex={isDuplicate ? -1 : undefined} className="yandex-link">Читать на Яндекс.Картах →</a>
-                    </div>
-                  </div>
+                    return (
+                      <article
+                        key={review.id}
+                        className="review-card"
+                        aria-label={`Отзыв клиента: ${review.author}`}
+                      >
+                        <div className="review-header">
+                          <div className="review-meta">
+                            <div className="review-name">{review.author}</div>
+                            <div
+                              className="review-stars"
+                              role="img"
+                              aria-label={`Оценка ${review.rating} из 5`}
+                            >
+                              <span aria-hidden="true">{stars}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <blockquote className="review-text" cite={review.sourceUrl}>
+                          {textBody}
+                        </blockquote>
+                        <div className="review-footer">
+                          <a
+                            href={review.sourceUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Читать на Яндекс.Картах — отзыв: ${review.author}`}
+                            className="yandex-link"
+                          >
+                            Читать на Яндекс.Картах →
+                          </a>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               ))}
             </div>

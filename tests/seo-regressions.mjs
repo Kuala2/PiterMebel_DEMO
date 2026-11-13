@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import vm from "node:vm";
 import ts from "typescript";
 
@@ -75,5 +75,61 @@ test("Network and malformed-response failures do not count as leads", async () =
     const result = await submitter(fetch)({}, form());
     assert.equal(result.success, false);
     assert.notEqual(result.deliveryAccepted, true);
+  }
+});
+
+test("Client reviews dataset stays factual, complete, and linked to Yandex Maps", () => {
+  const reviewsModule = load("data/reviews.ts", {});
+  const reviews = reviewsModule.CLIENT_REVIEWS;
+  assert.equal(reviewsModule.YANDEX_REVIEWS_URL, "https://yandex.ru/maps/org/pitermebel/245406542043/reviews/");
+  assert.equal(reviews.length, 8);
+  const ids = new Set();
+  for (const review of reviews) {
+    assert.ok(review.id && !ids.has(review.id));
+    ids.add(review.id);
+    assert.ok(review.author.trim().length > 0);
+    assert.equal(review.rating, 5);
+    assert.ok(Array.isArray(review.lines) && review.lines.length > 0);
+    assert.ok(review.lines.every((line) => line.trim().length > 0));
+    assert.match(review.sourceUrl, /^https:\/\/yandex\.ru\/maps\/org\/(pitermebel\/)?245406542043\/reviews/);
+  }
+});
+
+test("Homepage reviews use semantic HTML without self-serving or cherry-picked AggregateRating JSON-LD", () => {
+  const layoutSource = readFileSync("app/layout.tsx", "utf8");
+  const homeLayoutSource = readFileSync("app/(home)/layout.tsx", "utf8");
+  const homeSource = readFileSync("app/(home)/page.tsx", "utf8");
+  for (const source of [layoutSource, homeLayoutSource, homeSource]) {
+    assert.equal(/AggregateRating|aggregateRating|reviewRating|reviewBody|itemReviewed|"@type":\s*"Review"/.test(source), false);
+  }
+  assert.match(layoutSource, /sameAs:\s*\[SITE_CONFIG\.vkUrl,\s*SITE_CONFIG\.yandexMapsUrl\]/);
+  assert.match(homeSource, /id="reviews"\s+aria-labelledby="reviews-heading"/);
+  assert.match(homeSource, /<article[\s\S]*?className="review-card"/);
+  assert.match(homeSource, /<blockquote[^>]*className="review-text"[^>]*cite=\{review\.sourceUrl\}/);
+  assert.match(homeSource, /role="img"\s+aria-label=\{`Оценка \$\{review\.rating\} из 5`\}/);
+  assert.match(homeSource, /<span aria-hidden="true">\{stars\}<\/span>/);
+  assert.match(homeSource, /aria-hidden=\{isDuplicate \? "true" : undefined\}/);
+  assert.match(homeSource, /viewport\.scrollLeft\s*=\s*0/);
+
+  if (existsSync("out/index.html")) {
+    const html = readFileSync("out/index.html", "utf8");
+    const reviewsStart = html.indexOf('id="reviews"');
+    const manifestoStart = html.indexOf('id="manifesto"');
+    assert.ok(reviewsStart !== -1 && manifestoStart > reviewsStart);
+    const reviewsHtml = html.slice(reviewsStart, manifestoStart);
+    assert.equal((reviewsHtml.match(/<article\b/g) || []).length, 8);
+    assert.equal((reviewsHtml.match(/<blockquote\b/g) || []).length, 8);
+    assert.equal((reviewsHtml.match(/role="img"\s+aria-label="Оценка 5 из 5"/g) || []).length, 8);
+    assert.equal((reviewsHtml.match(/<span aria-hidden="true">★★★★★<\/span>/g) || []).length, 8);
+    const dupStart = reviewsHtml.indexOf('aria-hidden="true"><div class="review-card"');
+    assert.ok(dupStart !== -1);
+    const dupHtml = reviewsHtml.slice(dupStart);
+    assert.equal((dupHtml.match(/<article\b|<blockquote\b|role="img"/g) || []).length, 0);
+    assert.equal((dupHtml.match(/tabIndex="-1"|tabindex="-1"/g) || []).length, 8);
+    const ldMatches = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+    assert.ok(ldMatches.length >= 1);
+    for (const [, raw] of ldMatches) {
+      assert.equal(/AggregateRating|aggregateRating|reviewRating|reviewBody|itemReviewed|"Review"/.test(raw), false);
+    }
   }
 });

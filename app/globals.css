@@ -1728,6 +1728,11 @@ img {
   animation-play-state: paused;
 }
 
+.reviews-marquee-viewport:has(:focus-visible) .reviews-marquee-track {
+  animation: none;
+  transform: translate3d(0, 0, 0);
+}
+
 .reviews-marquee-group {
   display: flex;
   align-items: stretch;
