@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
 import LeadSection from "@/components/LeadSection";
+import { KITCHENS } from "@/data/kitchens";
 import { PROJECTS } from "@/data/projects";
 import { buildBreadcrumbs, buildOg } from "@/lib/seo";
 import { buildMetaDescription } from "@/lib/seo";
@@ -51,6 +52,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   }
 
   const allPhotos = project.gallery?.length ? project.gallery : [project.cover];
+  const relatedKitchen = project.relatedKitchenSlug
+    ? KITCHENS.find((k) => k.slug === project.relatedKitchenSlug)
+    : undefined;
 
   const currentIndex = PROJECTS.findIndex((p) => p.slug === slug);
   const prevProject = PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
@@ -119,6 +123,12 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                   Рассчитать под себя
                 </Link>
               </div>
+
+              {relatedKitchen && (
+                <Link href={`/kitchens/${relatedKitchen.slug}/`} className="detail-related-link">
+                  Смотреть серию «{relatedKitchen.title}» в каталоге кухонь →
+                </Link>
+              )}
             </div>
 
             {/* Right Column: Photo Gallery */}

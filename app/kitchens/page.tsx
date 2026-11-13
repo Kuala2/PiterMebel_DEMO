@@ -8,6 +8,19 @@ import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
 import CatalogTabs from "@/components/CatalogTabs";
 import CatalogEditorial from "@/components/CatalogEditorial";
+import { SITE_URL } from "@/lib/seo";
+
+const ITEM_LIST_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  numberOfItems: KITCHENS.length,
+  itemListElement: KITCHENS.map((item, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: item.title,
+    url: `${SITE_URL}/kitchens/${item.slug}/`,
+  })),
+};
 
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -39,6 +52,12 @@ export default function KitchensCatalogPage() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+        }}
+      />
       {/* 1. Page Header */}
       <PageHeader title="Кухни на заказ" />
 
@@ -200,6 +219,12 @@ export default function KitchensCatalogPage() {
           { title: "Материалы и фурнитура", text: "Работаем с влагостойкими плитами Egger, фасадами МДФ в пластике AGT и Velvet, матовой эмалью, натуральным шпоном дуба, столешницами Slotex (38 мм) и компакт-плитами HPL. Комплектуем секции петлями и выдвижными ящиками Blum, Hettich и Boyard с плавным закрыванием." },
           { title: "Точный проект и схема электрики", text: "До запуска в производство выполняем точный замер и выдаём готовую схему расположения розеток и сантехнических выводов под вашу бытовую технику." },
           { title: "Установка и подключение под ключ", text: "Штатные мастера собирают гарнитур, врезают мойку и варочную панель, устанавливают подсветку рабочей зоны и подключают всю бытовую технику и сантехнику за 1–2 дня." },
+        ]}
+        links={[
+          { href: "/apartment/", label: "Мебель во всю квартиру за месяц" },
+          { href: "/calculator/?category=kitchen", label: "Рассчитать стоимость кухни" },
+          { href: "/knowledge/rozetki-na-kuhne-shema-vysoty/", label: "Схема розеток и воды под кухню" },
+          { href: "/projects/", label: "Смотреть всё портфолио" },
         ]}
         faq={[
           { question: "Сколько времени занимает изготовление кухни на заказ?", answer: "Срок производства кухни зависит от выбранного материала фасадов и в среднем составляет от 3 до 4 недель. Точная дата доставки и сборки фиксируется в договоре." },

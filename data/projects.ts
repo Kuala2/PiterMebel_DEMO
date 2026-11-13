@@ -104,7 +104,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "emerald-enamel",
     type: "Кухня",
-    title: "Кухня МДФ Эмаль",
+    title: "Изумрудная кухня с белыми витринами",
     cover: "/img/projects/emerald-enamel/photo_1.jpg",
     gallery: [
       "/img/projects/emerald-enamel/photo_1.jpg",
@@ -112,7 +112,7 @@ export const PROJECTS: Project[] = [
       "/img/projects/emerald-enamel/photo_3.jpg",
       "/img/projects/emerald-enamel/photo_4.jpg",
     ],
-    summary: "Фасады из МДФ в эмали делают цвет главным акцентом кухни. Выразительный оттенок сочетается с классической геометрией фасадов и светлыми верхними секциями.",
+    summary: "Линейная планировка с высоким пеналом под встроенную технику, купольной вытяжкой и контрастным цветовым решением: нижний ряд в насыщенном зелёном оттенке уравновешен белыми верхними витринами с перекрёстной раскладкой.",
     materials: ["МДФ в эмали"],
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
     relatedKitchenSlug: "emerald-enamel",
@@ -120,13 +120,13 @@ export const PROJECTS: Project[] = [
   {
     slug: "velvet-matte",
     type: "Кухня",
-    title: "Кухня МДФ Velvet",
+    title: "Угловая матовая кухня с подсветкой",
     cover: "/img/projects/velvet-matte/photo_1.jpg",
     gallery: [
       "/img/projects/velvet-matte/photo_1.jpg",
       "/img/projects/velvet-matte/photo_2.jpg",
     ],
-    summary: "Фасады из МДФ-пластика Velvet поддерживают спокойный современный образ кухни. Матовая поверхность и лаконичная геометрия позволяют сосредоточить внимание на пропорциях и сочетании материалов.",
+    summary: "Угловая композиция в спокойной светлой палитре: верхний ярус без видимых ручек выстроен до потолка, тёмный цоколь и мойка задают графичный акцент, а линейная LED-подсветка подчёркивает рисунок столешницы и фартука под камень.",
     materials: ["МДФ-пластик Velvet"],
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
     relatedKitchenSlug: "velvet-matte",
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "sherman-cognac",
     type: "Кухня",
-    title: "Кухня МДФ пластик+Egger",
+    title: "Угловая кухня с пеналом-витриной",
     cover: "/img/projects/sherman-cognac/photo_1.jpg",
     gallery: [
       "/img/projects/sherman-cognac/photo_1.jpg",
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
       "/img/projects/sherman-cognac/photo_3.jpg",
       "/img/projects/sherman-cognac/photo_4.jpg",
     ],
-    summary: "Белые глянцевые фасады из МДФ-пластика сочетаются с тёплым древесным декором Egger «Шерман коньяк коричневый». Благодаря этому кухня выглядит современной, но сохраняет уютный жилой характер.",
+    summary: "Угловая планировка с высоким пеналом-витриной в тёмной рамке и тёплой внутренней подсветкой стекла. Фартук, столешница и облицовка стенового короба выполнены в едином древесном декоре Egger и дополнены гладкими белыми фасадами.",
     materials: ["Глянцевый МДФ-пластик", "Egger «Шерман коньяк»"],
     source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
     relatedKitchenSlug: "sherman-cognac",

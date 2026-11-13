@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface StepItem {
   title: string;
@@ -151,6 +152,11 @@ export default function HowItWorks01() {
             <strong className="how-it-works-guarantee-strong">Всё в одних руках:</strong>{" "}
             готовим электрику и сантехнику строго под проект, привозим и подключаем технику — без несостыковок и поиска сторонних мастеров.
           </p>
+          <div style={{ marginTop: "18px" }}>
+            <Link href="/apartment/" className="btn btn-glass">
+              Мебель во всю квартиру за месяц →
+            </Link>
+          </div>
         </div>
       </div>
     </section>

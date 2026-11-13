@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
 import LeadSection from "@/components/LeadSection";
 import { KITCHENS } from "@/data/kitchens";
+import { PROJECTS } from "@/data/projects";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
 
@@ -64,6 +65,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
   }
 
   const allPhotos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
+  const relatedProject = PROJECTS.find((p) => p.relatedKitchenSlug === kitchen.slug);
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -148,6 +150,12 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                   Рассчитать под себя
                 </Link>
               </div>
+
+              {relatedProject && (
+                <Link href={`/projects/${relatedProject.slug}/`} className="detail-related-link">
+                  Реализованный объект в портфолио: «{relatedProject.title}» →
+                </Link>
+              )}
             </div>
 
             {/* Right Column: Generous Photo Gallery */}

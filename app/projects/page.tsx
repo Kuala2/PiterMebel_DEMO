@@ -10,6 +10,7 @@ import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
 import CatalogTabs from "@/components/CatalogTabs";
 import CatalogEditorial from "@/components/CatalogEditorial";
+import { SITE_URL } from "@/lib/seo";
 
 type MainCategoryKey = "kitchens" | "wardrobes" | "custom";
 
@@ -92,6 +93,18 @@ const PORTFOLIO_ITEMS: PortfolioCardItem[] = [
   ...RAW_PORTFOLIO_ITEMS.filter((item) => !PORTFOLIO_ORDER.includes(item.slug)),
 ];
 
+const ITEM_LIST_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  numberOfItems: PORTFOLIO_ITEMS.length,
+  itemListElement: PORTFOLIO_ITEMS.map((item, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    name: item.title,
+    url: `${SITE_URL}${item.href}`,
+  })),
+};
+
 export default function ProjectsPortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
@@ -122,6 +135,12 @@ export default function ProjectsPortfolioPage() {
 
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+        }}
+      />
       {/* 1. Page Header */}
       <PageHeader title="Реализованные проекты студии" backTo="/" />
 
@@ -263,6 +282,12 @@ export default function ProjectsPortfolioPage() {
           { title: "Индивидуальное проектирование", text: "Любой понравившийся проект из портфолио мы адаптируем под планировку вашей квартиры, размеры стен, расположение коммуникаций и нужный состав бытовой техники." },
           { title: "Прямое производство без посредников", text: "Раскрой плит, кромление с прифуговкой и сверловка под фурнитуру выполняются на собственных станках в Санкт-Петербурге с контролем качества каждого узла." },
           { title: "Фиксированная смета и гарантия", text: "Полная спецификация материалов, фурнитуры и сроков закрепляется в официальном договоре до начала работ. Доставка и сборка выполняются штатными мастерами." },
+        ]}
+        links={[
+          { href: "/apartment/", label: "Мебель во всю квартиру за месяц" },
+          { href: "/kitchens/", label: "Каталог кухонь" },
+          { href: "/wardrobes/", label: "Шкафы и гардеробные" },
+          { href: "/calculator/", label: "Рассчитать свой проект" },
         ]}
         faq={[
           { question: "Можно ли рассчитать проект, похожий на работу из портфолио?", answer: "Да, выберите понравившийся проект или пришлите нам примерные размеры помещения — мы подготовим расчёт стоимости и подберём материалы под ваш бюджет." },

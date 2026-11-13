@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface EditorialItem {
   title: string;
   text: string;
@@ -25,6 +27,7 @@ export default function CatalogEditorial({
   title,
   intro,
   items,
+  links = [],
   faq = [],
 }: CatalogEditorialProps) {
   const faqJsonLd =
@@ -65,6 +68,28 @@ export default function CatalogEditorial({
             </article>
           ))}
         </div>
+
+        {links.length > 0 && (
+          <div className="catalog-editorial-links" aria-label="Полезные следующие шаги">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        )}
+
+        {faq.length > 0 && (
+          <div className="catalog-editorial-faq">
+            <h2>Вопросы перед началом проекта</h2>
+            {faq.map((item) => (
+              <details key={item.question}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
