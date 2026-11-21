@@ -4,10 +4,73 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Gallery from "@/components/Gallery";
 import LeadSection from "@/components/LeadSection";
-import { KITCHENS } from "@/data/kitchens";
-import { PROJECTS } from "@/data/projects";
+import { KITCHENS, type KitchenFacadeTier } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
-import { buildOg, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
+import { buildOg, buildTwitter, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
+
+const FACADE_TIER_CONFIG: Record<
+  KitchenFacadeTier,
+  {
+    calcMaterial: "plastic" | "pvc" | "enamel" | "veneer" | "unknown";
+    leadTimeText: string;
+    tierLowPrice: number;
+    tierHighPrice: number;
+    cornerRangeText?: string;
+  }
+> = {
+  plastic: {
+    calcMaterial: "plastic",
+    leadTimeText: "3–4 недели · свой цех в СПб",
+    tierLowPrice: 200000,
+    tierHighPrice: 330000,
+    cornerRangeText: "300–330\u00A0тыс.\u00A0₽",
+  },
+  pvc: {
+    calcMaterial: "pvc",
+    leadTimeText: "3–4 недели · свой цех в СПб",
+    tierLowPrice: 180000,
+    tierHighPrice: 300000,
+    cornerRangeText: "280–300\u00A0тыс.\u00A0₽",
+  },
+  "plastic-egger": {
+    calcMaterial: "plastic",
+    leadTimeText: "3–4 недели · свой цех в СПб",
+    tierLowPrice: 160000,
+    tierHighPrice: 330000,
+    cornerRangeText: "250–330\u00A0тыс.\u00A0₽",
+  },
+  "enamel-plastic": {
+    calcMaterial: "enamel",
+    leadTimeText: "4–5 недель · свой цех в СПб",
+    tierLowPrice: 200000,
+    tierHighPrice: 370000,
+    cornerRangeText: "300–370\u00A0тыс.\u00A0₽",
+  },
+  enamel: {
+    calcMaterial: "enamel",
+    leadTimeText: "4–5 недель · свой цех в СПб",
+    tierLowPrice: 220000,
+    tierHighPrice: 370000,
+    cornerRangeText: "340–370\u00A0тыс.\u00A0₽",
+  },
+  veneer: {
+    calcMaterial: "veneer",
+    leadTimeText: "4–6 недель · свой цех в СПб",
+    tierLowPrice: 250000,
+    tierHighPrice: 430000,
+    cornerRangeText: "390–430\u00A0тыс.\u00A0₽",
+  },
+  custom: {
+    calcMaterial: "unknown",
+    leadTimeText: "3–5 недель · зависит от материала фасадов",
+    tierLowPrice: 160000,
+    tierHighPrice: 370000,
+  },
+};
+
+function formatRub(value: number) {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
+}
 
 interface KitchenPageProps {
   params: Promise<{ slug: string }>;
@@ -53,6 +116,10 @@ export async function generateMetadata({
       ...buildOg(pageTitle, ogDescription, `/kitchens/${kitchen.slug}`),
       images: [{ url: kitchen.cover, alt: kitchen.title }],
     },
+    twitter: buildTwitter(pageTitle, ogDescription, {
+      url: kitchen.cover,
+      alt: kitchen.title,
+    }),
   };
 }
 
@@ -65,28 +132,62 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
   }
 
   const allPhotos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
-  const relatedProject = PROJECTS.find((p) => p.relatedKitchenSlug === kitchen.slug);
-
-  const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: kitchen.title,
-    image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
-    description: kitchen.summary,
-    brand: { "@type": "Brand", name: SITE_CONFIG.name },
-    url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
-    mainEntityOfPage: `${SITE_URL}/kitchens/${kitchen.slug}/`,
-    additionalProperty: kitchen.specs.map((spec) => ({
-      "@type": "PropertyValue",
-      name: spec.label,
-      value: spec.value,
-    })),
-  };
 
   const currentIndex = KITCHENS.findIndex((k) => k.slug === slug);
   const prevKitchen = KITCHENS[(currentIndex - 1 + KITCHENS.length) % KITCHENS.length];
   const nextKitchen = KITCHENS[(currentIndex + 1) % KITCHENS.length];
   const otherKitchens = KITCHENS.filter((k) => k.slug !== slug).slice(0, 3);
+  const { calcMaterial, leadTimeText, tierLowPrice, tierHighPrice, cornerRangeText } =
+    FACADE_TIER_CONFIG[kitchen.facadeTier];
+  const hasPremiumWorktop = kitchen.specs.some(
+    (s) =>
+      s.label.toLowerCase().includes("столешниц") &&
+      /(камен|кварц|hpl)/i.test(s.value)
+  );
+  const priceAnchorText = cornerRangeText
+    ? hasPremiumWorktop
+      ? `от ${formatRub(tierLowPrice)}\u00A0₽ · 3,5 м (база Slotex): ${cornerRangeText}`
+      : `от ${formatRub(tierLowPrice)}\u00A0₽ · угловая 3,5 м: ${cornerRangeText}`
+    : `от ${formatRub(tierLowPrice)}\u00A0₽ · расчёт по фасадам и размерам`;
+  const calculatorHref = `/calculator/?category=kitchen&layout=corner&meters=3.5&material=${calcMaterial}`;
+
+  const displaySpecs = [
+    ...kitchen.specs,
+    { label: "Срок изготовления", value: leadTimeText },
+    { label: "Ориентир по цене", value: priceAnchorText },
+    {
+      label: "Условия и монтаж",
+      value: "Договор, схема розеток в подарок, доставка, сборка и подключение. Счёт, СБП, карта, рассрочка",
+    },
+  ];
+
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: kitchen.title,
+    sku: kitchen.slug,
+    image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
+    description: kitchen.summary,
+    brand: { "@type": "Brand", name: SITE_CONFIG.name },
+    manufacturer: { "@id": `${SITE_URL}/#organization` },
+    url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
+    mainEntityOfPage: `${SITE_URL}/kitchens/${kitchen.slug}/`,
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: tierLowPrice,
+      highPrice: tierHighPrice,
+      offerCount: 1,
+      priceCurrency: "RUB",
+      availability: "https://schema.org/PreOrder",
+      url: `${SITE_URL}${calculatorHref}`,
+      seller: { "@id": `${SITE_URL}/#organization` },
+    },
+    additionalProperty: displaySpecs.map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.label,
+      value: spec.value,
+    })),
+  };
 
   return (
     <div className="kitchen-detail-page">
@@ -104,14 +205,14 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       {/* 1. Above the fold: Split Layout (Desktop 42/58, Mobile order: Title -> Gallery -> Specs) */}
       <section className="detail-page-header">
         <div className="container">
-          <div className="detail-top-nav" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "28px", flexWrap: "wrap", gap: "12px" }}>
-            <Link href="/kitchens/" className="btn btn-glass" style={{ gap: "8px" }}>
+          <nav className="detail-top-nav" aria-label="Навигация по каталогу кухонь">
+            <Link href="/kitchens/" className="detail-top-link">
               ← В каталог кухонь
             </Link>
-            <Link href={`/kitchens/${nextKitchen.slug}/`} className="btn btn-glass" style={{ gap: "8px" }}>
+            <Link href={`/kitchens/${nextKitchen.slug}/`} className="detail-top-link">
               Следующая: {nextKitchen.title} →
             </Link>
-          </div>
+          </nav>
 
           <div className="detail-split-hero">
             {/* Info Column */}
@@ -127,7 +228,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
               {/* Clean Specifications Table */}
               <div className="detail-specs-table">
-                {kitchen.specs.map((spec) => (
+                {displaySpecs.map((spec) => (
                   <div className="detail-spec-row" key={`${kitchen.slug}-${spec.label}`}>
                     <span className="detail-spec-name">{spec.label}</span>
                     <span className="detail-spec-val">{spec.value}</span>
@@ -144,23 +245,17 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
                   Записаться на консультацию
                 </a>
                 <Link
-                  href="/calculator/"
+                  href={calculatorHref}
                   className="btn btn-glass"
                 >
                   Рассчитать под себя
                 </Link>
               </div>
-
-              {relatedProject && (
-                <Link href={`/projects/${relatedProject.slug}/`} className="detail-related-link">
-                  Реализованный объект в портфолио: «{relatedProject.title}» →
-                </Link>
-              )}
             </div>
 
             {/* Right Column: Generous Photo Gallery */}
             <div className="detail-gallery-col">
-              <Gallery images={allPhotos} title={kitchen.title} aspectRatio="4 / 3" />
+              <Gallery images={allPhotos} title={kitchen.title} aspectRatio="5 / 4" showThumbs={false} />
             </div>
           </div>
         </div>

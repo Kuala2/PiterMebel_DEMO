@@ -7,19 +7,19 @@ import MaxIcon from "@/components/MaxIcon";
 import YandexOfficeMap from "@/components/YandexOfficeMap";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
-import { buildOg } from "@/lib/seo";
+import { buildOg, buildTwitter } from "@/lib/seo";
+
+const TITLE = `Контакты студии — ${SITE_CONFIG.name}`;
+const DESCRIPTION = `Контакты студии «ПитерМебель»: офис образцов на ${SITE_CONFIG.officeAddress} (${SITE_CONFIG.metro}), цех на Петергофском шоссе, 73. Встречи по записи.`;
 
 export const metadata: Metadata = {
-  title: `Контакты студии — ${SITE_CONFIG.name}`,
-  description: `Контакты студии «ПитерМебель»: офис на ${SITE_CONFIG.officeAddress}, ${SITE_CONFIG.metro}. Консультации по предварительной записи.`,
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
     canonical: "/contacts/",
   },
-  openGraph: buildOg(
-    `Контакты студии — ${SITE_CONFIG.name}`,
-    `Офис: ${SITE_CONFIG.officeAddress} (${SITE_CONFIG.metro}). Производство: ${SITE_CONFIG.productionAddress}.`,
-    "/contacts"
-  ),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/contacts"),
+  twitter: buildTwitter(TITLE, DESCRIPTION),
 };
 
 export default function ContactsPage() {
@@ -174,7 +174,7 @@ export default function ContactsPage() {
                     className="btn btn-green btn-sm"
                     style={{ padding: "12px 20px", fontSize: "15px" }}
                   >
-                    Открыть на Яндекс.Картах →
+                    Открыть на Яндекс Картах →
                   </a>
                 </div>
               </div>

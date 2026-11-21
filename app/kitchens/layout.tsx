@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { buildOg } from "@/lib/seo";
+import { buildOg, buildTwitter } from "@/lib/seo";
+
+const TITLE = "Кухни на заказ в СПб от производителя | ПитерМебель";
+const DESCRIPTION =
+  "Кухни на заказ в Санкт-Петербурге от 160 000 ₽ (угловая 3,5 м от 250 тыс. ₽): Egger, пластик AGT, эмаль и шпон, столешница Slotex 38 мм. Срок 3–4 недели.";
 
 export const metadata: Metadata = {
-  title: "Кухни на заказ в СПб от производителя | ПитерМебель",
-  description: "Кухни на заказ по индивидуальным размерам в Санкт-Петербурге: эмаль, пластик и шпон. Проектирование, договор и монтаж под ключ.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
     canonical: "/kitchens/",
   },
-  openGraph: buildOg("Кухни на заказ в СПб от производителя | ПитерМебель", "Индивидуальные кухни из эмали, пластика и шпона с монтажом под ключ.", "/kitchens"),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/kitchens"),
+  twitter: buildTwitter(TITLE, DESCRIPTION),
 };
 
 export default function Layout({

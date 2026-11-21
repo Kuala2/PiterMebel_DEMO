@@ -39,6 +39,24 @@ export function buildOg(title: string, description: string, path?: string) {
   };
 }
 
+/** Twitter / мессенджер-карточка страницы, чтобы не наследовались метаданные главной. */
+export function buildTwitter(
+  title: string,
+  description: string,
+  image?: { url: string; alt?: string }
+) {
+  return {
+    card: (image ? "summary_large_image" : "summary") as "summary" | "summary_large_image",
+    title,
+    description,
+    images: [
+      image
+        ? { url: image.url, alt: image.alt || title }
+        : { url: OG_IMAGE, width: 512, height: 512, alt: title },
+    ],
+  };
+}
+
 /** Хлебные крошки для BreadcrumbList JSON-LD */
 export function buildBreadcrumbs(items: { name: string; path?: string }[]) {
   return {

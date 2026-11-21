@@ -5,7 +5,7 @@ import DesignPackagesSection, {
 } from "@/components/DesignPackagesSection";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, buildBreadcrumbs, buildOg } from "@/lib/seo";
+import { SITE_URL, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
 
 const PAGE_TITLE = `Дизайн-проект квартиры в СПб — от 2 500 ₽/м² | ${SITE_CONFIG.name}`;
 const PAGE_DESCRIPTION =
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     canonical: "/design/",
   },
   openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/design"),
+  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION),
 };
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbs([
@@ -35,10 +36,7 @@ const SERVICE_JSON_LD = {
     name: SITE_CONFIG.city,
   },
   provider: {
-    "@type": "Organization",
-    name: SITE_CONFIG.name,
-    url: SITE_URL,
-    telephone: SITE_CONFIG.phone,
+    "@id": `${SITE_URL}/#organization`,
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -48,17 +46,23 @@ const SERVICE_JSON_LD = {
         "@type": "Offer",
         name: "Пакет Стандартный — рабочий дизайн-проект",
         description: STANDARD_DESIGN_ITEMS.map((i) => i.text).join(", "),
-        price: "2500",
-        priceCurrency: "RUB",
-        unitText: "м²",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: 2500,
+          priceCurrency: "RUB",
+          unitText: "м²",
+        },
       },
       {
         "@type": "Offer",
         name: "Пакет Премиум — полный дизайн-проект с 3D-визуализацией и комплектацией",
         description: PREMIUM_DESIGN_ITEMS.map((i) => i.text).join(", "),
-        price: "5000",
-        priceCurrency: "RUB",
-        unitText: "м²",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: 5000,
+          priceCurrency: "RUB",
+          unitText: "м²",
+        },
       },
     ],
   },
@@ -82,9 +86,9 @@ export default function DesignServicesPage() {
           <div className="design-hero-inner">
             <h1 className="subpage-hero-title">Услуги наших дизайнеров</h1>
             <p className="design-hero-lead">
-              Опытные специалисты проработают каждый миллиметр вашей площади,
-              дадут ценные советы и рекомендации, что необходимо для наилучшего
-              результата.
+              Дизайнеры проработают планировку, эргономику и мебельные узлы с
+              точностью до миллиметра и подготовят рабочие чертежи для ремонта и
+              производства.
             </p>
           </div>
         </div>

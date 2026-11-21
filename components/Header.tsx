@@ -5,12 +5,29 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { SITE_CONFIG } from "@/data/site";
+import {
+  WARDROBE_SERVICES,
+  CUSTOM_FURNITURE_SERVICES,
+} from "@/data/services";
+
+interface NavSubItem {
+  href: string;
+  label: string;
+}
+
+interface NavItem {
+  href: string;
+  label: string;
+  children?: NavSubItem[];
+  wideDropdown?: boolean;
+}
 
 export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const scrollYRef = useRef(0);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuDrawerRef = useRef<HTMLElement>(null);
@@ -32,6 +49,7 @@ export default function Header() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setMobileMenuOpen(false);
+    setOpenMobileGroup(null);
     const currentNorm = normalizePath(pathname);
     const targetNorm = normalizePath(href);
     if (currentNorm === targetNorm) {
@@ -42,11 +60,25 @@ export default function Header() {
     }
   };
 
-  // Multi-page navigation structure (Главная accessed via Logo)
-  const navLinks = [
+  const navLinks: NavItem[] = [
     { href: "/kitchens/", label: "КУХНИ" },
-    { href: "/wardrobes/", label: "ШКАФЫ" },
-    { href: "/custom-furniture/", label: "КОРПУСНАЯ МЕБЕЛЬ" },
+    {
+      href: "/wardrobes/",
+      label: "ШКАФЫ",
+      children: WARDROBE_SERVICES.map((s) => ({
+        href: s.href,
+        label: s.shortTitle,
+      })),
+    },
+    {
+      href: "/custom-furniture/",
+      label: "КОРПУСНАЯ МЕБЕЛЬ",
+      wideDropdown: true,
+      children: CUSTOM_FURNITURE_SERVICES.map((s) => ({
+        href: s.href,
+        label: s.shortTitle,
+      })),
+    },
     { href: "/production/", label: "ПРОИЗВОДСТВО" },
     { href: "/calculator/", label: "КАЛЬКУЛЯТОР" },
     { href: "/contacts/", label: "КОНТАКТЫ" },
@@ -155,16 +187,55 @@ export default function Header() {
                 link.href === "/"
                   ? currentNorm === "/"
                   : currentNorm.startsWith(link.href);
+
+              if (!link.children?.length) {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`nav-link ${isActive ? "active" : ""}`}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`nav-link ${isActive ? "active" : ""}`}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.href} className="nav-dropdown-wrap">
+                  <Link
+                    href={link.href}
+                    className={`nav-link nav-link-has-dropdown ${isActive ? "active" : ""}`}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    <span>{link.label}</span>
+                    <span className="nav-caret" aria-hidden="true">▾</span>
+                  </Link>
+
+                  <div
+                    className={`nav-dropdown-panel ${link.wideDropdown ? "is-wide" : ""}`}
+                    role="region"
+                    aria-label={`Подразделы: ${link.label}`}
+                  >
+                    <div className="nav-dropdown-grid">
+                      {link.children.map((sub) => {
+                        const subActive = currentNorm === normalizePath(sub.href);
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className={`nav-dropdown-link ${subActive ? "active" : ""}`}
+                            onClick={(e) => handleNavClick(e, sub.href)}
+                          >
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </nav>
@@ -193,7 +264,7 @@ export default function Header() {
             </a>
 
             <Link href="/contacts/#measure" className="btn btn-green btn-sm header-desktop-btn">
-              Консультация и расчет
+              Консультация и расчёт
             </Link>
 
             <button
@@ -233,16 +304,63 @@ export default function Header() {
               link.href === "/"
                 ? currentNorm === "/"
                 : currentNorm.startsWith(link.href);
+
+            if (!link.children?.length) {
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`mobile-nav-link ${isActive ? "active" : ""}`}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {link.label}
+                </Link>
+              );
+            }
+
+            const isExpanded = openMobileGroup === link.href;
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`mobile-nav-link ${isActive ? "active" : ""}`}
-                onClick={(e) => handleNavClick(e, link.href)}
-                aria-current={isActive ? "page" : undefined}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="mobile-nav-group">
+                <div className="mobile-nav-group-row">
+                  <Link
+                    href={link.href}
+                    className={`mobile-nav-link ${isActive ? "active" : ""}`}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                  <button
+                    type="button"
+                    className={`mobile-nav-expand-btn ${isExpanded ? "is-open" : ""}`}
+                    onClick={() =>
+                      setOpenMobileGroup(isExpanded ? null : link.href)
+                    }
+                    aria-expanded={isExpanded}
+                    aria-label={`Подразделы: ${link.label}`}
+                  >
+                    {isExpanded ? "−" : "+"}
+                  </button>
+                </div>
+
+                {isExpanded && (
+                  <div className="mobile-nav-sublinks">
+                    {link.children.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className={`mobile-nav-sublink ${
+                          currentNorm === normalizePath(sub.href) ? "active" : ""
+                        }`}
+                        onClick={(e) => handleNavClick(e, sub.href)}
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
@@ -265,7 +383,7 @@ export default function Header() {
             style={{ width: "100%", padding: "14px 20px" }}
             onClick={() => setMobileMenuOpen(false)}
           >
-            Консультация и расчет
+            Консультация и расчёт
           </Link>
         </div>
       </nav>

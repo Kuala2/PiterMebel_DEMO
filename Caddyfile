@@ -46,9 +46,59 @@
         redir https://pitermebel.com/kitchens/mdf-klassika-dub/ permanent
     }
 
-    @legacyBathroomPur path /projects/bathroom-pur-vanity /projects/bathroom-pur-vanity/
+    @legacyBathroomPur path /projects/bathroom-pur-vanity /projects/bathroom-pur-vanity/ /projects/bathroom-vanity /projects/bathroom-vanity/
     handle @legacyBathroomPur {
-        redir https://pitermebel.com/projects/bathroom-vanity/ permanent
+        redir https://pitermebel.com/custom-furniture/bathroom/ permanent
+    }
+
+    @legacyKitchenProjects path_regexp legacyKitchen ^/projects/(island-parquet|oak-stone|white-showcase|marble-hood|narrow-kitchen|emerald-enamel|velvet-matte|sherman-cognac)/?$
+    handle @legacyKitchenProjects {
+        redir https://pitermebel.com/kitchens/{re.legacyKitchen.1}/ permanent
+    }
+
+    @legacyWalkIn path /projects/glass-wardrobe /projects/glass-wardrobe/ /projects/brick-wardrobe /projects/brick-wardrobe/ /projects/light-wood-wardrobe /projects/light-wood-wardrobe/
+    handle @legacyWalkIn {
+        redir https://pitermebel.com/wardrobes/walk-in/ permanent
+    }
+
+    @legacySwing path /projects/wardrobe-inside /projects/wardrobe-inside/
+    handle @legacySwing {
+        redir https://pitermebel.com/wardrobes/swing/ permanent
+    }
+
+    @legacyBedroom path /projects/bedroom-set /projects/bedroom-set/
+    handle @legacyBedroom {
+        redir https://pitermebel.com/wardrobes/bedroom/ permanent
+    }
+
+    @legacyHallway path /projects/mirror-hall /projects/mirror-hall/
+    handle @legacyHallway {
+        redir https://pitermebel.com/wardrobes/hallway/ permanent
+    }
+
+    @legacySliding path /projects/slat-panels /projects/slat-panels/
+    handle @legacySliding {
+        redir https://pitermebel.com/wardrobes/sliding/ permanent
+    }
+
+    @legacyTvZones path /projects/oak-veneer-panel /projects/oak-veneer-panel/
+    handle @legacyTvZones {
+        redir https://pitermebel.com/custom-furniture/tv-zones/ permanent
+    }
+
+    @legacyBusiness path /projects/office-reception /projects/office-reception/
+    handle @legacyBusiness {
+        redir https://pitermebel.com/custom-furniture/business/ permanent
+    }
+
+    @legacyPartitions path /projects/sliding-partition /projects/sliding-partition/ /projects/cascade-partitions /projects/cascade-partitions/
+    handle @legacyPartitions {
+        redir https://pitermebel.com/custom-furniture/partitions/ permanent
+    }
+
+    @legacyVeneer path /projects/curved-oak-facades /projects/curved-oak-facades/
+    handle @legacyVeneer {
+        redir https://pitermebel.com/custom-furniture/veneer-wood/ permanent
     }
 }
 

@@ -7,12 +7,14 @@ interface GalleryProps {
   images: string[];
   title: string;
   aspectRatio?: string;
+  showThumbs?: boolean;
 }
 
 export default function Gallery({
   images,
   title,
   aspectRatio = "16 / 10",
+  showThumbs = true,
 }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
   const [lightbox, setLightbox] = useState(false);
@@ -25,9 +27,6 @@ export default function Gallery({
   const lightboxRef = useRef<HTMLDivElement>(null);
 
   const count = images.length;
-
-  const activeRatio = ratios[images[activeIdx]];
-  const computedAspectRatio = activeRatio ? `${activeRatio}` : (aspectRatio || "4 / 3");
 
   const go = useCallback(
     (dir: number) => setActiveIdx((i) => (i + dir + count) % count),
@@ -119,12 +118,12 @@ export default function Gallery({
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
     >
-      {/* Главное окно галереи с адаптивным aspect-ratio под активное фото */}
+      {/* Главное окно галереи с фиксированным aspect-ratio (без прыжков высоты между слайдами) */}
       <div
         ref={galleryTriggerRef}
         className="detail-gallery-viewport"
         style={{
-          aspectRatio: computedAspectRatio,
+          aspectRatio: aspectRatio || "4 / 3",
           maxHeight: "72vh",
         }}
         onTouchStart={handleTouchStart}
@@ -153,7 +152,7 @@ export default function Gallery({
               priority={idx === 0}
               sizes="(max-width: 1024px) 100vw, 1200px"
               style={{
-                objectFit: "cover",
+                objectFit: ratios[src] && ratios[src] < 0.72 ? "contain" : "cover",
                 objectPosition: "center",
               }}
               draggable={false}
@@ -211,7 +210,7 @@ export default function Gallery({
       </div>
 
       {/* Миниатюры для прямого выбора кадра */}
-      {count > 1 && (
+      {showThumbs && count > 1 && (
         <div className="detail-thumbs-grid">
           {images.map((src, idx) => (
             <button

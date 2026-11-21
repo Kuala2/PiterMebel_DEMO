@@ -2,15 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import LegalOperator from "@/components/LegalOperator";
-import { buildOg, SITE_URL } from "@/lib/seo";
+import { buildOg, buildTwitter, SITE_URL } from "@/lib/seo";
 import { SITE_CONFIG } from "@/data/site";
 import { PRIVACY_DATE, PRIVACY_VERSION, PROCESSING_SETUP, canReceiveLeads } from "@/data/legal";
 
+const TITLE = "Политика конфиденциальности | ПитерМебель";
+const DESCRIPTION =
+  "Обработка персональных данных на сайте ПитерМебель: заявки, цели и сроки хранения, права посетителей и отзыв согласия.";
+
 export const metadata: Metadata = {
-  title: "Политика конфиденциальности | ПитерМебель",
-  description: "Обработка персональных данных на сайте ПитерМебель: заявки, цели и сроки хранения, права посетителей и отзыв согласия.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "/privacy/" },
-  openGraph: buildOg("Политика конфиденциальности | ПитерМебель", "Правила обработки персональных данных посетителей сайта.", "/privacy"),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/privacy"),
+  twitter: buildTwitter(TITLE, DESCRIPTION),
 };
 
 export default function PrivacyPage() {

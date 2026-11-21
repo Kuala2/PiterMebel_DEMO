@@ -7,7 +7,7 @@ const outputPath = process.env.PITER_MEBEL_PERFORMANCE_REPORT || "seo-work/2026-
 const targets = [
   ["home", "/"],
   ["kitchens", "/kitchens/"],
-  ["project", "/projects/marble-hood/"],
+  ["kitchen", "/kitchens/marble-hood/"],
   ["article", "/knowledge/rozetki-na-kuhne-shema-vysoty/"],
   ["contacts", "/contacts/"],
 ].filter(([name]) => !process.env.PITER_MEBEL_PERFORMANCE_TARGETS || process.env.PITER_MEBEL_PERFORMANCE_TARGETS.split(",").includes(name));

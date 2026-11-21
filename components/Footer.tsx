@@ -6,6 +6,10 @@ import WhatsAppIcon from "@/components/WhatsAppIcon";
 import MaxIcon from "@/components/MaxIcon";
 import { SITE_CONFIG, NAVIGATION_LINKS } from "@/data/site";
 import { LEGAL_DETAILS, hasConfirmedLegalDetails } from "@/data/legal";
+import {
+  WARDROBE_SERVICES,
+  CUSTOM_FURNITURE_SERVICES,
+} from "@/data/services";
 
 export default function Footer() {
   return (
@@ -165,6 +169,25 @@ export default function Footer() {
                 Записаться на консультацию
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* All Directions Directory Row (UX + SEO crawlability) */}
+        <div className="footer-directions-block">
+          <div className="footer-col-head">Направления производства</div>
+          <div className="footer-directions-grid">
+            <Link href="/kitchens/">Кухни на заказ</Link>
+            <Link href="/apartment/">Мебель в квартиру под ключ</Link>
+            {WARDROBE_SERVICES.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.shortTitle}
+              </Link>
+            ))}
+            {CUSTOM_FURNITURE_SERVICES.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.shortTitle}
+              </Link>
+            ))}
           </div>
         </div>
 

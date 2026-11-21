@@ -9,7 +9,7 @@ import {
   getArticleWordCount,
 } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
-import { buildBreadcrumbs, buildOg, SITE_URL } from "@/lib/seo";
+import { buildBreadcrumbs, buildOg, buildTwitter, SITE_URL } from "@/lib/seo";
 import LeadSection from "@/components/LeadSection";
 import { ElectricalBlueprint } from "@/components/KnowledgeBlueprints";
 
@@ -50,6 +50,10 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       section: article.categoryLabel,
       images: [{ url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg", alt: article.title }],
     },
+    twitter: buildTwitter(article.seoTitle, article.seoDescription, {
+      url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg",
+      alt: article.title,
+    }),
   };
 }
 
@@ -113,7 +117,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         {/* 1. ARTICLE HEADER */}
         <header className="article-header-section">
           <div className="container article-narrow">
-            <Link href="/knowledge/" className="btn btn-glass" style={{ marginBottom: "24px" }}>
+            <Link href="/knowledge/" className="back-link-inline">
               ← База знаний
             </Link>
 

@@ -192,9 +192,18 @@ export function calculateEstimate({
   }, 0);
   const midpoint = furnitureCost + optionsCost;
 
+  const low = Math.max(
+    categoryPricing.minimum,
+    roundPrice(midpoint * CALCULATOR_PRICING.range.lowMultiplier)
+  );
+  const high = Math.max(
+    low,
+    roundPrice(midpoint * CALCULATOR_PRICING.range.highMultiplier)
+  );
+
   return {
-    low: roundPrice(midpoint * CALCULATOR_PRICING.range.lowMultiplier),
-    high: roundPrice(midpoint * CALCULATOR_PRICING.range.highMultiplier),
-    midpoint: roundPrice(midpoint),
+    low,
+    high,
+    midpoint: Math.max(categoryPricing.minimum, roundPrice(midpoint)),
   };
 }

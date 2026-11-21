@@ -5,6 +5,8 @@ import { buildBreadcrumbs } from "@/lib/seo";
 interface PageHeaderProps {
   /** Заголовок страницы (H1) */
   title: string;
+  /** Короткое пояснение под заголовком */
+  subtitle?: string;
   /** Ссылка «назад» — только для страниц, которых нет в верхнем меню (например, «/»). Не задана — кнопки нет. */
   backTo?: string;
   /** Подпись кнопки возврата */
@@ -13,7 +15,7 @@ interface PageHeaderProps {
   children?: ReactNode;
 }
 
-export default function PageHeader({ title, backTo, backLabel = "На главную", children }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle, backTo, backLabel = "На главную", children }: PageHeaderProps) {
   const breadcrumbJsonLd = buildBreadcrumbs([{ name: title }]);
 
   return (
@@ -27,11 +29,16 @@ export default function PageHeader({ title, backTo, backLabel = "На главн
       />
       <div className="container">
         {backTo && (
-          <Link href={backTo} className="btn btn-glass" style={{ marginBottom: "24px" }}>
+          <Link href={backTo} className="back-link-inline">
             ← {backLabel}
           </Link>
         )}
         <h1 className="subpage-hero-title">{title}</h1>
+        {subtitle && (
+          <p className="subpage-hero-caption" style={{ marginTop: "10px", maxWidth: "720px" }}>
+            {subtitle}
+          </p>
+        )}
         {children}
       </div>
     </section>

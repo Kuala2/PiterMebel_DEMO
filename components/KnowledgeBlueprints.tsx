@@ -27,7 +27,7 @@ export function ElectricalBlueprint() {
           ПРИНЦИПИАЛЬНАЯ СХЕМА · НЕ ДЛЯ МОНТАЖА
         </text>
         <text x="195" y="23" fill="#72C324" fontSize="9.5" fontFamily="monospace" fontWeight="bold">
-          ЧЕРТЕЖ 01
+          ЧЕРТЁЖ 01
         </text>
         <line x1="16" y1="34" x2="404" y2="34" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 

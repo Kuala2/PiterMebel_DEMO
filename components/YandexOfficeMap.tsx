@@ -74,7 +74,7 @@ export default function YandexOfficeMap() {
             [59.899907, 30.272883],
             {
               hintContent: "Студия мебели «ПитерМебель» · пл. Стачек, 9, 4 этаж",
-              iconCaption: "Питермебель",
+              iconCaption: "ПитерМебель",
             },
             {
               preset: "islands#redDotIconWithCaption",
@@ -193,7 +193,7 @@ export default function YandexOfficeMap() {
             className="btn btn-green"
             style={{ fontSize: "14px", padding: "10px 20px", textDecoration: "none" }}
           >
-            Открыть на Яндекс.Картах ↗
+            Открыть на Яндекс Картах ↗
           </a>
         </div>
       )}

@@ -67,13 +67,13 @@ try {
   await page.goto(base + "/?ysclid=test123", { waitUntil: "networkidle" });
   assert.equal(await page.evaluate(() => typeof window.ym), "undefined", "window.ym must be undefined");
   assert.equal(external.some(url => url.includes("mc.yandex")), false, "No requests to mc.yandex.ru are permitted");
-  await page.locator('footer a[href="/kitchens/"]').click();
+  await page.locator('footer .footer-nav-links a[href="/kitchens/"]').click();
   await page.waitForURL(base + "/kitchens/");
-  const firstImage = page.locator(".kitchen-ladder-first .card-img-slide");
+  const firstImage = page.locator(".projects-grid .catalog-card .card-img-slide").first();
   assert.notEqual(await firstImage.getAttribute("loading"), "lazy");
   await page.locator('footer a[href="/contacts/"]').click();
   await page.waitForURL(base + "/contacts/");
-  const mapContainer = page.locator("[data-sticky-cta-suppress]");
+  const mapContainer = page.locator(".contacts-map-frame");
   await mapContainer.scrollIntoViewIfNeeded();
   await page.waitForTimeout(400);
 

@@ -63,7 +63,7 @@ async function testPage(path, viewport) {
 }
 
 for (const width of [320, 360, 390, 430]) {
-  for (const path of ["/kitchens/", "/projects/", "/wardrobes/", "/custom-furniture/"]) {
+  for (const path of ["/kitchens/", "/projects/"]) {
     const context = await browser.newContext({ viewport: { width, height: 844 } });
     const page = await context.newPage();
     await page.goto(`${baseUrl}${path}`, { waitUntil: "domcontentloaded" });

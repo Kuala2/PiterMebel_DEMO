@@ -12,6 +12,7 @@ import HowItWorks09 from "@/components/ui/how-it-works-09";
 import { SITE_CONFIG } from "@/data/site";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 import { CLIENT_REVIEWS, YANDEX_REVIEWS_URL } from "@/data/reviews";
+import { SERVICE_PAGES } from "@/data/services";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("all");
@@ -129,7 +130,7 @@ export default function HomePage() {
     };
   }, []);
 
-  const catalogItems = [
+  const kitchenCatalogItems = [
     {
       id: "mdf-plastik-gola",
       category: "kitchens",
@@ -147,38 +148,6 @@ export default function HomePage() {
       link: "/kitchens/mdf-plastik-gola/",
     },
     {
-      id: "light-wood-wardrobe",
-      category: "wardrobes",
-      badge: "Гардеробная",
-      title: "Гардеробная с подсветкой и древесным декором",
-      desc: "Открытая гардеробная система со встроенной светодиодной подсветкой полок и штанг.",
-      specLabel: "Оснащение",
-      specValue: "Древесный декор / LED",
-      photos: [
-        "/img/projects/light-wood-wardrobe/photo_1.jpg",
-        "/img/projects/light-wood-wardrobe/photo_2.jpg",
-        "/img/projects/light-wood-wardrobe/photo_3.jpg",
-        "/img/projects/light-wood-wardrobe/photo_4.jpg",
-      ],
-      link: "/projects/light-wood-wardrobe/",
-    },
-    {
-      id: "sliding-partition",
-      category: "custom",
-      badge: "Перегородки",
-      title: "Раздвижная перегородка для зонирования",
-      desc: "Раздвижная межкомнатная перегородка из алюминиевого профиля с безопасным остеклением.",
-      specLabel: "Конструкция",
-      specValue: "Алюминиевый профиль / Стекло",
-      photos: [
-        "/img/projects/sliding-partition/photo_1.jpg",
-        "/img/projects/sliding-partition/photo_2.jpg",
-        "/img/projects/sliding-partition/photo_3.jpg",
-        "/img/projects/sliding-partition/photo_4.jpg",
-      ],
-      link: "/projects/sliding-partition/",
-    },
-    {
       id: "island-parquet",
       category: "kitchens",
       badge: "Эмаль и шпон",
@@ -192,37 +161,7 @@ export default function HomePage() {
         "/img/projects/island-parquet/photo_3.jpg",
         "/img/projects/island-parquet/photo_4.jpg",
       ],
-      link: "/projects/island-parquet/",
-    },
-    {
-      id: "glass-wardrobe",
-      category: "wardrobes",
-      badge: "Stopsol",
-      title: "Гардеробная со стеклом Stopsol",
-      desc: "При выключенной подсветке стекло выглядит как зеркало, при включённой становится прозрачным. Без нижней направляющей.",
-      specLabel: "Стекло",
-      specValue: "Stopsol",
-      photos: [
-        "/img/projects/glass-wardrobe/photo_1.jpg",
-        "/img/projects/glass-wardrobe/photo_2.jpg",
-        "/img/projects/glass-wardrobe/photo_3.jpg",
-      ],
-      link: "/projects/glass-wardrobe/",
-    },
-    {
-      id: "oak-veneer-panel",
-      category: "custom",
-      badge: "ТВ-зона",
-      title: "ТВ-зона с панелями из шпона дуба",
-      desc: "Панели из натурального шпона дуба сочетаются с МДФ в эмали в составе комплексного проекта.",
-      specLabel: "Материалы",
-      specValue: "Шпон дуба / МДФ в эмали",
-      photos: [
-        "/img/projects/oak-veneer-panel/photo_1.jpg",
-        "/img/projects/oak-veneer-panel/photo_2.jpg",
-        "/img/projects/oak-veneer-panel/photo_3.jpg",
-      ],
-      link: "/projects/oak-veneer-panel/",
+      link: "/kitchens/island-parquet/",
     },
     {
       id: "mdf-plastik-slotex",
@@ -241,79 +180,18 @@ export default function HomePage() {
       link: "/kitchens/mdf-plastik-slotex/",
     },
     {
-      id: "mirror-hall",
-      category: "wardrobes",
-      badge: "Прихожая",
-      title: "Зеркальный шкаф с нишей для обуви",
-      desc: "Встроенный зеркальный шкаф с нишей для обуви и торцевыми ручками.",
-      specLabel: "Конструкция",
-      specValue: "Зеркало / Ниша для обуви",
-      photos: [
-        "/img/projects/mirror-hall/photo_1.jpg",
-        "/img/projects/mirror-hall/photo_2.jpg",
-      ],
-      link: "/projects/mirror-hall/",
-    },
-    {
-      id: "cascade-partitions",
-      category: "custom",
-      badge: "Перегородки",
-      title: "Каскадные раздвижные перегородки",
-      desc: "Система интерьерных раздвижных перегородок с каскадным открыванием и беспороговым монтажом.",
-      specLabel: "Конструкция",
-      specValue: "Каскадное открывание",
-      photos: [
-        "/img/projects/cascade-partitions/photo_1.jpg",
-        "/img/projects/cascade-partitions/photo_2.jpg",
-        "/img/projects/cascade-partitions/photo_3.jpg",
-        "/img/projects/cascade-partitions/photo_4.jpg",
-      ],
-      link: "/projects/cascade-partitions/",
-    },
-    {
       id: "mdf-emal-vitrina",
       category: "kitchens",
-      badge: "МДФ ПВХ",
-      title: "Кухня МДФ ПВХ с фрезеровкой",
-      desc: "Светлые фасады с витриной в узкой чёрной алюминиевой рамке, корпус и столешница Egger.",
-      specLabel: "Оснащение",
-      specValue: "Витрина / Корпус Egger",
+      badge: "Эмаль и пластик",
+      title: "Кухня МДФ эмаль с витриной",
+      desc: "Фасады из МДФ в эмали и матовом пластике с витриной в узкой чёрной алюминиевой рамке, корпус и столешница Egger.",
+      specLabel: "Фасады",
+      specValue: "Эмаль / Матовый пластик",
       photos: [
         "/img/kitchens/valeria/photo_1.jpg",
         "/img/kitchens/valeria/photo_2.jpg",
-        "/img/kitchens/valeria/photo_3.jpg",
-        "/img/kitchens/valeria/photo_4.jpg",
       ],
       link: "/kitchens/mdf-emal-vitrina/",
-    },
-    {
-      id: "brick-wardrobe",
-      category: "wardrobes",
-      badge: "П-образная",
-      title: "П-образная гардеробная со скошенными полками",
-      desc: "Гардеробная из ЛДСП Egger. Для стены со скосом полки изготовлены по шаблону.",
-      specLabel: "Материал",
-      specValue: "ЛДСП Egger H3170",
-      photos: [
-        "/img/projects/brick-wardrobe/photo_1.jpg",
-        "/img/projects/brick-wardrobe/photo_2.jpg",
-        "/img/projects/brick-wardrobe/photo_3.jpg",
-      ],
-      link: "/projects/brick-wardrobe/",
-    },
-    {
-      id: "bathroom-vanity",
-      category: "custom",
-      badge: "Ванная",
-      title: "Влагостойкая мебель для ванной комнаты",
-      desc: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги и бесшовной обработкой кромок.",
-      specLabel: "Материалы",
-      specValue: "МДФ в пластике / Влагостойкая кромка",
-      photos: [
-        "/img/projects/bathroom-vanity/photo_1.jpg",
-        "/img/projects/bathroom-vanity/photo_2.jpg",
-      ],
-      link: "/projects/bathroom-vanity/",
     },
     {
       id: "oak-stone",
@@ -329,37 +207,7 @@ export default function HomePage() {
         "/img/projects/oak-stone/photo_3.jpg",
         "/img/projects/oak-stone/photo_4.jpg",
       ],
-      link: "/projects/oak-stone/",
-    },
-    {
-      id: "wardrobe-inside",
-      category: "wardrobes",
-      badge: "Шкафы",
-      title: "Шкафы для комнаты и прихожей",
-      desc: "Комплект шкафов из ЛДСП Egger U705 «Ангора серая» для нескольких помещений квартиры.",
-      specLabel: "Материал",
-      specValue: "ЛДСП Egger U705",
-      photos: [
-        "/img/projects/wardrobe-inside/photo_1.jpg",
-        "/img/projects/wardrobe-inside/photo_2.jpg",
-        "/img/projects/wardrobe-inside/photo_3.jpg",
-      ],
-      link: "/projects/wardrobe-inside/",
-    },
-    {
-      id: "office-reception",
-      category: "custom",
-      badge: "Коммерческий",
-      title: "Стойка ресепшен для клиники",
-      desc: "Акриловый искусственный камень, рейки из массива бука, МДФ в эмали и LED-подсветка.",
-      specLabel: "Материалы",
-      specValue: "Акриловый камень / Массив бука",
-      photos: [
-        "/img/projects/office-reception/photo_1.jpg",
-        "/img/projects/office-reception/photo_2.jpg",
-        "/img/projects/office-reception/photo_3.jpg",
-      ],
-      link: "/projects/office-reception/",
+      link: "/kitchens/oak-stone/",
     },
     {
       id: "mdf-plastik-hettich",
@@ -377,36 +225,6 @@ export default function HomePage() {
       link: "/kitchens/mdf-plastik-hettich/",
     },
     {
-      id: "bedroom-set",
-      category: "wardrobes",
-      badge: "Спальня",
-      title: "Шкафы и мебель для спальни",
-      desc: "Шкафы и тумбы выполнены в единой стилистике как часть комплексного заказа мебели для квартиры.",
-      specLabel: "Проект",
-      specValue: "Мебель для спальни",
-      photos: [
-        "/img/projects/bedroom-set/photo_1.jpg",
-        "/img/projects/bedroom-set/photo_2.jpg",
-        "/img/projects/bedroom-set/photo_3.jpg",
-      ],
-      link: "/projects/bedroom-set/",
-    },
-    {
-      id: "curved-oak-facades",
-      category: "custom",
-      badge: "Фасады",
-      title: "Радиусные фасады из шпона дуба",
-      desc: "Гнутые мебельные фасады из натурального шпона дуба под защитным лаком.",
-      specLabel: "Технология",
-      specValue: "Шпон дуба / Радиусные фасады",
-      photos: [
-        "/img/projects/curved-oak-facades/photo_1.jpg",
-        "/img/projects/curved-oak-facades/photo_2.jpg",
-        "/img/projects/curved-oak-facades/photo_3.jpg",
-      ],
-      link: "/projects/curved-oak-facades/",
-    },
-    {
       id: "mdf-belyj-egger",
       category: "kitchens",
       badge: "Пластик + Egger",
@@ -420,21 +238,6 @@ export default function HomePage() {
         "/img/kitchens/ulyana/photo_3.jpg",
       ],
       link: "/kitchens/mdf-belyj-egger/",
-    },
-    {
-      id: "slat-panels",
-      category: "custom",
-      badge: "Комплексный проект",
-      title: "Кухня, стеллаж и шкаф-купе",
-      desc: "Стеллаж переходит в кухню, а кухня — в шкаф-купе, связывая несколько функциональных зон.",
-      specLabel: "Формат",
-      specValue: "Единая мебельная композиция",
-      photos: [
-        "/img/projects/slat-panels/photo_1.jpg",
-        "/img/projects/slat-panels/photo_2.jpg",
-        "/img/projects/slat-panels/photo_3.jpg",
-      ],
-      link: "/projects/slat-panels/",
     },
     {
       id: "mdf-grafit-gola",
@@ -456,7 +259,7 @@ export default function HomePage() {
       category: "kitchens",
       badge: "МДФ Эмаль",
       title: "Изумрудная кухня с белыми витринами",
-      desc: "Линейная композиция с пеналом под технику, зелёными фрезерованными фасадами и белыми верхними витринами.",
+      desc: "Угловая композиция с пеналом под технику, зелёными фрезерованными фасадами и белыми верхними витринами.",
       specLabel: "Фасады",
       specValue: "МДФ в эмали",
       photos: [
@@ -465,7 +268,7 @@ export default function HomePage() {
         "/img/projects/emerald-enamel/photo_3.jpg",
         "/img/projects/emerald-enamel/photo_4.jpg",
       ],
-      link: "/projects/emerald-enamel/",
+      link: "/kitchens/emerald-enamel/",
     },
     {
       id: "velvet-matte",
@@ -479,16 +282,16 @@ export default function HomePage() {
         "/img/projects/velvet-matte/photo_1.jpg",
         "/img/projects/velvet-matte/photo_2.jpg",
       ],
-      link: "/projects/velvet-matte/",
+      link: "/kitchens/velvet-matte/",
     },
     {
       id: "mdf-klassika-dub",
       category: "kitchens",
-      badge: "МДФ Эмаль",
-      title: "Кухня МДФ Эмаль матовая",
-      desc: "Светлые молочные фасады в сочетании со столешницей с тёплым древесным декором.",
+      badge: "Классика",
+      title: "Классическая молочная кухня",
+      desc: "Молочные фрезерованные фасады с классической витриной в сочетании со столешницей и фартуком под дерево.",
       specLabel: "Фасады",
-      specValue: "МДФ Эмаль матовая / Дерево",
+      specValue: "Молочные фасады / Дерево",
       photos: [
         "/img/kitchens/viktoria/photo_1.jpg",
         "/img/kitchens/viktoria/photo_2.jpg",
@@ -510,38 +313,54 @@ export default function HomePage() {
         "/img/projects/sherman-cognac/photo_3.jpg",
         "/img/projects/sherman-cognac/photo_4.jpg",
       ],
-      link: "/projects/sherman-cognac/",
+      link: "/kitchens/sherman-cognac/",
     },
   ];
 
+  const serviceCatalogItems = SERVICE_PAGES.map((s) => ({
+    id: s.slug,
+    category: s.branch === "wardrobes" ? "wardrobes" : "custom",
+    badge: s.branch === "wardrobes" ? "Шкафы" : "Корпусная мебель",
+    title: s.shortTitle,
+    desc: s.lead,
+    specLabel: "Материалы",
+    specValue: s.materialOptions.slice(0, 2).join(" / "),
+    photos: s.gallery.slice(0, 5),
+    link: s.href,
+  }));
+
+  const catalogItems = [...kitchenCatalogItems, ...serviceCatalogItems];
+
   const firstFourIds = [
     "sherman-cognac",
-    "glass-wardrobe",
+    "walk-in",
     "mdf-plastik-hettich",
-    "bedroom-set",
+    "bedroom",
   ];
 
   const restOrderIds = [
-    "sliding-partition",
+    "partitions",
     "mdf-plastik-gola",
-    "light-wood-wardrobe",
-    "oak-veneer-panel",
+    "kids",
+    "tv-zones",
     "island-parquet",
-    "mirror-hall",
-    "cascade-partitions",
+    "hallway",
+    "office-home",
     "mdf-emal-vitrina",
-    "bathroom-vanity",
+    "bathroom",
     "velvet-matte",
-    "brick-wardrobe",
-    "office-reception",
+    "dressers",
+    "business",
     "emerald-enamel",
-    "curved-oak-facades",
+    "veneer-wood",
     "mdf-belyj-egger",
-    "wardrobe-inside",
+    "swing",
     "oak-stone",
-    "slat-panels",
+    "sliding",
     "mdf-grafit-gola",
+    "laundry",
     "mdf-klassika-dub",
+    "balcony",
     "mdf-plastik-slotex",
   ];
 
@@ -855,7 +674,7 @@ export default function HomePage() {
                               tabIndex={-1}
                               className="yandex-link"
                             >
-                              Читать на Яндекс.Картах →
+                              Читать на Яндекс Картах →
                             </a>
                           </div>
                         </div>
@@ -888,10 +707,10 @@ export default function HomePage() {
                             href={review.sourceUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Читать на Яндекс.Картах — отзыв: ${review.author}`}
+                            aria-label={`Читать на Яндекс Картах — отзыв: ${review.author}`}
                             className="yandex-link"
                           >
-                            Читать на Яндекс.Картах →
+                            Читать на Яндекс Картах →
                           </a>
                         </div>
                       </article>
@@ -1045,7 +864,7 @@ export default function HomePage() {
 
           <div className="knowledge-track-single">
             <Link
-              href={`/knowledge/${KNOWLEDGE_ARTICLES[0].slug}`}
+              href={`/knowledge/${KNOWLEDGE_ARTICLES[0].slug}/`}
               className="knowledge-object-card"
             >
               <div className="knowledge-object-media">

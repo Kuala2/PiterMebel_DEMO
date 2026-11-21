@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
+import SpotlightArea from "@/components/SpotlightArea";
 import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
 import CatalogTabs from "@/components/CatalogTabs";
@@ -61,7 +62,7 @@ export default function KitchensCatalogPage() {
       {/* 1. Page Header */}
       <PageHeader title="Кухни на заказ" />
 
-      {/* 2. Filter Tabs Bar (Under the line) */}
+      {/* 2. Filter Tabs Bar */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
         <div className="container">
           <CatalogTabs
@@ -73,43 +74,30 @@ export default function KitchensCatalogPage() {
         </div>
       </section>
 
-      {/* 2. Alternating Ladder Showcase */}
-      {filteredKitchens.map((kitchen, idx) => {
-        const isReversed = idx % 2 === 1;
-        const currentIdx = cardPhoto[kitchen.slug] ?? 0;
-        const photos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
-        const isDark = idx !== 1;
-        const isFirst = idx === 0;
+      {/* 3. Kitchens 3-Column Portfolio Grid */}
+      <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "28px", paddingBottom: "96px" }}>
+        <div className="container">
+          <SpotlightArea className="projects-grid" selector=".catalog-card">
+            {filteredKitchens.map((kitchen, idx) => {
+              const currentIdx = cardPhoto[kitchen.slug] ?? 0;
+              const photos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
 
-        return (
-          <section
-            key={kitchen.slug}
-            className={`kitchen-ladder-section ${isFirst ? "kitchen-ladder-first" : ""}`}
-            style={{
-              backgroundColor: isDark ? "var(--bg-dark)" : "var(--bg-studio)",
-              ...(isFirst ? { paddingTop: "28px" } : {}),
-            }}
-          >
-            <div className="container">
-              <div
-                className={`kitchen-ladder-item spotlight-target ${isReversed ? "is-reversed" : ""}`}
-                style={{ marginBottom: 0 }}
-              >
-                {/* Photo Column */}
-                <div className="ladder-photo-col">
-                  <div className="ladder-gallery-wrap">
+              return (
+                <div
+                  key={kitchen.slug}
+                  className="catalog-card project-card-item spotlight-target"
+                >
+                  <div className="card-gallery-wrap">
                     <Image
                       key={photos[currentIdx] || photos[0]}
                       src={photos[currentIdx] || photos[0]}
                       alt={kitchen.title}
                       fill
-                      sizes="(max-width: 1024px) 100vw, 720px"
-                      className="card-img-slide"
-                      priority={isFirst && currentIdx === 0}
-                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                      className="card-img-slide is-active"
+                      priority={idx < 3 && currentIdx === 0}
                     />
 
-                    {/* In-Card Left Arrow */}
                     {photos.length > 1 && (
                       <button
                         type="button"
@@ -129,7 +117,6 @@ export default function KitchensCatalogPage() {
                       </button>
                     )}
 
-                    {/* In-Card Right Arrow */}
                     {photos.length > 1 && (
                       <button
                         type="button"
@@ -148,91 +135,117 @@ export default function KitchensCatalogPage() {
                       </button>
                     )}
 
-                    {/* Photo Dots */}
-                    <div className="card-photo-dots">
-                      {photos.map((_, pIdx) => (
-                        <button
-                          key={pIdx}
-                          type="button"
-                          className={`photo-square-dot ${
-                            currentIdx === pIdx ? "is-active" : ""
-                          }`}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setCardPhoto((prev) => ({ ...prev, [kitchen.slug]: pIdx }));
-                          }}
-                          aria-label={`Фото ${pIdx + 1}`}
-                        />
-                      ))}
-                    </div>
+                    {photos.length > 1 && (
+                      <div className="card-photo-dots">
+                        {photos.map((_, pIdx) => (
+                          <button
+                            key={pIdx}
+                            type="button"
+                            className={`photo-square-dot ${
+                              currentIdx === pIdx ? "is-active" : ""
+                            }`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              setCardPhoto((prev) => ({ ...prev, [kitchen.slug]: pIdx }));
+                            }}
+                            aria-label={`Фото ${pIdx + 1}`}
+                          />
+                        ))}
+                      </div>
+                    )}
 
-                    {/* Direct link on photo area */}
                     <Link
                       href={`/kitchens/${kitchen.slug}/`}
                       style={{ position: "absolute", inset: 0, zIndex: 2 }}
-                      aria-label={`Подробнее: ${kitchen.title}`}
+                      aria-label={`Смотреть проект ${kitchen.title}`}
                     />
                   </div>
-                </div>
 
-                {/* Info Column (Весь блок кликабелен для перехода к модели) */}
-                <div className="ladder-info-col">
                   <Link
                     href={`/kitchens/${kitchen.slug}/`}
-                    className="ladder-content-clickable"
-                    style={{ textDecoration: "none", color: "inherit", display: "flex", flexDirection: "column", cursor: "pointer" }}
+                    className="card-body"
+                    style={{ textDecoration: "none", display: "flex", flexDirection: "column", cursor: "pointer" }}
                   >
-                    <div>
-                      <h2 className="ladder-title" style={{ marginBottom: "20px" }}>{kitchen.title}</h2>
+                    <h2 className="card-title">{kitchen.title}</h2>
+
+                    <div className="card-specs-tags">
+                      {kitchen.specs.length > 0 ? (
+                        kitchen.specs.slice(0, 3).map((spec) => (
+                          <span key={`${kitchen.slug}-${spec.label}`} className="spec-tag">
+                            {spec.value}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="spec-tag">Индивидуальный проект</span>
+                      )}
                     </div>
 
-                    <div className="ladder-specs-rows">
-                      {kitchen.specs.slice(0, 3).map((spec) => (
-                        <div className="spec-row" key={`${kitchen.slug}-${spec.label}`}>
-                          <span className="spec-row-label">{spec.label}</span>
-                          <span className="spec-row-val">{spec.value}</span>
-                        </div>
-                      ))}
+                    <div className="card-footer-row">
+                      <span className="card-view-btn">Смотреть проект →</span>
                     </div>
                   </Link>
-
-                  <div className="ladder-actions" style={{ marginTop: "20px" }}>
-                    <Link
-                      href={`/kitchens/${kitchen.slug}/`}
-                      className="btn btn-green"
-                    >
-                      Смотреть проект →
-                    </Link>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </section>
-        );
-      })}
+              );
+            })}
+          </SpotlightArea>
+        </div>
+      </section>
 
       <CatalogEditorial
-        title="Кухни на заказ по индивидуальным размерам"
-        intro="Проектируем и изготавливаем кухни в собственном цеху на Петергофском шоссе, 73. Каждый гарнитур рассчитывается с точностью до миллиметра под планировку помещения, выступы, ниши и габариты встраиваемой техники."
+        title="Кухни на заказ в Санкт-Петербурге: материалы, цены и сроки"
+        intro="Проектируем и изготавливаем кухни в собственном цеху на Петергофском шоссе, 73 с уже включённой столешницей."
+        materials={[
+          { material: "ЛДСП Egger", priceTier: "250–280\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
+          { material: "МДФ в плёнке ПВХ", priceTier: "280–300\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
+          { material: "МДФ пластик AGT / Velvet", priceTier: "300–330\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
+          { material: "МДФ эмаль RAL / NCS", priceTier: "340–370\u00A0тыс.\u00A0₽", leadTime: "4–5 нед." },
+          { material: "Шпон дуба", priceTier: "390–430\u00A0тыс.\u00A0₽", leadTime: "4–6 нед." },
+        ]}
+        materialsNote={"Ориентир за угловую кухню 3,5 м со столешницей Slotex 38 мм (прямая — от 160\u00A0000\u00A0₽)."}
+        calculatorHref="/calculator/?category=kitchen&layout=corner&meters=3.5&material=plastic"
+        calculatorLabel="Рассчитать кухню →"
         items={[
-          { title: "Материалы и фурнитура", text: "Работаем с влагостойкими плитами Egger, фасадами МДФ в пластике AGT и Velvet, матовой эмалью, натуральным шпоном дуба, столешницами Slotex (38 мм) и компакт-плитами HPL. Комплектуем секции петлями и выдвижными ящиками Blum, Hettich и Boyard с плавным закрыванием." },
-          { title: "Точный проект и схема электрики", text: "До запуска в производство выполняем точный замер и выдаём готовую схему расположения розеток и сантехнических выводов под вашу бытовую технику." },
-          { title: "Установка и подключение под ключ", text: "Штатные мастера собирают гарнитур, врезают мойку и варочную панель, устанавливают подсветку рабочей зоны и подключают всю бытовую технику и сантехнику за 1–2 дня." },
+          {
+            title: "Схема электрики в подарок",
+            text: "При заказе кухни выдаём в подарок точный план розеток и воды под встраиваемую технику до начала ремонта.",
+          },
+          {
+            title: "Цех без наценок салонов",
+            text: "Кроим и присаживаем под Blum и Hettich на своих станках — нестандарт без доплат.",
+          },
+          {
+            title: "Монтаж под ключ за 1–2 дня",
+            text: "Штатные мастера собирают гарнитур, врезают мойку и подключают технику с сантехникой.",
+          },
         ]}
         links={[
           { href: "/apartment/", label: "Мебель во всю квартиру за месяц" },
-          { href: "/calculator/?category=kitchen", label: "Рассчитать стоимость кухни" },
+          { href: "/calculator/?category=kitchen&layout=corner&meters=3.5", label: "Рассчитать стоимость кухни" },
           { href: "/knowledge/rozetki-na-kuhne-shema-vysoty/", label: "Схема розеток и воды под кухню" },
           { href: "/projects/", label: "Смотреть всё портфолио" },
         ]}
         faq={[
-          { question: "Сколько времени занимает изготовление кухни на заказ?", answer: "Срок производства кухни зависит от выбранного материала фасадов и в среднем составляет от 3 до 4 недель. Точная дата доставки и сборки фиксируется в договоре." },
-          { question: "Как рассчитывается стоимость кухни?", answer: "Цена зависит от габаритов гарнитура, материала фасадов, столешницы и выбранной фурнитуры. Предварительный расчёт можно выполнить в онлайн-калькуляторе или по вашим размерам." },
+          {
+            question: "Сколько стоит кухня на заказ в Санкт-Петербурге?",
+            answer: "Прямые кухни начинаются от 160\u00A0000\u00A0₽. Угловая кухня 3,5 м со столешницей Slotex 38 мм стоит 250–280\u00A0тыс.\u00A0₽ в Egger и 300–330\u00A0тыс.\u00A0₽ в AGT/Velvet.",
+          },
+          {
+            question: "Сколько времени занимает изготовление кухни?",
+            answer: "В Egger, ПВХ и AGT/Velvet — 3–4 недели, в матовой эмали и натуральном шпоне — 4–6 недель по договору.",
+          },
+          {
+            question: "Что входит в базовый расчёт и стоимость монтажа?",
+            answer: "В базовый расчёт уже включена влагостойкая столешница Slotex 38 мм. Доставку, сборку и нужные подключения техники и сантехники сразу прописываем в смете договора — без скрытых доплат при монтаже.",
+          },
+          {
+            question: "Когда лучше проектировать кухню — до или после разводки электрики?",
+            answer: "До разводки электрики и сантехники: мы выдаём схему розеток и воды до черновых работ.",
+          },
         ]}
       />
 
-      {/* 3. Consultation Section */}
+      {/* 4. Consultation Section */}
       <LeadSection
         id="consult"
         initialCategory="Кухня"

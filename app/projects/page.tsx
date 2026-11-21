@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
 import SpotlightArea from "@/components/SpotlightArea";
-import { PROJECTS } from "@/data/projects";
+import { SERVICE_PAGES } from "@/data/services";
 import { KITCHENS } from "@/data/kitchens";
 import PageHeader from "@/components/PageHeader";
 import CatalogTabs from "@/components/CatalogTabs";
@@ -26,9 +26,7 @@ interface PortfolioCardItem {
 }
 
 const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
-  ...KITCHENS.filter(
-    (k) => !PROJECTS.some((p) => p.relatedKitchenSlug === k.slug)
-  ).map((k): PortfolioCardItem => ({
+  ...KITCHENS.map((k): PortfolioCardItem => ({
     slug: `kitchen-${k.slug}`,
     href: `/kitchens/${k.slug}/`,
     badge: "Кухня",
@@ -38,52 +36,52 @@ const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
     gallery: k.gallery,
     materials: k.specs.slice(0, 3).map((s) => s.value),
   })),
-  ...PROJECTS.map((p): PortfolioCardItem => {
-    const category: MainCategoryKey =
-      p.type === "Кухня"
-        ? "kitchens"
-        : p.type === "Гардеробная" || p.type === "Спальня" || p.type === "Прихожая"
-          ? "wardrobes"
-          : "custom";
+  ...SERVICE_PAGES.map((s): PortfolioCardItem => {
+    const isWardrobe = s.branch === "wardrobes";
     return {
-      slug: p.slug,
-      href: `/projects/${p.slug}/`,
-      badge: p.type,
-      category,
-      title: p.title,
-      cover: p.cover,
-      gallery: p.gallery,
-      materials: p.materials,
+      slug: `service-${s.slug}`,
+      href: `/${s.branch}/${s.slug}/`,
+      badge: isWardrobe ? "Шкафы" : "Корпусная мебель",
+      category: isWardrobe ? "wardrobes" : "custom",
+      title: s.shortTitle,
+      cover: s.cover || s.gallery[0] || "",
+      gallery: s.gallery.slice(0, 5),
+      materials: s.materialOptions.slice(0, 3),
     };
   }),
 ];
 
 const PORTFOLIO_ORDER = [
-  "sherman-cognac",
-  "glass-wardrobe",
+  "kitchen-sherman-cognac",
+  "service-walk-in",
+  "service-tv-zones",
   "kitchen-mdf-plastik-hettich",
-  "bedroom-set",
-  "sliding-partition",
+  "service-swing",
+  "service-bathroom",
   "kitchen-mdf-plastik-gola",
-  "light-wood-wardrobe",
-  "oak-veneer-panel",
-  "island-parquet",
-  "mirror-hall",
-  "cascade-partitions",
+  "service-hallway",
+  "service-partitions",
+  "kitchen-island-parquet",
+  "service-bedroom",
+  "service-kids",
   "kitchen-mdf-emal-vitrina",
-  "bathroom-vanity",
-  "velvet-matte",
-  "brick-wardrobe",
-  "office-reception",
-  "emerald-enamel",
-  "curved-oak-facades",
+  "service-sliding",
+  "service-office-home",
+  "kitchen-velvet-matte",
+  "service-veneer-wood",
+  "service-dressers",
+  "kitchen-emerald-enamel",
+  "service-laundry",
+  "service-business",
   "kitchen-mdf-belyj-egger",
-  "wardrobe-inside",
-  "oak-stone",
-  "slat-panels",
+  "service-balcony",
+  "kitchen-oak-stone",
   "kitchen-mdf-grafit-gola",
   "kitchen-mdf-klassika-dub",
   "kitchen-mdf-plastik-slotex",
+  "kitchen-white-showcase",
+  "kitchen-marble-hood",
+  "kitchen-narrow-kitchen",
 ];
 
 const PORTFOLIO_ITEMS: PortfolioCardItem[] = [
@@ -277,11 +275,30 @@ export default function ProjectsPortfolioPage() {
 
       <CatalogEditorial
         title="Мебель, изготовленная и установленная нашей командой"
-        intro="В портфолио собраны фотографии готовых кухонь, гардеробных, шкафов и комплексных проектов меблировки квартир, выполненных в нашем цеху на Петергофском шоссе, 73."
+        intro="Реальные проекты из цеха на Петергофском шоссе, 73 — любое решение адаптируем под вашу планировку."
+        materialsTitle="Ориентир по срокам и цене"
+        summaryFacts={[
+          { label: "Шкафы и корпусная мебель", value: "от 80\u00A0000\u00A0₽" },
+          { label: "Кухни на заказ", value: "от 160\u00A0000\u00A0₽" },
+          { label: "Срок изготовления", value: "2–4 недели" },
+          { label: "Вся мебель в квартиру", value: "около 1 месяца" },
+        ]}
+        materialsNote="Точная смета фиксируется в договоре после замера."
+        calculatorHref="/calculator/"
+        calculatorLabel="Открыть калькулятор →"
         items={[
-          { title: "Индивидуальное проектирование", text: "Любой понравившийся проект из портфолио мы адаптируем под планировку вашей квартиры, размеры стен, расположение коммуникаций и нужный состав бытовой техники." },
-          { title: "Прямое производство без посредников", text: "Раскрой плит, кромление с прифуговкой и сверловка под фурнитуру выполняются на собственных станках в Санкт-Петербурге с контролем качества каждого узла." },
-          { title: "Фиксированная смета и гарантия", text: "Полная спецификация материалов, фурнитуры и сроков закрепляется в официальном договоре до начала работ. Доставка и сборка выполняются штатными мастерами." },
+          {
+            title: "Адаптация под вашу планировку",
+            text: "Пересчитываем любой проект из портфолио под ваши стены, выступы и состав техники.",
+          },
+          {
+            title: "Прямое производство в СПб",
+            text: "Раскрой, кромление с прифуговкой и присадку выполняем на собственных станках без посредников.",
+          },
+          {
+            title: "Фиксированная смета по договору",
+            text: "Спецификация материалов и сроки закрепляются в договоре без скрытых доплат.",
+          },
         ]}
         links={[
           { href: "/apartment/", label: "Мебель во всю квартиру за месяц" },
@@ -290,8 +307,18 @@ export default function ProjectsPortfolioPage() {
           { href: "/calculator/", label: "Рассчитать свой проект" },
         ]}
         faq={[
-          { question: "Можно ли рассчитать проект, похожий на работу из портфолио?", answer: "Да, выберите понравившийся проект или пришлите нам примерные размеры помещения — мы подготовим расчёт стоимости и подберём материалы под ваш бюджет." },
-          { question: "Где можно посмотреть образцы материалов вживую?", answer: "Посмотреть и потрогать образцы фасадов, столешниц, плит и фурнитуры можно в нашем офисе у метро «Нарвская» (пл. Стачек, 9, БЦ «Кировский», оф. 407) по предварительной записи." },
+          {
+            question: "Можно ли рассчитать проект, похожий на работу из портфолио?",
+            answer: "Да — выберите нужную категорию и примерные размеры в онлайн-калькуляторе, чтобы сразу увидеть ориентир стоимости.",
+          },
+          {
+            question: "Где можно посмотреть образцы материалов из портфолио вживую?",
+            answer: "Образцы фасадов, столешниц и фурнитуры представлены в офисе у метро «Нарвская» по предварительной записи.",
+          },
+          {
+            question: "Есть ли скидка при заказе нескольких позиций сразу?",
+            answer: "Да, при заказе от 2 изделий или полной меблировке квартиры действует скидка за объём.",
+          },
         ]}
       />
 

@@ -4,20 +4,20 @@ import Image from "next/image";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
-import { buildOg } from "@/lib/seo";
+import { buildOg, buildTwitter } from "@/lib/seo";
+
+const TITLE = "База знаний о проектировании мебели | ПитерМебель";
+const DESCRIPTION =
+  "Практические материалы о подготовке кухни, выборе фасадов, наполнении гардеробных и монтаже мебели на заказ в Санкт-Петербурге.";
 
 export const metadata: Metadata = {
-  title: "База знаний о проектировании мебели | ПитерМебель",
-  description:
-    "Практические материалы о подготовке кухни, выборе фасадов, наполнении гардеробных и монтаже мебели на заказ в Санкт-Петербурге.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
     canonical: "/knowledge/",
   },
-  openGraph: buildOg(
-    "База знаний о проектировании мебели | ПитерМебель",
-    "Практические материалы о подготовке кухни, выборе фасадов и монтаже мебели на заказ.",
-    "/knowledge"
-  ),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/knowledge"),
+  twitter: buildTwitter(TITLE, DESCRIPTION),
 };
 
 export default function KnowledgePage() {

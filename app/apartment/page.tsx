@@ -4,7 +4,7 @@ import BoostVideoPlayer from "@/components/BoostVideoPlayer";
 import DesignPackagesSection from "@/components/DesignPackagesSection";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, buildBreadcrumbs, buildOg } from "@/lib/seo";
+import { SITE_URL, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
 
 const PAGE_TITLE = `Мебель во всю квартиру за месяц — видеообзор | ${SITE_CONFIG.name}`;
 const PAGE_DESCRIPTION =
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     canonical: "/apartment/",
   },
   openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/apartment"),
+  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION),
 };
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbs([
@@ -35,9 +36,33 @@ const VIDEO_JSON_LD = {
   contentUrl: `${SITE_URL}/video/studio-apartment-720p.mp4`,
   embedUrl: "https://vk.ru/clip-215942650_456239099",
   publisher: {
-    "@type": "Organization",
-    name: SITE_CONFIG.name,
-    url: SITE_URL,
+    "@id": `${SITE_URL}/#organization`,
+  },
+};
+
+const SERVICE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Комплексная меблировка квартиры на заказ за месяц в Санкт-Петербурге",
+  serviceType: "Мебель во всю квартиру под ключ",
+  description: PAGE_DESCRIPTION,
+  url: `${SITE_URL}/apartment/`,
+  areaServed: {
+    "@type": "City",
+    name: SITE_CONFIG.city,
+  },
+  provider: {
+    "@id": `${SITE_URL}/#organization`,
+  },
+  offers: {
+    "@type": "Offer",
+    url: `${SITE_URL}/calculator/?category=cabinet&layout=complex`,
+    priceCurrency: "RUB",
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      minPrice: 160000,
+      priceCurrency: "RUB",
+    },
   },
 };
 
@@ -52,11 +77,15 @@ export default function ApartmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(VIDEO_JSON_LD) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_JSON_LD) }}
+      />
 
       <section className="detail-page-header boost-hero-section" data-sticky-cta-suppress>
         <div className="container">
           <div className="detail-top-nav">
-            <Link href="/" className="btn btn-glass boost-back-btn" style={{ gap: "8px" }}>
+            <Link href="/" className="detail-top-link boost-back-btn">
               ← На главную
             </Link>
           </div>
@@ -81,15 +110,19 @@ export default function ApartmentPage() {
               <div className="detail-specs-table boost-specs-table" data-sticky-cta-suppress>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Что входит в заказ</span>
-                  <span className="detail-spec-val">Кухня, шкафы-купе, прихожая, стеллажи и рабочая зона</span>
+                  <span className="detail-spec-val">Кухня, шкафы-купе, гардеробная, прихожая, ванная, ТВ-зона и рабочее место</span>
                 </div>
                 <div className="detail-spec-row">
-                  <span className="detail-spec-name">Производство</span>
-                  <span className="detail-spec-val">Собственный цех в Санкт-Петербурге · по точным размерам</span>
+                  <span className="detail-spec-name">Материалы и фурнитура</span>
+                  <span className="detail-spec-val">ЛДСП Egger, МДФ в пластике AGT / ПВХ / эмали, шпон дуба, столешницы Slotex и HPL · Blum, Hettich, Boyard</span>
                 </div>
                 <div className="detail-spec-row">
-                  <span className="detail-spec-name">Монтаж под ключ</span>
-                  <span className="detail-spec-val">Доставка, чистовая сборка и подключение техники</span>
+                  <span className="detail-spec-name">Срок и ориентир цены</span>
+                  <span className="detail-spec-val">Около 1 месяца · кухни от 160 000 ₽, шкафы и корпусная мебель от 80 000 ₽ · скидка от 2 изделий</span>
+                </div>
+                <div className="detail-spec-row">
+                  <span className="detail-spec-name">Монтаж и условия</span>
+                  <span className="detail-spec-val">Свой цех в СПб, доставка, чистовая сборка и подключение техники. Договор, оплата по счёту, СБП, картой или в рассрочку</span>
                 </div>
               </div>
 

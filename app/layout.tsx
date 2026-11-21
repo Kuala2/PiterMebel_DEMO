@@ -55,6 +55,10 @@ const SITE_JSON_LD = {
         addressCountry: "RU",
       },
       geo: { "@type": "GeoCoordinates", latitude: 59.899907, longitude: 30.272883 },
+      areaServed: [
+        { "@type": "City", name: SITE_CONFIG.city },
+        { "@type": "AdministrativeArea", name: "Ленинградская область" },
+      ],
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",

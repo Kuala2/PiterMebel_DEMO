@@ -16,7 +16,7 @@ type MaterialId = keyof typeof CALCULATOR_PRICING.materialMultipliers;
 
 const CATEGORIES: Array<Choice & { id: CalculatorCategory }> = [
   { id: "kitchen", name: "Кухня", description: "Гарнитур по одной или нескольким стенам" },
-  { id: "wardrobe", name: "Шкаф или гардеробная", description: "Встроенная или отдельностоящая система хранения" },
+  { id: "wardrobe", name: "Шкаф или гардеробная", description: "Встроенная или отдельно стоящая система хранения" },
   { id: "cabinet", name: "Корпусная мебель", description: "Прихожая, ТВ-зона, ванная или несколько изделий" },
 ];
 
@@ -54,12 +54,12 @@ const MATERIALS_BY_CATEGORY: Record<CalculatorCategory, Array<Choice & { id: Mat
     {
       id: "plastic",
       name: "МДФ в пластике AGT / Velvet",
-      description: "Износостойкая матовая или бархатистая поверхность с герметичной кромкой",
+      description: "Износостойкая матовая или бархатистая поверхность с влагостойкой кромкой",
     },
     {
       id: "enamel",
       name: "МДФ в матовой эмали",
-      description: "Окраска в любой оттенок по палитрам RAL и NCS, гладкие или с выборкой",
+      description: "Окраска в любой оттенок по палитрам RAL и NCS, гладкие или с фрезеровкой",
     },
     {
       id: "veneer",
@@ -174,7 +174,7 @@ const OPTIONS_BY_CATEGORY: Record<CalculatorCategory, Choice[]> = {
     { id: "lighting", name: "Встроенная подсветка", description: "Подсветка открытых полок, ниш и витрин со стеклом" },
     { id: "ceiling", name: "Исполнение до потолка", description: "Высокие секции с точной подгонкой по стенам и потолку" },
     { id: "fittings", name: "Фурнитура Blum / Hettich", description: "Петли, подъёмники и направляющие повышенного ресурса" },
-    { id: "mixed", name: "Комбинация материалов", description: "Сочетание эмали, шпона дуба, стекла, зеркал или рейки" },
+    { id: "mixed", name: "Комбинация материалов", description: "Сочетание эмали, шпона дуба, стекла, зеркал или реек" },
   ],
 };
 
@@ -288,7 +288,11 @@ export default function CalculatorPage() {
     options,
   }), [category, layout, material, meters, options]);
 
-  const priceLabel = `${formatPrice(estimate.low)} — ${formatPrice(estimate.high)} ₽`;
+  const isSinglePrice = estimate.low === estimate.high;
+  const priceLabel = isSinglePrice
+    ? `от ${formatPrice(estimate.low)} ₽`
+    : `${formatPrice(estimate.low)} — ${formatPrice(estimate.high)} ₽`;
+  const priceDisplay = isSinglePrice ? priceLabel : `≈ ${priceLabel}`;
   const summary = useMemo(() => [
     `Изделие: ${categoryChoice.name}`,
     `Конфигурация: ${layoutChoice.name}`,
@@ -418,13 +422,13 @@ export default function CalculatorPage() {
             <div ref={stageRef} className="calculator-stage">
               <header className="calculator-stage-header">
                 <p>Шаг {step + 1} из {STEPS.length}</p>
-                <h3 ref={stageHeadingRef} tabIndex={-1}>{STEPS[step].title}</h3>
+                <h2 ref={stageHeadingRef} tabIndex={-1}>{STEPS[step].title}</h2>
                 <span>{STEPS[step].description}</span>
               </header>
 
               <div className="calculator-mobile-price" aria-live="polite">
                 <span>Ориентировочная стоимость</span>
-                <strong>≈ {priceLabel}</strong>
+                <strong>{priceDisplay}</strong>
               </div>
 
               {step === 0 && (
@@ -599,8 +603,8 @@ export default function CalculatorPage() {
               tabIndex={-1}
             >
               <div className="calculator-price">
-                <p>Предварительный диапазон</p>
-                <strong>≈ {priceLabel}</strong>
+                <p>{isSinglePrice ? "Предварительный ориентир" : "Предварительный диапазон"}</p>
+                <strong>{priceDisplay}</strong>
                 <span>Ориентир меняется вместе с выбранными параметрами.</span>
               </div>
 

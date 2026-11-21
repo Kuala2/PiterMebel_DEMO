@@ -1,5 +1,4 @@
 export type ProjectType =
-  | "Кухня"
   | "Гардеробная"
   | "Спальня"
   | "Прихожая"
@@ -12,6 +11,7 @@ export type ProjectType =
 export interface Project {
   slug: string;
   type: ProjectType;
+  targetHref: string;
   title: string;
   cover: string;
   gallery: string[];
@@ -19,137 +19,13 @@ export interface Project {
   materials: string[];
   /** Внутренний источник фактов. Не выводится на сайт. */
   source: string;
-  relatedKitchenSlug?: string;
 }
 
 export const PROJECTS: Project[] = [
   {
-    slug: "island-parquet",
-    type: "Кухня",
-    title: "Кухня эмаль и натуральный шпон",
-    cover: "/img/projects/island-parquet/photo_1.jpg",
-    gallery: [
-      "/img/projects/island-parquet/photo_1.jpg",
-      "/img/projects/island-parquet/photo_2.jpg",
-      "/img/projects/island-parquet/photo_3.jpg",
-      "/img/projects/island-parquet/photo_4.jpg",
-    ],
-    summary: "Фасады из МДФ в эмали сочетаются с натуральным шпоном, а столешница из искусственного камня объединяет рабочую зону в единую композицию. Тёплая древесная фактура смягчает строгую геометрию кухни.",
-    materials: ["МДФ в эмали", "Натуральный шпон", "Искусственный камень"],
-    source: "posts/post_253/post_info.json",
-  },
-  {
-    slug: "oak-stone",
-    type: "Кухня",
-    title: "Кухня эмаль и массив дуба",
-    cover: "/img/projects/oak-stone/photo_1.jpg",
-    gallery: [
-      "/img/projects/oak-stone/photo_1.jpg",
-      "/img/projects/oak-stone/photo_2.jpg",
-      "/img/projects/oak-stone/photo_3.jpg",
-      "/img/projects/oak-stone/photo_4.jpg",
-      "/img/projects/oak-stone/photo_5.jpg",
-      "/img/projects/oak-stone/photo_6.jpg",
-    ],
-    summary: "Фасады из МДФ в эмали дополнены деталями из массива дуба. Столешница из кварцевого агломерата продолжается на подоконник, образуя цельную рабочую поверхность с интегрированной мойкой.",
-    materials: ["МДФ в эмали", "Массив дуба", "Кварцевый агломерат"],
-    source: "posts/post_246/post_info.json",
-  },
-  {
-    slug: "white-showcase",
-    type: "Кухня",
-    title: "Белая угловая кухня с витриной",
-    cover: "/img/projects/white-showcase/photo_1.jpg",
-    gallery: [
-      "/img/projects/white-showcase/photo_1.jpg",
-      "/img/projects/white-showcase/photo_2.jpg",
-      "/img/projects/white-showcase/photo_3.jpg",
-      "/img/projects/white-showcase/photo_4.jpg",
-      "/img/projects/white-showcase/photo_5.jpg",
-    ],
-    summary: "Светлая угловая кухня с высокими секциями помогает собрать хранение и встроенную технику в единую линию. Витрина с подсветкой делает крупную композицию визуально легче.",
-    materials: [],
-    source: "Подтверждённого текстового описания материалов нет; указаны только видимые элементы",
-  },
-  {
-    slug: "marble-hood",
-    type: "Кухня",
-    title: "Кухня с тонкой столешницей HPL",
-    cover: "/img/projects/marble-hood/photo_1.jpg",
-    gallery: [
-      "/img/projects/marble-hood/photo_1.jpg",
-      "/img/projects/marble-hood/photo_2.jpg",
-      "/img/projects/marble-hood/photo_3.jpg",
-      "/img/projects/marble-hood/photo_4.jpg",
-      "/img/projects/marble-hood/photo_5.jpg",
-    ],
-    summary: "Тонкая столешница HPL толщиной 12 мм подчёркивает горизонталь рабочей зоны и поддерживает лаконичный характер кухни. Решение выглядит легче привычной массивной столешницы.",
-    materials: ["HPL 12 мм"],
-    source: "posts/post_231/post_info.json",
-  },
-  {
-    slug: "narrow-kitchen",
-    type: "Кухня",
-    title: "Кухня с фасадами МДФ ПВХ",
-    cover: "/img/projects/narrow-kitchen/photo_1.jpg",
-    gallery: [
-      "/img/projects/narrow-kitchen/photo_1.jpg",
-      "/img/projects/narrow-kitchen/photo_2.jpg",
-      "/img/projects/narrow-kitchen/photo_3.jpg",
-    ],
-    summary: "Фасады из МДФ ПВХ в оттенке «кашемир серый» создают спокойную нейтральную основу, столешница Slotex добавляет фактуру. Ручки и фартук заказчик подобрал отдельно под интерьер.",
-    materials: ["МДФ ПВХ", "Slotex"],
-    source: "posts/post_244/post_info.json",
-  },
-  {
-    slug: "emerald-enamel",
-    type: "Кухня",
-    title: "Изумрудная кухня с белыми витринами",
-    cover: "/img/projects/emerald-enamel/photo_1.jpg",
-    gallery: [
-      "/img/projects/emerald-enamel/photo_1.jpg",
-      "/img/projects/emerald-enamel/photo_2.jpg",
-      "/img/projects/emerald-enamel/photo_3.jpg",
-      "/img/projects/emerald-enamel/photo_4.jpg",
-    ],
-    summary: "Линейная планировка с высоким пеналом под встроенную технику, купольной вытяжкой и контрастным цветовым решением: нижний ряд в насыщенном зелёном оттенке уравновешен белыми верхними витринами с перекрёстной раскладкой.",
-    materials: ["МДФ в эмали"],
-    source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
-    relatedKitchenSlug: "emerald-enamel",
-  },
-  {
-    slug: "velvet-matte",
-    type: "Кухня",
-    title: "Угловая матовая кухня с подсветкой",
-    cover: "/img/projects/velvet-matte/photo_1.jpg",
-    gallery: [
-      "/img/projects/velvet-matte/photo_1.jpg",
-      "/img/projects/velvet-matte/photo_2.jpg",
-    ],
-    summary: "Угловая композиция в спокойной светлой палитре: верхний ярус без видимых ручек выстроен до потолка, тёмный цоколь и мойка задают графичный акцент, а линейная LED-подсветка подчёркивает рисунок столешницы и фартука под камень.",
-    materials: ["МДФ-пластик Velvet"],
-    source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
-    relatedKitchenSlug: "velvet-matte",
-  },
-  {
-    slug: "sherman-cognac",
-    type: "Кухня",
-    title: "Угловая кухня с пеналом-витриной",
-    cover: "/img/projects/sherman-cognac/photo_1.jpg",
-    gallery: [
-      "/img/projects/sherman-cognac/photo_1.jpg",
-      "/img/projects/sherman-cognac/photo_2.jpg",
-      "/img/projects/sherman-cognac/photo_3.jpg",
-      "/img/projects/sherman-cognac/photo_4.jpg",
-    ],
-    summary: "Угловая планировка с высоким пеналом-витриной в тёмной рамке и тёплой внутренней подсветкой стекла. Фартук, столешница и облицовка стенового короба выполнены в едином древесном декоре Egger и дополнены гладкими белыми фасадами.",
-    materials: ["Глянцевый МДФ-пластик", "Egger «Шерман коньяк»"],
-    source: "client_data/AUDIO_TRANSCRIPTS.md, раздел 3",
-    relatedKitchenSlug: "sherman-cognac",
-  },
-  {
     slug: "glass-wardrobe",
     type: "Гардеробная",
+    targetHref: "/wardrobes/walk-in/",
     title: "Гардеробная со стеклом Stopsol",
     cover: "/img/projects/glass-wardrobe/photo_1.jpg",
     gallery: [
@@ -167,6 +43,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "brick-wardrobe",
     type: "Гардеробная",
+    targetHref: "/wardrobes/walk-in/",
     title: "П-образная гардеробная со скошенными полками",
     cover: "/img/projects/brick-wardrobe/photo_1.jpg",
     gallery: [
@@ -184,6 +61,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "wardrobe-inside",
     type: "Гардеробная",
+    targetHref: "/wardrobes/swing/",
     title: "Шкафы для комнаты и прихожей",
     cover: "/img/projects/wardrobe-inside/photo_1.jpg",
     gallery: [
@@ -201,6 +79,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "bedroom-set",
     type: "Спальня",
+    targetHref: "/wardrobes/bedroom/",
     title: "Шкафы и мебель для спальни",
     cover: "/img/projects/bedroom-set/photo_1.jpg",
     gallery: [
@@ -218,6 +97,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "mirror-hall",
     type: "Прихожая",
+    targetHref: "/wardrobes/hallway/",
     title: "Зеркальный шкаф с нишей для обуви",
     cover: "/img/projects/mirror-hall/photo_1.jpg",
     gallery: [
@@ -233,6 +113,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "slat-panels",
     type: "Корпусная мебель",
+    targetHref: "/wardrobes/sliding/",
     title: "Кухня, стеллаж и шкаф-купе",
     cover: "/img/projects/slat-panels/photo_1.jpg",
     gallery: [
@@ -250,6 +131,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "oak-veneer-panel",
     type: "Панели",
+    targetHref: "/custom-furniture/tv-zones/",
     title: "ТВ-зона с панелями из шпона дуба",
     cover: "/img/projects/oak-veneer-panel/photo_1.jpg",
     gallery: [
@@ -264,6 +146,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "office-reception",
     type: "Коммерческий",
+    targetHref: "/custom-furniture/business/",
     title: "Стойка ресепшен для клиники",
     cover: "/img/projects/office-reception/photo_1.jpg",
     gallery: [
@@ -280,6 +163,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "light-wood-wardrobe",
     type: "Гардеробная",
+    targetHref: "/wardrobes/walk-in/",
     title: "Гардеробная с подсветкой и древесным декором",
     cover: "/img/projects/light-wood-wardrobe/photo_1.jpg",
     gallery: [
@@ -297,6 +181,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "sliding-partition",
     type: "Перегородки",
+    targetHref: "/custom-furniture/partitions/",
     title: "Раздвижная перегородка для зонирования",
     cover: "/img/projects/sliding-partition/photo_1.jpg",
     gallery: [
@@ -312,6 +197,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "cascade-partitions",
     type: "Перегородки",
+    targetHref: "/custom-furniture/partitions/",
     title: "Каскадные раздвижные перегородки",
     cover: "/img/projects/cascade-partitions/photo_1.jpg",
     gallery: [
@@ -331,6 +217,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "curved-oak-facades",
     type: "Корпусная мебель",
+    targetHref: "/custom-furniture/veneer-wood/",
     title: "Радиусные фасады из шпона дуба",
     cover: "/img/projects/curved-oak-facades/photo_1.jpg",
     gallery: [
@@ -345,14 +232,15 @@ export const PROJECTS: Project[] = [
   {
     slug: "bathroom-vanity",
     type: "Ванная",
+    targetHref: "/custom-furniture/bathroom/",
     title: "Влагостойкая мебель для ванной комнаты",
     cover: "/img/projects/bathroom-vanity/photo_1.jpg",
     gallery: [
       "/img/projects/bathroom-vanity/photo_1.jpg",
       "/img/projects/bathroom-vanity/photo_2.jpg",
     ],
-    summary: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с бесшовной влагостойкой обработкой кромок.",
-    materials: ["МДФ в пластике", "Влагостойкая кромка / кромкооблицовка"],
+    summary: "Мебель для санузлов и ванных комнат с повышенной защитой от влаги. Фасады и корпуса из МДФ в пластике с влагостойкой кромкой.",
+    materials: ["МДФ в пластике", "Влагостойкая кромка"],
     source: "posts/post_156/post_info.json",
   },
 ];

@@ -3,19 +3,19 @@ import type { Metadata } from "next";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
-import { buildOg } from "@/lib/seo";
+import { buildOg, buildTwitter } from "@/lib/seo";
+
+const TITLE = `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`;
+const DESCRIPTION = `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру. Мебель на заказ с ${SITE_CONFIG.foundingYear} года.`;
 
 export const metadata: Metadata = {
-  title: `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`,
-  description: `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру. Мебель на заказ с ${SITE_CONFIG.foundingYear} года.`,
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: {
     canonical: "/production/",
   },
-  openGraph: buildOg(
-    `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`,
-    `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру с ${SITE_CONFIG.foundingYear} года.`,
-    "/production"
-  ),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/production"),
+  twitter: buildTwitter(TITLE, DESCRIPTION),
 };
 
 export default function ProductionPage() {
