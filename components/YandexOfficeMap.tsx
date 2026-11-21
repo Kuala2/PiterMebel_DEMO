@@ -73,7 +73,7 @@ export default function YandexOfficeMap() {
           const placemark = new window.ymaps.Placemark(
             [59.899907, 30.272883],
             {
-              hintContent: "Студия мебели «ПитерМебель» · пл. Стачек, 9, 4 этаж",
+              hintContent: "Студия мебели «ПитерМебель» · пл. Стачек, 9, оф. 407, 4 этаж",
               iconCaption: "ПитерМебель",
             },
             {
@@ -226,7 +226,7 @@ export default function YandexOfficeMap() {
               animation: "spin 0.8s linear infinite",
             }}
           />
-          <span>Загрузка карты...</span>
+          <span>Загрузка карты…</span>
         </div>
       )}
     </div>

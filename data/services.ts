@@ -545,7 +545,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       },
     ],
     relatedLinks: [
-      { href: "/custom-furniture/laundry/", label: "Постирочные и хоз. шкафы" },
+      { href: "/custom-furniture/laundry/", label: "Постирочные и хозяйственные шкафы" },
       { href: "/custom-furniture/dressers/", label: "Комоды и консоли" },
       { href: "/apartment/", label: "Мебель во всю квартиру за месяц" },
       { href: "/calculator/?category=cabinet&layout=single&meters=1.2&material=plastic", label: "Калькулятор мебели" },
@@ -612,7 +612,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     editorialIntro: "Проектируем ТВ-зоны со скрытым кабель-каналом; в кухне-гостиной кроим в тон кухни из одной партии.",
     materials: [
       { material: "ЛДСП Egger (зона 2,4 м)", priceTier: "160–170\u00A0тыс.\u00A0₽", leadTime: "2–3 нед." },
-      { material: "МДФ пластик AGT / ПВХ", priceTier: "190–210\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
+      { material: "МДФ пластик AGT / ПВХ", priceTier: "180–210\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
       { material: "МДФ эмаль RAL / NCS", priceTier: "220–240\u00A0тыс.\u00A0₽", leadTime: "4–5 нед." },
       { material: "Шпон дуба и витрины", priceTier: "240–270\u00A0тыс.\u00A0₽", leadTime: "4–6 нед." },
     ],
@@ -672,7 +672,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
     seoDescription: "Раздвижные межкомнатные и каскадные перегородки на заказ в СПб от 80 000 ₽: алюминиевый профиль, закалённое стекло, без порога. От 10 рабочих дней.",
     minPrice: 80000,
     cover: "/img/services/partitions/photo_1.jpg",
-    coverAlt: "Четырёхстворчатая беспороговая раздвижная перегородка в чёрном алюминиевом профиле с прозрачным стеклом",
+    coverAlt: "Беспороговая раздвижная перегородка в чёрном алюминиевом профиле с прозрачным стеклом",
     gallery: [
       "/img/services/partitions/photo_1.jpg",
       "/img/services/partitions/photo_2.jpg",
@@ -925,11 +925,11 @@ export const SERVICE_PAGES: ServicePageData[] = [
     branch: "custom-furniture",
     slug: "laundry",
     href: "/custom-furniture/laundry/",
-    shortTitle: "Постирочные и хоз. шкафы",
+    shortTitle: "Постирочные и хозяйственные шкафы",
     cardDesc: "Шкафы-колонны под стиральную и сушильную машины, хозблоки под пылесос с зарядкой и гладильную доску, корзины и доступ к коллекторам. Срок 2–4 недели, от 80 000 ₽.",
-    h1: "Постирочные и хоз. шкафы",
+    h1: "Постирочные и хозяйственные шкафы",
     lead: "Прячем стиральную и сушильную машины, пылесос и коллекторы за ровные фасады.",
-    seoTitle: "Постирочные и хоз. шкафы на заказ в СПб | ПитерМебель",
+    seoTitle: "Постирочные и хозяйственные шкафы на заказ в СПб | ПитерМебель",
     seoDescription: "Постирочные и хозяйственные шкафы на заказ в СПб от 80 000 ₽: колонны под стиральную и сушильную машины, ниша под пылесос и доступ к коллектору.",
     minPrice: 80000,
     cover: "/img/services/laundry/photo_1.jpg",
@@ -984,7 +984,7 @@ export const SERVICE_PAGES: ServicePageData[] = [
       { href: "/custom-furniture/bathroom/", label: "Мебель для ванной" },
       { href: "/wardrobes/hallway/", label: "Шкафы в прихожую" },
       { href: "/wardrobes/swing/", label: "Встроенные шкафы" },
-      { href: "/calculator/?category=cabinet&layout=single&meters=1.8&material=egger", label: "Рассчитать хоз. шкаф" },
+      { href: "/calculator/?category=cabinet&layout=single&meters=1.8&material=egger", label: "Рассчитать постирочный шкаф" },
     ],
     faq: [
       {

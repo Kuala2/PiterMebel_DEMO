@@ -54,7 +54,7 @@ export function ElectricalBlueprint() {
         {/* Upper Modules (Навесные шкафы) */}
         <rect x="58" y="46" width="222" height="39" stroke="rgba(255,255,255,0.2)" strokeWidth="1" fill="rgba(255,255,255,0.015)" />
         <text x="64" y="60" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="sans-serif">
-          [ ВЕРХНИЕ МОДУЛИ 2150 ]
+          [ ВЕРХНИЕ МОДУЛИ ПО ПРОЕКТУ ]
         </text>
 
         {/* Appliance connection zone */}

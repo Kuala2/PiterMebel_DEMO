@@ -133,7 +133,7 @@ export default function ContactsPage() {
           <div className="contacts-editorial-guarantees">
             <div className="guarantee-item">
               <div className="guarantee-title">Договор и оплата</div>
-              <p className="guarantee-desc">Заключаем договор с согласованной сметой. Оплатить заказ можно на расчётный счёт, по ссылке СБП, через терминал или в рассрочку.</p>
+              <p className="guarantee-desc">Заключаем договор с согласованной сметой. Оплатить заказ можно на расчётный счёт, по ссылке СБП, через терминал или в рассрочку от банка.</p>
             </div>
             <div className="guarantee-item">
               <div className="guarantee-title">Сроки в договоре</div>

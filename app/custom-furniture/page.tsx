@@ -45,7 +45,7 @@ export default function CustomFurniturePage() {
           { material: "МДФ пластик AGT / ПВХ", priceTier: "от 90\u00A0000\u00A0₽", leadTime: "3–4 нед." },
           { material: "МДФ эмаль RAL / NCS", priceTier: "100–240\u00A0тыс.\u00A0₽", leadTime: "4–5 нед." },
           { material: "Шпон дуба и массив", priceTier: "110–270\u00A0тыс.\u00A0₽", leadTime: "4–6 нед." },
-          { material: "HPL, камень, перегородки", priceTier: "По чертежу", leadTime: "от 10 раб. дн." },
+          { material: "Раздвижные перегородки", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "от 10 раб. дн." },
         ]}
         materialsNote="Ориентир за изделие 1,2–2,4 м. Точная смета — после замера."
         calculatorHref="/calculator/?category=cabinet&layout=zone&meters=1.8&material=egger"

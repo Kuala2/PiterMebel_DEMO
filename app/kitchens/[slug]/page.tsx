@@ -104,7 +104,12 @@ export async function generateMetadata({
   const pageTitle = distinctTitle.length + 15 <= 70
     ? `${distinctTitle} — ПитерМебель`
     : distinctTitle;
-  const ogDescription = buildMetaDescription(`${kitchen.title}: ${kitchen.summary}`);
+  const summaryDesc = buildMetaDescription(kitchen.summary);
+  const serviceSuffix = " Изготовление на заказ в СПб, договор и монтаж под ключ.";
+  const ogDescription =
+    summaryDesc.length + serviceSuffix.length <= 155
+      ? `${summaryDesc}${serviceSuffix}`
+      : summaryDesc;
 
   return {
     title: pageTitle,
@@ -157,7 +162,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
     { label: "Ориентир по цене", value: priceAnchorText },
     {
       label: "Условия и монтаж",
-      value: "Договор, схема розеток в подарок, доставка, сборка и подключение. Счёт, СБП, карта, рассрочка",
+      value: "Договор, схема розеток в подарок, доставка, сборка и подключение. Счёт, СБП, карта, рассрочка от банка",
     },
   ];
 

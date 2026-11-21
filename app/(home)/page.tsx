@@ -12,6 +12,7 @@ import HowItWorks09 from "@/components/ui/how-it-works-09";
 import { SITE_CONFIG } from "@/data/site";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 import { CLIENT_REVIEWS, YANDEX_REVIEWS_URL } from "@/data/reviews";
+import { KITCHENS } from "@/data/kitchens";
 import { SERVICE_PAGES } from "@/data/services";
 
 export default function HomePage() {
@@ -130,192 +131,25 @@ export default function HomePage() {
     };
   }, []);
 
-  const kitchenCatalogItems = [
-    {
-      id: "mdf-plastik-gola",
-      category: "kitchens",
-      badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик Gola",
-      desc: "Фасады из МДФ-пластика, корпус Egger, столешница и фартук из искусственного камня.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик / Камень",
-      photos: [
-        "/img/kitchens/slavena/photo_1.jpg",
-        "/img/kitchens/slavena/photo_2.jpg",
-        "/img/kitchens/slavena/photo_3.jpg",
-        "/img/kitchens/slavena/photo_4.jpg",
-      ],
-      link: "/kitchens/mdf-plastik-gola/",
-    },
-    {
-      id: "island-parquet",
-      category: "kitchens",
-      badge: "Эмаль и шпон",
-      title: "Кухня эмаль и натуральный шпон",
-      desc: "Фасады из МДФ в эмали с натуральным шпоном и столешницей из искусственного камня.",
-      specLabel: "Материалы",
-      specValue: "МДФ в эмали / Шпон",
-      photos: [
-        "/img/projects/island-parquet/photo_1.jpg",
-        "/img/projects/island-parquet/photo_2.jpg",
-        "/img/projects/island-parquet/photo_3.jpg",
-        "/img/projects/island-parquet/photo_4.jpg",
-      ],
-      link: "/kitchens/island-parquet/",
-    },
-    {
-      id: "mdf-plastik-slotex",
-      category: "kitchens",
-      badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик и Slotex",
-      desc: "Фасады из суперматового МДФ-пластика, корпус Egger, влагостойкая столешница Slotex и фурнитура Blum.",
-      specLabel: "Фасады",
-      specValue: "Суперматовый МДФ",
-      photos: [
-        "/img/kitchens/aleksandra/photo_1.jpg",
-        "/img/kitchens/aleksandra/photo_2.jpg",
-        "/img/kitchens/aleksandra/photo_3.jpg",
-        "/img/kitchens/aleksandra/photo_4.jpg",
-      ],
-      link: "/kitchens/mdf-plastik-slotex/",
-    },
-    {
-      id: "mdf-emal-vitrina",
-      category: "kitchens",
-      badge: "Эмаль и пластик",
-      title: "Кухня МДФ эмаль с витриной",
-      desc: "Фасады из МДФ в эмали и матовом пластике с витриной в узкой чёрной алюминиевой рамке, корпус и столешница Egger.",
-      specLabel: "Фасады",
-      specValue: "Эмаль / Матовый пластик",
-      photos: [
-        "/img/kitchens/valeria/photo_1.jpg",
-        "/img/kitchens/valeria/photo_2.jpg",
-      ],
-      link: "/kitchens/mdf-emal-vitrina/",
-    },
-    {
-      id: "oak-stone",
-      category: "kitchens",
-      badge: "Эмаль и дуб",
-      title: "Кухня эмаль и массив дуба",
-      desc: "Фасады из МДФ в эмали и массива дуба. Столешница из кварцевого агломерата.",
-      specLabel: "Материалы",
-      specValue: "Эмаль / Массив дуба",
-      photos: [
-        "/img/projects/oak-stone/photo_1.jpg",
-        "/img/projects/oak-stone/photo_2.jpg",
-        "/img/projects/oak-stone/photo_3.jpg",
-        "/img/projects/oak-stone/photo_4.jpg",
-      ],
-      link: "/kitchens/oak-stone/",
-    },
-    {
-      id: "mdf-plastik-hettich",
-      category: "kitchens",
-      badge: "МДФ-пластик",
-      title: "Кухня МДФ пластик Hettich",
-      desc: "Фасады из МДФ-пластика, корпус и столешница Egger под дерево, фурнитура Hettich с доводчиками.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик / Дерево",
-      photos: [
-        "/img/kitchens/timofey/photo_1.jpg",
-        "/img/kitchens/timofey/photo_2.jpg",
-        "/img/kitchens/timofey/photo_3.jpg",
-      ],
-      link: "/kitchens/mdf-plastik-hettich/",
-    },
-    {
-      id: "mdf-belyj-egger",
-      category: "kitchens",
-      badge: "Пластик + Egger",
-      title: "Кухня белый пластик и Egger",
-      desc: "Белые фасады из МДФ-пластика в сочетании с древесным декором Egger и стеновой панелью под мрамор.",
-      specLabel: "Фасады",
-      specValue: "Белый МДФ-пластик / Egger",
-      photos: [
-        "/img/kitchens/ulyana/photo_1.jpg",
-        "/img/kitchens/ulyana/photo_2.jpg",
-        "/img/kitchens/ulyana/photo_3.jpg",
-      ],
-      link: "/kitchens/mdf-belyj-egger/",
-    },
-    {
-      id: "mdf-grafit-gola",
-      category: "kitchens",
-      badge: "МДФ Графит",
-      title: "Кухня МДФ Графит Gola",
-      desc: "Фасады из МДФ-пластика с древесным декором столешницы Egger и профилем Gola на нижних секциях.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик / Профиль Gola",
-      photos: [
-        "/img/kitchens/stefania/photo_1.jpg",
-        "/img/kitchens/stefania/photo_2.jpg",
-        "/img/kitchens/stefania/photo_3.jpg",
-      ],
-      link: "/kitchens/mdf-grafit-gola/",
-    },
-    {
-      id: "emerald-enamel",
-      category: "kitchens",
-      badge: "МДФ Эмаль",
-      title: "Изумрудная кухня с белыми витринами",
-      desc: "Угловая композиция с пеналом под технику, зелёными фрезерованными фасадами и белыми верхними витринами.",
-      specLabel: "Фасады",
-      specValue: "МДФ в эмали",
-      photos: [
-        "/img/projects/emerald-enamel/photo_1.jpg",
-        "/img/projects/emerald-enamel/photo_2.jpg",
-        "/img/projects/emerald-enamel/photo_3.jpg",
-        "/img/projects/emerald-enamel/photo_4.jpg",
-      ],
-      link: "/kitchens/emerald-enamel/",
-    },
-    {
-      id: "velvet-matte",
-      category: "kitchens",
-      badge: "Пластик Velvet",
-      title: "Угловая матовая кухня с подсветкой",
-      desc: "Светлая угловая планировка до потолка с линейной подсветкой и контрастным тёмным цоколем.",
-      specLabel: "Фасады",
-      specValue: "МДФ-пластик Velvet",
-      photos: [
-        "/img/projects/velvet-matte/photo_1.jpg",
-        "/img/projects/velvet-matte/photo_2.jpg",
-      ],
-      link: "/kitchens/velvet-matte/",
-    },
-    {
-      id: "mdf-klassika-dub",
-      category: "kitchens",
-      badge: "Классика",
-      title: "Классическая молочная кухня",
-      desc: "Молочные фрезерованные фасады с классической витриной в сочетании со столешницей и фартуком под дерево.",
-      specLabel: "Фасады",
-      specValue: "Молочные фасады / Дерево",
-      photos: [
-        "/img/kitchens/viktoria/photo_1.jpg",
-        "/img/kitchens/viktoria/photo_2.jpg",
-        "/img/kitchens/viktoria/photo_3.jpg",
-      ],
-      link: "/kitchens/mdf-klassika-dub/",
-    },
-    {
-      id: "sherman-cognac",
-      category: "kitchens",
-      badge: "Глянец & Egger",
-      title: "Угловая кухня с пеналом-витриной",
-      desc: "Угловая кухня с подсвеченной стеклянной витриной и облицовкой стенового короба в декоре Egger.",
-      specLabel: "Декор",
-      specValue: "Egger Шерман / Пластик",
-      photos: [
-        "/img/projects/sherman-cognac/photo_1.jpg",
-        "/img/projects/sherman-cognac/photo_2.jpg",
-        "/img/projects/sherman-cognac/photo_3.jpg",
-        "/img/projects/sherman-cognac/photo_4.jpg",
-      ],
-      link: "/kitchens/sherman-cognac/",
-    },
-  ];
+  const kitchenCatalogItems = KITCHENS.map((k) => {
+    const primarySpec = k.specs[0];
+    const secondarySpec = k.specs.find(
+      (s) => s !== primarySpec && /(столешниц|декор|открыван)/i.test(s.label)
+    );
+    return {
+      id: k.slug,
+      category: "kitchens" as const,
+      badge: "Кухни",
+      title: k.title,
+      desc: k.summary,
+      specLabel: primarySpec?.label || "Материалы",
+      specValue: secondarySpec
+        ? `${primarySpec.value} / ${secondarySpec.value}`
+        : primarySpec?.value || "Индивидуальный проект",
+      photos: (k.gallery.length ? k.gallery : [k.cover]).slice(0, 5),
+      link: `/kitchens/${k.slug}/`,
+    };
+  });
 
   const serviceCatalogItems = SERVICE_PAGES.map((s) => ({
     id: s.slug,
@@ -362,12 +196,18 @@ export default function HomePage() {
     "mdf-klassika-dub",
     "balcony",
     "mdf-plastik-slotex",
+    "white-showcase",
+    "marble-hood",
+    "narrow-kitchen",
   ];
 
   const itemOrder = [...firstFourIds, ...restOrderIds];
-  const orderedItems = itemOrder
-    .map((id) => catalogItems.find((item) => item.id === id))
-    .filter((item): item is (typeof catalogItems)[number] => Boolean(item));
+  const orderedItems = [
+    ...itemOrder
+      .map((id) => catalogItems.find((item) => item.id === id))
+      .filter((item): item is (typeof catalogItems)[number] => Boolean(item)),
+    ...catalogItems.filter((item) => !itemOrder.includes(item.id)),
+  ];
 
   const visibleItems =
     activeTab === "all"

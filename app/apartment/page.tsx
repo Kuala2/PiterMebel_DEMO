@@ -122,7 +122,7 @@ export default function ApartmentPage() {
                 </div>
                 <div className="detail-spec-row">
                   <span className="detail-spec-name">Монтаж и условия</span>
-                  <span className="detail-spec-val">Свой цех в СПб, доставка, чистовая сборка и подключение техники. Договор, оплата по счёту, СБП, картой или в рассрочку</span>
+                  <span className="detail-spec-val">Свой цех в СПб, доставка, чистовая сборка и подключение техники. Договор, оплата по счёту, СБП, картой или в рассрочку от банка</span>
                 </div>
               </div>
 

@@ -280,7 +280,8 @@ export default function ProjectsPortfolioPage() {
         summaryFacts={[
           { label: "Шкафы и корпусная мебель", value: "от 80\u00A0000\u00A0₽" },
           { label: "Кухни на заказ", value: "от 160\u00A0000\u00A0₽" },
-          { label: "Срок изготовления", value: "2–4 недели" },
+          { label: "Срок (Egger, ПВХ, пластик)", value: "2–4 недели" },
+          { label: "Срок (эмаль и шпон дуба)", value: "4–6 недель" },
           { label: "Вся мебель в квартиру", value: "около 1 месяца" },
         ]}
         materialsNote="Точная смета фиксируется в договоре после замера."

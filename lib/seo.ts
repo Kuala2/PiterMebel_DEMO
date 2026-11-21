@@ -10,13 +10,32 @@ export const HOME_TITLE = `${SITE_CONFIG.name} — кухни и мебель н
 export const HOME_DESCRIPTION =
   "Проектируем и изготавливаем кухни, шкафы и корпусную мебель в Санкт-Петербурге с 2005 года. Договор, доставка и монтаж под ключ.";
 
-/** Собирает уникальное описание сниппета и аккуратно ограничивает его по словам. */
+/** Собирает уникальное описание сниппета без обрыва на предлоге или посреди фразы. */
 export function buildMetaDescription(text: string, maxLength = 155) {
   const normalized = text.replace(/\s+/g, " ").trim();
   if (normalized.length <= maxLength) return normalized;
-  const shortened = normalized.slice(0, maxLength + 1);
+
+  // Сначала пробуем закончить на границе целого предложения, если получается содержательный сниппет.
+  const withinLimit = normalized.slice(0, maxLength);
+  const sentenceEnds = [...withinLimit.matchAll(/[.!?](?:\s|$)/g)];
+  if (sentenceEnds.length > 0) {
+    const lastEnd = sentenceEnds[sentenceEnds.length - 1];
+    const endIdx = (lastEnd.index ?? 0) + 1;
+    if (endIdx >= 55) {
+      return withinLimit.slice(0, endIdx).trim();
+    }
+  }
+
+  const shortened = normalized.slice(0, maxLength);
   const lastSpace = shortened.lastIndexOf(" ");
-  return `${shortened.slice(0, lastSpace > 110 ? lastSpace : maxLength).replace(/[,:;.!?\s]+$/, "")}…`;
+  let trimmed = shortened.slice(0, lastSpace > 90 ? lastSpace : maxLength - 1);
+  // Убираем висячие русские предлоги/союзы и знаки препинания в конце перед многоточием.
+  const danglingWord =
+    /(?:^|\s)(?:в|во|к|ко|с|со|у|о|об|и|а|но|или|на|по|из|от|до|за|под|при|для|без|над|про|как|что|где|чтобы|поэтому|который|которая|которое|которые)$/i;
+  while (danglingWord.test(trimmed)) {
+    trimmed = trimmed.replace(danglingWord, "").replace(/[,:;.!?\-\u2014\s]+$/, "");
+  }
+  return `${trimmed.replace(/[,:;.!?\-\u2014\s]+$/, "")}…`;
 }
 
 /**
