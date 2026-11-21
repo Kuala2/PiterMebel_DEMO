@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ServicePageData } from "@/data/services";
 import { SITE_URL, buildBreadcrumbs } from "@/lib/seo";
+import { getPublicImageRatios } from "@/lib/image-meta";
 import Gallery from "@/components/Gallery";
 import CatalogEditorial from "@/components/CatalogEditorial";
 import LeadSection from "@/components/LeadSection";
@@ -29,16 +30,22 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
     serviceType: service.shortTitle,
     description: service.seoDescription,
     url: `${SITE_URL}${service.href}`,
-    areaServed: {
-      "@type": "City",
-      name: "Санкт-Петербург",
-    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Санкт-Петербург",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Ленинградская область",
+      },
+    ],
     provider: {
       "@id": `${SITE_URL}/#organization`,
     },
     offers: {
       "@type": "Offer",
-      url: `${SITE_URL}${service.calculatorHref}`,
+      url: `${SITE_URL}${service.href}`,
       priceCurrency: "RUB",
       priceSpecification: {
         "@type": "PriceSpecification",
@@ -55,6 +62,7 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
       : service.cover
         ? [service.cover]
         : [];
+  const heroImageRatios = getPublicImageRatios(heroImages);
 
   return (
     <div className="service-direction-page">
@@ -120,6 +128,10 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
                   Калькулятор
                 </Link>
               </div>
+
+              <p className="service-hero-terms">
+                Договор с фиксированной сметой · доставка и монтаж · счёт, СБП, карта, рассрочка от банка
+              </p>
             </div>
 
             <div className="service-hero-media">
@@ -127,6 +139,8 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
                 <Gallery
                   images={heroImages}
                   title={service.shortTitle}
+                  coverAlt={service.coverAlt}
+                  initialRatios={heroImageRatios}
                   aspectRatio="5 / 4"
                   showThumbs={false}
                 />

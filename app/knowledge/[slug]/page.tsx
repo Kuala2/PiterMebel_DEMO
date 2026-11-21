@@ -9,7 +9,8 @@ import {
   getArticleWordCount,
 } from "@/data/knowledge";
 import { SITE_CONFIG } from "@/data/site";
-import { buildBreadcrumbs, buildOg, buildTwitter, SITE_URL } from "@/lib/seo";
+import { buildBreadcrumbs, buildOg, buildTwitter, OG_IMAGE, SITE_URL } from "@/lib/seo";
+import { getPublicImageMeta } from "@/lib/image-meta";
 import LeadSection from "@/components/LeadSection";
 import { ElectricalBlueprint } from "@/components/KnowledgeBlueprints";
 
@@ -35,6 +36,16 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     };
   }
 
+  const articleImgUrl = article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg";
+  const articleImgMeta = getPublicImageMeta(articleImgUrl);
+  const ogImage = {
+    url: articleImgUrl,
+    alt: article.title,
+    ...(articleImgMeta
+      ? { width: articleImgMeta.width, height: articleImgMeta.height, type: articleImgMeta.type }
+      : {}),
+  };
+
   return {
     title: article.seoTitle,
     description: article.seoDescription,
@@ -42,18 +53,14 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       canonical: `/knowledge/${article.slug}/`,
     },
     openGraph: {
-      ...buildOg(article.seoTitle, article.seoDescription, `/knowledge/${article.slug}`),
+      ...buildOg(article.seoTitle, article.seoDescription, `/knowledge/${article.slug}`, ogImage),
       type: "article",
       publishedTime: article.publishedAtISO,
       modifiedTime: article.updatedAtISO,
       authors: [article.author.name],
       section: article.categoryLabel,
-      images: [{ url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg", alt: article.title }],
     },
-    twitter: buildTwitter(article.seoTitle, article.seoDescription, {
-      url: article.placeholderImage || "/img/knowledge/kitchen_sockets_plan.jpg",
-      alt: article.title,
-    }),
+    twitter: buildTwitter(article.seoTitle, article.seoDescription, ogImage),
   };
 }
 
@@ -92,7 +99,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       name: SITE_CONFIG.name,
       logo: {
         "@type": "ImageObject",
-        url: "https://pitermebel.com/img/brand/logo_bird.svg",
+        url: `${SITE_URL}${OG_IMAGE}`,
+        width: 512,
+        height: 512,
       },
     },
   };

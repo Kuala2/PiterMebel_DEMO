@@ -5,6 +5,7 @@ import {
   getServiceByBranchAndSlug,
 } from "@/data/services";
 import { buildOg, buildTwitter } from "@/lib/seo";
+import { getPublicImageMeta } from "@/lib/image-meta";
 import ServicePageView from "@/components/ServicePageView";
 
 interface Props {
@@ -22,23 +23,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Направление не найдено — ПитерМебель" };
   }
 
+  const ogUrl = `/img/og/services/${service.slug}.jpg`;
+  const ogMeta = getPublicImageMeta(ogUrl);
+  const fallbackMeta = service.cover ? getPublicImageMeta(service.cover) : null;
+  const image = ogMeta
+    ? {
+        url: ogUrl,
+        width: ogMeta.width,
+        height: ogMeta.height,
+        type: ogMeta.type,
+        alt: service.coverAlt || service.h1,
+      }
+    : service.cover
+      ? {
+          url: service.cover,
+          ...(fallbackMeta
+            ? { width: fallbackMeta.width, height: fallbackMeta.height, type: fallbackMeta.type }
+            : {}),
+          alt: service.coverAlt || service.h1,
+        }
+      : undefined;
+
   return {
     title: service.seoTitle,
     description: service.seoDescription,
     alternates: {
       canonical: service.href,
     },
-    openGraph: {
-      ...buildOg(service.seoTitle, service.seoDescription, service.href),
-      ...(service.cover
-        ? { images: [{ url: service.cover, alt: service.coverAlt || service.h1 }] }
-        : {}),
-    },
-    twitter: buildTwitter(
-      service.seoTitle,
-      service.seoDescription,
-      service.cover ? { url: service.cover, alt: service.coverAlt || service.h1 } : undefined
-    ),
+    openGraph: buildOg(service.seoTitle, service.seoDescription, service.href, image),
+    twitter: buildTwitter(service.seoTitle, service.seoDescription, image),
   };
 }
 

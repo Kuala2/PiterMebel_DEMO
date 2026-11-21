@@ -38,15 +38,38 @@ export function buildMetaDescription(text: string, maxLength = 155) {
   return `${trimmed.replace(/[,:;.!?\-\u2014\s]+$/, "")}…`;
 }
 
+export interface OgImageInput {
+  url: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  type?: string;
+}
+
 /**
  * Единый openGraph-блок для страниц сайта.
  * Next не мерджит openGraph глубоко, поэтому каждая страница задаёт его целиком.
  */
-export function buildOg(title: string, description: string, path?: string) {
+export function buildOg(
+  title: string,
+  description: string,
+  path?: string,
+  image?: OgImageInput
+) {
   let cleanPath = "";
   if (path && path !== "/") {
     cleanPath = path.endsWith("/") ? path : `${path}/`;
   }
+  const ogImage = image
+    ? {
+        url: image.url,
+        ...(image.width ? { width: image.width } : {}),
+        ...(image.height ? { height: image.height } : {}),
+        alt: image.alt || title,
+        ...(image.type ? { type: image.type } : {}),
+      }
+    : { url: OG_IMAGE, width: 512, height: 512, alt: title, type: "image/png" };
+
   return {
     title,
     description,
@@ -54,7 +77,7 @@ export function buildOg(title: string, description: string, path?: string) {
     locale: "ru_RU",
     type: "website" as const,
     url: cleanPath ? `${SITE_URL}${cleanPath}` : `${SITE_URL}/`,
-    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: title, type: "image/png" }],
+    images: [ogImage],
   };
 }
 
@@ -62,7 +85,7 @@ export function buildOg(title: string, description: string, path?: string) {
 export function buildTwitter(
   title: string,
   description: string,
-  image?: { url: string; alt?: string }
+  image?: OgImageInput
 ) {
   return {
     card: (image ? "summary_large_image" : "summary") as "summary" | "summary_large_image",
@@ -70,7 +93,12 @@ export function buildTwitter(
     description,
     images: [
       image
-        ? { url: image.url, alt: image.alt || title }
+        ? {
+            url: image.url,
+            ...(image.width ? { width: image.width } : {}),
+            ...(image.height ? { height: image.height } : {}),
+            alt: image.alt || title,
+          }
         : { url: OG_IMAGE, width: 512, height: 512, alt: title },
     ],
   };

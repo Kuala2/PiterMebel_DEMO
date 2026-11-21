@@ -11576,6 +11576,13 @@ html.menu-open .boost-popup {
   padding-top: 8px;
 }
 
+.service-hero-terms {
+  margin: -4px 0 0;
+  font-size: 14px;
+  line-height: 1.48;
+  color: var(--color-text-muted);
+}
+
 .service-hero-media {
   min-width: 0;
 }

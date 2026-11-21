@@ -6,6 +6,8 @@ import Image from "next/image";
 interface GalleryProps {
   images: string[];
   title: string;
+  coverAlt?: string;
+  initialRatios?: Record<string, number>;
   aspectRatio?: string;
   showThumbs?: boolean;
 }
@@ -13,12 +15,15 @@ interface GalleryProps {
 export default function Gallery({
   images,
   title,
+  coverAlt,
+  initialRatios,
   aspectRatio = "16 / 10",
   showThumbs = true,
 }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [mountedIndices, setMountedIndices] = useState<number[]>([0]);
   const [lightbox, setLightbox] = useState(false);
-  const [ratios, setRatios] = useState<Record<string, number>>({});
+  const [ratios, setRatios] = useState<Record<string, number>>(() => initialRatios ?? {});
   const [isPaused, setIsPaused] = useState(false);
 
   const touchStartX = useRef<number | null>(null);
@@ -28,9 +33,25 @@ export default function Gallery({
 
   const count = images.length;
 
+  const activateIndex = useCallback((nextIdx: number) => {
+    setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
+    setActiveIdx(nextIdx);
+  }, []);
+
   const go = useCallback(
-    (dir: number) => setActiveIdx((i) => (i + dir + count) % count),
+    (dir: number) => {
+      setActiveIdx((current) => {
+        const nextIdx = (current + dir + count) % count;
+        setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
+        return nextIdx;
+      });
+    },
     [count]
+  );
+
+  const getAltFor = useCallback(
+    (idx: number) => (idx === 0 && coverAlt ? coverAlt : `${title} — фото ${idx + 1}`),
+    [coverAlt, title]
   );
 
   // Автолистание каждые 5 секунд с паузой при наведении курсора, таче, фокусе или открытом лайтбоксе.
@@ -42,11 +63,11 @@ export default function Gallery({
     }
 
     const timer = setInterval(() => {
-      setActiveIdx((i) => (i + 1) % count);
+      go(1);
     }, 5000);
 
     return () => clearInterval(timer);
-  }, [count, isPaused, lightbox, activeIdx]);
+  }, [count, isPaused, lightbox, activeIdx, go]);
 
   // Лайтбокс: клавиатура, удержание фокуса и восстановление фокуса после закрытия.
   useEffect(() => {
@@ -139,33 +160,39 @@ export default function Gallery({
           }
         }}
       >
-        {images.map((src, idx) => (
-          <div
-            key={src}
-            className={`detail-gallery-slide ${idx === activeIdx ? "is-active" : ""}`}
-            aria-hidden={idx !== activeIdx}
-          >
-            <Image
-              src={src}
-              alt={`${title} — фото ${idx + 1}`}
-              fill
-              priority={idx === 0}
-              sizes="(max-width: 1024px) 100vw, 1200px"
-              style={{
-                objectFit: ratios[src] && ratios[src] < 0.72 ? "contain" : "cover",
-                objectPosition: "center",
-              }}
-              draggable={false}
-              onLoad={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                if (target.naturalWidth && target.naturalHeight) {
-                  const r = +(target.naturalWidth / target.naturalHeight).toFixed(3);
-                  setRatios((prev) => (prev[src] ? prev : { ...prev, [src]: r }));
-                }
-              }}
-            />
-          </div>
-        ))}
+        {images.map((src, idx) => {
+          const isMounted = idx === activeIdx || mountedIndices.includes(idx);
+          const ratio = ratios[src] ?? initialRatios?.[src];
+          return (
+            <div
+              key={src}
+              className={`detail-gallery-slide ${idx === activeIdx ? "is-active" : ""}`}
+              aria-hidden={idx !== activeIdx}
+            >
+              {isMounted && (
+                <Image
+                  src={src}
+                  alt={getAltFor(idx)}
+                  fill
+                  priority={idx === 0}
+                  sizes="(max-width: 1024px) 100vw, 1200px"
+                  style={{
+                    objectFit: ratio && ratio < 0.72 ? "contain" : "cover",
+                    objectPosition: "center",
+                  }}
+                  draggable={false}
+                  onLoad={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    if (target.naturalWidth && target.naturalHeight) {
+                      const r = +(target.naturalWidth / target.naturalHeight).toFixed(3);
+                      setRatios((prev) => (prev[src] ? prev : { ...prev, [src]: r }));
+                    }
+                  }}
+                />
+              )}
+            </div>
+          );
+        })}
 
         <div className="gallery-zoom-badge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -217,8 +244,8 @@ export default function Gallery({
               key={src}
               type="button"
               className={`detail-thumb-item ${idx === activeIdx ? "is-active" : ""}`}
-              onClick={() => setActiveIdx(idx)}
-              onMouseEnter={() => setActiveIdx(idx)}
+              onClick={() => activateIndex(idx)}
+              onMouseEnter={() => activateIndex(idx)}
               aria-label={`Перейти к фото ${idx + 1}`}
             >
               <Image
@@ -259,7 +286,7 @@ export default function Gallery({
             <Image
               key={images[activeIdx]}
               src={images[activeIdx]}
-              alt={`${title} — фото ${activeIdx + 1}`}
+              alt={getAltFor(activeIdx)}
               width={1920}
               height={1280}
               sizes="100vw"

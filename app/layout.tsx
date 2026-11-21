@@ -41,8 +41,13 @@ const SITE_JSON_LD = {
       name: SITE_CONFIG.name,
       description: "Семейное производство кухонь, шкафов и корпусной мебели на заказ в Санкт-Петербурге. Встречи в студии образцов по предварительной записи.",
       alternateName: "Питер-Мебель",
-      url: SITE_URL,
-      logo: `${SITE_URL}/img/brand/logo_bird.svg`,
+      url: `${SITE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}${OG_IMAGE}`,
+        width: 512,
+        height: 512,
+      },
       image: `${SITE_URL}${OG_IMAGE}`,
       telephone: SITE_CONFIG.phoneRaw,
       email: SITE_CONFIG.email,
@@ -52,6 +57,7 @@ const SITE_JSON_LD = {
         "@type": "PostalAddress",
         streetAddress: SITE_CONFIG.address,
         addressLocality: SITE_CONFIG.city,
+        addressRegion: SITE_CONFIG.city,
         addressCountry: "RU",
       },
       geo: { "@type": "GeoCoordinates", latitude: 59.899907, longitude: 30.272883 },
@@ -72,7 +78,7 @@ const SITE_JSON_LD = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       name: SITE_CONFIG.name,
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "ru-RU",
@@ -84,15 +90,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
-  keywords: [
-    "ПитерМебель",
-    "мебель на заказ СПб",
-    "кухни на заказ Санкт-Петербург",
-    "производство мебели Петергофское шоссе",
-    "гардеробные",
-    "шкафы",
-    "площадь Стачек 9 офис 407"
-  ],
   authors: [{ name: SITE_CONFIG.name }],
   verification: {
     yandex: "2290ffc6c48b46ac",
@@ -109,11 +106,6 @@ export const metadata: Metadata = {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
     images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_CONFIG.name }],
-  },
-  alternates: {
-    types: {
-      "application/rss+xml": "/feed.xml",
-    },
   },
   manifest: "/site.webmanifest",
   icons: {
@@ -140,6 +132,12 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${cormorant.variable} ${onest.variable}`}>
       <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`База знаний «${SITE_CONFIG.name}»`}
+          href="/feed.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSON_LD) }}

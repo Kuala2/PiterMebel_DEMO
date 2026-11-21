@@ -21,6 +21,7 @@ interface PortfolioCardItem {
   category: MainCategoryKey;
   title: string;
   cover: string;
+  coverAlt: string;
   gallery: string[];
   materials: string[];
 }
@@ -33,6 +34,7 @@ const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
     category: "kitchens",
     title: k.title,
     cover: k.cover,
+    coverAlt: k.title,
     gallery: k.gallery,
     materials: k.specs.slice(0, 3).map((s) => s.value),
   })),
@@ -45,6 +47,7 @@ const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
       category: isWardrobe ? "wardrobes" : "custom",
       title: s.shortTitle,
       cover: s.cover || s.gallery[0] || "",
+      coverAlt: s.coverAlt || s.shortTitle,
       gallery: s.gallery.slice(0, 5),
       materials: s.materialOptions.slice(0, 3),
     };
@@ -158,7 +161,7 @@ export default function ProjectsPortfolioPage() {
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "28px", paddingBottom: "96px" }}>
         <div className="container">
           <SpotlightArea className="projects-grid" selector=".catalog-card">
-            {filteredProjects.map((project) => {
+            {filteredProjects.map((project, idx) => {
               const currentIdx = cardPhoto[project.slug] ?? 0;
               const photos = project.gallery?.length ? project.gallery : [project.cover];
 
@@ -171,8 +174,9 @@ export default function ProjectsPortfolioPage() {
                     <Image
                       key={photos[currentIdx] || photos[0]}
                       src={photos[currentIdx] || photos[0]}
-                      alt={project.title}
+                      alt={currentIdx === 0 ? project.coverAlt : `${project.title} — фото ${currentIdx + 1}`}
                       fill
+                      priority={idx < 3 && currentIdx === 0}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="card-img-slide is-active"
                     />

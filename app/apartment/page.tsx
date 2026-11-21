@@ -47,16 +47,22 @@ const SERVICE_JSON_LD = {
   serviceType: "Мебель во всю квартиру под ключ",
   description: PAGE_DESCRIPTION,
   url: `${SITE_URL}/apartment/`,
-  areaServed: {
-    "@type": "City",
-    name: SITE_CONFIG.city,
-  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: SITE_CONFIG.city,
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Ленинградская область",
+    },
+  ],
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
   offers: {
     "@type": "Offer",
-    url: `${SITE_URL}/calculator/?category=cabinet&layout=complex`,
+    url: `${SITE_URL}/apartment/`,
     priceCurrency: "RUB",
     priceSpecification: {
       "@type": "PriceSpecification",

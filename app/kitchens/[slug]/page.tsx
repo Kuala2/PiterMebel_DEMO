@@ -7,6 +7,7 @@ import LeadSection from "@/components/LeadSection";
 import { KITCHENS, type KitchenFacadeTier } from "@/data/kitchens";
 import { SITE_CONFIG } from "@/data/site";
 import { buildOg, buildTwitter, buildBreadcrumbs, buildMetaDescription, SITE_URL } from "@/lib/seo";
+import { getPublicImageMeta, getPublicImageRatios } from "@/lib/image-meta";
 
 const FACADE_TIER_CONFIG: Record<
   KitchenFacadeTier,
@@ -111,20 +112,23 @@ export async function generateMetadata({
       ? `${summaryDesc}${serviceSuffix}`
       : summaryDesc;
 
+  const coverMeta = getPublicImageMeta(kitchen.cover);
+  const ogImage = {
+    url: kitchen.cover,
+    alt: kitchen.title,
+    ...(coverMeta
+      ? { width: coverMeta.width, height: coverMeta.height, type: coverMeta.type }
+      : {}),
+  };
+
   return {
     title: pageTitle,
     description: ogDescription,
     alternates: {
       canonical: `/kitchens/${kitchen.slug}/`,
     },
-    openGraph: {
-      ...buildOg(pageTitle, ogDescription, `/kitchens/${kitchen.slug}`),
-      images: [{ url: kitchen.cover, alt: kitchen.title }],
-    },
-    twitter: buildTwitter(pageTitle, ogDescription, {
-      url: kitchen.cover,
-      alt: kitchen.title,
-    }),
+    openGraph: buildOg(pageTitle, ogDescription, `/kitchens/${kitchen.slug}`, ogImage),
+    twitter: buildTwitter(pageTitle, ogDescription, ogImage),
   };
 }
 
@@ -137,6 +141,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
   }
 
   const allPhotos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
+  const photoRatios = getPublicImageRatios(allPhotos);
 
   const currentIndex = KITCHENS.findIndex((k) => k.slug === slug);
   const prevKitchen = KITCHENS[(currentIndex - 1 + KITCHENS.length) % KITCHENS.length];
@@ -184,7 +189,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       offerCount: 1,
       priceCurrency: "RUB",
       availability: "https://schema.org/PreOrder",
-      url: `${SITE_URL}${calculatorHref}`,
+      url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
       seller: { "@id": `${SITE_URL}/#organization` },
     },
     additionalProperty: displaySpecs.map((spec) => ({
@@ -260,7 +265,13 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
 
             {/* Right Column: Generous Photo Gallery */}
             <div className="detail-gallery-col">
-              <Gallery images={allPhotos} title={kitchen.title} aspectRatio="5 / 4" showThumbs={false} />
+              <Gallery
+                images={allPhotos}
+                title={kitchen.title}
+                initialRatios={photoRatios}
+                aspectRatio="5 / 4"
+                showThumbs={false}
+              />
             </div>
           </div>
         </div>

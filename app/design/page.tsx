@@ -31,10 +31,16 @@ const SERVICE_JSON_LD = {
   name: "Услуги дизайнеров интерьера и разработка дизайн-проекта в Санкт-Петербурге",
   description: PAGE_DESCRIPTION,
   url: `${SITE_URL}/design/`,
-  areaServed: {
-    "@type": "City",
-    name: SITE_CONFIG.city,
-  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: SITE_CONFIG.city,
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Ленинградская область",
+    },
+  ],
   provider: {
     "@id": `${SITE_URL}/#organization`,
   },
