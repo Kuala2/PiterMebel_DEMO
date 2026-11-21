@@ -21,11 +21,14 @@ export default function Gallery({
   showThumbs = true,
 }: GalleryProps) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [displayIdx, setDisplayIdx] = useState(0);
   const [mountedIndices, setMountedIndices] = useState<number[]>([0]);
   const [lightbox, setLightbox] = useState(false);
   const [ratios, setRatios] = useState<Record<string, number>>(() => initialRatios ?? {});
   const [isPaused, setIsPaused] = useState(false);
 
+  const activeIdxRef = useRef(0);
+  const loadedIndicesRef = useRef<Set<number>>(new Set([0]));
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
   const galleryTriggerRef = useRef<HTMLDivElement>(null);
@@ -33,20 +36,29 @@ export default function Gallery({
 
   const count = images.length;
 
+  const markSlideLoaded = useCallback((idx: number) => {
+    loadedIndicesRef.current.add(idx);
+    if (activeIdxRef.current === idx) {
+      setDisplayIdx(idx);
+    }
+  }, []);
+
   const activateIndex = useCallback((nextIdx: number) => {
-    setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
+    activeIdxRef.current = nextIdx;
     setActiveIdx(nextIdx);
+    setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
+    if (loadedIndicesRef.current.has(nextIdx)) {
+      setDisplayIdx(nextIdx);
+    }
   }, []);
 
   const go = useCallback(
     (dir: number) => {
-      setActiveIdx((current) => {
-        const nextIdx = (current + dir + count) % count;
-        setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
-        return nextIdx;
-      });
+      if (count <= 1) return;
+      const nextIdx = (activeIdxRef.current + dir + count) % count;
+      activateIndex(nextIdx);
     },
-    [count]
+    [count, activateIndex]
   );
 
   const getAltFor = useCallback(
@@ -138,6 +150,7 @@ export default function Gallery({
       }}
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
+      onTouchCancel={() => setIsPaused(false)}
     >
       {/* Главное окно галереи с фиксированным aspect-ratio (без прыжков высоты между слайдами) */}
       <div
@@ -149,6 +162,10 @@ export default function Gallery({
         }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        onTouchCancel={() => {
+          touchStartX.current = null;
+          touchStartY.current = null;
+        }}
         onClick={() => setLightbox(true)}
         role="button"
         tabIndex={0}
@@ -161,13 +178,14 @@ export default function Gallery({
         }}
       >
         {images.map((src, idx) => {
-          const isMounted = idx === activeIdx || mountedIndices.includes(idx);
+          const isMounted = idx === activeIdx || idx === displayIdx || mountedIndices.includes(idx);
+          const isVisible = idx === displayIdx;
           const ratio = ratios[src] ?? initialRatios?.[src];
           return (
             <div
               key={src}
-              className={`detail-gallery-slide ${idx === activeIdx ? "is-active" : ""}`}
-              aria-hidden={idx !== activeIdx}
+              className={`detail-gallery-slide ${isVisible ? "is-active" : ""}`}
+              aria-hidden={!isVisible}
             >
               {isMounted && (
                 <Image
@@ -187,7 +205,9 @@ export default function Gallery({
                       const r = +(target.naturalWidth / target.naturalHeight).toFixed(3);
                       setRatios((prev) => (prev[src] ? prev : { ...prev, [src]: r }));
                     }
+                    markSlideLoaded(idx);
                   }}
+                  onError={() => markSlideLoaded(idx)}
                 />
               )}
             </div>

@@ -54,18 +54,18 @@ function parseWebp(buf: Buffer): { width: number; height: number } | null {
   return null;
 }
 
-function parseExifOrientation(buf: Buffer, app1Start: number, app1Len: number): number {
+function parseExifOrientation(buf: Buffer, app1Start: number, app1Len: number): number | null {
   // Expect "Exif\0\0" at app1Start + 4
-  if (app1Start + 14 > buf.length || app1Len < 12) return 1;
-  if (buf.toString("ascii", app1Start + 4, app1Start + 10) !== "Exif\0\0") return 1;
+  if (app1Start + 14 > buf.length || app1Len < 12) return null;
+  if (buf.toString("ascii", app1Start + 4, app1Start + 10) !== "Exif\0\0") return null;
   const tiff = app1Start + 10;
   const littleEndian = buf.toString("ascii", tiff, tiff + 2) === "II";
   const readU16 = (o: number) => (littleEndian ? buf.readUInt16LE(o) : buf.readUInt16BE(o));
   const readU32 = (o: number) => (littleEndian ? buf.readUInt32LE(o) : buf.readUInt32BE(o));
-  if (tiff + 8 > buf.length) return 1;
+  if (tiff + 8 > buf.length) return null;
   const ifd0Offset = readU32(tiff + 4);
   const ifd0 = tiff + ifd0Offset;
-  if (ifd0 + 2 > buf.length) return 1;
+  if (ifd0 + 2 > buf.length) return null;
   const entries = readU16(ifd0);
   for (let i = 0; i < entries; i++) {
     const entry = ifd0 + 2 + i * 12;
@@ -75,7 +75,7 @@ function parseExifOrientation(buf: Buffer, app1Start: number, app1Len: number): 
       return readU16(entry + 8);
     }
   }
-  return 1;
+  return null;
 }
 
 function parseJpeg(buf: Buffer): { width: number; height: number } | null {
@@ -98,7 +98,8 @@ function parseJpeg(buf: Buffer): { width: number; height: number } | null {
     if (len < 2 || offset + len > buf.length) break;
 
     if (marker === 0xe1) {
-      orientation = parseExifOrientation(buf, offset - 2, len);
+      const parsed = parseExifOrientation(buf, offset - 2, len);
+      if (parsed !== null) orientation = parsed;
     }
 
     const isSof =
@@ -126,11 +127,13 @@ function parseJpeg(buf: Buffer): { width: number; height: number } | null {
  */
 export function getPublicImageMeta(publicSrc: string): PublicImageMeta | null {
   if (!publicSrc || !publicSrc.startsWith("/")) return null;
-  if (cache.has(publicSrc)) return cache.get(publicSrc) ?? null;
+  const cleanSrc = publicSrc.split(/[?#]/, 1)[0];
+  if (cache.has(cleanSrc)) return cache.get(cleanSrc) ?? null;
 
-  const fullPath = path.join(process.cwd(), "public", publicSrc.replace(/^\/+/, ""));
-  if (!fs.existsSync(fullPath)) {
-    cache.set(publicSrc, null);
+  const publicDir = path.resolve(process.cwd(), "public");
+  const fullPath = path.resolve(publicDir, cleanSrc.replace(/^\/+/, ""));
+  if (!fullPath.startsWith(publicDir + path.sep) || !fs.existsSync(fullPath)) {
+    cache.set(cleanSrc, null);
     return null;
   }
 
@@ -152,7 +155,7 @@ export function getPublicImageMeta(publicSrc: string): PublicImageMeta | null {
     }
 
     if (!dims || !type || dims.width <= 0 || dims.height <= 0) {
-      cache.set(publicSrc, null);
+      cache.set(cleanSrc, null);
       return null;
     }
 
@@ -162,10 +165,10 @@ export function getPublicImageMeta(publicSrc: string): PublicImageMeta | null {
       type,
       ratio: +(dims.width / dims.height).toFixed(3),
     };
-    cache.set(publicSrc, meta);
+    cache.set(cleanSrc, meta);
     return meta;
   } catch {
-    cache.set(publicSrc, null);
+    cache.set(cleanSrc, null);
     return null;
   }
 }

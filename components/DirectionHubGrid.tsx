@@ -35,7 +35,11 @@ export default function DirectionHubGrid({ services }: DirectionHubGridProps) {
                   <Image
                     key={photos[currentIdx] || photos[0]}
                     src={photos[currentIdx] || photos[0]}
-                    alt={service.coverAlt || service.shortTitle}
+                    alt={
+                      currentIdx === 0
+                        ? service.coverAlt || service.shortTitle
+                        : `${service.shortTitle} — фото ${currentIdx + 1}`
+                    }
                     fill
                     priority={idx < 3 && currentIdx === 0}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
