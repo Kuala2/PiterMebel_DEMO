@@ -28,6 +28,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
+  const [closedDropdown, setClosedDropdown] = useState<string | null>(null);
   const scrollYRef = useRef(0);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuDrawerRef = useRef<HTMLElement>(null);
@@ -47,7 +48,17 @@ export default function Header() {
     return cleaned.endsWith("/") ? cleaned : `${cleaned}/`;
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+    dropdownGroupHref?: string
+  ) => {
+    e.currentTarget.blur();
+    if (dropdownGroupHref) {
+      setClosedDropdown(dropdownGroupHref);
+    } else {
+      setClosedDropdown(null);
+    }
     setMobileMenuOpen(false);
     setOpenMobileGroup(null);
     const currentNorm = normalizePath(pathname);
@@ -203,11 +214,28 @@ export default function Header() {
               }
 
               return (
-                <div key={link.href} className="nav-dropdown-wrap">
+                <div
+                  key={link.href}
+                  className={`nav-dropdown-wrap ${closedDropdown === link.href ? "is-closed" : ""}`}
+                  onMouseLeave={() =>
+                    setClosedDropdown((cur) => (cur === link.href ? null : cur))
+                  }
+                  onFocusCapture={(e) => {
+                    if (e.target instanceof HTMLElement && e.target.matches(":focus-visible")) {
+                      setClosedDropdown(null);
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") {
+                      (document.activeElement as HTMLElement | null)?.blur?.();
+                      setClosedDropdown(link.href);
+                    }
+                  }}
+                >
                   <Link
                     href={link.href}
                     className={`nav-link nav-link-has-dropdown ${isActive ? "active" : ""}`}
-                    onClick={(e) => handleNavClick(e, link.href)}
+                    onClick={(e) => handleNavClick(e, link.href, link.href)}
                     aria-current={isActive ? "page" : undefined}
                   >
                     <span>{link.label}</span>
@@ -227,7 +255,7 @@ export default function Header() {
                             key={sub.href}
                             href={sub.href}
                             className={`nav-dropdown-link ${subActive ? "active" : ""}`}
-                            onClick={(e) => handleNavClick(e, sub.href)}
+                            onClick={(e) => handleNavClick(e, sub.href, link.href)}
                           >
                             {sub.label}
                           </Link>

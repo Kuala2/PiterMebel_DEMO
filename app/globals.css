@@ -11165,8 +11165,8 @@ html.menu-open .boost-popup {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.nav-dropdown-wrap:hover .nav-caret,
-.nav-dropdown-wrap:focus-within .nav-caret {
+.nav-dropdown-wrap:not(.is-closed):hover .nav-caret,
+.nav-dropdown-wrap:not(.is-closed):has(:focus-visible) .nav-caret {
   transform: rotate(180deg);
   opacity: 1;
 }
@@ -11189,8 +11189,8 @@ html.menu-open .boost-popup {
   min-width: 540px;
 }
 
-.nav-dropdown-wrap:hover .nav-dropdown-panel,
-.nav-dropdown-wrap:focus-within .nav-dropdown-panel {
+.nav-dropdown-wrap:not(.is-closed):hover .nav-dropdown-panel,
+.nav-dropdown-wrap:not(.is-closed):has(:focus-visible) .nav-dropdown-panel {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
