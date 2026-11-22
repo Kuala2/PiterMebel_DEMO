@@ -289,13 +289,12 @@ export const KITCHENS: Kitchen[] = [
   {
     slug: "marble-hood",
     title: "Кухня с тонкой столешницей HPL",
-    cover: "/img/projects/marble-hood/photo_1.webp",
+    cover: "/img/projects/marble-hood/photo_5.webp",
     gallery: [
-      "/img/projects/marble-hood/photo_1.webp",
+      "/img/projects/marble-hood/photo_5.webp",
       "/img/projects/marble-hood/photo_2.webp",
       "/img/projects/marble-hood/photo_3.webp",
       "/img/projects/marble-hood/photo_4.webp",
-      "/img/projects/marble-hood/photo_5.webp",
     ],
     materialGroup: "combined",
     facadeTier: "custom",
