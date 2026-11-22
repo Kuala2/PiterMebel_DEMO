@@ -112,14 +112,24 @@ export async function generateMetadata({
       ? `${summaryDesc}${serviceSuffix}`
       : summaryDesc;
 
+  const ogUrl = `/img/og/kitchens/${kitchen.slug}.jpg`;
+  const ogMeta = getPublicImageMeta(ogUrl);
   const coverMeta = getPublicImageMeta(kitchen.cover);
-  const ogImage = {
-    url: kitchen.cover,
-    alt: kitchen.title,
-    ...(coverMeta
-      ? { width: coverMeta.width, height: coverMeta.height, type: coverMeta.type }
-      : {}),
-  };
+  const ogImage = ogMeta
+    ? {
+        url: ogUrl,
+        width: ogMeta.width,
+        height: ogMeta.height,
+        type: ogMeta.type,
+        alt: kitchen.title,
+      }
+    : {
+        url: kitchen.cover,
+        alt: kitchen.title,
+        ...(coverMeta
+          ? { width: coverMeta.width, height: coverMeta.height, type: coverMeta.type }
+          : {}),
+      };
 
   return {
     title: pageTitle,
