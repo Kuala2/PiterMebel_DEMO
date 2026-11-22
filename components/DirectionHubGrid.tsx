@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import SpotlightArea from "@/components/SpotlightArea";
@@ -12,6 +12,18 @@ interface DirectionHubGridProps {
 
 export default function DirectionHubGrid({ services }: DirectionHubGridProps) {
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
+  const preloadedUrlsRef = useRef<Set<string>>(new Set());
+
+  const preloadCardPhotos = (urls: string[]) => {
+    if (typeof window === "undefined") return;
+    for (const url of urls) {
+      if (!url || preloadedUrlsRef.current.has(url)) continue;
+      preloadedUrlsRef.current.add(url);
+      const img = new window.Image();
+      img.decoding = "async";
+      img.src = url;
+    }
+  };
 
   return (
     <SpotlightArea className="projects-grid" selector=".catalog-card">
@@ -23,17 +35,19 @@ export default function DirectionHubGrid({ services }: DirectionHubGridProps) {
               ? [service.cover]
               : [];
         const currentIdx = cardPhoto[service.slug] ?? 0;
+        const isPriority = idx < 3 && currentIdx === 0;
 
         return (
           <div
             key={service.slug}
             className="catalog-card project-card-item spotlight-target direction-hub-card"
+            onMouseEnter={() => preloadCardPhotos(photos)}
+            onTouchStart={() => preloadCardPhotos(photos)}
           >
             <div className="card-gallery-wrap">
               {photos.length > 0 ? (
                 <>
                   <Image
-                    key={photos[currentIdx] || photos[0]}
                     src={photos[currentIdx] || photos[0]}
                     alt={
                       currentIdx === 0
@@ -41,7 +55,8 @@ export default function DirectionHubGrid({ services }: DirectionHubGridProps) {
                         : `${service.shortTitle} — фото ${currentIdx + 1}`
                     }
                     fill
-                    priority={idx < 3 && currentIdx === 0}
+                    priority={isPriority}
+                    loading={isPriority ? undefined : currentIdx > 0 ? "eager" : "lazy"}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                     className="card-img-slide is-active"
                   />

@@ -133,9 +133,6 @@ export default function HomePage() {
 
   const kitchenCatalogItems = KITCHENS.map((k) => {
     const primarySpec = k.specs[0];
-    const secondarySpec = k.specs.find(
-      (s) => s !== primarySpec && /(столешниц|декор|открыван)/i.test(s.label)
-    );
     return {
       id: k.slug,
       category: "kitchens" as const,
@@ -143,9 +140,7 @@ export default function HomePage() {
       title: k.title,
       desc: k.summary,
       specLabel: primarySpec?.label || "Материалы",
-      specValue: secondarySpec
-        ? `${primarySpec.value} / ${secondarySpec.value}`
-        : primarySpec?.value || "Индивидуальный проект",
+      specValue: primarySpec?.value || "Индивидуальный проект",
       photos: (k.gallery.length ? k.gallery : [k.cover]).slice(0, 5),
       link: `/kitchens/${k.slug}/`,
     };
@@ -396,7 +391,7 @@ export default function HomePage() {
                       <div className="card-body">
                         <h3 className="card-title">{item.title}</h3>
                         <div className="card-footer">
-                          <div>
+                          <div className="card-footer-meta">
                             <div className="card-price-label">{item.specLabel}</div>
                             <div className="card-price-val">{item.specValue}</div>
                           </div>
