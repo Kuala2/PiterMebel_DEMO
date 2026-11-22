@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LeadSection from "@/components/LeadSection";
@@ -26,6 +26,18 @@ const ITEM_LIST_JSON_LD = {
 export default function KitchensCatalogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [cardPhoto, setCardPhoto] = useState<Record<string, number>>({});
+  const preloadedUrlsRef = useRef<Set<string>>(new Set());
+
+  const preloadCardPhotos = (urls: string[]) => {
+    if (typeof window === "undefined") return;
+    for (const url of urls) {
+      if (!url || preloadedUrlsRef.current.has(url)) continue;
+      preloadedUrlsRef.current.add(url);
+      const img = new window.Image();
+      img.decoding = "async";
+      img.src = url;
+    }
+  };
 
   const filterTabs = [
     { key: "all", label: "Все кухни", count: KITCHENS.length },
@@ -81,21 +93,25 @@ export default function KitchensCatalogPage() {
             {filteredKitchens.map((kitchen, idx) => {
               const currentIdx = cardPhoto[kitchen.slug] ?? 0;
               const photos = kitchen.gallery?.length ? kitchen.gallery : [kitchen.cover];
+              const isPriority = idx < 3 && currentIdx === 0;
 
               return (
                 <div
                   key={kitchen.slug}
                   className="catalog-card project-card-item spotlight-target"
+                  onMouseEnter={() => preloadCardPhotos(photos)}
+                  onTouchStart={() => preloadCardPhotos(photos)}
                 >
                   <div className="card-gallery-wrap">
                     <Image
-                      key={photos[currentIdx] || photos[0]}
                       src={photos[currentIdx] || photos[0]}
                       alt={kitchen.title}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
                       className="card-img-slide is-active"
-                      priority={idx < 3 && currentIdx === 0}
+                      priority={isPriority}
+                      fetchPriority={idx === 0 && currentIdx === 0 ? "high" : undefined}
+                      loading={isPriority ? undefined : currentIdx > 0 ? "eager" : "lazy"}
                     />
 
                     {photos.length > 1 && (

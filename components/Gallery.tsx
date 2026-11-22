@@ -36,21 +36,44 @@ export default function Gallery({
 
   const count = images.length;
 
-  const markSlideLoaded = useCallback((idx: number) => {
-    loadedIndicesRef.current.add(idx);
-    if (activeIdxRef.current === idx) {
-      setDisplayIdx(idx);
-    }
-  }, []);
+  const preloadAllSlides = useCallback(() => {
+    if (count <= 1) return;
+    setMountedIndices((prev) =>
+      prev.length >= count ? prev : Array.from({ length: count }, (_, i) => i)
+    );
+  }, [count]);
 
-  const activateIndex = useCallback((nextIdx: number) => {
-    activeIdxRef.current = nextIdx;
-    setActiveIdx(nextIdx);
-    setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
-    if (loadedIndicesRef.current.has(nextIdx)) {
-      setDisplayIdx(nextIdx);
-    }
-  }, []);
+  const markSlideLoaded = useCallback(
+    (idx: number) => {
+      loadedIndicesRef.current.add(idx);
+      if (idx === 0) {
+        preloadAllSlides();
+      }
+      if (activeIdxRef.current === idx) {
+        setDisplayIdx(idx);
+      }
+    },
+    [preloadAllSlides]
+  );
+
+  const activateIndex = useCallback(
+    (nextIdx: number) => {
+      activeIdxRef.current = nextIdx;
+      setActiveIdx(nextIdx);
+      preloadAllSlides();
+      setMountedIndices((prev) => (prev.includes(nextIdx) ? prev : [...prev, nextIdx]));
+      if (loadedIndicesRef.current.has(nextIdx)) {
+        setDisplayIdx(nextIdx);
+      }
+    },
+    [preloadAllSlides]
+  );
+
+  useEffect(() => {
+    if (count <= 1) return;
+    const id = window.setTimeout(preloadAllSlides, 2500);
+    return () => window.clearTimeout(id);
+  }, [count, preloadAllSlides]);
 
   const go = useCallback(
     (dir: number) => {
@@ -140,7 +163,10 @@ export default function Gallery({
   return (
     <div
       className="detail-gallery-main"
-      onMouseEnter={() => setIsPaused(true)}
+      onMouseEnter={() => {
+        setIsPaused(true);
+        preloadAllSlides();
+      }}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
       onBlur={(e) => {
@@ -148,7 +174,10 @@ export default function Gallery({
           setIsPaused(false);
         }
       }}
-      onTouchStart={() => setIsPaused(true)}
+      onTouchStart={() => {
+        setIsPaused(true);
+        preloadAllSlides();
+      }}
       onTouchEnd={() => setIsPaused(false)}
       onTouchCancel={() => setIsPaused(false)}
     >
@@ -171,6 +200,7 @@ export default function Gallery({
         tabIndex={0}
         aria-label="Открыть фото на весь экран"
         onKeyDown={(e) => {
+          if (e.target !== e.currentTarget) return;
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             setLightbox(true);
@@ -189,10 +219,24 @@ export default function Gallery({
             >
               {isMounted && (
                 <Image
+                  ref={(el) => {
+                    if (el && el.complete && el.naturalWidth > 0) {
+                      if (el.naturalHeight) {
+                        const r = +(el.naturalWidth / el.naturalHeight).toFixed(3);
+                        setRatios((prev) => (prev[src] ? prev : { ...prev, [src]: r }));
+                      }
+                      el.decode?.().catch(() => {});
+                      if (!loadedIndicesRef.current.has(idx)) {
+                        markSlideLoaded(idx);
+                      }
+                    }
+                  }}
                   src={src}
                   alt={getAltFor(idx)}
                   fill
                   priority={idx === 0}
+                  fetchPriority={idx === 0 ? "high" : undefined}
+                  loading={idx === 0 ? undefined : "eager"}
                   sizes="(max-width: 1024px) 100vw, 1200px"
                   style={{
                     objectFit: ratio && ratio < 0.72 ? "contain" : "cover",
@@ -205,6 +249,7 @@ export default function Gallery({
                       const r = +(target.naturalWidth / target.naturalHeight).toFixed(3);
                       setRatios((prev) => (prev[src] ? prev : { ...prev, [src]: r }));
                     }
+                    target.decode?.().catch(() => {});
                     markSlideLoaded(idx);
                   }}
                   onError={() => markSlideLoaded(idx)}
@@ -304,11 +349,10 @@ export default function Gallery({
 
           <div className="lightbox-stage">
             <Image
-              key={images[activeIdx]}
               src={images[activeIdx]}
               alt={getAltFor(activeIdx)}
-              width={1920}
-              height={1280}
+              width={1200}
+              height={1200}
               sizes="100vw"
               style={{
                 maxWidth: "94vw",

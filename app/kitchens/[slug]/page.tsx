@@ -73,6 +73,15 @@ function formatRub(value: number) {
   return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "\u00A0");
 }
 
+function buildKitchenCoverAlt(kitchen: (typeof KITCHENS)[number]): string {
+  const detailParts = kitchen.specs
+    .slice(0, 2)
+    .map((s) => `${s.label.toLowerCase()} ${s.value}`)
+    .join(", ");
+  const candidate = detailParts ? `${kitchen.title} — ${detailParts}` : kitchen.title;
+  return candidate.length <= 125 ? candidate : kitchen.title;
+}
+
 interface KitchenPageProps {
   params: Promise<{ slug: string }>;
 }
@@ -112,6 +121,7 @@ export async function generateMetadata({
       ? `${summaryDesc}${serviceSuffix}`
       : summaryDesc;
 
+  const coverAlt = buildKitchenCoverAlt(kitchen);
   const ogUrl = `/img/og/kitchens/${kitchen.slug}.jpg`;
   const ogMeta = getPublicImageMeta(ogUrl);
   const coverMeta = getPublicImageMeta(kitchen.cover);
@@ -121,11 +131,11 @@ export async function generateMetadata({
         width: ogMeta.width,
         height: ogMeta.height,
         type: ogMeta.type,
-        alt: kitchen.title,
+        alt: coverAlt,
       }
     : {
         url: kitchen.cover,
-        alt: kitchen.title,
+        alt: coverAlt,
         ...(coverMeta
           ? { width: coverMeta.width, height: coverMeta.height, type: coverMeta.type }
           : {}),
@@ -222,21 +232,16 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
           { name: kitchen.title },
         ])) }}
       />
-      {/* 1. Above the fold: Split Layout (Desktop 42/58, Mobile order: Title -> Gallery -> Specs) */}
+      {/* 1. Above the fold: Split Layout (Desktop 40/60 centered, Mobile order: Breadcrumb -> Title -> Gallery -> Lead -> Specs -> Buttons) */}
       <section className="detail-page-header">
         <div className="container">
-          <nav className="detail-top-nav" aria-label="Навигация по каталогу кухонь">
-            <Link href="/kitchens/" className="detail-top-link">
-              ← В каталог кухонь
-            </Link>
-            <Link href={`/kitchens/${nextKitchen.slug}/`} className="detail-top-link">
-              Следующая: {nextKitchen.title} →
-            </Link>
-          </nav>
-
           <div className="detail-split-hero">
             {/* Info Column */}
             <div className="detail-info-col">
+              <nav className="service-breadcrumb" aria-label="Навигация по каталогу кухонь">
+                <Link href="/kitchens/">← В каталог кухонь</Link>
+              </nav>
+
               <h1 className="detail-hero-title">
                 {kitchen.title}
               </h1>
@@ -278,6 +283,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
               <Gallery
                 images={allPhotos}
                 title={kitchen.title}
+                coverAlt={buildKitchenCoverAlt(kitchen)}
                 initialRatios={photoRatios}
                 aspectRatio="5 / 4"
                 showThumbs={false}
