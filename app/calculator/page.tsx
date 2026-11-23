@@ -218,6 +218,7 @@ export default function CalculatorPage() {
   const [options, setOptions] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
+  const userInteractedRef = useRef(false);
   const stageRef = useRef<HTMLDivElement>(null);
   const stageHeadingRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLElement>(null);
@@ -257,7 +258,7 @@ export default function CalculatorPage() {
   }, []);
 
   useEffect(() => {
-    if (!urlReady) return;
+    if (!urlReady || !userInteractedRef.current) return;
     const params = new URLSearchParams({
       category,
       layout,
@@ -326,11 +327,13 @@ export default function CalculatorPage() {
   };
 
   const goToStep = (nextStep: number) => {
+    userInteractedRef.current = true;
     setStep(Math.min(STEPS.length - 1, Math.max(0, nextStep)));
     focusStage();
   };
 
   const chooseCategory = (id: CalculatorCategory) => {
+    userInteractedRef.current = true;
     setCategory(id);
     setLayout(LAYOUTS[id][0].id);
     setMeters(DEFAULT_METERS_BY_CATEGORY[id]);
@@ -341,7 +344,23 @@ export default function CalculatorPage() {
     }
   };
 
+  const chooseLayout = (id: string) => {
+    userInteractedRef.current = true;
+    setLayout(id);
+  };
+
+  const chooseMeters = (next: number | ((value: number) => number)) => {
+    userInteractedRef.current = true;
+    setMeters(next);
+  };
+
+  const chooseMaterial = (id: MaterialId) => {
+    userInteractedRef.current = true;
+    setMaterial(id);
+  };
+
   const toggleOption = (id: string) => {
+    userInteractedRef.current = true;
     setOptions((current) => {
       const exists = current.includes(id);
       if (exists) {
@@ -466,7 +485,7 @@ export default function CalculatorPage() {
                           name="calculator-layout"
                           value={item.id}
                           checked={layout === item.id}
-                          onChange={() => setLayout(item.id)}
+                          onChange={() => chooseLayout(item.id)}
                         />
                         <span className="calculator-choice-marker" aria-hidden="true" />
                         <span className="calculator-choice-copy">
@@ -483,7 +502,7 @@ export default function CalculatorPage() {
                         key={preset.id}
                         type="button"
                         aria-pressed={Math.abs(meters - preset.meters) < 0.05}
-                        onClick={() => setMeters(preset.meters)}
+                        onClick={() => chooseMeters(preset.meters)}
                       >
                         <strong>{preset.name}</strong>
                         <span>{preset.description}</span>
@@ -497,7 +516,7 @@ export default function CalculatorPage() {
                       <span id="calculator-meters-help">Если точных размеров нет, укажите примерно.</span>
                     </label>
                     <div className="calculator-meter-control">
-                      <button type="button" onClick={() => setMeters((value) => clampMeters(value - 0.2))} aria-label="Уменьшить длину">−</button>
+                      <button type="button" onClick={() => chooseMeters((value) => clampMeters(value - 0.2))} aria-label="Уменьшить длину">−</button>
                       <input
                         id="calculator-meters"
                         type="number"
@@ -507,10 +526,10 @@ export default function CalculatorPage() {
                         inputMode="decimal"
                         value={meters}
                         aria-describedby="calculator-meters-help"
-                        onChange={(event) => setMeters(clampMeters(Number(event.target.value), DEFAULT_METERS_BY_CATEGORY[category]))}
+                        onChange={(event) => chooseMeters(clampMeters(Number(event.target.value), DEFAULT_METERS_BY_CATEGORY[category]))}
                       />
                       <span>м</span>
-                      <button type="button" onClick={() => setMeters((value) => clampMeters(value + 0.2))} aria-label="Увеличить длину">+</button>
+                      <button type="button" onClick={() => chooseMeters((value) => clampMeters(value + 0.2))} aria-label="Увеличить длину">+</button>
                     </div>
                   </div>
                 </fieldset>
@@ -527,7 +546,7 @@ export default function CalculatorPage() {
                           name="calculator-material"
                           value={item.id}
                           checked={material === item.id}
-                          onChange={() => setMaterial(item.id)}
+                          onChange={() => chooseMaterial(item.id)}
                         />
                         <span className="calculator-choice-marker" aria-hidden="true" />
                         <span className="calculator-choice-copy">

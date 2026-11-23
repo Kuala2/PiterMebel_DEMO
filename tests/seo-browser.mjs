@@ -106,6 +106,29 @@ try {
   }
 
   assert.equal(errors.length, 0, errors.join("\n"));
+
+  for (const calcPath of ["/calculator/", "/calculator/?category=cabinet&layout=complex"]) {
+    await page.goto(base + calcPath, { waitUntil: "networkidle" });
+    await page.waitForTimeout(200);
+    assert.equal(page.url(), base + calcPath, `Calculator must not rewrite URL on initial load (${calcPath})`);
+    assert.equal(
+      await page.locator('link[rel="canonical"]').getAttribute("href"),
+      "https://pitermebel.com/calculator/"
+    );
+  }
+  assert.equal(
+    await page.locator('input[name="calculator-category"][value="cabinet"]').isChecked(),
+    true,
+    "Calculator must hydrate category=cabinet from query string without mutating URL"
+  );
+  assert.ok(
+    (await page.locator("#calculator-result").textContent())?.includes("Несколько зон"),
+    "Calculator summary must hydrate layout=complex from query string"
+  );
+  await page.locator("label.calculator-choice", { hasText: "Кухня" }).click();
+  await page.waitForTimeout(150);
+  assert.match(page.url(), /category=kitchen/, "Calculator URL should update after explicit user interaction");
+
   assert.equal((await page.goto(base + "/seo-test-missing/")).status(), 404);
   await context.close();
   const noJs = await browser.newContext({ javaScriptEnabled: false });

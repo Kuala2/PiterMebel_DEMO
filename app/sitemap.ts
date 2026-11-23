@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
-const CATALOG_UPDATED_AT = new Date("2026-11-22");
+const CATALOG_UPDATED_AT = new Date("2026-11-23");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: {

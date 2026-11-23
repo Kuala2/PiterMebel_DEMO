@@ -6,8 +6,23 @@
         redir https://pitermebel.com/ permanent
     }
 
-    @legacyCatalogKitchen path /catalog/kitchen /catalog/kitchen/
-    handle @legacyCatalogKitchen {
+    @legacyQuiz path /quiz /quiz/*
+    handle @legacyQuiz {
+        redir https://pitermebel.com/calculator/ permanent
+    }
+
+    @legacyAnalyticsConsent path /analytics-consent /analytics-consent/
+    handle @legacyAnalyticsConsent {
+        redir https://pitermebel.com/privacy/ permanent
+    }
+
+    @legacyBasket path /basket /basket/
+    handle @legacyBasket {
+        redir https://pitermebel.com/kitchens/ permanent
+    }
+
+    @legacyCatalog path /catalog /catalog/ /catalog/kitchen /catalog/kitchen/
+    handle @legacyCatalog {
         redir https://pitermebel.com/kitchens/ permanent
     }
 
@@ -102,6 +117,39 @@
     }
 }
 
+# Одношаговый редирект с HTTP / www на канонический HTTPS URL с trailingSlash
+(canonical_domain_redirect) {
+    @canonicalRootIndex path /index.html
+    handle @canonicalRootIndex {
+        redir https://pitermebel.com/ permanent
+    }
+
+    @canonicalNestedIndex path_regexp canonicalNestedIdx ^(/.*)/index\.html$
+    handle @canonicalNestedIndex {
+        redir https://pitermebel.com{re.canonicalNestedIdx.1}/ permanent
+    }
+
+    @canonicalNoSlashWithQuery {
+        path_regexp ^/[^.]*[^/]$
+        expression `{query} != ""`
+    }
+    handle @canonicalNoSlashWithQuery {
+        redir https://pitermebel.com{path}/?{query} permanent
+    }
+
+    @canonicalNoSlash {
+        path_regexp ^/[^.]*[^/]$
+        expression `{query} == ""`
+    }
+    handle @canonicalNoSlash {
+        redir https://pitermebel.com{path}/ permanent
+    }
+
+    handle {
+        redir https://pitermebel.com{uri} permanent
+    }
+}
+
 # 1. HTTP (порт 80): отдаем robots.txt и sitemap.xml с кодом 200 БЕЗ редиректа (жесткое требование Яндекса при переезде сайта)
 http://pitermebel.com, http://www.pitermebel.com {
     import legacy_redirects
@@ -112,18 +160,18 @@ http://pitermebel.com, http://www.pitermebel.com {
         file_server
     }
 
-    # Все остальные страницы штатно редиректим на HTTPS
+    # Все остальные страницы редиректим на канонический HTTPS URL за один переход
     handle {
-        redir https://pitermebel.com{uri} permanent
+        import canonical_domain_redirect
     }
 }
 
-# 2. Редирект с HTTPS www на основной HTTPS домен
+# 2. Редирект с HTTPS www на основной HTTPS домен за один переход
 https://www.pitermebel.com {
     import legacy_redirects
 
     handle {
-        redir https://pitermebel.com{uri} permanent
+        import canonical_domain_redirect
     }
 }
 
@@ -143,6 +191,23 @@ https://pitermebel.com {
     header Strict-Transport-Security "max-age=31536000"
 
     import legacy_redirects
+
+    # Служебные артефакты 404 из Next.js export не должны отдавать 200 OK
+    @notFoundPages path /404 /404/ /404.html /404/index.html
+    handle @notFoundPages {
+        error "Not Found" 404
+    }
+
+    # Канонизация прямых запросов к index.html
+    @rootIndexHtml path /index.html
+    handle @rootIndexHtml {
+        redir https://pitermebel.com/ permanent
+    }
+
+    @nestedIndexHtml path_regexp nestedIdx ^(/.*)/index\.html$
+    handle @nestedIndexHtml {
+        redir https://pitermebel.com{re.nestedIdx.1}/ permanent
+    }
 
     # Хешированные ассеты Next.js (_next/static/*)
     @static {
@@ -167,20 +232,32 @@ https://pitermebel.com {
     # Защита статических файлов от превращения в HTML:
     # Если файл не найден, возвращаем 404, а не главную страницу index.html
     @staticFiles {
-        path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf *.mp4 *.webm *.json *.xml *.txt
+        path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf *.mp4 *.webm *.json *.xml *.txt *.webmanifest
     }
     handle @staticFiles {
         file_server
     }
 
-    # Роутинг для HTML-страниц статического экспорта (trailingSlash)
+    # Роутинг для HTML-страниц статического экспорта (trailingSlash: true):
+    # file_server сам отдаёт <dir>/index.html и редиректит /path -> /path/ (308),
+    # без try_files {path}/index.html (который отдавал бы дубли 200 OK без слеша).
     handle {
-        try_files {path} {path}/index.html {path}.html
         file_server
     }
 
     handle_errors {
-        rewrite * /404.html
-        file_server
+        # Сбрасываем долгосрочный Cache-Control (например immutable для /_next/static/*), чтобы 404/5xx не кешировались
+        header Cache-Control "no-store"
+
+        @errStatic path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf *.mp4 *.webm *.json *.xml *.txt *.webmanifest
+        handle @errStatic {
+            respond "{err.status_code} {err.status_text}"
+        }
+
+        @404 expression `{err.status_code} == 404`
+        handle @404 {
+            rewrite * /404.html
+            file_server
+        }
     }
 }

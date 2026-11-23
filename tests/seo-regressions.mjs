@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import path from "node:path";
 import vm from "node:vm";
 import ts from "typescript";
 
@@ -131,5 +132,220 @@ test("Homepage reviews use semantic HTML without self-serving or cherry-picked A
     for (const [, raw] of ldMatches) {
       assert.equal(/AggregateRating|aggregateRating|reviewRating|reviewBody|itemReviewed|"Review"/.test(raw), false);
     }
+  }
+});
+
+function listHtmlFiles(dir) {
+  const results = [];
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...listHtmlFiles(full));
+    } else if (entry.name.endsWith(".html")) {
+      results.push(full);
+    }
+  }
+  return results;
+}
+
+test("Static export and sitemap match 1-to-1 with zero obsolete HTML stubs or legacy URLs", () => {
+  assert.equal(existsSync("public/catalog/kitchen/index.html"), false, "Legacy stub public/catalog/kitchen/index.html must not exist");
+  assert.equal(existsSync("public/kitchens/slavena/index.html"), false, "Legacy stub public/kitchens/slavena/index.html must not exist");
+  assert.equal(existsSync("public/projects/bathroom-pur-vanity/index.html"), false, "Legacy stub public/projects/bathroom-pur-vanity/index.html must not exist");
+  assert.equal(existsSync("data/projects.ts"), false, "Obsolete data/projects.ts must not remain in repository");
+
+  if (!existsSync("out/sitemap.xml")) return;
+
+  const sitemapXml = readFileSync("out/sitemap.xml", "utf8");
+  const sitemapUrls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  const sitemapSet = new Set(sitemapUrls);
+  assert.equal(sitemapUrls.length, sitemapSet.size, "Sitemap must not contain duplicate URLs");
+  assert.equal(sitemapUrls.length, 44, `Expected 44 canonical URLs in sitemap.xml, got ${sitemapUrls.length}`);
+
+  for (const url of sitemapUrls) {
+    assert.match(url, /^https:\/\/pitermebel\.com\/(.*\/)?$/, `Non-canonical URL in sitemap: ${url}`);
+    assert.doesNotMatch(url, /\/projects\/[^/]+\//, `Removed /projects/<slug>/ URL leaked into sitemap: ${url}`);
+    assert.doesNotMatch(url, /\/kitchens\/(slavena|aleksandra|timofey|stefania|ulyana|valeria|viktoria)\//, `Removed kitchen slug leaked into sitemap: ${url}`);
+    assert.doesNotMatch(url, /\/(en|quiz|catalog|basket|analytics-consent)\b/, `Legacy URL leaked into sitemap: ${url}`);
+  }
+
+  const allowedNonSitemap = new Set(["404.html", "404/index.html", "yandex_2290ffc6c48b46ac.html"]);
+  const exportedUrls = new Set();
+  for (const file of listHtmlFiles("out")) {
+    const rel = path.relative("out", file).replace(/\\/g, "/");
+    if (allowedNonSitemap.has(rel)) continue;
+    assert.ok(rel === "index.html" || rel.endsWith("/index.html"), `Unexpected non-directory HTML file in out/: ${rel}`);
+    const canonicalUrl = rel === "index.html"
+      ? "https://pitermebel.com/"
+      : `https://pitermebel.com/${rel.slice(0, -"index.html".length)}`;
+    assert.ok(sitemapSet.has(canonicalUrl), `Exported HTML page ${rel} is missing from sitemap.xml`);
+    exportedUrls.add(canonicalUrl);
+  }
+  assert.equal(exportedUrls.size, sitemapSet.size, "Every sitemap URL must correspond to an exported HTML file");
+});
+
+test("Caddyfile permanently redirects all legacy and removed URLs and preserves canonical trailing-slash routing", () => {
+  const caddy = readFileSync("Caddyfile", "utf8");
+  const legacyBlockMatch = caddy.match(/\(legacy_redirects\)\s*\{([\s\S]*?)\n\}/);
+  assert.ok(legacyBlockMatch, "Caddyfile must define (legacy_redirects) snippet");
+  const legacyBlock = legacyBlockMatch[1];
+
+  const requiredExactPaths = [
+    "/en",
+    "/en/*",
+    "/quiz",
+    "/quiz/*",
+    "/analytics-consent",
+    "/analytics-consent/",
+    "/basket",
+    "/basket/",
+    "/catalog",
+    "/catalog/",
+    "/catalog/kitchen",
+    "/catalog/kitchen/",
+    "/kitchens/slavena",
+    "/kitchens/slavena/",
+    "/kitchens/aleksandra",
+    "/kitchens/aleksandra/",
+    "/kitchens/timofey",
+    "/kitchens/timofey/",
+    "/kitchens/stefania",
+    "/kitchens/stefania/",
+    "/kitchens/ulyana",
+    "/kitchens/ulyana/",
+    "/kitchens/valeria",
+    "/kitchens/valeria/",
+    "/kitchens/viktoria",
+    "/kitchens/viktoria/",
+    "/projects/bathroom-pur-vanity",
+    "/projects/bathroom-pur-vanity/",
+    "/projects/bathroom-vanity",
+    "/projects/bathroom-vanity/",
+    "/projects/glass-wardrobe",
+    "/projects/glass-wardrobe/",
+    "/projects/brick-wardrobe",
+    "/projects/brick-wardrobe/",
+    "/projects/light-wood-wardrobe",
+    "/projects/light-wood-wardrobe/",
+    "/projects/wardrobe-inside",
+    "/projects/wardrobe-inside/",
+    "/projects/bedroom-set",
+    "/projects/bedroom-set/",
+    "/projects/mirror-hall",
+    "/projects/mirror-hall/",
+    "/projects/slat-panels",
+    "/projects/slat-panels/",
+    "/projects/oak-veneer-panel",
+    "/projects/oak-veneer-panel/",
+    "/projects/office-reception",
+    "/projects/office-reception/",
+    "/projects/sliding-partition",
+    "/projects/sliding-partition/",
+    "/projects/cascade-partitions",
+    "/projects/cascade-partitions/",
+    "/projects/curved-oak-facades",
+    "/projects/curved-oak-facades/",
+  ];
+  const matcherTokens = new Set(
+    [...legacyBlock.matchAll(/@\w+\s+path\s+([^\n]+)/g)].flatMap((m) => m[1].trim().split(/\s+/))
+  );
+  for (const legacyPath of requiredExactPaths) {
+    assert.ok(matcherTokens.has(legacyPath), `Caddyfile missing legacy path matcher token for ${legacyPath}`);
+  }
+
+  const kitchenProjectRegexMatch = legacyBlock.match(/path_regexp legacyKitchen \^\/projects\/\(([^)]+)\)\/\?\$/);
+  assert.ok(kitchenProjectRegexMatch, "Caddyfile missing legacyKitchen regex redirect");
+  const redirectedKitchenSlugs = new Set(kitchenProjectRegexMatch[1].split("|"));
+  for (const slug of [
+    "island-parquet",
+    "oak-stone",
+    "white-showcase",
+    "marble-hood",
+    "narrow-kitchen",
+    "emerald-enamel",
+    "velvet-matte",
+    "sherman-cognac",
+  ]) {
+    assert.ok(redirectedKitchenSlugs.has(slug), `Caddyfile missing /projects/${slug}/ redirect`);
+  }
+
+  // Must import legacy_redirects in all 3 site blocks (http, https www, https apex)
+  assert.equal(
+    (caddy.match(/\bimport\s+legacy_redirects\b/g) || []).length,
+    3,
+    "Caddyfile must import legacy_redirects in http, https www, and https apex blocks"
+  );
+
+  // Must define single-hop canonical domain redirect for http and https www
+  assert.match(caddy, /\(canonical_domain_redirect\)\s*\{/, "Caddyfile must define (canonical_domain_redirect)");
+  assert.equal(
+    (caddy.match(/\bimport\s+canonical_domain_redirect\b/g) || []).length,
+    2,
+    "Caddyfile must use canonical_domain_redirect in both http and https www blocks"
+  );
+
+  // Must NOT use try_files {path}/index.html which bypasses file_server trailing-slash redirect and serves 200 duplicates
+  assert.doesNotMatch(
+    caddy,
+    /^\s*try_files\b/m,
+    "Caddyfile must not use try_files (it serves 200 OK duplicates on non-trailing-slash URLs and /404)"
+  );
+
+  // Must return real HTTP 404 for exported /404 artifacts and canonicalize /index.html
+  assert.match(caddy, /@notFoundPages\s+path\s+\/404\s+\/404\/\s+\/404\.html\s+\/404\/index\.html/);
+  assert.match(caddy, /error\s+"Not Found"\s+404/);
+  assert.match(caddy, /@rootIndexHtml\s+path\s+\/index\.html/);
+  assert.match(caddy, /@nestedIndexHtml\s+path_regexp\s+nestedIdx/);
+  const notFoundHandleIdx = caddy.indexOf("handle @notFoundPages");
+  const rootIndexHandleIdx = caddy.indexOf("handle @rootIndexHtml");
+  const nestedIndexHandleIdx = caddy.indexOf("handle @nestedIndexHtml");
+  assert.ok(notFoundHandleIdx !== -1, "Caddyfile must define handle @notFoundPages");
+  assert.ok(rootIndexHandleIdx !== -1, "Caddyfile must define handle @rootIndexHtml");
+  assert.ok(nestedIndexHandleIdx !== -1, "Caddyfile must define handle @nestedIndexHtml");
+  assert.ok(
+    notFoundHandleIdx < rootIndexHandleIdx && notFoundHandleIdx < nestedIndexHandleIdx,
+    "Caddyfile must evaluate @notFoundPages before @rootIndexHtml and @nestedIndexHtml so /404/index.html returns 404 directly"
+  );
+  assert.match(caddy, /@staticFiles\s*\{[\s\S]*?\*\.webmanifest/);
+  assert.match(caddy, /handle_errors\s*\{[\s\S]*?header\s+Cache-Control\s+"no-store"/, "Caddyfile handle_errors must override Cache-Control with no-store so 404/5xx are never cached as immutable");
+  assert.match(caddy, /@errStatic\s+path\b[^\n]*\*\.webmanifest/);
+  assert.match(
+    caddy,
+    /handle\s+@errStatic\s*\{\s*respond\s+"\{err\.status_code\} \{err\.status_text\}"\s*\}/,
+    "Caddyfile @errStatic must use standard handle_errors respond without redundant status code placeholder"
+  );
+
+  if (existsSync("out/sitemap.xml")) {
+    const sitemapSet = new Set(
+      [...readFileSync("out/sitemap.xml", "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1])
+    );
+    for (const [, target] of legacyBlock.matchAll(/redir\s+(https:\/\/pitermebel\.com[^\s]+)\s+permanent/g)) {
+      if (target.includes("{re.legacyKitchen.1}")) {
+        for (const slug of redirectedKitchenSlugs) {
+          const resolved = target.replace("{re.legacyKitchen.1}", slug);
+          assert.ok(sitemapSet.has(resolved), `Redirect target not in sitemap: ${resolved}`);
+        }
+      } else {
+        assert.ok(sitemapSet.has(target), `Redirect target not in sitemap: ${target}`);
+      }
+    }
+  }
+});
+
+test("Every exported kitchen detail page includes valid Product JSON-LD with AggregateOffer", () => {
+  if (!existsSync("out/kitchens")) return;
+  const dirs = readdirSync("out/kitchens", { withFileTypes: true }).filter((d) => d.isDirectory());
+  assert.equal(dirs.length, 15, `Expected 15 exported kitchen directories, got ${dirs.length}`);
+  for (const dir of dirs) {
+    const html = readFileSync(path.join("out/kitchens", dir.name, "index.html"), "utf8");
+    const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map((m) => JSON.parse(m[1]));
+    const product = schemas.find((s) => s["@type"] === "Product");
+    assert.ok(product, `Missing Product JSON-LD on /kitchens/${dir.name}/`);
+    assert.equal(product.offers?.["@type"], "AggregateOffer", `Missing AggregateOffer on /kitchens/${dir.name}/`);
+    assert.ok(product.offers.lowPrice >= 160000, `Invalid lowPrice on /kitchens/${dir.name}/`);
+    assert.ok(product.offers.highPrice >= product.offers.lowPrice, `Invalid highPrice on /kitchens/${dir.name}/`);
+    assert.equal(product.offers.priceCurrency, "RUB");
+    assert.equal(product.offers.availability, "https://schema.org/PreOrder");
   }
 });

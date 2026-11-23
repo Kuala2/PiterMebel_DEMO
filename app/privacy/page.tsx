@@ -22,7 +22,7 @@ export default function PrivacyPage() {
   return <div className="privacy-page" style={{ minHeight: "100vh" }}>
     <PageHeader title="Политика конфиденциальности" backTo="/" />
     <section className="article-content-section"><div className="container article-narrow">
-      <p className="article-paragraph">Политика в отношении обработки персональных данных на сайте <a href={SITE_URL}>{SITE_URL}</a>.
+      <p className="article-paragraph">Политика в отношении обработки персональных данных на сайте <a href={`${SITE_URL}/`}>{SITE_URL}</a>.
         Редакция от {PRIVACY_DATE}, версия {PRIVACY_VERSION}.</p>
       <p className="article-paragraph">Документ описывает обработку данных посетителей сайта и лиц, обращающихся в студию «ПитерМебель» за консультацией,
         расчётом мебели и согласованием замера. Правовая основа — Федеральный закон от 27.07.2006 № 152-ФЗ «О персональных данных».

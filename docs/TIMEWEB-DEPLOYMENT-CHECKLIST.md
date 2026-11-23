@@ -21,9 +21,11 @@ sudo systemctl reload caddy
 
 Проверка после публикации:
 
-- `http://pitermebel.com/` → один редирект (`301`/`308`) на `https://pitermebel.com/`;
-- `http://www.pitermebel.com/contacts/` → один редирект на `https://pitermebel.com/contacts/`;
+- `http://pitermebel.com/` → один редирект (`301`) на `https://pitermebel.com/`;
+- `http://www.pitermebel.com/contacts` и `https://www.pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty` (без слеша) → один редирект (`301`) сразу на `https://pitermebel.com/.../` с завершающим слешем (сниппет `canonical_domain_redirect`);
 - `https://www.pitermebel.com/` и `https://www.pitermebel.com/contacts/` → `301` на `https://pitermebel.com/...` (без отдачи дубля `200 OK`);
+- `https://pitermebel.com/kitchens` (без слеша) → `308` на `/kitchens/` (не `200 OK` дубль);
+- `https://pitermebel.com/404`, `/404/`, `/404.html`, `/404/index.html` → реальный статус `404` (не `200 OK` и без редиректа);
 - конечные HTTPS-страницы открываются с валидным сертификатом без предупреждений.
 
 ## 2. Старые URL (301-редиректы)
@@ -31,17 +33,30 @@ sudo systemctl reload caddy
 В `Caddyfile` (сниппет `legacy_redirects`) настроены постоянные серверные 301-редиректы (без цепочек и без HTML meta-refresh):
 
 - `/en` и `/en/*` → `https://pitermebel.com/`;
-- `/catalog/kitchen` и `/catalog/kitchen/` → `https://pitermebel.com/kitchens/`;
-- `/kitchens/slavena` и `/kitchens/slavena/` → `https://pitermebel.com/kitchens/mdf-plastik-gola/`;
-- `/kitchens/aleksandra` и `/kitchens/aleksandra/` → `https://pitermebel.com/kitchens/mdf-plastik-slotex/`;
-- `/kitchens/timofey` и `/kitchens/timofey/` → `https://pitermebel.com/kitchens/mdf-plastik-hettich/`;
-- `/kitchens/stefania` и `/kitchens/stefania/` → `https://pitermebel.com/kitchens/mdf-grafit-gola/`;
-- `/kitchens/ulyana` и `/kitchens/ulyana/` → `https://pitermebel.com/kitchens/mdf-belyj-egger/`;
-- `/kitchens/valeria` и `/kitchens/valeria/` → `https://pitermebel.com/kitchens/mdf-emal-vitrina/`;
-- `/kitchens/viktoria` и `/kitchens/viktoria/` → `https://pitermebel.com/kitchens/mdf-klassika-dub/`;
-- `/projects/bathroom-pur-vanity` и `/projects/bathroom-pur-vanity/` → `https://pitermebel.com/projects/bathroom-vanity/`.
+- `/quiz` и `/quiz/*` → `https://pitermebel.com/calculator/`;
+- `/analytics-consent` и `/analytics-consent/` → `https://pitermebel.com/privacy/`;
+- `/basket` и `/basket/` → `https://pitermebel.com/kitchens/`;
+- `/catalog`, `/catalog/`, `/catalog/kitchen` и `/catalog/kitchen/` → `https://pitermebel.com/kitchens/`;
+- `/kitchens/slavena/` → `https://pitermebel.com/kitchens/mdf-plastik-gola/`;
+- `/kitchens/aleksandra/` → `https://pitermebel.com/kitchens/mdf-plastik-slotex/`;
+- `/kitchens/timofey/` → `https://pitermebel.com/kitchens/mdf-plastik-hettich/`;
+- `/kitchens/stefania/` → `https://pitermebel.com/kitchens/mdf-grafit-gola/`;
+- `/kitchens/ulyana/` → `https://pitermebel.com/kitchens/mdf-belyj-egger/`;
+- `/kitchens/valeria/` → `https://pitermebel.com/kitchens/mdf-emal-vitrina/`;
+- `/kitchens/viktoria/` → `https://pitermebel.com/kitchens/mdf-klassika-dub/`;
+- `/projects/{island-parquet,oak-stone,white-showcase,marble-hood,narrow-kitchen,emerald-enamel,velvet-matte,sherman-cognac}/` → `https://pitermebel.com/kitchens/<slug>/`;
+- `/projects/{glass-wardrobe,brick-wardrobe,light-wood-wardrobe}/` → `https://pitermebel.com/wardrobes/walk-in/`;
+- `/projects/wardrobe-inside/` → `https://pitermebel.com/wardrobes/swing/`;
+- `/projects/bedroom-set/` → `https://pitermebel.com/wardrobes/bedroom/`;
+- `/projects/mirror-hall/` → `https://pitermebel.com/wardrobes/hallway/`;
+- `/projects/slat-panels/` → `https://pitermebel.com/wardrobes/sliding/`;
+- `/projects/bathroom-pur-vanity/` и `/projects/bathroom-vanity/` → `https://pitermebel.com/custom-furniture/bathroom/`;
+- `/projects/oak-veneer-panel/` → `https://pitermebel.com/custom-furniture/tv-zones/`;
+- `/projects/office-reception/` → `https://pitermebel.com/custom-furniture/business/`;
+- `/projects/sliding-partition/` и `/projects/cascade-partitions/` → `https://pitermebel.com/custom-furniture/partitions/`;
+- `/projects/curved-oak-facades/` → `https://pitermebel.com/custom-furniture/veneer-wood/`.
 
-Проверить варианты HTTP, HTTPS и `www`. Каждый запрос должен попадать на конечный URL за один переход (`301`). HTML-файлы в `public/` оставлены только как резерв для хостинга без серверных правил.
+Проверить варианты HTTP, HTTPS и `www`. Каждый запрос должен попадать на конечный URL за один переход (`301`). HTML-заглушки из `public/` удалены, чтобы в `out/` не было лишних старых страниц с ответом `200 OK`.
 
 ## 3. Заголовки
 
