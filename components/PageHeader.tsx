@@ -11,12 +11,14 @@ interface PageHeaderProps {
   backTo?: string;
   /** Подпись кнопки возврата */
   backLabel?: string;
+  /** Канонический путь страницы для BreadcrumbList JSON-LD (не отображается визуально) */
+  breadcrumbPath?: string;
   /** Дополнительный контент внутри хедера (например, кнопки контактов) */
   children?: ReactNode;
 }
 
-export default function PageHeader({ title, subtitle, backTo, backLabel = "На главную", children }: PageHeaderProps) {
-  const breadcrumbJsonLd = buildBreadcrumbs([{ name: title }]);
+export default function PageHeader({ title, subtitle, backTo, backLabel = "На главную", breadcrumbPath, children }: PageHeaderProps) {
+  const breadcrumbJsonLd = buildBreadcrumbs([{ name: title, ...(breadcrumbPath ? { path: breadcrumbPath } : {}) }]);
 
   return (
     <section

@@ -20,14 +20,23 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
 
   const breadcrumbJsonLd = buildBreadcrumbs([
     { name: parentLabel, path: parentHref },
-    { name: service.shortTitle },
+    { name: service.shortTitle, path: service.href },
   ]);
+
+  const heroImages =
+    service.gallery.length > 0
+      ? service.gallery.slice(0, 5)
+      : service.cover
+        ? [service.cover]
+        : [];
+  const heroImageRatios = getPublicImageRatios(heroImages);
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.editorialTitle,
     serviceType: service.shortTitle,
+    category: parentLabel,
     description: service.seoDescription,
     url: `${SITE_URL}${service.href}`,
     areaServed: [
@@ -53,16 +62,25 @@ export default function ServicePageView({ service }: ServicePageViewProps) {
         priceCurrency: "RUB",
       },
     },
-    ...(service.cover ? { image: `${SITE_URL}${service.cover}` } : {}),
+    ...(service.whatWeMake.length > 0
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: service.shortTitle,
+            itemListElement: service.whatWeMake.map((item) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: item,
+              },
+            })),
+          },
+        }
+      : {}),
+    ...(heroImages.length > 0
+      ? { image: heroImages.map((img) => `${SITE_URL}${img}`) }
+      : {}),
   };
-
-  const heroImages =
-    service.gallery.length > 0
-      ? service.gallery.slice(0, 5)
-      : service.cover
-        ? [service.cover]
-        : [];
-  const heroImageRatios = getPublicImageRatios(heroImages);
 
   return (
     <div className="service-direction-page">

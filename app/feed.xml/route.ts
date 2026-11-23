@@ -1,4 +1,5 @@
 import { KNOWLEDGE_ARTICLES } from "@/data/knowledge";
+import { SITE_CONFIG } from "@/data/site";
 import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -8,6 +9,14 @@ function escapeXml(value: string): string {
 }
 
 export function GET() {
+  const timestamps = KNOWLEDGE_ARTICLES.map((a) =>
+    new Date(a.updatedAtISO || a.publishedAtISO).getTime()
+  );
+  const lastBuildDate =
+    timestamps.length > 0
+      ? new Date(Math.max(...timestamps)).toUTCString()
+      : new Date("2026-11-23T00:00:00Z").toUTCString();
+
   const items = KNOWLEDGE_ARTICLES.map(
     (article) => `
     <item>
@@ -17,7 +26,7 @@ export function GET() {
       <description>${escapeXml(article.excerpt)}</description>
       <pubDate>${new Date(article.publishedAtISO).toUTCString()}</pubDate>
       <category>${escapeXml(article.categoryLabel)}</category>
-      <author>${escapeXml(article.author.name)}</author>
+      <author>${escapeXml(SITE_CONFIG.email)} (${escapeXml(article.author.name)})</author>
     </item>`
   ).join("");
 
@@ -28,6 +37,7 @@ export function GET() {
     <link>${SITE_URL}/knowledge/</link>
     <description>Практические материалы о проектировании и подготовке мебели на заказ в Санкт-Петербурге</description>
     <language>ru</language>
+    <lastBuildDate>${lastBuildDate}</lastBuildDate>
     <atom:link href="${SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
     ${items}
   </channel>

@@ -349,3 +349,116 @@ test("Every exported kitchen detail page includes valid Product JSON-LD with Agg
     assert.equal(product.offers.availability, "https://schema.org/PreOrder");
   }
 });
+
+test("Backend SEO artifacts (robots Clean-param, image sitemap, RSS 2.0, 404 metadata, JSON-LD graph, Caddy headers)", () => {
+  const caddy = readFileSync("Caddyfile", "utf8");
+  assert.match(caddy, /handle_errors\s*\{[\s\S]*?header\s+X-Robots-Tag\s+"noindex"/);
+  assert.match(caddy, /header\s+\/feed\.xml\s+>Content-Type\s+"application\/rss\+xml; charset=utf-8"/);
+  assert.match(caddy, /header\s+\/site\.webmanifest\s+>Content-Type\s+"application\/manifest\+json; charset=utf-8"/);
+  assert.match(caddy, /header\s+@indexNowKeys\s+X-Robots-Tag\s+"noindex, nofollow"/);
+  assert.match(caddy, /@rscPayloads\s+path\s+\/index\.txt\s+\*\/index\.txt/);
+  assert.match(caddy, /header\s+@rscPayloads\s+X-Robots-Tag\s+"noindex, nofollow"/);
+  assert.match(caddy, /header\s+@rscPayloads\s+Cache-Control\s+"no-cache, must-revalidate"/);
+  assert.match(caddy, /header\s+\/downloads\/kitchen-electrics-checklist\.pdf\s+Link\s+`<https:\/\/pitermebel\.com\/knowledge\/rozetki-na-kuhne-shema-vysoty\/>; rel="canonical"`/);
+
+  if (!existsSync("out/robots.txt")) return;
+
+  const manifestBuf = readFileSync("out/site.webmanifest");
+  assert.equal(
+    manifestBuf[0] === 0xef && manifestBuf[1] === 0xbb && manifestBuf[2] === 0xbf,
+    false,
+    "out/site.webmanifest must not start with a UTF-8 BOM"
+  );
+  const manifestJson = JSON.parse(manifestBuf.toString("utf8"));
+  assert.equal(manifestJson.start_url, "/");
+  assert.equal(manifestJson.lang, "ru");
+
+  const robots = readFileSync("out/robots.txt", "utf8");
+  assert.match(robots, /^User-Agent:\s*\*/m);
+  assert.match(robots, /^Clean-param:.*utm_source.*yclid.*ysclid.*ymclid.*erid.*_openstat.* \/$/m);
+  assert.match(robots, /^Clean-param:.*category.*layout.*meters.* \/calculator\/$/m);
+  assert.match(robots, /^Sitemap:\s*https:\/\/pitermebel\.com\/sitemap\.xml$/m);
+
+  const sitemap = readFileSync("out/sitemap.xml", "utf8");
+  assert.match(sitemap, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
+  const imageLocs = [...sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
+  assert.ok(imageLocs.length >= 100, `Expected >=100 image sitemap entries, got ${imageLocs.length}`);
+  for (const imgUrl of imageLocs) {
+    assert.ok(imgUrl.startsWith("https://pitermebel.com/"));
+    const rel = imgUrl.slice("https://pitermebel.com/".length);
+    assert.ok(existsSync(path.join("out", rel)), `Image in sitemap.xml missing from out/: ${rel}`);
+  }
+
+  const feed = readFileSync("out/feed.xml", "utf8");
+  assert.match(feed, /<lastBuildDate>[^<]+<\/lastBuildDate>/);
+  assert.match(feed, /<author>[^\s<]+@[^\s<]+\s+\([^<]+\)<\/author>/);
+
+  const html404 = readFileSync("out/404.html", "utf8");
+  assert.match(html404, /<title>Страница не найдена \(404\) \| ПитерМебель<\/title>/);
+  assert.match(html404, /name="twitter:title"\s+content="Страница не найдена \(404\) \| ПитерМебель"/);
+  assert.match(html404, /name="robots"\s+content="noindex/);
+  assert.doesNotMatch(html404, /content="index,\s*follow"/);
+
+  const homeHtml = readFileSync("out/index.html", "utf8");
+  const heroPreloads = homeHtml.match(/<link[^>]*rel="preload"[^>]*photo_hero_upscaled[^>]*>/g) || [];
+  assert.equal(heroPreloads.length, 1, `Expected single hero preload on /, got ${heroPreloads.length}`);
+  assert.match(homeHtml, /name="robots"\s+content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"/);
+  assert.match(homeHtml, /property="og:image"\s+content="https:\/\/pitermebel\.com\/img\/og\/home\.jpg"/);
+  assert.match(homeHtml, /name="twitter:card"\s+content="summary_large_image"/);
+  const homeSchemas = [...homeHtml.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .flatMap((m) => {
+      const parsed = JSON.parse(m[1]);
+      return parsed["@graph"] || [parsed];
+    });
+  const org = homeSchemas.find((s) => s["@type"] === "LocalBusiness");
+  assert.ok(org?.legalName, "LocalBusiness JSON-LD must include legalName");
+  assert.ok(org?.taxID, "LocalBusiness JSON-LD must include taxID");
+  assert.ok(org?.department?.["@id"] === "https://pitermebel.com/#workshop", "LocalBusiness JSON-LD must include workshop department");
+  assert.ok(Array.isArray(org?.department?.image) && org.department.image.length >= 1, "Workshop LocalBusiness JSON-LD must include image[]");
+  for (const imgUrl of org.department.image) {
+    assert.ok(imgUrl.startsWith("https://pitermebel.com/"));
+    const rel = imgUrl.slice("https://pitermebel.com/".length);
+    assert.ok(existsSync(path.join("out", rel)), `Workshop JSON-LD image missing from out/: ${rel}`);
+  }
+  assert.ok(org?.hasOfferCatalog?.itemListElement?.length >= 5, "LocalBusiness JSON-LD must include hasOfferCatalog");
+
+  const pageSchemaChecks = [
+    ["out/contacts/index.html", "ContactPage"],
+    ["out/production/index.html", "AboutPage"],
+    ["out/calculator/index.html", "WebApplication"],
+    ["out/kitchens/index.html", "CollectionPage"],
+    ["out/knowledge/index.html", "CollectionPage"],
+    ["out/knowledge/rozetki-na-kuhne-shema-vysoty/index.html", "FAQPage"],
+  ];
+  for (const [file, expectedType] of pageSchemaChecks) {
+    const html = readFileSync(file, "utf8");
+    const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .flatMap((m) => {
+        const parsed = JSON.parse(m[1]);
+        return parsed["@graph"] || [parsed];
+      });
+    assert.ok(
+      schemas.some((s) => s["@type"] === expectedType),
+      `Expected ${expectedType} JSON-LD in ${file}`
+    );
+  }
+
+  const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  for (const url of sitemapUrls) {
+    const relPath = url === "https://pitermebel.com/"
+      ? "out/index.html"
+      : path.join("out", url.slice("https://pitermebel.com/".length), "index.html");
+    const html = readFileSync(relPath, "utf8");
+    const breadcrumbs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+      .map((m) => JSON.parse(m[1]))
+      .filter((s) => s["@type"] === "BreadcrumbList");
+    for (const bc of breadcrumbs) {
+      for (const item of bc.itemListElement || []) {
+        assert.ok(
+          typeof item.item === "string" && item.item.startsWith("https://pitermebel.com/") && item.item.endsWith("/"),
+          `BreadcrumbList item in ${relPath} missing canonical trailing-slash item URL: ${JSON.stringify(item)}`
+        );
+      }
+    }
+  }
+});

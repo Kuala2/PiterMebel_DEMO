@@ -2,8 +2,27 @@ import { SITE_CONFIG } from "@/data/site";
 
 export const SITE_URL = "https://pitermebel.com";
 
-/** Дефолтная обложка для соцсетей и мессенджеров (фирменное лого птички) */
+/** Фирменное лого птички (для LocalBusiness.logo и компактных превью) */
 export const OG_IMAGE = "/img/brand/og-bird.png";
+
+/** Широкая OG-обложка 1200×630 для превью ключевых разделов в поиске и мессенджерах */
+export const OG_HOME_IMAGE: OgImageInput = {
+  url: "/img/og/home.jpg",
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+  alt: "Кухни и мебель на заказ в Санкт-Петербурге — ПитерМебель",
+};
+
+export function buildWideOgImage(url: string, alt: string): OgImageInput {
+  return {
+    url,
+    width: 1200,
+    height: 630,
+    type: "image/jpeg",
+    alt,
+  };
+}
 
 export const HOME_TITLE = `${SITE_CONFIG.name} — кухни и мебель на заказ в Санкт-Петербурге`;
 

@@ -404,7 +404,7 @@ export default function CalculatorPage() {
 
   return (
     <div className="calc-page">
-      <PageHeader title="Предварительный расчёт мебели" />
+      <PageHeader title="Предварительный расчёт мебели" breadcrumbPath="/calculator/" />
 
       <section className="calculator-section" aria-label="Калькулятор предварительной стоимости">
         <div className="container">

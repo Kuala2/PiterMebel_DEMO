@@ -3,10 +3,14 @@ import type { Metadata } from "next";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG, yearsInBusiness } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
-import { buildOg, buildTwitter } from "@/lib/seo";
+import { buildOg, buildTwitter, buildWideOgImage, SITE_URL } from "@/lib/seo";
 
 const TITLE = `Собственное производство мебели — ${SITE_CONFIG.name} в СПб`;
 const DESCRIPTION = `Собственный мебельный цех на Петергофском шоссе, 73. Раскрой плит, кромление с прифуговкой и присадка под фурнитуру. Мебель на заказ с ${SITE_CONFIG.foundingYear} года.`;
+const OG_COVER = buildWideOgImage(
+  "/img/og/production.jpg",
+  "Собственное производство мебели в Санкт-Петербурге — ПитерМебель"
+);
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -14,15 +18,35 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/production/",
   },
-  openGraph: buildOg(TITLE, DESCRIPTION, "/production"),
-  twitter: buildTwitter(TITLE, DESCRIPTION),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/production", OG_COVER),
+  twitter: buildTwitter(TITLE, DESCRIPTION, OG_COVER),
+};
+
+const PRODUCTION_PAGE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: `${SITE_URL}/production/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: { "@id": `${SITE_URL}/#workshop` },
+  primaryImageOfPage: {
+    "@type": "ImageObject",
+    url: `${SITE_URL}/img/production/line-boring.webp`,
+  },
 };
 
 export default function ProductionPage() {
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PRODUCTION_PAGE_JSON_LD) }}
+      />
       {/* 1. Page Header */}
-      <PageHeader title="Собственное производство мебели в Санкт-Петербурге" />
+      <PageHeader title="Собственное производство мебели в Санкт-Петербурге" breadcrumbPath="/production/" />
 
       {/* 2. Key Facts Strip */}
       <section style={{ padding: "48px 0", borderBottom: "1px solid rgba(255, 255, 255, 0.08)", backgroundColor: "var(--bg-dark)" }}>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { KNOWLEDGE_ARTICLES, getArticleReadTime } from "@/data/knowledge";
 import LeadSection from "@/components/LeadSection";
 import PageHeader from "@/components/PageHeader";
-import { buildOg, buildTwitter } from "@/lib/seo";
+import { buildOg, buildTwitter, OG_HOME_IMAGE, SITE_URL } from "@/lib/seo";
 
 const TITLE = "База знаний о проектировании мебели | ПитерМебель";
 const DESCRIPTION =
@@ -16,14 +16,42 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/knowledge/",
   },
-  openGraph: buildOg(TITLE, DESCRIPTION, "/knowledge"),
-  twitter: buildTwitter(TITLE, DESCRIPTION),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/knowledge", OG_HOME_IMAGE),
+  twitter: buildTwitter(TITLE, DESCRIPTION, OG_HOME_IMAGE),
+};
+
+const KNOWLEDGE_COLLECTION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: `${SITE_URL}/knowledge/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Статьи базы знаний ПитерМебель",
+    numberOfItems: KNOWLEDGE_ARTICLES.length,
+    itemListElement: KNOWLEDGE_ARTICLES.map((article, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: article.title,
+      url: `${SITE_URL}/knowledge/${article.slug}/`,
+    })),
+  },
 };
 
 export default function KnowledgePage() {
   return (
     <div className="knowledge-page" style={{ minHeight: "100vh" }}>
-      <PageHeader title="База знаний о мебели на заказ" backTo="/" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(KNOWLEDGE_COLLECTION_JSON_LD),
+        }}
+      />
+      <PageHeader title="База знаний о мебели на заказ" backTo="/" breadcrumbPath="/knowledge/" />
 
       {/* 2. ARTICLE LIST: от новых к старым */}
       {KNOWLEDGE_ARTICLES.length > 0 && (

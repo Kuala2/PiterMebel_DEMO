@@ -7,9 +7,9 @@ import MaxIcon from "@/components/MaxIcon";
 import YandexOfficeMap from "@/components/YandexOfficeMap";
 import { SITE_CONFIG } from "@/data/site";
 import PageHeader from "@/components/PageHeader";
-import { buildOg, buildTwitter } from "@/lib/seo";
+import { buildOg, buildTwitter, OG_HOME_IMAGE, SITE_URL } from "@/lib/seo";
 
-const TITLE = `Контакты студии — ${SITE_CONFIG.name}`;
+const TITLE = `Контакты студии мебели в СПб — пл. Стачек, 9 | ${SITE_CONFIG.name}`;
 const DESCRIPTION = `Контакты студии «ПитерМебель»: офис образцов на ${SITE_CONFIG.officeAddress} (${SITE_CONFIG.metro}), цех на Петергофском шоссе, 73. Встречи по записи.`;
 
 export const metadata: Metadata = {
@@ -18,15 +18,30 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contacts/",
   },
-  openGraph: buildOg(TITLE, DESCRIPTION, "/contacts"),
-  twitter: buildTwitter(TITLE, DESCRIPTION),
+  openGraph: buildOg(TITLE, DESCRIPTION, "/contacts", OG_HOME_IMAGE),
+  twitter: buildTwitter(TITLE, DESCRIPTION, OG_HOME_IMAGE),
+};
+
+const CONTACT_PAGE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: TITLE,
+  description: DESCRIPTION,
+  url: `${SITE_URL}/contacts/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  mainEntity: { "@id": `${SITE_URL}/#organization` },
 };
 
 export default function ContactsPage() {
   return (
     <div className="contacts-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(CONTACT_PAGE_JSON_LD) }}
+      />
       {/* 1. Page Header & Direct Channels */}
-      <PageHeader title="Контакты и визиты в студию">
+      <PageHeader title="Контакты и визиты в студию" breadcrumbPath="/contacts/">
         <div className="contacts-channels-grid" data-sticky-cta-suppress>
           <a
             href={`tel:${SITE_CONFIG.phoneRaw}`}

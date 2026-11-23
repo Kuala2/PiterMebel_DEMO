@@ -5,7 +5,7 @@ import DesignPackagesSection, {
 } from "@/components/DesignPackagesSection";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
+import { SITE_URL, OG_HOME_IMAGE, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
 
 const PAGE_TITLE = `Дизайн-проект квартиры в СПб — от 2 500 ₽/м² | ${SITE_CONFIG.name}`;
 const PAGE_DESCRIPTION =
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/design/",
   },
-  openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/design"),
-  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION),
+  openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/design", OG_HOME_IMAGE),
+  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION, OG_HOME_IMAGE),
 };
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbs([

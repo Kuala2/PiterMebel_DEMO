@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function ConsentPage() {
   return <div className="privacy-page" style={{ minHeight: "100vh" }}>
-    <PageHeader title="Согласие на обработку персональных данных" backTo="/privacy/" backLabel="К политике конфиденциальности" />
+    <PageHeader title="Согласие на обработку персональных данных" backTo="/privacy/" backLabel="К политике конфиденциальности" breadcrumbPath="/consent/" />
     <section className="article-content-section"><div className="container article-narrow">
       <p className="article-paragraph">Отдельный документ для заявок на сайте {SITE_URL}. Редакция от {LEGAL_DATE}, версия {LEGAL_VERSION}.</p>
       {!canReceiveLeads && <p className="article-paragraph">Документ подготовлен для будущего подключения заявок через Yandex Cloud.

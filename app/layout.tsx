@@ -7,7 +7,8 @@ import StickyCTA from "@/components/StickyCTA";
 import ApartmentBoostPopup from "@/components/ApartmentBoostPopup";
 import AmbientFlowCanvas from "@/components/AmbientFlowCanvas";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, OG_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
+import { LEGAL_DETAILS } from "@/data/legal";
+import { SITE_URL, OG_IMAGE, OG_HOME_IMAGE, HOME_TITLE, HOME_DESCRIPTION } from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -39,6 +40,10 @@ const SITE_JSON_LD = {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#organization`,
       name: SITE_CONFIG.name,
+      ...(LEGAL_DETAILS.legalStatus && LEGAL_DETAILS.operatorLegalName
+        ? { legalName: `${LEGAL_DETAILS.legalStatus} ${LEGAL_DETAILS.operatorLegalName}` }
+        : {}),
+      ...(LEGAL_DETAILS.inn ? { taxID: LEGAL_DETAILS.inn } : {}),
       description: "Семейное производство кухонь, шкафов и корпусной мебели на заказ в Санкт-Петербурге. Встречи в студии образцов по предварительной записи.",
       alternateName: "Питер-Мебель",
       url: `${SITE_URL}/`,
@@ -48,11 +53,17 @@ const SITE_JSON_LD = {
         width: 512,
         height: 512,
       },
-      image: `${SITE_URL}${OG_IMAGE}`,
+      image: [
+        `${SITE_URL}/img/hero/photo_hero_upscaled.webp`,
+        `${SITE_URL}${OG_IMAGE}`,
+      ],
       telephone: SITE_CONFIG.phoneRaw,
       email: SITE_CONFIG.email,
+      priceRange: "от 80 000 ₽",
       currenciesAccepted: "RUB",
+      paymentAccepted: "Безналичный расчёт, СБП, банковская карта, рассрочка",
       foundingDate: String(SITE_CONFIG.foundingYear),
+      hasMap: SITE_CONFIG.yandexMapsUrl,
       address: {
         "@type": "PostalAddress",
         streetAddress: SITE_CONFIG.address,
@@ -61,6 +72,14 @@ const SITE_JSON_LD = {
         addressCountry: "RU",
       },
       geo: { "@type": "GeoCoordinates", latitude: 59.899907, longitude: 30.272883 },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: SITE_CONFIG.phoneRaw,
+        email: SITE_CONFIG.email,
+        contactType: "customer service",
+        areaServed: "RU",
+        availableLanguage: "Russian",
+      },
       areaServed: [
         { "@type": "City", name: SITE_CONFIG.city },
         { "@type": "AdministrativeArea", name: "Ленинградская область" },
@@ -73,6 +92,59 @@ const SITE_JSON_LD = {
           closes: "18:00",
         },
       ],
+      department: {
+        "@type": "LocalBusiness",
+        "@id": `${SITE_URL}/#workshop`,
+        name: `Производственный цех «${SITE_CONFIG.name}»`,
+        description: "Собственный мебельный цех полного цикла: раскрой плит, кромление с прифуговкой и присадка под фурнитуру.",
+        url: `${SITE_URL}/production/`,
+        image: [
+          `${SITE_URL}/img/production/panel-cutting.webp`,
+          `${SITE_URL}/img/production/edge-banding.webp`,
+          `${SITE_URL}/img/production/line-boring.webp`,
+        ],
+        telephone: SITE_CONFIG.phoneRaw,
+        priceRange: "от 80 000 ₽",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Петергофское шоссе, 73",
+          addressLocality: SITE_CONFIG.city,
+          addressRegion: SITE_CONFIG.city,
+          addressCountry: "RU",
+        },
+        parentOrganization: { "@id": `${SITE_URL}/#organization` },
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Направления производства мебели на заказ",
+        itemListElement: [
+          {
+            "@type": "OfferCatalog",
+            name: "Кухни на заказ",
+            url: `${SITE_URL}/kitchens/`,
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Шкафы и гардеробные на заказ",
+            url: `${SITE_URL}/wardrobes/`,
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Корпусная мебель на заказ",
+            url: `${SITE_URL}/custom-furniture/`,
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Мебель во всю квартиру за месяц",
+            url: `${SITE_URL}/apartment/`,
+          },
+          {
+            "@type": "OfferCatalog",
+            name: "Услуги дизайнеров интерьера",
+            url: `${SITE_URL}/design/`,
+          },
+        ],
+      },
       sameAs: [SITE_CONFIG.vkUrl, SITE_CONFIG.yandexMapsUrl],
     },
     {
@@ -91,6 +163,20 @@ export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
   authors: [{ name: SITE_CONFIG.name }],
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   verification: {
     yandex: "2290ffc6c48b46ac",
     google: "u6GC5nx_1ELGUhayTou1Y6tglbuIYq3KU6GARkCGlig",
@@ -99,13 +185,20 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     locale: "ru_RU",
     type: "website",
-    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_CONFIG.name, type: "image/png" }],
+    images: [OG_HOME_IMAGE],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
-    images: [{ url: OG_IMAGE, width: 512, height: 512, alt: SITE_CONFIG.name }],
+    images: [
+      {
+        url: OG_HOME_IMAGE.url,
+        width: OG_HOME_IMAGE.width,
+        height: OG_HOME_IMAGE.height,
+        alt: OG_HOME_IMAGE.alt,
+      },
+    ],
   },
   manifest: "/site.webmanifest",
   icons: {

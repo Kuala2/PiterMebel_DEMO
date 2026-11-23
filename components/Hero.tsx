@@ -75,6 +75,7 @@ export default function Hero() {
             alt="Кухня по индивидуальному проекту ПитерМебель"
             fill
             priority
+            fetchPriority="high"
             sizes="100vw"
             className="hero-bg-img"
             style={{ objectFit: "cover", objectPosition: "center 30%" }}

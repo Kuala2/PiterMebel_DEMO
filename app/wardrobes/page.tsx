@@ -5,16 +5,25 @@ import DirectionHubGrid from "@/components/DirectionHubGrid";
 import { WARDROBE_SERVICES } from "@/data/services";
 import { SITE_URL } from "@/lib/seo";
 
-const ITEM_LIST_JSON_LD = {
+const COLLECTION_PAGE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  numberOfItems: WARDROBE_SERVICES.length,
-  itemListElement: WARDROBE_SERVICES.map((item, idx) => ({
-    "@type": "ListItem",
-    position: idx + 1,
-    name: item.shortTitle,
-    url: `${SITE_URL}${item.href}`,
-  })),
+  "@type": "CollectionPage",
+  name: "Шкафы и гардеробные на заказ в Санкт-Петербурге — ПитерМебель",
+  url: `${SITE_URL}/wardrobes/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Направления производства шкафов и гардеробных",
+    numberOfItems: WARDROBE_SERVICES.length,
+    itemListElement: WARDROBE_SERVICES.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.shortTitle,
+      url: `${SITE_URL}${item.href}`,
+    })),
+  },
 };
 
 export default function WardrobesPage() {
@@ -23,12 +32,12 @@ export default function WardrobesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+          __html: JSON.stringify(COLLECTION_PAGE_JSON_LD),
         }}
       />
 
       {/* 1. Page Header */}
-      <PageHeader title="Шкафы и гардеробные на заказ" />
+      <PageHeader title="Шкафы и гардеробные на заказ" breadcrumbPath="/wardrobes/" />
 
       {/* 2. Subcategories Showcase Grid */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "32px", paddingBottom: "96px" }}>
@@ -41,11 +50,11 @@ export default function WardrobesPage() {
         title="Встроенные шкафы и гардеробные на заказ в Санкт-Петербурге"
         intro="Изготавливаем шкафы от пола до потолка в собственном цеху на Петергофском шоссе, 73 без доплаты за нестандарт."
         materials={[
-          { material: "ЛДСП Egger", priceTier: "120–140\u00A0тыс.\u00A0₽", leadTime: "2–3 нед." },
-          { material: "МДФ в плёнке ПВХ", priceTier: "150–170\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
-          { material: "МДФ пластик AGT / Velvet", priceTier: "170–180\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
-          { material: "МДФ эмаль RAL / NCS", priceTier: "190–210\u00A0тыс.\u00A0₽", leadTime: "4–5 нед." },
-          { material: "Шпон дуба и стекло Stopsol", priceTier: "210–230\u00A0тыс.\u00A0₽", leadTime: "3–6 нед." },
+          { material: "ЛДСП Egger", priceTier: "120–140\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "МДФ в плёнке ПВХ", priceTier: "150–170\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "МДФ пластик AGT / Velvet", priceTier: "170–180\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "МДФ эмаль RAL / NCS", priceTier: "190–210\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "Шпон дуба и стекло Stopsol", priceTier: "210–230\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
         ]}
         materialsNote={"Ориентир за шкаф 2 м (компактная ниша — от 80\u00A0000\u00A0₽)."}
         calculatorHref="/calculator/?category=wardrobe&layout=built-in&meters=2.0&material=egger"
@@ -57,11 +66,11 @@ export default function WardrobesPage() {
           },
           {
             title: "Обход натяжных потолков и щитков",
-            text: "Делаем независимую крышу у натяжного потолка и ревизионный отсек для электрощита в прихожей.",
+            text: "Ставим крышу с зазором 10 мм у натяжного потолка и делаем ревизионный отсек для электрощита в прихожей.",
           },
           {
-            title: "Продуманное наполнение",
-            text: "Комплектуем секции ящиками с доводчиками, пантографами, обувницами, хозблоками и LED-подсветкой.",
+            title: "Внутреннее наполнение",
+            text: "Комплектуем штангами, пантографами, брючницами, выдвижными ящиками, корзинами для белья и встроенной подсветкой.",
           },
         ]}
         links={[
@@ -81,7 +90,7 @@ export default function WardrobesPage() {
           },
           {
             question: "Сколько времени занимает изготовление шкафа или гардеробной?",
-            answer: "В ЛДСП Egger, ПВХ и пластике — 2–4 недели, с фасадами в эмали или шпоне — 4–6 недель по договору.",
+            answer: "От 21 до 40 рабочих дней по договору — точный срок зависит от выбранных фасадов и комплектации.",
           },
           {
             question: "Где можно посмотреть образцы ЛДСП Egger, эмали и стекла Stopsol?",

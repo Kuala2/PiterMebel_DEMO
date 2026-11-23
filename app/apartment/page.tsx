@@ -5,7 +5,7 @@ import CatalogEditorial from "@/components/CatalogEditorial";
 import DesignPackagesSection from "@/components/DesignPackagesSection";
 import LeadSection from "@/components/LeadSection";
 import { SITE_CONFIG } from "@/data/site";
-import { SITE_URL, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
+import { SITE_URL, OG_HOME_IMAGE, buildBreadcrumbs, buildOg, buildTwitter } from "@/lib/seo";
 
 const PAGE_TITLE = `Мебель во всю квартиру за месяц — видеообзор | ${SITE_CONFIG.name}`;
 const PAGE_DESCRIPTION =
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/apartment/",
   },
-  openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/apartment"),
-  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION),
+  openGraph: buildOg(PAGE_TITLE, PAGE_DESCRIPTION, "/apartment", OG_HOME_IMAGE),
+  twitter: buildTwitter(PAGE_TITLE, PAGE_DESCRIPTION, OG_HOME_IMAGE),
 };
 
 const BREADCRUMB_JSON_LD = buildBreadcrumbs([
@@ -173,7 +173,7 @@ export default function ApartmentPage() {
         items={[
           {
             title: "Единый стиль и одна партия плит",
-            text: "Кроим кухню, шкафы, прихожую, ванную и ТВ-зону из одной партии ЛДСП Egger, МДФ AGT/эмали или шпона — без разнотона между комнатами.",
+            text: "Изготавливаем кухню, шкафы, прихожую, ванную и ТВ-зону из одной партии ЛДСП Egger, МДФ AGT/эмали или шпона — без разнотона между комнатами.",
           },
           {
             title: "Синхронное производство за месяц",
@@ -187,8 +187,8 @@ export default function ApartmentPage() {
         materialsTitle="Ориентир по стоимости и срокам"
         materials={[
           { material: "Кухня на заказ", priceTier: "от 160\u00A0000\u00A0₽", leadTime: "3–5 нед." },
-          { material: "Шкаф или гардеробная", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "2–4 нед." },
-          { material: "Прихожая и хранение", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "2–4 нед." },
+          { material: "Шкаф или гардеробная", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "Прихожая и хранение", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
           { material: "Ванная и ТВ-зона", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "2–4 нед." },
           { material: "Комплекс от 2 изделий", priceTier: "скидка за объём", leadTime: "~1 мес." },
         ]}

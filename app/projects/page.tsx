@@ -94,16 +94,25 @@ const PORTFOLIO_ITEMS: PortfolioCardItem[] = [
   ...RAW_PORTFOLIO_ITEMS.filter((item) => !PORTFOLIO_ORDER.includes(item.slug)),
 ];
 
-const ITEM_LIST_JSON_LD = {
+const COLLECTION_PAGE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  numberOfItems: PORTFOLIO_ITEMS.length,
-  itemListElement: PORTFOLIO_ITEMS.map((item, idx) => ({
-    "@type": "ListItem",
-    position: idx + 1,
-    name: item.title,
-    url: `${SITE_URL}${item.href}`,
-  })),
+  "@type": "CollectionPage",
+  name: "Портфолио реализованных проектов мебели — ПитерМебель",
+  url: `${SITE_URL}/projects/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Реализованные проекты студии ПитерМебель",
+    numberOfItems: PORTFOLIO_ITEMS.length,
+    itemListElement: PORTFOLIO_ITEMS.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.title,
+      url: `${SITE_URL}${item.href}`,
+    })),
+  },
 };
 
 export default function ProjectsPortfolioPage() {
@@ -151,11 +160,11 @@ export default function ProjectsPortfolioPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+          __html: JSON.stringify(COLLECTION_PAGE_JSON_LD),
         }}
       />
       {/* 1. Page Header */}
-      <PageHeader title="Реализованные проекты студии" backTo="/" />
+      <PageHeader title="Реализованные проекты студии" backTo="/" breadcrumbPath="/projects/" />
 
       {/* 2. Filter Tabs Bar (Under the line) */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>

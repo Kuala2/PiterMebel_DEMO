@@ -229,6 +229,16 @@ https://pitermebel.com {
     }
     header @html Cache-Control "no-cache, must-revalidate"
 
+    # Служебные SEO-заголовки: MIME для RSS и Web App Manifest, noindex для ключей IndexNow и RSC-пейлоадов Next.js, canonical для PDF-чеклиста
+    header /feed.xml >Content-Type "application/rss+xml; charset=utf-8"
+    header /site.webmanifest >Content-Type "application/manifest+json; charset=utf-8"
+    @indexNowKeys path /26da01ce2942637d1211788353ad4152.txt /4cfd1e5053fe673a12445d798d7e27f6.txt
+    header @indexNowKeys X-Robots-Tag "noindex, nofollow"
+    @rscPayloads path /index.txt */index.txt
+    header @rscPayloads X-Robots-Tag "noindex, nofollow"
+    header @rscPayloads Cache-Control "no-cache, must-revalidate"
+    header /downloads/kitchen-electrics-checklist.pdf Link `<https://pitermebel.com/knowledge/rozetki-na-kuhne-shema-vysoty/>; rel="canonical"`
+
     # Защита статических файлов от превращения в HTML:
     # Если файл не найден, возвращаем 404, а не главную страницу index.html
     @staticFiles {
@@ -248,6 +258,7 @@ https://pitermebel.com {
     handle_errors {
         # Сбрасываем долгосрочный Cache-Control (например immutable для /_next/static/*), чтобы 404/5xx не кешировались
         header Cache-Control "no-store"
+        header X-Robots-Tag "noindex"
 
         @errStatic path /_next/* *.css *.js *.jpg *.jpeg *.png *.webp *.avif *.svg *.ico *.woff *.woff2 *.pdf *.mp4 *.webm *.json *.xml *.txt *.webmanifest
         handle @errStatic {

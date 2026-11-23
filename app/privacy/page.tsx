@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return <div className="privacy-page" style={{ minHeight: "100vh" }}>
-    <PageHeader title="Политика конфиденциальности" backTo="/" />
+    <PageHeader title="Политика конфиденциальности" backTo="/" breadcrumbPath="/privacy/" />
     <section className="article-content-section"><div className="container article-narrow">
       <p className="article-paragraph">Политика в отношении обработки персональных данных на сайте <a href={`${SITE_URL}/`}>{SITE_URL}</a>.
         Редакция от {PRIVACY_DATE}, версия {PRIVACY_VERSION}.</p>

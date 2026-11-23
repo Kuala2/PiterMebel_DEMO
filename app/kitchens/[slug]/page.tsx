@@ -111,15 +111,27 @@ export async function generateMetadata({
       ? `${kitchen.title} (${qualifierSpec})`
       : kitchen.title;
 
-  const pageTitle = distinctTitle.length + 15 <= 70
-    ? `${distinctTitle} — ПитерМебель`
-    : distinctTitle;
+  const geoBrandTitle = `${distinctTitle} на заказ в СПб | ПитерМебель`;
+  const geoShortTitle = `${distinctTitle} в СПб | ПитерМебель`;
+  const pageTitle =
+    geoBrandTitle.length <= 70
+      ? geoBrandTitle
+      : geoShortTitle.length <= 70
+        ? geoShortTitle
+        : distinctTitle.length + 15 <= 70
+          ? `${distinctTitle} — ПитерМебель`
+          : distinctTitle;
+
+  const { tierLowPrice } = FACADE_TIER_CONFIG[kitchen.facadeTier];
   const summaryDesc = buildMetaDescription(kitchen.summary);
-  const serviceSuffix = " Изготовление на заказ в СПб, договор и монтаж под ключ.";
+  const fullSuffix = " Изготовление на заказ в СПб, договор и монтаж под ключ.";
+  const compactSuffix = ` На заказ в СПб от ${formatRub(tierLowPrice)} ₽.`;
   const ogDescription =
-    summaryDesc.length + serviceSuffix.length <= 155
-      ? `${summaryDesc}${serviceSuffix}`
-      : summaryDesc;
+    summaryDesc.length + fullSuffix.length <= 155
+      ? `${summaryDesc}${fullSuffix}`
+      : summaryDesc.length + compactSuffix.length <= 160
+        ? `${summaryDesc}${compactSuffix}`
+        : summaryDesc;
 
   const coverAlt = buildKitchenCoverAlt(kitchen);
   const ogUrl = `/img/og/kitchens/${kitchen.slug}.jpg`;
@@ -191,11 +203,18 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
     },
   ];
 
+  const facadeMaterial = kitchen.specs.find((s) =>
+    s.label.toLowerCase().includes("фасад")
+  )?.value;
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: kitchen.title,
     sku: kitchen.slug,
+    category: "Кухни на заказ",
+    ...(facadeMaterial ? { material: facadeMaterial } : {}),
+    countryOfOrigin: { "@type": "Country", name: "Россия" },
     image: allPhotos.map((photo) => `${SITE_URL}${photo}`),
     description: kitchen.summary,
     brand: { "@type": "Brand", name: SITE_CONFIG.name },
@@ -209,6 +228,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
       offerCount: 1,
       priceCurrency: "RUB",
       availability: "https://schema.org/PreOrder",
+      itemCondition: "https://schema.org/NewCondition",
       url: `${SITE_URL}/kitchens/${kitchen.slug}/`,
       seller: { "@id": `${SITE_URL}/#organization` },
     },
@@ -229,7 +249,7 @@ export default async function KitchenDetailPage({ params }: KitchenPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buildBreadcrumbs([
           { name: "Кухни", path: "/kitchens/" },
-          { name: kitchen.title },
+          { name: kitchen.title, path: `/kitchens/${kitchen.slug}/` },
         ])) }}
       />
       {/* 1. Above the fold: Split Layout (Desktop 40/60 centered, Mobile order: Breadcrumb -> Title -> Gallery -> Lead -> Specs -> Buttons) */}

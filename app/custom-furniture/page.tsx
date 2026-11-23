@@ -5,16 +5,25 @@ import DirectionHubGrid from "@/components/DirectionHubGrid";
 import { CUSTOM_FURNITURE_SERVICES } from "@/data/services";
 import { SITE_URL } from "@/lib/seo";
 
-const ITEM_LIST_JSON_LD = {
+const COLLECTION_PAGE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  numberOfItems: CUSTOM_FURNITURE_SERVICES.length,
-  itemListElement: CUSTOM_FURNITURE_SERVICES.map((item, idx) => ({
-    "@type": "ListItem",
-    position: idx + 1,
-    name: item.shortTitle,
-    url: `${SITE_URL}${item.href}`,
-  })),
+  "@type": "CollectionPage",
+  name: "Корпусная мебель на заказ в Санкт-Петербурге — ПитерМебель",
+  url: `${SITE_URL}/custom-furniture/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Направления производства корпусной мебели",
+    numberOfItems: CUSTOM_FURNITURE_SERVICES.length,
+    itemListElement: CUSTOM_FURNITURE_SERVICES.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.shortTitle,
+      url: `${SITE_URL}${item.href}`,
+    })),
+  },
 };
 
 export default function CustomFurniturePage() {
@@ -23,12 +32,12 @@ export default function CustomFurniturePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+          __html: JSON.stringify(COLLECTION_PAGE_JSON_LD),
         }}
       />
 
       {/* 1. Page Header */}
-      <PageHeader title="Корпусная мебель на заказ" />
+      <PageHeader title="Корпусная мебель на заказ" breadcrumbPath="/custom-furniture/" />
 
       {/* 2. Subcategories Showcase Grid */}
       <section style={{ backgroundColor: "var(--bg-dark)", paddingTop: "32px", paddingBottom: "96px" }}>
@@ -53,7 +62,7 @@ export default function CustomFurniturePage() {
         items={[
           {
             title: "Единый стиль для квартиры",
-            text: "Кроим мебель для кухни, прихожей, гостиной и ванной из одной партии плит или выкраса.",
+            text: "Изготавливаем мебель для кухни, прихожей, гостиной и ванной из одной партии плит или выкраса.",
           },
           {
             title: "Материалы под любую нагрузку",

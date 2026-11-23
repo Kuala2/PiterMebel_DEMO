@@ -11,16 +11,25 @@ import CatalogTabs from "@/components/CatalogTabs";
 import CatalogEditorial from "@/components/CatalogEditorial";
 import { SITE_URL } from "@/lib/seo";
 
-const ITEM_LIST_JSON_LD = {
+const COLLECTION_PAGE_JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  numberOfItems: KITCHENS.length,
-  itemListElement: KITCHENS.map((item, idx) => ({
-    "@type": "ListItem",
-    position: idx + 1,
-    name: item.title,
-    url: `${SITE_URL}/kitchens/${item.slug}/`,
-  })),
+  "@type": "CollectionPage",
+  name: "Кухни на заказ в Санкт-Петербурге — ПитерМебель",
+  url: `${SITE_URL}/kitchens/`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: {
+    "@type": "ItemList",
+    name: "Реализованные кухни на заказ",
+    numberOfItems: KITCHENS.length,
+    itemListElement: KITCHENS.map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.title,
+      url: `${SITE_URL}/kitchens/${item.slug}/`,
+    })),
+  },
 };
 
 export default function KitchensCatalogPage() {
@@ -68,11 +77,11 @@ export default function KitchensCatalogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(ITEM_LIST_JSON_LD),
+          __html: JSON.stringify(COLLECTION_PAGE_JSON_LD),
         }}
       />
       {/* 1. Page Header */}
-      <PageHeader title="Кухни на заказ" />
+      <PageHeader title="Кухни на заказ" breadcrumbPath="/kitchens/" />
 
       {/* 2. Filter Tabs Bar */}
       <section style={{ paddingTop: "28px", paddingBottom: "0px", backgroundColor: "var(--bg-dark)" }}>
@@ -228,7 +237,7 @@ export default function KitchensCatalogPage() {
           },
           {
             title: "Цех без наценок салонов",
-            text: "Кроим и присаживаем под Blum и Hettich на своих станках — нестандарт без доплат.",
+            text: "Проектируем и изготавливаем детали под Blum и Hettich на своих станках — нестандарт без доплат.",
           },
           {
             title: "Монтаж под ключ за 1–2 дня",

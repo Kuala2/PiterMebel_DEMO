@@ -93,8 +93,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     author: {
       "@type": "Organization",
       name: article.author.name,
+      url: `${SITE_URL}/`,
     },
     publisher: {
+      "@id": `${SITE_URL}/#organization`,
       "@type": "Organization",
       name: SITE_CONFIG.name,
       logo: {
@@ -108,8 +110,24 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   const breadcrumbJsonLd = buildBreadcrumbs([
     { name: "База знаний", path: "/knowledge/" },
-    { name: article.title },
+    { name: article.title, path: `/knowledge/${article.slug}/` },
   ]);
+
+  const faqJsonLd =
+    article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
 
   return (
     <div className="article-page" style={{ paddingTop: "120px", minHeight: "100vh" }}>
@@ -121,6 +139,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <article>
         {/* 1. ARTICLE HEADER */}
