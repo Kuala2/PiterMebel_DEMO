@@ -154,7 +154,7 @@ export default function HomePage() {
     desc: s.lead,
     specLabel: "Материалы",
     specValue: s.materialOptions.slice(0, 2).join(" / "),
-    photos: s.gallery.slice(0, 5),
+    photos: s.gallery,
     link: s.href,
   }));
 

@@ -21,7 +21,7 @@
         redir https://pitermebel.com/kitchens/ permanent
     }
 
-    @legacyCatalog path /catalog /catalog/ /catalog/kitchen /catalog/kitchen/
+    @legacyCatalog path /catalog /catalog/*
     handle @legacyCatalog {
         redir https://pitermebel.com/kitchens/ permanent
     }

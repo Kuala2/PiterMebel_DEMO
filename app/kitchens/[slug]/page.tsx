@@ -56,7 +56,7 @@ const FACADE_TIER_CONFIG: Record<
   },
   veneer: {
     calcMaterial: "veneer",
-    leadTimeText: "4–6 недель · свой цех в СПб",
+    leadTimeText: "6–8 недель · свой цех в СПб",
     tierLowPrice: 250000,
     tierHighPrice: 430000,
     cornerRangeText: "390–430\u00A0тыс.\u00A0₽",

@@ -48,7 +48,7 @@ const RAW_PORTFOLIO_ITEMS: PortfolioCardItem[] = [
       title: s.shortTitle,
       cover: s.cover || s.gallery[0] || "",
       coverAlt: s.coverAlt || s.shortTitle,
-      gallery: s.gallery.slice(0, 5),
+      gallery: s.gallery,
       materials: s.materialOptions.slice(0, 3),
     };
   }),
@@ -308,8 +308,8 @@ export default function ProjectsPortfolioPage() {
         summaryFacts={[
           { label: "Шкафы и корпусная мебель", value: "от 80\u00A0000\u00A0₽" },
           { label: "Кухни на заказ", value: "от 160\u00A0000\u00A0₽" },
-          { label: "Срок (шкафы и гардеробные)", value: "21–40 раб. дней" },
-          { label: "Срок (кухни и корпусная)", value: "2–6 недель" },
+          { label: "Срок (шкафы и корпусная)", value: "21–40 раб. дней" },
+          { label: "Срок (кухни / шпон и массив)", value: "3–8 недель" },
           { label: "Вся мебель в квартиру", value: "около 1 месяца" },
         ]}
         materialsNote="Точная смета фиксируется в договоре после замера."

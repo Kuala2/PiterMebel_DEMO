@@ -30,7 +30,7 @@ export default function DirectionHubGrid({ services }: DirectionHubGridProps) {
       {services.map((service, idx) => {
         const photos =
           service.gallery.length > 0
-            ? service.gallery.slice(0, 5)
+            ? service.gallery
             : service.cover
               ? [service.cover]
               : [];

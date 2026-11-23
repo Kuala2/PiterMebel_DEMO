@@ -54,7 +54,7 @@ export default function WardrobesPage() {
           { material: "МДФ в плёнке ПВХ", priceTier: "150–170\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
           { material: "МДФ пластик AGT / Velvet", priceTier: "170–180\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
           { material: "МДФ эмаль RAL / NCS", priceTier: "190–210\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
-          { material: "Шпон дуба и стекло Stopsol", priceTier: "210–230\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "Шпон дуба и стекло Stopsol", priceTier: "210–230\u00A0тыс.\u00A0₽", leadTime: "6–8 нед." },
         ]}
         materialsNote={"Ориентир за шкаф 2 м (компактная ниша — от 80\u00A0000\u00A0₽)."}
         calculatorHref="/calculator/?category=wardrobe&layout=built-in&meters=2.0&material=egger"

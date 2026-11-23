@@ -225,7 +225,7 @@ export default function KitchensCatalogPage() {
           { material: "МДФ в плёнке ПВХ", priceTier: "280–300\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
           { material: "МДФ пластик AGT / Velvet", priceTier: "300–330\u00A0тыс.\u00A0₽", leadTime: "3–4 нед." },
           { material: "МДФ эмаль RAL / NCS", priceTier: "340–370\u00A0тыс.\u00A0₽", leadTime: "4–5 нед." },
-          { material: "Шпон дуба", priceTier: "390–430\u00A0тыс.\u00A0₽", leadTime: "4–6 нед." },
+          { material: "Шпон дуба", priceTier: "390–430\u00A0тыс.\u00A0₽", leadTime: "6–8 нед." },
         ]}
         materialsNote={"Ориентир за угловую кухню 3,5 м со столешницей Slotex 38 мм (прямая — от 160\u00A0000\u00A0₽)."}
         calculatorHref="/calculator/?category=kitchen&layout=corner&meters=3.5&material=plastic"
@@ -257,7 +257,7 @@ export default function KitchensCatalogPage() {
           },
           {
             question: "Сколько времени занимает изготовление кухни?",
-            answer: "В Egger, ПВХ и AGT/Velvet — 3–4 недели, в матовой эмали и натуральном шпоне — 4–6 недель по договору.",
+            answer: "В Egger, ПВХ и AGT/Velvet — 3–4 недели, в матовой эмали — 4–5 недель, в натуральном шпоне — 6–8 недель по договору.",
           },
           {
             question: "Что входит в базовый расчёт и стоимость монтажа?",
