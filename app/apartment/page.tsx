@@ -67,7 +67,7 @@ const SERVICE_JSON_LD = {
     priceCurrency: "RUB",
     priceSpecification: {
       "@type": "PriceSpecification",
-      minPrice: 160000,
+      minPrice: 480000,
       priceCurrency: "RUB",
     },
   },
@@ -132,7 +132,7 @@ export default function ApartmentPage() {
                   </div>
                   <div className="service-metric">
                     <dt>Стоимость</dt>
-                    <dd>от 160 000 ₽</dd>
+                    <dd>от 480 000 ₽</dd>
                   </div>
                   <div className="service-metric">
                     <dt>Выгода</dt>
@@ -189,8 +189,8 @@ export default function ApartmentPage() {
           { material: "Кухня на заказ", priceTier: "от 160\u00A0000\u00A0₽", leadTime: "3–5 нед." },
           { material: "Шкаф или гардеробная", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
           { material: "Прихожая и хранение", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
-          { material: "Ванная и ТВ-зона", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "2–4 нед." },
-          { material: "Комплекс от 2 изделий", priceTier: "скидка за объём", leadTime: "~1 мес." },
+          { material: "Ванная и ТВ-зона", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "Комплекс во всю квартиру", priceTier: "от 480\u00A0000\u00A0₽", leadTime: "~1 мес." },
         ]}
         materialsNote="Точная смета фиксируется в договоре после замера и согласования материалов."
         calculatorHref="/calculator/?category=cabinet&layout=complex"
@@ -216,7 +216,7 @@ export default function ApartmentPage() {
           {
             question: "Как формируется цена и когда действует скидка?",
             answer:
-              "Кухни начинаются от 160\u00A0000\u00A0₽, шкафы и корпусная мебель — от 80\u00A0000\u00A0₽ за изделие. При заказе от 2 изделий в одном договоре действует скидка за объём, точная сумма фиксируется после замера.",
+              "Кухни начинаются от 160\u00A0000\u00A0₽, шкафы и корпусная мебель — от 80\u00A0000\u00A0₽, а комплексная меблировка квартиры — от 480\u00A0000\u00A0₽. При заказе от 2 изделий в одном договоре действует скидка за объём, точная сумма фиксируется после замера.",
           },
           {
             question: "Входит ли доставка, монтаж и подключение техники?",

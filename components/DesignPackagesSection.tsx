@@ -60,7 +60,7 @@ export default function DesignPackagesSection({
                 </CardTitleTag>
               </div>
               <div className="design-package-price-box">
-                <span className="design-package-price">2 500 ₽</span>
+                <span className="design-package-price is-accent">2 500 ₽</span>
                 <span className="design-package-unit">за 1 м²</span>
               </div>
             </div>

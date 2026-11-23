@@ -53,7 +53,7 @@ export default function CustomFurniturePage() {
           { material: "ЛДСП Egger (класс E1)", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "2–3 нед." },
           { material: "МДФ пластик AGT / ПВХ", priceTier: "от 90\u00A0000\u00A0₽", leadTime: "21–40 раб. дн." },
           { material: "МДФ эмаль RAL / NCS", priceTier: "100–240\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
-          { material: "Шпон дуба и массив", priceTier: "110–270\u00A0тыс.\u00A0₽", leadTime: "21–40 раб. дн." },
+          { material: "Шпон дуба и массив", priceTier: "110–270\u00A0тыс.\u00A0₽", leadTime: "6–8 нед." },
           { material: "Раздвижные перегородки", priceTier: "от 80\u00A0000\u00A0₽", leadTime: "от 10 раб. дн." },
         ]}
         materialsNote="Ориентир за изделие 1,2–2,4 м. Точная смета — после замера."
