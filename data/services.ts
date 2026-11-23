@@ -316,14 +316,14 @@ export const SERVICE_PAGES: ServicePageData[] = [
     seoTitle: "Прихожие на заказ в СПб по размерам коридора | ПитерМебель",
     seoDescription: "Прихожие на заказ в СПб от 80 000 ₽ (2 м в Egger 120–140 тыс. ₽): шкафы, обувницы, зеркала, банкетки и доступ к электрощитку. Свой цех.",
     minPrice: 80000,
-    cover: "/img/services/hallway/photo_1.webp",
-    coverAlt: "Прихожая со светло-серым шкафом, реечной стеновой панелью, банкеткой и LED-подсветкой",
+    cover: "/img/services/hallway/photo_5.webp",
+    coverAlt: "Прихожая со светлым встроенным шкафом до потолка, реечной панелью и мягкой банкеткой с бордовым сиденьем",
     gallery: [
+      "/img/services/hallway/photo_5.webp",
       "/img/services/hallway/photo_1.webp",
       "/img/services/hallway/photo_2.webp",
       "/img/services/hallway/photo_3.webp",
       "/img/services/hallway/photo_4.webp",
-      "/img/services/hallway/photo_5.webp",
     ],
     tags: ["Ниша для обуви", "Зеркало в полный рост", "Скрытый электрощиток"],
     whatWeMake: [
