@@ -1949,6 +1949,10 @@ img {
   border-top: 2px solid rgba(255, 255, 255, 0.25);
 }
 
+.design-package-card.is-standard {
+  border-top: 2px solid rgba(245, 145, 44, 0.72);
+}
+
 .design-package-card.is-premium {
   background: var(--bg-surface-elevated);
   border-color: rgba(140, 224, 65, 0.28);
@@ -2010,6 +2014,11 @@ img {
 
 .design-package-price.is-accent {
   color: var(--color-green-brand);
+}
+
+.design-package-title.is-orange,
+.design-package-price.is-orange {
+  color: #F5912C;
 }
 
 .design-package-unit {

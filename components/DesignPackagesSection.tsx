@@ -51,16 +51,16 @@ export default function DesignPackagesSection({
 
         <div className="design-packages-grid">
           {/* Standard Package */}
-          <article className="design-package-card">
+          <article className="design-package-card is-standard">
             <div className="design-package-head">
               <div>
                 <span className="design-package-kicker">Базовый проект</span>
-                <CardTitleTag className="design-package-title">
+                <CardTitleTag className="design-package-title is-orange">
                   Пакет «Стандартный»
                 </CardTitleTag>
               </div>
               <div className="design-package-price-box">
-                <span className="design-package-price">2 500 ₽</span>
+                <span className="design-package-price is-orange">2 500 ₽</span>
                 <span className="design-package-unit">за 1 м²</span>
               </div>
             </div>
